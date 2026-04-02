@@ -63,6 +63,17 @@ There is also a potentially important empirical side-question around identity an
 - which mechanism set best explains the historical collapse
 - whether the conditions that caused collapse are still present now, or whether extinction reflected a transient overshoot regime that may no longer exist
 
+## Tier 1 specification update (April 2026)
+
+- Tier 1 is now frozen as an annual `1965-2002` simulator with a `Pedder juvenile/adult x lake/refuge` core, plus explicit `brown trout`, `trout piscivory`, `climbing galaxias in lake`, `climbing galaxias in refuge streams`, and `trophic upsurge` states.
+- The historical question and the present-day question stay linked but distinct: first explain the original collapse, then ask whether current Lake Pedder still sits outside a coexistence envelope once the transient post-flood overshoot regime is removed.
+- The `trophic upsurge` pulse is treated as a deterministic early-impoundment driver that rises after `1972`, peaks in `1977`, and then decays. That keeps the chronology sharp without forcing a much more complicated productivity submodel.
+- The early `trophy trout` story is represented by a transient piscivory multiplier, not by a full trout age/size simulator. That is enough to test the overshoot hypothesis in Tier 1.
+- Lake Oberon and Strathgordon are now explicitly `intrinsic-baseline constraints`, not historical-lake calibration targets. They help anchor Pedder demography away from the original invasion setting.
+- The hypothesis families are now fixed as: `habitat-only null`, `trout-only`, `climbing-only`, `trout + climbing persistent joint-cause`, and `trout + climbing + transient perfect-storm overshoot`.
+- `Galaxias parvus` remains conceptual background only, and genetics / introgression remain a sidecar interpretation issue rather than a phase-1 demographic mechanism.
+- The machine-readable design companions are now `data/calibration_targets.csv` and `data/parameter_priors.csv`, with the narrative specification in `docs/model_spec_tier1.md`.
+
 [1]: https://nre.tas.gov.au/Documents/Galaxias%20pedderensis_LS_APPROVED%20BY%20GM_15062023.pdf "https://nre.tas.gov.au/Documents/Galaxias%20pedderensis_LS_APPROVED%20BY%20GM_15062023.pdf"
 [2]: https://www.dcceew.gov.au/environment/biodiversity/threatened/assessments/galaxias-pedderensis-2005 "https://www.dcceew.gov.au/environment/biodiversity/threatened/assessments/galaxias-pedderensis-2005"
 [3]: https://nre.tas.gov.au/Documents/clarence.pdf "https://nre.tas.gov.au/Documents/clarence.pdf"

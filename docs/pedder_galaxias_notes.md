@@ -147,3 +147,16 @@ Literature-ingestion additions from the new markdown bundle:
 - The `johnstoni` genetics paper is useful as a warning case:
 - present-day trout allopatry does not automatically imply trout caused fragmentation
 - helpful for Introduction nuance and for avoiding overclaiming from spatial pattern alone
+
+Current Tier 1 design freeze (April 2026):
+
+- Annual time step, historical core `1965-2002`.
+- Pedder gets the real demographic structure: juveniles and adults in both `lake` and `refuge-stream` compartments.
+- Trout and climbing galaxias stay explicit, but as annual pressure / abundance states rather than full age-structured populations.
+- Represent the `large trophy trout` idea with a transient piscivory multiplier tied to the early `trophic upsurge`, not with a detailed trout size model.
+- Treat the apparent `1977` Pedder peak as a timing target, not yet a hard numeric abundance target.
+- Use Lake Oberon and Strathgordon as `intrinsic-baseline` constraints for Pedder demography, not as direct analogues of the historical Lake Pedder invasion dynamics.
+- Keep `Galaxias parvus` in conceptual background only.
+- Keep genetics / introgression as a sidecar interpretation issue, not a phase-1 collapse process.
+- Defer seasonal detail, full trout size structure, full climbing stage structure, and absolute density thresholds.
+- The Tier 1 machine-readable artifacts are now `data/calibration_targets.csv` and `data/parameter_priors.csv`, with the design narrative in `docs/model_spec_tier1.md`.
