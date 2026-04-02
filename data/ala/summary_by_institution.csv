@@ -1,0 +1,20 @@
+query_taxon,institutionCode,collectionCode,dataResourceName,curated_records,earliest_year,latest_year,pedder_linked_records
+Galaxias brevipinnis,TMAG,Ichthyology,Tasmanian Museum and Art Gallery provider for OZCAM,263,,,25
+Galaxias brevipinnis,QVMAG,Ichthyology,Queen Victoria Museum Art Gallery provider for OZCAM,41,1929,1981,0
+Galaxias brevipinnis,NMV,Ichthyology,Museums Victoria provider for OZCAM,26,1904,2015,0
+Galaxias brevipinnis,CSIRO,ANFC,Australian National Fish Collection (ANFC),23,1945,2021,0
+Galaxias brevipinnis,AM,Ichthyology,Australian Museum provider for OZCAM,7,1905,1967,0
+Galaxias brevipinnis,NHMUK,ZOO,Natural History Museum (London) Collection Specimens,6,1971,1971,1
+Galaxias brevipinnis,SMNS,SMNS-Z-GFBIOichthyologycoll,The Ichthyology Collection at the Staatliches Museum für Naturkunde Stuttgart,1,1982,1982,0
+Galaxias brevipinnis,WAM,Ichthyology,Western Australian Museum provider for OZCAM,1,,,0
+Galaxias parvus,TMAG,Ichthyology,Tasmanian Museum and Art Gallery provider for OZCAM,50,,,41
+Galaxias parvus,NMV,Ichthyology,Museums Victoria provider for OZCAM,27,1965,1977,26
+Galaxias parvus,AM,Ichthyology,Australian Museum provider for OZCAM,2,1976,1976,2
+Galaxias parvus,QVMAG,Ichthyology,Queen Victoria Museum Art Gallery provider for OZCAM,1,1970,1970,1
+Galaxias parvus,WAM,Ichthyology,Western Australian Museum provider for OZCAM,1,,,1
+Galaxias pedderensis,NMV,Ichthyology,Museums Victoria provider for OZCAM,34,1965,1978,34
+Galaxias pedderensis,TMAG,Ichthyology,Tasmanian Museum and Art Gallery provider for OZCAM,30,,,30
+Galaxias pedderensis,QVMAG,Ichthyology,Queen Victoria Museum Art Gallery provider for OZCAM,6,1967,1976,6
+Galaxias pedderensis,AM,Ichthyology,Australian Museum provider for OZCAM,2,1976,1976,2
+Galaxias pedderensis,CSIRO,ANFC,Australian National Fish Collection (ANFC),2,2022,2022,2
+Galaxias pedderensis,WAM,Ichthyology,Western Australian Museum provider for OZCAM,1,,,1

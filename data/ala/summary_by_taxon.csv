@@ -1,0 +1,4 @@
+query_taxon,project_taxon_role,curated_records,pedder_linked_records,institutions,collections,earliest_year,latest_year
+Galaxias brevipinnis,co_occurring_galaxiid,368,26,8,4,1904,2021
+Galaxias parvus,co_occurring_galaxiid,81,71,5,1,1965,1977
+Galaxias pedderensis,core_endemic,75,75,6,2,1965,2022

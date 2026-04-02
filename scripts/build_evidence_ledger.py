@@ -1975,7 +1975,7 @@ GAPS = [
         "why_it_matters": "Needed to turn the museum-screening insight into a specimen-level chronology with dates, counts, and taxonomic certainty.",
         "access_need": "data_request_or_curated_ala_download",
         "status": "partially_available_via_ala",
-        "notes": "ALA already shows promising locality and year structure, but not enough curation for direct modeling use.",
+        "notes": "A first curated ALA specimen table now exists in data/ala, but direct museum exports are still needed to recover missing TMAG dates and verify ambiguous off-system Pedder records.",
     },
     {
         "gap_id": "G004",

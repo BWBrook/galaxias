@@ -1,0 +1,4 @@
+query_taxon,scientificName,scientificNameAuthorship,taxonConceptID,rank,matchType,kingdom,phylum,classs,order,family,genus,species,issues,vernacularName
+Galaxias pedderensis,Galaxias pedderensis,"Frankenberg, 1968",https://biodiversity.org.au/afd/taxa/f57c715a-65ce-42ab-b2dd-3372632b7af0,species,exactMatch,Animalia,Chordata,Actinopterygii,Salmoniformes,Galaxiidae,Galaxias,Galaxias pedderensis,noIssue,Pedder Galaxias
+Galaxias brevipinnis,Galaxias brevipinnis,"Günther, 1866",https://biodiversity.org.au/afd/taxa/6d336d38-6249-4b42-9462-30f7331fc7dd,species,exactMatch,Animalia,Chordata,Actinopterygii,Salmoniformes,Galaxiidae,Galaxias,Galaxias brevipinnis,noIssue,Climbing Galaxias
+Galaxias parvus,Galaxias parvus,"Frankenberg, 1968",https://biodiversity.org.au/afd/taxa/976e8b1e-5f47-4c29-99d2-711a1e68bda4,species,exactMatch,Animalia,Chordata,Actinopterygii,Salmoniformes,Galaxiidae,Galaxias,Galaxias parvus,noIssue,Swamp Galaxias
