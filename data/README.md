@@ -22,6 +22,9 @@ In `data/ala/`:
 - `specimens_project_relevant.csv`: subset of curated rows that are directly relevant or potentially relevant to the Pedder project.
 - `summary_by_taxon.csv`: counts and year ranges by queried taxon.
 - `summary_by_institution.csv`: counts and year ranges by institution / collection / taxon.
+- `project_relevant_occurrence_enrichment.csv`: per-record ALA API enrichment for the project-relevant subset, including raw/processed event fields and quality flags.
+- `project_relevant_metadata_gap_summary.csv`: grouped summary of what metadata remains absent online after the enrichment pass.
+- `tmag_pedderensis_request_list.csv`: generated request list for the core undated TMAG `G. pedderensis` lots.
 
 Design notes:
 
@@ -32,6 +35,7 @@ Design notes:
 - The current ledger is strongest on chronology and management history, and weaker on direct quantitative demography and trout/climbing abundance time series.
 - In the normalized pedder plate tables, blank numeric cells from the raw sheet have been interpreted as zero counts. The `G. fontanus` row is treated as a species-total row because it appears inline rather than under a separate location block.
 - In the ALA curation outputs, `specimens_curated.csv` is one row per inferred specimen key, and `specimens_project_relevant.csv` keeps rows that are either directly Pedder-linked or unresolved enough to warrant follow-up rather than immediate exclusion.
+- In the ALA enrichment outputs, `MISSING_COLLECTION_DATE` is taken from the ALA per-record quality flags and is a useful indicator that the date is not merely absent from the bulk download.
 
 Immediate next steps:
 

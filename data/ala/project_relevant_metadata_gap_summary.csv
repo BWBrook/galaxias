@@ -1,0 +1,14 @@
+query_taxon,institutionCode,records,missing_collection_date_issue,missing_locality_after_enrichment,has_any_public_date_component
+Galaxias brevipinnis,NHMUK,1,0,1,0
+Galaxias brevipinnis,TMAG,25,25,0,0
+Galaxias parvus,AM,2,0,0,2
+Galaxias parvus,NMV,26,0,0,25
+Galaxias parvus,QVMAG,1,0,0,1
+Galaxias parvus,TMAG,41,41,0,0
+Galaxias parvus,WAM,1,1,0,0
+Galaxias pedderensis,AM,2,0,0,2
+Galaxias pedderensis,CSIRO,2,0,0,2
+Galaxias pedderensis,NMV,34,0,0,34
+Galaxias pedderensis,QVMAG,6,0,0,6
+Galaxias pedderensis,TMAG,30,30,2,0
+Galaxias pedderensis,WAM,1,1,0,0
