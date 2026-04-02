@@ -109,3 +109,41 @@ The official recovery material mentions that Clarence Lagoon has been stocked wi
 For simulations, I’d probably go with Python due to its support for custom simulators, calibration wrappers, and scenario sweeps. R, however, would still work well for a more stats-oriented approach.
 
 The brook trout since 1963 and the translocated populations at Lake Oberon and Strathgordon are official. 
+
+New additions from the "A fish and a lake" draft:
+
+- Use "trophic upsurge" as the explicit term for the post-inundation boom mechanism.
+- Treat the apparent Pedder peak around 1977 as a candidate calibration target if the underlying source can be pinned down.
+- Keep the possibility open that extinction reflected a transient overshoot regime of unusually large, piscivorous trout rather than a timeless impossibility of coexistence.
+- Retain *Galaxias parvus* in the conceptual community background even if it is not a modeled state variable.
+- Add a sidecar genetics question: mito mixing among brev and pedder, allozymes suggesting they remain distinct, possible follow-up via DArT/RAD. This matters for conservation framing and maybe for interpretation of modern refuge populations, but is probably not part of phase-1 demographic modelling.
+
+Literature-ingestion additions from the new markdown bundle:
+
+- `1977` is now better supported than before as the main candidate peak year for the post-flood Pedder boom.
+- Use the wording `trophic upsurge` consistently rather than switching between subsidy, boost, enrichment pulse, and boom.
+- Keep the exact statement conservative:
+- strong support for a 1977 peak signal
+- still worth chasing the original fish series or figure before treating it as a hard numeric target
+
+- The best extinction narrative is still `joint cause, ordered in time`:
+- trout likely initiated the crash during the high-productivity early impoundment phase
+- climbing galaxias likely accelerated replacement and blocked recovery later
+
+- The `perfect storm` framing is looking increasingly viable:
+- inundation changed habitat
+- trophic upsurge created an unusually productive early lake
+- trout overshot into a large-bodied, highly piscivorous phase
+- climbing galaxias then became dominant in the altered system
+
+- `Galaxias parvus` remains background, not a default state variable.
+
+- Genetics is now a clearer sidecar issue than before:
+- current insurance populations retain similar heterozygosity and low differentiation
+- introgression with `G. brevipinnis` is real
+- best-supported timing may pre-date anthropogenic contact
+- therefore do not build hybridisation into phase-1 collapse dynamics unless new evidence forces it
+
+- The `johnstoni` genetics paper is useful as a warning case:
+- present-day trout allopatry does not automatically imply trout caused fragmentation
+- helpful for Introduction nuance and for avoiding overclaiming from spatial pattern alone

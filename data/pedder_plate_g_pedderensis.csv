@@ -1,0 +1,3 @@
+species,row_scope,location,on_pedder_plate_passed_qc,already_genotyped_on_johnstoni_plate,available_to_extract,number_to_extract,all_possible_samples,samples_to_genotype_on_pedder_plate,final_sample_size
+G. pedderensis,location,Lake Oberon,6,0,1,1,7,7,7
+G. pedderensis,location,Strathgordon,16,0,8,8,24,24,24

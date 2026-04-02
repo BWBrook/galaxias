@@ -1,0 +1,8 @@
+metric,reported_sum,computed_sum_from_tidy_rows,matches_reported_sum
+on_pedder_plate_passed_qc,54,54,True
+already_genotyped_on_johnstoni_plate,17,17,True
+available_to_extract,47,47,True
+number_to_extract,41,41,True
+all_possible_samples,118,118,True
+samples_to_genotype_on_pedder_plate,95,95,True
+final_sample_size,112,112,True

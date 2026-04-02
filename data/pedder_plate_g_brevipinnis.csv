@@ -1,0 +1,10 @@
+species,row_scope,location,on_pedder_plate_passed_qc,already_genotyped_on_johnstoni_plate,available_to_extract,number_to_extract,all_possible_samples,samples_to_genotype_on_pedder_plate,final_sample_size
+G. brevipinnis,location,Cygnet creek,5,1,0,0,6,5,6
+G. brevipinnis,location,Tarkine area,8,2,0,0,10,8,10
+G. brevipinnis,location,Lake Pedder,18,0,0,0,18,18,18
+G. brevipinnis,location,Great Lake,1,1,0,0,2,1,2
+G. brevipinnis,location,Snug Falls,0,2,10,10,12,10,12
+G. brevipinnis,location,Reservoir Lakes,0,2,0,0,2,0,2
+G. brevipinnis,location,Loiusa Creek,0,1,0,0,1,0,1
+G. brevipinnis,location,Tyndall Creek,0,0,24,18,24,18,18
+G. brevipinnis,location,Mainland Aust,0,8,0,0,8,0,8

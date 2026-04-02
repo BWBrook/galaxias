@@ -48,6 +48,21 @@ This framing is attractive because it is more novel than the default reintroduct
 
 Two other additions are worth capturing now. First, *Galaxias parvus* was also present in the system and coexisted with *pedderensis*, so it should at least appear in the conceptual background even if it ends up being a minor player in the model. Second, Charlotte's 2025 *Galaxias johnstoni* paper and Kaleigh's *pedderensis* genetic study sound highly valuable for the Introduction because they provide both trout-versus-galaxiid context and a reconstructed grey-literature history of the Pedder system. They may also sharpen the contrast between fragmentation caused before trout arrival and fragmentation driven by trout invasion.
 
+The new narrative draft also usefully sharpens some wording for the paper itself. "Trophic upsurge" is probably the right ecological term for the early post-inundation productivity pulse, and the note that Pedder abundance appears to have peaked around 1977 may give us a more explicit target pattern than the looser "early boom" wording. Likewise, the 1996 "one lonely individual" formulation is rhetorically strong but also scientifically helpful because it reminds us that the final natural-range record can be treated as a point observation near functional extirpation rather than just another generic survey year.
+
+There is also a potentially important empirical side-question around identity and conservation target. If climbing galaxias occasionally invades refuge systems and if there is any risk of hybridisation or mito-nuclear discordance, then the project may eventually need a short genetics appendix or at least a framing paragraph on taxonomic integrity. The current notes mention mitochondrial mixing, allozymes suggesting separation, and the possibility of checking this with DArT or RAD-style data. That is probably not a phase-1 modelling task, but it is worth parking as a live issue because it affects how confidently we interpret both historical material and current refuge populations.
+
+## Literature-ingestion update (April 2026)
+
+- The newly ingested literature strengthens the `trophic upsurge` framing and makes `1977` the best current candidate year for the post-inundation Pedder peak.
+- That `1977` target is now supported well enough to use in calibration, but the direct Pedder-only fish time series is still one step removed. Chilcott and the 2025 genetics paper both cite it clearly, while Lake 2001 directly documents the accompanying littoral-fauna peak.
+- The transient `perfect storm` framing has become stronger, not weaker: early enrichment plus trout overshoot plus later climbing-galaxias dominance is now the most interesting causal sequence to test.
+- `Galaxias parvus` should stay in the conceptual community background because the primary literature suggests it persisted at much higher levels than `pedderensis` after inundation.
+- Genetics and introgression now deserve a defined sidecar slot. The new Pedder genetics paper shows evidence of `brevipinnis` introgression into `pedderensis`, but the best-supported timing appears to pre-date 1972, so this should not be forced into phase-1 demographic collapse modeling as a primary mechanism.
+- The better paper framing is now a two-part question:
+- which mechanism set best explains the historical collapse
+- whether the conditions that caused collapse are still present now, or whether extinction reflected a transient overshoot regime that may no longer exist
+
 [1]: https://nre.tas.gov.au/Documents/Galaxias%20pedderensis_LS_APPROVED%20BY%20GM_15062023.pdf "https://nre.tas.gov.au/Documents/Galaxias%20pedderensis_LS_APPROVED%20BY%20GM_15062023.pdf"
 [2]: https://www.dcceew.gov.au/environment/biodiversity/threatened/assessments/galaxias-pedderensis-2005 "https://www.dcceew.gov.au/environment/biodiversity/threatened/assessments/galaxias-pedderensis-2005"
 [3]: https://nre.tas.gov.au/Documents/clarence.pdf "https://nre.tas.gov.au/Documents/clarence.pdf"
