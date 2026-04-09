@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import ast
+import json
 import re
 from pathlib import Path
 
@@ -50,6 +51,14 @@ EXPRESSION_PARAMETER_RE = re.compile(r"PR\d{3}")
 
 def _read_csv(path: Path) -> pd.DataFrame:
     return pd.read_csv(path, dtype=str, keep_default_na=False)
+
+
+def _read_json(path: Path) -> dict[str, dict[str, object]]:
+    with path.open(encoding="utf-8") as handle:
+        payload = json.load(handle)
+    if not isinstance(payload, dict):
+        raise ValueError(f"Expected top-level object in {path}")
+    return payload
 
 
 def _split_ids(value: str) -> list[str]:
@@ -202,6 +211,31 @@ def _validate_constraint_rows(rows: pd.DataFrame, parameter_ids: set[str]) -> No
             raise ValueError(f"Constraint {row['constraint_id']} references unknown parameters: {sorted(unknown)}")
 
 
+def _validate_target_details(
+    calibration_targets: pd.DataFrame | None,
+    target_details: dict[str, dict[str, object]] | None,
+) -> None:
+    if calibration_targets is None:
+        if target_details:
+            raise ValueError("Target details were provided without calibration_targets.csv")
+        return
+    if target_details is None:
+        raise ValueError("Missing calibration_target_details.json for Module 2 scoring")
+
+    target_ids = set(calibration_targets["target_id"])
+    detail_ids = set(target_details)
+    if target_ids != detail_ids:
+        missing = target_ids - detail_ids
+        extra = detail_ids - target_ids
+        raise ValueError(f"Target details mismatch. Missing={sorted(missing)}, extra={sorted(extra)}")
+
+    required_keys = {"required_scenario_id", "observed_primary", "observed_secondary"}
+    for target_id, details in target_details.items():
+        missing_keys = required_keys - set(details)
+        if missing_keys:
+            raise ValueError(f"Target {target_id} is missing required detail keys: {sorted(missing_keys)}")
+
+
 def load_model_inputs(data_dir: str | Path) -> ModelInputs:
     data_path = Path(data_dir).resolve()
     evidence_ids = _load_evidence_ids(data_path)
@@ -210,10 +244,13 @@ def load_model_inputs(data_dir: str | Path) -> ModelInputs:
     constraints = _read_csv(data_path / "parameter_constraints.csv")
     calibration_targets_path = data_path / "calibration_targets.csv"
     calibration_targets = _read_csv(calibration_targets_path) if calibration_targets_path.exists() else None
+    target_details_path = data_path / "calibration_target_details.json"
+    target_details = _read_json(target_details_path) if target_details_path.exists() else None
 
     _validate_prior_rows(priors, evidence_ids)
     _validate_family_rows(family_map, set(priors["parameter_id"]))
     _validate_constraint_rows(constraints, set(priors["parameter_id"]))
+    _validate_target_details(calibration_targets, target_details)
 
     return ModelInputs(
         data_dir=data_path,
@@ -221,6 +258,7 @@ def load_model_inputs(data_dir: str | Path) -> ModelInputs:
         family_map=family_map,
         constraints=constraints,
         calibration_targets=calibration_targets,
+        calibration_target_details=target_details,
     )
 
 

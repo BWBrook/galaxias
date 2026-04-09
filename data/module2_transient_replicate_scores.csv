@@ -1,0 +1,241 @@
+target_id,target_group,comparison_type,scenario_id,evaluation_status,projected_primary,projected_secondary,observed_primary,observed_secondary,raw_penalty,weighted_penalty,priority_weight,notes,family_id,seed
+CT001,historical_core,qualitative_state_constraint,historical_lake,scored,1.0,1.0,1.0,1.0,0.0,0.0,4.0,,transient_perfect_storm,1
+CT002,historical_core,window_relative_abundance_requirement,historical_lake,scored,1.085444201360557,3.8909522057738144,1.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,1
+CT003,historical_core,target_year_match,historical_lake,scored,1974.0,0.689119170984456,1977.0,,3.0,12.0,4.0,,transient_perfect_storm,1
+CT004,historical_core,event_and_window_presence,historical_lake,scored,0.525,3.8386037004655145,350000.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,1
+CT005,historical_core,windowed_dominance_switch,historical_lake,scored,0.35546760560717117,0.8168499679205454,1.0,1.0,0.3371663979696147,1.6858319898480734,5.0,,transient_perfect_storm,1
+CT006,historical_core,compartment_presence_constraint,historical_lake,scored,6.2475000000000005,1.0,11.0,12.5,0.3333333333333333,1.6666666666666665,5.0,,transient_perfect_storm,1
+CT007,historical_core,joint_occupancy_and_count_constraint,historical_lake,scored,0.5067041075719707,6.7575,5.0,68.0,80.1113453269865,400.5567266349325,5.0,,transient_perfect_storm,1
+CT008,historical_core,upper_bound_count_constraint,historical_lake,scored,14.790000000000001,58.0,10.0,50.0,0.2661666666666667,1.3308333333333335,5.0,,transient_perfect_storm,1
+CT009,historical_core,last_occurrence_event,historical_lake,scored,2002.0,,1996.0,,6.0,30.0,5.0,,transient_perfect_storm,1
+CT010,historical_core,zero_detection_window,historical_lake,scored,19.125,24.48,0.0,0.0,31.875,159.375,5.0,,transient_perfect_storm,1
+CT011,intrinsic_baseline,baseline_growth_constraint,historical_lake,deferred_requires_scenario,,,500.0,1997.0,,,3.0,"Requires scenario_id=lake_oberon, current kernel only supports historical_lake.",transient_perfect_storm,1
+CT012,intrinsic_baseline,delayed_establishment_constraint,historical_lake,deferred_requires_scenario,,,8.0,2008.0,,,3.0,"Requires scenario_id=strathgordon, current kernel only supports historical_lake.",transient_perfect_storm,1
+CT001,historical_core,qualitative_state_constraint,historical_lake,scored,1.0,1.0,1.0,1.0,0.0,0.0,4.0,,transient_perfect_storm,2
+CT002,historical_core,window_relative_abundance_requirement,historical_lake,scored,1.3731985915594707,2.8182685493033137,1.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,2
+CT003,historical_core,target_year_match,historical_lake,scored,1974.0,0.6825396825396826,1977.0,,3.0,12.0,4.0,,transient_perfect_storm,2
+CT004,historical_core,event_and_window_presence,historical_lake,scored,0.525,3.8386037004655145,350000.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,2
+CT005,historical_core,windowed_dominance_switch,historical_lake,scored,0.3216437478033369,5.266853524502621,1.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,2
+CT006,historical_core,compartment_presence_constraint,historical_lake,scored,10.8375,1.0,11.0,12.5,0.3333333333333333,1.6666666666666665,5.0,,transient_perfect_storm,2
+CT007,historical_core,joint_occupancy_and_count_constraint,historical_lake,scored,0.7068661246384929,9.435,5.0,68.0,63.40376156123712,317.0188078061856,5.0,,transient_perfect_storm,2
+CT008,historical_core,upper_bound_count_constraint,historical_lake,scored,17.901,70.2,10.0,50.0,0.4623833333333333,2.3119166666666664,5.0,,transient_perfect_storm,2
+CT009,historical_core,last_occurrence_event,historical_lake,scored,2002.0,,1996.0,,6.0,30.0,5.0,,transient_perfect_storm,2
+CT010,historical_core,zero_detection_window,historical_lake,scored,11.526,25.5,0.0,0.0,19.21,96.05000000000001,5.0,,transient_perfect_storm,2
+CT011,intrinsic_baseline,baseline_growth_constraint,historical_lake,deferred_requires_scenario,,,500.0,1997.0,,,3.0,"Requires scenario_id=lake_oberon, current kernel only supports historical_lake.",transient_perfect_storm,2
+CT012,intrinsic_baseline,delayed_establishment_constraint,historical_lake,deferred_requires_scenario,,,8.0,2008.0,,,3.0,"Requires scenario_id=strathgordon, current kernel only supports historical_lake.",transient_perfect_storm,2
+CT001,historical_core,qualitative_state_constraint,historical_lake,scored,1.0,1.0,1.0,1.0,0.0,0.0,4.0,,transient_perfect_storm,3
+CT002,historical_core,window_relative_abundance_requirement,historical_lake,scored,1.1995750715691413,5.021793087882258,1.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,3
+CT003,historical_core,target_year_match,historical_lake,scored,1975.0,0.6808510638297872,1977.0,,2.0,8.0,4.0,,transient_perfect_storm,3
+CT004,historical_core,event_and_window_presence,historical_lake,scored,0.525,3.8386037004655145,350000.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,3
+CT005,historical_core,windowed_dominance_switch,historical_lake,scored,6.467015912537482,0.8050988444834579,1.0,1.0,3.4725083399324728,17.362541699662366,5.0,,transient_perfect_storm,3
+CT006,historical_core,compartment_presence_constraint,historical_lake,scored,7.0125,1.0,11.0,12.5,0.3333333333333333,1.6666666666666665,5.0,,transient_perfect_storm,3
+CT007,historical_core,joint_occupancy_and_count_constraint,historical_lake,scored,0.4589957276541603,6.12,5.0,68.0,85.20121002431597,426.00605012157985,5.0,,transient_perfect_storm,3
+CT008,historical_core,upper_bound_count_constraint,historical_lake,scored,13.668000000000001,53.6,10.0,50.0,0.19540000000000007,0.9770000000000003,5.0,,transient_perfect_storm,3
+CT009,historical_core,last_occurrence_event,historical_lake,scored,2002.0,,1996.0,,6.0,30.0,5.0,,transient_perfect_storm,3
+CT010,historical_core,zero_detection_window,historical_lake,scored,12.444,22.695,0.0,0.0,20.740000000000002,103.70000000000002,5.0,,transient_perfect_storm,3
+CT011,intrinsic_baseline,baseline_growth_constraint,historical_lake,deferred_requires_scenario,,,500.0,1997.0,,,3.0,"Requires scenario_id=lake_oberon, current kernel only supports historical_lake.",transient_perfect_storm,3
+CT012,intrinsic_baseline,delayed_establishment_constraint,historical_lake,deferred_requires_scenario,,,8.0,2008.0,,,3.0,"Requires scenario_id=strathgordon, current kernel only supports historical_lake.",transient_perfect_storm,3
+CT001,historical_core,qualitative_state_constraint,historical_lake,scored,1.0,1.0,1.0,1.0,0.0,0.0,4.0,,transient_perfect_storm,4
+CT002,historical_core,window_relative_abundance_requirement,historical_lake,scored,1.111106509982331,4.551983881009308,1.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,4
+CT003,historical_core,target_year_match,historical_lake,scored,1974.0,0.689119170984456,1977.0,,3.0,12.0,4.0,,transient_perfect_storm,4
+CT004,historical_core,event_and_window_presence,historical_lake,scored,0.525,3.8386037004655145,350000.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,4
+CT005,historical_core,windowed_dominance_switch,historical_lake,scored,4.346682826459619,0.9986936238198827,1.0,1.0,2.4512003596677236,12.256001798338618,5.0,,transient_perfect_storm,4
+CT006,historical_core,compartment_presence_constraint,historical_lake,scored,7.3950000000000005,1.0,11.0,12.5,0.3333333333333333,1.6666666666666665,5.0,,transient_perfect_storm,4
+CT007,historical_core,joint_occupancy_and_count_constraint,historical_lake,scored,0.4971639942743109,6.63,5.0,68.0,81.08568555615476,405.4284277807738,5.0,,transient_perfect_storm,4
+CT008,historical_core,upper_bound_count_constraint,historical_lake,scored,9.588000000000001,37.6,10.0,50.0,0.0,0.0,5.0,,transient_perfect_storm,4
+CT009,historical_core,last_occurrence_event,historical_lake,scored,2002.0,,1996.0,,6.0,30.0,5.0,,transient_perfect_storm,4
+CT010,historical_core,zero_detection_window,historical_lake,scored,12.699000000000002,23.205000000000002,0.0,0.0,21.165000000000003,105.82500000000002,5.0,,transient_perfect_storm,4
+CT011,intrinsic_baseline,baseline_growth_constraint,historical_lake,deferred_requires_scenario,,,500.0,1997.0,,,3.0,"Requires scenario_id=lake_oberon, current kernel only supports historical_lake.",transient_perfect_storm,4
+CT012,intrinsic_baseline,delayed_establishment_constraint,historical_lake,deferred_requires_scenario,,,8.0,2008.0,,,3.0,"Requires scenario_id=strathgordon, current kernel only supports historical_lake.",transient_perfect_storm,4
+CT001,historical_core,qualitative_state_constraint,historical_lake,scored,1.0,1.0,1.0,1.0,0.0,0.0,4.0,,transient_perfect_storm,5
+CT002,historical_core,window_relative_abundance_requirement,historical_lake,scored,1.1451850653548874,5.012211064774795,1.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,5
+CT003,historical_core,target_year_match,historical_lake,scored,1974.0,0.6915167095115681,1977.0,,3.0,12.0,4.0,,transient_perfect_storm,5
+CT004,historical_core,event_and_window_presence,historical_lake,scored,0.525,3.8386037004655145,350000.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,5
+CT005,historical_core,windowed_dominance_switch,historical_lake,scored,0.34605436216176444,4.718222949033598,1.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,5
+CT006,historical_core,compartment_presence_constraint,historical_lake,scored,6.12,1.0,11.0,12.5,0.3333333333333333,1.6666666666666665,5.0,,transient_perfect_storm,5
+CT007,historical_core,joint_occupancy_and_count_constraint,historical_lake,scored,0.5067041075719707,6.7575,5.0,68.0,80.1113453269865,400.5567266349325,5.0,,transient_perfect_storm,5
+CT008,historical_core,upper_bound_count_constraint,historical_lake,scored,10.506,41.2,10.0,50.0,0.025300000000000013,0.12650000000000006,5.0,,transient_perfect_storm,5
+CT009,historical_core,last_occurrence_event,historical_lake,scored,2002.0,,1996.0,,6.0,30.0,5.0,,transient_perfect_storm,5
+CT010,historical_core,zero_detection_window,historical_lake,scored,11.424000000000001,23.97,0.0,0.0,19.040000000000003,95.20000000000002,5.0,,transient_perfect_storm,5
+CT011,intrinsic_baseline,baseline_growth_constraint,historical_lake,deferred_requires_scenario,,,500.0,1997.0,,,3.0,"Requires scenario_id=lake_oberon, current kernel only supports historical_lake.",transient_perfect_storm,5
+CT012,intrinsic_baseline,delayed_establishment_constraint,historical_lake,deferred_requires_scenario,,,8.0,2008.0,,,3.0,"Requires scenario_id=strathgordon, current kernel only supports historical_lake.",transient_perfect_storm,5
+CT001,historical_core,qualitative_state_constraint,historical_lake,scored,1.0,1.0,1.0,1.0,0.0,0.0,4.0,,transient_perfect_storm,6
+CT002,historical_core,window_relative_abundance_requirement,historical_lake,scored,1.1850407965693563,4.083452239876821,1.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,6
+CT003,historical_core,target_year_match,historical_lake,scored,1975.0,0.6825396825396826,1977.0,,2.0,8.0,4.0,,transient_perfect_storm,6
+CT004,historical_core,event_and_window_presence,historical_lake,scored,0.525,3.8386037004655145,350000.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,6
+CT005,historical_core,windowed_dominance_switch,historical_lake,scored,0.37105829006362606,0.9016624240316988,1.0,1.0,0.1725251361767047,0.8626256808835235,5.0,,transient_perfect_storm,6
+CT006,historical_core,compartment_presence_constraint,historical_lake,scored,9.5625,1.0,11.0,12.5,0.3333333333333333,1.6666666666666665,5.0,,transient_perfect_storm,6
+CT007,historical_core,joint_occupancy_and_count_constraint,historical_lake,scored,0.4017198803957853,5.355,5.0,68.0,92.13764842061288,460.6882421030644,5.0,,transient_perfect_storm,6
+CT008,historical_core,upper_bound_count_constraint,historical_lake,scored,12.189,47.8,10.0,50.0,0.10944999999999999,0.54725,5.0,,transient_perfect_storm,6
+CT009,historical_core,last_occurrence_event,historical_lake,scored,2002.0,,1996.0,,6.0,30.0,5.0,,transient_perfect_storm,6
+CT010,historical_core,zero_detection_window,historical_lake,scored,13.463999999999999,21.675,0.0,0.0,22.440000000000005,112.20000000000002,5.0,,transient_perfect_storm,6
+CT011,intrinsic_baseline,baseline_growth_constraint,historical_lake,deferred_requires_scenario,,,500.0,1997.0,,,3.0,"Requires scenario_id=lake_oberon, current kernel only supports historical_lake.",transient_perfect_storm,6
+CT012,intrinsic_baseline,delayed_establishment_constraint,historical_lake,deferred_requires_scenario,,,8.0,2008.0,,,3.0,"Requires scenario_id=strathgordon, current kernel only supports historical_lake.",transient_perfect_storm,6
+CT001,historical_core,qualitative_state_constraint,historical_lake,scored,1.0,1.0,1.0,1.0,0.0,0.0,4.0,,transient_perfect_storm,7
+CT002,historical_core,window_relative_abundance_requirement,historical_lake,scored,1.1476774007010677,4.611484203729842,1.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,7
+CT003,historical_core,target_year_match,historical_lake,scored,1975.0,0.6619718309859155,1977.0,,2.0,8.0,4.0,,transient_perfect_storm,7
+CT004,historical_core,event_and_window_presence,historical_lake,scored,0.525,3.8386037004655145,350000.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,7
+CT005,historical_core,windowed_dominance_switch,historical_lake,scored,12.82801517077107,0.8934840800495518,1.0,1.0,4.440430377528293,22.202151887641467,5.0,,transient_perfect_storm,7
+CT006,historical_core,compartment_presence_constraint,historical_lake,scored,8.2875,1.0,11.0,12.5,0.3333333333333333,1.6666666666666665,5.0,,transient_perfect_storm,7
+CT007,historical_core,joint_occupancy_and_count_constraint,historical_lake,scored,0.6115938077281566,8.16,5.0,68.0,70.58015115870582,352.9007557935291,5.0,,transient_perfect_storm,7
+CT008,historical_core,upper_bound_count_constraint,historical_lake,scored,8.873999999999999,34.8,10.0,50.0,0.0,0.0,5.0,,transient_perfect_storm,7
+CT009,historical_core,last_occurrence_event,historical_lake,scored,2002.0,,1996.0,,6.0,30.0,5.0,,transient_perfect_storm,7
+CT010,historical_core,zero_detection_window,historical_lake,scored,11.678999999999998,26.01,0.0,0.0,19.465,97.325,5.0,,transient_perfect_storm,7
+CT011,intrinsic_baseline,baseline_growth_constraint,historical_lake,deferred_requires_scenario,,,500.0,1997.0,,,3.0,"Requires scenario_id=lake_oberon, current kernel only supports historical_lake.",transient_perfect_storm,7
+CT012,intrinsic_baseline,delayed_establishment_constraint,historical_lake,deferred_requires_scenario,,,8.0,2008.0,,,3.0,"Requires scenario_id=strathgordon, current kernel only supports historical_lake.",transient_perfect_storm,7
+CT001,historical_core,qualitative_state_constraint,historical_lake,scored,1.0,1.0,1.0,1.0,0.0,0.0,4.0,,transient_perfect_storm,8
+CT002,historical_core,window_relative_abundance_requirement,historical_lake,scored,1.2361024725025826,3.4386321456858955,1.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,8
+CT003,historical_core,target_year_match,historical_lake,scored,1975.0,0.6992481203007519,1977.0,,2.0,8.0,4.0,,transient_perfect_storm,8
+CT004,historical_core,event_and_window_presence,historical_lake,scored,0.525,3.8386037004655145,350000.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,8
+CT005,historical_core,windowed_dominance_switch,historical_lake,scored,12.82801517077107,0.9016624240316988,1.0,1.0,4.425244243609534,22.126221218047668,5.0,,transient_perfect_storm,8
+CT006,historical_core,compartment_presence_constraint,historical_lake,scored,11.22,1.0,11.0,12.5,0.3333333333333333,1.6666666666666665,5.0,,transient_perfect_storm,8
+CT007,historical_core,joint_occupancy_and_count_constraint,historical_lake,scored,0.6115938077281566,8.16,5.0,68.0,70.58015115870582,352.9007557935291,5.0,,transient_perfect_storm,8
+CT008,historical_core,upper_bound_count_constraint,historical_lake,scored,17.747999999999998,69.6,10.0,50.0,0.45273333333333315,2.2636666666666656,5.0,,transient_perfect_storm,8
+CT009,historical_core,last_occurrence_event,historical_lake,scored,2002.0,,1996.0,,6.0,30.0,5.0,,transient_perfect_storm,8
+CT010,historical_core,zero_detection_window,historical_lake,scored,10.812000000000001,25.5,0.0,0.0,18.02,90.1,5.0,,transient_perfect_storm,8
+CT011,intrinsic_baseline,baseline_growth_constraint,historical_lake,deferred_requires_scenario,,,500.0,1997.0,,,3.0,"Requires scenario_id=lake_oberon, current kernel only supports historical_lake.",transient_perfect_storm,8
+CT012,intrinsic_baseline,delayed_establishment_constraint,historical_lake,deferred_requires_scenario,,,8.0,2008.0,,,3.0,"Requires scenario_id=strathgordon, current kernel only supports historical_lake.",transient_perfect_storm,8
+CT001,historical_core,qualitative_state_constraint,historical_lake,scored,1.0,1.0,1.0,1.0,0.0,0.0,4.0,,transient_perfect_storm,9
+CT002,historical_core,window_relative_abundance_requirement,historical_lake,scored,1.185761113688222,3.8448302781944914,1.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,9
+CT003,historical_core,target_year_match,historical_lake,scored,1975.0,0.6657381615598886,1977.0,,2.0,8.0,4.0,,transient_perfect_storm,9
+CT004,historical_core,event_and_window_presence,historical_lake,scored,0.525,3.8386037004655145,350000.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,9
+CT005,historical_core,windowed_dominance_switch,historical_lake,scored,0.40187708491940893,5.266853524502621,1.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,9
+CT006,historical_core,compartment_presence_constraint,historical_lake,scored,7.3950000000000005,1.0,11.0,12.5,0.3333333333333333,1.6666666666666665,5.0,,transient_perfect_storm,9
+CT007,historical_core,joint_occupancy_and_count_constraint,historical_lake,scored,0.6973424034285133,9.307500000000001,5.0,68.0,64.06968897621584,320.3484448810792,5.0,,transient_perfect_storm,9
+CT008,historical_core,upper_bound_count_constraint,historical_lake,scored,19.329,75.8,10.0,50.0,0.55245,2.76225,5.0,,transient_perfect_storm,9
+CT009,historical_core,last_occurrence_event,historical_lake,scored,2002.0,,1996.0,,6.0,30.0,5.0,,transient_perfect_storm,9
+CT010,historical_core,zero_detection_window,historical_lake,scored,16.371000000000002,24.225,0.0,0.0,27.285000000000004,136.425,5.0,,transient_perfect_storm,9
+CT011,intrinsic_baseline,baseline_growth_constraint,historical_lake,deferred_requires_scenario,,,500.0,1997.0,,,3.0,"Requires scenario_id=lake_oberon, current kernel only supports historical_lake.",transient_perfect_storm,9
+CT012,intrinsic_baseline,delayed_establishment_constraint,historical_lake,deferred_requires_scenario,,,8.0,2008.0,,,3.0,"Requires scenario_id=strathgordon, current kernel only supports historical_lake.",transient_perfect_storm,9
+CT001,historical_core,qualitative_state_constraint,historical_lake,scored,1.0,1.0,1.0,1.0,0.0,0.0,4.0,,transient_perfect_storm,10
+CT002,historical_core,window_relative_abundance_requirement,historical_lake,scored,1.1393392893652718,3.6428014750287616,1.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,10
+CT003,historical_core,target_year_match,historical_lake,scored,1974.0,0.7222222222222222,1977.0,,3.0,12.0,4.0,,transient_perfect_storm,10
+CT004,historical_core,event_and_window_presence,historical_lake,scored,0.525,3.8386037004655145,350000.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,10
+CT005,historical_core,windowed_dominance_switch,historical_lake,scored,0.33319519924080704,6.9127452509096905,1.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,10
+CT006,historical_core,compartment_presence_constraint,historical_lake,scored,8.5425,1.0,11.0,12.5,0.3333333333333333,1.6666666666666665,5.0,,transient_perfect_storm,10
+CT007,historical_core,joint_occupancy_and_count_constraint,historical_lake,scored,0.6973424034285133,9.307500000000001,5.0,68.0,64.06968897621584,320.3484448810792,5.0,,transient_perfect_storm,10
+CT008,historical_core,upper_bound_count_constraint,historical_lake,scored,14.535,57.0,10.0,50.0,0.2500833333333333,1.2504166666666667,5.0,,transient_perfect_storm,10
+CT009,historical_core,last_occurrence_event,historical_lake,scored,2002.0,,1996.0,,6.0,30.0,5.0,,transient_perfect_storm,10
+CT010,historical_core,zero_detection_window,historical_lake,scored,16.677,23.715,0.0,0.0,27.795000000000005,138.97500000000002,5.0,,transient_perfect_storm,10
+CT011,intrinsic_baseline,baseline_growth_constraint,historical_lake,deferred_requires_scenario,,,500.0,1997.0,,,3.0,"Requires scenario_id=lake_oberon, current kernel only supports historical_lake.",transient_perfect_storm,10
+CT012,intrinsic_baseline,delayed_establishment_constraint,historical_lake,deferred_requires_scenario,,,8.0,2008.0,,,3.0,"Requires scenario_id=strathgordon, current kernel only supports historical_lake.",transient_perfect_storm,10
+CT001,historical_core,qualitative_state_constraint,historical_lake,scored,1.0,1.0,1.0,1.0,0.0,0.0,4.0,,transient_perfect_storm,11
+CT002,historical_core,window_relative_abundance_requirement,historical_lake,scored,1.2089061877210572,5.1870468136733345,1.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,11
+CT003,historical_core,target_year_match,historical_lake,scored,1975.0,0.67828418230563,1977.0,,2.0,8.0,4.0,,transient_perfect_storm,11
+CT004,historical_core,event_and_window_presence,historical_lake,scored,0.525,3.8386037004655145,350000.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,11
+CT005,historical_core,windowed_dominance_switch,historical_lake,scored,4.346682826459619,0.8702934334152447,1.0,1.0,2.6805630499652926,13.402815249826464,5.0,,transient_perfect_storm,11
+CT006,historical_core,compartment_presence_constraint,historical_lake,scored,8.7975,1.0,11.0,12.5,0.3333333333333333,1.6666666666666665,5.0,,transient_perfect_storm,11
+CT007,historical_core,joint_occupancy_and_count_constraint,historical_lake,scored,0.6020622842777983,8.0325,5.0,68.0,71.36749949399832,356.8374974699916,5.0,,transient_perfect_storm,11
+CT008,historical_core,upper_bound_count_constraint,historical_lake,scored,10.353,40.6,10.0,50.0,0.017649999999999985,0.08824999999999993,5.0,,transient_perfect_storm,11
+CT009,historical_core,last_occurrence_event,historical_lake,scored,2002.0,,1996.0,,6.0,30.0,5.0,,transient_perfect_storm,11
+CT010,historical_core,zero_detection_window,historical_lake,scored,19.226999999999997,23.46,0.0,0.0,32.045,160.22500000000002,5.0,,transient_perfect_storm,11
+CT011,intrinsic_baseline,baseline_growth_constraint,historical_lake,deferred_requires_scenario,,,500.0,1997.0,,,3.0,"Requires scenario_id=lake_oberon, current kernel only supports historical_lake.",transient_perfect_storm,11
+CT012,intrinsic_baseline,delayed_establishment_constraint,historical_lake,deferred_requires_scenario,,,8.0,2008.0,,,3.0,"Requires scenario_id=strathgordon, current kernel only supports historical_lake.",transient_perfect_storm,11
+CT001,historical_core,qualitative_state_constraint,historical_lake,scored,1.0,1.0,1.0,1.0,0.0,0.0,4.0,,transient_perfect_storm,12
+CT002,historical_core,window_relative_abundance_requirement,historical_lake,scored,1.1999115253725732,4.372723822932536,1.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,12
+CT003,historical_core,target_year_match,historical_lake,scored,1974.0,0.6875,1977.0,,3.0,12.0,4.0,,transient_perfect_storm,12
+CT004,historical_core,event_and_window_presence,historical_lake,scored,0.525,3.8386037004655145,350000.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,12
+CT005,historical_core,windowed_dominance_switch,historical_lake,scored,0.2903934443976204,13.496312156537966,1.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,12
+CT006,historical_core,compartment_presence_constraint,historical_lake,scored,5.355,1.0,11.0,12.5,0.3333333333333333,1.6666666666666665,5.0,,transient_perfect_storm,12
+CT007,historical_core,joint_occupancy_and_count_constraint,historical_lake,scored,0.525781990586303,7.0125,5.0,68.0,78.22245519638994,391.1122759819497,5.0,,transient_perfect_storm,12
+CT008,historical_core,upper_bound_count_constraint,historical_lake,scored,13.209,51.8,10.0,50.0,0.16644999999999996,0.8322499999999998,5.0,,transient_perfect_storm,12
+CT009,historical_core,last_occurrence_event,historical_lake,scored,2002.0,,1996.0,,6.0,30.0,5.0,,transient_perfect_storm,12
+CT010,historical_core,zero_detection_window,historical_lake,scored,19.431,23.97,0.0,0.0,32.385000000000005,161.925,5.0,,transient_perfect_storm,12
+CT011,intrinsic_baseline,baseline_growth_constraint,historical_lake,deferred_requires_scenario,,,500.0,1997.0,,,3.0,"Requires scenario_id=lake_oberon, current kernel only supports historical_lake.",transient_perfect_storm,12
+CT012,intrinsic_baseline,delayed_establishment_constraint,historical_lake,deferred_requires_scenario,,,8.0,2008.0,,,3.0,"Requires scenario_id=strathgordon, current kernel only supports historical_lake.",transient_perfect_storm,12
+CT001,historical_core,qualitative_state_constraint,historical_lake,scored,1.0,1.0,1.0,1.0,0.0,0.0,4.0,,transient_perfect_storm,13
+CT002,historical_core,window_relative_abundance_requirement,historical_lake,scored,1.2728289355834954,4.470910824525053,1.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,13
+CT003,historical_core,target_year_match,historical_lake,scored,1975.0,0.7136038186157518,1977.0,,2.0,8.0,4.0,,transient_perfect_storm,13
+CT004,historical_core,event_and_window_presence,historical_lake,scored,0.525,3.8386037004655145,350000.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,13
+CT005,historical_core,windowed_dominance_switch,historical_lake,scored,4.346682826459619,0.7449825709000418,1.0,1.0,2.9396790686809133,14.698395343404567,5.0,,transient_perfect_storm,13
+CT006,historical_core,compartment_presence_constraint,historical_lake,scored,9.307500000000001,1.0,11.0,12.5,0.3333333333333333,1.6666666666666665,5.0,,transient_perfect_storm,13
+CT007,historical_core,joint_occupancy_and_count_constraint,historical_lake,scored,0.6687665599237839,8.925,5.0,68.0,66.13248223893241,330.66241119466207,5.0,,transient_perfect_storm,13
+CT008,historical_core,upper_bound_count_constraint,historical_lake,scored,16.167,63.4,10.0,50.0,0.35301666666666676,1.7650833333333338,5.0,,transient_perfect_storm,13
+CT009,historical_core,last_occurrence_event,historical_lake,scored,2002.0,,1996.0,,6.0,30.0,5.0,,transient_perfect_storm,13
+CT010,historical_core,zero_detection_window,historical_lake,scored,16.728,22.95,0.0,0.0,27.880000000000003,139.4,5.0,,transient_perfect_storm,13
+CT011,intrinsic_baseline,baseline_growth_constraint,historical_lake,deferred_requires_scenario,,,500.0,1997.0,,,3.0,"Requires scenario_id=lake_oberon, current kernel only supports historical_lake.",transient_perfect_storm,13
+CT012,intrinsic_baseline,delayed_establishment_constraint,historical_lake,deferred_requires_scenario,,,8.0,2008.0,,,3.0,"Requires scenario_id=strathgordon, current kernel only supports historical_lake.",transient_perfect_storm,13
+CT001,historical_core,qualitative_state_constraint,historical_lake,scored,1.0,1.0,1.0,1.0,0.0,0.0,4.0,,transient_perfect_storm,14
+CT002,historical_core,window_relative_abundance_requirement,historical_lake,scored,1.2033324875288263,5.054377769970188,1.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,14
+CT003,historical_core,target_year_match,historical_lake,scored,1975.0,0.6739130434782609,1977.0,,2.0,8.0,4.0,,transient_perfect_storm,14
+CT004,historical_core,event_and_window_presence,historical_lake,scored,0.525,3.8386037004655145,350000.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,14
+CT005,historical_core,windowed_dominance_switch,historical_lake,scored,0.40892138088644503,1.1037156282965053,1.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,14
+CT006,historical_core,compartment_presence_constraint,historical_lake,scored,7.7775,1.0,11.0,12.5,0.3333333333333333,1.6666666666666665,5.0,,transient_perfect_storm,14
+CT007,historical_core,joint_occupancy_and_count_constraint,historical_lake,scored,0.4685389664515931,6.2475000000000005,5.0,68.0,84.13784084464463,420.68920422322316,5.0,,transient_perfect_storm,14
+CT008,historical_core,upper_bound_count_constraint,historical_lake,scored,13.515,53.0,10.0,50.0,0.18575000000000003,0.9287500000000002,5.0,,transient_perfect_storm,14
+CT009,historical_core,last_occurrence_event,historical_lake,scored,2002.0,,1996.0,,6.0,30.0,5.0,,transient_perfect_storm,14
+CT010,historical_core,zero_detection_window,historical_lake,scored,11.831999999999999,25.755,0.0,0.0,19.720000000000002,98.60000000000001,5.0,,transient_perfect_storm,14
+CT011,intrinsic_baseline,baseline_growth_constraint,historical_lake,deferred_requires_scenario,,,500.0,1997.0,,,3.0,"Requires scenario_id=lake_oberon, current kernel only supports historical_lake.",transient_perfect_storm,14
+CT012,intrinsic_baseline,delayed_establishment_constraint,historical_lake,deferred_requires_scenario,,,8.0,2008.0,,,3.0,"Requires scenario_id=strathgordon, current kernel only supports historical_lake.",transient_perfect_storm,14
+CT001,historical_core,qualitative_state_constraint,historical_lake,scored,1.0,1.0,1.0,1.0,0.0,0.0,4.0,,transient_perfect_storm,15
+CT002,historical_core,window_relative_abundance_requirement,historical_lake,scored,1.157667322389071,4.244025659474924,1.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,15
+CT003,historical_core,target_year_match,historical_lake,scored,1974.0,0.683377308707124,1977.0,,3.0,12.0,4.0,,transient_perfect_storm,15
+CT004,historical_core,event_and_window_presence,historical_lake,scored,0.525,3.8386037004655145,350000.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,15
+CT005,historical_core,windowed_dominance_switch,historical_lake,scored,6.467015912537482,0.8356065687912813,1.0,1.0,3.410520285332882,17.05260142666441,5.0,,transient_perfect_storm,15
+CT006,historical_core,compartment_presence_constraint,historical_lake,scored,8.5425,1.0,11.0,12.5,0.3333333333333333,1.6666666666666665,5.0,,transient_perfect_storm,15
+CT007,historical_core,joint_occupancy_and_count_constraint,historical_lake,scored,0.7639920768069964,10.2,5.0,68.0,59.61630013393241,298.0815006696621,5.0,,transient_perfect_storm,15
+CT008,historical_core,upper_bound_count_constraint,historical_lake,scored,11.118,43.6,10.0,50.0,0.05590000000000002,0.2795000000000001,5.0,,transient_perfect_storm,15
+CT009,historical_core,last_occurrence_event,historical_lake,scored,2002.0,,1996.0,,6.0,30.0,5.0,,transient_perfect_storm,15
+CT010,historical_core,zero_detection_window,historical_lake,scored,11.832,24.735,0.0,0.0,19.720000000000002,98.60000000000001,5.0,,transient_perfect_storm,15
+CT011,intrinsic_baseline,baseline_growth_constraint,historical_lake,deferred_requires_scenario,,,500.0,1997.0,,,3.0,"Requires scenario_id=lake_oberon, current kernel only supports historical_lake.",transient_perfect_storm,15
+CT012,intrinsic_baseline,delayed_establishment_constraint,historical_lake,deferred_requires_scenario,,,8.0,2008.0,,,3.0,"Requires scenario_id=strathgordon, current kernel only supports historical_lake.",transient_perfect_storm,15
+CT001,historical_core,qualitative_state_constraint,historical_lake,scored,1.0,1.0,1.0,1.0,0.0,0.0,4.0,,transient_perfect_storm,16
+CT002,historical_core,window_relative_abundance_requirement,historical_lake,scored,1.3095064919165906,4.246681954712329,1.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,16
+CT003,historical_core,target_year_match,historical_lake,scored,1974.0,0.7156398104265402,1977.0,,3.0,12.0,4.0,,transient_perfect_storm,16
+CT004,historical_core,event_and_window_presence,historical_lake,scored,0.525,3.8386037004655145,350000.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,16
+CT005,historical_core,windowed_dominance_switch,historical_lake,scored,0.3216437478033369,5.972235692962793,1.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,16
+CT006,historical_core,compartment_presence_constraint,historical_lake,scored,7.140000000000001,1.0,11.0,12.5,0.3333333333333333,1.6666666666666665,5.0,,transient_perfect_storm,16
+CT007,historical_core,joint_occupancy_and_count_constraint,historical_lake,scored,0.6592397185843385,8.7975,5.0,68.0,66.84278488305218,334.21392441526086,5.0,,transient_perfect_storm,16
+CT008,historical_core,upper_bound_count_constraint,historical_lake,scored,15.248999999999999,59.8,10.0,50.0,0.29511666666666664,1.4755833333333332,5.0,,transient_perfect_storm,16
+CT009,historical_core,last_occurrence_event,historical_lake,scored,2002.0,,1996.0,,6.0,30.0,5.0,,transient_perfect_storm,16
+CT010,historical_core,zero_detection_window,historical_lake,scored,17.442,24.225,0.0,0.0,29.070000000000004,145.35000000000002,5.0,,transient_perfect_storm,16
+CT011,intrinsic_baseline,baseline_growth_constraint,historical_lake,deferred_requires_scenario,,,500.0,1997.0,,,3.0,"Requires scenario_id=lake_oberon, current kernel only supports historical_lake.",transient_perfect_storm,16
+CT012,intrinsic_baseline,delayed_establishment_constraint,historical_lake,deferred_requires_scenario,,,8.0,2008.0,,,3.0,"Requires scenario_id=strathgordon, current kernel only supports historical_lake.",transient_perfect_storm,16
+CT001,historical_core,qualitative_state_constraint,historical_lake,scored,1.0,1.0,1.0,1.0,0.0,0.0,4.0,,transient_perfect_storm,17
+CT002,historical_core,window_relative_abundance_requirement,historical_lake,scored,1.0784541484073649,3.8095344507310327,1.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,17
+CT003,historical_core,target_year_match,historical_lake,scored,1974.0,0.7073170731707317,1977.0,,3.0,12.0,4.0,,transient_perfect_storm,17
+CT004,historical_core,event_and_window_presence,historical_lake,scored,0.525,3.8386037004655145,350000.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,17
+CT005,historical_core,windowed_dominance_switch,historical_lake,scored,0.5164037032221892,0.9875350358442415,1.0,1.0,0.02090550583382671,0.10452752916913355,5.0,,transient_perfect_storm,17
+CT006,historical_core,compartment_presence_constraint,historical_lake,scored,7.5225,1.0,11.0,12.5,0.3333333333333333,1.6666666666666665,5.0,,transient_perfect_storm,17
+CT007,historical_core,joint_occupancy_and_count_constraint,historical_lake,scored,0.5353197604309102,7.140000000000001,5.0,68.0,77.30646433000759,386.53232165003794,5.0,,transient_perfect_storm,17
+CT008,historical_core,upper_bound_count_constraint,historical_lake,scored,9.69,38.0,10.0,50.0,0.0,0.0,5.0,,transient_perfect_storm,17
+CT009,historical_core,last_occurrence_event,historical_lake,scored,2002.0,,1996.0,,6.0,30.0,5.0,,transient_perfect_storm,17
+CT010,historical_core,zero_detection_window,historical_lake,scored,10.506,23.46,0.0,0.0,17.51,87.55000000000001,5.0,,transient_perfect_storm,17
+CT011,intrinsic_baseline,baseline_growth_constraint,historical_lake,deferred_requires_scenario,,,500.0,1997.0,,,3.0,"Requires scenario_id=lake_oberon, current kernel only supports historical_lake.",transient_perfect_storm,17
+CT012,intrinsic_baseline,delayed_establishment_constraint,historical_lake,deferred_requires_scenario,,,8.0,2008.0,,,3.0,"Requires scenario_id=strathgordon, current kernel only supports historical_lake.",transient_perfect_storm,17
+CT001,historical_core,qualitative_state_constraint,historical_lake,scored,1.0,1.0,1.0,1.0,0.0,0.0,4.0,,transient_perfect_storm,18
+CT002,historical_core,window_relative_abundance_requirement,historical_lake,scored,1.1873331381364667,3.6767277340994173,1.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,18
+CT003,historical_core,target_year_match,historical_lake,scored,1975.0,0.6730245231607629,1977.0,,2.0,8.0,4.0,,transient_perfect_storm,18
+CT004,historical_core,event_and_window_presence,historical_lake,scored,0.525,3.8386037004655145,350000.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,18
+CT005,historical_core,windowed_dominance_switch,historical_lake,scored,12.82801517077107,0.9368922134932547,1.0,1.0,4.361364169075692,21.80682084537846,5.0,,transient_perfect_storm,18
+CT006,historical_core,compartment_presence_constraint,historical_lake,scored,7.65,1.0,11.0,12.5,0.3333333333333333,1.6666666666666665,5.0,,transient_perfect_storm,18
+CT007,historical_core,joint_occupancy_and_count_constraint,historical_lake,scored,0.7544730338752936,10.0725,5.0,68.0,60.2240376726876,301.120188363438,5.0,,transient_perfect_storm,18
+CT008,historical_core,upper_bound_count_constraint,historical_lake,scored,16.014,62.8,10.0,50.0,0.3433666666666666,1.716833333333333,5.0,,transient_perfect_storm,18
+CT009,historical_core,last_occurrence_event,historical_lake,scored,2002.0,,1996.0,,6.0,30.0,5.0,,transient_perfect_storm,18
+CT010,historical_core,zero_detection_window,historical_lake,scored,10.608,22.44,0.0,0.0,17.68,88.4,5.0,,transient_perfect_storm,18
+CT011,intrinsic_baseline,baseline_growth_constraint,historical_lake,deferred_requires_scenario,,,500.0,1997.0,,,3.0,"Requires scenario_id=lake_oberon, current kernel only supports historical_lake.",transient_perfect_storm,18
+CT012,intrinsic_baseline,delayed_establishment_constraint,historical_lake,deferred_requires_scenario,,,8.0,2008.0,,,3.0,"Requires scenario_id=strathgordon, current kernel only supports historical_lake.",transient_perfect_storm,18
+CT001,historical_core,qualitative_state_constraint,historical_lake,scored,1.0,1.0,1.0,1.0,0.0,0.0,4.0,,transient_perfect_storm,19
+CT002,historical_core,window_relative_abundance_requirement,historical_lake,scored,1.32809086992398,3.670865777973343,1.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,19
+CT003,historical_core,target_year_match,historical_lake,scored,1975.0,0.6992481203007519,1977.0,,2.0,8.0,4.0,,transient_perfect_storm,19
+CT004,historical_core,event_and_window_presence,historical_lake,scored,0.525,3.8386037004655145,350000.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,19
+CT005,historical_core,windowed_dominance_switch,historical_lake,scored,4.346682826459619,1.0221853879791272,1.0,1.0,2.4490216426121068,12.245108213060533,5.0,,transient_perfect_storm,19
+CT006,historical_core,compartment_presence_constraint,historical_lake,scored,9.8175,1.0,11.0,12.5,0.3333333333333333,1.6666666666666665,5.0,,transient_perfect_storm,19
+CT007,historical_core,joint_occupancy_and_count_constraint,historical_lake,scored,0.5925299802519357,7.905,5.0,68.0,72.16912704163322,360.8456352081661,5.0,,transient_perfect_storm,19
+CT008,historical_core,upper_bound_count_constraint,historical_lake,scored,15.861,62.2,10.0,50.0,0.3337166666666667,1.6685833333333335,5.0,,transient_perfect_storm,19
+CT009,historical_core,last_occurrence_event,historical_lake,scored,2002.0,,1996.0,,6.0,30.0,5.0,,transient_perfect_storm,19
+CT010,historical_core,zero_detection_window,historical_lake,scored,16.065,21.165,0.0,0.0,26.775,133.875,5.0,,transient_perfect_storm,19
+CT011,intrinsic_baseline,baseline_growth_constraint,historical_lake,deferred_requires_scenario,,,500.0,1997.0,,,3.0,"Requires scenario_id=lake_oberon, current kernel only supports historical_lake.",transient_perfect_storm,19
+CT012,intrinsic_baseline,delayed_establishment_constraint,historical_lake,deferred_requires_scenario,,,8.0,2008.0,,,3.0,"Requires scenario_id=strathgordon, current kernel only supports historical_lake.",transient_perfect_storm,19
+CT001,historical_core,qualitative_state_constraint,historical_lake,scored,1.0,1.0,1.0,1.0,0.0,0.0,4.0,,transient_perfect_storm,20
+CT002,historical_core,window_relative_abundance_requirement,historical_lake,scored,1.336226765086237,4.655751507991578,1.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,20
+CT003,historical_core,target_year_match,historical_lake,scored,1975.0,0.7007481296758105,1977.0,,2.0,8.0,4.0,,transient_perfect_storm,20
+CT004,historical_core,event_and_window_presence,historical_lake,scored,0.525,3.8386037004655145,350000.0,1.0,0.0,0.0,5.0,,transient_perfect_storm,20
+CT005,historical_core,windowed_dominance_switch,historical_lake,scored,2.2263497403817563,0.9463877426840648,1.0,1.0,1.4257771241757853,7.128885620878926,5.0,,transient_perfect_storm,20
+CT006,historical_core,compartment_presence_constraint,historical_lake,scored,7.65,1.0,11.0,12.5,0.3333333333333333,1.6666666666666665,5.0,,transient_perfect_storm,20
+CT007,historical_core,joint_occupancy_and_count_constraint,historical_lake,scored,0.563928384082,7.5225,5.0,68.0,74.66444557238556,373.3222278619278,5.0,,transient_perfect_storm,20
+CT008,historical_core,upper_bound_count_constraint,historical_lake,scored,14.382,56.4,10.0,50.0,0.24043333333333328,1.2021666666666664,5.0,,transient_perfect_storm,20
+CT009,historical_core,last_occurrence_event,historical_lake,scored,2002.0,,1996.0,,6.0,30.0,5.0,,transient_perfect_storm,20
+CT010,historical_core,zero_detection_window,historical_lake,scored,10.455000000000002,22.44,0.0,0.0,17.425,87.125,5.0,,transient_perfect_storm,20
+CT011,intrinsic_baseline,baseline_growth_constraint,historical_lake,deferred_requires_scenario,,,500.0,1997.0,,,3.0,"Requires scenario_id=lake_oberon, current kernel only supports historical_lake.",transient_perfect_storm,20
+CT012,intrinsic_baseline,delayed_establishment_constraint,historical_lake,deferred_requires_scenario,,,8.0,2008.0,,,3.0,"Requires scenario_id=strathgordon, current kernel only supports historical_lake.",transient_perfect_storm,20

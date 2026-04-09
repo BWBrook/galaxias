@@ -14,6 +14,7 @@ class ModelInputs:
     family_map: pd.DataFrame
     constraints: pd.DataFrame
     calibration_targets: pd.DataFrame | None = None
+    calibration_target_details: dict[str, dict[str, Any]] | None = None
 
 
 @dataclass(frozen=True)
@@ -74,3 +75,30 @@ class SimulationResult:
     resolved_parameters: ResolvedParameters
     forcing_table: pd.DataFrame
     summary: dict[str, Any] = field(default_factory=dict)
+
+
+@dataclass(frozen=True)
+class ScoringConfig:
+    include_historical_core: bool = True
+    include_intrinsic_baseline: bool = True
+    require_all_targets: bool = True
+    replicate_aggregation: str = "median"
+
+
+@dataclass(frozen=True)
+class ProjectionResult:
+    projection_table: pd.DataFrame
+
+
+@dataclass(frozen=True)
+class ScoringResult:
+    projection_table: pd.DataFrame
+    target_score_table: pd.DataFrame
+    summary: dict[str, Any]
+
+
+@dataclass(frozen=True)
+class AggregateScoringResult:
+    replicate_score_table: pd.DataFrame
+    aggregate_target_score_table: pd.DataFrame
+    summary: dict[str, Any]

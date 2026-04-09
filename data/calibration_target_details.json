@@ -1,0 +1,93 @@
+{
+  "CT001": {
+    "required_scenario_id": "historical_lake",
+    "window": {"start": 1965, "end": 1971},
+    "observed_primary": 1.0,
+    "observed_secondary": 1.0
+  },
+  "CT002": {
+    "required_scenario_id": "historical_lake",
+    "pre_window": {"start": 1965, "end": 1971},
+    "boom_window": {"start": 1975, "end": 1980},
+    "late_window": {"start": 1988, "end": 1991},
+    "observed_primary": 1.0,
+    "observed_secondary": 1.0
+  },
+  "CT003": {
+    "required_scenario_id": "historical_lake",
+    "target_year": 1977,
+    "observed_primary": 1977.0,
+    "observed_secondary": null
+  },
+  "CT004": {
+    "required_scenario_id": "historical_lake",
+    "stocking_year": 1972,
+    "post_stocking_window": {"start": 1973, "end": 1978},
+    "observed_primary": 350000.0,
+    "observed_secondary": 1.0
+  },
+  "CT005": {
+    "required_scenario_id": "historical_lake",
+    "pedder_dominant_year": 1980,
+    "climbing_dominant_year": 1983,
+    "observed_primary": 1.0,
+    "observed_secondary": 1.0
+  },
+  "CT006": {
+    "required_scenario_id": "historical_lake",
+    "window": {"start": 1988, "end": 1989},
+    "expected_capture_range": {"low": 5.0, "high": 20.0},
+    "observed_primary": 11.0,
+    "observed_secondary": 12.5
+  },
+  "CT007": {
+    "required_scenario_id": "historical_lake",
+    "window": {"start": 1990, "end": 1991},
+    "survey_sites": 117,
+    "observed_occupied_sites": 5.0,
+    "observed_capture_count": 68.0,
+    "occupancy_anchor_alpha": 0.0006422803456273754,
+    "occupied_site_range": {"low": 3.0, "high": 7.0},
+    "observed_primary": 5.0,
+    "observed_secondary": 68.0
+  },
+  "CT008": {
+    "required_scenario_id": "historical_lake",
+    "window": {"start": 1992, "end": 1996},
+    "capture_upper_bound": 10.0,
+    "capture_soft_gap": 15.0,
+    "latent_upper_bound": 50.0,
+    "latent_soft_gap": 75.0,
+    "observed_primary": 10.0,
+    "observed_secondary": 50.0
+  },
+  "CT009": {
+    "required_scenario_id": "historical_lake",
+    "target_year": 1996,
+    "observed_primary": 1996.0,
+    "observed_secondary": null
+  },
+  "CT010": {
+    "required_scenario_id": "historical_lake",
+    "window": {"start": 1998, "end": 2002},
+    "observed_primary": 0.0,
+    "observed_secondary": 0.0
+  },
+  "CT011": {
+    "required_scenario_id": "lake_oberon",
+    "founder_count": 34.0,
+    "juvenile_year": 1997,
+    "adult_floor_early_2000s": 500.0,
+    "strong_growth_year": 2012,
+    "observed_primary": 500.0,
+    "observed_secondary": 1997.0
+  },
+  "CT012": {
+    "required_scenario_id": "strathgordon",
+    "juvenile_first_year": 2008,
+    "established_year": 2012,
+    "founder_scale": 8.0,
+    "observed_primary": 8.0,
+    "observed_secondary": 2008.0
+  }
+}
