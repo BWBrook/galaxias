@@ -37,6 +37,8 @@ habitat_only_null,Habitat-only null,PR035,estimate,,Estimated from the prior pac
 habitat_only_null,Habitat-only null,PR036,estimate,,Estimated from the prior pack for this hypothesis family.
 habitat_only_null,Habitat-only null,PR037,estimate,,Estimated from the prior pack for this hypothesis family.
 habitat_only_null,Habitat-only null,PR038,estimate,,Estimated from the prior pack for this hypothesis family.
+habitat_only_null,Habitat-only null,PR039,estimate,,Estimated from the prior pack for this hypothesis family.
+habitat_only_null,Habitat-only null,PR040,estimate,,Estimated from the prior pack for this hypothesis family.
 trout_only,Trout-only,PR001,estimate,,Estimated from the prior pack for this hypothesis family.
 trout_only,Trout-only,PR002,estimate,,Estimated from the prior pack for this hypothesis family.
 trout_only,Trout-only,PR003,estimate,,Estimated from the prior pack for this hypothesis family.
@@ -75,6 +77,8 @@ trout_only,Trout-only,PR035,estimate,,Estimated from the prior pack for this hyp
 trout_only,Trout-only,PR036,estimate,,Estimated from the prior pack for this hypothesis family.
 trout_only,Trout-only,PR037,estimate,,Estimated from the prior pack for this hypothesis family.
 trout_only,Trout-only,PR038,estimate,,Estimated from the prior pack for this hypothesis family.
+trout_only,Trout-only,PR039,estimate,,Estimated from the prior pack for this hypothesis family.
+trout_only,Trout-only,PR040,estimate,,Estimated from the prior pack for this hypothesis family.
 climbing_only,Climbing-only,PR001,estimate,,Estimated from the prior pack for this hypothesis family.
 climbing_only,Climbing-only,PR002,estimate,,Estimated from the prior pack for this hypothesis family.
 climbing_only,Climbing-only,PR003,estimate,,Estimated from the prior pack for this hypothesis family.
@@ -113,6 +117,8 @@ climbing_only,Climbing-only,PR035,estimate,,Estimated from the prior pack for th
 climbing_only,Climbing-only,PR036,estimate,,Estimated from the prior pack for this hypothesis family.
 climbing_only,Climbing-only,PR037,estimate,,Estimated from the prior pack for this hypothesis family.
 climbing_only,Climbing-only,PR038,estimate,,Estimated from the prior pack for this hypothesis family.
+climbing_only,Climbing-only,PR039,estimate,,Estimated from the prior pack for this hypothesis family.
+climbing_only,Climbing-only,PR040,estimate,,Estimated from the prior pack for this hypothesis family.
 persistent_joint_cause,Trout + climbing persistent joint-cause,PR001,estimate,,Estimated from the prior pack for this hypothesis family.
 persistent_joint_cause,Trout + climbing persistent joint-cause,PR002,estimate,,Estimated from the prior pack for this hypothesis family.
 persistent_joint_cause,Trout + climbing persistent joint-cause,PR003,estimate,,Estimated from the prior pack for this hypothesis family.
@@ -151,6 +157,8 @@ persistent_joint_cause,Trout + climbing persistent joint-cause,PR035,estimate,,E
 persistent_joint_cause,Trout + climbing persistent joint-cause,PR036,estimate,,Estimated from the prior pack for this hypothesis family.
 persistent_joint_cause,Trout + climbing persistent joint-cause,PR037,estimate,,Estimated from the prior pack for this hypothesis family.
 persistent_joint_cause,Trout + climbing persistent joint-cause,PR038,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR039,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR040,estimate,,Estimated from the prior pack for this hypothesis family.
 transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR001,estimate,,Estimated from the prior pack for this hypothesis family.
 transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR002,estimate,,Estimated from the prior pack for this hypothesis family.
 transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR003,estimate,,Estimated from the prior pack for this hypothesis family.
@@ -189,3 +197,5 @@ transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR0
 transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR036,estimate,,Estimated from the prior pack for this hypothesis family.
 transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR037,estimate,,Estimated from the prior pack for this hypothesis family.
 transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR038,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR039,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR040,estimate,,Estimated from the prior pack for this hypothesis family.

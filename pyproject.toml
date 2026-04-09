@@ -1,3 +1,7 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
 [project]
 name = "galaxias-workflow"
 version = "0.1.0"
@@ -5,8 +9,13 @@ description = "Python workflows for the Pedder galaxias evidence and data curati
 requires-python = ">=3.12"
 dependencies = [
     "galah-python>=0.13.0,<0.14",
+    "numpy>=2.2,<3",
     "pandas>=2.2,<3",
+    "pytest>=9,<10",
 ]
 
+[tool.hatch.build.targets.wheel]
+packages = ["src/galaxias_model"]
+
 [tool.uv]
-package = false
+package = true

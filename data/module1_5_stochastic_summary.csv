@@ -1,0 +1,21 @@
+family_id,family_label,seed,peak_year_pedder_lake_index,peak_value_pedder_lake_index,first_year_climbing_ratio_gt_one,first_year_lake_absent,last_year_total_present,first_year_total_absent,peak_trout_year,peak_upsurge_year,pre1972_min_total,boom_ratio_1977_vs_1965,final_to_peak_ratio,present_in_1980
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,1,1974,0.689119170984456,1979,1979.0,2002,,1978,1977,226.0,1.0838574423480083,0.27113702623906705,1
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,2,1974,0.6825396825396826,1979,,2002,,1978,1977,61.0,1.1918597765583672,0.0377906976744186,1
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,3,1975,0.6808510638297872,1978,,2002,,1978,1977,210.0,1.1700853611925086,0.14697406340057637,1
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,4,1974,0.689119170984456,1980,,2002,,1978,1977,224.0,1.1393810536262696,0.022598870056497175,1
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,5,1974,0.6915167095115681,1979,,2002,,1978,1977,205.0,1.1482808022922637,0.04065040650406504,1
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,6,1975,0.6825396825396826,1978,,2002,,1978,1977,218.0,1.2397149335924846,0.23249299719887956,1
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,7,1975,0.6619718309859155,1978,,2002,,1978,1977,195.0,1.1493130562516203,0.049079754601226995,1
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,8,1975,0.6992481203007519,1978,,2002,,1978,1977,209.0,1.273972602739726,0.03116883116883117,1
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,9,1975,0.6657381615598886,1983,,2002,,1978,1977,192.0,1.1558521455303588,0.2175226586102719,1
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,10,1974,0.7222222222222222,1979,,2002,,1978,1977,224.0,1.1443806398687448,0.18703241895261846,1
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,11,1975,0.67828418230563,1978,,2002,,1978,1977,209.0,1.1838376101110686,0.20604395604395603,1
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,12,1974,0.6875,1983,1993.0,2002,,1978,1977,181.0,1.1304933199848104,0.211864406779661,1
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,13,1975,0.7136038186157518,1978,,2002,,1978,1977,210.0,1.2294620007476207,0.22391857506361323,1
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,14,1975,0.6739130434782609,1983,,2002,,1978,1977,202.0,1.176208479611126,0.04129793510324484,1
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,15,1974,0.683377308707124,1978,,2002,,1978,1977,211.0,1.1290944123314064,0.040345821325648415,1
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,16,1974,0.7156398104265402,1979,,2002,,1978,1977,64.0,1.191645911363766,0.21483375959079284,1
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,17,1974,0.7073170731707317,1982,,2002,,1978,1977,212.0,1.0,0.032171581769437,1
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,18,1975,0.6730245231607629,1980,,2002,,1978,1977,209.0,1.2378003467921723,0.03592814371257485,1
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,19,1975,0.6992481203007519,1978,,2002,,1978,1977,59.0,1.2077922077922079,0.2066115702479339,1
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,20,1975,0.7007481296758105,1978,,2002,,1978,1977,68.0,1.2329618990498437,0.031578947368421054,1

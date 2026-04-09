@@ -153,16 +153,20 @@ wheels = [
 [[package]]
 name = "galaxias-workflow"
 version = "0.1.0"
-source = { virtual = "." }
+source = { editable = "." }
 dependencies = [
     { name = "galah-python" },
+    { name = "numpy" },
     { name = "pandas" },
+    { name = "pytest" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "galah-python", specifier = ">=0.13.0,<0.14" },
+    { name = "numpy", specifier = ">=2.2,<3" },
     { name = "pandas", specifier = ">=2.2,<3" },
+    { name = "pytest", specifier = ">=9,<10" },
 ]
 
 [[package]]

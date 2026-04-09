@@ -9,13 +9,25 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
 
-EXPECTED_PARAMETER_COUNT = 38
+EXPECTED_PARAMETER_COUNT = 40
 EXPECTED_FAMILY_IDS = {
     "habitat_only_null",
     "trout_only",
     "climbing_only",
     "persistent_joint_cause",
     "transient_perfect_storm",
+}
+REQUIRED_PARAMETER_GROUPS = {
+    "Pedder life history",
+    "Pedder lake-refuge movement / spawning allocation",
+    "Pedder density dependence or carrying terms",
+    "trout abundance trajectory",
+    "trout piscivory modifier",
+    "climbing-galaxias expansion",
+    "trophic-upsurge amplitude and decay",
+    "refuge habitat quality",
+    "habitat transition timing",
+    "observation / calibration nuisance terms",
 }
 ALLOWED_PARAMETER_STATUSES = {
     "estimate",
@@ -108,6 +120,12 @@ def validate_prior_rows(rows: list[dict[str, str]], evidence_ids: set[str]) -> d
     if len(rows) != EXPECTED_PARAMETER_COUNT:
         raise ValueError(f"Expected {EXPECTED_PARAMETER_COUNT} parameter rows, found {len(rows)}")
 
+    groups = {row["parameter_group"] for row in rows}
+    if groups != REQUIRED_PARAMETER_GROUPS:
+        missing = REQUIRED_PARAMETER_GROUPS - groups
+        extra = groups - REQUIRED_PARAMETER_GROUPS
+        raise ValueError(f"Parameter groups mismatch. Missing={missing}, extra={extra}")
+
     seen_ids: set[str] = set()
     defaults: dict[str, float] = {}
     for row in rows:
@@ -160,6 +178,10 @@ def validate_family_map(
     rows: list[dict[str, str]],
     parameter_defaults: dict[str, float],
 ) -> dict[str, dict[str, float]]:
+    expected_row_count = EXPECTED_PARAMETER_COUNT * len(EXPECTED_FAMILY_IDS)
+    if len(rows) != expected_row_count:
+        raise ValueError(f"Expected {expected_row_count} family-map rows, found {len(rows)}")
+
     expected_parameter_ids = set(parameter_defaults)
     family_ids = {row["family_id"] for row in rows}
     if family_ids != EXPECTED_FAMILY_IDS:
