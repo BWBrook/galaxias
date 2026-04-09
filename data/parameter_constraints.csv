@@ -1,0 +1,11 @@
+constraint_id,applies_to,constraint_type,lhs,operator,rhs,notes
+PC001,all,ordered_pair,PR020,>=,PR021,Lake trout impact should not be weaker than refuge trout impact.
+PC002,all,ordered_pair,PR008,>=,PR009,Lake carrying scale should generally exceed refuge carrying scale.
+PC003,all,ordered_pair,PR026,>=,PR025,Refuge-stream climbing expansion should be at least as fast as lake expansion by default.
+PC004,all,expression_bound,PR020 * (1 - PR034),<=,PR020,Refuge buffering must not amplify effective trout predation.
+PC005,all,expression_bound,PR028 * (1 - PR034),<=,PR028,Refuge buffering must not amplify effective climbing-galaxias pressure.
+PC006,habitat_only_null,family_definition,PR020,==,0,Habitat-only null must switch off trout effects on Pedder.
+PC007,habitat_only_null,family_definition,PR027,==,0,Habitat-only null must switch off climbing-galaxias effects on Pedder.
+PC008,trout_only,family_definition,PR027,==,0,Trout-only family must switch off climbing-galaxias effects.
+PC009,climbing_only,family_definition,PR020,==,0,Climbing-only family must switch off trout effects.
+PC010,persistent_joint_cause,family_definition,PR018,==,1,Persistent joint-cause family neutralizes the transient overshoot multiplier at one.

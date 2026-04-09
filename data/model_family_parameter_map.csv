@@ -1,0 +1,191 @@
+family_id,family_label,parameter_id,parameter_status,fixed_value,notes
+habitat_only_null,Habitat-only null,PR001,estimate,,Estimated from the prior pack for this hypothesis family.
+habitat_only_null,Habitat-only null,PR002,estimate,,Estimated from the prior pack for this hypothesis family.
+habitat_only_null,Habitat-only null,PR003,estimate,,Estimated from the prior pack for this hypothesis family.
+habitat_only_null,Habitat-only null,PR004,estimate,,Estimated from the prior pack for this hypothesis family.
+habitat_only_null,Habitat-only null,PR005,estimate,,Estimated from the prior pack for this hypothesis family.
+habitat_only_null,Habitat-only null,PR006,estimate,,Estimated from the prior pack for this hypothesis family.
+habitat_only_null,Habitat-only null,PR007,estimate,,Estimated from the prior pack for this hypothesis family.
+habitat_only_null,Habitat-only null,PR008,estimate,,Estimated from the prior pack for this hypothesis family.
+habitat_only_null,Habitat-only null,PR009,estimate,,Estimated from the prior pack for this hypothesis family.
+habitat_only_null,Habitat-only null,PR010,estimate,,Estimated from the prior pack for this hypothesis family.
+habitat_only_null,Habitat-only null,PR011,estimate,,Estimated from the prior pack for this hypothesis family.
+habitat_only_null,Habitat-only null,PR012,unused,,State or process omitted from this hypothesis family.
+habitat_only_null,Habitat-only null,PR013,unused,,State or process omitted from this hypothesis family.
+habitat_only_null,Habitat-only null,PR014,unused,,State or process omitted from this hypothesis family.
+habitat_only_null,Habitat-only null,PR015,unused,,State or process omitted from this hypothesis family.
+habitat_only_null,Habitat-only null,PR016,unused,,State or process omitted from this hypothesis family.
+habitat_only_null,Habitat-only null,PR017,unused,,State or process omitted from this hypothesis family.
+habitat_only_null,Habitat-only null,PR018,unused,,State or process omitted from this hypothesis family.
+habitat_only_null,Habitat-only null,PR019,unused,,State or process omitted from this hypothesis family.
+habitat_only_null,Habitat-only null,PR020,fixed_zero,0,Disabled in this hypothesis family.
+habitat_only_null,Habitat-only null,PR021,fixed_zero,0,Disabled in this hypothesis family.
+habitat_only_null,Habitat-only null,PR022,unused,,State or process omitted from this hypothesis family.
+habitat_only_null,Habitat-only null,PR023,unused,,State or process omitted from this hypothesis family.
+habitat_only_null,Habitat-only null,PR024,unused,,State or process omitted from this hypothesis family.
+habitat_only_null,Habitat-only null,PR025,unused,,State or process omitted from this hypothesis family.
+habitat_only_null,Habitat-only null,PR026,unused,,State or process omitted from this hypothesis family.
+habitat_only_null,Habitat-only null,PR027,fixed_zero,0,Disabled in this hypothesis family.
+habitat_only_null,Habitat-only null,PR028,fixed_zero,0,Disabled in this hypothesis family.
+habitat_only_null,Habitat-only null,PR029,estimate,,Estimated from the prior pack for this hypothesis family.
+habitat_only_null,Habitat-only null,PR030,estimate,,Estimated from the prior pack for this hypothesis family.
+habitat_only_null,Habitat-only null,PR031,estimate,,Estimated from the prior pack for this hypothesis family.
+habitat_only_null,Habitat-only null,PR032,estimate,,Estimated from the prior pack for this hypothesis family.
+habitat_only_null,Habitat-only null,PR033,estimate,,Estimated from the prior pack for this hypothesis family.
+habitat_only_null,Habitat-only null,PR034,unused,,State or process omitted from this hypothesis family.
+habitat_only_null,Habitat-only null,PR035,estimate,,Estimated from the prior pack for this hypothesis family.
+habitat_only_null,Habitat-only null,PR036,estimate,,Estimated from the prior pack for this hypothesis family.
+habitat_only_null,Habitat-only null,PR037,estimate,,Estimated from the prior pack for this hypothesis family.
+habitat_only_null,Habitat-only null,PR038,estimate,,Estimated from the prior pack for this hypothesis family.
+trout_only,Trout-only,PR001,estimate,,Estimated from the prior pack for this hypothesis family.
+trout_only,Trout-only,PR002,estimate,,Estimated from the prior pack for this hypothesis family.
+trout_only,Trout-only,PR003,estimate,,Estimated from the prior pack for this hypothesis family.
+trout_only,Trout-only,PR004,estimate,,Estimated from the prior pack for this hypothesis family.
+trout_only,Trout-only,PR005,estimate,,Estimated from the prior pack for this hypothesis family.
+trout_only,Trout-only,PR006,estimate,,Estimated from the prior pack for this hypothesis family.
+trout_only,Trout-only,PR007,estimate,,Estimated from the prior pack for this hypothesis family.
+trout_only,Trout-only,PR008,estimate,,Estimated from the prior pack for this hypothesis family.
+trout_only,Trout-only,PR009,estimate,,Estimated from the prior pack for this hypothesis family.
+trout_only,Trout-only,PR010,estimate,,Estimated from the prior pack for this hypothesis family.
+trout_only,Trout-only,PR011,estimate,,Estimated from the prior pack for this hypothesis family.
+trout_only,Trout-only,PR012,estimate,,Estimated from the prior pack for this hypothesis family.
+trout_only,Trout-only,PR013,estimate,,Estimated from the prior pack for this hypothesis family.
+trout_only,Trout-only,PR014,estimate,,Estimated from the prior pack for this hypothesis family.
+trout_only,Trout-only,PR015,estimate,,Estimated from the prior pack for this hypothesis family.
+trout_only,Trout-only,PR016,estimate,,Estimated from the prior pack for this hypothesis family.
+trout_only,Trout-only,PR017,estimate,,Estimated from the prior pack for this hypothesis family.
+trout_only,Trout-only,PR018,estimate,,Estimated from the prior pack for this hypothesis family.
+trout_only,Trout-only,PR019,estimate,,Estimated from the prior pack for this hypothesis family.
+trout_only,Trout-only,PR020,estimate,,Estimated from the prior pack for this hypothesis family.
+trout_only,Trout-only,PR021,estimate,,Estimated from the prior pack for this hypothesis family.
+trout_only,Trout-only,PR022,unused,,State or process omitted from this hypothesis family.
+trout_only,Trout-only,PR023,unused,,State or process omitted from this hypothesis family.
+trout_only,Trout-only,PR024,unused,,State or process omitted from this hypothesis family.
+trout_only,Trout-only,PR025,unused,,State or process omitted from this hypothesis family.
+trout_only,Trout-only,PR026,unused,,State or process omitted from this hypothesis family.
+trout_only,Trout-only,PR027,fixed_zero,0,Disabled in this hypothesis family.
+trout_only,Trout-only,PR028,fixed_zero,0,Disabled in this hypothesis family.
+trout_only,Trout-only,PR029,estimate,,Estimated from the prior pack for this hypothesis family.
+trout_only,Trout-only,PR030,estimate,,Estimated from the prior pack for this hypothesis family.
+trout_only,Trout-only,PR031,estimate,,Estimated from the prior pack for this hypothesis family.
+trout_only,Trout-only,PR032,estimate,,Estimated from the prior pack for this hypothesis family.
+trout_only,Trout-only,PR033,estimate,,Estimated from the prior pack for this hypothesis family.
+trout_only,Trout-only,PR034,estimate,,Estimated from the prior pack for this hypothesis family.
+trout_only,Trout-only,PR035,estimate,,Estimated from the prior pack for this hypothesis family.
+trout_only,Trout-only,PR036,estimate,,Estimated from the prior pack for this hypothesis family.
+trout_only,Trout-only,PR037,estimate,,Estimated from the prior pack for this hypothesis family.
+trout_only,Trout-only,PR038,estimate,,Estimated from the prior pack for this hypothesis family.
+climbing_only,Climbing-only,PR001,estimate,,Estimated from the prior pack for this hypothesis family.
+climbing_only,Climbing-only,PR002,estimate,,Estimated from the prior pack for this hypothesis family.
+climbing_only,Climbing-only,PR003,estimate,,Estimated from the prior pack for this hypothesis family.
+climbing_only,Climbing-only,PR004,estimate,,Estimated from the prior pack for this hypothesis family.
+climbing_only,Climbing-only,PR005,estimate,,Estimated from the prior pack for this hypothesis family.
+climbing_only,Climbing-only,PR006,estimate,,Estimated from the prior pack for this hypothesis family.
+climbing_only,Climbing-only,PR007,estimate,,Estimated from the prior pack for this hypothesis family.
+climbing_only,Climbing-only,PR008,estimate,,Estimated from the prior pack for this hypothesis family.
+climbing_only,Climbing-only,PR009,estimate,,Estimated from the prior pack for this hypothesis family.
+climbing_only,Climbing-only,PR010,estimate,,Estimated from the prior pack for this hypothesis family.
+climbing_only,Climbing-only,PR011,estimate,,Estimated from the prior pack for this hypothesis family.
+climbing_only,Climbing-only,PR012,unused,,State or process omitted from this hypothesis family.
+climbing_only,Climbing-only,PR013,unused,,State or process omitted from this hypothesis family.
+climbing_only,Climbing-only,PR014,unused,,State or process omitted from this hypothesis family.
+climbing_only,Climbing-only,PR015,unused,,State or process omitted from this hypothesis family.
+climbing_only,Climbing-only,PR016,unused,,State or process omitted from this hypothesis family.
+climbing_only,Climbing-only,PR017,unused,,State or process omitted from this hypothesis family.
+climbing_only,Climbing-only,PR018,unused,,State or process omitted from this hypothesis family.
+climbing_only,Climbing-only,PR019,unused,,State or process omitted from this hypothesis family.
+climbing_only,Climbing-only,PR020,fixed_zero,0,Disabled in this hypothesis family.
+climbing_only,Climbing-only,PR021,fixed_zero,0,Disabled in this hypothesis family.
+climbing_only,Climbing-only,PR022,estimate,,Estimated from the prior pack for this hypothesis family.
+climbing_only,Climbing-only,PR023,estimate,,Estimated from the prior pack for this hypothesis family.
+climbing_only,Climbing-only,PR024,estimate,,Estimated from the prior pack for this hypothesis family.
+climbing_only,Climbing-only,PR025,estimate,,Estimated from the prior pack for this hypothesis family.
+climbing_only,Climbing-only,PR026,estimate,,Estimated from the prior pack for this hypothesis family.
+climbing_only,Climbing-only,PR027,estimate,,Estimated from the prior pack for this hypothesis family.
+climbing_only,Climbing-only,PR028,estimate,,Estimated from the prior pack for this hypothesis family.
+climbing_only,Climbing-only,PR029,estimate,,Estimated from the prior pack for this hypothesis family.
+climbing_only,Climbing-only,PR030,estimate,,Estimated from the prior pack for this hypothesis family.
+climbing_only,Climbing-only,PR031,estimate,,Estimated from the prior pack for this hypothesis family.
+climbing_only,Climbing-only,PR032,estimate,,Estimated from the prior pack for this hypothesis family.
+climbing_only,Climbing-only,PR033,estimate,,Estimated from the prior pack for this hypothesis family.
+climbing_only,Climbing-only,PR034,estimate,,Estimated from the prior pack for this hypothesis family.
+climbing_only,Climbing-only,PR035,estimate,,Estimated from the prior pack for this hypothesis family.
+climbing_only,Climbing-only,PR036,estimate,,Estimated from the prior pack for this hypothesis family.
+climbing_only,Climbing-only,PR037,estimate,,Estimated from the prior pack for this hypothesis family.
+climbing_only,Climbing-only,PR038,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR001,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR002,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR003,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR004,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR005,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR006,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR007,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR008,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR009,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR010,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR011,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR012,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR013,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR014,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR015,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR016,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR017,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR018,fixed_one,1,Neutralized at one in this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR019,unused,,State or process omitted from this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR020,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR021,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR022,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR023,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR024,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR025,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR026,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR027,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR028,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR029,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR030,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR031,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR032,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR033,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR034,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR035,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR036,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR037,estimate,,Estimated from the prior pack for this hypothesis family.
+persistent_joint_cause,Trout + climbing persistent joint-cause,PR038,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR001,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR002,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR003,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR004,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR005,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR006,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR007,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR008,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR009,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR010,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR011,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR012,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR013,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR014,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR015,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR016,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR017,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR018,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR019,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR020,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR021,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR022,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR023,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR024,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR025,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR026,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR027,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR028,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR029,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR030,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR031,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR032,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR033,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR034,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR035,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR036,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR037,estimate,,Estimated from the prior pack for this hypothesis family.
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,PR038,estimate,,Estimated from the prior pack for this hypothesis family.
