@@ -1,13 +1,31 @@
 from galaxias_model.io import load_model_inputs, resolve_family_parameters
 from galaxias_model.observation import project_run_to_target_space, project_target
-from galaxias_model.scoring import aggregate_replicate_scores, score_historical_run, score_target
-from galaxias_model.simulation import build_historical_forcing, run_historical_simulation, summarize_latent_run
+from galaxias_model.scoring import (
+    aggregate_replicate_scores,
+    aggregate_scenario_bundle_scores,
+    score_family_scenario_bundle,
+    score_historical_run,
+    score_scenario_run,
+    score_target,
+)
+from galaxias_model.simulation import (
+    build_historical_forcing,
+    build_scenario_forcing,
+    get_scenario_definition,
+    run_historical_simulation,
+    run_scenario_simulation,
+    summarize_latent_run,
+)
 from galaxias_model.types import (
+    AggregateScenarioBundleResult,
     AggregateScoringResult,
     ForcingSchedule,
+    FounderEvent,
     ModelInputs,
     ProjectionResult,
     ResolvedParameters,
+    ScenarioBundleResult,
+    ScenarioDefinition,
     ScoringConfig,
     ScoringResult,
     SimulationConfig,
@@ -15,23 +33,33 @@ from galaxias_model.types import (
 )
 
 __all__ = [
+    "AggregateScenarioBundleResult",
     "AggregateScoringResult",
     "ForcingSchedule",
+    "FounderEvent",
     "ModelInputs",
     "ProjectionResult",
     "ResolvedParameters",
+    "ScenarioBundleResult",
+    "ScenarioDefinition",
     "ScoringConfig",
     "ScoringResult",
     "SimulationConfig",
     "SimulationResult",
     "aggregate_replicate_scores",
+    "aggregate_scenario_bundle_scores",
     "build_historical_forcing",
+    "build_scenario_forcing",
+    "get_scenario_definition",
     "load_model_inputs",
     "project_run_to_target_space",
     "project_target",
     "resolve_family_parameters",
     "run_historical_simulation",
+    "run_scenario_simulation",
+    "score_family_scenario_bundle",
     "score_historical_run",
+    "score_scenario_run",
     "score_target",
     "summarize_latent_run",
 ]

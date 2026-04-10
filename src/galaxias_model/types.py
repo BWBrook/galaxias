@@ -15,6 +15,7 @@ class ModelInputs:
     constraints: pd.DataFrame
     calibration_targets: pd.DataFrame | None = None
     calibration_target_details: dict[str, dict[str, Any]] | None = None
+    scenario_definitions: dict[str, "ScenarioDefinition"] | None = None
 
 
 @dataclass(frozen=True)
@@ -60,6 +61,23 @@ class ForcingSchedule:
 
 
 @dataclass(frozen=True)
+class FounderEvent:
+    year: int
+    adult_lake_addition: float
+
+
+@dataclass(frozen=True)
+class ScenarioDefinition:
+    scenario_id: str
+    start_year: int
+    end_year: int
+    initialization_mode: str
+    forcing_mode: str
+    founder_events: tuple[FounderEvent, ...] = ()
+    spawn_habitat_by_year: dict[int, float] = field(default_factory=dict)
+
+
+@dataclass(frozen=True)
 class SimulationConfig:
     start_year: int = 1965
     end_year: int = 2002
@@ -67,10 +85,12 @@ class SimulationConfig:
     stochastic: bool = True
     scenario_id: str = "historical_lake"
     record_forcing: bool = True
+    scenario_definition: ScenarioDefinition | None = None
 
 
 @dataclass
 class SimulationResult:
+    scenario_id: str
     trajectory_table: pd.DataFrame
     resolved_parameters: ResolvedParameters
     forcing_table: pd.DataFrame
@@ -100,5 +120,19 @@ class ScoringResult:
 @dataclass(frozen=True)
 class AggregateScoringResult:
     replicate_score_table: pd.DataFrame
+    aggregate_target_score_table: pd.DataFrame
+    summary: dict[str, Any]
+
+
+@dataclass(frozen=True)
+class ScenarioBundleResult:
+    scenario_results: dict[str, ScoringResult]
+    bundle_target_score_table: pd.DataFrame
+    summary: dict[str, Any]
+
+
+@dataclass(frozen=True)
+class AggregateScenarioBundleResult:
+    replicate_bundle_score_table: pd.DataFrame
     aggregate_target_score_table: pd.DataFrame
     summary: dict[str, Any]

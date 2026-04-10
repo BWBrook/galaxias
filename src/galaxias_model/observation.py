@@ -8,9 +8,6 @@ import pandas as pd
 from galaxias_model.types import ModelInputs, ProjectionResult, SimulationResult
 
 
-SCENARIO_ID = "historical_lake"
-
-
 def _window_subset(table: pd.DataFrame, start: int, end: int) -> pd.DataFrame:
     return table.loc[table["year"].between(start, end)].copy()
 
@@ -37,18 +34,23 @@ def _expected_detected_count(latent_abundance: float, simulation_result: Simulat
     return params.value("PR035") * params.value("PR036") * max(float(latent_abundance), 0.0)
 
 
+def _juvenile_total(subset: pd.DataFrame) -> pd.Series:
+    return subset["J_L"] + subset["J_R"]
+
+
 def project_target(target_id: str, simulation_result: SimulationResult, model_inputs: ModelInputs) -> dict[str, Any]:
     target_row = _target_row_for(model_inputs, target_id)
     details = _details_for(model_inputs, target_id)
     trajectory = simulation_result.trajectory_table
     forcing = simulation_result.forcing_table
     summary = simulation_result.summary
+    scenario_id = simulation_result.scenario_id
 
     base = {
         "target_id": target_id,
         "target_group": str(target_row["target_group"]),
         "comparison_type": str(target_row["comparison_type"]),
-        "scenario_id": SCENARIO_ID,
+        "scenario_id": scenario_id,
         "evaluation_status": "scored",
         "projected_primary": np.nan,
         "projected_secondary": np.nan,
@@ -59,9 +61,9 @@ def project_target(target_id: str, simulation_result: SimulationResult, model_in
     }
 
     required_scenario_id = str(details["required_scenario_id"])
-    if required_scenario_id != SCENARIO_ID:
+    if required_scenario_id != scenario_id:
         base["evaluation_status"] = "deferred_requires_scenario"
-        base["notes"] = f"Requires scenario_id={required_scenario_id}, current kernel only supports historical_lake."
+        base["notes"] = f"Requires scenario_id={required_scenario_id}, current run is {scenario_id}."
         return base
 
     if target_id == "CT001":
@@ -193,7 +195,48 @@ def project_target(target_id: str, simulation_result: SimulationResult, model_in
         }
         return base
 
-    raise ValueError(f"Unsupported target_id for Module 2 projection: {target_id}")
+    if target_id == "CT011":
+        adult_window = details["adult_floor_window"]
+        adult_subset = _window_subset(trajectory, int(adult_window["start"]), int(adult_window["end"]))
+        founder_total = float(forcing["founder_addition_A_L"].sum())
+        juvenile_series = _juvenile_total(trajectory)
+        juvenile_years = trajectory.loc[juvenile_series > 0, "year"]
+        first_year_juveniles_present = int(juvenile_years.iloc[0]) if not juvenile_years.empty else None
+        max_adults_2001_2004 = float((adult_subset["A_L"] + adult_subset["A_R"]).max())
+        total_2012 = float(trajectory.loc[trajectory["year"] == 2012, "N_total"].iloc[0])
+        growth_ratio = total_2012 / max(founder_total, 1e-9)
+        base["projected_primary"] = total_2012
+        base["projected_secondary"] = first_year_juveniles_present if first_year_juveniles_present is not None else np.nan
+        base["projection_metadata"] = {
+            "founder_total": founder_total,
+            "first_year_juveniles_present": first_year_juveniles_present,
+            "max_adults_2001_2004": max_adults_2001_2004,
+            "total_2012": total_2012,
+            "growth_ratio_2012_vs_founders": growth_ratio,
+        }
+        return base
+
+    if target_id == "CT012":
+        absence_window = details["juvenile_absence_window"]
+        absence_subset = _window_subset(trajectory, int(absence_window["start"]), int(absence_window["end"]))
+        juvenile_series = _juvenile_total(trajectory)
+        juvenile_years = trajectory.loc[juvenile_series > 0, "year"]
+        first_year_juveniles_present = int(juvenile_years.iloc[0]) if not juvenile_years.empty else None
+        juveniles_2008 = float((trajectory.loc[trajectory["year"] == 2008, "J_L"] + trajectory.loc[trajectory["year"] == 2008, "J_R"]).iloc[0])
+        total_2012 = float(trajectory.loc[trajectory["year"] == 2012, "N_total"].iloc[0])
+        juveniles_2012 = float((trajectory.loc[trajectory["year"] == 2012, "J_L"] + trajectory.loc[trajectory["year"] == 2012, "J_R"]).iloc[0])
+        base["projected_primary"] = total_2012
+        base["projected_secondary"] = first_year_juveniles_present if first_year_juveniles_present is not None else np.nan
+        base["projection_metadata"] = {
+            "any_juveniles_2001_2007": bool((_juvenile_total(absence_subset) > 0).any()),
+            "first_year_juveniles_present": first_year_juveniles_present,
+            "juveniles_2008": juveniles_2008,
+            "total_2012": total_2012,
+            "juveniles_2012": juveniles_2012,
+        }
+        return base
+
+    raise ValueError(f"Unsupported target_id for Module 2.5 projection: {target_id}")
 
 
 def project_run_to_target_space(simulation_result: SimulationResult, model_inputs: ModelInputs) -> ProjectionResult:

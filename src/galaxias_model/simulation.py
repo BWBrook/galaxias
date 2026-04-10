@@ -1,15 +1,43 @@
 from __future__ import annotations
 
 import math
+from dataclasses import replace
 from typing import Any
 
 import numpy as np
 import pandas as pd
 
-from galaxias_model.types import ForcingSchedule, ResolvedParameters, SimulationConfig, SimulationResult
+from galaxias_model.types import (
+    ForcingSchedule,
+    ModelInputs,
+    ResolvedParameters,
+    ScenarioDefinition,
+    SimulationConfig,
+    SimulationResult,
+)
 
 
 EPS = 1e-9
+
+
+def _default_historical_definition() -> ScenarioDefinition:
+    return ScenarioDefinition(
+        scenario_id="historical_lake",
+        start_year=1965,
+        end_year=2002,
+        initialization_mode="burn_in_equilibrium",
+        forcing_mode="historical_lake",
+        founder_events=(),
+        spawn_habitat_by_year={year: 1.0 for year in range(1965, 2003)},
+    )
+
+
+def get_scenario_definition(model_inputs: ModelInputs, scenario_id: str) -> ScenarioDefinition:
+    if model_inputs.scenario_definitions is None:
+        raise ValueError("ModelInputs missing scenario_definitions")
+    if scenario_id not in model_inputs.scenario_definitions:
+        raise ValueError(f"Unknown scenario_id: {scenario_id}")
+    return model_inputs.scenario_definitions[scenario_id]
 
 
 def _latent_capacities(params: ResolvedParameters) -> tuple[float, float]:
@@ -19,10 +47,14 @@ def _latent_capacities(params: ResolvedParameters) -> tuple[float, float]:
     )
 
 
-def build_historical_forcing(years: list[int] | np.ndarray, params: ResolvedParameters) -> ForcingSchedule:
+def _build_historical_lake_forcing_impl(
+    years: list[int] | np.ndarray,
+    params: ResolvedParameters,
+    scenario_definition: ScenarioDefinition,
+) -> ForcingSchedule:
     year_values = [int(year) for year in years]
 
-    records: list[dict[str, float | int | bool]] = []
+    records: list[dict[str, float | int | bool | str]] = []
     prev_t = 0.0
     prev_k_t = 0.0
     prev_c_l = 0.0
@@ -85,11 +117,14 @@ def build_historical_forcing(years: list[int] | np.ndarray, params: ResolvedPara
 
         records.append(
             {
+                "scenario_id": scenario_definition.scenario_id,
                 "year": year,
                 "connected": connected,
                 "U": upsurge,
                 "O": overshoot,
                 "H": habitat_transition,
+                "spawn_habitat_multiplier": 1.0,
+                "founder_addition_A_L": 0.0,
                 "stocking_input": stocking_input,
                 "K_T": trout_capacity,
                 "T": trout,
@@ -108,6 +143,55 @@ def build_historical_forcing(years: list[int] | np.ndarray, params: ResolvedPara
 
     forcing_table = pd.DataFrame.from_records(records)
     return ForcingSchedule(years=year_values, table=forcing_table)
+
+
+def _build_baseline_refuge_forcing(
+    scenario_definition: ScenarioDefinition,
+    years: list[int] | np.ndarray,
+) -> ForcingSchedule:
+    year_values = [int(year) for year in years]
+    founder_lookup = {
+        event.year: event.adult_lake_addition
+        for event in scenario_definition.founder_events
+    }
+    records = [
+        {
+            "scenario_id": scenario_definition.scenario_id,
+            "year": year,
+            "connected": 0,
+            "U": 0.0,
+            "O": 0.0,
+            "H": 0.0,
+            "spawn_habitat_multiplier": float(scenario_definition.spawn_habitat_by_year[year]),
+            "founder_addition_A_L": float(founder_lookup.get(year, 0.0)),
+            "stocking_input": 0.0,
+            "K_T": 0.0,
+            "T": 0.0,
+            "P": 0.0,
+            "C_L": 0.0,
+            "C_R": 0.0,
+            "trout_active": False,
+            "climbing_active": False,
+        }
+        for year in year_values
+    ]
+    return ForcingSchedule(years=year_values, table=pd.DataFrame.from_records(records))
+
+
+def build_scenario_forcing(
+    scenario_definition: ScenarioDefinition,
+    years: list[int] | np.ndarray,
+    params: ResolvedParameters,
+) -> ForcingSchedule:
+    if scenario_definition.forcing_mode == "historical_lake":
+        return _build_historical_lake_forcing_impl(years, params, scenario_definition)
+    if scenario_definition.forcing_mode == "baseline_refuge":
+        return _build_baseline_refuge_forcing(scenario_definition, years)
+    raise ValueError(f"Unsupported forcing_mode: {scenario_definition.forcing_mode}")
+
+
+def build_historical_forcing(years: list[int] | np.ndarray, params: ResolvedParameters) -> ForcingSchedule:
+    return build_scenario_forcing(_default_historical_definition(), years, params)
 
 
 def _draw_poisson(rng: np.random.Generator, lam: float, stochastic: bool) -> float:
@@ -135,6 +219,7 @@ def _advance_pedder_state(
 ) -> dict[str, float]:
     upsurge = float(forcing_row["U"])
     habitat_transition = float(forcing_row["H"])
+    spawn_habitat_multiplier = float(forcing_row.get("spawn_habitat_multiplier", 1.0))
     trout = float(threat_row["T"])
     piscivory = float(threat_row["P"])
     climbing_lake = float(threat_row["C_L"])
@@ -150,6 +235,7 @@ def _advance_pedder_state(
         * (state["A_L"] + state["A_R"])
         * (1 + params.value("PR031") * upsurge)
         * max(spawn_quality, EPS)
+        * max(spawn_habitat_multiplier, 0.0)
     )
 
     new_j_l = _draw_poisson(rng, total_recruits * params.value("PR006"), stochastic)
@@ -183,10 +269,7 @@ def _advance_pedder_state(
         params.value("PR021") * trout * piscivory * (1 - params.value("PR034"))
         + params.value("PR028") * climbing_refuge * (1 - params.value("PR034"))
     )
-    lake_exposure = (
-        params.value("PR033") * habitat_transition
-        + lake_biotic_pressure
-    )
+    lake_exposure = params.value("PR033") * habitat_transition + lake_biotic_pressure
     refuge_exposure = refuge_biotic_pressure
 
     m_l = math.exp(-lake_exposure)
@@ -228,10 +311,19 @@ def _burn_in_state(params: ResolvedParameters, burn_in_years: int) -> dict[str, 
         "C_R": 0.0,
         "U": 0.0,
         "H": 0.0,
+        "spawn_habitat_multiplier": 1.0,
     }
     for _ in range(burn_in_years):
         state = _advance_pedder_state(state, forcing_row, forcing_row, params, rng, stochastic=False)
     return state
+
+
+def _initial_state_for_scenario(params: ResolvedParameters, config: SimulationConfig, scenario_definition: ScenarioDefinition) -> dict[str, float]:
+    if scenario_definition.initialization_mode == "burn_in_equilibrium":
+        return _burn_in_state(params, config.burn_in_years)
+    if scenario_definition.initialization_mode == "founder_zero_state":
+        return {"J_L": 0.0, "A_L": 0.0, "J_R": 0.0, "A_R": 0.0}
+    raise ValueError(f"Unsupported initialization_mode: {scenario_definition.initialization_mode}")
 
 
 def _build_record(
@@ -278,7 +370,7 @@ def _build_record(
     }
 
 
-def run_historical_simulation(
+def run_scenario_simulation(
     params: ResolvedParameters,
     family_id: str,
     config: SimulationConfig,
@@ -286,29 +378,42 @@ def run_historical_simulation(
 ) -> SimulationResult:
     if family_id != params.family_id:
         raise ValueError(f"family_id {family_id} does not match resolved parameter family {params.family_id}")
-    if config.scenario_id != "historical_lake":
-        raise ValueError("Module 1 only supports scenario_id='historical_lake'")
 
-    years = np.arange(config.start_year, config.end_year + 1, dtype=int)
-    forcing = build_historical_forcing(years, params)
+    if config.scenario_definition is not None:
+        scenario_definition = config.scenario_definition
+    elif config.scenario_id == "historical_lake":
+        scenario_definition = _default_historical_definition()
+    else:
+        raise ValueError("run_scenario_simulation requires config.scenario_definition for non-historical scenarios")
+
+    if scenario_definition.scenario_id != config.scenario_id:
+        raise ValueError(
+            f"SimulationConfig scenario_id {config.scenario_id} does not match scenario_definition {scenario_definition.scenario_id}"
+        )
+
+    if scenario_definition.initialization_mode == "burn_in_equilibrium":
+        years = np.arange(config.start_year, config.end_year + 1, dtype=int)
+    else:
+        years = np.arange(scenario_definition.start_year, scenario_definition.end_year + 1, dtype=int)
+
+    forcing = build_scenario_forcing(scenario_definition, years, params)
     rng = np.random.default_rng(seed)
-    state = _burn_in_state(params, config.burn_in_years)
-    threat_row = {
-        "T": 0.0,
-        "P": 0.0,
-        "C_L": 0.0,
-        "C_R": 0.0,
-    }
+    state = _initial_state_for_scenario(params, config, scenario_definition)
+    threat_row = {"T": 0.0, "P": 0.0, "C_L": 0.0, "C_R": 0.0}
 
     records: list[dict[str, float | int]] = []
     for forcing_row in forcing.table.to_dict(orient="records"):
         year = int(forcing_row["year"])
+        founder_addition = float(forcing_row.get("founder_addition_A_L", 0.0))
+        if founder_addition > 0:
+            state["A_L"] += founder_addition
         state = _advance_pedder_state(state, forcing_row, threat_row, params, rng, stochastic=config.stochastic)
         records.append(_build_record(year, family_id, seed, state, forcing_row, params))
         threat_row = forcing_row
 
     trajectory = pd.DataFrame.from_records(records)
     result = SimulationResult(
+        scenario_id=scenario_definition.scenario_id,
         trajectory_table=trajectory,
         resolved_parameters=params,
         forcing_table=forcing.table.copy(),
@@ -317,16 +422,28 @@ def run_historical_simulation(
     return result
 
 
+def run_historical_simulation(
+    params: ResolvedParameters,
+    family_id: str,
+    config: SimulationConfig,
+    seed: int,
+) -> SimulationResult:
+    if config.scenario_id != "historical_lake":
+        raise ValueError("run_historical_simulation only supports scenario_id='historical_lake'")
+    scenario_config = replace(config, scenario_definition=_default_historical_definition())
+    return run_scenario_simulation(params, family_id, scenario_config, seed)
+
+
 def summarize_latent_run(simulation_result: SimulationResult) -> dict[str, Any]:
     trajectory = simulation_result.trajectory_table
 
-    def first_year(mask: pd.Series) -> int | None:
+    def first_year(mask: pd.Series) -> int | float:
         matches = trajectory.loc[mask, "year"]
-        return int(matches.iloc[0]) if not matches.empty else None
+        return int(matches.iloc[0]) if not matches.empty else np.nan
 
-    def last_year(mask: pd.Series) -> int | None:
+    def last_year(mask: pd.Series) -> int | float:
         matches = trajectory.loc[mask, "year"]
-        return int(matches.iloc[-1]) if not matches.empty else None
+        return int(matches.iloc[-1]) if not matches.empty else np.nan
 
     peak_value = float(trajectory["pedder_lake_index"].max())
     peak_threshold = peak_value * 0.985 if peak_value > 0 else 0.0
@@ -334,9 +451,11 @@ def summarize_latent_run(simulation_result: SimulationResult) -> dict[str, Any]:
     peak_total_row = trajectory.loc[trajectory["N_total"].idxmax()]
     peak_trout_row = trajectory.loc[trajectory["T"].idxmax()]
     peak_upsurge_row = trajectory.loc[trajectory["U"].idxmax()]
-    value_1965 = float(trajectory.loc[trajectory["year"] == 1965, "pedder_lake_index"].iloc[0])
-    # Treat the inferred 1977 signal as a short boom window rather than a literal single-year census peak.
-    boom_window = trajectory.loc[trajectory["year"].between(1975, 1977), "pedder_lake_index"]
+    first_year_value = int(trajectory["year"].min())
+    value_first_year = float(trajectory.loc[trajectory["year"] == first_year_value, "pedder_lake_index"].iloc[0])
+    boom_window = trajectory.loc[trajectory["year"].between(first_year_value + 10, first_year_value + 12), "pedder_lake_index"]
+    if boom_window.empty and 1975 in trajectory["year"].to_numpy():
+        boom_window = trajectory.loc[trajectory["year"].between(1975, 1977), "pedder_lake_index"]
     final_total = float(trajectory.loc[trajectory["year"] == trajectory["year"].max(), "N_total"].iloc[0])
     pre1972 = trajectory.loc[trajectory["year"] < 1972, "N_total"]
 
@@ -352,7 +471,7 @@ def summarize_latent_run(simulation_result: SimulationResult) -> dict[str, Any]:
         "first_year_total_absent": first_year(trajectory["total_present"] == 0),
         "peak_trout_year": int(peak_trout_row["year"]),
         "peak_upsurge_year": int(peak_upsurge_row["year"]),
-        "pre1972_min_total": float(pre1972.min()) if not pre1972.empty else None,
-        "boom_ratio_1977_vs_1965": float(boom_window.max()) / max(value_1965, EPS),
+        "pre1972_min_total": float(pre1972.min()) if not pre1972.empty else np.nan,
+        "boom_ratio_1977_vs_1965": float(boom_window.max()) / max(value_first_year, EPS),
         "final_to_peak_ratio": final_total / max(float(peak_total_row["N_total"]), EPS),
     }

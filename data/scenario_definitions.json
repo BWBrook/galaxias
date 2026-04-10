@@ -1,0 +1,45 @@
+{
+  "historical_lake": {
+    "scenario_id": "historical_lake",
+    "start_year": 1965,
+    "end_year": 2002,
+    "initialization_mode": "burn_in_equilibrium",
+    "forcing_mode": "historical_lake",
+    "founder_events": [],
+    "spawn_habitat_schedule": [
+      {"year_start": 1965, "year_end": 2002, "value": 1.0}
+    ]
+  },
+  "lake_oberon": {
+    "scenario_id": "lake_oberon",
+    "start_year": 1991,
+    "end_year": 2012,
+    "initialization_mode": "founder_zero_state",
+    "forcing_mode": "baseline_refuge",
+    "founder_events": [
+      {"year": 1991, "adult_lake_addition": 31.0},
+      {"year": 1997, "adult_lake_addition": 3.0}
+    ],
+    "spawn_habitat_schedule": [
+      {"year_start": 1991, "year_end": 2012, "value": 1.0}
+    ]
+  },
+  "strathgordon": {
+    "scenario_id": "strathgordon",
+    "start_year": 2001,
+    "end_year": 2012,
+    "initialization_mode": "founder_zero_state",
+    "forcing_mode": "baseline_refuge",
+    "founder_events": [
+      {"year": 2001, "adult_lake_addition": 52.0},
+      {"year": 2002, "adult_lake_addition": 22.0},
+      {"year": 2005, "adult_lake_addition": 117.0},
+      {"year": 2006, "adult_lake_addition": 53.0},
+      {"year": 2007, "adult_lake_addition": 109.0}
+    ],
+    "spawn_habitat_schedule": [
+      {"year_start": 2001, "year_end": 2007, "value": 0.0},
+      {"year_start": 2008, "year_end": 2012, "value": 1.0}
+    ]
+  }
+}

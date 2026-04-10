@@ -75,18 +75,38 @@
   },
   "CT011": {
     "required_scenario_id": "lake_oberon",
-    "founder_count": 34.0,
-    "juvenile_year": 1997,
-    "adult_floor_early_2000s": 500.0,
-    "strong_growth_year": 2012,
+    "founder_schedule": [
+      {"year": 1991, "adult_lake_addition": 31.0},
+      {"year": 1997, "adult_lake_addition": 3.0}
+    ],
+    "juvenile_deadline_year": 1997,
+    "adult_floor_window": {"start": 2001, "end": 2004},
+    "adult_floor": 500.0,
+    "adult_floor_soft_gap": 150.0,
+    "total_2012_floor": 185.0,
+    "total_2012_soft_gap": 100.0,
+    "growth_ratio_floor": 30.0,
+    "growth_ratio_soft_gap": 10.0,
     "observed_primary": 500.0,
     "observed_secondary": 1997.0
   },
   "CT012": {
     "required_scenario_id": "strathgordon",
-    "juvenile_first_year": 2008,
-    "established_year": 2012,
-    "founder_scale": 8.0,
+    "founder_schedule": [
+      {"year": 2001, "adult_lake_addition": 52.0},
+      {"year": 2002, "adult_lake_addition": 22.0},
+      {"year": 2005, "adult_lake_addition": 117.0},
+      {"year": 2006, "adult_lake_addition": 53.0},
+      {"year": 2007, "adult_lake_addition": 109.0}
+    ],
+    "juvenile_absence_window": {"start": 2001, "end": 2007},
+    "juvenile_target_year": 2008,
+    "juvenile_2008_floor": 8.0,
+    "juvenile_2008_soft_gap": 4.0,
+    "total_2012_floor": 265.0,
+    "total_2012_soft_gap": 100.0,
+    "juvenile_2012_floor": 27.0,
+    "juvenile_2012_soft_gap": 15.0,
     "observed_primary": 8.0,
     "observed_secondary": 2008.0
   }

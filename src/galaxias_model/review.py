@@ -7,8 +7,14 @@ import numpy as np
 import pandas as pd
 
 from galaxias_model.io import load_model_inputs, resolve_family_parameters
-from galaxias_model.scoring import aggregate_replicate_scores, score_historical_run, score_target
-from galaxias_model.simulation import run_historical_simulation
+from galaxias_model.scoring import (
+    aggregate_replicate_scores,
+    aggregate_scenario_bundle_scores,
+    score_family_scenario_bundle,
+    score_historical_run,
+    score_target,
+)
+from galaxias_model.simulation import get_scenario_definition, run_historical_simulation, run_scenario_simulation
 from galaxias_model.types import ModelInputs, ScoringConfig, SimulationConfig
 
 
@@ -39,6 +45,27 @@ def _markdown_table(rows: list[dict[str, Any]], columns: list[str]) -> str:
         for row in rows
     ]
     return "\n".join([header, separator, *body])
+
+
+def _regression_frames_match(
+    current: pd.DataFrame,
+    reference: pd.DataFrame,
+    sort_columns: list[str],
+) -> bool:
+    current_sorted = current.sort_values(sort_columns).reset_index(drop=True).copy()
+    reference_sorted = reference.sort_values(sort_columns).reset_index(drop=True).copy()
+    try:
+        pd.testing.assert_frame_equal(
+            current_sorted,
+            reference_sorted,
+            check_exact=False,
+            check_dtype=False,
+            atol=1e-9,
+            rtol=0,
+        )
+    except AssertionError:
+        return False
+    return True
 
 
 def run_module1_5_review(
@@ -665,4 +692,330 @@ def write_module2_readiness_bundle(root: Path) -> dict[str, Any]:
         "historical_core_ready": evaluation["gates"]["historical_core_ready"],
         "full_ready_for_module3": evaluation["gates"]["full_ready_for_module3"],
         "needs_module_2_5": evaluation["gates"]["needs_module_2_5"],
+    }
+
+
+def _run_scenario_result(
+    model_inputs: ModelInputs,
+    params,
+    family_id: str,
+    scenario_id: str,
+    stochastic: bool,
+    seed: int,
+):
+    scenario_definition = get_scenario_definition(model_inputs, scenario_id)
+    config = SimulationConfig(
+        stochastic=stochastic,
+        scenario_id=scenario_id,
+        scenario_definition=scenario_definition,
+        start_year=scenario_definition.start_year,
+        end_year=scenario_definition.end_year,
+    )
+    if scenario_id == "historical_lake":
+        return run_historical_simulation(params, family_id, config, seed=seed)
+    return run_scenario_simulation(params, family_id, config, seed=seed)
+
+
+def _bundle_rows_for_family(
+    model_inputs: ModelInputs,
+    family_id: str,
+    historical_stochastic: bool,
+    historical_seed: int,
+):
+    params = resolve_family_parameters(model_inputs, family_id)
+    results_by_scenario = {
+        "historical_lake": _run_scenario_result(
+            model_inputs,
+            params,
+            family_id,
+            "historical_lake",
+            stochastic=historical_stochastic,
+            seed=historical_seed,
+        ),
+        "lake_oberon": _run_scenario_result(
+            model_inputs,
+            params,
+            family_id,
+            "lake_oberon",
+            stochastic=False,
+            seed=1,
+        ),
+        "strathgordon": _run_scenario_result(
+            model_inputs,
+            params,
+            family_id,
+            "strathgordon",
+            stochastic=False,
+            seed=1,
+        ),
+    }
+    return score_family_scenario_bundle(results_by_scenario, model_inputs, ScoringConfig())
+
+
+def run_module2_5_readiness_review(
+    model_inputs: ModelInputs,
+    stochastic_seeds: Iterable[int] = range(1, 21),
+) -> tuple[pd.DataFrame, pd.DataFrame, dict[str, Any]]:
+    default_bundles = [
+        _bundle_rows_for_family(model_inputs, family_id, historical_stochastic=False, historical_seed=1)
+        for family_id in REVIEW_FAMILIES
+    ]
+    default_bundle_scores = pd.concat(
+        [bundle.bundle_target_score_table.copy() for bundle in default_bundles],
+        ignore_index=True,
+    )
+
+    transient_bundles = [
+        _bundle_rows_for_family(
+            model_inputs,
+            "transient_perfect_storm",
+            historical_stochastic=True,
+            historical_seed=seed,
+        )
+        for seed in stochastic_seeds
+    ]
+    transient_bundle_scores = pd.concat(
+        [bundle.bundle_target_score_table.copy() for bundle in transient_bundles],
+        ignore_index=True,
+    )
+    aggregate_transient = aggregate_scenario_bundle_scores(transient_bundles, ScoringConfig())
+
+    module2_default = pd.read_csv(model_inputs.data_dir / "module2_default_target_scores.csv")
+    module2_transient = pd.read_csv(model_inputs.data_dir / "module2_transient_replicate_scores.csv")
+    current_default_hist = default_bundle_scores.loc[default_bundle_scores["target_id"].isin([f"CT{i:03d}" for i in range(1, 11)])].copy()
+    current_transient_hist = transient_bundle_scores.loc[transient_bundle_scores["target_id"].isin([f"CT{i:03d}" for i in range(1, 11)])].copy()
+    ref_default_hist = module2_default.loc[module2_default["target_id"].isin([f"CT{i:03d}" for i in range(1, 11)])].copy()
+    ref_transient_hist = module2_transient.loc[module2_transient["target_id"].isin([f"CT{i:03d}" for i in range(1, 11)])].copy()
+    regression_columns = [
+        "target_id",
+        "family_id",
+        "seed",
+        "scenario_id",
+        "evaluation_status",
+        "projected_primary",
+        "projected_secondary",
+        "observed_primary",
+        "observed_secondary",
+        "raw_penalty",
+        "weighted_penalty",
+    ]
+    current_default_hist = current_default_hist[regression_columns]
+    ref_default_hist = ref_default_hist[regression_columns]
+    current_transient_hist = current_transient_hist[regression_columns]
+    ref_transient_hist = ref_transient_hist[regression_columns]
+    historical_default_regression_pass = _regression_frames_match(
+        current_default_hist,
+        ref_default_hist,
+        ["family_id", "target_id"],
+    )
+    historical_transient_regression_pass = _regression_frames_match(
+        current_transient_hist,
+        ref_transient_hist,
+        ["seed", "target_id"],
+    )
+
+    all_default_scored = (default_bundle_scores["evaluation_status"] == "scored").all()
+    no_missing_default = all(not bundle.summary["missing_scenarios"] for bundle in default_bundles)
+    full_ready_default = all(bundle.summary["full_ready_for_module3"] for bundle in default_bundles)
+    full_ready_transient = all(bundle.summary["full_ready_for_module3"] for bundle in transient_bundles)
+
+    smoke_rows = []
+    smoke_params = resolve_family_parameters(model_inputs, "habitat_only_null")
+    for scenario_id in ["lake_oberon", "strathgordon"]:
+        for seed in range(1, 6):
+            sim_result = _run_scenario_result(
+                model_inputs,
+                smoke_params,
+                "habitat_only_null",
+                scenario_id,
+                stochastic=True,
+                seed=seed,
+            )
+            bundle = score_family_scenario_bundle(
+                {
+                    "historical_lake": _run_scenario_result(
+                        model_inputs,
+                        smoke_params,
+                        "habitat_only_null",
+                        "historical_lake",
+                        stochastic=False,
+                        seed=1,
+                    ),
+                    scenario_id: sim_result,
+                    "strathgordon" if scenario_id == "lake_oberon" else "lake_oberon": _run_scenario_result(
+                        model_inputs,
+                        smoke_params,
+                        "habitat_only_null",
+                        "strathgordon" if scenario_id == "lake_oberon" else "lake_oberon",
+                        stochastic=False,
+                        seed=1,
+                    ),
+                },
+                model_inputs,
+                ScoringConfig(),
+            )
+            relevant = bundle.bundle_target_score_table.loc[
+                bundle.bundle_target_score_table["target_id"] == ("CT011" if scenario_id == "lake_oberon" else "CT012")
+            ]
+            smoke_rows.append(
+                {
+                    "scenario_id": scenario_id,
+                    "seed": seed,
+                    "raw_penalty": float(relevant["raw_penalty"].iloc[0]),
+                    "weighted_penalty": float(relevant["weighted_penalty"].iloc[0]),
+                }
+            )
+    smoke_frame = pd.DataFrame(smoke_rows)
+    smoke_finite = np.isfinite(smoke_frame["raw_penalty"]).all() and np.isfinite(smoke_frame["weighted_penalty"]).all()
+
+    gates = {
+        "historical_default_regression_pass": historical_default_regression_pass,
+        "historical_transient_regression_pass": historical_transient_regression_pass,
+        "bundle_all_targets_scored": bool(all_default_scored),
+        "bundle_no_missing_scenarios": bool(no_missing_default),
+        "default_bundles_full_ready_for_module3": bool(full_ready_default),
+        "transient_bundle_full_ready_for_module3": bool(full_ready_transient),
+        "aggregate_history_median_and_iqr_finite": (
+            aggregate_transient.summary["historical_core_distance_median"] is not None
+            and aggregate_transient.summary["historical_core_distance_iqr"] is not None
+            and np.isfinite(float(aggregate_transient.summary["historical_core_distance_median"]))
+            and np.isfinite(float(aggregate_transient.summary["historical_core_distance_iqr"]))
+        ),
+    }
+    gates["historical_core_ready"] = all(gates.values())
+    gates["full_ready_for_module3"] = gates["historical_core_ready"] and (
+        not aggregate_transient.summary["deferred_target_ids"]
+        and not aggregate_transient.summary["missing_scenarios"]
+    )
+    gates["needs_module_2_75"] = (not gates["historical_core_ready"]) or (not gates["full_ready_for_module3"])
+
+    evaluation = {
+        "gates": gates,
+        "metrics": {
+            "historical_core_distance_median": aggregate_transient.summary["historical_core_distance_median"],
+            "historical_core_distance_iqr": aggregate_transient.summary["historical_core_distance_iqr"],
+            "intrinsic_baseline_distance_median": aggregate_transient.summary["intrinsic_baseline_distance_median"],
+            "deferred_target_ids": aggregate_transient.summary["deferred_target_ids"],
+            "missing_scenarios": aggregate_transient.summary["missing_scenarios"],
+            "optional_stochastic_baseline_smoke_finite": bool(smoke_finite),
+        },
+        "aggregate_transient": aggregate_transient,
+        "optional_smoke": smoke_frame,
+    }
+    return default_bundle_scores, transient_bundle_scores, evaluation
+
+
+def render_module2_5_readiness_review(
+    default_bundle_scores: pd.DataFrame,
+    transient_bundle_scores: pd.DataFrame,
+    evaluation: dict[str, Any],
+) -> str:
+    gates = evaluation["gates"]
+    metrics = evaluation["metrics"]
+    gate_rows = [{"gate": key, "status": value} for key, value in gates.items()]
+    default_rows = (
+        default_bundle_scores.loc[
+            default_bundle_scores["target_id"].isin(["CT011", "CT012"]),
+            ["family_id", "target_id", "scenario_id", "evaluation_status", "raw_penalty"],
+        ]
+        .sort_values(["target_id", "family_id"])
+        .to_dict(orient="records")
+    )
+    transient_rows = [
+        {"metric": "historical_core_distance_median", "value": metrics["historical_core_distance_median"]},
+        {"metric": "historical_core_distance_iqr", "value": metrics["historical_core_distance_iqr"]},
+        {"metric": "intrinsic_baseline_distance_median", "value": metrics["intrinsic_baseline_distance_median"]},
+        {
+            "metric": "optional_stochastic_baseline_smoke_finite",
+            "value": metrics["optional_stochastic_baseline_smoke_finite"],
+        },
+    ]
+
+    lines = [
+        "# Module 2.5 Readiness Review",
+        "",
+        "## Summary",
+        "",
+        (
+            "Module 2.5 adds explicit `lake_oberon` and `strathgordon` scenarios, then scores "
+            "all twelve calibration targets through a scenario bundle rather than a single historical run."
+        ),
+        (
+            "The historical path is checked against the tracked Module 2 outputs, while the new "
+            "baseline scenarios activate `CT011` and `CT012` without introducing new free parameters."
+        ),
+        "",
+        "## Acceptance Gates",
+        "",
+        _markdown_table(gate_rows, ["gate", "status"]),
+        "",
+        "## Baseline Target Highlights",
+        "",
+        _markdown_table(default_rows, ["family_id", "target_id", "scenario_id", "evaluation_status", "raw_penalty"]),
+        "",
+        "## Transient Bundle Summary",
+        "",
+        _markdown_table(transient_rows, ["metric", "value"]),
+        "",
+        "## Interpretation",
+        "",
+    ]
+
+    if gates["full_ready_for_module3"]:
+        lines.extend(
+            [
+                "All bundle targets now score successfully, with no missing scenarios and no deferred targets.",
+                "Module 3 can proceed on top of the Module 2.5 bundle-scoring interface.",
+            ]
+        )
+    else:
+        lines.extend(
+            [
+                "Module 3 should not start yet.",
+                "The correct next step is Module 2.75 because at least one Module 2.5 readiness gate failed.",
+            ]
+        )
+
+    lines.extend(
+        [
+            "",
+            "## Module 2.75 Trigger",
+            "",
+            "- Trigger if `historical_core_ready=False` after scenario enablement, which means the shared kernel/scoring contract regressed.",
+            "- Trigger if `historical_core_ready=True` but `full_ready_for_module3=False`, which means the baseline scenarios or their target formulas still need refinement.",
+            "",
+            "## Artifacts",
+            "",
+            "- `data/module2_5_default_bundle_scores.csv`",
+            "- `data/module2_5_transient_bundle_scores.csv`",
+            "- `docs/module2_5_readiness_review.md`",
+        ]
+    )
+    return "\n".join(lines) + "\n"
+
+
+def write_module2_5_readiness_bundle(root: Path) -> dict[str, Any]:
+    data_dir = root / "data"
+    docs_dir = root / "docs"
+    model_inputs = load_model_inputs(data_dir)
+    default_bundle_scores, transient_bundle_scores, evaluation = run_module2_5_readiness_review(model_inputs)
+
+    default_path = data_dir / "module2_5_default_bundle_scores.csv"
+    transient_path = data_dir / "module2_5_transient_bundle_scores.csv"
+    review_path = docs_dir / "module2_5_readiness_review.md"
+
+    default_bundle_scores.to_csv(default_path, index=False)
+    transient_bundle_scores.to_csv(transient_path, index=False)
+    review_path.write_text(
+        render_module2_5_readiness_review(default_bundle_scores, transient_bundle_scores, evaluation),
+        encoding="utf-8",
+    )
+
+    return {
+        "default_bundle_scores": default_path,
+        "transient_bundle_scores": transient_path,
+        "review_doc": review_path,
+        "historical_core_ready": evaluation["gates"]["historical_core_ready"],
+        "full_ready_for_module3": evaluation["gates"]["full_ready_for_module3"],
+        "needs_module_2_75": evaluation["gates"]["needs_module_2_75"],
     }

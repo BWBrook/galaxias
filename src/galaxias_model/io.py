@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from galaxias_model.types import ModelInputs, ResolvedParameters
+from galaxias_model.types import FounderEvent, ModelInputs, ResolvedParameters, ScenarioDefinition
 
 
 EXPECTED_PARAMETER_COUNT = 40
@@ -46,6 +46,9 @@ ALLOWED_SOURCE_STRATEGIES = {
 }
 ALLOWED_SAMPLING_TRANSFORMS = {"identity", "log", "logit"}
 ALLOWED_OPERATORS = {"==", ">=", "<=", ">", "<"}
+EXPECTED_SCENARIO_IDS = {"historical_lake", "lake_oberon", "strathgordon"}
+ALLOWED_INITIALIZATION_MODES = {"burn_in_equilibrium", "founder_zero_state"}
+ALLOWED_FORCING_MODES = {"historical_lake", "baseline_refuge"}
 EXPRESSION_PARAMETER_RE = re.compile(r"PR\d{3}")
 
 
@@ -236,6 +239,94 @@ def _validate_target_details(
             raise ValueError(f"Target {target_id} is missing required detail keys: {sorted(missing_keys)}")
 
 
+def _parse_scenario_definition(scenario_id: str, payload: dict[str, object]) -> ScenarioDefinition:
+    required_keys = {"scenario_id", "start_year", "end_year", "initialization_mode", "forcing_mode"}
+    missing = required_keys - set(payload)
+    if missing:
+        raise ValueError(f"Scenario {scenario_id} missing keys: {sorted(missing)}")
+
+    if str(payload["scenario_id"]) != scenario_id:
+        raise ValueError(f"Scenario key mismatch: {scenario_id} vs payload id {payload['scenario_id']}")
+
+    initialization_mode = str(payload["initialization_mode"])
+    forcing_mode = str(payload["forcing_mode"])
+    if initialization_mode not in ALLOWED_INITIALIZATION_MODES:
+        raise ValueError(f"Invalid initialization_mode for {scenario_id}: {initialization_mode}")
+    if forcing_mode not in ALLOWED_FORCING_MODES:
+        raise ValueError(f"Invalid forcing_mode for {scenario_id}: {forcing_mode}")
+
+    start_year = int(payload["start_year"])
+    end_year = int(payload["end_year"])
+    if end_year < start_year:
+        raise ValueError(f"Scenario {scenario_id} has end_year < start_year")
+
+    founder_events_payload = payload.get("founder_events", [])
+    founder_events: list[FounderEvent] = []
+    for event in founder_events_payload:
+        if not isinstance(event, dict):
+            raise ValueError(f"Scenario {scenario_id} founder event must be an object")
+        founder_events.append(
+            FounderEvent(
+                year=int(event["year"]),
+                adult_lake_addition=float(event["adult_lake_addition"]),
+            )
+        )
+
+    schedule_payload = payload.get("spawn_habitat_schedule", [])
+    if not isinstance(schedule_payload, list):
+        raise ValueError(f"Scenario {scenario_id} spawn_habitat_schedule must be a list")
+    spawn_habitat_by_year: dict[int, float] = {}
+    for entry in schedule_payload:
+        if not isinstance(entry, dict):
+            raise ValueError(f"Scenario {scenario_id} schedule entry must be an object")
+        year_start = int(entry["year_start"])
+        year_end = int(entry["year_end"])
+        value = float(entry["value"])
+        if year_end < year_start:
+            raise ValueError(f"Scenario {scenario_id} has invalid schedule range {year_start}-{year_end}")
+        for year in range(year_start, year_end + 1):
+            if year in spawn_habitat_by_year:
+                raise ValueError(f"Scenario {scenario_id} has overlapping spawn_habitat_schedule at year {year}")
+            spawn_habitat_by_year[year] = value
+
+    expected_years = set(range(start_year, end_year + 1))
+    if set(spawn_habitat_by_year) != expected_years:
+        missing_years = sorted(expected_years - set(spawn_habitat_by_year))
+        extra_years = sorted(set(spawn_habitat_by_year) - expected_years)
+        raise ValueError(
+            f"Scenario {scenario_id} spawn_habitat_schedule does not cover full window. "
+            f"Missing={missing_years}, extra={extra_years}"
+        )
+
+    if forcing_mode == "historical_lake" and founder_events:
+        raise ValueError("historical_lake scenario must not define founder events")
+    if forcing_mode == "baseline_refuge" and initialization_mode != "founder_zero_state":
+        raise ValueError("baseline_refuge scenarios must use founder_zero_state initialization")
+
+    return ScenarioDefinition(
+        scenario_id=scenario_id,
+        start_year=start_year,
+        end_year=end_year,
+        initialization_mode=initialization_mode,
+        forcing_mode=forcing_mode,
+        founder_events=tuple(sorted(founder_events, key=lambda event: event.year)),
+        spawn_habitat_by_year=spawn_habitat_by_year,
+    )
+
+
+def _validate_scenario_definitions(raw_definitions: dict[str, dict[str, object]] | None) -> dict[str, ScenarioDefinition]:
+    if raw_definitions is None:
+        raise ValueError("Missing scenario_definitions.json for Module 2.5 scenario support")
+    if set(raw_definitions) != EXPECTED_SCENARIO_IDS:
+        missing = sorted(EXPECTED_SCENARIO_IDS - set(raw_definitions))
+        extra = sorted(set(raw_definitions) - EXPECTED_SCENARIO_IDS)
+        raise ValueError(f"Scenario definitions mismatch. Missing={missing}, extra={extra}")
+    return {
+        scenario_id: _parse_scenario_definition(scenario_id, payload)
+        for scenario_id, payload in raw_definitions.items()
+    }
+
+
 def load_model_inputs(data_dir: str | Path) -> ModelInputs:
     data_path = Path(data_dir).resolve()
     evidence_ids = _load_evidence_ids(data_path)
@@ -246,11 +337,14 @@ def load_model_inputs(data_dir: str | Path) -> ModelInputs:
     calibration_targets = _read_csv(calibration_targets_path) if calibration_targets_path.exists() else None
     target_details_path = data_path / "calibration_target_details.json"
     target_details = _read_json(target_details_path) if target_details_path.exists() else None
+    scenario_definitions_path = data_path / "scenario_definitions.json"
+    raw_scenario_definitions = _read_json(scenario_definitions_path) if scenario_definitions_path.exists() else None
 
     _validate_prior_rows(priors, evidence_ids)
     _validate_family_rows(family_map, set(priors["parameter_id"]))
     _validate_constraint_rows(constraints, set(priors["parameter_id"]))
     _validate_target_details(calibration_targets, target_details)
+    scenario_definitions = _validate_scenario_definitions(raw_scenario_definitions)
 
     return ModelInputs(
         data_dir=data_path,
@@ -259,6 +353,7 @@ def load_model_inputs(data_dir: str | Path) -> ModelInputs:
         constraints=constraints,
         calibration_targets=calibration_targets,
         calibration_target_details=target_details,
+        scenario_definitions=scenario_definitions,
     )
 
 
