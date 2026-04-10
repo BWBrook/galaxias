@@ -367,6 +367,26 @@ def _apply_family_status(default_value: float, status: str, fixed_value: str) ->
     return default_value
 
 
+def _resolve_family_parameter_rows(
+    model_inputs: ModelInputs,
+    family_id: str,
+) -> pd.DataFrame:
+    if family_id not in EXPECTED_FAMILY_IDS:
+        raise ValueError(f"Unknown family_id: {family_id}")
+
+    family_rows = model_inputs.family_map.loc[model_inputs.family_map["family_id"] == family_id].copy()
+    priors = model_inputs.parameter_priors.copy()
+    merged = priors.merge(
+        family_rows[["family_id", "family_label", "parameter_id", "parameter_status", "fixed_value", "notes"]],
+        on="parameter_id",
+        how="inner",
+        suffixes=("", "_family"),
+    )
+    if len(merged) != EXPECTED_PARAMETER_COUNT:
+        raise ValueError(f"Failed to resolve all parameters for family {family_id}")
+    return merged
+
+
 def _validate_resolved_constraints(
     constraints: pd.DataFrame,
     values: dict[str, float],
@@ -406,20 +426,9 @@ def resolve_family_parameters(
     source: str = "default",
 ) -> ResolvedParameters:
     if source != "default":
-        raise ValueError("Module 1 only supports source='default'")
-    if family_id not in EXPECTED_FAMILY_IDS:
-        raise ValueError(f"Unknown family_id: {family_id}")
+        raise ValueError("resolve_family_parameters currently only supports source='default'")
 
-    family_rows = model_inputs.family_map.loc[model_inputs.family_map["family_id"] == family_id].copy()
-    priors = model_inputs.parameter_priors.copy()
-    merged = priors.merge(
-        family_rows[["family_id", "family_label", "parameter_id", "parameter_status", "fixed_value", "notes"]],
-        on="parameter_id",
-        how="inner",
-        suffixes=("", "_family"),
-    )
-    if len(merged) != EXPECTED_PARAMETER_COUNT:
-        raise ValueError(f"Failed to resolve all parameters for family {family_id}")
+    merged = _resolve_family_parameter_rows(model_inputs, family_id)
 
     values: dict[str, float] = {}
     statuses: dict[str, str] = {}

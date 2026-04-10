@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -136,3 +137,72 @@ class AggregateScenarioBundleResult:
     replicate_bundle_score_table: pd.DataFrame
     aggregate_target_score_table: pd.DataFrame
     summary: dict[str, Any]
+
+
+def _default_module3_output_dir() -> Path:
+    stamp = datetime.now(timezone.utc).strftime("run_%Y%m%dT%H%M%SZ")
+    return Path("outputs") / "module3" / stamp
+
+
+@dataclass(frozen=True)
+class Module3Config:
+    families: tuple[str, ...] = (
+        "habitat_only_null",
+        "trout_only",
+        "climbing_only",
+        "persistent_joint_cause",
+        "transient_perfect_storm",
+    )
+    stage_a_draws_per_family: int = 2000
+    stage_a_keep_per_family: int = 100
+    stage_b_historical_replicates: int = 20
+    final_acceptance_fraction: float = 0.10
+    final_acceptance_cap: int = 50
+    workers: int = 1
+    batch_size: int = 100
+    master_seed: int = 20260410
+    stochastic_baselines: bool = False
+    output_dir: Path = field(default_factory=_default_module3_output_dir)
+    resume: bool = False
+
+    @classmethod
+    def readiness_defaults(cls, output_dir: Path | None = None) -> "Module3Config":
+        return cls(
+            stage_a_draws_per_family=250,
+            stage_a_keep_per_family=20,
+            stage_b_historical_replicates=5,
+            final_acceptance_fraction=0.10,
+            final_acceptance_cap=10,
+            workers=1,
+            output_dir=output_dir if output_dir is not None else cls().output_dir,
+            resume=False,
+        )
+
+
+@dataclass(frozen=True)
+class ProposalResult:
+    summary_row: dict[str, Any]
+    parameter_values_table: pd.DataFrame
+    target_scores_table: pd.DataFrame
+
+
+@dataclass(frozen=True)
+class FamilyCalibrationResult:
+    family_id: str
+    proposal_summary_table: pd.DataFrame
+    parameter_values_table: pd.DataFrame
+    target_scores_table: pd.DataFrame
+    retained_proposal_ids: tuple[str, ...] = ()
+    accepted_proposal_ids: tuple[str, ...] = ()
+
+
+@dataclass(frozen=True)
+class CalibrationRunResult:
+    config: Module3Config
+    proposal_summary_table: pd.DataFrame
+    parameter_values_table: pd.DataFrame
+    target_scores_table: pd.DataFrame
+    family_summary_table: pd.DataFrame
+    accepted_proposals_table: pd.DataFrame
+    run_manifest: dict[str, Any]
+    family_results: dict[str, FamilyCalibrationResult]

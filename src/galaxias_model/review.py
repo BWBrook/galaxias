@@ -1,11 +1,13 @@
 from __future__ import annotations
 
 from pathlib import Path
+from shutil import rmtree
 from typing import Any, Iterable
 
 import numpy as np
 import pandas as pd
 
+from galaxias_model.calibration import run_module3_calibration, run_module3_calibration_stage
 from galaxias_model.io import load_model_inputs, resolve_family_parameters
 from galaxias_model.scoring import (
     aggregate_replicate_scores,
@@ -15,7 +17,7 @@ from galaxias_model.scoring import (
     score_target,
 )
 from galaxias_model.simulation import get_scenario_definition, run_historical_simulation, run_scenario_simulation
-from galaxias_model.types import ModelInputs, ScoringConfig, SimulationConfig
+from galaxias_model.types import ModelInputs, Module3Config, ScoringConfig, SimulationConfig
 
 
 REVIEW_FAMILIES = [
@@ -1018,4 +1020,421 @@ def write_module2_5_readiness_bundle(root: Path) -> dict[str, Any]:
         "historical_core_ready": evaluation["gates"]["historical_core_ready"],
         "full_ready_for_module3": evaluation["gates"]["full_ready_for_module3"],
         "needs_module_2_75": evaluation["gates"]["needs_module_2_75"],
+    }
+
+
+MODULE3_REVIEW_TARGET_IDS = {f"CT{i:03d}" for i in range(1, 13)}
+
+
+def _fresh_run_dir(path: Path) -> Path:
+    if path.exists():
+        rmtree(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    return path
+
+
+def _accepted_id_tuple(frame: pd.DataFrame) -> tuple[str, ...]:
+    if frame.empty:
+        return ()
+    return tuple(frame["proposal_id"].astype(str).tolist())
+
+
+def _safe_spearman(x: pd.Series, y: pd.Series) -> float:
+    paired = pd.DataFrame({"x": pd.to_numeric(x, errors="coerce"), "y": pd.to_numeric(y, errors="coerce")}).dropna()
+    if len(paired) < 2:
+        return float("nan")
+    if paired["x"].nunique() < 2 or paired["y"].nunique() < 2:
+        return float("nan")
+    ranked = paired.rank(method="average")
+    return float(ranked["x"].corr(ranked["y"], method="pearson"))
+
+
+def _module3_small_repro_config(output_dir: Path, workers: int) -> Module3Config:
+    return Module3Config(
+        stage_a_draws_per_family=60,
+        stage_a_keep_per_family=8,
+        stage_b_historical_replicates=3,
+        final_acceptance_fraction=0.10,
+        final_acceptance_cap=5,
+        workers=workers,
+        batch_size=50,
+        master_seed=20260410,
+        stochastic_baselines=False,
+        output_dir=output_dir,
+        resume=False,
+    )
+
+
+def _module3_screen_discrimination_rows(
+    proposal_summary: pd.DataFrame,
+    config: Module3Config,
+) -> pd.DataFrame:
+    rows: list[dict[str, Any]] = []
+    for family_id in config.families:
+        subset = proposal_summary.loc[proposal_summary["family_id"] == family_id].copy()
+        retained = subset.loc[
+            pd.to_numeric(subset["stage_a_rank"], errors="coerce").between(1, config.stage_a_keep_per_family),
+            "deterministic_overall_distance",
+        ]
+        rejected = subset.loc[subset["stage_status"] == "stage_a_rejected", "deterministic_overall_distance"]
+        retained_median = float(pd.to_numeric(retained, errors="coerce").median()) if not retained.empty else float("nan")
+        rejected_median = float(pd.to_numeric(rejected, errors="coerce").median()) if not rejected.empty else float("nan")
+        passed = bool(
+            np.isfinite(retained_median)
+            and np.isfinite(rejected_median)
+            and retained_median <= 0.8 * rejected_median
+        )
+        rows.append(
+            {
+                "family_id": family_id,
+                "retained_median": retained_median,
+                "rejected_median": rejected_median,
+                "pass": passed,
+            }
+        )
+    return pd.DataFrame(rows)
+
+
+def _module3_rank_consistency_rows(proposal_summary: pd.DataFrame, families: Iterable[str]) -> pd.DataFrame:
+    rows: list[dict[str, Any]] = []
+    for family_id in families:
+        subset = proposal_summary.loc[
+            (proposal_summary["family_id"] == family_id)
+            & (proposal_summary["stage_status"].isin({"stage_b_rejected", "accepted"}))
+        ].copy()
+        correlation = _safe_spearman(
+            subset["deterministic_overall_distance"],
+            subset["stochastic_overall_distance_median"],
+        )
+        passed = bool(np.isfinite(correlation) and correlation >= 0.40)
+        rows.append(
+            {
+                "family_id": family_id,
+                "spearman_rank_correlation": correlation,
+                "pass": passed,
+            }
+        )
+    return pd.DataFrame(rows)
+
+
+def _module3_accepted_targets_scored(
+    accepted_summary: pd.DataFrame,
+    target_scores: pd.DataFrame,
+) -> bool:
+    if accepted_summary.empty:
+        return False
+    for proposal_id in accepted_summary["proposal_id"].astype(str):
+        subset = target_scores.loc[
+            (target_scores["proposal_id"] == proposal_id)
+            & (target_scores["stage"] == "stage_b")
+        ].copy()
+        if set(subset["target_id"].astype(str)) != MODULE3_REVIEW_TARGET_IDS:
+            return False
+        if not (subset["evaluation_status"] == "scored").all():
+            return False
+    return True
+
+
+def run_module3_readiness_review(
+    root: Path,
+    config: Module3Config | None = None,
+    repro_config: Module3Config | None = None,
+) -> tuple[pd.DataFrame, pd.DataFrame, dict[str, Any]]:
+    data_dir = root / "data"
+    model_inputs = load_model_inputs(data_dir)
+
+    readiness_dir = root / "outputs" / "module3"
+    primary_config = config or Module3Config.readiness_defaults(
+        output_dir=readiness_dir / "readiness_primary"
+    )
+    repeat_config = Module3Config(
+        **{
+            **primary_config.__dict__,
+            "output_dir": readiness_dir / "readiness_repeat",
+            "resume": False,
+        }
+    )
+    serial_small_config = repro_config or _module3_small_repro_config(
+        readiness_dir / "readiness_repro_workers1",
+        workers=1,
+    )
+    parallel_small_config = Module3Config(
+        **{
+            **serial_small_config.__dict__,
+            "workers": 2,
+            "output_dir": readiness_dir / "readiness_repro_workers2",
+            "resume": False,
+        }
+    )
+    resume_stage_a_config = Module3Config(
+        **{
+            **serial_small_config.__dict__,
+            "output_dir": readiness_dir / "readiness_resume_stage_a",
+            "resume": False,
+        }
+    )
+    resume_full_config = Module3Config(
+        **{
+            **serial_small_config.__dict__,
+            "output_dir": readiness_dir / "readiness_resume_stage_a",
+            "resume": True,
+        }
+    )
+    clean_small_config = Module3Config(
+        **{
+            **serial_small_config.__dict__,
+            "output_dir": readiness_dir / "readiness_resume_clean",
+            "resume": False,
+        }
+    )
+
+    for path in [
+        primary_config.output_dir,
+        repeat_config.output_dir,
+        serial_small_config.output_dir,
+        parallel_small_config.output_dir,
+        resume_stage_a_config.output_dir,
+        clean_small_config.output_dir,
+    ]:
+        _fresh_run_dir(path)
+
+    primary_run = run_module3_calibration(model_inputs, primary_config)
+    repeat_run = run_module3_calibration(model_inputs, repeat_config)
+    serial_small_run = run_module3_calibration(model_inputs, serial_small_config)
+    parallel_small_run = run_module3_calibration(model_inputs, parallel_small_config)
+    run_module3_calibration_stage(model_inputs, resume_stage_a_config, stage="stage_a")
+    resumed_run = run_module3_calibration_stage(model_inputs, resume_full_config, stage="all")
+    clean_small_run = run_module3_calibration(model_inputs, clean_small_config)
+
+    family_summary = primary_run.family_summary_table.copy()
+    accepted_summary = primary_run.accepted_proposals_table[
+        [
+            "proposal_id",
+            "family_id",
+            "proposal_seed",
+            "stochastic_overall_distance_median",
+            "stochastic_historical_core_distance_median",
+            "stochastic_intrinsic_baseline_distance_median",
+            "stochastic_historical_core_distance_iqr",
+        ]
+    ].copy()
+
+    sampler_valid_rate_pass = bool((family_summary["stage_a_valid_rate"] >= 0.70).all())
+
+    discrimination_rows = _module3_screen_discrimination_rows(
+        primary_run.proposal_summary_table,
+        primary_config,
+    )
+    screen_discrimination_pass = bool(discrimination_rows["pass"].sum() >= 4)
+
+    stage_b_rows = primary_run.proposal_summary_table.loc[
+        primary_run.proposal_summary_table["stage_status"].isin({"stage_b_failed", "stage_b_rejected", "accepted"})
+    ].copy()
+    stochastic_confirmation_finite_pass = bool(
+        (not stage_b_rows.empty)
+        and np.isfinite(pd.to_numeric(stage_b_rows["stochastic_overall_distance_median"], errors="coerce")).all()
+        and np.isfinite(pd.to_numeric(stage_b_rows["stochastic_historical_core_distance_median"], errors="coerce")).all()
+        and np.isfinite(pd.to_numeric(stage_b_rows["stochastic_intrinsic_baseline_distance_median"], errors="coerce")).all()
+        and np.isfinite(pd.to_numeric(stage_b_rows["stochastic_historical_core_distance_iqr"], errors="coerce")).all()
+    )
+
+    rank_rows = _module3_rank_consistency_rows(primary_run.proposal_summary_table, primary_config.families)
+    rank_consistency_pass = bool(rank_rows["pass"].sum() >= 4)
+
+    accepted_set_nonempty_pass = bool(
+        (not accepted_summary.empty)
+        and _module3_accepted_targets_scored(accepted_summary, primary_run.target_scores_table)
+    )
+
+    repeat_ids_match = _accepted_id_tuple(primary_run.accepted_proposals_table) == _accepted_id_tuple(
+        repeat_run.accepted_proposals_table
+    )
+    worker_ids_match = _accepted_id_tuple(serial_small_run.accepted_proposals_table) == _accepted_id_tuple(
+        parallel_small_run.accepted_proposals_table
+    )
+    resume_ids_match = _accepted_id_tuple(resumed_run.accepted_proposals_table) == _accepted_id_tuple(
+        clean_small_run.accepted_proposals_table
+    )
+    reproducibility_pass = bool(repeat_ids_match and worker_ids_match and resume_ids_match)
+
+    gates = {
+        "sampler_valid_rate_pass": sampler_valid_rate_pass,
+        "screen_discrimination_pass": screen_discrimination_pass,
+        "stochastic_confirmation_finite_pass": stochastic_confirmation_finite_pass,
+        "rank_consistency_pass": rank_consistency_pass,
+        "accepted_set_nonempty_pass": accepted_set_nonempty_pass,
+        "reproducibility_pass": reproducibility_pass,
+    }
+    gates["full_ready_for_module4"] = all(gates.values())
+    gates["needs_module_3_5"] = not gates["full_ready_for_module4"]
+
+    evaluation = {
+        "gates": gates,
+        "metrics": {
+            "accepted_count": int(len(accepted_summary)),
+            "same_seed_same_worker_identical": repeat_ids_match,
+            "workers1_vs_workers2_identical": worker_ids_match,
+            "resume_matches_clean_run": resume_ids_match,
+        },
+        "screen_discrimination": discrimination_rows,
+        "rank_consistency": rank_rows,
+        "primary_run": primary_run,
+    }
+    return family_summary, accepted_summary, evaluation
+
+
+def render_module3_readiness_review(
+    family_summary: pd.DataFrame,
+    accepted_summary: pd.DataFrame,
+    evaluation: dict[str, Any],
+) -> str:
+    gates = evaluation["gates"]
+    metrics = evaluation["metrics"]
+    discrimination_rows = evaluation["screen_discrimination"].to_dict(orient="records")
+    rank_rows = evaluation["rank_consistency"].to_dict(orient="records")
+    family_rows = family_summary[
+        [
+            "family_id",
+            "stage_a_valid_rate",
+            "stage_a_retained",
+            "stage_b_valid",
+            "final_accepted",
+            "final_acceptance_rate",
+        ]
+    ].to_dict(orient="records")
+    accepted_rows = accepted_summary.to_dict(orient="records")
+    gate_rows = [{"gate": key, "status": value} for key, value in gates.items()]
+    metric_rows = [{"metric": key, "value": value} for key, value in metrics.items()]
+
+    lines = [
+        "# Module 3 Readiness Review",
+        "",
+        "## Summary",
+        "",
+        (
+            "Module 3 adds the first full two-stage ABC/history-matching calibration harness "
+            "on top of the validated latent kernel and the Module 2.5 bundle scorer."
+        ),
+        (
+            "Stage A screens equal proposal budgets across all five hypothesis families using "
+            "deterministic scenario bundles, while Stage B confirms retained proposals against "
+            "stochastic historical replicates with deterministic baselines."
+        ),
+        "",
+        "## Acceptance Gates",
+        "",
+        _markdown_table(gate_rows, ["gate", "status"]),
+        "",
+        "## Family Summary",
+        "",
+        _markdown_table(
+            family_rows,
+            [
+                "family_id",
+                "stage_a_valid_rate",
+                "stage_a_retained",
+                "stage_b_valid",
+                "final_accepted",
+                "final_acceptance_rate",
+            ],
+        ),
+        "",
+        "## Screen Discrimination",
+        "",
+        _markdown_table(discrimination_rows, ["family_id", "retained_median", "rejected_median", "pass"]),
+        "",
+        "## Rank Consistency",
+        "",
+        _markdown_table(rank_rows, ["family_id", "spearman_rank_correlation", "pass"]),
+        "",
+        "## Reproducibility Checks",
+        "",
+        _markdown_table(metric_rows, ["metric", "value"]),
+        "",
+        "## Accepted Proposals",
+        "",
+    ]
+
+    if accepted_rows:
+        lines.append(
+            _markdown_table(
+                accepted_rows,
+                [
+                    "proposal_id",
+                    "family_id",
+                    "proposal_seed",
+                    "stochastic_overall_distance_median",
+                    "stochastic_historical_core_distance_median",
+                    "stochastic_intrinsic_baseline_distance_median",
+                    "stochastic_historical_core_distance_iqr",
+                ],
+            )
+        )
+    else:
+        lines.append("No accepted proposals were retained in the readiness run.")
+
+    lines.extend(
+        [
+            "",
+            "## Interpretation",
+            "",
+        ]
+    )
+
+    if gates["full_ready_for_module4"]:
+        lines.extend(
+            [
+                "All Module 3 readiness gates passed.",
+                "The retained-sample calibration harness is ready to support Module 4 posterior summaries and counterfactual analysis.",
+            ]
+        )
+    else:
+        lines.extend(
+            [
+                "Module 4 should not start yet.",
+                "The correct next step is Module 3.5 because at least one calibration-harness readiness gate failed.",
+            ]
+        )
+
+    lines.extend(
+        [
+            "",
+            "## Module 3.5 Trigger",
+            "",
+            "- Trigger a sampler/constraint realignment pass if valid-rate failures or pre-simulation proposal failures dominate.",
+            "- Trigger a Stage A to Stage B handoff refinement pass if rank consistency is weak or stochastic confirmation is numerically unstable.",
+            "- Trigger a reproducibility repair pass if accepted proposal ids differ under the same seed or across worker counts.",
+            "",
+            "## Artifacts",
+            "",
+            "- `data/module3_readiness_family_summary.csv`",
+            "- `data/module3_readiness_accepted_summary.csv`",
+            "- `docs/module3_readiness_review.md`",
+        ]
+    )
+    return "\n".join(lines) + "\n"
+
+
+def write_module3_readiness_bundle(root: Path) -> dict[str, Any]:
+    data_dir = root / "data"
+    docs_dir = root / "docs"
+    family_summary, accepted_summary, evaluation = run_module3_readiness_review(root)
+
+    family_path = data_dir / "module3_readiness_family_summary.csv"
+    accepted_path = data_dir / "module3_readiness_accepted_summary.csv"
+    review_path = docs_dir / "module3_readiness_review.md"
+
+    family_summary.to_csv(family_path, index=False)
+    accepted_summary.to_csv(accepted_path, index=False)
+    review_path.write_text(
+        render_module3_readiness_review(family_summary, accepted_summary, evaluation),
+        encoding="utf-8",
+    )
+
+    return {
+        "family_summary": family_path,
+        "accepted_summary": accepted_path,
+        "review_doc": review_path,
+        "full_ready_for_module4": evaluation["gates"]["full_ready_for_module4"],
+        "needs_module_3_5": evaluation["gates"]["needs_module_3_5"],
     }
