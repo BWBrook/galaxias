@@ -12,7 +12,11 @@ import pandas as pd
 
 from galaxias_model.io import load_model_inputs
 from galaxias_model.sampling import build_resolved_parameters_from_sample, sample_family_parameter_table
-from galaxias_model.scoring import aggregate_scenario_bundle_scores, score_family_scenario_bundle
+from galaxias_model.scoring import (
+    aggregate_scenario_bundle_scores,
+    observation_bridge_variant_ids,
+    score_family_scenario_bundle,
+)
 from galaxias_model.simulation import get_scenario_definition, run_historical_simulation, run_scenario_simulation
 from galaxias_model.types import (
     CalibrationRunResult,
@@ -138,6 +142,7 @@ def _config_to_jsonable(config: Module3Config) -> dict[str, Any]:
         "batch_size": int(config.batch_size),
         "master_seed": int(config.master_seed),
         "stochastic_baselines": bool(config.stochastic_baselines),
+        "observation_bridge_variant": str(config.observation_bridge_variant),
         "output_dir": str(_normalize_output_dir(config.output_dir)),
         "resume": bool(config.resume),
     }
@@ -170,6 +175,10 @@ def _validate_module3_config(config: Module3Config) -> None:
         raise ValueError("workers must be positive")
     if config.batch_size <= 0:
         raise ValueError("batch_size must be positive")
+    if config.observation_bridge_variant not in observation_bridge_variant_ids():
+        raise ValueError(
+            f"observation_bridge_variant must be one of {', '.join(observation_bridge_variant_ids())}"
+        )
 
 
 def _proposal_summary_row(
@@ -243,6 +252,7 @@ def _run_bundle_from_params(
     historical_seed: int,
     stochastic_baselines: bool = False,
     baseline_seed_base: int | None = None,
+    scoring_config: ScoringConfig | None = None,
 ) -> ScenarioBundleResult:
     results_by_scenario = {
         "historical_lake": run_historical_simulation(
@@ -264,7 +274,7 @@ def _run_bundle_from_params(
             seed=(baseline_seed_base or historical_seed) + 1,
         ),
     }
-    return score_family_scenario_bundle(results_by_scenario, model_inputs, ScoringConfig())
+    return score_family_scenario_bundle(results_by_scenario, model_inputs, scoring_config or ScoringConfig())
 
 
 def run_deterministic_bundle(
@@ -272,6 +282,7 @@ def run_deterministic_bundle(
     family_id: str,
     model_inputs: ModelInputs,
     seed: int,
+    scoring_config: ScoringConfig | None = None,
 ) -> ScenarioBundleResult:
     return _run_bundle_from_params(
         params,
@@ -280,6 +291,7 @@ def run_deterministic_bundle(
         historical_stochastic=False,
         historical_seed=seed,
         stochastic_baselines=False,
+        scoring_config=scoring_config,
     )
 
 
@@ -291,6 +303,7 @@ def _stage_a_worker(task: dict[str, Any]) -> tuple[dict[str, Any], list[dict[str
     family_label = str(task["family_label"])
     proposal_index = int(task["proposal_index"])
     proposal_seed = int(task["proposal_seed"])
+    scoring_config = ScoringConfig(observation_bridge_variant=str(task.get("observation_bridge_variant", "baseline_current")))
 
     try:
         params = build_resolved_parameters_from_sample(model_inputs, family_id, parameter_rows)
@@ -309,7 +322,7 @@ def _stage_a_worker(task: dict[str, Any]) -> tuple[dict[str, Any], list[dict[str
         )
 
     try:
-        bundle = run_deterministic_bundle(params, family_id, model_inputs, proposal_seed)
+        bundle = run_deterministic_bundle(params, family_id, model_inputs, proposal_seed, scoring_config=scoring_config)
     except Exception as exc:
         return (
             _proposal_summary_row(
@@ -381,6 +394,7 @@ def _stage_b_worker(task: dict[str, Any]) -> tuple[dict[str, Any], list[dict[str
     proposal_seed = int(task["proposal_seed"])
     replicate_seeds = [int(seed) for seed in task["replicate_seeds"]]
     stochastic_baselines = bool(task["stochastic_baselines"])
+    scoring_config = ScoringConfig(observation_bridge_variant=str(task.get("observation_bridge_variant", "baseline_current")))
 
     try:
         params = build_resolved_parameters_from_sample(model_inputs, family_id, parameter_rows)
@@ -411,6 +425,7 @@ def _stage_b_worker(task: dict[str, Any]) -> tuple[dict[str, Any], list[dict[str
                 historical_seed=historical_seed,
                 stochastic_baselines=stochastic_baselines,
                 baseline_seed_base=baseline_seed,
+                scoring_config=scoring_config,
             )
             bundle_results.append(bundle)
             target_frames.append(
@@ -422,7 +437,7 @@ def _stage_b_worker(task: dict[str, Any]) -> tuple[dict[str, Any], list[dict[str
                     bundle_target_score_table=bundle.bundle_target_score_table,
                 )
             )
-        aggregate = aggregate_scenario_bundle_scores(bundle_results, ScoringConfig())
+        aggregate = aggregate_scenario_bundle_scores(bundle_results, scoring_config)
     except Exception as exc:
         return (
             _proposal_summary_row(
@@ -631,6 +646,7 @@ def run_stage_a_screen(
                 "family_label": family_label,
                 "proposal_index": proposal_index,
                 "proposal_seed": proposal_seed,
+                "observation_bridge_variant": config.observation_bridge_variant,
                 "parameter_rows": subset.to_dict(orient="records"),
             }
         )
@@ -707,6 +723,7 @@ def run_stage_b_confirmation(
                 "proposal_seed": proposal_seed,
                 "replicate_seeds": replicate_seeds,
                 "stochastic_baselines": config.stochastic_baselines,
+                "observation_bridge_variant": config.observation_bridge_variant,
                 "parameter_rows": parameter_rows.to_dict(orient="records"),
             }
         )

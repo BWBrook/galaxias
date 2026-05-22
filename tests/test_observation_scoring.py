@@ -233,6 +233,62 @@ def test_ct006_to_ct010_monotonicity(model_inputs: ModelInputs, target_id, bette
     assert float(better["raw_penalty"]) < float(worse["raw_penalty"])
 
 
+def test_observation_bridge_variants_adjust_late_targets(model_inputs: ModelInputs) -> None:
+    params = resolve_family_parameters(model_inputs, "transient_perfect_storm")
+
+    ct007 = _target_row(model_inputs, "CT007")
+    ct007_details = _target_details(model_inputs, "CT007")
+    occupancy_good_count_low = _synthetic_projection(
+        "CT007",
+        5.0,
+        10.0,
+        {"expected_occupied_sites": 5.0, "expected_refuge_capture_mean": 10.0},
+    )
+    baseline_ct007 = score_target(ct007, ct007_details, occupancy_good_count_low, params)
+    occupancy_primary_ct007 = score_target(
+        ct007,
+        ct007_details,
+        occupancy_good_count_low,
+        params,
+        ScoringConfig(observation_bridge_variant="ct007_occupancy_primary"),
+    )
+    assert float(occupancy_primary_ct007["raw_penalty"]) < float(baseline_ct007["raw_penalty"])
+
+    ct009 = _target_row(model_inputs, "CT009")
+    ct009_details = _target_details(model_inputs, "CT009")
+    late_persistence = _synthetic_projection("CT009", 2002.0, np.nan, {})
+    baseline_ct009 = score_target(ct009, ct009_details, late_persistence, params)
+    soft_ct009 = score_target(
+        ct009,
+        ct009_details,
+        late_persistence,
+        params,
+        ScoringConfig(observation_bridge_variant="ct009_terminal_window_gap3"),
+    )
+    assert float(baseline_ct009["weighted_penalty"]) == pytest.approx(30.0)
+    assert float(soft_ct009["weighted_penalty"]) == pytest.approx(10.0)
+
+    ct010 = _target_row(model_inputs, "CT010")
+    ct010_details = _target_details(model_inputs, "CT010")
+    expected_detections = _synthetic_projection(
+        "CT010",
+        10.0,
+        10.0,
+        {"yearly_expected_detected_count": [10.0, 10.0, 10.0, 10.0, 10.0]},
+    )
+    baseline_ct010 = score_target(ct010, ct010_details, expected_detections, params)
+    half_detection_ct010 = score_target(
+        ct010,
+        ct010_details,
+        expected_detections,
+        params,
+        ScoringConfig(observation_bridge_variant="ct010_detection_half"),
+    )
+    assert float(half_detection_ct010["weighted_penalty"]) == pytest.approx(
+        0.5 * float(baseline_ct010["weighted_penalty"])
+    )
+
+
 def test_identical_seed_reproduces_target_score_table(model_inputs: ModelInputs) -> None:
     params = resolve_family_parameters(model_inputs, "transient_perfect_storm")
     scoring_config = ScoringConfig()

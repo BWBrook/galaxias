@@ -24,6 +24,72 @@ EPS = 1e-9
 SCORED = "scored"
 DEFERRED = "deferred_requires_scenario"
 FAILED = "failed_projection"
+OBSERVATION_BRIDGE_VARIANTS: dict[str, dict[str, Any]] = {
+    "baseline_current": {
+        "ct007_occupancy_weight": 0.5,
+        "ct007_count_weight": 0.5,
+        "ct009_mode": "exact_year",
+        "ct009_low_year": 1992,
+        "ct009_high_year": 1996,
+        "ct009_early_gap": 4.0,
+        "ct009_late_gap": 3.0,
+        "ct010_detection_multiplier": 1.0,
+    },
+    "ct007_occupancy_primary": {
+        "ct007_occupancy_weight": 0.75,
+        "ct007_count_weight": 0.25,
+        "ct009_mode": "exact_year",
+        "ct009_low_year": 1992,
+        "ct009_high_year": 1996,
+        "ct009_early_gap": 4.0,
+        "ct009_late_gap": 3.0,
+        "ct010_detection_multiplier": 1.0,
+    },
+    "ct009_terminal_window_gap3": {
+        "ct007_occupancy_weight": 0.5,
+        "ct007_count_weight": 0.5,
+        "ct009_mode": "terminal_window",
+        "ct009_low_year": 1992,
+        "ct009_high_year": 1996,
+        "ct009_early_gap": 4.0,
+        "ct009_late_gap": 3.0,
+        "ct010_detection_multiplier": 1.0,
+    },
+    "ct010_detection_half": {
+        "ct007_occupancy_weight": 0.5,
+        "ct007_count_weight": 0.5,
+        "ct009_mode": "exact_year",
+        "ct009_low_year": 1992,
+        "ct009_high_year": 1996,
+        "ct009_early_gap": 4.0,
+        "ct009_late_gap": 3.0,
+        "ct010_detection_multiplier": 0.5,
+    },
+    "late_bridge_soft": {
+        "ct007_occupancy_weight": 0.75,
+        "ct007_count_weight": 0.25,
+        "ct009_mode": "terminal_window",
+        "ct009_low_year": 1992,
+        "ct009_high_year": 1996,
+        "ct009_early_gap": 4.0,
+        "ct009_late_gap": 3.0,
+        "ct010_detection_multiplier": 0.5,
+    },
+}
+
+
+def observation_bridge_variant_ids() -> tuple[str, ...]:
+    return tuple(OBSERVATION_BRIDGE_VARIANTS)
+
+
+def _observation_bridge_variant(scoring_config: ScoringConfig) -> dict[str, Any]:
+    variant_id = scoring_config.observation_bridge_variant
+    if variant_id not in OBSERVATION_BRIDGE_VARIANTS:
+        raise ValueError(
+            f"Unknown observation_bridge_variant={variant_id!r}; "
+            f"expected one of {', '.join(observation_bridge_variant_ids())}"
+        )
+    return {"variant_id": variant_id, **OBSERVATION_BRIDGE_VARIANTS[variant_id]}
 
 
 def _as_dict(row: Any) -> dict[str, Any]:
@@ -75,6 +141,23 @@ def lower_bound_penalty(value: float, lower_bound: float, soft_gap: float) -> fl
     return (lower_bound - value) / soft_gap
 
 
+def terminal_window_penalty(
+    value: float,
+    low: int,
+    high: int,
+    early_gap: float,
+    late_gap: float,
+) -> float:
+    if value is None or pd.isna(value):
+        return 10.0
+    year = float(value)
+    if float(low) <= year <= float(high):
+        return 0.0
+    if year < float(low):
+        return (float(low) - year) / max(float(early_gap), EPS)
+    return (year - float(high)) / max(float(late_gap), EPS)
+
+
 def dominance_penalty(ratio: float, target: str, scale: float) -> float:
     ratio = max(float(ratio), EPS)
     scale = max(float(scale), EPS)
@@ -115,15 +198,18 @@ def score_target(
     target_details: dict[str, Any],
     projection_row: Any,
     resolved_parameters: ResolvedParameters,
+    scoring_config: ScoringConfig | None = None,
 ) -> dict[str, Any]:
     row = _as_dict(target_row)
     projection = _as_dict(projection_row)
+    target_id = str(row["target_id"])
     comparison_type = str(row["comparison_type"])
     evaluation_status = str(projection["evaluation_status"])
     priority_weight = float(row["priority_weight"])
+    bridge_variant = _observation_bridge_variant(scoring_config or ScoringConfig())
 
     score_row = {
-        "target_id": str(row["target_id"]),
+        "target_id": target_id,
         "target_group": str(row["target_group"]),
         "comparison_type": comparison_type,
         "scenario_id": str(projection["scenario_id"]),
@@ -184,17 +270,19 @@ def score_target(
         ) / 3.0
     elif comparison_type == "joint_occupancy_and_count_constraint":
         site_range = target_details["occupied_site_range"]
-        raw_penalty = 0.5 * (
-            range_penalty(
-                float(metadata["expected_occupied_sites"]),
-                float(site_range["low"]),
-                float(site_range["high"]),
-            )
-            + count_penalty(
-                obs=float(target_details["observed_capture_count"]),
-                exp=float(metadata["expected_refuge_capture_mean"]),
-                overdispersion=pr037,
-            )
+        occupancy_penalty = range_penalty(
+            float(metadata["expected_occupied_sites"]),
+            float(site_range["low"]),
+            float(site_range["high"]),
+        )
+        capture_penalty = count_penalty(
+            obs=float(target_details["observed_capture_count"]),
+            exp=float(metadata["expected_refuge_capture_mean"]),
+            overdispersion=pr037,
+        )
+        raw_penalty = (
+            float(bridge_variant["ct007_occupancy_weight"]) * occupancy_penalty
+            + float(bridge_variant["ct007_count_weight"]) * capture_penalty
         )
     elif comparison_type == "upper_bound_count_constraint":
         raw_penalty = (
@@ -213,15 +301,25 @@ def score_target(
         )
     elif comparison_type == "last_occurrence_event":
         projected_year = projection["projected_primary"]
-        if projected_year is None or pd.isna(projected_year):
-            raw_penalty = 10.0
-        else:
-            raw_penalty = 0.0 if int(projected_year) == int(target_details["target_year"]) else abs(
-                int(projected_year) - int(target_details["target_year"])
+        if bridge_variant["ct009_mode"] == "terminal_window":
+            raw_penalty = terminal_window_penalty(
+                projected_year,
+                low=int(bridge_variant["ct009_low_year"]),
+                high=int(bridge_variant["ct009_high_year"]),
+                early_gap=float(bridge_variant["ct009_early_gap"]),
+                late_gap=float(bridge_variant["ct009_late_gap"]),
             )
+        else:
+            if projected_year is None or pd.isna(projected_year):
+                raw_penalty = 10.0
+            else:
+                raw_penalty = 0.0 if int(projected_year) == int(target_details["target_year"]) else abs(
+                    int(projected_year) - int(target_details["target_year"])
+                )
     elif comparison_type == "zero_detection_window":
         yearly_expected = metadata["yearly_expected_detected_count"]
-        raw_penalty = float(np.mean([count_penalty(0.0, value, pr037) for value in yearly_expected]))
+        detection_multiplier = float(bridge_variant["ct010_detection_multiplier"])
+        raw_penalty = float(np.mean([count_penalty(0.0, value * detection_multiplier, pr037) for value in yearly_expected]))
     elif comparison_type == "baseline_growth_constraint":
         first_year = metadata["first_year_juveniles_present"]
         juvenile_penalty = 10.0 if first_year is None else upper_bound_penalty(
@@ -284,6 +382,9 @@ def score_target(
 
     score_row["raw_penalty"] = float(raw_penalty)
     score_row["weighted_penalty"] = float(raw_penalty * priority_weight)
+    if target_id in {"CT007", "CT009", "CT010"}:
+        variant_note = f"observation_bridge_variant={bridge_variant['variant_id']}"
+        score_row["notes"] = f"{score_row['notes']} {variant_note}".strip()
     return score_row
 
 
@@ -332,6 +433,7 @@ def score_scenario_run(
             target_details=model_inputs.calibration_target_details[target_id],
             projection_row=projection_rows[target_id],
             resolved_parameters=simulation_result.resolved_parameters,
+            scoring_config=scoring_config,
         )
         score_row["family_id"] = simulation_result.resolved_parameters.family_id
         score_row["seed"] = int(simulation_result.summary["seed"])

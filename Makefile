@@ -1,4 +1,4 @@
-.PHONY: setup portability compile test check smoke module3-5 module3-75 clean
+.PHONY: setup portability compile test check smoke module3-5 module3-75 module4-smoke clean
 
 setup:
 	uv sync --locked
@@ -25,6 +25,19 @@ module3-5:
 
 module3-75:
 	uv run python scripts/review_module3_75_observation_bridge.py
+
+module4-smoke:
+	uv run python scripts/run_module4_observation_sensitivity.py \
+		--output-dir outputs/module4/smoke \
+		--variants baseline_current late_bridge_soft \
+		--seeds 20260410 \
+		--stage-a-draws-per-family 3 \
+		--stage-a-keep-per-family 1 \
+		--stage-b-historical-replicates 1 \
+		--final-acceptance-cap 5 \
+		--workers 1 \
+		--batch-size 10 \
+		--clean
 
 clean:
 	rm -rf outputs .pytest_cache scripts/__pycache__ src/galaxias_model/__pycache__ tests/__pycache__

@@ -104,6 +104,7 @@ class ScoringConfig:
     include_intrinsic_baseline: bool = True
     require_all_targets: bool = True
     replicate_aggregation: str = "median"
+    observation_bridge_variant: str = "baseline_current"
 
 
 @dataclass(frozen=True)
@@ -162,6 +163,7 @@ class Module3Config:
     batch_size: int = 100
     master_seed: int = 20260410
     stochastic_baselines: bool = False
+    observation_bridge_variant: str = "baseline_current"
     output_dir: Path = field(default_factory=_default_module3_output_dir)
     resume: bool = False
 

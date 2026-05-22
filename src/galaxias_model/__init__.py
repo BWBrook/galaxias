@@ -16,6 +16,7 @@ from galaxias_model.sampling import (
 from galaxias_model.scoring import (
     aggregate_replicate_scores,
     aggregate_scenario_bundle_scores,
+    observation_bridge_variant_ids,
     score_family_scenario_bundle,
     score_historical_run,
     score_scenario_run,
@@ -75,6 +76,7 @@ __all__ = [
     "get_scenario_definition",
     "inverse_transform_parameter_value",
     "load_model_inputs",
+    "observation_bridge_variant_ids",
     "project_run_to_target_space",
     "project_target",
     "resolve_family_parameters",
