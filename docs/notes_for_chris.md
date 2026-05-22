@@ -329,6 +329,45 @@ fragile artefact of one harsh late-target setting. It still needs sensitivity
 testing in Module 4, but it has survived the first targeted observation-bridge
 stress test.
 
+## Module 4: Observation-Bridge Sensitivity Calibration
+
+Chris was away while this step was run, so we did not wait for answers to the
+specific late-evidence questions above. Instead, we used the literature and the
+existing repo notes to define a small, transparent sensitivity grid.
+
+Module 4 reran the calibration with five explicit observation-bridge variants:
+
+- baseline current scoring;
+- `CT007` occupancy-primary scoring;
+- `CT009` soft terminal-window scoring;
+- `CT010` lower-detection scoring;
+- a combined soft late-observation setting.
+
+This was run on `deep-server`, not on the MacBook. The grid used three seeds,
+1000 Stage A draws per family, 100 retained proposals per family, and 20 Stage
+B stochastic historical replicates. In total this was 15 calibration runs.
+
+The main result was stronger than expected:
+
+- `persistent_joint_cause` won 12 of 15 variant/seed runs;
+- `climbing_only` won 3 of 15 runs;
+- `persistent_joint_cause` won all 3 baseline runs;
+- `persistent_joint_cause` won all 3 combined soft late-observation runs;
+- habitat-only and trout-only had zero accepted proposals across the whole
+  Module 4 grid.
+
+The single-axis changes are still informative. If we only halve the
+zero-detection bridge in `CT010`, climbing-only wins two of three seeds. If we
+make `CT007` occupancy-primary, climbing-only wins one of three seeds. But when
+the late observation bridge is softened in a combined, transparent way, the
+joint-cause signal remains stable.
+
+Plain-language meaning for Chris: the current sustained joint-pressure
+interpretation is no longer just the product of one exact late-evidence scoring
+recipe. Climbing galaxias remains central and sometimes locally wins, but the
+overall sensitivity grid still supports a combined trout-plus-climbing
+explanation over a single-cause story.
+
 ## Current Working Interpretation
 
 At this point, the most defensible interpretation is:
@@ -420,3 +459,7 @@ competitive.
 - Ran Module 3.75 to decompose the late-history observation bridge. The
   persistent joint-cause family remained the most robust current winner, even
   under a combined softer late-observation scenario.
+- Implemented and ran Module 4 on `deep-server`, with late-observation
+  assumptions as first-class calibration variants. The full grid completed in
+  about 42.5 minutes, and `persistent_joint_cause` won 12 of 15 variant/seed
+  runs, including all combined soft late-observation runs.

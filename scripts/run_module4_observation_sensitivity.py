@@ -271,6 +271,29 @@ def _render_review(
         if not target_leverage.empty
         else []
     )
+    winning_families = winners.loc[winners["family_rank"] == 1].copy() if not winners.empty else pd.DataFrame()
+    winner_counts = (
+        winning_families.groupby("family_id").size().sort_values(ascending=False).to_dict()
+        if not winning_families.empty
+        else {}
+    )
+    variant_winner_counts = (
+        winning_families.groupby(["variant_id", "family_id"]).size().unstack(fill_value=0).to_dict(orient="index")
+        if not winning_families.empty
+        else {}
+    )
+    accepted_totals = (
+        accepted_mix.groupby("family_id")["accepted_count"].sum().sort_values(ascending=False).to_dict()
+        if not accepted_mix.empty
+        else {}
+    )
+    late_soft_winners = (
+        winning_families.loc[winning_families["variant_id"] == "late_bridge_soft", "family_id"]
+        .value_counts()
+        .to_dict()
+        if not winning_families.empty
+        else {}
+    )
     family_rows = (
         family_summary[
             [
@@ -336,9 +359,24 @@ def _render_review(
         "",
         "## Interpretation",
         "",
+        f"Winner counts across all variant/seed runs: `{winner_counts}`.",
+        f"Winner counts by variant: `{variant_winner_counts}`.",
+        f"Accepted proposal totals across all runs: `{accepted_totals}`.",
+        f"Combined soft late-observation winners: `{late_soft_winners}`.",
         (
-            "Interpret this file after a non-smoke grid. Tiny smoke runs are only meant to "
-            "validate the pipeline, not the biology."
+            "Habitat-only and trout-only should be treated as outside the accepted frontier "
+            "when their accepted totals remain zero across the sensitivity grid."
+        ),
+        (
+            "The central biological test is whether `persistent_joint_cause` remains stable "
+            "under the combined late-observation variant, because that variant softens the "
+            "three late targets simultaneously rather than giving a single scoring assumption "
+            "all the leverage."
+        ),
+        (
+            "Single-axis flips toward `climbing_only` are still informative. They identify "
+            "which observation assumptions control local rank order, but they do not by "
+            "themselves overturn the joint-cause signal unless the combined variant also flips."
         ),
         "",
         "## Artifacts",
