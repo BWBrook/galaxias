@@ -1,0 +1,6 @@
+global_stage_b_rank,proposal_id,family_id,stage_status,stochastic_overall_distance_median,stochastic_historical_core_distance_median,stochastic_intrinsic_baseline_distance_median,stochastic_historical_core_distance_iqr,accepted_final
+1,climbing_only:p00216,climbing_only,accepted,152.81889016852912,148.7388594561227,4.0800307124064155,39.82070103349548,True
+2,transient_perfect_storm:p00144,transient_perfect_storm,accepted,179.11925602688947,174.4578584382323,4.661397588657162,7.831225153281821,True
+3,persistent_joint_cause:p00162,persistent_joint_cause,accepted,185.7037903769079,181.2770276578887,4.426762719019194,12.405369869111496,True
+40,trout_only:p00096,trout_only,stage_b_rejected,323.3731213124911,317.5725749009671,5.800546411524045,7.9606349770951965,False
+57,habitat_only_null:p00248,habitat_only_null,stage_b_rejected,383.6989135179199,377.90467754570113,5.794235972218765,50.22219942866275,False

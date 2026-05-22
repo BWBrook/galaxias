@@ -1,6 +1,6 @@
 family_id,family_label,stage_a_draws,stage_a_valid_scored,stage_a_valid_rate,stage_a_retained,stage_b_evaluated,stage_b_valid,final_accepted,final_acceptance_rate,median_deterministic_distance_retained,median_stochastic_distance_valid
-climbing_only,Climbing-only,250,125,0.5,20,20,20,10,0.04,301.00542013066183,291.4986960077313
-habitat_only_null,Habitat-only null,250,172,0.688,20,20,20,0,0.0,609.6225829897651,611.3320352273465
-persistent_joint_cause,Trout + climbing persistent joint-cause,250,106,0.424,20,20,20,0,0.0,350.58833275254864,406.2346551269661
-transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,250,104,0.416,20,20,20,0,0.0,371.1557073425465,447.7303288594089
-trout_only,Trout-only,250,151,0.604,20,20,20,0,0.0,564.3358555344629,566.9815751946616
+climbing_only,Climbing-only,250,250,1.0,20,20,20,3,0.012,267.73100320308845,272.5224821084027
+habitat_only_null,Habitat-only null,250,250,1.0,20,20,20,0,0.0,573.4677706821257,553.6304227874115
+persistent_joint_cause,Trout + climbing persistent joint-cause,250,250,1.0,20,20,20,5,0.02,282.09034135156037,301.3635605718696
+transient_perfect_storm,Trout + climbing + transient perfect-storm overshoot,250,250,1.0,20,20,20,2,0.008,291.6073186209376,328.2748829524403
+trout_only,Trout-only,250,250,1.0,20,20,20,0,0.0,505.730499174389,501.36500389687905

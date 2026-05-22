@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 from pathlib import Path
 
 from galaxias_model.review import write_module3_readiness_bundle
@@ -8,8 +9,15 @@ from galaxias_model.review import write_module3_readiness_bundle
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Write the Module 3 readiness bundle.")
+    parser.add_argument("--output-root", type=Path, default=ROOT)
+    return parser.parse_args()
+
+
 def main() -> None:
-    outputs = write_module3_readiness_bundle(ROOT)
+    args = parse_args()
+    outputs = write_module3_readiness_bundle(ROOT, output_root=args.output_root)
     print("Wrote Module 3 readiness bundle:")
     print(f"- {outputs['family_summary']}")
     print(f"- {outputs['accepted_summary']}")

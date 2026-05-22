@@ -1039,7 +1039,7 @@ def load_evidence_ids() -> set[str]:
 
 def write_csv(path: Path, rows: list[dict[str, object]], fields: list[str]) -> None:
     with path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fields)
+        writer = csv.DictWriter(handle, fieldnames=fields, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 

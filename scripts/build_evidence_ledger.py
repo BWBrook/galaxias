@@ -8,6 +8,10 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
 
 
+def literature_path(*parts: str) -> str:
+    return Path("literature", *parts).as_posix()
+
+
 SOURCE_FIELDS = [
     "source_id",
     "citation_short",
@@ -83,7 +87,7 @@ SOURCES = [
         "title": "Prospects and problems for the restoration of the Pedder galaxias",
         "authors_or_org": "Andrew C. Sanger",
         "url": "",
-        "local_path": str(ROOT / "literature" / "pedder" / "Sanger_2001_CES_UTAS.md"),
+        "local_path": literature_path("pedder", "Sanger_2001_CES_UTAS.md"),
         "access_status": "accessible_local",
         "notes": "Core synthesis of 1988-1992 IFC work, life history, museum screening, and causal interpretation.",
     },
@@ -109,7 +113,7 @@ SOURCES = [
         "title": "Recovery Plan: Tasmanian Galaxiidae 2006-2010",
         "authors_or_org": "Inland Fisheries Service / Australian Government",
         "url": "https://www.dcceew.gov.au/sites/default/files/documents/tasmanian-galaxiidae.pdf",
-        "local_path": str(ROOT / "literature" / "pedder" / "tasmanian_galaxiidae_recovery_plan_2006_2010.md"),
+        "local_path": literature_path("pedder", "tasmanian_galaxiidae_recovery_plan_2006_2010.md"),
         "access_status": "accessible_local",
         "notes": "Critical for post-1996 survey interpretation, exact last-record wording, and translocation counts.",
     },
@@ -135,7 +139,7 @@ SOURCES = [
         "title": "Extinct habitat, extant species: lessons learned from conservation recovery actions for the Pedder galaxias (Galaxias pedderensis) in south-west Tasmania, Australia",
         "authors_or_org": "Stuart Chilcott et al.",
         "url": "https://www.publish.csiro.au/mf/MF12257",
-        "local_path": str(ROOT / "literature" / "pedder" / "chilcott_2013_lessons_learned_pedderensis.md"),
+        "local_path": literature_path("pedder", "chilcott_2013_lessons_learned_pedderensis.md"),
         "access_status": "accessible_local",
         "notes": "Core recovery-program paper with the clearest Lake Oberon and Strathgordon chronologies now available locally as markdown.",
     },
@@ -239,7 +243,7 @@ SOURCES = [
         "title": "Inundation, Extinction and Lacustrine Lives",
         "authors_or_org": "Rick De Vos",
         "url": "",
-        "local_path": str(ROOT / "literature" / "pedder" / "Vos_2019_CSR.md"),
+        "local_path": literature_path("pedder", "Vos_2019_CSR.md"),
         "access_status": "accessible_local",
         "notes": "Secondary contextual source with useful chronology and translocation summaries, but not treated as a primary ecological data source.",
     },
@@ -278,7 +282,7 @@ SOURCES = [
         "title": "Two New Species of Galaxiid Fishes from the Lake Pedder Region of Southern Tasmania",
         "authors_or_org": "Roger Frankenberg",
         "url": "",
-        "local_path": str(ROOT / "literature" / "pedder" / "frankenberg_1968_species_description.md"),
+        "local_path": literature_path("pedder", "frankenberg_1968_species_description.md"),
         "access_status": "accessible_local",
         "notes": "Foundational species-description source for pre-flood range, abundance wording, and community composition with G. parvus.",
     },
@@ -291,7 +295,7 @@ SOURCES = [
         "title": "Conservation of Galaxias pedderensis",
         "authors_or_org": "Premek Hamr",
         "url": "",
-        "local_path": str(ROOT / "literature" / "pedder" / "hamr_1992_pedderensis_report.md"),
+        "local_path": literature_path("pedder", "hamr_1992_pedderensis_report.md"),
         "access_status": "accessible_local",
         "notes": "Primary recovery-era report covering 1988-1991 surveys, life history, site assessment, and early translocation logic.",
     },
@@ -304,7 +308,7 @@ SOURCES = [
         "title": "Threatened Fishes of the World: Galaxias pedderensis Frankenberg, 1968 (Galaxiidae)",
         "authors_or_org": "Premek Hamr",
         "url": "https://doi.org/10.1007/BF00001177",
-        "local_path": str(ROOT / "literature" / "pedder" / "hamr_1995_envirbiolfishes_pedderensis.md"),
+        "local_path": literature_path("pedder", "hamr_1995_envirbiolfishes_pedderensis.md"),
         "access_status": "accessible_local",
         "notes": "Compact but useful direct source for refuge-stream habitat, diet, life history, and threat summary.",
     },
@@ -317,7 +321,7 @@ SOURCES = [
         "title": "The Fauna of Lake Pedder: Changes after the Flooding and Thoughts on Restoration",
         "authors_or_org": "Peter S. Lake",
         "url": "",
-        "local_path": str(ROOT / "literature" / "pedder" / "lake_2001_the_faunalakepedder.md"),
+        "local_path": literature_path("pedder", "lake_2001_the_faunalakepedder.md"),
         "access_status": "accessible_local",
         "notes": "Best current direct source for the trophic-upsurge framing and the 1977 littoral-fauna peak after inundation.",
     },
@@ -330,7 +334,7 @@ SOURCES = [
         "title": "Evaluating genetic diversity, population structure, and introgression in insurance populations of one of Australia's most threatened species: the freshwater fish Galaxias pedderensis",
         "authors_or_org": "Kayleigh Horner et al.",
         "url": "",
-        "local_path": str(ROOT / "literature" / "pedder" / "2026_galaxias_pedderensis_genetics.md"),
+        "local_path": literature_path("pedder", "2026_galaxias_pedderensis_genetics.md"),
         "access_status": "accessible_local",
         "notes": "Key modern genetics paper for insurance-population diversity, serial translocation interpretation, and introgression risk.",
     },
@@ -343,7 +347,7 @@ SOURCES = [
         "title": "Conservation of Endangered Species of Tasmanian Freshwater Fish",
         "authors_or_org": "Andrew C. Sanger and Wayne Fulton",
         "url": "",
-        "local_path": str(ROOT / "literature" / "pedder" / "sanger_fultonreport_1991.md"),
+        "local_path": literature_path("pedder", "sanger_fultonreport_1991.md"),
         "access_status": "accessible_local",
         "notes": "Multi-species technical report useful for comparative trout-galaxiid context, Clarence framing, and broader management background.",
     },
@@ -356,7 +360,7 @@ SOURCES = [
         "title": "Effects of Habitat Structure and the Presence of Brown Trout on the Population Density of Galaxias truttaceus in Tasmania, Australia",
         "authors_or_org": "T. R. Ault and W. G. R. White",
         "url": "https://doi.org/10.1577/1548-8659(1994)123<0939:EOHSAT>2.3.CO;2",
-        "local_path": str(ROOT / "literature" / "comparative" / "ault_white1994_tourt_and_habitat_on_galaxias_truttaceus.md"),
+        "local_path": literature_path("comparative", "ault_white1994_tourt_and_habitat_on_galaxias_truttaceus.md"),
         "access_status": "accessible_local",
         "notes": "Strong Tasmania-based proxy showing brown trout effects after habitat structure is explicitly accounted for.",
     },
@@ -369,7 +373,7 @@ SOURCES = [
         "title": "Dietary and Spatial Overlap between Stream Populations of a Native and Two Introduced Fish Species in New Zealand",
         "authors_or_org": "G. J. Glova and P. M. Sagar",
         "url": "https://doi.org/10.1071/MF9910423",
-        "local_path": str(ROOT / "literature" / "comparative" / "glova_sagar_1991_overlap_trout_native_fish_p1.md"),
+        "local_path": literature_path("comparative", "glova_sagar_1991_overlap_trout_native_fish_p1.md"),
         "access_status": "accessible_local",
         "notes": "Primary comparative source on diel feeding and microhabitat partitioning between G. brevipinnis and juvenile salmonids.",
     },
@@ -382,7 +386,7 @@ SOURCES = [
         "title": "A further assessment of trophic and spatial inter-relations of galaxiids and salmonids in New Zealand",
         "authors_or_org": "G. J. Glova and P. M. Sagar",
         "url": "https://doi.org/10.1111/j.1600-0633.1993.tb00093.x",
-        "local_path": str(ROOT / "literature" / "comparative" / "glova_sagar_1993_overlap_trout_native_fish_p2.md"),
+        "local_path": literature_path("comparative", "glova_sagar_1993_overlap_trout_native_fish_p2.md"),
         "access_status": "accessible_local",
         "notes": "Primary comparative source showing coexistence depends on trout size structure and substrate context.",
     },
@@ -395,7 +399,7 @@ SOURCES = [
         "title": "Fragmented population structure in a native New Zealand fish: an effect of introduced brown trout?",
         "authors_or_org": "Colin R. Townsend and Todd A. Crowl",
         "url": "https://www.jstor.org/stable/3545242",
-        "local_path": str(ROOT / "literature" / "comparative" / "townsend1991_troutfragmentedpopulationstructure.md"),
+        "local_path": literature_path("comparative", "townsend1991_troutfragmentedpopulationstructure.md"),
         "access_status": "accessible_local",
         "notes": "Direct exclusion-pattern paper for trout versus non-diadromous galaxiids, with waterfall refuge structure.",
     },
@@ -408,7 +412,7 @@ SOURCES = [
         "title": "Status of galaxiid fishes in Tasmania, Australia: conservation listings, threats and management issues",
         "authors_or_org": "Scott A. Hardie et al.",
         "url": "https://doi.org/10.1002/aqc.722",
-        "local_path": str(ROOT / "literature" / "comparative" / "hardie_2005_status_of_galaxiid_fishes_in_tasmania.md"),
+        "local_path": literature_path("comparative", "hardie_2005_status_of_galaxiid_fishes_in_tasmania.md"),
         "access_status": "accessible_local",
         "notes": "Statewide synthesis of threats, management issues, and the need to examine salmonid coexistence case by case.",
     },
@@ -421,7 +425,7 @@ SOURCES = [
         "title": "Crying wolf, crying foul, or crying shame: alien salmonids and a biodiversity crisis in the southern cool-temperate galaxioid fishes?",
         "authors_or_org": "R. M. McDowall",
         "url": "https://doi.org/10.1007/s11160-006-9017-7",
-        "local_path": str(ROOT / "literature" / "comparative" / "mcdowall2006_article_cryingwolfcryingfoulorcryingsh.md"),
+        "local_path": literature_path("comparative", "mcdowall2006_article_cryingwolfcryingfoulorcryingsh.md"),
         "access_status": "accessible_local",
         "notes": "Major synthesis on repeated galaxioid declines after salmonid introductions across the southern hemisphere.",
     },
@@ -434,7 +438,7 @@ SOURCES = [
         "title": "Historical Impacts of Invasive Species May Not Always Be What They Seem: A Genetic Perspective From an Endangered Native Species",
         "authors_or_org": "Charlotte Jense et al.",
         "url": "",
-        "local_path": str(ROOT / "literature" / "comparative" / "2025_galaxias_johnstoni_vs_trout.md"),
+        "local_path": literature_path("comparative", "2025_galaxias_johnstoni_vs_trout.md"),
         "access_status": "accessible_local",
         "notes": "Important Tasmanian control-case paper showing current trout allopatry does not necessarily imply trout-caused fragmentation.",
     },
@@ -447,7 +451,7 @@ SOURCES = [
         "title": "Fish biogeography and hybridization: do contemporary distributions predict introgression history?",
         "authors_or_org": "Jonathan M. Waters, Ciaran S. M. Campbell, and Ludovic Dutoit",
         "url": "",
-        "local_path": str(ROOT / "literature" / "comparative" / "nzgalaxiid_hybridisation.md"),
+        "local_path": literature_path("comparative", "nzgalaxiid_hybridisation.md"),
         "access_status": "accessible_local",
         "notes": "Useful genetics-side framing paper showing that present-day distributions can mislead about older introgression histories.",
     },
@@ -2003,7 +2007,7 @@ GAPS = [
 def write_csv(path: Path, rows: list[dict[str, object]], fieldnames: list[str]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer = csv.DictWriter(handle, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         for row in rows:
             writer.writerow({field: row.get(field, "") for field in fieldnames})

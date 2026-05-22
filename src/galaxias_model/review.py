@@ -247,14 +247,18 @@ def render_module1_5_review(
     return "\n".join(lines) + "\n"
 
 
-def write_module1_5_review_bundle(root: Path) -> dict[str, Any]:
+def write_module1_5_review_bundle(root: Path, output_root: Path | None = None) -> dict[str, Any]:
     data_dir = root / "data"
-    docs_dir = root / "docs"
+    target_root = output_root if output_root is not None else root
+    output_data_dir = target_root / "data"
+    docs_dir = target_root / "docs"
     model_inputs = load_model_inputs(data_dir)
     deterministic, stochastic, evaluation = run_module1_5_review(model_inputs)
 
-    example_path = data_dir / "module1_5_example_summary.csv"
-    stochastic_path = data_dir / "module1_5_stochastic_summary.csv"
+    output_data_dir.mkdir(parents=True, exist_ok=True)
+    docs_dir.mkdir(parents=True, exist_ok=True)
+    example_path = output_data_dir / "module1_5_example_summary.csv"
+    stochastic_path = output_data_dir / "module1_5_stochastic_summary.csv"
     review_path = docs_dir / "module1_5_review.md"
 
     deterministic.to_csv(example_path, index=False)
@@ -670,14 +674,18 @@ def render_module2_readiness_review(
     return "\n".join(lines) + "\n"
 
 
-def write_module2_readiness_bundle(root: Path) -> dict[str, Any]:
+def write_module2_readiness_bundle(root: Path, output_root: Path | None = None) -> dict[str, Any]:
     data_dir = root / "data"
-    docs_dir = root / "docs"
+    target_root = output_root if output_root is not None else root
+    output_data_dir = target_root / "data"
+    docs_dir = target_root / "docs"
     model_inputs = load_model_inputs(data_dir)
     default_target_scores, transient_replicate_scores, evaluation = run_module2_readiness_review(model_inputs)
 
-    default_path = data_dir / "module2_default_target_scores.csv"
-    transient_path = data_dir / "module2_transient_replicate_scores.csv"
+    output_data_dir.mkdir(parents=True, exist_ok=True)
+    docs_dir.mkdir(parents=True, exist_ok=True)
+    default_path = output_data_dir / "module2_default_target_scores.csv"
+    transient_path = output_data_dir / "module2_transient_replicate_scores.csv"
     review_path = docs_dir / "module2_readiness_review.md"
 
     default_target_scores.to_csv(default_path, index=False)
@@ -996,14 +1004,18 @@ def render_module2_5_readiness_review(
     return "\n".join(lines) + "\n"
 
 
-def write_module2_5_readiness_bundle(root: Path) -> dict[str, Any]:
+def write_module2_5_readiness_bundle(root: Path, output_root: Path | None = None) -> dict[str, Any]:
     data_dir = root / "data"
-    docs_dir = root / "docs"
+    target_root = output_root if output_root is not None else root
+    output_data_dir = target_root / "data"
+    docs_dir = target_root / "docs"
     model_inputs = load_model_inputs(data_dir)
     default_bundle_scores, transient_bundle_scores, evaluation = run_module2_5_readiness_review(model_inputs)
 
-    default_path = data_dir / "module2_5_default_bundle_scores.csv"
-    transient_path = data_dir / "module2_5_transient_bundle_scores.csv"
+    output_data_dir.mkdir(parents=True, exist_ok=True)
+    docs_dir.mkdir(parents=True, exist_ok=True)
+    default_path = output_data_dir / "module2_5_default_bundle_scores.csv"
+    transient_path = output_data_dir / "module2_5_transient_bundle_scores.csv"
     review_path = docs_dir / "module2_5_readiness_review.md"
 
     default_bundle_scores.to_csv(default_path, index=False)
@@ -1415,13 +1427,17 @@ def render_module3_readiness_review(
     return "\n".join(lines) + "\n"
 
 
-def write_module3_readiness_bundle(root: Path) -> dict[str, Any]:
+def write_module3_readiness_bundle(root: Path, output_root: Path | None = None) -> dict[str, Any]:
     data_dir = root / "data"
-    docs_dir = root / "docs"
+    target_root = output_root if output_root is not None else root
+    output_data_dir = target_root / "data"
+    docs_dir = target_root / "docs"
     family_summary, accepted_summary, evaluation = run_module3_readiness_review(root)
 
-    family_path = data_dir / "module3_readiness_family_summary.csv"
-    accepted_path = data_dir / "module3_readiness_accepted_summary.csv"
+    output_data_dir.mkdir(parents=True, exist_ok=True)
+    docs_dir.mkdir(parents=True, exist_ok=True)
+    family_path = output_data_dir / "module3_readiness_family_summary.csv"
+    accepted_path = output_data_dir / "module3_readiness_accepted_summary.csv"
     review_path = docs_dir / "module3_readiness_review.md"
 
     family_summary.to_csv(family_path, index=False)
@@ -1437,4 +1453,571 @@ def write_module3_readiness_bundle(root: Path) -> dict[str, Any]:
         "review_doc": review_path,
         "full_ready_for_module4": evaluation["gates"]["full_ready_for_module4"],
         "needs_module_3_5": evaluation["gates"]["needs_module_3_5"],
+    }
+
+
+STAGE_B_FINAL_STATUSES = {"stage_b_rejected", "accepted"}
+
+
+def _valid_stage_b_proposals(proposal_summary: pd.DataFrame) -> pd.DataFrame:
+    valid = proposal_summary.loc[proposal_summary["stage_status"].isin(STAGE_B_FINAL_STATUSES)].copy()
+    valid["stochastic_overall_distance_median"] = pd.to_numeric(
+        valid["stochastic_overall_distance_median"],
+        errors="coerce",
+    )
+    return valid.loc[np.isfinite(valid["stochastic_overall_distance_median"])].copy()
+
+
+def _module3_5_sampler_failure_rows(proposal_summary: pd.DataFrame) -> pd.DataFrame:
+    family_draws = proposal_summary.groupby("family_id").size().rename("family_draws").reset_index()
+    failures = proposal_summary.loc[
+        proposal_summary["stage_status"].isin({"sampling_failure", "constraint_failure", "stage_a_failed"})
+    ].copy()
+    if failures.empty:
+        return pd.DataFrame(
+            columns=["family_id", "stage_status", "failure_reason", "failure_count", "family_draws", "failure_rate"]
+        )
+
+    grouped = (
+        failures.assign(failure_reason=failures["failure_reason"].fillna(""))
+        .groupby(["family_id", "stage_status", "failure_reason"], as_index=False)
+        .size()
+        .rename(columns={"size": "failure_count"})
+        .merge(family_draws, on="family_id", how="left")
+    )
+    grouped["failure_rate"] = grouped["failure_count"] / grouped["family_draws"]
+    return grouped.sort_values(["family_id", "failure_count"], ascending=[True, False]).reset_index(drop=True)
+
+
+def _module3_5_stage_b_frontier(proposal_summary: pd.DataFrame) -> pd.DataFrame:
+    valid = _valid_stage_b_proposals(proposal_summary)
+    if valid.empty:
+        return pd.DataFrame()
+    frontier = valid.sort_values(
+        [
+            "stochastic_overall_distance_median",
+            "stochastic_historical_core_distance_median",
+            "stochastic_intrinsic_baseline_distance_median",
+            "stochastic_historical_core_distance_iqr",
+            "proposal_id",
+        ]
+    ).reset_index(drop=True)
+    frontier["global_stage_b_rank"] = np.arange(1, len(frontier) + 1)
+    return frontier[
+        [
+            "global_stage_b_rank",
+            "proposal_id",
+            "family_id",
+            "stage_status",
+            "stochastic_overall_distance_median",
+            "stochastic_historical_core_distance_median",
+            "stochastic_intrinsic_baseline_distance_median",
+            "stochastic_historical_core_distance_iqr",
+            "accepted_final",
+        ]
+    ].copy()
+
+
+def _module3_5_family_best_rows(stage_b_frontier: pd.DataFrame) -> pd.DataFrame:
+    if stage_b_frontier.empty:
+        return pd.DataFrame()
+    return (
+        stage_b_frontier.sort_values("global_stage_b_rank")
+        .groupby("family_id", as_index=False)
+        .head(1)
+        .sort_values("global_stage_b_rank")
+        .reset_index(drop=True)
+    )
+
+
+def _module3_5_proposal_target_medians(target_scores: pd.DataFrame) -> pd.DataFrame:
+    stage_b = target_scores.loc[target_scores["stage"] == "stage_b"].copy()
+    if stage_b.empty:
+        return pd.DataFrame(columns=["proposal_id", "family_id", "target_id", "median_weighted_penalty"])
+    stage_b["weighted_penalty"] = pd.to_numeric(stage_b["weighted_penalty"], errors="coerce")
+    return (
+        stage_b.groupby(["proposal_id", "family_id", "target_id"], as_index=False)["weighted_penalty"]
+        .median()
+        .rename(columns={"weighted_penalty": "median_weighted_penalty"})
+        .sort_values(["family_id", "proposal_id", "target_id"])
+        .reset_index(drop=True)
+    )
+
+
+def _module3_5_target_leverage_rows(
+    proposal_target_medians: pd.DataFrame,
+    proposal_summary: pd.DataFrame,
+    model_inputs: ModelInputs,
+) -> pd.DataFrame:
+    valid_ids = set(_valid_stage_b_proposals(proposal_summary)["proposal_id"].astype(str))
+    target_medians = proposal_target_medians.loc[
+        proposal_target_medians["proposal_id"].astype(str).isin(valid_ids)
+    ].copy()
+    if target_medians.empty:
+        return pd.DataFrame()
+
+    family_distance = (
+        _valid_stage_b_proposals(proposal_summary)
+        .groupby("family_id", as_index=False)["stochastic_overall_distance_median"]
+        .median()
+        .rename(columns={"stochastic_overall_distance_median": "family_median_stage_b_distance"})
+    )
+    leverage = (
+        target_medians.groupby(["family_id", "target_id"], as_index=False)["median_weighted_penalty"]
+        .median()
+        .merge(family_distance, on="family_id", how="left")
+    )
+    leverage["target_share_of_family_distance"] = (
+        leverage["median_weighted_penalty"] / leverage["family_median_stage_b_distance"]
+    )
+
+    target_meta = model_inputs.calibration_targets[
+        ["target_id", "target_group", "comparison_type", "priority_weight"]
+    ].copy()
+    leverage = leverage.merge(target_meta, on="target_id", how="left")
+    return leverage[
+        [
+            "family_id",
+            "target_id",
+            "target_group",
+            "comparison_type",
+            "priority_weight",
+            "median_weighted_penalty",
+            "family_median_stage_b_distance",
+            "target_share_of_family_distance",
+        ]
+    ].sort_values(["family_id", "median_weighted_penalty"], ascending=[True, False]).reset_index(drop=True)
+
+
+def _module3_5_accepted_target_penalties(
+    proposal_target_medians: pd.DataFrame,
+    accepted_summary: pd.DataFrame,
+    model_inputs: ModelInputs,
+) -> pd.DataFrame:
+    accepted_ids = set(accepted_summary["proposal_id"].astype(str)) if not accepted_summary.empty else set()
+    accepted = proposal_target_medians.loc[proposal_target_medians["proposal_id"].astype(str).isin(accepted_ids)].copy()
+    target_meta = model_inputs.calibration_targets[
+        ["target_id", "target_group", "comparison_type", "priority_weight"]
+    ].copy()
+    if accepted.empty:
+        return pd.DataFrame(columns=[*target_meta.columns, "accepted_median_weighted_penalty"])
+    rows = (
+        accepted.groupby("target_id", as_index=False)["median_weighted_penalty"]
+        .median()
+        .rename(columns={"median_weighted_penalty": "accepted_median_weighted_penalty"})
+        .merge(target_meta, on="target_id", how="left")
+    )
+    return rows[
+        [
+            "target_id",
+            "target_group",
+            "comparison_type",
+            "priority_weight",
+            "accepted_median_weighted_penalty",
+        ]
+    ].sort_values("accepted_median_weighted_penalty", ascending=False).reset_index(drop=True)
+
+
+def _module3_5_best_proposal_target_penalties(
+    proposal_target_medians: pd.DataFrame,
+    family_best_rows: pd.DataFrame,
+) -> pd.DataFrame:
+    if proposal_target_medians.empty or family_best_rows.empty:
+        return pd.DataFrame()
+    best = family_best_rows[["family_id", "proposal_id", "global_stage_b_rank"]].copy()
+    rows = proposal_target_medians.merge(best, on=["family_id", "proposal_id"], how="inner")
+    return rows.sort_values(
+        ["global_stage_b_rank", "median_weighted_penalty"],
+        ascending=[True, False],
+    ).reset_index(drop=True)
+
+
+def _module3_5_target_omission_rows(
+    proposal_target_medians: pd.DataFrame,
+    proposal_summary: pd.DataFrame,
+) -> pd.DataFrame:
+    valid = _valid_stage_b_proposals(proposal_summary)[["proposal_id", "family_id"]].copy()
+    if valid.empty or proposal_target_medians.empty:
+        return pd.DataFrame(
+            columns=[
+                "omission_label",
+                "omitted_target_ids",
+                "family_id",
+                "best_proposal_id",
+                "adjusted_median_target_sum",
+                "family_rank",
+                "delta_from_winning_family",
+            ]
+        )
+
+    proposal_targets = proposal_target_medians.merge(valid, on=["proposal_id", "family_id"], how="inner")
+    target_ids = sorted(proposal_targets["target_id"].astype(str).unique())
+    omission_specs: list[tuple[str, tuple[str, ...]]] = [
+        ("none", ()),
+        *[(target_id, (target_id,)) for target_id in target_ids],
+        ("late_terminal_block", ("CT007", "CT009", "CT010")),
+        ("causal_mechanism_block", ("CT004", "CT005")),
+    ]
+
+    rows: list[dict[str, Any]] = []
+    for label, omitted_targets in omission_specs:
+        keep = proposal_targets.loc[~proposal_targets["target_id"].isin(omitted_targets)].copy()
+        proposal_totals = (
+            keep.groupby(["proposal_id", "family_id"], as_index=False)["median_weighted_penalty"]
+            .sum()
+            .rename(columns={"median_weighted_penalty": "adjusted_median_target_sum"})
+        )
+        if proposal_totals.empty:
+            continue
+        best_by_family = (
+            proposal_totals.sort_values(["adjusted_median_target_sum", "proposal_id"])
+            .groupby("family_id", as_index=False)
+            .head(1)
+            .sort_values(["adjusted_median_target_sum", "family_id"])
+            .reset_index(drop=True)
+        )
+        best_by_family["family_rank"] = np.arange(1, len(best_by_family) + 1)
+        winning_distance = float(best_by_family["adjusted_median_target_sum"].iloc[0])
+        for row in best_by_family.to_dict(orient="records"):
+            rows.append(
+                {
+                    "omission_label": label,
+                    "omitted_target_ids": ",".join(omitted_targets) if omitted_targets else "none",
+                    "family_id": row["family_id"],
+                    "best_proposal_id": row["proposal_id"],
+                    "adjusted_median_target_sum": float(row["adjusted_median_target_sum"]),
+                    "family_rank": int(row["family_rank"]),
+                    "delta_from_winning_family": float(row["adjusted_median_target_sum"] - winning_distance),
+                }
+            )
+    return pd.DataFrame(rows)
+
+
+def run_module3_5_diagnostic_review(
+    root: Path,
+    config: Module3Config | None = None,
+) -> tuple[dict[str, pd.DataFrame], dict[str, Any]]:
+    data_dir = root / "data"
+    model_inputs = load_model_inputs(data_dir)
+    diagnostic_dir = root / "outputs" / "module3_5"
+    diagnostic_config = config or Module3Config.readiness_defaults(
+        output_dir=diagnostic_dir / "diagnostic_primary"
+    )
+    _fresh_run_dir(diagnostic_config.output_dir)
+
+    run = run_module3_calibration(model_inputs, diagnostic_config)
+    proposal_summary = run.proposal_summary_table.copy()
+    target_scores = run.target_scores_table.copy()
+    accepted_summary = run.accepted_proposals_table.copy()
+
+    stage_b_frontier = _module3_5_stage_b_frontier(proposal_summary)
+    family_best = _module3_5_family_best_rows(stage_b_frontier)
+    proposal_target_medians = _module3_5_proposal_target_medians(target_scores)
+    sampler_failures = _module3_5_sampler_failure_rows(proposal_summary)
+    target_leverage = _module3_5_target_leverage_rows(
+        proposal_target_medians,
+        proposal_summary,
+        model_inputs,
+    )
+    accepted_target_penalties = _module3_5_accepted_target_penalties(
+        proposal_target_medians,
+        accepted_summary,
+        model_inputs,
+    )
+    best_proposal_targets = _module3_5_best_proposal_target_penalties(
+        proposal_target_medians,
+        family_best,
+    )
+    target_omission = _module3_5_target_omission_rows(proposal_target_medians, proposal_summary)
+
+    valid_stage_b = _valid_stage_b_proposals(proposal_summary)
+    winning_family = (
+        str(stage_b_frontier.iloc[0]["family_id"]) if not stage_b_frontier.empty else ""
+    )
+    omitted_winners = (
+        target_omission.loc[target_omission["family_rank"] == 1].copy()
+        if "family_rank" in target_omission.columns
+        else pd.DataFrame()
+    )
+    omission_flip_count = int((omitted_winners["family_id"] != winning_family).sum()) if not omitted_winners.empty else 0
+
+    evaluation = {
+        "config": {
+            "stage_a_draws_per_family": diagnostic_config.stage_a_draws_per_family,
+            "stage_a_keep_per_family": diagnostic_config.stage_a_keep_per_family,
+            "stage_b_historical_replicates": diagnostic_config.stage_b_historical_replicates,
+            "final_acceptance_fraction": diagnostic_config.final_acceptance_fraction,
+            "final_acceptance_cap": diagnostic_config.final_acceptance_cap,
+            "master_seed": diagnostic_config.master_seed,
+            "output_dir": str(diagnostic_config.output_dir),
+        },
+        "metrics": {
+            "stage_b_valid_proposals": int(len(valid_stage_b)),
+            "accepted_count": int(len(accepted_summary)),
+            "winning_family": winning_family,
+            "target_omission_flip_count": omission_flip_count,
+        },
+        "recommended_next_step": (
+            "Reparameterize constrained priors before changing biological target weights."
+            if not sampler_failures.empty
+            else "Run a larger remote sensitivity sweep before changing biological target weights."
+        ),
+    }
+    tables = {
+        "family_summary": run.family_summary_table.copy(),
+        "sampler_failures": sampler_failures,
+        "stage_b_frontier": stage_b_frontier,
+        "family_best_stage_b": family_best,
+        "target_leverage": target_leverage,
+        "accepted_target_penalties": accepted_target_penalties,
+        "best_proposal_target_penalties": best_proposal_targets,
+        "target_omission_sensitivity": target_omission,
+    }
+    return tables, evaluation
+
+
+def render_module3_5_diagnostic_review(
+    tables: dict[str, pd.DataFrame],
+    evaluation: dict[str, Any],
+) -> str:
+    metrics = [{"metric": key, "value": value} for key, value in evaluation["metrics"].items()]
+    config_rows = [{"setting": key, "value": value} for key, value in evaluation["config"].items()]
+
+    sampler_rows = tables["sampler_failures"].head(10).to_dict(orient="records")
+    family_best_rows = tables["family_best_stage_b"][
+        [
+            "global_stage_b_rank",
+            "proposal_id",
+            "family_id",
+            "stage_status",
+            "stochastic_overall_distance_median",
+            "stochastic_historical_core_distance_iqr",
+        ]
+    ].to_dict(orient="records") if not tables["family_best_stage_b"].empty else []
+    accepted_target_rows = tables["accepted_target_penalties"].head(8).to_dict(orient="records")
+    best_target_rows = tables["best_proposal_target_penalties"][
+        [
+            "family_id",
+            "proposal_id",
+            "target_id",
+            "median_weighted_penalty",
+        ]
+    ].head(30).to_dict(orient="records") if not tables["best_proposal_target_penalties"].empty else []
+    omission_table = tables["target_omission_sensitivity"]
+    omission_winners = (
+        omission_table.loc[omission_table["family_rank"] == 1].copy()
+        if "family_rank" in omission_table.columns
+        else pd.DataFrame()
+    )
+    omission_rows = omission_winners[
+        [
+            "omission_label",
+            "omitted_target_ids",
+            "family_id",
+            "best_proposal_id",
+            "adjusted_median_target_sum",
+        ]
+    ].to_dict(orient="records") if not omission_winners.empty else []
+
+    lines = [
+        "# Module 3.5 Diagnostic Review",
+        "",
+        "## Summary",
+        "",
+        (
+            "Module 3.5 diagnoses why the first ABC/history-matching readiness run is not yet "
+            "a sound basis for Module 4 posterior summaries."
+        ),
+        (
+            "It reruns the Module 3 readiness-scale calibration once, then inspects sampler "
+            "failures, retained-proposal target leverage, and target-omission family ranking."
+        ),
+        "",
+        "## Run Configuration",
+        "",
+        _markdown_table(config_rows, ["setting", "value"]),
+        "",
+        "## Key Metrics",
+        "",
+        _markdown_table(metrics, ["metric", "value"]),
+        "",
+        "## Sampler Geometry",
+        "",
+    ]
+    if sampler_rows:
+        lines.append(
+            _markdown_table(
+                sampler_rows,
+                ["family_id", "stage_status", "failure_reason", "failure_count", "failure_rate"],
+            )
+        )
+    else:
+        lines.append("No pre-simulation sampler or constraint failures were recorded.")
+
+    lines.extend(
+        [
+            "",
+            "## Family Ranking Frontier",
+            "",
+        ]
+    )
+    if family_best_rows:
+        lines.append(
+            _markdown_table(
+                family_best_rows,
+                [
+                    "global_stage_b_rank",
+                    "proposal_id",
+                    "family_id",
+                    "stage_status",
+                    "stochastic_overall_distance_median",
+                    "stochastic_historical_core_distance_iqr",
+                ],
+            )
+        )
+    else:
+        lines.append("No valid Stage B proposals were available for ranking.")
+
+    lines.extend(
+        [
+            "",
+            "## Accepted Target Leverage",
+            "",
+        ]
+    )
+    if accepted_target_rows:
+        lines.append(
+            _markdown_table(
+                accepted_target_rows,
+                [
+                    "target_id",
+                    "target_group",
+                    "comparison_type",
+                    "priority_weight",
+                    "accepted_median_weighted_penalty",
+                ],
+            )
+        )
+    else:
+        lines.append("No accepted proposals were available for target-leverage summaries.")
+
+    lines.extend(
+        [
+            "",
+            "## Best Proposal Target Penalties",
+            "",
+        ]
+    )
+    if best_target_rows:
+        lines.append(
+            _markdown_table(
+                best_target_rows,
+                ["family_id", "proposal_id", "target_id", "median_weighted_penalty"],
+            )
+        )
+    else:
+        lines.append("No best-proposal target penalties were available.")
+
+    lines.extend(
+        [
+            "",
+            "## Target Omission Sensitivity",
+            "",
+        ]
+    )
+    if omission_rows:
+        lines.append(
+            _markdown_table(
+                omission_rows,
+                [
+                    "omission_label",
+                    "omitted_target_ids",
+                    "family_id",
+                    "best_proposal_id",
+                    "adjusted_median_target_sum",
+                ],
+            )
+        )
+    else:
+        lines.append("Target omission sensitivity could not be computed.")
+
+    lines.extend(["", "## Interpretation", ""])
+    if sampler_rows:
+        lines.extend(
+            [
+                "The immediate blocker is sampler geometry, not numerical instability or reproducibility.",
+                (
+                    "Independent prior draws frequently violate ordered biological constraints, so a large "
+                    "fraction of proposals never reaches simulation. The next code change should therefore "
+                    "make those constrained pairs explicit in the sampling parameterisation."
+                ),
+            ]
+        )
+    else:
+        lines.extend(
+            [
+                "The constraint-aware sampler removed the pre-simulation validity blocker.",
+                (
+                    "At this readiness scale the accepted frontier now includes climbing-only, persistent "
+                    "joint-cause, and transient perfect-storm proposals, so the earlier climbing-only result "
+                    "should not be interpreted as a stable biological conclusion."
+                ),
+            ]
+        )
+    lines.extend(
+        [
+            (
+                "Family ranking remains sensitive to the late detection and contraction targets: omitting "
+                "`CT007`, `CT010`, or the late-terminal block can move the best retained proposal toward "
+                "the persistent joint-cause family."
+            ),
+            "",
+            "## Recommended Next Step",
+            "",
+            evaluation["recommended_next_step"],
+            "",
+            "## Artifacts",
+            "",
+            "- `data/module3_5_family_summary.csv`",
+            "- `data/module3_5_sampler_failures.csv`",
+            "- `data/module3_5_stage_b_frontier.csv`",
+            "- `data/module3_5_family_best_stage_b.csv`",
+            "- `data/module3_5_target_leverage.csv`",
+            "- `data/module3_5_accepted_target_penalties.csv`",
+            "- `data/module3_5_best_proposal_target_penalties.csv`",
+            "- `data/module3_5_target_omission_sensitivity.csv`",
+            "- `docs/module3_5_diagnostic_review.md`",
+        ]
+    )
+    return "\n".join(lines) + "\n"
+
+
+def write_module3_5_diagnostic_bundle(
+    root: Path,
+    output_root: Path | None = None,
+    config: Module3Config | None = None,
+) -> dict[str, Any]:
+    target_root = output_root if output_root is not None else root
+    output_data_dir = target_root / "data"
+    docs_dir = target_root / "docs"
+    tables, evaluation = run_module3_5_diagnostic_review(root, config=config)
+
+    output_data_dir.mkdir(parents=True, exist_ok=True)
+    docs_dir.mkdir(parents=True, exist_ok=True)
+
+    paths: dict[str, Path] = {}
+    for name, frame in tables.items():
+        path = output_data_dir / f"module3_5_{name}.csv"
+        frame.to_csv(path, index=False)
+        paths[name] = path
+
+    review_path = docs_dir / "module3_5_diagnostic_review.md"
+    review_path.write_text(render_module3_5_diagnostic_review(tables, evaluation), encoding="utf-8")
+
+    return {
+        **paths,
+        "review_doc": review_path,
+        "winning_family": evaluation["metrics"]["winning_family"],
+        "target_omission_flip_count": evaluation["metrics"]["target_omission_flip_count"],
+        "recommended_next_step": evaluation["recommended_next_step"],
     }

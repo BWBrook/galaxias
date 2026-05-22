@@ -18,6 +18,7 @@ from galaxias_model.types import ModelInputs, ResolvedParameters
 
 EPS = 1e-9
 MAX_PARAMETER_ATTEMPTS = 1000
+MAX_PROPOSAL_ATTEMPTS = 1000
 
 
 def transform_parameter_value(value: float, sampling_transform: str) -> float:
@@ -89,6 +90,60 @@ def _sample_estimated_parameter(row: dict[str, Any], rng: np.random.Generator) -
     )
 
 
+def _draw_proposal_rows_once(
+    merged_rows: list[dict[str, Any]],
+    family_id: str,
+    family_label: str,
+    proposal_index: int,
+    rng: np.random.Generator,
+) -> tuple[list[dict[str, Any]], dict[str, float], dict[str, str], str]:
+    output_rows: list[dict[str, Any]] = []
+    values: dict[str, float] = {}
+    statuses: dict[str, str] = {}
+    failure_reason = ""
+
+    for row in merged_rows:
+        parameter_id = str(row["parameter_id"])
+        status = str(row["parameter_status"])
+        default_value = _parse_float(row["default_value"])
+        sampled_flag = status == "estimate"
+
+        if sampled_flag and not failure_reason:
+            try:
+                value_natural, value_sampling = _sample_estimated_parameter(row, rng)
+            except RuntimeError as exc:
+                failure_reason = str(exc)
+                value_natural = float("nan")
+                value_sampling = float("nan")
+        elif sampled_flag:
+            value_natural = float("nan")
+            value_sampling = float("nan")
+        else:
+            value_natural = _apply_family_status(default_value, status, row["fixed_value"])
+            value_sampling = float("nan")
+
+        values[parameter_id] = value_natural
+        statuses[parameter_id] = status
+        output_rows.append(
+            {
+                "proposal_index": proposal_index,
+                "family_id": family_id,
+                "family_label": family_label,
+                "parameter_id": parameter_id,
+                "parameter_status": status,
+                "value_natural": value_natural,
+                "value_sampling": value_sampling,
+                "sampled_flag": bool(sampled_flag),
+                "proposal_sampling_failed": False,
+                "failure_reason": "",
+                "distribution_family": str(row["distribution_family"]),
+                "sampling_transform": str(row["sampling_transform"]),
+            }
+        )
+
+    return output_rows, values, statuses, failure_reason
+
+
 def sample_family_parameter_table(
     model_inputs: ModelInputs,
     family_id: str,
@@ -96,49 +151,43 @@ def sample_family_parameter_table(
     n_samples: int,
 ) -> pd.DataFrame:
     merged = _resolve_family_parameter_rows(model_inputs, family_id)
+    merged_rows = merged.to_dict(orient="records")
     family_label = str(merged["family_label"].iloc[0])
     rows: list[dict[str, Any]] = []
 
     for proposal_index in range(1, n_samples + 1):
-        proposal_failed = False
-        failure_reason = ""
-        for row in merged.to_dict(orient="records"):
-            parameter_id = str(row["parameter_id"])
-            status = str(row["parameter_status"])
-            default_value = _parse_float(row["default_value"])
-            sampled_flag = status == "estimate"
-
-            if sampled_flag and not proposal_failed:
-                try:
-                    value_natural, value_sampling = _sample_estimated_parameter(row, rng)
-                except RuntimeError as exc:
-                    proposal_failed = True
-                    failure_reason = str(exc)
-                    value_natural = float("nan")
-                    value_sampling = float("nan")
-            elif sampled_flag:
-                value_natural = float("nan")
-                value_sampling = float("nan")
-            else:
-                value_natural = _apply_family_status(default_value, status, row["fixed_value"])
-                value_sampling = float("nan")
-
-            rows.append(
-                {
-                    "proposal_index": proposal_index,
-                    "family_id": family_id,
-                    "family_label": family_label,
-                    "parameter_id": parameter_id,
-                    "parameter_status": status,
-                    "value_natural": value_natural,
-                    "value_sampling": value_sampling,
-                    "sampled_flag": bool(sampled_flag),
-                    "proposal_sampling_failed": bool(proposal_failed),
-                    "failure_reason": failure_reason,
-                    "distribution_family": str(row["distribution_family"]),
-                    "sampling_transform": str(row["sampling_transform"]),
-                }
+        last_rows: list[dict[str, Any]] = []
+        last_failure_reason = ""
+        for _ in range(MAX_PROPOSAL_ATTEMPTS):
+            proposal_rows, values, statuses, failure_reason = _draw_proposal_rows_once(
+                merged_rows,
+                family_id,
+                family_label,
+                proposal_index,
+                rng,
             )
+            last_rows = proposal_rows
+            last_failure_reason = failure_reason
+            if failure_reason:
+                continue
+            try:
+                _validate_resolved_constraints(model_inputs.constraints, values, family_id, statuses)
+            except ValueError as exc:
+                last_failure_reason = str(exc)
+                continue
+
+            rows.extend(proposal_rows)
+            break
+        else:
+            if not last_failure_reason:
+                last_failure_reason = (
+                    f"Proposal sampling failed after {MAX_PROPOSAL_ATTEMPTS} attempts "
+                    f"for {family_id}"
+                )
+            for output_row in last_rows:
+                output_row["proposal_sampling_failed"] = True
+                output_row["failure_reason"] = last_failure_reason
+            rows.extend(last_rows)
 
     return pd.DataFrame(rows)
 

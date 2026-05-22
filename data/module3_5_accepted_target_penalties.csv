@@ -1,0 +1,13 @@
+target_id,target_group,comparison_type,priority_weight,accepted_median_weighted_penalty
+CT010,historical_core,zero_detection_window,5,74.75936908636098
+CT007,historical_core,joint_occupancy_and_count_constraint,5,63.71695156128505
+CT009,historical_core,last_occurrence_event,5,30.0
+CT011,intrinsic_baseline,baseline_growth_constraint,3,4.15840188422285
+CT008,historical_core,upper_bound_count_constraint,5,3.6745356352337257
+CT003,historical_core,target_year_match,4,2.0
+CT004,historical_core,event_and_window_presence,5,1.6666666666666665
+CT006,historical_core,compartment_presence_constraint,5,1.6666666666666665
+CT012,intrinsic_baseline,delayed_establishment_constraint,3,0.09499483148995445
+CT001,historical_core,qualitative_state_constraint,4,0.0
+CT002,historical_core,window_relative_abundance_requirement,5,0.0
+CT005,historical_core,windowed_dominance_switch,5,0.0

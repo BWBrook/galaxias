@@ -299,13 +299,18 @@ def test_module2_cli_and_review_bundle_write_expected_outputs(tmp_path: Path) ->
     assert summary["full_ready_for_module3"] is False
 
     subprocess.run(
-        [sys.executable, str(ROOT / "scripts" / "review_module2_readiness.py")],
+        [
+            sys.executable,
+            str(ROOT / "scripts" / "review_module2_readiness.py"),
+            "--output-root",
+            str(tmp_path / "module2_review"),
+        ],
         cwd=ROOT,
         check=True,
     )
-    assert (ROOT / "data" / "module2_default_target_scores.csv").exists()
-    assert (ROOT / "data" / "module2_transient_replicate_scores.csv").exists()
-    review_doc = ROOT / "docs" / "module2_readiness_review.md"
+    assert (tmp_path / "module2_review" / "data" / "module2_default_target_scores.csv").exists()
+    assert (tmp_path / "module2_review" / "data" / "module2_transient_replicate_scores.csv").exists()
+    review_doc = tmp_path / "module2_review" / "docs" / "module2_readiness_review.md"
     assert review_doc.exists()
     text = review_doc.read_text(encoding="utf-8")
     assert "historical_core_ready" in text

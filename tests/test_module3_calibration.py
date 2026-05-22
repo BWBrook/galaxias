@@ -17,7 +17,7 @@ from galaxias_model import (
     sample_family_parameter_table,
     transform_parameter_value,
 )
-from galaxias_model.review import run_module3_readiness_review
+from galaxias_model.review import run_module3_5_diagnostic_review, run_module3_readiness_review
 from galaxias_model.types import ModelInputs
 
 
@@ -183,3 +183,19 @@ def test_module3_readiness_review_runs_with_small_override(tmp_path: Path) -> No
         }
     )
     assert "proposal_id" in accepted_summary.columns
+
+
+def test_module3_5_diagnostic_review_runs_with_small_override(tmp_path: Path) -> None:
+    config = _small_config(tmp_path / "module3_5_diagnostic", workers=1)
+    tables, evaluation = run_module3_5_diagnostic_review(ROOT, config=config)
+
+    assert not tables["family_summary"].empty
+    assert not tables["stage_b_frontier"].empty
+    assert not tables["target_omission_sensitivity"].empty
+    assert set(tables["target_omission_sensitivity"]["omission_label"]).issuperset(
+        {"none", "late_terminal_block", "causal_mechanism_block"}
+    )
+    assert set(evaluation["metrics"]).issuperset(
+        {"stage_b_valid_proposals", "accepted_count", "winning_family", "target_omission_flip_count"}
+    )
+    assert evaluation["recommended_next_step"]
