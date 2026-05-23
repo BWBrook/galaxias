@@ -386,6 +386,25 @@ At this point, the most defensible interpretation is:
 This is not yet a final causal conclusion. It is a well-structured interim
 result.
 
+## Planned Module 4.5: What Makes The Mechanisms Work?
+
+The next step is not another broad sweep of possible histories. It is an
+interpretive pass over the histories that have already survived the calibration
+filters.
+
+In plain terms, we want to ask why the accepted histories work. For example,
+does the sustained joint-cause explanation work because trout pressure remains
+biologically important after the early trophy-trout period, because climbing
+galaxias pressure becomes dominant later, because refuge habitat remains too
+limited, or because the observation model is forgiving? Similarly, when the
+climbing-only family occasionally wins under softer late-observation
+assumptions, we need to know whether that looks like a plausible biological
+alternative or mostly an artefact of survey/detection uncertainty.
+
+This pass should produce a compact biological interpretation of the accepted
+parameter sets and trajectories, then tell us which ensemble is defensible for
+the next counterfactual stage.
+
 ## Decisions Made So Far
 
 We are not changing biological target weights simply to force a preferred
