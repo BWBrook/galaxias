@@ -112,6 +112,7 @@ counterfactual analysis:
 
 Primary inputs:
 
+- `data/module4_raw_artifact_manifest.csv`
 - `outputs/remote/module4_observation_sensitivity_20260522T101942Z/*`
 - `data/module4_family_summary.csv`
 - `data/module4_accepted_mix.csv`
@@ -131,17 +132,25 @@ Secondary context:
 
 ## Proposal Sets To Compare
 
-Use four nested proposal sets:
+Use five pre-defined proposal sets:
 
 1. `accepted`: proposals with `accepted_final = True`.
-2. `near_frontier`: valid Stage B proposals within a small distance margin of
-   the best proposal for their variant/seed.
-3. `family_winners`: the best proposal per family, variant, and seed.
-4. `global_winners`: the winning proposal for each variant/seed.
+2. `near_frontier_absolute`: valid Stage B proposals with
+   `target_sum <= best_target_sum + 10` within each variant/seed.
+3. `near_frontier_relative`: valid Stage B proposals with
+   `target_sum <= 1.05 * best_target_sum` within each variant/seed.
+4. `family_winners`: the best proposal per family, variant, and seed.
+5. `global_winners`: the winning proposal for each variant/seed.
 
 The accepted set is the main biological ensemble. The near-frontier and
 winner-only sets are diagnostic: they help distinguish robust patterns from
 rank-order noise.
+
+Target-sum distance is defined as the sum, across targets, of replicate-median
+weighted target penalties for valid Stage B proposals. Module 4.5 must report
+where target-sum rank agrees or disagrees with
+`stochastic_overall_distance_median`, because Module 4 family winners were
+chosen by target-sum rank rather than the aggregate stochastic distance alone.
 
 ## Analyses
 
@@ -233,11 +242,15 @@ This synthesis should explicitly separate:
 
 Tracked summary artifacts:
 
+- `data/module4_5_proposal_set_membership.csv`
+- `data/module4_5_distance_audit.csv`
 - `data/module4_5_parameter_summary.csv`
 - `data/module4_5_parameter_contrasts.csv`
 - `data/module4_5_nuisance_audit.csv`
 - `data/module4_5_target_family_summary.csv`
+- `data/module4_5_pressure_landmarks.csv`
 - `data/module4_5_trajectory_landmarks.csv`
+- `data/module4_5_family_decision_table.csv`
 - `docs/module4_5_mechanism_interpretation_review.md`
 
 Optional artifacts if useful:
@@ -280,7 +293,8 @@ Expected run style:
 
 - mirror latest repo to `/data/codex/repos/galaxias`;
 - verify `uv sync --locked` and `make check`;
-- run the full Module 4.5 summarizer against the existing artifact;
+- run the full Module 4.5 summarizer against the existing artifact using an
+  explicit `--module4-root` and `--manifest`;
 - copy compact `data/` and `docs/` products back to the MacBook.
 
 Use `tmux` if trajectory regeneration is run across hundreds of proposals, or

@@ -123,7 +123,7 @@ def _build_historical_lake_forcing_impl(
                 "U": upsurge,
                 "O": overshoot,
                 "H": habitat_transition,
-                "spawn_habitat_multiplier": 1.0,
+                "spawn_habitat_multiplier": float(scenario_definition.spawn_habitat_by_year.get(year, 1.0)),
                 "founder_addition_A_L": 0.0,
                 "stocking_input": stocking_input,
                 "K_T": trout_capacity,
@@ -416,7 +416,7 @@ def run_scenario_simulation(
         scenario_id=scenario_definition.scenario_id,
         trajectory_table=trajectory,
         resolved_parameters=params,
-        forcing_table=forcing.table.copy(),
+        forcing_table=forcing.table.copy() if config.record_forcing else pd.DataFrame(),
     )
     result.summary = summarize_latent_run(result)
     return result

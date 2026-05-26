@@ -6,6 +6,14 @@ from galaxias_model.calibration import (
     run_stage_b_confirmation,
 )
 from galaxias_model.io import load_model_inputs, resolve_family_parameters
+from galaxias_model.mechanism_interpretation import (
+    MODULE4_5_MANDATORY_OUTPUTS,
+    REQUIRED_MODULE4_ARTIFACTS,
+    Module4ArtifactValidation,
+    module4_5_output_paths,
+    read_raw_artifact_manifest,
+    validate_module4_raw_artifact_manifest,
+)
 from galaxias_model.observation import project_run_to_target_space, project_target
 from galaxias_model.sampling import (
     build_resolved_parameters_from_sample,
@@ -58,9 +66,12 @@ __all__ = [
     "ForcingSchedule",
     "FounderEvent",
     "ModelInputs",
+    "MODULE4_5_MANDATORY_OUTPUTS",
     "Module3Config",
+    "Module4ArtifactValidation",
     "ProposalResult",
     "ProjectionResult",
+    "REQUIRED_MODULE4_ARTIFACTS",
     "ResolvedParameters",
     "ScenarioBundleResult",
     "ScenarioDefinition",
@@ -76,9 +87,11 @@ __all__ = [
     "get_scenario_definition",
     "inverse_transform_parameter_value",
     "load_model_inputs",
+    "module4_5_output_paths",
     "observation_bridge_variant_ids",
     "project_run_to_target_space",
     "project_target",
+    "read_raw_artifact_manifest",
     "resolve_family_parameters",
     "run_deterministic_bundle",
     "run_historical_simulation",
@@ -94,4 +107,5 @@ __all__ = [
     "score_target",
     "summarize_latent_run",
     "transform_parameter_value",
+    "validate_module4_raw_artifact_manifest",
 ]

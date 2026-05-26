@@ -16,12 +16,17 @@ Use the locked Python environment:
 
 ```bash
 make setup
+make fast-check
+make integration-check
 make check
 make smoke
 ```
 
 `make smoke` deliberately runs tiny jobs only and writes to ignored
 `outputs/smoke_*` directories.
+
+`make fast-check` is the routine developer gate. `make integration-check` runs
+the slower calibration/reproducibility tests that are marked `slow`.
 
 ## Nectar path
 

@@ -1,4 +1,4 @@
-.PHONY: setup portability compile test check smoke module3-5 module3-75 module4-smoke clean
+.PHONY: setup portability compile fast-test test integration-test fast-check integration-check check smoke module3-5 module3-75 module4-smoke module4-5-smoke clean
 
 setup:
 	uv sync --locked
@@ -9,10 +9,20 @@ portability:
 compile:
 	uv run python -m compileall -q src scripts tests
 
+fast-test:
+	uv run pytest -m "not slow"
+
 test:
 	uv run pytest
 
-check: portability compile test
+integration-test:
+	uv run pytest -m slow
+
+fast-check: portability compile fast-test
+
+integration-check: integration-test
+
+check: fast-check integration-check
 
 smoke:
 	uv run python scripts/validate_prior_pack.py
@@ -38,6 +48,13 @@ module4-smoke:
 		--workers 1 \
 		--batch-size 10 \
 		--clean
+
+module4-5-smoke:
+	uv run python scripts/run_module4_5_mechanism_interpretation.py \
+		--module4-root outputs/remote/module4_observation_sensitivity_20260522T101942Z \
+		--manifest data/module4_raw_artifact_manifest.csv \
+		--publish-root . \
+		--smoke-only
 
 clean:
 	rm -rf outputs .pytest_cache scripts/__pycache__ src/galaxias_model/__pycache__ tests/__pycache__

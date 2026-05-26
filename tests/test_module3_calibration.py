@@ -104,6 +104,8 @@ def test_identical_seed_reproduces_sampling_table(model_inputs: ModelInputs) -> 
     pd.testing.assert_frame_equal(table_a, table_b)
 
 
+@pytest.mark.slow
+@pytest.mark.integration
 def test_module3_small_run_writes_outputs_and_finite_scores(model_inputs: ModelInputs, tmp_path: Path) -> None:
     output_dir = tmp_path / "module3_small"
     config = _small_config(output_dir, workers=1, resume=False)
@@ -136,6 +138,8 @@ def test_module3_small_run_writes_outputs_and_finite_scores(model_inputs: ModelI
     assert (stage_a_targets["evaluation_status"] == "scored").all()
 
 
+@pytest.mark.slow
+@pytest.mark.integration
 def test_parallel_workers_match_serial_accepted_ids(model_inputs: ModelInputs, tmp_path: Path) -> None:
     serial = run_module3_calibration(model_inputs, _small_config(tmp_path / "serial", workers=1))
     parallel = run_module3_calibration(model_inputs, _small_config(tmp_path / "parallel", workers=2))
@@ -144,6 +148,8 @@ def test_parallel_workers_match_serial_accepted_ids(model_inputs: ModelInputs, t
     )
 
 
+@pytest.mark.slow
+@pytest.mark.integration
 def test_resume_matches_clean_final_accepted_set(model_inputs: ModelInputs, tmp_path: Path) -> None:
     resume_dir = tmp_path / "resume_case"
     stage_a_config = _small_config(resume_dir, workers=1, resume=False)
@@ -161,6 +167,8 @@ def test_resume_matches_clean_final_accepted_set(model_inputs: ModelInputs, tmp_
     )
 
 
+@pytest.mark.slow
+@pytest.mark.integration
 def test_module3_readiness_review_runs_with_small_override(tmp_path: Path) -> None:
     config = _small_config(ROOT / "outputs" / "module3" / "test_readiness_primary", workers=1)
     repro_config = _small_config(ROOT / "outputs" / "module3" / "test_readiness_repro", workers=1)
@@ -185,6 +193,8 @@ def test_module3_readiness_review_runs_with_small_override(tmp_path: Path) -> No
     assert "proposal_id" in accepted_summary.columns
 
 
+@pytest.mark.slow
+@pytest.mark.integration
 def test_module3_5_diagnostic_review_runs_with_small_override(tmp_path: Path) -> None:
     config = _small_config(tmp_path / "module3_5_diagnostic", workers=1)
     tables, evaluation = run_module3_5_diagnostic_review(ROOT, config=config)

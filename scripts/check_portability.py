@@ -12,16 +12,54 @@ SOURCE_REGISTER = ROOT / "data" / "source_register.csv"
 WINDOWS_RESERVED = re.compile(r"(^|/)(con|prn|aux|nul|com[1-9]|lpt[1-9])(\.|/|$)")
 WINDOWS_FORBIDDEN = re.compile(r'[<>:"\\|?*]')
 DRIVE_PATH = re.compile(r"^[A-Za-z]:[\\/]")
+EXCLUDED_DIRS = {
+    ".git",
+    ".mypy_cache",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".venv",
+    "__pycache__",
+    "htmlcov",
+    "outputs",
+}
+BINARY_SUFFIXES = {
+    ".docx",
+    ".gz",
+    ".jpeg",
+    ".jpg",
+    ".pdf",
+    ".png",
+    ".pptx",
+    ".xlsx",
+}
 
 
-def git_files() -> list[str]:
-    result = subprocess.run(
-        ["git", "ls-files", "--cached", "--others", "--exclude-standard", "-z"],
-        cwd=ROOT,
-        check=True,
-        stdout=subprocess.PIPE,
-    )
-    return [item.decode("utf-8") for item in result.stdout.split(b"\0") if item]
+def tree_files() -> list[str]:
+    paths: list[str] = []
+    for path in ROOT.rglob("*"):
+        if any(part in EXCLUDED_DIRS for part in path.relative_to(ROOT).parts):
+            continue
+        if not path.is_file():
+            continue
+        paths.append(path.relative_to(ROOT).as_posix())
+    return sorted(paths)
+
+
+def discover_files() -> tuple[list[str], str]:
+    try:
+        result = subprocess.run(
+            ["git", "ls-files", "--cached", "--others", "--exclude-standard", "-z"],
+            cwd=ROOT,
+            check=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+        )
+    except (OSError, subprocess.CalledProcessError):
+        return tree_files(), "tree"
+    paths = [item.decode("utf-8") for item in result.stdout.split(b"\0") if item]
+    if paths:
+        return paths, "git"
+    return tree_files(), "tree"
 
 
 def check_case_collisions(paths: list[str]) -> list[str]:
@@ -48,6 +86,8 @@ def check_windows_names(paths: list[str]) -> list[str]:
 def check_text_bytes(paths: list[str]) -> list[str]:
     problems: list[str] = []
     for path in paths:
+        if Path(path).suffix.lower() in BINARY_SUFFIXES:
+            continue
         data = (ROOT / path).read_bytes()
         if b"\0" in data:
             continue
@@ -81,7 +121,7 @@ def check_source_register() -> list[str]:
 
 
 def main() -> int:
-    paths = git_files()
+    paths, source = discover_files()
     problems = []
     problems.extend(check_case_collisions(paths))
     problems.extend(check_windows_names(paths))
@@ -94,7 +134,8 @@ def main() -> int:
             print(f"- {problem}", file=sys.stderr)
         return 1
 
-    print(f"Portability check passed: {len(paths)} git-managed files inspected.")
+    source_label = "git-managed" if source == "git" else "tree-walked"
+    print(f"Portability check passed: {len(paths)} {source_label} files inspected.")
     return 0
 
 

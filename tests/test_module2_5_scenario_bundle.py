@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from dataclasses import replace
 import subprocess
 import sys
 from pathlib import Path
@@ -205,6 +206,35 @@ def test_scenario_definition_forcing_matches_expected_founders_and_spawn_habitat
     ]
     assert (strath_forcing.loc[strath_forcing["year"] <= 2007, "spawn_habitat_multiplier"] == 0.0).all()
     assert (strath_forcing.loc[strath_forcing["year"] >= 2008, "spawn_habitat_multiplier"] == 1.0).all()
+
+
+def test_historical_forcing_honors_scenario_spawn_habitat_schedule(model_inputs: ModelInputs) -> None:
+    params = resolve_family_parameters(model_inputs, "habitat_only_null")
+    historical = get_scenario_definition(model_inputs, "historical_lake")
+    custom_spawn = {
+        year: (0.5 if year in {1977, 1978} else 1.0)
+        for year in range(historical.start_year, historical.end_year + 1)
+    }
+    modified = replace(historical, spawn_habitat_by_year=custom_spawn)
+    forcing = build_scenario_forcing(modified, list(range(modified.start_year, modified.end_year + 1)), params).table
+
+    assert float(forcing.loc[forcing["year"] == 1976, "spawn_habitat_multiplier"].iloc[0]) == 1.0
+    assert float(forcing.loc[forcing["year"] == 1977, "spawn_habitat_multiplier"].iloc[0]) == 0.5
+    assert float(forcing.loc[forcing["year"] == 1978, "spawn_habitat_multiplier"].iloc[0]) == 0.5
+
+
+def test_record_forcing_false_omits_forcing_table_but_keeps_trajectory(model_inputs: ModelInputs) -> None:
+    params = resolve_family_parameters(model_inputs, "transient_perfect_storm")
+    result = run_historical_simulation(
+        params,
+        "transient_perfect_storm",
+        SimulationConfig(stochastic=False, record_forcing=False),
+        seed=1,
+    )
+
+    assert result.forcing_table.empty
+    assert not result.trajectory_table.empty
+    assert result.summary["family_id"] == "transient_perfect_storm"
 
 
 def test_baseline_kernel_invariants_hold(model_inputs: ModelInputs) -> None:

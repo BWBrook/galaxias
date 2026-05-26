@@ -19,3 +19,9 @@ packages = ["src/galaxias_model"]
 
 [tool.uv]
 package = true
+
+[tool.pytest.ini_options]
+markers = [
+    "slow: calibration, multiprocessing, or review-bundle tests that are useful but not part of the fast local gate",
+    "integration: tests that exercise multi-step command or workflow boundaries",
+]

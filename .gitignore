@@ -3,3 +3,9 @@ __pycache__/
 *.pyc
 .DS_Store
 outputs/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.log
+.ipynb_checkpoints/

@@ -59,7 +59,7 @@ Current planning state:
 
 ## Gate 0: Feedback Intake And Plan Freeze
 
-Status: `active`
+Status: `passed`
 
 Goal:
 
@@ -80,11 +80,11 @@ Pass gate:
 - The plan identifies every must-pass gate before Module 5.
 - The repo has a clean checkpoint once Barry approves the plan.
 
-Do not proceed to Gate 1 until this gate is accepted.
+This gate is now satisfied.
 
 ## Gate 1: Reproducibility And Repo-Health Foundation
 
-Status: `pending`
+Status: `passed`
 
 Purpose:
 
@@ -92,6 +92,8 @@ Make sure Module 4.5 is not built on hidden remote state, slow or fragile test
 behaviour, or missing onboarding documentation.
 
 ### Gate 1A: Raw Module 4 Artefact Provenance
+
+Status: `passed`
 
 Required actions:
 
@@ -122,6 +124,8 @@ Pass gate:
 
 ### Gate 1B: Predictable Test Tiers
 
+Status: `passed`
+
 Required actions:
 
 - Add pytest markers for slow/integration tests.
@@ -132,7 +136,7 @@ Required actions:
   - `make check`;
   - `make integration-check`;
   - `make module4-smoke`;
-  - later `make module4-5-smoke`.
+  - `make module4-5-smoke`.
 - Decide whether `make check` should remain full-suite or become a fast
   developer gate plus explicit integration gate.
 
@@ -143,6 +147,8 @@ Pass gate:
 - Parallel-vs-serial reproducibility remains tested somewhere deliberate.
 
 ### Gate 1C: Onboarding And Offline Reproducibility
+
+Status: `passed`
 
 Required actions:
 
@@ -173,7 +179,7 @@ Pass gate:
 
 ## Gate 2: Module 4.5 Design Lock
 
-Status: `pending`
+Status: `passed`
 
 Purpose:
 
@@ -248,6 +254,7 @@ Required actions:
 ```bash
 uv run python scripts/run_module4_5_mechanism_interpretation.py \
   --module4-root outputs/remote/module4_observation_sensitivity_20260522T101942Z \
+  --manifest data/module4_raw_artifact_manifest.csv \
   --publish-root . \
   --near-frontier-delta 10 \
   --near-frontier-relative 1.05 \
@@ -270,6 +277,14 @@ Mandatory outputs:
 - `data/module4_5_trajectory_landmarks.csv`
 - `data/module4_5_family_decision_table.csv`
 - `docs/module4_5_mechanism_interpretation_review.md`
+
+Current scaffold:
+
+- Module 4.5 code has a dedicated home in
+  `src/galaxias_model/mechanism_interpretation.py`.
+- The smoke CLI is `scripts/run_module4_5_mechanism_interpretation.py`.
+- `make module4-5-smoke` validates explicit raw-artifact inputs and the
+  mandatory output contract before full implementation begins.
 
 Pass gate:
 
@@ -515,14 +530,10 @@ problem using some shared modelling ideas.
 
 ## Immediate Recommended Sequence
 
-1. Review and approve or edit this gated plan.
-2. Complete Gate 1A by creating the Module 4 raw artefact manifest.
-3. Complete Gate 1B and Gate 1C enough to make the repo reproducible for a new
-   collaborator.
-4. Revise the Module 4.5 plan under Gate 2 with fixed definitions and decision
-   rules.
-5. Implement and smoke Module 4.5 under Gate 3.
-6. Run the full Module 4.5 diagnostic under Gate 4.
+1. Implement the full Module 4.5 analysis under Gate 3 using the dedicated
+   `mechanism_interpretation` module and explicit `--module4-root` /
+   `--manifest` inputs.
+2. Smoke Module 4.5 with `make module4-5-smoke`, then run `make check`.
+3. Run the full Module 4.5 diagnostic under Gate 4.
 
 Only after Gate 4 passes should Module 5 be started.
-
