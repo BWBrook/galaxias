@@ -5,7 +5,9 @@ from pathlib import Path
 
 from galaxias_model.mechanism_interpretation import (
     MODULE4_5_MANDATORY_OUTPUTS,
+    generate_module4_5_outputs,
     module4_5_output_paths,
+    render_module4_5_review_from_outputs,
     validate_module4_raw_artifact_manifest,
 )
 
@@ -26,6 +28,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--seed", type=int, default=20260523)
     parser.add_argument("--verify-hashes", action="store_true")
     parser.add_argument(
+        "--summarize-only",
+        action="store_true",
+        help="Re-render the Markdown review from already-derived Module 4.5 tables.",
+    )
+    parser.add_argument(
         "--smoke-only",
         action="store_true",
         help="Validate inputs and output contract without generating Module 4.5 result tables.",
@@ -35,6 +42,11 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
+    if args.summarize_only:
+        review_path = render_module4_5_review_from_outputs(args.publish_root)
+        print(f"Module 4.5 review re-rendered: {review_path}")
+        return 0
+
     validation = validate_module4_raw_artifact_manifest(
         args.manifest,
         args.module4_root,
@@ -70,9 +82,20 @@ def main() -> int:
     if args.smoke_only:
         return 0
 
-    print("Full Module 4.5 generation is intentionally not implemented in this scaffold yet.")
-    print("Use --smoke-only until Gate 3 implementation begins.")
-    return 2
+    result = generate_module4_5_outputs(
+        module4_root=args.module4_root,
+        manifest_path=args.manifest,
+        publish_root=args.publish_root,
+        near_frontier_delta=args.near_frontier_delta,
+        near_frontier_relative=args.near_frontier_relative,
+        trajectory_sample=args.trajectory_sample,
+        seed=args.seed,
+        verify_hashes=args.verify_hashes,
+    )
+    print("Module 4.5 outputs generated:")
+    for output in MODULE4_5_MANDATORY_OUTPUTS:
+        print(f"- {result.output_paths[output]} ({result.row_counts.get(output, 'written')} rows)")
+    return 0
 
 
 if __name__ == "__main__":

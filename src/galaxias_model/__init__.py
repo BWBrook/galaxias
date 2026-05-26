@@ -9,9 +9,12 @@ from galaxias_model.io import load_model_inputs, resolve_family_parameters
 from galaxias_model.mechanism_interpretation import (
     MODULE4_5_MANDATORY_OUTPUTS,
     REQUIRED_MODULE4_ARTIFACTS,
+    Module45GenerationResult,
     Module4ArtifactValidation,
+    generate_module4_5_outputs,
     module4_5_output_paths,
     read_raw_artifact_manifest,
+    render_module4_5_review_from_outputs,
     validate_module4_raw_artifact_manifest,
 )
 from galaxias_model.observation import project_run_to_target_space, project_target
@@ -68,6 +71,7 @@ __all__ = [
     "ModelInputs",
     "MODULE4_5_MANDATORY_OUTPUTS",
     "Module3Config",
+    "Module45GenerationResult",
     "Module4ArtifactValidation",
     "ProposalResult",
     "ProjectionResult",
@@ -85,6 +89,7 @@ __all__ = [
     "build_historical_forcing",
     "build_scenario_forcing",
     "get_scenario_definition",
+    "generate_module4_5_outputs",
     "inverse_transform_parameter_value",
     "load_model_inputs",
     "module4_5_output_paths",
@@ -92,6 +97,7 @@ __all__ = [
     "project_run_to_target_space",
     "project_target",
     "read_raw_artifact_manifest",
+    "render_module4_5_review_from_outputs",
     "resolve_family_parameters",
     "run_deterministic_bundle",
     "run_historical_simulation",

@@ -368,6 +368,40 @@ recipe. Climbing galaxias remains central and sometimes locally wins, but the
 overall sensitivity grid still supports a combined trout-plus-climbing
 explanation over a single-cause story.
 
+## Module 4.5: Mechanism Interpretation Audit
+
+Module 4.5 has now converted the Module 4 calibration grid into a mechanism
+audit. It did not run a new broad calibration. Instead, it compared predefined
+proposal sets from the raw Module 4 artifacts:
+
+- accepted proposals;
+- near-frontier proposals by absolute target-sum distance;
+- near-frontier proposals by relative target-sum distance;
+- family winners;
+- global winners.
+
+The audit also reconstructed deterministic landmark trajectories and derived
+trout/climbing pressure summaries for the historical windows we care about:
+1972-1977, 1978-1983, 1984-1991, 1992-1996, and 1998-2002.
+
+The Module 4.5 decision table currently says:
+
+- `persistent_joint_cause` is the primary Module 5 ensemble;
+- `climbing_only` remains a sensitivity case;
+- `transient_perfect_storm` remains a joint-cause sensitivity case;
+- habitat-only and trout-only remain negative references.
+
+The accepted mechanism-rich families did not show high nuisance-bound risk in
+the current audit. That does not prove the observation model is perfect, but it
+means Module 5 can proceed without an immediate Module 4.75 nuisance
+refinement.
+
+Plain-language meaning for Chris: the current best explanation is not simply
+"climbing galaxias did it" or "trout did it". The most stable model family is a
+sustained joint-pressure story. Climbing-only and transient perfect-storm
+histories are still biologically useful uncertainty cases and should be kept in
+counterfactual sensitivity analysis.
+
 ## Current Working Interpretation
 
 At this point, the most defensible interpretation is:
@@ -386,24 +420,17 @@ At this point, the most defensible interpretation is:
 This is not yet a final causal conclusion. It is a well-structured interim
 result.
 
-## Planned Module 4.5: What Makes The Mechanisms Work?
+## Next Step: Module 5 Counterfactual Attribution
 
-The next step is not another broad sweep of possible histories. It is an
-interpretive pass over the histories that have already survived the calibration
-filters.
+The next step is matched counterfactual analysis. In plain terms, Module 5
+should ask what happens to the fitted historical trajectories if we remove or
+alter one mechanism at a time: trout effects, climbing-galaxias effects,
+combined biotic effects, transient trout overshoot, habitat-transition penalty,
+and refuge buffering.
 
-In plain terms, we want to ask why the accepted histories work. For example,
-does the sustained joint-cause explanation work because trout pressure remains
-biologically important after the early trophy-trout period, because climbing
-galaxias pressure becomes dominant later, because refuge habitat remains too
-limited, or because the observation model is forgiving? Similarly, when the
-climbing-only family occasionally wins under softer late-observation
-assumptions, we need to know whether that looks like a plausible biological
-alternative or mostly an artefact of survey/detection uncertainty.
-
-This pass should produce a compact biological interpretation of the accepted
-parameter sets and trajectories, then tell us which ensemble is defensible for
-the next counterfactual stage.
+The key discipline is to keep the Module 4.5 ensemble decision visible:
+`persistent_joint_cause` is primary, while `climbing_only` and
+`transient_perfect_storm` are sensitivity ensembles.
 
 ## Decisions Made So Far
 

@@ -233,7 +233,7 @@ Pass gate:
 
 ## Gate 3: Module 4.5 Implementation
 
-Status: `pending`
+Status: `passed`
 
 Purpose:
 
@@ -278,13 +278,15 @@ Mandatory outputs:
 - `data/module4_5_family_decision_table.csv`
 - `docs/module4_5_mechanism_interpretation_review.md`
 
-Current scaffold:
+Current implementation:
 
 - Module 4.5 code has a dedicated home in
   `src/galaxias_model/mechanism_interpretation.py`.
 - The smoke CLI is `scripts/run_module4_5_mechanism_interpretation.py`.
 - `make module4-5-smoke` validates explicit raw-artifact inputs and the
-  mandatory output contract before full implementation begins.
+  mandatory output contract.
+- The full CLI generates all mandatory Module 4.5 tables and the Markdown
+  interpretation review from the raw Module 4 artifact manifest.
 
 Pass gate:
 
@@ -295,7 +297,7 @@ Pass gate:
 
 ## Gate 4: Module 4.5 Diagnostic Execution
 
-Status: `pending`
+Status: `passed`
 
 Purpose:
 
@@ -338,7 +340,20 @@ Pass gate:
 - `docs/notes_for_chris.md` is updated in plain language.
 - Validation passes locally and, if run remotely, on `deep-server`.
 
-Module 5 is blocked until this gate passes.
+Current result:
+
+- `persistent_joint_cause` is carried into Module 5 as the primary ensemble.
+- `climbing_only` remains a sensitivity case because it is accepted and
+  locally competitive under single-axis late-observation variants, but it does
+  not win the baseline or combined soft late-observation variants.
+- `transient_perfect_storm` remains a joint-cause sensitivity case because it
+  is accepted and has a transient overshoot signature, but it did not win the
+  Module 4 target-sum grid.
+- `habitat_only_null` and `trout_only` remain negative references.
+- Current nuisance-bound diagnostics are low risk for the accepted
+  mechanism-rich families, so Gate 4.75 is not triggered by the present audit.
+
+Module 5 is unblocked.
 
 ## Gate 4.75: Conditional Refinement Before Counterfactuals
 
@@ -530,10 +545,10 @@ problem using some shared modelling ideas.
 
 ## Immediate Recommended Sequence
 
-1. Implement the full Module 4.5 analysis under Gate 3 using the dedicated
-   `mechanism_interpretation` module and explicit `--module4-root` /
-   `--manifest` inputs.
-2. Smoke Module 4.5 with `make module4-5-smoke`, then run `make check`.
-3. Run the full Module 4.5 diagnostic under Gate 4.
-
-Only after Gate 4 passes should Module 5 be started.
+1. Start Module 5 matched counterfactual attribution using
+   `persistent_joint_cause` as the primary ensemble.
+2. Carry `climbing_only` and `transient_perfect_storm` as sensitivity
+   ensembles rather than collapsing them away.
+3. Keep `habitat_only_null` and `trout_only` as negative references.
+4. Revisit Gate 4.75 only if counterfactual setup or Chris review exposes a
+   nuisance-bound or late-observation dependence not visible in Module 4.5.

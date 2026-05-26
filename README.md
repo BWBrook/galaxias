@@ -21,16 +21,19 @@ come before counterfactual attribution.
 
 ## Current Status
 
-Modules 1 through 4 are complete to the current standard. Module 4 found that
-`persistent_joint_cause` won 12 of 15 observation-bridge variant/seed runs,
-including all baseline and combined soft late-observation runs. `climbing_only`
-won 3 of 15 runs under single-axis late-observation relaxations.
-`habitat_only_null` and `trout_only` had zero accepted proposals across the
-Module 4 grid.
+Modules 1 through 4.5 are complete to the current standard. Module 4 found
+that `persistent_joint_cause` won 12 of 15 observation-bridge variant/seed
+runs, including all baseline and combined soft late-observation runs.
+`climbing_only` won 3 of 15 runs under single-axis late-observation
+relaxations. `habitat_only_null` and `trout_only` had zero accepted proposals
+across the Module 4 grid.
 
-This is a strong calibration result, but not a final causal conclusion. Module
-4.5 must test whether the surviving mechanism-rich families are biologically
-coherent rather than carried mainly by nuisance or late-observation terms.
+Module 4.5 turned that calibration result into a mechanism audit. Its current
+decision table carries `persistent_joint_cause` as the primary Module 5
+ensemble, keeps `climbing_only` and `transient_perfect_storm` as sensitivity
+cases, and keeps `habitat_only_null` and `trout_only` as negative references.
+This is still not a final causal conclusion; counterfactual attribution starts
+in Module 5.
 
 ## Module Map
 
@@ -43,7 +46,7 @@ coherent rather than carried mainly by nuisance or late-observation terms.
 - Module 3.75: late-observation bridge diagnostics for `CT007`, `CT009`, and
   `CT010`.
 - Module 4: observation-bridge sensitivity calibration.
-- Module 4.5: planned mechanism interpretation audit.
+- Module 4.5: mechanism interpretation audit.
 - Module 5 and later: counterfactual attribution, coexistence envelope,
   robustness, manuscript, and genetics sidecar.
 
@@ -68,6 +71,17 @@ Small smoke jobs stay local and write ignored outputs:
 make smoke
 make module4-smoke
 make module4-5-smoke
+```
+
+The full Module 4.5 diagnostic can be regenerated from the raw Module 4
+artifact manifest:
+
+```bash
+uv run python scripts/run_module4_5_mechanism_interpretation.py \
+  --module4-root outputs/remote/module4_observation_sensitivity_20260522T101942Z \
+  --manifest data/module4_raw_artifact_manifest.csv \
+  --publish-root . \
+  --verify-hashes
 ```
 
 ## Offline Or Cluster-Safe Python
