@@ -2,6 +2,9 @@
 
 Last updated: 2026-05-23
 
+Companion gate plan:
+`docs/gated_action_plan_module4_5_and_beyond.md`
+
 ## Purpose
 
 Module 4.5 is the interpretive bridge between calibration sensitivity and
@@ -326,4 +329,3 @@ Escalate to a larger calibration grid only if:
   of ambiguity;
 - the required grid is large enough to justify more `deep-server` runs or,
   eventually, a PBS sweep on `kunanyi`.
-
