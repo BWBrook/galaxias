@@ -4,13 +4,19 @@ This repo is the Pedder galaxias modelling and evidence workflow.
 
 ## Operating Boundary
 
-- Treat this MacBook as a control plane and smoke-test host only.
-- Local runs should stay small: setup checks, compile checks, unit tests, tiny
-  deterministic/stochastic smokes, document generation, and repo maintenance.
+- Treat this Mac mini as the local development, validation, and orchestration
+  host for this repo.
+- Local runs can include setup checks, compile checks, unit tests, document
+  generation, tiny deterministic/stochastic smokes, Module 4.5 report
+  generation, and other small-to-moderate pandas/Python work.
 - Do not run heavy ABC calibration, large simulation batches, big data pulls,
-  or long parallel jobs on the MacBook.
-- Offload meaningful compute through SSH to `nectar`/`nectar-codex` or
-  `kunanyi` as appropriate.
+  or long parallel jobs on the Mac mini unless they have first been scoped as
+  genuinely local-scale.
+- Offload meaningful compute through the remote-compute ladder described in
+  `/Users/bwbrook/work/nectar`: usually `deep-server` / `utas-ubuntu` for
+  large single-host CPU/RAM work, `alien-wsl` for GPU work that fits dual RTX
+  2080s, Nectar for elastic cloud CPU/GPU jobs, and `kunanyi` only for true
+  PBS-scale multi-node jobs.
 - Use `/Users/bwbrook/work/nectar` for the current machine runbooks, SSH paths,
   PBS conventions, data-placement rules, and smoke-test ladders.
 
@@ -28,9 +34,9 @@ This repo is the Pedder galaxias modelling and evidence workflow.
   drive-letter paths.
 - Keep text files LF-only so the repo behaves the same on WSL Ubuntu, macOS,
   Nectar Ubuntu, and Kunanyi/CentOS.
-- Preserve Python 3.12 compatibility as the shared baseline; newer local Python
-  versions are useful for extra checks but should not become required without
-  a deliberate decision.
+- Python 3.14 is now the intended local and repo baseline. Historical
+  provenance records may still name Python 3.12 when they describe older
+  Module 4 runs.
 - Use `uv` for environment management. Keep `uv.lock` authoritative.
 - Store generated heavy outputs outside git, normally under `outputs/` locally
   or remote scratch/artifact paths described in the Nectar control-plane repo.

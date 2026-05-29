@@ -244,7 +244,7 @@ non-detection.
 ## Module 3.5 Remote Sensitivity Sweep
 
 We then ran a larger Module 3.5 sensitivity sweep remotely on Nectar. The
-MacBook is being used as a control plane for light checks; heavier simulation
+Mac mini is being used as a control plane for light checks; heavier simulation
 runs are offloaded.
 
 The remote sweep used:
@@ -343,7 +343,7 @@ Module 4 reran the calibration with five explicit observation-bridge variants:
 - `CT010` lower-detection scoring;
 - a combined soft late-observation setting.
 
-This was run on `deep-server`, not on the MacBook. The grid used three seeds,
+This was run on `deep-server`, not on the Mac mini. The grid used three seeds,
 1000 Stage A draws per family, 100 retained proposals per family, and 20 Stage
 B stochastic historical replicates. In total this was 15 calibration runs.
 

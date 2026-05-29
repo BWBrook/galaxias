@@ -86,11 +86,11 @@ uv run python scripts/run_module4_5_mechanism_interpretation.py \
 
 ## Offline Or Cluster-Safe Python
 
-The repo targets Python 3.12. On machines where `uv` should not download a
+The repo targets Python 3.14. On machines where `uv` should not download a
 managed Python, point it at a pre-installed interpreter or forbid downloads:
 
 ```bash
-UV_PYTHON_DOWNLOADS=never uv run --python /path/to/python3.12 pytest -m "not slow"
+UV_PYTHON_DOWNLOADS=never uv run --python /path/to/python3.14 pytest -m "not slow"
 ```
 
 Keep `uv.lock` authoritative; do not replace the host Python to make this repo

@@ -142,7 +142,7 @@ Required actions:
 
 Pass gate:
 
-- The fast gate finishes reliably on the MacBook.
+- The fast gate finishes reliably on the Mac mini.
 - The full or integration gate is still available and documented.
 - Parallel-vs-serial reproducibility remains tested somewhere deliberate.
 
@@ -306,7 +306,7 @@ counterfactual attribution.
 
 Compute plan:
 
-- Develop and smoke locally on the MacBook.
+- Develop and smoke locally on the Mac mini.
 - Use `deep-server` if full raw-artifact joins or trajectory regeneration are
   slow locally.
 - Use `tmux` on `deep-server` for any run that may outlive the interactive

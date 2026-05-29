@@ -1,7 +1,7 @@
 .PHONY: setup portability compile fast-test test integration-test fast-check integration-check check smoke module3-5 module3-75 module4-smoke module4-5-smoke clean
 
 setup:
-	uv sync --locked
+	uv sync --locked --python 3.14
 
 portability:
 	uv run python scripts/check_portability.py

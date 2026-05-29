@@ -53,7 +53,7 @@ creating an unstructured tuning exercise.
 
 ### Tier 0: local smoke
 
-Run on the MacBook or Mac Mini only with tiny settings:
+Run locally on the Mac mini only with tiny settings:
 
 - 2-5 Stage A draws per family;
 - 1-2 retained proposals per family;
@@ -96,8 +96,8 @@ Possible trigger:
 
 Use:
 
-- MacBook for orchestration, docs, and tiny smoke tests;
-- Mac Mini for heavier macOS development loops if the MacBook is being tied up;
+- Mac mini for orchestration, docs, smoke tests, and moderate local
+  report-generation loops;
 - `deep-server` for the first serious Module 4 grid;
 - `kunanyi` only after the run definition is stable and the grid is large
   enough to justify PBS;

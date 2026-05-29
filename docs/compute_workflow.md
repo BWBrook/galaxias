@@ -2,17 +2,18 @@
 
 ## Roles
 
-The MacBook is the control plane for `galaxias`: use it for repo maintenance,
-document work, package setup, portability checks, and smoke-sized runs. Heavy
-calibration, large simulation batches, or bulky data work should be launched
-remotely over SSH.
+The Mac mini is the local control and validation host for `galaxias`: use it
+for repo maintenance, document work, package setup, portability checks,
+smoke-sized runs, and small-to-moderate report generation. Heavy calibration,
+large simulation batches, or bulky data work should be launched remotely over
+SSH.
 
 Use `/Users/bwbrook/work/nectar` as the live operating reference for machine
 access, storage locations, PBS submission patterns, and smoke-test ladders.
 
 ## Local smoke path
 
-Use the locked Python environment:
+Use the locked Python 3.14 environment:
 
 ```bash
 make setup
@@ -42,7 +43,7 @@ ssh nectar-codex 'cd /data/codex/repos/galaxias && make setup && make check'
 ```
 
 For heavier Module 3 calibration runs, keep outputs in a run-specific remote
-scratch or artifact directory rather than the MacBook checkout.
+scratch or artifact directory rather than the Mac mini checkout.
 
 After the Module 3.5 sampler repair, the next useful remote rehearsal is a
 larger sensitivity sweep before changing biological target weights:

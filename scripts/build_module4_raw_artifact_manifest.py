@@ -26,7 +26,8 @@ SUMMARY_PUBLISH_GIT_COMMIT = "eaac90ef0260946f2c2126b8bc0fc03bd1a05010"
 CALIBRATION_COMMIT_BASIS = (
     "inferred_from_run_start_after_module4_runner_commit; exact_commit_absent_from_run_manifest"
 )
-PYTHON_VERSION_BASIS = "repo_python_baseline_only; exact_patch_absent_from_run_manifest"
+PYTHON_VERSION_BASIS = "historical_repo_python_baseline_only; exact_patch_absent_from_run_manifest"
+CALIBRATION_SOURCE_PYTHON_VERSION = "3.12.x"
 
 EXPECTED_FILES = (
     ("proposal_summary", "proposal_summary.csv.gz"),
@@ -99,7 +100,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--source-python-version",
         default=None,
-        help="Exact Python version used for the source run. Defaults to the repo baseline with an unknown patch.",
+        help=(
+            "Exact Python version used for the source run. Defaults to the historical "
+            "Module 4 calibration baseline with an unknown patch."
+        ),
     )
     return parser.parse_args()
 
@@ -197,11 +201,7 @@ def git_head() -> str:
 def source_python_version(explicit_version: str | None) -> str:
     if explicit_version:
         return explicit_version
-    baseline_path = ROOT / ".python-version"
-    if baseline_path.exists():
-        baseline = baseline_path.read_text(encoding="utf-8").strip()
-        return f"{baseline}.x"
-    return "python3.12.x"
+    return CALIBRATION_SOURCE_PYTHON_VERSION
 
 
 def command_from_config(config: dict[str, Any], variant: str, seed: str, remote_output: str) -> str:

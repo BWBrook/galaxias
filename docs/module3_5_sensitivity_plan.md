@@ -105,9 +105,9 @@ Module 3.75 focused on `CT007`/`CT009`/`CT010`.
 
 ## Compute Plan
 
-### Local MacBook
+### Local Mac mini
 
-Use only for:
+Use for local validation only:
 
 - `make check`;
 - `make smoke`;
@@ -137,7 +137,7 @@ Recommended flavor:
 - `c3.3xlarge` is probably unnecessary for this Python workflow unless a
   later profiling run shows poor walltime at `c3.xlarge`.
 
-Resize gate from the MacBook control-plane:
+Resize gate from the Mac mini control-plane:
 
 ```bash
 cd /Users/bwbrook/work/nectar
@@ -172,7 +172,7 @@ set -euo pipefail
 cd /data/codex/repos/galaxias
 git fetch origin
 git status --short --branch
-uv sync --locked
+uv sync --locked --python 3.14
 make check
 
 RUN_ID=module3_5_sensitivity_$(date -u +%Y%m%dT%H%M%SZ)

@@ -263,23 +263,19 @@ small landmark table is needed for reproducibility.
 
 ## Compute Plan
 
-### MacBook
+### Mac mini
 
-Use the MacBook for:
+Use the Mac mini for:
 
 - reading and editing the plan;
 - developing the summarizer on one variant/seed;
 - running `make check`;
 - inspecting small CSV outputs.
 
-Avoid loading all raw remote artifacts repeatedly on the MacBook if memory use
-is clumsy.
-
-### Mac Mini
-
-Use the Mac Mini if the work is mostly pandas/report generation and the
-MacBook feels memory-bound. This is a good fallback for medium local analysis,
-but it is not necessary if `deep-server` is more convenient.
+The Mac mini is also suitable for the full Module 4.5 pandas/report-generation
+pass when the raw Module 4 mirror is already present locally. Move to
+`deep-server` if a later analysis becomes a large resimulation or a long
+parallel job.
 
 ### Deep-server
 
@@ -292,10 +288,10 @@ artifact already exists there:
 Expected run style:
 
 - mirror latest repo to `/data/codex/repos/galaxias`;
-- verify `uv sync --locked` and `make check`;
+- verify `uv sync --locked --python 3.14` and `make check`;
 - run the full Module 4.5 summarizer against the existing artifact using an
   explicit `--module4-root` and `--manifest`;
-- copy compact `data/` and `docs/` products back to the MacBook.
+- copy compact `data/` and `docs/` products back to the Mac mini.
 
 Use `tmux` if trajectory regeneration is run across hundreds of proposals, or
 if the job may outlive the interactive Codex session.
