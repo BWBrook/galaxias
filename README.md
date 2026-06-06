@@ -71,7 +71,13 @@ Small smoke jobs stay local and write ignored outputs:
 make smoke
 make module4-smoke
 make module4-5-smoke
+make module5-smoke
+make module5-inspect
 ```
+
+`make module5-inspect` reads the tiny Module 5 smoke output from disk and
+writes an ignored inspection bundle. It is a runner-output contract check, not
+production attribution.
 
 The full Module 4.5 diagnostic can be regenerated from the raw Module 4
 artifact manifest:

@@ -67,6 +67,9 @@ Design notes:
   and writes tiny matched baseline/intervention smoke outputs under ignored
   `outputs/`; these are runner-wiring checks, not production attribution
   results.
+- `scripts/inspect_module5_counterfactual_smoke.py` reads those emitted smoke
+  files from disk and writes an ignored inspection bundle for schema, pairing,
+  provenance, and smoke-only boundary review.
 - In the normalized pedder plate tables, blank numeric cells from the raw sheet have been interpreted as zero counts. The `G. fontanus` row is treated as a species-total row because it appears inline rather than under a separate location block.
 - In the ALA curation outputs, `specimens_curated.csv` is one row per inferred specimen key, and `specimens_project_relevant.csv` keeps rows that are either directly Pedder-linked or unresolved enough to warrant follow-up rather than immediate exclusion.
 - In the ALA enrichment outputs, `MISSING_COLLECTION_DATE` is taken from the ALA per-record quality flags and is a useful indicator that the date is not merely absent from the bulk download.
@@ -75,7 +78,9 @@ Immediate next steps:
 
 1. Review the Goal 002 Module 5 runner prototype before authorising any
    production attribution runs.
-2. Keep generated Module 5 smoke outputs under ignored `outputs/` unless a
+2. Use the Goal 003 inspection layer to review emitted Module 5 smoke files
+   before authorising any production attribution runs.
+3. Keep generated Module 5 smoke outputs under ignored `outputs/` unless a
    later reviewed goal explicitly promotes a compact summary.
-3. Keep the TMAG metadata request alive, but do not treat the remaining museum
+4. Keep the TMAG metadata request alive, but do not treat the remaining museum
    gaps as blockers for the Module 5 runner-prototype lane.
