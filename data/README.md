@@ -76,11 +76,9 @@ Design notes:
 
 Immediate next steps:
 
-1. Review the Goal 002 Module 5 runner prototype before authorising any
-   production attribution runs.
-2. Use the Goal 003 inspection layer to review emitted Module 5 smoke files
-   before authorising any production attribution runs.
-3. Keep generated Module 5 smoke outputs under ignored `outputs/` unless a
+1. Review the Goal 004 Module 5 production-readiness gate before authorising
+   any production attribution runs.
+2. Keep generated Module 5 smoke outputs under ignored `outputs/` unless a
    later reviewed goal explicitly promotes a compact summary.
-4. Keep the TMAG metadata request alive, but do not treat the remaining museum
-   gaps as blockers for the Module 5 runner-prototype lane.
+3. Keep the TMAG metadata request alive, but do not treat the remaining museum
+   gaps as blockers for the Module 5 readiness-gate lane.

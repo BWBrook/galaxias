@@ -79,6 +79,11 @@ make module5-inspect
 writes an ignored inspection bundle. It is a runner-output contract check, not
 production attribution.
 
+The next Module 5 step is the production-readiness gate in
+`docs/goals/004-module5-production-readiness/`. It defines approval conditions
+before any production attribution run, remote compute, or manuscript-level
+interpretation.
+
 The full Module 4.5 diagnostic can be regenerated from the raw Module 4
 artifact manifest:
 

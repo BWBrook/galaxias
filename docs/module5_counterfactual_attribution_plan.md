@@ -101,28 +101,36 @@ In this scaffold:
 - Other axes are design-only placeholders for the next scaffold stage and are
   explicitly marked as requiring a module-level intervention implementation.
 
-## Production-Readiness Gate for the Next Goal
+## Production-Readiness Gate
 
-Before moving to Module 5 production/prototype:
+Goal 002 added a tiny local runner prototype and Goal 003 added disk-first
+inspection of its emitted smoke files. Before moving beyond those smoke-scale
+checks, Goal 004 defines the production-readiness gate for Module 5.
+
+Before any production-sized Module 5 run:
 
 1. The counterfactual intervention contract and outcome schema in this goal are
-   finalised and immutable.
-2. A lightweight validator and focused test demonstrate:
+   finalised or any proposed change has been reviewed.
+2. The lightweight validator and focused tests demonstrate:
    - required column coverage,
    - family-role reference integrity,
    - unique intervention IDs,
    - required axis presence,
    - contract schema completeness.
-3. The `data/README.md` documents these artefacts and where generated outputs
-   will be written.
-4. Negative references remain negative references until matched stochastic
-   outcomes show otherwise.
+3. Tiny local smoke output and disk-first inspection pass.
+4. SRF-A/Barry approve the production proposal set, replicate count, seed
+   policy, compute target, output-handling plan, validation ladder, and
+   claim-language guardrail.
+5. Negative references remain negative references until reviewed matched
+   stochastic outcomes show otherwise.
 
-## Residual Work for Goal 002 (next)
+## Residual Work for Goal 004 (next)
 
-- Implement the execution runner that maps rows in
-  `data/module5_counterfactual_interventions.csv` into proposal-level matched
-  simulation pairs.
-- Generate and store contract-conforming outputs and provenance files.
-- Add a short interpretation gate note that keeps causal language scoped to
-  Module 4.5-conditioned attribution, not certainty claims.
+- Finalise the production-readiness gate in
+  `docs/goals/004-module5-production-readiness/`.
+- Decide whether a small local dry-run is needed before any production-sized
+  plan.
+- Use `/Users/bwbrook/work/nectar` for deliberate compute-routing only after
+  SRF-A/Barry approve production-sized planning.
+- Keep causal language scoped to Module 4.5-conditioned matched attribution,
+  not certainty claims.
