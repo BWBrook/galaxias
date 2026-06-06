@@ -1,4 +1,4 @@
-.PHONY: setup portability compile fast-test test integration-test fast-check integration-check check smoke module3-5 module3-75 module4-smoke module4-5-smoke clean
+.PHONY: setup portability compile fast-test test integration-test fast-check integration-check check smoke module3-5 module3-75 module4-smoke module4-5-smoke module5-smoke clean
 
 setup:
 	uv sync --locked --python 3.14
@@ -55,6 +55,11 @@ module4-5-smoke:
 		--manifest data/module4_raw_artifact_manifest.csv \
 		--publish-root . \
 		--smoke-only
+
+module5-smoke:
+	uv run python scripts/run_module5_counterfactual_smoke.py \
+		--output-dir outputs/module5_runner_smoke \
+		--replicates 2
 
 clean:
 	rm -rf outputs .pytest_cache scripts/__pycache__ src/galaxias_model/__pycache__ tests/__pycache__
