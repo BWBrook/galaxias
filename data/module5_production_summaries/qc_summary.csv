@@ -1,0 +1,13 @@
+check_name,observed_value,expected_value,passed,details
+raw_file_exists,True,True,True,/data/codex/artifacts/galaxias/module5_100rep_production_20260614T031501Z-goal014-m5-100rep-production/outputs/module5_100rep_production/matched_outcomes.csv
+raw_path_under_source_artifact,/data/codex/artifacts/galaxias/module5_100rep_production_20260614T031501Z-goal014-m5-100rep-production/outputs/module5_100rep_production/matched_outcomes.csv,/data/codex/artifacts/galaxias/module5_100rep_production_20260614T031501Z-goal014-m5-100rep-production,True,Raw matched outcomes must be read from the authorized remote artifact tree.
+raw_sha256,ef8d9a5fca70a253c972c7d8483654b42f0351e361e852258b5c814dfebdc727,ef8d9a5fca70a253c972c7d8483654b42f0351e361e852258b5c814dfebdc727,True,
+required_columns,[],[],True,
+row_count,279500,279500,True,
+column_count,53,53,True,
+replicate_ids,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99]","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99]",True,
+source_intervention_units,2795,2795,True,
+distinct_proposal_source_keys,780,780,True,
+seed_mismatches,0,0,True,
+partition_counts,"{""diagnostic_sidecar/climbing_only_no_trout_pressure"": 23500, ""headline/climbing_only"": 47000, ""headline/persistent_joint_cause"": 106000, ""headline/transient_perfect_storm"": 100000, ""negative_reference/habitat_only_null"": 1500, ""negative_reference/trout_only"": 1500}","{""diagnostic_sidecar/climbing_only_no_trout_pressure"": 23500, ""headline/climbing_only"": 47000, ""headline/persistent_joint_cause"": 106000, ""headline/transient_perfect_storm"": 100000, ""negative_reference/habitat_only_null"": 1500, ""negative_reference/trout_only"": 1500}",True,
+replicate_coverage,"{""failures"": [], ""units"": 2795}","{""replicates"": 100, ""units"": 2795}",True,

@@ -1,0 +1,41 @@
+{
+  "label": "goal015-module5-production-summary",
+  "run_id": "20260614T031501Z-goal014-m5-100rep-production",
+  "created_at": "2026-06-14T04:08:57.355352+00:00",
+  "source_artifact": "/data/codex/artifacts/galaxias/module5_100rep_production_20260614T031501Z-goal014-m5-100rep-production",
+  "matched_outcomes_path": "/data/codex/artifacts/galaxias/module5_100rep_production_20260614T031501Z-goal014-m5-100rep-production/outputs/module5_100rep_production/matched_outcomes.csv",
+  "source_execution_sha": "ddb8a6de583e85f170f46c9dec9b1246baa6dccc",
+  "goal014_record_sha": "a96cfed24800823b77cbafeed5e9603e9dd6d33c",
+  "raw_matched_outcomes_size": 435867556,
+  "raw_matched_outcomes_sha256": "ef8d9a5fca70a253c972c7d8483654b42f0351e361e852258b5c814dfebdc727",
+  "expected_raw_matched_outcomes_sha256": "ef8d9a5fca70a253c972c7d8483654b42f0351e361e852258b5c814dfebdc727",
+  "summarizer_command": "scripts/summarize_module5_production.py --matched-outcomes /data/codex/artifacts/galaxias/module5_100rep_production_20260614T031501Z-goal014-m5-100rep-production/outputs/module5_100rep_production/matched_outcomes.csv --output-dir /data/codex/artifacts/galaxias/module5_100rep_production_20260614T031501Z-goal014-m5-100rep-production/compact_summaries_goal015 --expected-sha256 ef8d9a5fca70a253c972c7d8483654b42f0351e361e852258b5c814dfebdc727 --source-artifact /data/codex/artifacts/galaxias/module5_100rep_production_20260614T031501Z-goal014-m5-100rep-production --source-execution-sha ddb8a6de583e85f170f46c9dec9b1246baa6dccc --goal014-record-sha a96cfed24800823b77cbafeed5e9603e9dd6d33c --run-id 20260614T031501Z-goal014-m5-100rep-production",
+  "row_count": 279500,
+  "column_count": 53,
+  "expected_replicates": 100,
+  "source_intervention_units": 2795,
+  "distinct_proposal_source_keys": 780,
+  "contrast_endpoints": [
+    "extirpation_year_contrast",
+    "persistence_2002_contrast",
+    "persistence_1996_contrast",
+    "min_abundance_1992_2002_contrast",
+    "lake_refuge_share_2002_contrast",
+    "detection_summary_contrast"
+  ],
+  "qc_all_passed": true,
+  "raw_matched_outcomes_copied_locally": false,
+  "non_interpretation_boundary": "Compact descriptive summaries only; no final causal conclusion, manuscript language, figure/table work, or production attribution interpretation is made by this Goal 015 artifact.",
+  "summary_files": {
+    "qc_summary": "qc_summary.csv",
+    "partition_endpoint_summary": "partition_endpoint_summary.csv",
+    "source_intervention_endpoint_summary": "source_intervention_endpoint_summary.csv",
+    "direction_summary": "direction_summary.csv"
+  },
+  "summary_row_counts": {
+    "qc_summary": 12,
+    "partition_endpoint_summary": 78,
+    "source_intervention_endpoint_summary": 16770,
+    "direction_summary": 78
+  }
+}
