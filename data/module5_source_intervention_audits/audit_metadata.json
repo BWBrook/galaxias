@@ -1,0 +1,33 @@
+{
+  "broad_raw_extract_created": false,
+  "endpoint_bundle_survived_targeted_audit": true,
+  "expected_raw_row_count": 279500,
+  "generated_at_utc": "2026-06-14T05:37:13.857511Z",
+  "goal": "017-module5-targeted-source-intervention-audit",
+  "negative_subset_source_limit_per_audit": 20,
+  "negative_subset_source_totals": {
+    "A03": 40,
+    "A10": 23
+  },
+  "output_files": {
+    "negative_subset_sources.csv": 40,
+    "replicate_distribution_summary.csv": 6,
+    "selected_audit_targets.csv": 6
+  },
+  "raw_matched_outcomes_copied_locally": false,
+  "raw_matched_outcomes_path": "/data/codex/artifacts/galaxias/module5_100rep_production_20260614T031501Z-goal014-m5-100rep-production/outputs/module5_100rep_production/matched_outcomes.csv",
+  "raw_matched_sha256": "ef8d9a5fca70a253c972c7d8483654b42f0351e361e852258b5c814dfebdc727",
+  "raw_matched_size_bytes": 435867556,
+  "raw_row_count_scanned": 279500,
+  "remote_alias": "deep-server-ts",
+  "remote_workspace": "/data/codex/scratch/galaxias/module5_goal017_audit_20260614T053513Z",
+  "selected_audit_ids": [
+    "A01",
+    "A02",
+    "A03",
+    "A04",
+    "A05",
+    "A10"
+  ],
+  "source_artifact": "/data/codex/artifacts/galaxias/module5_100rep_production_20260614T031501Z-goal014-m5-100rep-production"
+}
