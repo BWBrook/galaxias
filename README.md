@@ -73,14 +73,22 @@ make module4-smoke
 make module4-5-smoke
 make module5-smoke
 make module5-inspect
+make module5-dry-run
+make module5-dry-run-inspect
 ```
 
 `make module5-inspect` reads the tiny Module 5 smoke output from disk and
 writes an ignored inspection bundle. It is a runner-output contract check, not
 production attribution.
 
-The next Module 5 step is the production-readiness gate in
-`docs/goals/004-module5-production-readiness/`. It defines approval conditions
+`make module5-dry-run` runs the approved local real-proposal Module 5 dry run
+from the Goal 005/006 contract and writes ignored outputs under
+`outputs/module5_dry_run_baseline_current_20260410/`. The matching
+`make module5-dry-run-inspect` target inspects those files from disk. These
+are local plumbing checks, not production attribution or manuscript evidence.
+
+The Module 5 production-readiness gate in
+`docs/goals/004-module5-production-readiness/` defines approval conditions
 before any production attribution run, remote compute, or manuscript-level
 interpretation.
 

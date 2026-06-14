@@ -1,9 +1,12 @@
 column_name,required,dtype,unit,description,source_or_derivation
 family_id,TRUE,string,identifier,Family name used for each counterfactual run,Carried from the module5 counterfactual configuration and proposal metadata.
 family_role,TRUE,string,identifier,Module 5 role for the family (primary/sensitivity/negative_reference),Mapped from data/module4_5_family_decision_table.csv.
-proposal_id,TRUE,string,identifier,Unique Module 4 proposal identifier used for matched baseline/counterfactual runs,Resolved via Module 4 family proposal sampling input.
+proposal_id,TRUE,string,identifier,Module 4 proposal identifier unique only within its source context,Resolved via Module 4 family proposal sampling input.
+proposal_source_key,TRUE,string,identifier,Canonical Module 5 source-context proposal key,Generated as module4_run_id|variant_id|seed|run_dir_name|family_id|proposal_id.
+module4_run_id,TRUE,string,identifier,Module 4 source run identifier for the proposal row,Carried from data/module4_5_proposal_set_membership.csv.
 variant_id,TRUE,string,identifier,Observation-bridge variant used for the proposal source,Carried from candidate proposal metadata.
 seed,TRUE,integer,seed,Original proposal seed or variant run seed,Carried from Module 4 lineage metadata.
+run_dir_name,TRUE,string,identifier,Module 4 source run directory name for the proposal row,Carried from data/module4_5_proposal_set_membership.csv.
 proposal_seed,TRUE,integer,seed,Seed passed to the counterfactual paired simulation replicate group,Set in Module 5 execution configuration.
 stochastic_replicate_id,TRUE,integer,index,Replicate index for matched stochastic pairs,Generated deterministically from paired-run launcher.
 intervention_id,TRUE,string,identifier,Intervention contract row driving the scenario comparison,Joined from data/module5_counterfactual_interventions.csv.

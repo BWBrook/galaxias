@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import importlib.util
+from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
@@ -58,6 +59,67 @@ def test_validate_module5_counterfactual_contract_passes() -> None:
     )
     assert ok
     assert errors == []
+
+    schema_rows = list(csv.DictReader(DEFAULT_OUTCOME_SCHEMA.open(newline="", encoding="utf-8")))
+    by_name = {row["column_name"]: row for row in schema_rows}
+    assert {"proposal_source_key", "module4_run_id", "run_dir_name"} <= set(by_name)
+    assert "source context" in by_name["proposal_id"]["description"].lower()
+
+
+def test_default_module5_intervention_matrix_has_goal008_shape() -> None:
+    rows = list(csv.DictReader(DEFAULT_INTERVENTIONS.open(newline="", encoding="utf-8")))
+    expected_shape = {
+        "persistent_joint_cause": {
+            "status_quo",
+            "no_trout_pressure",
+            "no_climbing_pressure",
+            "no_trout_or_climbing_pressure",
+        },
+        "climbing_only": {
+            "status_quo",
+            "no_trout_pressure",
+            "no_climbing_pressure",
+        },
+        "transient_perfect_storm": {
+            "status_quo",
+            "no_trout_pressure",
+            "no_climbing_pressure",
+            "no_trout_or_climbing_pressure",
+        },
+        "habitat_only_null": {"status_quo"},
+        "trout_only": {"status_quo"},
+    }
+    expected_new_ids = {
+        "m5_climbing_only_no_climbing_pressure",
+        "m5_transient_perfect_storm_no_trout_pressure",
+        "m5_transient_perfect_storm_no_trout_or_climbing_pressure",
+    }
+
+    ids = [row["intervention_id"] for row in rows]
+    assert len(rows) == 13
+    assert len(ids) == len(set(ids))
+    assert expected_new_ids <= set(ids)
+
+    actual_shape: dict[str, set[str]] = defaultdict(set)
+    for row in rows:
+        actual_shape[row["family_id"]].add(row["intervention_axis"])
+    assert dict(actual_shape) == expected_shape
+
+    negative_shape: dict[str, set[str]] = defaultdict(set)
+    for row in rows:
+        if row["negative_reference_flag"].strip().upper() == "TRUE":
+            negative_shape[row["family_id"]].add(row["intervention_axis"])
+    assert dict(negative_shape) == {
+        "habitat_only_null": {"status_quo"},
+        "trout_only": {"status_quo"},
+    }
+
+    assert {row["production_status"] for row in rows} == {"implemented", "design_only"}
+    assert {
+        row["production_status"]
+        for row in rows
+        if row["intervention_axis"] != "status_quo"
+    } == {"design_only"}
 
 
 def test_validate_module5_counterfactual_contract_detects_duplicate_intervention_id(tmp_path: Path) -> None:
