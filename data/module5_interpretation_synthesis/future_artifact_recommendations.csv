@@ -1,0 +1,5 @@
+artifact_id,artifact_design_note,purpose,inputs,create_now,precondition
+F01,endpoint_bundle_summary_grid,Show lead persistence endpoint with abundance and lake-refuge support.,Goal 015 compact summaries plus Goal 017 audited targets.,no,Barry/Galaxias accept this synthesis gate.
+F02,pressure_removal_contrast_visual_concept,Compare primary pressure-removal rows across the accepted endpoint bundle.,partition_endpoint_summary.csv and replicate_distribution_summary.csv.,no,A future artefact-design goal authorizes visuals.
+F03,source_audit_appendix_grid,Summarize A01-A05 and A10 audited source/intervention findings compactly.,Goal 017 replicate_distribution_summary.csv and negative_subset_sources.csv.,no,A future review goal decides which source rows to expose.
+F04,sensitivity_diagnostic_context_grid,"Keep sensitivity, diagnostic sidecar, and negative-reference context visible without headline weighting.",Goal 015 summaries and Goal 016 sensitivity treatment matrix.,no,A later internal results-review goal chooses context scope.

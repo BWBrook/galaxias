@@ -1,0 +1,5 @@
+partition_or_context,treatment,evidence,caution,next_use
+headline/persistent_joint_cause,primary internal review basis,Module 4.5 primary ensemble; Goal 015-017 endpoint bundle support.,A03 constrains no-trout single-pressure decomposition.,Lead partition in synthesis.
+headline/climbing_only,sensitivity and contrast-shape check,Goal 015 positive no-climbing contrasts; Goal 016 kept as sensitivity.,Do not give equal headline weight without later decision.,Robustness comparison after primary partition.
+headline/transient_perfect_storm,sensitivity and contrast-shape check with A10 caution,"Goal 017 A10 negative subset: 23 units, 150 negative values among 2,300 rows.",No-trout single-pressure sensitivity row needs careful wording.,Sensitivity comparison with explicit caution.
+diagnostic_sidecar_and_negative_references,QC and context only,Goal 015 zero contrasts across diagnostic sidecar and negative-reference rows.,Do not use as headline evidence.,Compact context in later internal review.

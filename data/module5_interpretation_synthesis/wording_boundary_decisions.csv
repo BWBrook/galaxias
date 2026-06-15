@@ -1,0 +1,9 @@
+boundary_id,topic,allowed_internal_wording,not_allowed_in_goal018,reason,release_condition
+W01,evidence_stack,Goal 015-017 compact evidence is verified and suitable for internal synthesis.,public certainty statement,Goal 018 is internal only.,Later human-reviewed results goal.
+W02,endpoint_bundle,Endpoint bundle accepted for internal synthesis.,one-endpoint certainty,The synthesis uses a bundle and preserves cautions.,Barry/Galaxias approval of synthesis framing.
+W03,primary_partition,Persistent-joint-cause is the primary review basis.,unqualified public mechanism statement,"Primary status is internal review priority, not public wording.",Later results-review authorization.
+W04,A03_primary_no_trout,A03 is a caution on no-trout single-pressure decomposition.,clean single-pressure decomposition statement,A03 includes 147 negative persistence values across 40 negative-subset units.,Review decides how much decomposition detail to expose.
+W05,A10_transient_sensitivity,A10 is a sensitivity caution for transient-perfect-storm no-trout wording.,headline sensitivity statement,"A10 applies to a sensitivity partition, not the primary basis.",Sensitivity-scope decision in later review.
+W06,extirpation_timing,Extirpation timing remains secondary and audit-selector only.,timing-led interpretation,No extirpation-specific audit was authorized for Goal 018.,Separate timing audit if Galaxias asks for it.
+W07,diagnostic_and_negative_reference_context,Diagnostic sidecar and negative references are QC/context checks.,headline evidence use,Their role is contextual and diagnostic.,Later review chooses context scope.
+W08,future_artefacts,Future artefacts are design recommendations only.,draft paper-facing artefact or public wording,Goal 018 cannot create display artefacts or public text.,Separate artefact-design or results-review goal.
