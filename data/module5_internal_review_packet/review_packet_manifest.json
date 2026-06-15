@@ -1,0 +1,58 @@
+{
+  "packet_status": "internal_non_display",
+  "goal": "020-module5-internal-review-packet-build",
+  "source_commit": "e0f39eac798fe83fa48fb8a853dd8b6ee9c6f817",
+  "boundary": "Internal review packet only; no remote audit, raw matched-output read, simulation, polished artefact production, paper-facing wording, or stronger causal language.",
+  "source_inputs": [
+    "docs/module5_results_review_artifact_design.md",
+    "data/module5_results_review_design/",
+    "docs/module5_interpretation_synthesis_gate.md",
+    "data/module5_interpretation_synthesis/",
+    "docs/module5_targeted_source_intervention_audit.md",
+    "data/module5_source_intervention_audits/",
+    "docs/module5_production_summary_review.md",
+    "data/module5_production_summaries/"
+  ],
+  "reading_order": [
+    "wording_boundary_checklist.csv",
+    "endpoint_bundle_summary_grid.csv",
+    "source_audit_appendix_grid.csv",
+    "pressure_removal_contrast_matrix.csv",
+    "sensitivity_diagnostic_context_grid.csv"
+  ],
+  "tables": {
+    "wording_boundary_checklist.csv": {
+      "row_count": 10,
+      "packet_status": "internal_non_display",
+      "purpose": "First-stop wording and stop-condition checklist."
+    },
+    "endpoint_bundle_summary_grid.csv": {
+      "row_count": 3,
+      "packet_status": "internal_non_display",
+      "purpose": "Primary endpoint-bundle review grid."
+    },
+    "source_audit_appendix_grid.csv": {
+      "row_count": 6,
+      "packet_status": "internal_non_display",
+      "purpose": "Compact selected source/intervention audit context."
+    },
+    "pressure_removal_contrast_matrix.csv": {
+      "row_count": 7,
+      "packet_status": "internal_non_display",
+      "purpose": "Pressure-removal comparison matrix for internal review."
+    },
+    "sensitivity_diagnostic_context_grid.csv": {
+      "row_count": 6,
+      "packet_status": "internal_non_display",
+      "purpose": "Sensitivity, diagnostic, negative-reference, and timing context grid."
+    }
+  },
+  "stop_conditions": [
+    "Stop before reading raw matched outcomes or running remote commands.",
+    "Stop before constructing polished visuals or display-ready tables.",
+    "Stop before public, paper-facing, or stronger causal wording.",
+    "Stop before changing prior summary, audit, synthesis, design, code, or contract files.",
+    "Stop if Barry/Galaxias decide a new raw audit or timing audit is required."
+  ],
+  "recommended_next_step": "Barry/Galaxias skeptical review of this internal packet, followed by an acceptance, revision, or narrow follow-up audit/design decision."
+}
