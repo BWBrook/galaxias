@@ -153,12 +153,6 @@ def _terminal_persistence(result: SimulationResult, year: int) -> int:
     return int(_value_at_year(result.trajectory_table, year, "total_present") > 0)
 
 
-def _detection_proxy(result: SimulationResult) -> float:
-    # Smoke-only proxy: keeps the endpoint column populated without invoking a
-    # production observation projection or changing observation-model defaults.
-    return _value_at_year(result.trajectory_table, 2002, "N_total") * 0.01
-
-
 def _pressure_summaries(result: SimulationResult) -> tuple[float, float]:
     forcing = result.forcing_table
     window = forcing.loc[forcing["year"].between(1992, 2002)]
@@ -224,8 +218,6 @@ def _build_output_row(
     intervention_min = _window_min_total(intervention)
     baseline_share = _lake_share_2002(baseline)
     intervention_share = _lake_share_2002(intervention)
-    baseline_detection = _detection_proxy(baseline)
-    intervention_detection = _detection_proxy(intervention)
     trout_pressure, climbing_pressure = _pressure_summaries(intervention)
 
     return {
@@ -267,9 +259,6 @@ def _build_output_row(
         "lake_refuge_share_2002_baseline": baseline_share,
         "lake_refuge_share_2002_counterfactual": intervention_share,
         "lake_refuge_share_2002_contrast": intervention_share - baseline_share,
-        "detection_summary_baseline": baseline_detection,
-        "detection_summary_counterfactual": intervention_detection,
-        "detection_summary_contrast": intervention_detection - baseline_detection,
         "uncertainty_n_replicates": 0,
         "uncertainty_extirpation_median": 0.0,
         "uncertainty_extirpation_ci_low": 0.0,

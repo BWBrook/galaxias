@@ -64,7 +64,6 @@ def _row(
         "persistence_1996_contrast": persistence_2002,
         "min_abundance_1992_2002_contrast": extirpation * 10.0,
         "lake_refuge_share_2002_contrast": persistence_2002 / 10.0,
-        "detection_summary_contrast": extirpation / 100.0,
     }
 
 
@@ -112,6 +111,13 @@ def _expectations(frame: pd.DataFrame) -> ProductionSummaryExpectations:
 
 
 def test_write_production_summaries_records_qc_and_endpoint_tables(tmp_path: Path) -> None:
+    assert DEFAULT_CONTRAST_ENDPOINTS == (
+        "extirpation_year_contrast",
+        "persistence_2002_contrast",
+        "persistence_1996_contrast",
+        "min_abundance_1992_2002_contrast",
+        "lake_refuge_share_2002_contrast",
+    )
     frame = _matched_frame().drop(columns=["partition_label"])
     matched = tmp_path / "artifact" / "matched_outcomes.csv"
     matched.parent.mkdir()

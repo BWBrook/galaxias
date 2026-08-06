@@ -55,9 +55,12 @@ endpoint. Its aggregate medians are zero in the pressure-removal rows, but
 positive upper tails identify sources worth review. It should not carry the
 next review alone.
 
-Use `persistence_1996_contrast` as an early-window consistency check. Use
-`detection_summary_contrast` as a diagnostic/context endpoint, especially for
-source selection, rather than as the lead interpretation endpoint.
+Use `persistence_1996_contrast` as an early-window consistency check.
+
+Goal 021 semantic correction: the frozen Goal 014 `detection_summary_*` fields
+are a fixed `N_total(2002) * 0.01` abundance proxy, not an observation-model
+projection. They are excluded from the active schema and current scientific
+review; the immutable raw artifact is unchanged.
 
 The endpoint-priority details are recorded in
 `data/module5_interpretation_audits/endpoint_priority_matrix.csv`.
@@ -92,8 +95,8 @@ Key compact evidence:
 
 Climbing-only sensitivity should be used as a robustness and contrast-shape
 comparison, not as an equal headline basis. Its `no_climbing_pressure` row has
-positive median abundance, lake-refuge, and detection-summary contrasts, and a
-small positive persistence subset without negative persistence values.
+positive median abundance and lake-refuge contrasts, and a small positive
+persistence subset without negative persistence values.
 
 Transient-perfect-storm sensitivity should also be used as a comparison
 partition. The combined-pressure row has larger median abundance and

@@ -18,7 +18,6 @@ DEFAULT_CONTRAST_ENDPOINTS: tuple[str, ...] = (
     "persistence_1996_contrast",
     "min_abundance_1992_2002_contrast",
     "lake_refuge_share_2002_contrast",
-    "detection_summary_contrast",
 )
 
 DEFAULT_PARTITION_ROW_COUNTS: dict[str, int] = {
@@ -34,7 +33,7 @@ DEFAULT_PARTITION_ROW_COUNTS: dict[str, int] = {
 @dataclass(frozen=True)
 class ProductionSummaryExpectations:
     row_count: int = 279500
-    column_count: int = 53
+    column_count: int = 50
     expected_replicates: int = 100
     source_intervention_units: int = 2795
     distinct_proposal_source_keys: int = 780

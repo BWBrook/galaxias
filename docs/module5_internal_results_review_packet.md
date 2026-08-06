@@ -30,6 +30,12 @@ The packet uses committed compact inputs only:
 Input verification confirmed the Goal 019 design row counts, Goal 018 decision
 row counts, Goal 017 audit-summary row count, and Goal 015 no-local-raw flag.
 
+Goal 021 semantic correction excludes the frozen Goal 014
+`detection_summary_*` fields from current review because they are a fixed
+`N_total(2002) * 0.01` abundance proxy rather than an observation-model
+projection. The raw artifact remains immutable, and the accepted
+three-endpoint bundle and every Goal 018-020 packet table remain unchanged.
+
 ## Packet Contents
 
 The packet tables live under `data/module5_internal_review_packet/`:

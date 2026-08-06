@@ -37,9 +37,6 @@ min_abundance_1992_2002_contrast,TRUE,float,fish_index,Counterfactual minus base
 lake_refuge_share_2002_baseline,TRUE,float,fraction,Lake-to-total abundance share at 2002 baseline arm,Derived from 2002 trajectory values.
 lake_refuge_share_2002_counterfactual,TRUE,float,fraction,Lake-to-total abundance share at 2002 intervention arm,Derived from 2002 trajectory values.
 lake_refuge_share_2002_contrast,TRUE,float,fraction,Counterfactual minus baseline share difference,Computed within matched pairs.
-detection_summary_baseline,TRUE,float,expected_count,Expected detection-linked count from baseline trajectory observation hook,Computed through observation projection routine in matched baseline arm.
-detection_summary_counterfactual,TRUE,float,expected_count,Expected detection-linked count from intervention trajectory,Computed through observation projection routine in matched intervention arm.
-detection_summary_contrast,TRUE,float,expected_count,Counterfactual minus baseline detection contrast,Computed within matched pairs.
 uncertainty_n_replicates,TRUE,integer,count,Number of matched stochastic replicates with valid outputs,Computed from successful replicate count.
 uncertainty_extirpation_median,TRUE,float,year,Median matched contrast in extirpation year,Summarised from matched pair contrasts across replicates.
 uncertainty_extirpation_ci_low,TRUE,float,year,Lower uncertainty bound for extirpation contrast,Summarised from matched contrast draws across replicates.

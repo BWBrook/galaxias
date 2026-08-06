@@ -27,11 +27,11 @@ record SHA was `a96cfed24800823b77cbafeed5e9603e9dd6d33c`.
 
 The allowed compact summaries live in `data/module5_production_summaries/`:
 
-- `summary_metadata.json` (2,762 bytes)
+- `summary_metadata.json` (3,236 bytes)
 - `qc_summary.csv` (2,456 bytes)
-- `partition_endpoint_summary.csv` (18,520 bytes)
-- `source_intervention_endpoint_summary.csv` (8,734,938 bytes)
-- `direction_summary.csv` (16,987 bytes)
+- `partition_endpoint_summary.csv` (15,406 bytes)
+- `source_intervention_endpoint_summary.csv` (7,247,585 bytes)
+- `direction_summary.csv` (14,185 bytes)
 
 These files summarize only contrast endpoints:
 
@@ -40,7 +40,12 @@ These files summarize only contrast endpoints:
 - `persistence_1996_contrast`
 - `min_abundance_1992_2002_contrast`
 - `lake_refuge_share_2002_contrast`
-- `detection_summary_contrast`
+
+Goal 021 semantic correction: the frozen Goal 014 raw output also contains
+three fields named `detection_summary_*`. Those values are a fixed
+`N_total(2002) * 0.01` abundance proxy, not an observation-model projection.
+The raw artifact and its checksum remain immutable, but the proxy is excluded
+from the active schema and from all current compact scientific summaries.
 
 The compact files do not include raw matched-pair IDs, raw baseline run IDs, or
 a local copy of the raw matched-output table.
@@ -92,8 +97,7 @@ Sensitivity partition: `headline/climbing_only`
 
 - `no_climbing_pressure` had a median
   `min_abundance_1992_2002_contrast` of 116, median
-  `lake_refuge_share_2002_contrast` of 0.0908, and median
-  `detection_summary_contrast` of 1.38.
+  `lake_refuge_share_2002_contrast` of 0.0908.
 - `persistence_2002_contrast` was positive in 341 of 23,500 values and never
   negative.
 - `extirpation_year_contrast` median was 0, with positive upper-tail values.
@@ -129,8 +133,8 @@ Negative references
 ## Interpretation Questions
 
 1. Which endpoint should carry the primary review burden: 2002 persistence,
-   extirpation timing, minimum abundance, lake-refuge share, detection summary,
-   or a prespecified bundle?
+   extirpation timing, minimum abundance, lake-refuge share, or a prespecified
+   bundle?
 2. How should the review treat the difference between median-zero extirpation
    timing and positive upper-tail values in headline pressure-removal rows?
 3. Should the primary discussion emphasize the persistent-joint-cause partition

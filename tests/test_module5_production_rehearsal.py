@@ -10,6 +10,7 @@ from galaxias_model.module5_proposals import derive_module5_seed
 from galaxias_model.module5_rehearsal import (
     DEFAULT_REHEARSAL_REPLICATES,
     REHEARSAL_PARTITION_ROW_COUNTS,
+    REHEARSAL_STATUS,
     build_rehearsal_plan,
     inspect_rehearsal_output,
     verify_required_parameter_artifacts,
@@ -48,6 +49,7 @@ def test_rehearsal_plan_matches_goal012_counts() -> None:
     assert plan.source_intervention_unit_count == 2795
     assert plan.expected_row_count == 69875
     assert plan.distinct_proposal_source_key_count == 780
+    assert REHEARSAL_STATUS == "module5_matched_counterfactual_execution"
 
 
 def test_rehearsal_plan_keeps_bare_proposal_collisions_source_keyed() -> None:
@@ -151,9 +153,6 @@ def _minimal_outcome_row(
         "lake_refuge_share_2002_baseline": 1.0,
         "lake_refuge_share_2002_counterfactual": 1.0,
         "lake_refuge_share_2002_contrast": 0.0,
-        "detection_summary_baseline": 0.01,
-        "detection_summary_counterfactual": 0.01,
-        "detection_summary_contrast": 0.0,
         "uncertainty_n_replicates": 2,
         "uncertainty_extirpation_median": 0.0,
         "uncertainty_extirpation_ci_low": 0.0,
@@ -194,7 +193,7 @@ def test_rehearsal_inspector_detects_replicate_and_identity_failures(tmp_path: P
     (out_dir / "provenance.json").write_text(
         json.dumps(
             {
-                "status": "module5_25rep_rehearsal",
+                "status": "module5_matched_counterfactual_execution",
                 "production_attribution": False,
                 "expected_replicates": 2,
                 "expected_row_count": 2,
@@ -228,3 +227,4 @@ def test_rehearsal_inspector_detects_replicate_and_identity_failures(tmp_path: P
     checks = pd.read_csv(result.checks_path).set_index("check_name")
     assert not bool(checks.loc["replicate_coverage", "passed"])
     assert not bool(checks.loc["source_identity", "passed"])
+    assert bool(checks.loc["provenance_labels", "passed"])

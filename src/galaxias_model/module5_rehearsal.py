@@ -43,7 +43,7 @@ from galaxias_model.types import SimulationConfig
 
 
 DEFAULT_REHEARSAL_REPLICATES = 25
-REHEARSAL_STATUS = "module5_25rep_rehearsal"
+REHEARSAL_STATUS = "module5_matched_counterfactual_execution"
 REHEARSAL_SEED_BASE_LABEL = "galaxias-module5-25rep-rehearsal-v1"
 DEFAULT_REHEARSAL_OUTPUT_DIR = Path("outputs/module5_25rep_rehearsal")
 DEFAULT_REHEARSAL_SCRIPT_PATH = Path("scripts/run_module5_25rep_rehearsal.py")
@@ -655,7 +655,7 @@ def _write_rehearsal_provenance(
     workers: int,
 ) -> None:
     payload = {
-        "module": "Module 5 25-replicate production rehearsal",
+        "module": "Module 5 matched-counterfactual execution",
         "status": REHEARSAL_STATUS,
         "production_attribution": False,
         "run_id": run_id,
@@ -700,9 +700,8 @@ def _write_rehearsal_provenance(
         "matched_outcomes_sha256": _file_sha256(output_file),
         "created_at": datetime.now(timezone.utc).isoformat(),
         "boundary_note": (
-            "This 25-replicate run is a production rehearsal only; it is not "
-            "production attribution, not a 100-replicate production run, and "
-            "not manuscript evidence."
+            "This matched-counterfactual execution uses the configured replicate "
+            "count. It is not production attribution or manuscript evidence."
         ),
     }
     _write_json(output_dir / "provenance.json", payload)
@@ -1146,9 +1145,9 @@ def _write_inspection_report(
     checks: list[dict[str, object]],
 ) -> None:
     lines = [
-        "# Module 5 25-Replicate Rehearsal Inspection",
+        "# Module 5 Matched-Counterfactual Execution Inspection",
         "",
-        "This report inspects rehearsal outputs from disk. It is not production attribution and not manuscript evidence.",
+        "This report inspects matched-counterfactual outputs from disk. It is not production attribution or manuscript evidence.",
         "",
         "## Summary",
         "",

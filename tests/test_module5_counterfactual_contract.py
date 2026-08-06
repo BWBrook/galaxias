@@ -62,6 +62,12 @@ def test_validate_module5_counterfactual_contract_passes() -> None:
 
     schema_rows = list(csv.DictReader(DEFAULT_OUTCOME_SCHEMA.open(newline="", encoding="utf-8")))
     by_name = {row["column_name"]: row for row in schema_rows}
+    assert len(schema_rows) == 50
+    assert not {
+        "detection_summary_baseline",
+        "detection_summary_counterfactual",
+        "detection_summary_contrast",
+    } & set(by_name)
     assert {"proposal_source_key", "module4_run_id", "run_dir_name"} <= set(by_name)
     assert "source context" in by_name["proposal_id"]["description"].lower()
 
