@@ -29,6 +29,7 @@ from galaxias_model.module5_counterfactual import (
     read_intervention_rows,
     read_outcome_schema_columns,
 )
+from galaxias_model.module5_partitions import PARTITION_DEFINITIONS
 from galaxias_model.module5_proposals import (
     DEFAULT_MODULE4_MANIFEST_PATH,
     DEFAULT_PROPOSAL_MEMBERSHIP_PATH,
@@ -56,67 +57,6 @@ REHEARSAL_PARTITION_ROW_COUNTS: dict[str, int] = {
     "negative_reference/habitat_only_null": 375,
     "negative_reference/trout_only": 375,
 }
-
-
-@dataclass(frozen=True)
-class PartitionDefinition:
-    label: str
-    source_set: str
-    family_id: str
-    intervention_ids: tuple[str, ...]
-
-
-PARTITION_DEFINITIONS: tuple[PartitionDefinition, ...] = (
-    PartitionDefinition(
-        label="headline/persistent_joint_cause",
-        source_set="accepted",
-        family_id="persistent_joint_cause",
-        intervention_ids=(
-            "m5_persistent_joint_cause_status_quo",
-            "m5_persistent_joint_cause_no_trout_pressure",
-            "m5_persistent_joint_cause_no_climbing_pressure",
-            "m5_persistent_joint_cause_no_trout_or_climbing_pressure",
-        ),
-    ),
-    PartitionDefinition(
-        label="headline/climbing_only",
-        source_set="accepted",
-        family_id="climbing_only",
-        intervention_ids=(
-            "m5_climbing_only_status_quo",
-            "m5_climbing_only_no_climbing_pressure",
-        ),
-    ),
-    PartitionDefinition(
-        label="headline/transient_perfect_storm",
-        source_set="accepted",
-        family_id="transient_perfect_storm",
-        intervention_ids=(
-            "m5_transient_perfect_storm_status_quo",
-            "m5_transient_perfect_storm_no_trout_pressure",
-            "m5_transient_perfect_storm_no_climbing_pressure",
-            "m5_transient_perfect_storm_no_trout_or_climbing_pressure",
-        ),
-    ),
-    PartitionDefinition(
-        label="diagnostic_sidecar/climbing_only_no_trout_pressure",
-        source_set="accepted",
-        family_id="climbing_only",
-        intervention_ids=("m5_climbing_only_no_trout_pressure",),
-    ),
-    PartitionDefinition(
-        label="negative_reference/habitat_only_null",
-        source_set="family_winners",
-        family_id="habitat_only_null",
-        intervention_ids=("m5_habitat_only_null_negative_reference",),
-    ),
-    PartitionDefinition(
-        label="negative_reference/trout_only",
-        source_set="family_winners",
-        family_id="trout_only",
-        intervention_ids=("m5_trout_only_negative_reference",),
-    ),
-)
 
 
 @dataclass(frozen=True)
@@ -304,16 +244,6 @@ class RehearsalPlan:
     def source_context_count(self) -> int:
         return len({source.context_key for source in self.distinct_sources})
 
-    @property
-    def intervention_to_partition(self) -> dict[str, str]:
-        mapping: dict[str, str] = {}
-        for partition in self.partitions:
-            for intervention_id in partition.intervention_ids:
-                if intervention_id in mapping:
-                    raise ValueError(f"Intervention appears in multiple partitions: {intervention_id}")
-                mapping[intervention_id] = partition.label
-        return mapping
-
     def accepted_source_count_by_family(self) -> dict[str, int]:
         counts: dict[str, int] = {}
         for source in self.distinct_sources:
@@ -346,15 +276,6 @@ class RehearsalPlan:
                 artifact.to_dict() for artifact in self.required_artifacts
             ],
         }
-
-
-@dataclass(frozen=True)
-class RehearsalInspectionResult:
-    all_checks_passed: bool
-    inspection_dir: Path
-    summary_path: Path
-    checks_path: Path
-    report_path: Path
 
 
 def _as_bool(value: object) -> bool:
@@ -629,17 +550,6 @@ def write_rehearsal_preflight(
     )
 
 
-def _load_params_for_source(
-    source: RehearsalSource,
-    verified_by_context: dict[tuple[str, str, str, str], VerifiedArtifact],
-    parameter_cache: dict[tuple[str, str, str, str], pd.DataFrame],
-) -> pd.DataFrame:
-    artifact = verified_by_context[source.context_key]
-    if source.context_key not in parameter_cache:
-        parameter_cache[source.context_key] = load_parameter_values_table(artifact.path)
-    return parameter_cache[source.context_key]
-
-
 def _write_rehearsal_provenance(
     output_dir: Path,
     output_file: Path,
@@ -795,15 +705,12 @@ def _build_execution_tasks(
 ) -> list[dict[str, object]]:
     tasks: list[dict[str, object]] = []
     task_index = 0
-    for partition_index, partition in enumerate(plan.partitions):
-        for source_index, source in enumerate(partition.sources):
+    for partition in plan.partitions:
+        for source in partition.sources:
             artifact = verified_by_context[source.context_key]
             tasks.append(
                 {
                     "task_index": task_index,
-                    "partition_index": partition_index,
-                    "partition_label": partition.label,
-                    "source_index": source_index,
                     "source": source.to_dict(),
                     "intervention_rows": list(partition.intervention_rows),
                     "replicates": plan.replicates,
@@ -905,376 +812,4 @@ def _run_execution_tasks(tasks: list[dict[str, object]], *, workers: int) -> lis
     output_rows: list[dict[str, object]] = []
     for task_index in sorted(ordered_results):
         output_rows.extend(ordered_results[task_index])
-    return _attach_uncertainty_summaries(output_rows)
-
-
-def _read_rehearsal_inputs(rehearsal_dir: Path) -> tuple[pd.DataFrame, dict[str, object]]:
-    outcomes_path = rehearsal_dir / "matched_outcomes.csv"
-    provenance_path = rehearsal_dir / "provenance.json"
-    if not outcomes_path.exists():
-        raise FileNotFoundError(f"Missing rehearsal matched outcomes: {outcomes_path}")
-    if not provenance_path.exists():
-        raise FileNotFoundError(f"Missing rehearsal provenance: {provenance_path}")
-    return pd.read_csv(outcomes_path, keep_default_na=False), json.loads(
-        provenance_path.read_text(encoding="utf-8")
-    )
-
-
-def _check_schema(outcomes: pd.DataFrame, schema_columns: list[str]) -> dict[str, object]:
-    actual = list(outcomes.columns)
-    missing = [column for column in schema_columns if column not in actual]
-    extra = [column for column in actual if column not in schema_columns]
-    return {
-        "check_name": "schema_columns",
-        "passed": not missing and not extra and actual == schema_columns,
-        "details": (
-            f"rows={len(outcomes)} columns={len(actual)} missing={missing} "
-            f"extra={extra} same_order={actual == schema_columns}"
-        ),
-    }
-
-
-def _partition_labels_for(outcomes: pd.DataFrame) -> pd.Series:
-    if "partition_label" in outcomes.columns:
-        return outcomes["partition_label"].astype(str)
-    mapping = {}
-    for definition in PARTITION_DEFINITIONS:
-        for intervention_id in definition.intervention_ids:
-            mapping[intervention_id] = definition.label
-    return outcomes["intervention_id"].astype(str).map(mapping).fillna("unknown")
-
-
-def _check_partition_counts(
-    outcomes: pd.DataFrame,
-    expected_partition_rows: dict[str, int],
-) -> tuple[dict[str, object], pd.Series]:
-    labels = _partition_labels_for(outcomes)
-    actual = labels.value_counts().sort_index().to_dict()
-    actual = {str(key): int(value) for key, value in actual.items()}
-    return (
-        {
-            "check_name": "partition_counts",
-            "passed": actual == expected_partition_rows,
-            "details": f"partition_rows={actual} expected={expected_partition_rows}",
-        },
-        labels,
-    )
-
-
-def _check_source_identity(
-    outcomes: pd.DataFrame,
-    provenance: dict[str, object],
-) -> dict[str, object]:
-    required = [
-        "proposal_source_key",
-        *PROPOSAL_SOURCE_KEY_FIELDS,
-        "intervention_id",
-        "stochastic_replicate_id",
-    ]
-    missing = [column for column in required if column not in outcomes.columns]
-    if missing:
-        return {
-            "check_name": "source_identity",
-            "passed": False,
-            "details": f"missing required columns={missing}",
-        }
-
-    source_keys = outcomes["proposal_source_key"].astype(str)
-    blank_source_keys = int((source_keys.str.strip() == "").sum())
-    expected_keys = []
-    key_errors = []
-    for index, row in outcomes.iterrows():
-        try:
-            expected_keys.append(
-                build_proposal_source_key(
-                    module4_run_id=row["module4_run_id"],
-                    variant_id=row["variant_id"],
-                    seed=row["seed"],
-                    run_dir_name=row["run_dir_name"],
-                    family_id=row["family_id"],
-                    proposal_id=row["proposal_id"],
-                )
-            )
-        except ValueError as exc:
-            expected_keys.append("")
-            key_errors.append(f"row={index}: {exc}")
-    key_mismatches = int((source_keys != pd.Series(expected_keys, index=outcomes.index).astype(str)).sum())
-    duplicate_grain_count = int(
-        (
-            outcomes.groupby(
-                ["proposal_source_key", "intervention_id", "stochastic_replicate_id"],
-                dropna=False,
-            ).size()
-            > 1
-        ).sum()
-    )
-    provenance_keys = set(str(item) for item in provenance.get("selected_proposal_source_keys", []))
-    observed_keys = set(source_keys)
-    provenance_keys_match = provenance_keys == observed_keys
-    provenance_fields_match = list(provenance.get("source_identity_fields", [])) == list(
-        PROPOSAL_SOURCE_KEY_FIELDS
-    )
-    passed = (
-        blank_source_keys == 0
-        and key_mismatches == 0
-        and duplicate_grain_count == 0
-        and not key_errors
-        and provenance_keys_match
-        and provenance_fields_match
-    )
-    return {
-        "check_name": "source_identity",
-        "passed": passed,
-        "details": (
-            f"source_keys={len(observed_keys)} blank_source_keys={blank_source_keys} "
-            f"key_mismatches={key_mismatches} duplicate_source_intervention_replicates={duplicate_grain_count} "
-            f"provenance_keys_match={provenance_keys_match} provenance_fields_match={provenance_fields_match} "
-            f"key_errors={key_errors[:3]}"
-        ),
-    }
-
-
-def _check_replicate_coverage(
-    outcomes: pd.DataFrame,
-    expected_replicates: int,
-    expected_units: int,
-) -> dict[str, object]:
-    required = ["proposal_source_key", "intervention_id", "stochastic_replicate_id"]
-    missing = [column for column in required if column not in outcomes.columns]
-    if missing:
-        return {
-            "check_name": "replicate_coverage",
-            "passed": False,
-            "details": f"missing required columns={missing}",
-        }
-    expected_ids = set(range(expected_replicates))
-    failures: list[str] = []
-    unit_count = 0
-    for (source_key, intervention_id), group in outcomes.groupby(
-        ["proposal_source_key", "intervention_id"],
-        sort=False,
-    ):
-        unit_count += 1
-        replicate_values = pd.to_numeric(group["stochastic_replicate_id"], errors="coerce")
-        valid = replicate_values.dropna()
-        replicate_ids = set(valid.astype(int).tolist())
-        duplicate_counts = valid.astype(int).value_counts()
-        bad_duplicate_ids = sorted(int(index) for index, value in duplicate_counts.items() if int(value) != 1)
-        if len(group) != expected_replicates or replicate_ids != expected_ids or bad_duplicate_ids:
-            failures.append(
-                f"{source_key}|{intervention_id}: rows={len(group)} "
-                f"replicate_ids={sorted(replicate_ids)} duplicate_ids={bad_duplicate_ids}"
-            )
-            if len(failures) >= 5:
-                break
-    passed = unit_count == expected_units and not failures
-    return {
-        "check_name": "replicate_coverage",
-        "passed": passed,
-        "details": (
-            f"units={unit_count} expected_units={expected_units} expected_replicates={expected_replicates}"
-            if passed
-            else f"units={unit_count} expected_units={expected_units} failures={failures}"
-        ),
-    }
-
-
-def _check_seed_pairing(outcomes: pd.DataFrame) -> dict[str, object]:
-    baseline = outcomes["baseline_stochastic_seed"].astype(str)
-    intervention = outcomes["intervention_stochastic_seed"].astype(str)
-    mismatches = int((baseline != intervention).sum())
-    return {
-        "check_name": "common_random_seed_pairing",
-        "passed": mismatches == 0,
-        "details": f"seed_mismatches={mismatches}",
-    }
-
-
-def _check_matched_pair_ids(outcomes: pd.DataFrame) -> dict[str, object]:
-    expected = (
-        outcomes["proposal_source_key"].astype(str)
-        + "|"
-        + outcomes["intervention_id"].astype(str)
-        + "|r"
-        + outcomes["stochastic_replicate_id"].astype(str)
-    )
-    matched_pair_ids = outcomes["matched_pair_id"].astype(str)
-    baseline_ids = outcomes["run_id_baseline"].astype(str)
-    counterfactual_ids = outcomes["run_id_counterfactual"].astype(str)
-    pair_mismatches = int((matched_pair_ids != expected).sum())
-    baseline_mismatches = int((baseline_ids != expected + "|baseline").sum())
-    counterfactual_mismatches = int((counterfactual_ids != expected + "|counterfactual").sum())
-    duplicate_pairs = int(matched_pair_ids.duplicated().sum())
-    duplicate_baseline_ids = int(baseline_ids.duplicated().sum())
-    duplicate_counterfactual_ids = int(counterfactual_ids.duplicated().sum())
-    passed = (
-        pair_mismatches == 0
-        and baseline_mismatches == 0
-        and counterfactual_mismatches == 0
-        and duplicate_pairs == 0
-        and duplicate_baseline_ids == 0
-        and duplicate_counterfactual_ids == 0
-    )
-    return {
-        "check_name": "matched_pair_ids",
-        "passed": passed,
-        "details": (
-            f"unique_pairs={matched_pair_ids.nunique()} duplicate_pairs={duplicate_pairs} "
-            f"duplicate_baseline_ids={duplicate_baseline_ids} "
-            f"duplicate_counterfactual_ids={duplicate_counterfactual_ids} "
-            f"pair_mismatches={pair_mismatches} baseline_mismatches={baseline_mismatches} "
-            f"counterfactual_mismatches={counterfactual_mismatches}"
-        ),
-    }
-
-
-def _check_provenance(provenance: dict[str, object]) -> dict[str, object]:
-    status = provenance.get("status")
-    production_attribution = provenance.get("production_attribution")
-    passed = status == REHEARSAL_STATUS and production_attribution is False
-    return {
-        "check_name": "provenance_labels",
-        "passed": passed,
-        "details": f"status={status} production_attribution={production_attribution}",
-    }
-
-
-def _write_inspection_report(
-    report_path: Path,
-    summary: dict[str, object],
-    checks: list[dict[str, object]],
-) -> None:
-    lines = [
-        "# Module 5 Matched-Counterfactual Execution Inspection",
-        "",
-        "This report inspects matched-counterfactual outputs from disk. It is not production attribution or manuscript evidence.",
-        "",
-        "## Summary",
-        "",
-    ]
-    for key in [
-        "all_checks_passed",
-        "row_count",
-        "column_count",
-        "expected_replicates",
-        "source_intervention_units",
-        "distinct_proposal_source_keys",
-        "source_identity",
-        "replicate_coverage",
-        "seed_mismatches",
-        "production_attribution",
-    ]:
-        lines.append(f"- {key}: `{summary[key]}`")
-    lines.extend([
-        "",
-        "## Checks",
-        "",
-        "| check_name | passed | details |",
-        "| --- | --- | --- |",
-    ])
-    for check in checks:
-        details = str(check["details"]).replace("|", "\\|")
-        lines.append(f"| {check['check_name']} | {check['passed']} | {details} |")
-    lines.append("")
-    report_path.write_text("\n".join(lines), encoding="utf-8")
-
-
-def inspect_rehearsal_output(
-    *,
-    rehearsal_dir: Path = DEFAULT_REHEARSAL_OUTPUT_DIR,
-    outcome_schema_path: Path = DEFAULT_OUTCOME_SCHEMA_PATH,
-    inspection_dir: Path | None = None,
-) -> RehearsalInspectionResult:
-    rehearsal_dir = rehearsal_dir.resolve()
-    outcome_schema_path = outcome_schema_path.resolve()
-    inspection_dir = (inspection_dir or rehearsal_dir / "inspection").resolve()
-    inspection_dir.mkdir(parents=True, exist_ok=True)
-
-    outcomes, provenance = _read_rehearsal_inputs(rehearsal_dir)
-    schema_columns = read_outcome_schema_columns(outcome_schema_path)
-    expected_replicates = int(provenance.get("expected_replicates", DEFAULT_REHEARSAL_REPLICATES))
-    expected_rows = int(provenance.get("expected_row_count", 0))
-    expected_units = int(provenance.get("expected_source_intervention_units", 0))
-    expected_distinct_keys = int(provenance.get("expected_distinct_proposal_source_keys", 0))
-    expected_partition_rows = {
-        str(key): int(value)
-        for key, value in dict(provenance.get("expected_partition_row_counts", {})).items()
-    }
-
-    partition_check, labels = _check_partition_counts(outcomes, expected_partition_rows)
-    checks = [
-        _check_schema(outcomes, schema_columns),
-        {
-            "check_name": "row_count",
-            "passed": len(outcomes) == expected_rows,
-            "details": f"rows={len(outcomes)} expected={expected_rows}",
-        },
-        partition_check,
-        {
-            "check_name": "source_intervention_units",
-            "passed": outcomes.groupby(["proposal_source_key", "intervention_id"]).ngroups == expected_units,
-            "details": (
-                f"units={outcomes.groupby(['proposal_source_key', 'intervention_id']).ngroups} "
-                f"expected={expected_units}"
-            ),
-        },
-        {
-            "check_name": "distinct_proposal_source_keys",
-            "passed": outcomes["proposal_source_key"].nunique() == expected_distinct_keys,
-            "details": (
-                f"source_keys={outcomes['proposal_source_key'].nunique()} "
-                f"expected={expected_distinct_keys}"
-            ),
-        },
-        _check_replicate_coverage(outcomes, expected_replicates, expected_units),
-        _check_source_identity(outcomes, provenance),
-        _check_matched_pair_ids(outcomes),
-        _check_seed_pairing(outcomes),
-        _check_provenance(provenance),
-    ]
-    all_checks_passed = all(bool(check["passed"]) for check in checks)
-    check_status = {str(check["check_name"]): bool(check["passed"]) for check in checks}
-    seed_mismatches = int(
-        (
-            outcomes["baseline_stochastic_seed"].astype(str)
-            != outcomes["intervention_stochastic_seed"].astype(str)
-        ).sum()
-    )
-    summary = {
-        "all_checks_passed": all_checks_passed,
-        "row_count": int(len(outcomes)),
-        "column_count": int(len(outcomes.columns)),
-        "expected_replicates": expected_replicates,
-        "replicate_ids": f"0..{expected_replicates - 1}",
-        "source_intervention_units": int(outcomes.groupby(["proposal_source_key", "intervention_id"]).ngroups),
-        "expected_source_intervention_units": expected_units,
-        "distinct_proposal_source_keys": int(outcomes["proposal_source_key"].nunique()),
-        "expected_distinct_proposal_source_keys": expected_distinct_keys,
-        "partition_row_counts": {str(key): int(value) for key, value in labels.value_counts().sort_index().to_dict().items()},
-        "expected_partition_row_counts": expected_partition_rows,
-        "seed_mismatches": seed_mismatches,
-        "source_identity": bool(check_status.get("source_identity", False)),
-        "replicate_coverage": bool(check_status.get("replicate_coverage", False)),
-        "matched_pair_ids": bool(check_status.get("matched_pair_ids", False)),
-        "schema_columns": bool(check_status.get("schema_columns", False)),
-        "production_attribution": bool(provenance.get("production_attribution")),
-        "status": provenance.get("status"),
-        "run_id": provenance.get("run_id"),
-        "inspected_at": datetime.now(timezone.utc).isoformat(),
-        "rehearsal_dir": rehearsal_dir.as_posix(),
-        "outcome_schema_path": outcome_schema_path.as_posix(),
-    }
-
-    summary_path = inspection_dir / "inspection_summary.json"
-    checks_path = inspection_dir / "inspection_checks.csv"
-    report_path = inspection_dir / "inspection_report.md"
-    _write_json(summary_path, summary)
-    pd.DataFrame(checks).to_csv(checks_path, index=False)
-    _write_inspection_report(report_path, summary, checks)
-    return RehearsalInspectionResult(
-        all_checks_passed=all_checks_passed,
-        inspection_dir=inspection_dir,
-        summary_path=summary_path,
-        checks_path=checks_path,
-        report_path=report_path,
-    )
+    return output_rows

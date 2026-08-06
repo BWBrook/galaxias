@@ -50,6 +50,7 @@ def test_inspect_module5_smoke_writes_review_bundle_from_disk(tmp_path: Path) ->
     checks = pd.read_csv(result.checks_path)
     assert set(checks["check_name"]) == {
         "schema_columns",
+        "source_identity",
         "matched_pair_ids",
         "common_random_seed_pairing",
         "provenance_labels",

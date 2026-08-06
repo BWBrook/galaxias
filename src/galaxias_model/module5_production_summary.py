@@ -9,7 +9,14 @@ from typing import Iterable
 
 import pandas as pd
 
-from galaxias_model.module5_rehearsal import PARTITION_DEFINITIONS
+from galaxias_model.module5_counterfactual import DEFAULT_OUTCOME_SCHEMA_PATH
+from galaxias_model.module5_output_checks import (
+    check_matched_pair_ids,
+    check_ordered_schema,
+    check_seed_pairing,
+    check_source_identity,
+)
+from galaxias_model.module5_partitions import INTERVENTION_TO_PARTITION
 
 
 DEFAULT_CONTRAST_ENDPOINTS: tuple[str, ...] = (
@@ -38,6 +45,7 @@ class ProductionSummaryExpectations:
     source_intervention_units: int = 2795
     distinct_proposal_source_keys: int = 780
     partition_row_counts: dict[str, int] | None = None
+    schema_columns: tuple[str, ...] | None = None
 
     @property
     def expected_partition_row_counts(self) -> dict[str, int]:
@@ -67,18 +75,14 @@ def file_sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
-def _partition_mapping() -> dict[str, str]:
-    mapping: dict[str, str] = {}
-    for definition in PARTITION_DEFINITIONS:
-        for intervention_id in definition.intervention_ids:
-            mapping[intervention_id] = definition.label
-    return mapping
-
-
 def _with_partition_labels(frame: pd.DataFrame) -> pd.DataFrame:
     output = frame.copy()
-    mapping = _partition_mapping()
-    inferred = output["intervention_id"].astype(str).map(mapping).fillna("unknown")
+    inferred = (
+        output["intervention_id"]
+        .astype(str)
+        .map(INTERVENTION_TO_PARTITION)
+        .fillna("unknown")
+    )
     if "partition_label" not in output.columns:
         output["partition_label"] = inferred
     else:
@@ -174,6 +178,7 @@ def build_qc_checks(
     expectations: ProductionSummaryExpectations,
     endpoints: tuple[str, ...] = DEFAULT_CONTRAST_ENDPOINTS,
     raw_column_count: int | None = None,
+    raw_frame: pd.DataFrame | None = None,
 ) -> tuple[dict[str, object], ...]:
     checks: list[dict[str, object]] = []
     source_artifact_resolved = source_artifact.resolve()
@@ -239,6 +244,42 @@ def build_qc_checks(
         )
     )
 
+    schema_frame = raw_frame if raw_frame is not None else frame
+    expected_schema = expectations.schema_columns or tuple(
+        pd.read_csv(DEFAULT_OUTCOME_SCHEMA_PATH)["column_name"].astype(str)
+    )
+    schema_check = check_ordered_schema(schema_frame, expected_schema)
+    checks.append(
+        _check(
+            "schema_columns",
+            list(schema_frame.columns),
+            list(expected_schema),
+            bool(schema_check["passed"]),
+            str(schema_check["details"]),
+        )
+    )
+
+    identity_check = check_source_identity(frame)
+    checks.append(
+        _check(
+            "source_identity",
+            bool(identity_check["passed"]),
+            True,
+            bool(identity_check["passed"]),
+            str(identity_check["details"]),
+        )
+    )
+    pair_check = check_matched_pair_ids(frame)
+    checks.append(
+        _check(
+            "matched_pair_ids",
+            bool(pair_check["passed"]),
+            True,
+            bool(pair_check["passed"]),
+            str(pair_check["details"]),
+        )
+    )
+
     replicate_values = pd.to_numeric(frame["stochastic_replicate_id"], errors="coerce")
     replicate_ids = sorted(set(replicate_values.dropna().astype(int).tolist()))
     expected_replicate_ids = list(range(expectations.expected_replicates))
@@ -270,13 +311,17 @@ def build_qc_checks(
         )
     )
 
-    seed_mismatches = int(
-        (
-            frame["baseline_stochastic_seed"].astype(str)
-            != frame["intervention_stochastic_seed"].astype(str)
-        ).sum()
+    seed_result = check_seed_pairing(frame)
+    seed_mismatches = seed_result.mismatch_count
+    checks.append(
+        _check(
+            "seed_mismatches",
+            seed_mismatches,
+            0,
+            bool(seed_result.check["passed"]),
+            str(seed_result.check["details"]),
+        )
     )
-    checks.append(_check("seed_mismatches", seed_mismatches, 0, seed_mismatches == 0))
 
     expected_partitions = expectations.expected_partition_row_counts
     actual_partitions = {
@@ -546,6 +591,7 @@ def write_production_summaries(
         expectations=expectations,
         endpoints=endpoints,
         raw_column_count=raw_column_count,
+        raw_frame=raw_frame,
     )
     failed = [str(check["check_name"]) for check in qc_checks if not bool(check["passed"])]
     if failed:

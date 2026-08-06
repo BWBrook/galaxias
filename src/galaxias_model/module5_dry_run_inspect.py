@@ -8,13 +8,17 @@ from pathlib import Path
 import pandas as pd
 
 from galaxias_model.module5_counterfactual import REAL_DRY_RUN_STATUS
+from galaxias_model.module5_output_checks import (
+    check_matched_pair_ids,
+    check_ordered_schema,
+    check_seed_pairing,
+    check_source_identity,
+)
 from galaxias_model.module5_proposals import (
     APPROVED_DRY_RUN_PROPOSALS,
     APPROVED_DRY_RUN_PROPOSAL_IDS,
     DEFAULT_DRY_RUN_OUTPUT_DIR,
     DEFAULT_DRY_RUN_REPLICATES,
-    PROPOSAL_SOURCE_KEY_FIELDS,
-    build_proposal_source_key,
 )
 
 
@@ -61,18 +65,6 @@ def _load_inputs(dry_run_dir: Path) -> tuple[pd.DataFrame, dict[str, object]]:
     return pd.read_csv(outcomes_path, keep_default_na=False), json.loads(
         provenance_path.read_text(encoding="utf-8")
     )
-
-
-def _check_schema_columns(outcomes: pd.DataFrame, schema_columns: list[str]) -> dict[str, object]:
-    actual = list(outcomes.columns)
-    missing = [column for column in schema_columns if column not in actual]
-    extra = [column for column in actual if column not in schema_columns]
-    same_order = actual == schema_columns
-    return {
-        "check_name": "schema_columns",
-        "passed": not missing and not extra and same_order,
-        "details": f"rows={len(outcomes)} columns={len(actual)} missing={missing} extra={extra} same_order={same_order}",
-    }
 
 
 def _check_row_count(outcomes: pd.DataFrame, expected_count: int) -> dict[str, object]:
@@ -180,167 +172,6 @@ def _check_replicate_coverage(
     }
 
 
-def _check_source_identity(outcomes: pd.DataFrame, provenance: dict[str, object]) -> dict[str, object]:
-    required = [
-        "proposal_source_key",
-        *PROPOSAL_SOURCE_KEY_FIELDS,
-        "intervention_id",
-        "stochastic_replicate_id",
-    ]
-    missing_required = [column for column in required if column not in outcomes.columns]
-    if missing_required:
-        return {
-            "check_name": "source_identity",
-            "passed": False,
-            "details": f"missing required columns={missing_required}",
-        }
-
-    source_keys = outcomes["proposal_source_key"].astype(str)
-    blank_source_keys = int((source_keys.str.strip() == "").sum())
-
-    expected_keys: list[str] = []
-    key_errors: list[str] = []
-    for index, row in outcomes.iterrows():
-        try:
-            expected_keys.append(
-                build_proposal_source_key(
-                    module4_run_id=row["module4_run_id"],
-                    variant_id=row["variant_id"],
-                    seed=row["seed"],
-                    run_dir_name=row["run_dir_name"],
-                    family_id=row["family_id"],
-                    proposal_id=row["proposal_id"],
-                )
-            )
-        except ValueError as exc:
-            expected_keys.append("")
-            key_errors.append(f"row={index}: {exc}")
-
-    expected = pd.Series(expected_keys, index=outcomes.index, dtype="string")
-    key_mismatches = int((source_keys != expected.astype(str)).sum())
-    grain_counts = outcomes.groupby(
-        ["proposal_source_key", "intervention_id", "stochastic_replicate_id"],
-        dropna=False,
-    ).size()
-    duplicate_source_intervention_replicates = int((grain_counts > 1).sum())
-
-    observed_source_keys = set(source_keys)
-    provenance_source_keys = set(
-        str(item) for item in provenance.get("selected_proposal_source_keys", [])
-    )
-    provenance_keys_match = provenance_source_keys == observed_source_keys
-    provenance_fields_match = list(provenance.get("source_identity_fields", [])) == list(
-        PROPOSAL_SOURCE_KEY_FIELDS
-    )
-    passed = (
-        blank_source_keys == 0
-        and key_mismatches == 0
-        and duplicate_source_intervention_replicates == 0
-        and not key_errors
-        and provenance_keys_match
-        and provenance_fields_match
-    )
-
-    return {
-        "check_name": "source_identity",
-        "passed": passed,
-        "details": (
-            f"source_keys={len(observed_source_keys)} blank_source_keys={blank_source_keys} "
-            f"key_mismatches={key_mismatches} "
-            f"duplicate_source_intervention_replicates={duplicate_source_intervention_replicates} "
-            f"provenance_keys_match={provenance_keys_match} "
-            f"provenance_fields_match={provenance_fields_match} "
-            f"key_errors={key_errors[:3]}"
-        ),
-    }
-
-
-def _check_matched_pair_ids(outcomes: pd.DataFrame) -> dict[str, object]:
-    required = [
-        "proposal_source_key",
-        "intervention_id",
-        "stochastic_replicate_id",
-        "matched_pair_id",
-        "run_id_baseline",
-        "run_id_counterfactual",
-    ]
-    missing_required = [column for column in required if column not in outcomes.columns]
-    if missing_required:
-        return {
-            "check_name": "matched_pair_ids",
-            "passed": False,
-            "details": f"missing required columns={missing_required}",
-        }
-
-    matched_pair_ids = outcomes["matched_pair_id"].astype(str)
-    expected_matched_pair_ids = (
-        outcomes["proposal_source_key"].astype(str)
-        + "|"
-        + outcomes["intervention_id"].astype(str)
-        + "|r"
-        + outcomes["stochastic_replicate_id"].astype(str)
-    )
-    duplicate_count = int(matched_pair_ids.duplicated().sum())
-    blank_count = int((matched_pair_ids.str.strip() == "").sum())
-    source_context_mismatches = int((matched_pair_ids != expected_matched_pair_ids).sum())
-    baseline_id_mismatches = int(
-        (
-            outcomes["run_id_baseline"].astype(str)
-            != expected_matched_pair_ids + "|baseline"
-        ).sum()
-    )
-    counterfactual_id_mismatches = int(
-        (
-            outcomes["run_id_counterfactual"].astype(str)
-            != expected_matched_pair_ids + "|counterfactual"
-        ).sum()
-    )
-    same_run_id_count = int(
-        (
-            outcomes["run_id_baseline"].astype(str)
-            == outcomes["run_id_counterfactual"].astype(str)
-        ).sum()
-    )
-    return {
-        "check_name": "matched_pair_ids",
-        "passed": (
-            duplicate_count == 0
-            and blank_count == 0
-            and same_run_id_count == 0
-            and source_context_mismatches == 0
-            and baseline_id_mismatches == 0
-            and counterfactual_id_mismatches == 0
-        ),
-        "details": (
-            f"unique_pairs={matched_pair_ids.nunique()} duplicate_pairs={duplicate_count} "
-            f"blank_pairs={blank_count} same_run_ids={same_run_id_count} "
-            f"source_context_mismatches={source_context_mismatches} "
-            f"baseline_id_mismatches={baseline_id_mismatches} "
-            f"counterfactual_id_mismatches={counterfactual_id_mismatches}"
-        ),
-    }
-
-
-def _check_seed_pairing(outcomes: pd.DataFrame) -> dict[str, object]:
-    required = ["baseline_stochastic_seed", "intervention_stochastic_seed"]
-    missing_required = [column for column in required if column not in outcomes.columns]
-    if missing_required:
-        return {
-            "check_name": "common_random_seed_pairing",
-            "passed": False,
-            "details": f"missing required columns={missing_required}",
-        }
-
-    baseline = outcomes["baseline_stochastic_seed"].astype(str)
-    intervention = outcomes["intervention_stochastic_seed"].astype(str)
-    mismatch_count = int((baseline != intervention).sum())
-    return {
-        "check_name": "common_random_seed_pairing",
-        "passed": mismatch_count == 0,
-        "details": f"seed mismatches={mismatch_count}",
-    }
-
-
 def _check_provenance_labels(provenance: dict[str, object]) -> dict[str, object]:
     status = provenance.get("status")
     production_attribution = provenance.get("production_attribution")
@@ -391,7 +222,7 @@ def build_dry_run_inspection_checks(
     family_by_intervention: dict[str, str],
 ) -> list[dict[str, object]]:
     return [
-        _check_schema_columns(outcomes, schema_columns),
+        check_ordered_schema(outcomes, schema_columns),
         _check_row_count(outcomes, expected_row_count),
         _check_proposal_ids(outcomes),
         _check_intervention_ids(outcomes, expected_intervention_ids),
@@ -401,9 +232,9 @@ def build_dry_run_inspection_checks(
             family_by_intervention,
             expected_replicates,
         ),
-        _check_source_identity(outcomes, provenance),
-        _check_matched_pair_ids(outcomes),
-        _check_seed_pairing(outcomes),
+        check_source_identity(outcomes, provenance),
+        check_matched_pair_ids(outcomes),
+        check_seed_pairing(outcomes).check,
         _check_provenance_labels(provenance),
         _check_dry_run_boundary(outcomes, provenance),
     ]

@@ -107,6 +107,7 @@ def _expectations(frame: pd.DataFrame) -> ProductionSummaryExpectations:
             "headline/persistent_joint_cause": 3,
             "headline/climbing_only": 3,
         },
+        schema_columns=tuple(frame.columns),
     )
 
 

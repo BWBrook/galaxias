@@ -7,12 +7,12 @@ import pandas as pd
 import pytest
 
 from galaxias_model.module5_proposals import derive_module5_seed
+from galaxias_model.module5_execution_inspect import inspect_rehearsal_output
 from galaxias_model.module5_rehearsal import (
     DEFAULT_REHEARSAL_REPLICATES,
     REHEARSAL_PARTITION_ROW_COUNTS,
     REHEARSAL_STATUS,
     build_rehearsal_plan,
-    inspect_rehearsal_output,
     verify_required_parameter_artifacts,
 )
 

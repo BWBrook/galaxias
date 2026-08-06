@@ -4,9 +4,9 @@ import argparse
 from pathlib import Path
 
 from galaxias_model.module5_counterfactual import DEFAULT_OUTCOME_SCHEMA_PATH
+from galaxias_model.module5_execution_inspect import inspect_rehearsal_output
 from galaxias_model.module5_rehearsal import (
     DEFAULT_REHEARSAL_OUTPUT_DIR,
-    inspect_rehearsal_output,
 )
 
 

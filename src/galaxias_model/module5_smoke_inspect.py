@@ -7,6 +7,13 @@ from pathlib import Path
 
 import pandas as pd
 
+from galaxias_model.module5_output_checks import (
+    check_matched_pair_ids,
+    check_ordered_schema,
+    check_seed_pairing,
+    check_source_identity,
+)
+
 
 DEFAULT_SMOKE_DIR = Path("outputs/module5_runner_smoke")
 DEFAULT_OUTCOME_SCHEMA_PATH = Path("data/module5_counterfactual_outcome_schema.csv")
@@ -34,67 +41,6 @@ def _load_inputs(smoke_dir: Path) -> tuple[pd.DataFrame, dict[str, object]]:
     if not provenance_path.exists():
         raise FileNotFoundError(f"Missing Module 5 smoke provenance: {provenance_path}")
     return pd.read_csv(outcomes_path), json.loads(provenance_path.read_text(encoding="utf-8"))
-
-
-def _check_schema_columns(outcomes: pd.DataFrame, schema_columns: list[str]) -> dict[str, object]:
-    actual = list(outcomes.columns)
-    missing = [column for column in schema_columns if column not in actual]
-    extra = [column for column in actual if column not in schema_columns]
-    same_order = actual == schema_columns
-    return {
-        "check_name": "schema_columns",
-        "passed": not missing and not extra and same_order,
-        "details": f"rows={len(outcomes)} columns={len(actual)} missing={missing} extra={extra} same_order={same_order}",
-    }
-
-
-def _check_matched_pair_ids(outcomes: pd.DataFrame) -> dict[str, object]:
-    required = ["matched_pair_id", "run_id_baseline", "run_id_counterfactual"]
-    missing_required = [column for column in required if column not in outcomes.columns]
-    if missing_required:
-        return {
-            "check_name": "matched_pair_ids",
-            "passed": False,
-            "details": f"missing required columns={missing_required}",
-        }
-
-    matched_pair_ids = outcomes["matched_pair_id"].astype(str)
-    duplicate_count = int(matched_pair_ids.duplicated().sum())
-    blank_count = int((matched_pair_ids.str.strip() == "").sum())
-    same_run_id_count = int(
-        (
-            outcomes["run_id_baseline"].astype(str)
-            == outcomes["run_id_counterfactual"].astype(str)
-        ).sum()
-    )
-    return {
-        "check_name": "matched_pair_ids",
-        "passed": duplicate_count == 0 and blank_count == 0 and same_run_id_count == 0,
-        "details": (
-            f"unique_pairs={matched_pair_ids.nunique()} duplicate_pairs={duplicate_count} "
-            f"blank_pairs={blank_count} same_run_ids={same_run_id_count}"
-        ),
-    }
-
-
-def _check_seed_pairing(outcomes: pd.DataFrame) -> dict[str, object]:
-    required = ["baseline_stochastic_seed", "intervention_stochastic_seed"]
-    missing_required = [column for column in required if column not in outcomes.columns]
-    if missing_required:
-        return {
-            "check_name": "common_random_seed_pairing",
-            "passed": False,
-            "details": f"missing required columns={missing_required}",
-        }
-
-    baseline = outcomes["baseline_stochastic_seed"].astype(str)
-    intervention = outcomes["intervention_stochastic_seed"].astype(str)
-    mismatch_count = int((baseline != intervention).sum())
-    return {
-        "check_name": "common_random_seed_pairing",
-        "passed": mismatch_count == 0,
-        "details": f"seed mismatches={mismatch_count}",
-    }
 
 
 def _check_provenance_labels(provenance: dict[str, object]) -> dict[str, object]:
@@ -142,9 +88,10 @@ def build_inspection_checks(
     schema_columns: list[str],
 ) -> list[dict[str, object]]:
     return [
-        _check_schema_columns(outcomes, schema_columns),
-        _check_matched_pair_ids(outcomes),
-        _check_seed_pairing(outcomes),
+        check_ordered_schema(outcomes, schema_columns),
+        check_source_identity(outcomes, provenance),
+        check_matched_pair_ids(outcomes),
+        check_seed_pairing(outcomes).check,
         _check_provenance_labels(provenance),
         _check_smoke_only_boundary(outcomes, provenance),
     ]
