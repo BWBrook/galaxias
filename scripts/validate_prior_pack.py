@@ -143,6 +143,8 @@ def validate_prior_rows(rows: list[dict[str, str]], evidence_ids: set[str]) -> d
         missing_evidence = [eid for eid in split_ids(row["evidence_ids"]) if eid not in evidence_ids]
         if missing_evidence:
             raise ValueError(f"Unknown evidence_ids for {parameter_id}: {missing_evidence}")
+        if row["source_strategy"] == "direct_pedder" and not split_ids(row["evidence_ids"]):
+            raise ValueError(f"{parameter_id} cannot be direct_pedder without evidence_ids")
 
         lower = parse_float(row["lower_bound"])
         upper = parse_float(row["upper_bound"])
