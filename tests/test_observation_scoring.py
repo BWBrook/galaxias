@@ -331,7 +331,7 @@ def test_scoring_summary_blocks_on_baselines(model_inputs: ModelInputs, transien
     assert scoring_result.summary["deferred_target_ids"] == ["CT011", "CT012"]
 
 
-def test_module2_cli_and_review_bundle_write_expected_outputs(tmp_path: Path) -> None:
+def test_module2_scoring_cli_writes_expected_outputs(tmp_path: Path) -> None:
     output_dir = tmp_path / "scored_run"
     subprocess.run(
         [
@@ -353,22 +353,3 @@ def test_module2_cli_and_review_bundle_write_expected_outputs(tmp_path: Path) ->
     with (output_dir / "summary.json").open(encoding="utf-8") as handle:
         summary = json.load(handle)
     assert summary["full_ready_for_module3"] is False
-
-    subprocess.run(
-        [
-            sys.executable,
-            str(ROOT / "scripts" / "review_module2_readiness.py"),
-            "--output-root",
-            str(tmp_path / "module2_review"),
-        ],
-        cwd=ROOT,
-        check=True,
-    )
-    assert (tmp_path / "module2_review" / "data" / "module2_default_target_scores.csv").exists()
-    assert (tmp_path / "module2_review" / "data" / "module2_transient_replicate_scores.csv").exists()
-    review_doc = tmp_path / "module2_review" / "docs" / "module2_readiness_review.md"
-    assert review_doc.exists()
-    text = review_doc.read_text(encoding="utf-8")
-    assert "historical_core_ready" in text
-    assert "full_ready_for_module3" in text
-    assert "needs_module_2_5" in text

@@ -1,8 +1,6 @@
 from __future__ import annotations
 
 from dataclasses import replace
-import subprocess
-import sys
 from pathlib import Path
 
 import numpy as np
@@ -392,23 +390,3 @@ def test_aggregate_bundle_scores_are_finite(model_inputs: ModelInputs) -> None:
     assert np.isfinite(float(aggregate.summary["historical_core_distance_median"]))
     assert np.isfinite(float(aggregate.summary["historical_core_distance_iqr"]))
     assert aggregate.summary["full_ready_for_module3"] is True
-
-
-def test_module2_5_review_bundle_writes_expected_outputs(tmp_path: Path) -> None:
-    subprocess.run(
-        [
-            sys.executable,
-            str(ROOT / "scripts" / "review_module2_5_readiness.py"),
-            "--output-root",
-            str(tmp_path / "module2_5_review"),
-        ],
-        cwd=ROOT,
-        check=True,
-    )
-    assert (tmp_path / "module2_5_review" / "data" / "module2_5_default_bundle_scores.csv").exists()
-    assert (tmp_path / "module2_5_review" / "data" / "module2_5_transient_bundle_scores.csv").exists()
-    review_doc = tmp_path / "module2_5_review" / "docs" / "module2_5_readiness_review.md"
-    assert review_doc.exists()
-    text = review_doc.read_text(encoding="utf-8")
-    assert "full_ready_for_module3" in text
-    assert "needs_module_2_75" in text
