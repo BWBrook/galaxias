@@ -94,7 +94,7 @@ def _relative_path(path: Path) -> str:
 def _git_sha() -> str:
     try:
         return subprocess.check_output(
-            ["git", "rev-parse", "--short", "HEAD"],
+            ["git", "rev-parse", "HEAD"],
             text=True,
             stderr=subprocess.DEVNULL,
         ).strip()
@@ -194,6 +194,7 @@ def _build_output_row(
     run_dir_name: str = "module5_smoke_default_parameters",
     provenance_script: Path = DEFAULT_SCRIPT_PATH,
     module4_manifest: Path = DEFAULT_MODULE4_MANIFEST,
+    provenance_git_sha: str | None = None,
 ) -> dict[str, object]:
     family_id = row["family_id"]
     intervention_id = row["intervention_id"]
@@ -268,7 +269,7 @@ def _build_output_row(
         "uncertainty_persistence_2002_ci_high": 0.0,
         "processing_timestamp": timestamp,
         "provenance_source_file": _relative_path(interventions_path),
-        "provenance_git_sha": _git_sha(),
+        "provenance_git_sha": provenance_git_sha or _git_sha(),
         "provenance_script": provenance_script.as_posix(),
         "provenance_module4_manifest": module4_manifest.as_posix(),
     }
@@ -281,21 +282,49 @@ def _attach_uncertainty_summaries(rows: list[dict[str, object]]) -> list[dict[st
         if "proposal_source_key" in frame.columns
         else ["intervention_id"]
     )
-    for group_key, group in frame.groupby(group_columns, sort=False):
-        if not isinstance(group_key, tuple):
-            group_key = (group_key,)
-        mask = pd.Series(True, index=frame.index)
-        for column, value in zip(group_columns, group_key):
-            mask &= frame[column] == value
-        extirpation = group["extirpation_year_contrast"].astype(float)
-        persistence = group["persistence_2002_contrast"].astype(float)
-        frame.loc[mask, "uncertainty_n_replicates"] = len(group)
-        frame.loc[mask, "uncertainty_extirpation_median"] = float(extirpation.median())
-        frame.loc[mask, "uncertainty_extirpation_ci_low"] = float(np.quantile(extirpation, 0.025))
-        frame.loc[mask, "uncertainty_extirpation_ci_high"] = float(np.quantile(extirpation, 0.975))
-        frame.loc[mask, "uncertainty_persistence_2002_delta_median"] = float(persistence.median())
-        frame.loc[mask, "uncertainty_persistence_2002_ci_low"] = float(np.quantile(persistence, 0.025))
-        frame.loc[mask, "uncertainty_persistence_2002_ci_high"] = float(np.quantile(persistence, 0.975))
+    summary_columns = [
+        "uncertainty_n_replicates",
+        "uncertainty_extirpation_median",
+        "uncertainty_extirpation_ci_low",
+        "uncertainty_extirpation_ci_high",
+        "uncertainty_persistence_2002_delta_median",
+        "uncertainty_persistence_2002_ci_low",
+        "uncertainty_persistence_2002_ci_high",
+    ]
+    summaries = (
+        frame.groupby(group_columns, sort=False, as_index=False)
+        .agg(
+            uncertainty_n_replicates=("extirpation_year_contrast", "size"),
+            uncertainty_extirpation_median=("extirpation_year_contrast", "median"),
+            uncertainty_extirpation_ci_low=(
+                "extirpation_year_contrast",
+                lambda values: float(np.quantile(values.astype(float), 0.025)),
+            ),
+            uncertainty_extirpation_ci_high=(
+                "extirpation_year_contrast",
+                lambda values: float(np.quantile(values.astype(float), 0.975)),
+            ),
+            uncertainty_persistence_2002_delta_median=(
+                "persistence_2002_contrast",
+                "median",
+            ),
+            uncertainty_persistence_2002_ci_low=(
+                "persistence_2002_contrast",
+                lambda values: float(np.quantile(values.astype(float), 0.025)),
+            ),
+            uncertainty_persistence_2002_ci_high=(
+                "persistence_2002_contrast",
+                lambda values: float(np.quantile(values.astype(float), 0.975)),
+            ),
+        )
+    )
+    frame = frame.drop(columns=summary_columns).merge(
+        summaries,
+        on=group_columns,
+        how="left",
+        sort=False,
+        validate="many_to_one",
+    )
     return frame.to_dict(orient="records")
 
 
