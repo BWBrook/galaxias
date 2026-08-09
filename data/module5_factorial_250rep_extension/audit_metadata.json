@@ -1,0 +1,50 @@
+{
+  "analysis_command": "scripts/audit_module5_factorial_extension.py --matched-outcomes /data/codex/artifacts/galaxias/module5_factorial_extension_20260809T053300Z-goal027-m5-shared-250rep/outputs/module5_factorial_extension/matched_outcomes.csv --provenance /data/codex/artifacts/galaxias/module5_factorial_extension_20260809T053300Z-goal027-m5-shared-250rep/outputs/module5_factorial_extension/provenance.json --output-dir /data/codex/artifacts/galaxias/module5_factorial_extension_20260809T053300Z-goal027-m5-shared-250rep/compact_audit --expected-sha256 3ea4ad0a05ad928628fc3cd780cb94a3f4517d07a1827b16a527ea9000ce20c5 --source-artifact /data/codex/artifacts/galaxias/module5_factorial_extension_20260809T053300Z-goal027-m5-shared-250rep --source-execution-sha 4e2e786381595a4dcb9ca11f04b40df1d5606f2a --run-id 20260809T053300Z-goal027-m5-shared-250rep --expected-row-count 386250 --expected-replicates 250",
+  "batch_size": 50,
+  "common_seed_boundary": "Equal starting seeds across four arms, not guaranteed identical event-level ecological shocks after trajectories diverge.",
+  "created_at": "2026-08-09T05:43:19.842824+00:00",
+  "decision_counts": {
+    "family_level_stable_source_distribution_unstable": 1,
+    "stable_at_250": 5
+  },
+  "endpoints": [
+    "persistence_2002_contrast",
+    "min_abundance_1992_2002_contrast",
+    "lake_refuge_share_2002_contrast"
+  ],
+  "expected_replicates": 250,
+  "expected_row_count": 386250,
+  "families": [
+    "persistent_joint_cause",
+    "transient_perfect_storm"
+  ],
+  "goal026_continuity_review_flags": 0,
+  "interaction_definition": "replicate-level joint_removal - trout_removal - climbing_removal",
+  "interpretation_boundary": "Conditional endpoint-scale interaction and Monte Carlo stability only; not proof of ecological synergy or a final causal claim.",
+  "label": "goal027-module5-shared-four-arm-250rep-extension",
+  "matched_outcomes_path": "/data/codex/artifacts/galaxias/module5_factorial_extension_20260809T053300Z-goal027-m5-shared-250rep/outputs/module5_factorial_extension/matched_outcomes.csv",
+  "matched_outcomes_sha256": "3ea4ad0a05ad928628fc3cd780cb94a3f4517d07a1827b16a527ea9000ce20c5",
+  "matched_outcomes_size": 631217121,
+  "output_row_counts": {
+    "context_effect_summary.csv": 90,
+    "goal026_continuity_check.csv": 24,
+    "prefix_stability_summary.csv": 384,
+    "qc_summary.csv": 21,
+    "replication_decision.csv": 6,
+    "source_effect_summary.csv": 1545
+  },
+  "prefixes": [
+    100,
+    175,
+    250
+  ],
+  "primary_weighting": "equal variant_id x Module4 calibration-seed contexts",
+  "qc_all_passed": true,
+  "qc_only": false,
+  "raw_matched_outcomes_copied_locally": false,
+  "run_id": "20260809T053300Z-goal027-m5-shared-250rep",
+  "sensitivity_weighting": "equal proposal_source_key rows",
+  "source_artifact": "/data/codex/artifacts/galaxias/module5_factorial_extension_20260809T053300Z-goal027-m5-shared-250rep",
+  "source_execution_sha": "4e2e786381595a4dcb9ca11f04b40df1d5606f2a",
+  "stop_replicates": 250
+}

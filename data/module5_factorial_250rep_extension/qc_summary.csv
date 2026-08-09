@@ -1,0 +1,22 @@
+check_name,observed_value,expected_value,passed,details
+required_columns,[],[],True,
+raw_row_count,386250,386250,True,
+factorial_families,"[""persistent_joint_cause"", ""transient_perfect_storm""]","[""persistent_joint_cause"", ""transient_perfect_storm""]",True,
+within_pair_seed_match,0,0,True,This does not imply cross-intervention four-arm pairing.
+persistent_joint_cause_factorial_source_sets,"{""no_climbing_pressure"": 265, ""no_trout_or_climbing_pressure"": 265, ""no_trout_pressure"": 265}",identical non-empty sets,True,
+persistent_joint_cause_replicate_coverage,"{""failures"": 0, ""units"": 795}","{""failures"": 0, ""replicate_ids"": ""0..249""}",True,
+persistent_joint_cause_context_count,15,15,True,
+transient_perfect_storm_factorial_source_sets,"{""no_climbing_pressure"": 250, ""no_trout_or_climbing_pressure"": 250, ""no_trout_pressure"": 250}",identical non-empty sets,True,
+transient_perfect_storm_replicate_coverage,"{""failures"": 0, ""units"": 750}","{""failures"": 0, ""replicate_ids"": ""0..249""}",True,
+transient_perfect_storm_context_count,15,15,True,
+finite_endpoint_values,"{""lake_refuge_share_2002_contrast"": 0, ""min_abundance_1992_2002_contrast"": 0, ""persistence_2002_contrast"": 0}","{""lake_refuge_share_2002_contrast"": 0, ""min_abundance_1992_2002_contrast"": 0, ""persistence_2002_contrast"": 0}",True,
+schema_columns,,,True,rows=386250 columns=50 missing=[] extra=[] same_order=True
+source_identity,,,True,source_keys=515 blank_source_keys=0 key_mismatches=0 duplicate_source_intervention_replicates=0 provenance_keys_match=True provenance_fields_match=True key_errors=[]
+matched_pair_ids,,,True,unique_pairs=386250 duplicate_pairs=0 blank_pairs=0 same_run_ids=0 duplicate_baseline_ids=0 duplicate_counterfactual_ids=0 source_context_mismatches=0 pair_mismatches=0 baseline_id_mismatches=0 counterfactual_id_mismatches=0
+common_random_seed_pairing,,,True,seed mismatches=0
+factorial_source_counts,,,True,"actual={'persistent_joint_cause': 265, 'transient_perfect_storm': 250} expected={'persistent_joint_cause': 265, 'transient_perfect_storm': 250}"
+three_contrasts_per_source_replicate_block,,,True,blocks=128750 expected=128750 exact_axes=True
+one_seed_across_stored_arms,,,True,blocks_with_multiple_seeds=0
+zero_cross_block_seed_collisions,,,True,block_seeds=128750 distinct=128750 collision_groups=0 collision_excess=0
+shared_status_quo_baseline_values,,,True,blocks_with_baseline_disagreement=0
+factorial_extension_provenance,,,True,status=module5_shared_four_arm_extension production_attribution=False status_quo_once=True
