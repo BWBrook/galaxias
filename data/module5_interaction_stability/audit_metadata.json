@@ -1,0 +1,57 @@
+{
+  "analysis_command": "scripts/audit_module5_interaction_stability.py --matched-outcomes /data/codex/artifacts/galaxias/module5_100rep_production_20260614T031501Z-goal014-m5-100rep-production/outputs/module5_100rep_production/matched_outcomes.csv --output-dir /data/codex/artifacts/galaxias/module5_interaction_stability_20260809T045756Z-goal026-m5-interaction-stability/compact_outputs --expected-sha256 ef8d9a5fca70a253c972c7d8483654b42f0351e361e852258b5c814dfebdc727 --source-artifact /data/codex/artifacts/galaxias/module5_100rep_production_20260614T031501Z-goal014-m5-100rep-production --source-execution-sha ddb8a6de583e85f170f46c9dec9b1246baa6dccc --goal014-record-sha a96cfed24800823b77cbafeed5e9603e9dd6d33c --run-id 20260809T045756Z-goal026-m5-interaction-stability",
+  "created_at": "2026-08-09T04:58:32.330320+00:00",
+  "endpoints": [
+    "persistence_2002_contrast",
+    "min_abundance_1992_2002_contrast",
+    "lake_refuge_share_2002_contrast"
+  ],
+  "families": [
+    "persistent_joint_cause",
+    "transient_perfect_storm"
+  ],
+  "goal014_record_sha": "a96cfed24800823b77cbafeed5e9603e9dd6d33c",
+  "interaction_definition": "joint_removal - trout_removal - climbing_removal",
+  "interpretation_boundary": "Conditional expectation-scale interaction and Monte Carlo adequacy only; not posterior inference, attributable fraction, or proof of ecological synergy.",
+  "label": "goal026-module5-factorial-interaction-monte-carlo-audit",
+  "matched_outcomes_path": "/data/codex/artifacts/galaxias/module5_100rep_production_20260614T031501Z-goal014-m5-100rep-production/outputs/module5_100rep_production/matched_outcomes.csv",
+  "matched_outcomes_sha256": "ef8d9a5fca70a253c972c7d8483654b42f0351e361e852258b5c814dfebdc727",
+  "matched_outcomes_size": 435867556,
+  "output_row_counts": {
+    "context_effect_summary.csv": 90,
+    "prefix_stability_summary.csv": 384,
+    "qc_summary.csv": 11,
+    "replication_decision.csv": 6,
+    "source_effect_summary.csv": 1545
+  },
+  "overall_recommended_action": "targeted_extension",
+  "prefixes": [
+    25,
+    50,
+    75,
+    100
+  ],
+  "primary_weighting": "equal variant_id x Module4 calibration-seed contexts",
+  "qc_all_passed": true,
+  "raw_matched_outcomes_copied_locally": false,
+  "run_id": "20260809T045756Z-goal026-m5-interaction-stability",
+  "seed_collision_facts": {
+    "all_seed_key_count": 279500,
+    "collision_excess_key_count": 11,
+    "collision_group_count": 11,
+    "distinct_seed_count": 279489,
+    "same_source_cross_intervention_collision_group_count": 0
+  },
+  "seed_pairing_boundary": "Common random numbers apply within each baseline-counterfactual pair; intervention IDs use distinct seed streams.",
+  "sensitivity_weighting": "equal proposal_source_key rows",
+  "source_artifact": "/data/codex/artifacts/galaxias/module5_100rep_production_20260614T031501Z-goal014-m5-100rep-production",
+  "source_execution_sha": "ddb8a6de583e85f170f46c9dec9b1246baa6dccc",
+  "tolerances": {
+    "persistent_joint_cause|lake_refuge_share_2002_contrast": 0.01,
+    "persistent_joint_cause|min_abundance_1992_2002_contrast": 10.0,
+    "persistent_joint_cause|persistence_2002_contrast": 0.01,
+    "transient_perfect_storm|lake_refuge_share_2002_contrast": 0.01,
+    "transient_perfect_storm|min_abundance_1992_2002_contrast": 10.0,
+    "transient_perfect_storm|persistence_2002_contrast": 0.01
+  }
+}

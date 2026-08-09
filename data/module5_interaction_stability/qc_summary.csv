@@ -1,0 +1,12 @@
+check_name,observed_value,expected_value,passed,details
+required_columns,[],[],True,
+raw_row_count,279500,279500,True,
+factorial_families,"[""persistent_joint_cause"", ""transient_perfect_storm""]","[""persistent_joint_cause"", ""transient_perfect_storm""]",True,
+within_pair_seed_match,0,0,True,This does not imply cross-intervention four-arm pairing.
+persistent_joint_cause_factorial_source_sets,"{""no_climbing_pressure"": 265, ""no_trout_or_climbing_pressure"": 265, ""no_trout_pressure"": 265}",identical non-empty sets,True,
+persistent_joint_cause_replicate_coverage,"{""failures"": 0, ""units"": 795}","{""failures"": 0, ""replicate_ids"": ""0..99""}",True,
+persistent_joint_cause_context_count,15,15,True,
+transient_perfect_storm_factorial_source_sets,"{""no_climbing_pressure"": 250, ""no_trout_or_climbing_pressure"": 250, ""no_trout_pressure"": 250}",identical non-empty sets,True,
+transient_perfect_storm_replicate_coverage,"{""failures"": 0, ""units"": 750}","{""failures"": 0, ""replicate_ids"": ""0..99""}",True,
+transient_perfect_storm_context_count,15,15,True,
+finite_endpoint_values,"{""lake_refuge_share_2002_contrast"": 0, ""min_abundance_1992_2002_contrast"": 0, ""persistence_2002_contrast"": 0}","{""lake_refuge_share_2002_contrast"": 0, ""min_abundance_1992_2002_contrast"": 0, ""persistence_2002_contrast"": 0}",True,
