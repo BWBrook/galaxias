@@ -32,8 +32,11 @@ Module 4.5 turned that calibration result into a mechanism audit. Its current
 decision table carries `persistent_joint_cause` as the primary Module 5
 ensemble, keeps `climbing_only` and `transient_perfect_storm` as sensitivity
 cases, and keeps `habitat_only_null` and `trout_only` as negative references.
-This is still not a final causal conclusion; counterfactual attribution starts
-in Module 5.
+Module 5 has since completed the matched pressure-removal experiments,
+including the shared four-arm, 250-replicate extension. Its scale-dependent
+interaction results are under internal scientific review. See
+`docs/module5_shared_four_arm_250rep_extension.md` for the current evidence and
+`AGENT_HANDOFF.md` for the unresolved observation-context and endpoint choices.
 
 ## Module Map
 
@@ -47,8 +50,8 @@ in Module 5.
   `CT010`.
 - Module 4: observation-bridge sensitivity calibration.
 - Module 4.5: mechanism interpretation audit.
-- Module 5 and later: counterfactual attribution, coexistence envelope,
-  robustness, manuscript, and genetics sidecar.
+- Module 5: matched pressure-removal counterfactuals and interaction stability.
+- Later work: coexistence envelope, robustness, manuscript, and genetics sidecar.
 
 ## Quick Start
 
@@ -65,6 +68,11 @@ make check
 `make integration-check` runs the slower calibration/reproducibility tests.
 `make check` runs both.
 
+The Module 3 readiness report runs one calibration and assesses its scientific
+gates. Serial/parallel and resumed/clean equivalence belong to the integration
+tests. Its CLI accepts `--output-root` for the review bundle and `--output-dir`
+for calibration output; it preserves unrelated files in those directories.
+
 Small smoke jobs stay local and write ignored outputs:
 
 ```bash
@@ -73,24 +81,21 @@ make module4-smoke
 make module4-5-smoke
 make module5-smoke
 make module5-inspect
-make module5-dry-run
-make module5-dry-run-inspect
 ```
 
 `make module5-inspect` reads the tiny Module 5 smoke output from disk and
 writes an ignored inspection bundle. It is a runner-output contract check, not
 production attribution.
 
-`make module5-dry-run` runs the approved local real-proposal Module 5 dry run
-from the Goal 005/006 contract and writes ignored outputs under
-`outputs/module5_dry_run_baseline_current_20260410/`. The matching
-`make module5-dry-run-inspect` target inspects those files from disk. These
-are local plumbing checks, not production attribution or manuscript evidence.
+The fixed Goal 006 five-proposal dry-run commands have been retired. A bounded
+real-source test exercises the current matched-pair runner, parameter loading,
+provenance and disk inspection. The full matched-pair and shared four-arm
+runners remain in `scripts/run_module5_25rep_rehearsal.py` and
+`scripts/run_module5_factorial_extension.py`; even at one replicate they select
+the full source ensembles and are not tiny local smoke commands.
 
-The Module 5 production-readiness gate in
-`docs/goals/004-module5-production-readiness/` defines approval conditions
-before any production attribution run, remote compute, or manuscript-level
-interpretation.
+Historical run packets retain execution provenance. New meaningful compute
+and manuscript work follow the current scientific scope and compute policy.
 
 The full Module 4.5 diagnostic can be regenerated from the raw Module 4
 artifact manifest:

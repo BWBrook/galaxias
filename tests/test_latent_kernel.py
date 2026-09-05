@@ -167,21 +167,6 @@ def test_default_deterministic_review_gates_hold(model_inputs: ModelInputs) -> N
 def test_default_stochastic_review_gates_hold(model_inputs: ModelInputs) -> None:
     config = SimulationConfig(stochastic=True)
     summaries: list[dict[str, int | float | None | str]] = []
-    for seed in range(1, 21):
-        result = run_historical_simulation(
-            resolve_family_parameters(model_inputs, "transient_perfect_storm"),
-            "transient_perfect_storm",
-            config,
-            seed=seed,
-        )
-        summaries.append(result.summary)
-
-    summary_frame = pd.DataFrame(summaries)
-    assert (summary_frame["pre1972_min_total"] > 0).all()
-    assert (summary_frame["peak_year_pedder_lake_index"].between(1975, 1978)).median() >= 0.5
-    assert summary_frame["peak_year_pedder_lake_index"].median() >= 1975
-    assert summary_frame["peak_year_pedder_lake_index"].median() <= 1978
-
     present_in_1980 = 0
     for seed in range(1, 21):
         result = run_historical_simulation(
@@ -190,9 +175,17 @@ def test_default_stochastic_review_gates_hold(model_inputs: ModelInputs) -> None
             config,
             seed=seed,
         )
+        summaries.append(result.summary)
         present_in_1980 += int(
             result.trajectory_table.loc[result.trajectory_table["year"] == 1980, "total_present"].iloc[0] == 1
         )
+
+    summary_frame = pd.DataFrame(summaries)
+    assert (summary_frame["pre1972_min_total"] > 0).all()
+    assert (summary_frame["peak_year_pedder_lake_index"].between(1975, 1978)).median() >= 0.5
+    assert summary_frame["peak_year_pedder_lake_index"].median() >= 1975
+    assert summary_frame["peak_year_pedder_lake_index"].median() <= 1978
+
     assert present_in_1980 >= 18
 
 

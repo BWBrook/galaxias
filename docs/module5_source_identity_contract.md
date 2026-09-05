@@ -2,14 +2,13 @@
 
 ## Current State And Non-Claims
 
-Goal 011 implements the local Module 5 source-context identity contract needed
-before any production execution packet. This contract applies to seeds,
+This contract applies to Module 5 seeds,
 matched-pair IDs, run IDs, matched-outcome rows, provenance, and disk
 inspection.
 
-This note does not authorise a 25-replicate rehearsal, the 279,500-row
-production execution, remote commands, production attribution claims,
-manuscript claims, publication, staging, commit, push, or a PR.
+The fixed Goal 006 dry-run implementation has been retired. The general
+matched-pair and shared four-arm runners use this identity contract and the
+common checks in `src/galaxias_model/module5_output_checks.py`.
 
 ## Why Bare `proposal_id` Is Unsafe
 
@@ -58,17 +57,16 @@ Matched outcomes now carry these source-identity columns:
 The outcome schema now treats `proposal_id` as source-context scoped rather
 than globally unique.
 
-Real-proposal dry-run provenance records:
+Current runner provenance records:
 
 - `source_identity_fields`
 - `source_identity_strategy`
 - `selected_proposal_source_keys`
-- `selected_proposal_source_rows`
 - seed derivation over `proposal_source_key`
 
 ## Seed And Pair Identity Rule
 
-Module 5 stochastic seeds are derived from:
+The general matched-pair runner derives stochastic seeds from:
 
 ```text
 base_label|proposal_source_key|intervention_id|stochastic_replicate_id
@@ -76,6 +74,16 @@ base_label|proposal_source_key|intervention_id|stochastic_replicate_id
 
 The baseline and intervention arms keep common-random-number pairing by using
 the same stochastic seed inside each matched pair.
+
+The shared four-arm runner instead derives one seed per source-replicate block:
+
+```text
+base_label|proposal_source_key|stochastic_replicate_id
+```
+
+It runs status quo once and starts all three removal arms from that seed.
+Each runner supplies its own frozen seed label. Equal starting seeds do not
+guarantee identical event-level random shocks after trajectories diverge.
 
 Matched-pair IDs use:
 
@@ -95,8 +103,7 @@ source keys, stochastic seeds, matched-pair IDs, and run IDs.
 
 ## Disk Inspection Contract
 
-The real-proposal dry-run inspector now includes a `source_identity` check. It
-fails if:
+The common `source_identity` check fails if:
 
 - required source-identity columns are missing;
 - `proposal_source_key` is blank;
@@ -110,31 +117,12 @@ The matched-pair check also verifies that `matched_pair_id`,
 `run_id_baseline`, and `run_id_counterfactual` have the expected
 source-context shapes.
 
-## Validated Local Shape
+Uncertainty summaries also require `proposal_source_key`; they never fall back
+to pooling all proposals under the same intervention ID.
 
-The current local real-proposal dry run remains a plumbing and inspection
-check only:
+## Local Verification
 
-- five approved `family_winners` proposal rows;
-- all 13 current intervention rows;
-- 5 replicates per intervention row;
-- 65 matched-output rows;
-- zero seed mismatches expected;
-- `production_attribution` remains `false`.
-
-Generated validation outputs remain ignored under:
-
-```text
-outputs/module5_dry_run_baseline_current_20260410/
-```
-
-## Remaining Boundary
-
-Goal 011 removes the source-identity collision risk for the current local dry
-run and the next production implementation surface. It does not start
-production attribution, choose a new proposal sample, alter family weighting,
-change pressure-removal semantics, or authorise remote execution.
-
-The next production or rehearsal packet should explicitly choose the run
-shape, target, partitioning, artifact policy, and source-key-aware restart
-rules before any production-sized work begins.
+The current real-source test exercises sampled parameter loading, matched-pair
+execution, provenance and disk inspection with one source and two replicates.
+The ordinary Module 5 smoke command uses default parameters. Both are plumbing
+checks; scientific interpretation rests on the recorded production evidence.

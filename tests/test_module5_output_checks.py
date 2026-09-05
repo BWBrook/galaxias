@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import pandas as pd
+import pytest
 
+from galaxias_model.module5_counterfactual import _attach_uncertainty_summaries
 from galaxias_model.module5_output_checks import (
     check_matched_pair_ids,
     check_ordered_schema,
@@ -88,3 +90,24 @@ def test_seed_pairing_check_rejects_unmatched_seed() -> None:
     assert not result.check["passed"]
     assert result.mismatch_count == 1
     assert "seed mismatches=1" in str(result.check["details"])
+
+
+def test_uncertainty_summaries_require_and_preserve_source_identity() -> None:
+    rows = []
+    for source_key, contrast in (("source_a", 0.0), ("source_b", 10.0)):
+        row = {column: 0.0 for column in (
+            "uncertainty_n_replicates", "uncertainty_extirpation_median",
+            "uncertainty_extirpation_ci_low", "uncertainty_extirpation_ci_high",
+            "uncertainty_persistence_2002_delta_median",
+            "uncertainty_persistence_2002_ci_low", "uncertainty_persistence_2002_ci_high",
+        )}
+        row.update(proposal_source_key=source_key, intervention_id="same_intervention",
+                   extirpation_year_contrast=contrast, persistence_2002_contrast=0.0)
+        rows.append(row)
+    summary = pd.DataFrame(_attach_uncertainty_summaries(rows)).set_index("proposal_source_key")
+    assert summary["uncertainty_extirpation_median"].to_dict() == {"source_a": 0.0, "source_b": 10.0}
+    assert (summary["uncertainty_n_replicates"] == 1).all()
+    for row in rows:
+        del row["proposal_source_key"]
+    with pytest.raises(ValueError, match="proposal_source_key"):
+        _attach_uncertainty_summaries(rows)

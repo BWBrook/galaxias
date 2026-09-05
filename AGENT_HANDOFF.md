@@ -19,10 +19,10 @@ goal packets.
    or simplifying the codebase. Do not recreate retired machinery merely to
    preserve history.
 
-Immediately before this note was updated, `/Users/bwbrook/papers/galaxias` was
-clean on `main`, synced with `origin/main`, at commit
-`17d00931b97a757ef0d69ccf6de71f4be84c07ca`. The expected handover-time
-working-tree change is this file only unless Barry commits it before relaunch.
+Successor orientation verified a clean `main`, matching the live `origin/main`,
+at `f5595e14859a73b5fe3d17b5f29e3b7a997c8347` (the committed handover).
+Subsequent code simplification is described under **Lean-Code State**; inspect
+the live working tree before changing anything.
 
 Barry intends to launch the successor directly in this repository. Derive the
 authority for edits, compute, commits, and publication from his current request
@@ -235,8 +235,19 @@ Goals 021-025 applied a deliberate `kill-your-darlings` tranche:
 
 Do not add compatibility layers, replacement generators, preservation ledgers,
 or tests of file existence for the deleted paths. Git is the archive. The
-remaining Module 3 readiness orchestrator may merit a separate simplification
-later, but it is not an urgent obstacle to the scientific review.
+Module 3 readiness report now performs one calibration and reports five
+scientific gates. Serial/parallel and resume reproducibility remain in the
+integration tests; the report does not claim to assess them. Neither the
+Module 3 nor the Module 3.5 review deletes whole output directories.
+
+The successor code sweep also retired the fixed Goal 006 real-proposal dry-run
+runner and inspector. The general matched-pair runner, shared four-arm runner,
+tiny default-parameter smoke and common output checks remain. A bounded
+real-source execution test retains sampled-parameter, provenance, pairing and
+disk-inspection coverage. Redundant test loops, unused parameter-input formats
+and unused report reexports were removed. Source identity is mandatory for
+uncertainty grouping. Model equations, scoring choices, production seed labels
+and committed scientific evidence are unchanged.
 
 Existing numbered goal packets are provenance, not a requirement to create a
 new packet for every small step. Under the Twilight Laboratory workflow, align
@@ -247,8 +258,7 @@ stages autonomously, and return at its gold stamp or a genuine consult trigger.
 
 Read only what is needed to recover current reasoning:
 
-1. `README.md` for the biological question and module map. Its **Current
-   Status** section predates the completed Module 5 work; this handover is newer.
+1. `README.md` for the biological question, module map and current commands.
 2. `docs/module4_observation_sensitivity_plan.md`
 3. `docs/module4_observation_sensitivity_review.md`
 4. `docs/module4_5_mechanism_interpretation_review.md`

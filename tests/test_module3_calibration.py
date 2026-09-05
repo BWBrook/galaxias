@@ -18,7 +18,7 @@ from galaxias_model import (
     transform_parameter_value,
 )
 from galaxias_model.review import run_module3_5_diagnostic_review, run_module3_readiness_review
-from galaxias_model.types import ModelInputs
+from galaxias_model.types import CalibrationRunResult, ModelInputs
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -169,27 +169,36 @@ def test_resume_matches_clean_final_accepted_set(model_inputs: ModelInputs, tmp_
 
 @pytest.mark.slow
 @pytest.mark.integration
-def test_module3_readiness_review_runs_with_small_override(tmp_path: Path) -> None:
-    config = _small_config(ROOT / "outputs" / "module3" / "test_readiness_primary", workers=1)
-    repro_config = _small_config(ROOT / "outputs" / "module3" / "test_readiness_repro", workers=1)
+def test_module3_readiness_review_runs_once_in_caller_directory(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    config = _small_config(tmp_path / "readiness_primary", workers=1)
+    config.output_dir.mkdir()
+    sentinel = config.output_dir / "caller_data.txt"
+    sentinel.write_text("preserve me", encoding="utf-8")
+    calls: list[Module3Config] = []
+
+    def record_run(model_inputs: ModelInputs, run_config: Module3Config) -> CalibrationRunResult:
+        calls.append(run_config)
+        return run_module3_calibration(model_inputs, run_config)
+
+    monkeypatch.setattr("galaxias_model.review.run_module3_calibration", record_run)
     family_summary, accepted_summary, evaluation = run_module3_readiness_review(
         ROOT,
         config=config,
-        repro_config=repro_config,
     )
+    assert calls == [config]
+    assert sentinel.read_text(encoding="utf-8") == "preserve me"
     assert not family_summary.empty
-    assert set(evaluation["gates"]).issuperset(
-        {
-            "sampler_valid_rate_pass",
-            "screen_discrimination_pass",
-            "stochastic_confirmation_finite_pass",
-            "rank_consistency_pass",
-            "accepted_set_nonempty_pass",
-            "reproducibility_pass",
-            "full_ready_for_module4",
-            "needs_module_3_5",
-        }
-    )
+    assert set(evaluation["gates"]) == {
+        "sampler_valid_rate_pass",
+        "screen_discrimination_pass",
+        "stochastic_confirmation_finite_pass",
+        "rank_consistency_pass",
+        "accepted_set_nonempty_pass",
+        "scientific_ready_for_module4",
+        "needs_module_3_5",
+    }
     assert "proposal_id" in accepted_summary.columns
 
 
@@ -197,8 +206,12 @@ def test_module3_readiness_review_runs_with_small_override(tmp_path: Path) -> No
 @pytest.mark.integration
 def test_module3_5_diagnostic_review_runs_with_small_override(tmp_path: Path) -> None:
     config = _small_config(tmp_path / "module3_5_diagnostic", workers=1)
+    config.output_dir.mkdir()
+    sentinel = config.output_dir / "caller_data.txt"
+    sentinel.write_text("preserve me", encoding="utf-8")
     tables, evaluation = run_module3_5_diagnostic_review(ROOT, config=config)
 
+    assert sentinel.read_text(encoding="utf-8") == "preserve me"
     assert not tables["family_summary"].empty
     assert not tables["stage_b_frontier"].empty
     assert not tables["target_omission_sensitivity"].empty

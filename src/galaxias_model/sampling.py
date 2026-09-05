@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import math
-from collections.abc import Mapping
 from typing import Any
 
 import numpy as np
@@ -192,30 +191,20 @@ def sample_family_parameter_table(
     return pd.DataFrame(rows)
 
 
-def _sample_lookup_from_input(sampled_values: Mapping[str, float] | pd.DataFrame | pd.Series) -> dict[str, float]:
-    if isinstance(sampled_values, pd.DataFrame):
-        if "parameter_id" not in sampled_values.columns or "value_natural" not in sampled_values.columns:
-            raise ValueError("Sample DataFrame must contain parameter_id and value_natural columns")
-        return {
-            str(row["parameter_id"]): float(row["value_natural"])
-            for row in sampled_values.to_dict(orient="records")
-            if pd.notna(row["value_natural"])
-        }
-    if isinstance(sampled_values, pd.Series):
-        if "parameter_id" in sampled_values.index and "value_natural" in sampled_values.index:
-            return {str(sampled_values["parameter_id"]): float(sampled_values["value_natural"])}
-        return {str(key): float(value) for key, value in sampled_values.to_dict().items()}
-    return {str(key): float(value) for key, value in sampled_values.items()}
-
-
 def build_resolved_parameters_from_sample(
     model_inputs: ModelInputs,
     family_id: str,
-    sampled_values: Mapping[str, float] | pd.DataFrame | pd.Series,
+    sampled_values: pd.DataFrame,
 ) -> ResolvedParameters:
     merged = _resolve_family_parameter_rows(model_inputs, family_id)
     family_label = str(merged["family_label"].iloc[0])
-    sample_lookup = _sample_lookup_from_input(sampled_values)
+    if "parameter_id" not in sampled_values.columns or "value_natural" not in sampled_values.columns:
+        raise ValueError("Sample DataFrame must contain parameter_id and value_natural columns")
+    sample_lookup = {
+        str(row["parameter_id"]): float(row["value_natural"])
+        for row in sampled_values.to_dict(orient="records")
+        if pd.notna(row["value_natural"])
+    }
 
     values: dict[str, float] = {}
     statuses: dict[str, str] = {}

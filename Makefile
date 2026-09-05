@@ -1,4 +1,4 @@
-.PHONY: setup portability compile fast-test test integration-test fast-check integration-check check smoke module3-5 module3-75 module4-smoke module4-5-smoke module5-smoke module5-inspect module5-dry-run module5-dry-run-inspect clean
+.PHONY: setup portability compile fast-test test integration-test fast-check integration-check check smoke module3-5 module3-75 module4-smoke module4-5-smoke module5-smoke module5-inspect clean
 
 setup:
 	uv sync --locked --python 3.14
@@ -64,16 +64,6 @@ module5-smoke:
 module5-inspect:
 	uv run python scripts/inspect_module5_counterfactual_smoke.py \
 		--smoke-dir outputs/module5_runner_smoke \
-		--outcome-schema data/module5_counterfactual_outcome_schema.csv
-
-module5-dry-run:
-	uv run python scripts/run_module5_real_proposal_dry_run.py \
-		--output-dir outputs/module5_dry_run_baseline_current_20260410 \
-		--replicates 5
-
-module5-dry-run-inspect:
-	uv run python scripts/inspect_module5_real_proposal_dry_run.py \
-		--dry-run-dir outputs/module5_dry_run_baseline_current_20260410 \
 		--outcome-schema data/module5_counterfactual_outcome_schema.csv
 
 clean:

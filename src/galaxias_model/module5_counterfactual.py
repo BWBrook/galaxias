@@ -4,9 +4,7 @@ import csv
 import hashlib
 import json
 import math
-import platform
 import subprocess
-import sys
 from dataclasses import replace
 from datetime import datetime, timezone
 from pathlib import Path
@@ -17,21 +15,8 @@ import pandas as pd
 
 from galaxias_model.io import load_model_inputs, resolve_family_parameters
 from galaxias_model.module5_proposals import (
-    DEFAULT_DRY_RUN_OUTPUT_DIR,
-    DEFAULT_DRY_RUN_REPLICATES,
-    DEFAULT_DRY_RUN_SEED_BASE_LABEL,
-    DEFAULT_MODULE4_MANIFEST_PATH,
-    DEFAULT_PARAMETER_VALUES_PATH,
-    DEFAULT_PROPOSAL_MEMBERSHIP_PATH,
     PROPOSAL_SOURCE_KEY_FIELDS,
-    SelectedProposal,
     build_proposal_source_key,
-    derive_module5_seed,
-    load_parameter_values_table,
-    load_selected_dry_run_proposals,
-    proposals_by_family,
-    resolve_proposal_parameters,
-    verify_parameter_values_artifact,
 )
 from galaxias_model.simulation import run_historical_simulation
 from galaxias_model.types import ResolvedParameters, SimulationConfig, SimulationResult
@@ -42,8 +27,6 @@ DEFAULT_OUTCOME_SCHEMA_PATH = Path("data/module5_counterfactual_outcome_schema.c
 DEFAULT_OUTPUT_DIR = Path("outputs/module5_runner_smoke")
 DEFAULT_MODULE4_MANIFEST = Path("data/module4_raw_artifact_manifest.csv")
 DEFAULT_SCRIPT_PATH = Path("scripts/run_module5_counterfactual_smoke.py")
-DEFAULT_REAL_DRY_RUN_SCRIPT_PATH = Path("scripts/run_module5_real_proposal_dry_run.py")
-REAL_DRY_RUN_STATUS = "real_proposal_local_dry_run"
 
 TROUT_PRESSURE_PARAMETER_IDS = ("PR020", "PR021")
 CLIMBING_PRESSURE_PARAMETER_IDS = ("PR027", "PR028")
@@ -277,11 +260,9 @@ def _build_output_row(
 
 def _attach_uncertainty_summaries(rows: list[dict[str, object]]) -> list[dict[str, object]]:
     frame = pd.DataFrame(rows)
-    group_columns = (
-        ["proposal_source_key", "intervention_id"]
-        if "proposal_source_key" in frame.columns
-        else ["intervention_id"]
-    )
+    if "proposal_source_key" not in frame.columns:
+        raise ValueError("Module 5 uncertainty summaries require proposal_source_key")
+    group_columns = ["proposal_source_key", "intervention_id"]
     summary_columns = [
         "uncertainty_n_replicates",
         "uncertainty_extirpation_median",
@@ -425,168 +406,6 @@ def run_module5_counterfactual_smoke(
         intervention_ids=[row["intervention_id"] for row in selected],
         replicates=replicates,
         proposal_seed=proposal_seed,
-        stochastic=stochastic,
-    )
-    return output_file
-
-
-def _write_real_proposal_provenance(
-    output_dir: Path,
-    output_file: Path,
-    proposal_membership_path: Path,
-    module4_manifest_path: Path,
-    parameter_values_path: Path,
-    parameter_values_sha256: str,
-    interventions_path: Path,
-    outcome_schema_path: Path,
-    selected_proposals: Iterable[SelectedProposal],
-    intervention_ids: Iterable[str],
-    replicates: int,
-    stochastic: bool,
-) -> None:
-    selected = tuple(selected_proposals)
-    payload = {
-        "module": "Module 5 real-proposal dry run",
-        "status": REAL_DRY_RUN_STATUS,
-        "production_attribution": False,
-        "output_file": _relative_path(output_file),
-        "output_dir": _relative_path(output_dir),
-        "script_path": DEFAULT_REAL_DRY_RUN_SCRIPT_PATH.as_posix(),
-        "selected_proposal_ids": [proposal.proposal_id for proposal in selected],
-        "selected_proposal_source_keys": [proposal.proposal_source_key for proposal in selected],
-        "source_identity_fields": list(PROPOSAL_SOURCE_KEY_FIELDS),
-        "source_identity_strategy": (
-            "proposal_source_key=module4_run_id|variant_id|seed|run_dir_name|family_id|proposal_id"
-        ),
-        "selected_proposal_source_rows": [
-            {
-                "proposal_source_key": proposal.proposal_source_key,
-                "module4_run_id": proposal.module4_run_id,
-                "variant_id": proposal.variant_id,
-                "seed": proposal.seed,
-                "run_dir_name": proposal.run_dir_name,
-                "family_id": proposal.family_id,
-                "proposal_id": proposal.proposal_id,
-            }
-            for proposal in selected
-        ],
-        "proposal_source_filter": {
-            "proposal_set": "family_winners",
-            "variant_id": "baseline_current",
-            "seed": 20260410,
-        },
-        "intervention_ids": list(intervention_ids),
-        "interventions_path": _relative_path(interventions_path),
-        "outcome_schema_path": _relative_path(outcome_schema_path),
-        "proposal_membership_path": _relative_path(proposal_membership_path),
-        "module4_manifest_path": _relative_path(module4_manifest_path),
-        "parameter_values_path": _relative_path(parameter_values_path),
-        "parameter_values_sha256": parameter_values_sha256,
-        "git_sha": _git_sha(),
-        "git_status_short": _git_status_short(),
-        "python_version": sys.version.split()[0],
-        "compute_host": platform.node(),
-        "replicates": replicates,
-        "stochastic": stochastic,
-        "seed_derivation": "sha256(base_label|proposal_source_key|intervention_id|stochastic_replicate_id) modulo 2**32",
-        "seed_base_label": DEFAULT_DRY_RUN_SEED_BASE_LABEL,
-        "matched_outcomes_sha256": _file_sha256(output_file),
-        "created_at": datetime.now(timezone.utc).isoformat(),
-        "boundary_note": (
-            "Real-proposal local dry-run rows validate Module 5 plumbing only; "
-            "they are not production attribution results and not manuscript evidence."
-        ),
-    }
-    (output_dir / "provenance.json").write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
-
-
-def run_module5_real_proposal_dry_run(
-    data_dir: Path,
-    proposal_membership_path: Path = DEFAULT_PROPOSAL_MEMBERSHIP_PATH,
-    module4_manifest_path: Path = DEFAULT_MODULE4_MANIFEST_PATH,
-    parameter_values_path: Path = DEFAULT_PARAMETER_VALUES_PATH,
-    interventions_path: Path = DEFAULT_INTERVENTIONS_PATH,
-    outcome_schema_path: Path = DEFAULT_OUTCOME_SCHEMA_PATH,
-    output_dir: Path = DEFAULT_DRY_RUN_OUTPUT_DIR,
-    replicates: int = DEFAULT_DRY_RUN_REPLICATES,
-    stochastic: bool = True,
-) -> Path:
-    if replicates < 1:
-        raise ValueError("replicates must be >= 1")
-
-    model_inputs = load_model_inputs(data_dir)
-    proposal_membership_path = proposal_membership_path.resolve()
-    module4_manifest_path = module4_manifest_path.resolve()
-    parameter_values_path = parameter_values_path.resolve()
-    interventions_path = interventions_path.resolve()
-    outcome_schema_path = outcome_schema_path.resolve()
-    output_dir.mkdir(parents=True, exist_ok=True)
-
-    proposals = load_selected_dry_run_proposals(proposal_membership_path)
-    proposals_for_family = proposals_by_family(proposals)
-    artifact = verify_parameter_values_artifact(module4_manifest_path, parameter_values_path)
-    parameter_values = load_parameter_values_table(artifact.path)
-    resolved_by_family = {
-        family_id: resolve_proposal_parameters(model_inputs, proposal, parameter_values)
-        for family_id, proposal in proposals_for_family.items()
-    }
-
-    all_rows = read_intervention_rows(interventions_path)
-    selected_intervention_ids = [row["intervention_id"] for row in all_rows]
-    config = SimulationConfig(stochastic=stochastic)
-    timestamp = datetime.now(timezone.utc).isoformat()
-    output_rows: list[dict[str, object]] = []
-
-    for row in all_rows:
-        family_id = row["family_id"]
-        if family_id not in proposals_for_family:
-            raise ValueError(f"No selected dry-run proposal for intervention family {family_id}")
-        proposal = proposals_for_family[family_id]
-        params = resolved_by_family[family_id]
-        for replicate_id in range(replicates):
-            stochastic_seed = derive_module5_seed(
-                proposal.proposal_source_key,
-                row["intervention_id"],
-                replicate_id,
-            )
-            baseline, intervention = _run_matched_pair(row, params, config, seed=stochastic_seed)
-            output_rows.append(
-                _build_output_row(
-                    row,
-                    baseline,
-                    intervention,
-                    replicate_id,
-                    proposal.proposal_seed,
-                    stochastic_seed,
-                    timestamp,
-                    interventions_path,
-                    proposal_id=proposal.proposal_id,
-                    variant_id=proposal.variant_id,
-                    source_seed=proposal.seed,
-                    proposal_source_key=proposal.proposal_source_key,
-                    module4_run_id=proposal.module4_run_id,
-                    run_dir_name=proposal.run_dir_name,
-                    provenance_script=DEFAULT_REAL_DRY_RUN_SCRIPT_PATH,
-                    module4_manifest=module4_manifest_path,
-                )
-            )
-
-    output_rows = _attach_uncertainty_summaries(output_rows)
-    schema_columns = read_outcome_schema_columns(outcome_schema_path)
-    output_file = output_dir / "matched_outcomes.csv"
-    pd.DataFrame(output_rows).loc[:, schema_columns].to_csv(output_file, index=False)
-    _write_real_proposal_provenance(
-        output_dir=output_dir,
-        output_file=output_file,
-        proposal_membership_path=proposal_membership_path,
-        module4_manifest_path=module4_manifest_path,
-        parameter_values_path=parameter_values_path,
-        parameter_values_sha256=artifact.sha256,
-        interventions_path=interventions_path,
-        outcome_schema_path=outcome_schema_path,
-        selected_proposals=proposals,
-        intervention_ids=selected_intervention_ids,
-        replicates=replicates,
         stochastic=stochastic,
     )
     return output_file

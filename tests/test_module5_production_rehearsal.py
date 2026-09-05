@@ -1,18 +1,26 @@
 from __future__ import annotations
 
 import json
+from dataclasses import replace
 from pathlib import Path
 
 import pandas as pd
 import pytest
 
-from galaxias_model.module5_proposals import derive_module5_seed
-from galaxias_model.module5_execution_inspect import inspect_rehearsal_output
+from galaxias_model.io import load_model_inputs
+from galaxias_model.module5_proposals import (
+    derive_module5_seed,
+    load_parameter_values_table,
+    resolve_proposal_parameters,
+)
+from galaxias_model.module5_execution_inspect import _check_replicate_coverage, inspect_rehearsal_output
 from galaxias_model.module5_rehearsal import (
     DEFAULT_REHEARSAL_REPLICATES,
     REHEARSAL_PARTITION_ROW_COUNTS,
+    REHEARSAL_SEED_BASE_LABEL,
     REHEARSAL_STATUS,
     build_rehearsal_plan,
+    run_module5_25rep_rehearsal,
     verify_required_parameter_artifacts,
 )
 
@@ -23,6 +31,15 @@ MEMBERSHIP = DATA_DIR / "module4_5_proposal_set_membership.csv"
 MANIFEST = DATA_DIR / "module4_raw_artifact_manifest.csv"
 INTERVENTIONS = DATA_DIR / "module5_counterfactual_interventions.csv"
 OUTCOME_SCHEMA = DATA_DIR / "module5_counterfactual_outcome_schema.csv"
+
+
+def test_replicate_coverage_rejects_fractional_ids_without_truncating() -> None:
+    outcomes = pd.DataFrame({
+        "proposal_source_key": ["source", "source"],
+        "intervention_id": ["intervention", "intervention"],
+        "stochastic_replicate_id": [0.25, 1.25],
+    })
+    assert not _check_replicate_coverage(outcomes, 2, 1)["passed"]
 
 
 def test_rehearsal_plan_matches_goal012_counts() -> None:
@@ -63,7 +80,10 @@ def test_rehearsal_plan_keeps_bare_proposal_collisions_source_keyed() -> None:
 
     source_keys = [source.proposal_source_key for source in duplicate_sources]
     seeds = [
-        derive_module5_seed(source_key, "m5_climbing_only_status_quo", 0)
+        derive_module5_seed(
+            source_key, "m5_climbing_only_status_quo", 0,
+            base_label=REHEARSAL_SEED_BASE_LABEL,
+        )
         for source_key in source_keys
     ]
     matched_pair_ids = [
@@ -95,6 +115,56 @@ def test_required_artifact_resolution_fails_on_hash_mismatch(tmp_path: Path) -> 
 
     with pytest.raises(ValueError, match="SHA-256 mismatch"):
         verify_required_parameter_artifacts((modified,), root=ROOT)
+
+
+def test_real_source_execution_preserves_parameters_and_emits_valid_pairs(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    plan = build_rehearsal_plan(MEMBERSHIP, INTERVENTIONS, MANIFEST, replicates=2)
+    partition = plan.partitions[0]
+    source = partition.sources[0]
+    artifact = next(a for a in plan.required_artifacts if a.context_key == source.context_key)
+    plan = replace(
+        plan,
+        partitions=(replace(partition, sources=(source,)),),
+        required_artifacts=(artifact,),
+    )
+    verified = verify_required_parameter_artifacts(plan.required_artifacts, root=ROOT)[0]
+    values = load_parameter_values_table(verified.path)
+    resolved = resolve_proposal_parameters(load_model_inputs(DATA_DIR), source.to_selected_proposal(), values)
+    sampled = values.loc[values["proposal_id"] == source.proposal_id].set_index("parameter_id")
+    assert resolved.values == sampled["value_natural"].astype(float).to_dict()
+    assert resolved.statuses == sampled["parameter_status"].to_dict()
+    assert (resolved.manifest["active"] & (
+        resolved.manifest["effective_value"] != resolved.manifest["default_value"]
+    )).any()
+
+    # Bound execution to one real source; exercise the current writer and disk inspector.
+    monkeypatch.setattr("galaxias_model.module5_rehearsal.build_rehearsal_plan", lambda **kwargs: plan)
+    output_file = run_module5_25rep_rehearsal(
+        data_dir=DATA_DIR,
+        proposal_membership_path=MEMBERSHIP,
+        module4_manifest_path=MANIFEST,
+        interventions_path=INTERVENTIONS,
+        outcome_schema_path=OUTCOME_SCHEMA,
+        output_dir=tmp_path,
+        replicates=plan.replicates,
+    )
+    rows = pd.read_csv(output_file)
+    assert list(rows.columns) == pd.read_csv(OUTCOME_SCHEMA)["column_name"].tolist()
+    assert len(rows) == plan.expected_row_count == 8
+    assert set(rows["proposal_source_key"]) == {source.proposal_source_key}
+    for row in rows.to_dict("records"):
+        expected_seed = derive_module5_seed(
+            source.proposal_source_key, row["intervention_id"], row["stochastic_replicate_id"],
+            base_label=REHEARSAL_SEED_BASE_LABEL,
+        )
+        assert row["baseline_stochastic_seed"] == row["intervention_stochastic_seed"] == expected_seed
+    status_quo = rows.loc[rows["intervention_axis"] == "status_quo"]
+    contrast_columns = [column for column in rows if column.endswith("_contrast")]
+    assert (status_quo[contrast_columns] == 0).all().all()
+    inspection = inspect_rehearsal_output(rehearsal_dir=tmp_path, outcome_schema_path=OUTCOME_SCHEMA)
+    assert inspection.all_checks_passed, pd.read_csv(inspection.checks_path).to_dict("records")
 
 
 def _minimal_outcome_row(

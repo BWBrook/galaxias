@@ -1,13 +1,12 @@
 from __future__ import annotations
 
 from pathlib import Path
-from shutil import rmtree
 from typing import Any, Iterable
 
 import numpy as np
 import pandas as pd
 
-from galaxias_model.calibration import run_module3_calibration, run_module3_calibration_stage
+from galaxias_model.calibration import run_module3_calibration
 from galaxias_model.io import load_model_inputs
 from galaxias_model.types import ModelInputs, Module3Config
 
@@ -35,19 +34,6 @@ def _markdown_table(rows: list[dict[str, Any]], columns: list[str]) -> str:
 MODULE3_REVIEW_TARGET_IDS = {f"CT{i:03d}" for i in range(1, 13)}
 
 
-def _fresh_run_dir(path: Path) -> Path:
-    if path.exists():
-        rmtree(path)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    return path
-
-
-def _accepted_id_tuple(frame: pd.DataFrame) -> tuple[str, ...]:
-    if frame.empty:
-        return ()
-    return tuple(frame["proposal_id"].astype(str).tolist())
-
-
 def _safe_spearman(x: pd.Series, y: pd.Series) -> float:
     paired = pd.DataFrame({"x": pd.to_numeric(x, errors="coerce"), "y": pd.to_numeric(y, errors="coerce")}).dropna()
     if len(paired) < 2:
@@ -56,22 +42,6 @@ def _safe_spearman(x: pd.Series, y: pd.Series) -> float:
         return float("nan")
     ranked = paired.rank(method="average")
     return float(ranked["x"].corr(ranked["y"], method="pearson"))
-
-
-def _module3_small_repro_config(output_dir: Path, workers: int) -> Module3Config:
-    return Module3Config(
-        stage_a_draws_per_family=60,
-        stage_a_keep_per_family=8,
-        stage_b_historical_replicates=3,
-        final_acceptance_fraction=0.10,
-        final_acceptance_cap=5,
-        workers=workers,
-        batch_size=50,
-        master_seed=20260410,
-        stochastic_baselines=False,
-        output_dir=output_dir,
-        resume=False,
-    )
 
 
 def _module3_screen_discrimination_rows(
@@ -147,7 +117,6 @@ def _module3_accepted_targets_scored(
 def run_module3_readiness_review(
     root: Path,
     config: Module3Config | None = None,
-    repro_config: Module3Config | None = None,
 ) -> tuple[pd.DataFrame, pd.DataFrame, dict[str, Any]]:
     data_dir = root / "data"
     model_inputs = load_model_inputs(data_dir)
@@ -156,64 +125,7 @@ def run_module3_readiness_review(
     primary_config = config or Module3Config.readiness_defaults(
         output_dir=readiness_dir / "readiness_primary"
     )
-    repeat_config = Module3Config(
-        **{
-            **primary_config.__dict__,
-            "output_dir": readiness_dir / "readiness_repeat",
-            "resume": False,
-        }
-    )
-    serial_small_config = repro_config or _module3_small_repro_config(
-        readiness_dir / "readiness_repro_workers1",
-        workers=1,
-    )
-    parallel_small_config = Module3Config(
-        **{
-            **serial_small_config.__dict__,
-            "workers": 2,
-            "output_dir": readiness_dir / "readiness_repro_workers2",
-            "resume": False,
-        }
-    )
-    resume_stage_a_config = Module3Config(
-        **{
-            **serial_small_config.__dict__,
-            "output_dir": readiness_dir / "readiness_resume_stage_a",
-            "resume": False,
-        }
-    )
-    resume_full_config = Module3Config(
-        **{
-            **serial_small_config.__dict__,
-            "output_dir": readiness_dir / "readiness_resume_stage_a",
-            "resume": True,
-        }
-    )
-    clean_small_config = Module3Config(
-        **{
-            **serial_small_config.__dict__,
-            "output_dir": readiness_dir / "readiness_resume_clean",
-            "resume": False,
-        }
-    )
-
-    for path in [
-        primary_config.output_dir,
-        repeat_config.output_dir,
-        serial_small_config.output_dir,
-        parallel_small_config.output_dir,
-        resume_stage_a_config.output_dir,
-        clean_small_config.output_dir,
-    ]:
-        _fresh_run_dir(path)
-
     primary_run = run_module3_calibration(model_inputs, primary_config)
-    repeat_run = run_module3_calibration(model_inputs, repeat_config)
-    serial_small_run = run_module3_calibration(model_inputs, serial_small_config)
-    parallel_small_run = run_module3_calibration(model_inputs, parallel_small_config)
-    run_module3_calibration_stage(model_inputs, resume_stage_a_config, stage="stage_a")
-    resumed_run = run_module3_calibration_stage(model_inputs, resume_full_config, stage="all")
-    clean_small_run = run_module3_calibration(model_inputs, clean_small_config)
 
     family_summary = primary_run.family_summary_table.copy()
     accepted_summary = primary_run.accepted_proposals_table[
@@ -255,35 +167,20 @@ def run_module3_readiness_review(
         and _module3_accepted_targets_scored(accepted_summary, primary_run.target_scores_table)
     )
 
-    repeat_ids_match = _accepted_id_tuple(primary_run.accepted_proposals_table) == _accepted_id_tuple(
-        repeat_run.accepted_proposals_table
-    )
-    worker_ids_match = _accepted_id_tuple(serial_small_run.accepted_proposals_table) == _accepted_id_tuple(
-        parallel_small_run.accepted_proposals_table
-    )
-    resume_ids_match = _accepted_id_tuple(resumed_run.accepted_proposals_table) == _accepted_id_tuple(
-        clean_small_run.accepted_proposals_table
-    )
-    reproducibility_pass = bool(repeat_ids_match and worker_ids_match and resume_ids_match)
-
     gates = {
         "sampler_valid_rate_pass": sampler_valid_rate_pass,
         "screen_discrimination_pass": screen_discrimination_pass,
         "stochastic_confirmation_finite_pass": stochastic_confirmation_finite_pass,
         "rank_consistency_pass": rank_consistency_pass,
         "accepted_set_nonempty_pass": accepted_set_nonempty_pass,
-        "reproducibility_pass": reproducibility_pass,
     }
-    gates["full_ready_for_module4"] = all(gates.values())
-    gates["needs_module_3_5"] = not gates["full_ready_for_module4"]
+    gates["scientific_ready_for_module4"] = all(gates.values())
+    gates["needs_module_3_5"] = not gates["scientific_ready_for_module4"]
 
     evaluation = {
         "gates": gates,
         "metrics": {
             "accepted_count": int(len(accepted_summary)),
-            "same_seed_same_worker_identical": repeat_ids_match,
-            "workers1_vs_workers2_identical": worker_ids_match,
-            "resume_matches_clean_run": resume_ids_match,
         },
         "screen_discrimination": discrimination_rows,
         "rank_consistency": rank_rows,
@@ -330,7 +227,7 @@ def render_module3_readiness_review(
             "stochastic historical replicates with deterministic baselines."
         ),
         "",
-        "## Acceptance Gates",
+        "## Scientific Readiness Gates",
         "",
         _markdown_table(gate_rows, ["gate", "status"]),
         "",
@@ -356,9 +253,11 @@ def render_module3_readiness_review(
         "",
         _markdown_table(rank_rows, ["family_id", "spearman_rank_correlation", "pass"]),
         "",
-        "## Reproducibility Checks",
+        "## Run Metrics",
         "",
         _markdown_table(metric_rows, ["metric", "value"]),
+        "",
+        "Reproducibility across fresh runs, worker counts, and resume is checked separately by `make integration-check`; this report does not assess those checks.",
         "",
         "## Accepted Proposals",
         "",
@@ -390,18 +289,18 @@ def render_module3_readiness_review(
         ]
     )
 
-    if gates["full_ready_for_module4"]:
+    if gates["scientific_ready_for_module4"]:
         lines.extend(
             [
-                "All Module 3 readiness gates passed.",
-                "The retained-sample calibration harness is ready to support Module 4 posterior summaries and counterfactual analysis.",
+                "All Module 3 scientific readiness gates passed.",
+                "These gates support retained-sample summaries and conditional counterfactual analysis; engineering readiness also requires the separate integration checks.",
             ]
         )
     else:
         lines.extend(
             [
                 "Module 4 should not start yet.",
-                "The correct next step is Module 3.5 because at least one calibration-harness readiness gate failed.",
+                "The correct next step is Module 3.5 because at least one scientific readiness gate failed.",
             ]
         )
 
@@ -412,7 +311,6 @@ def render_module3_readiness_review(
             "",
             "- Trigger a sampler/constraint realignment pass if valid-rate failures or pre-simulation proposal failures dominate.",
             "- Trigger a Stage A to Stage B handoff refinement pass if rank consistency is weak or stochastic confirmation is numerically unstable.",
-            "- Trigger a reproducibility repair pass if accepted proposal ids differ under the same seed or across worker counts.",
             "",
             "## Artifacts",
             "",
@@ -424,12 +322,18 @@ def render_module3_readiness_review(
     return "\n".join(lines) + "\n"
 
 
-def write_module3_readiness_bundle(root: Path, output_root: Path | None = None) -> dict[str, Any]:
-    data_dir = root / "data"
+def write_module3_readiness_bundle(
+    root: Path,
+    output_root: Path | None = None,
+    config: Module3Config | None = None,
+) -> dict[str, Any]:
     target_root = output_root if output_root is not None else root
     output_data_dir = target_root / "data"
     docs_dir = target_root / "docs"
-    family_summary, accepted_summary, evaluation = run_module3_readiness_review(root)
+    primary_config = config or Module3Config.readiness_defaults(
+        output_dir=target_root / "outputs" / "module3" / "readiness_primary"
+    )
+    family_summary, accepted_summary, evaluation = run_module3_readiness_review(root, config=primary_config)
 
     output_data_dir.mkdir(parents=True, exist_ok=True)
     docs_dir.mkdir(parents=True, exist_ok=True)
@@ -448,7 +352,7 @@ def write_module3_readiness_bundle(root: Path, output_root: Path | None = None) 
         "family_summary": family_path,
         "accepted_summary": accepted_path,
         "review_doc": review_path,
-        "full_ready_for_module4": evaluation["gates"]["full_ready_for_module4"],
+        "scientific_ready_for_module4": evaluation["gates"]["scientific_ready_for_module4"],
         "needs_module_3_5": evaluation["gates"]["needs_module_3_5"],
     }
 
@@ -700,8 +604,6 @@ def run_module3_5_diagnostic_review(
     diagnostic_config = config or Module3Config.readiness_defaults(
         output_dir=diagnostic_dir / "diagnostic_primary"
     )
-    _fresh_run_dir(diagnostic_config.output_dir)
-
     run = run_module3_calibration(model_inputs, diagnostic_config)
     proposal_summary = run.proposal_summary_table.copy()
     target_scores = run.target_scores_table.copy()

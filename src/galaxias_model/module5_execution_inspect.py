@@ -100,23 +100,15 @@ def _check_replicate_coverage(
         replicate_values = pd.to_numeric(
             group["stochastic_replicate_id"], errors="coerce"
         )
-        valid = replicate_values.dropna()
-        replicate_ids = set(valid.astype(int).tolist())
-        duplicate_counts = valid.astype(int).value_counts()
-        bad_duplicate_ids = sorted(
-            int(index)
-            for index, value in duplicate_counts.items()
-            if int(value) != 1
-        )
+        replicate_ids = set(replicate_values.dropna())
         if (
             len(group) != expected_replicates
+            or replicate_values.isna().any()
             or replicate_ids != expected_ids
-            or bad_duplicate_ids
         ):
             failures.append(
                 f"{source_key}|{intervention_id}: rows={len(group)} "
-                f"replicate_ids={sorted(replicate_ids)} "
-                f"duplicate_ids={bad_duplicate_ids}"
+                f"replicate_ids={sorted(replicate_ids)}"
             )
             if len(failures) >= 5:
                 break

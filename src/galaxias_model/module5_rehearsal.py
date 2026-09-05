@@ -92,7 +92,6 @@ class RehearsalSource:
             seed=self.seed,
             proposal_seed=self.proposal_seed,
             run_dir_name=self.run_dir_name,
-            in_family_winners=self.source_set == "family_winners",
         )
 
     def to_dict(self) -> dict[str, object]:

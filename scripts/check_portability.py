@@ -56,7 +56,10 @@ def discover_files() -> tuple[list[str], str]:
         )
     except (OSError, subprocess.CalledProcessError):
         return tree_files(), "tree"
-    paths = [item.decode("utf-8") for item in result.stdout.split(b"\0") if item]
+    paths = [
+        item.decode("utf-8") for item in result.stdout.split(b"\0")
+        if item and (ROOT / item.decode("utf-8")).is_file()
+    ]
     if paths:
         return paths, "git"
     return tree_files(), "tree"
