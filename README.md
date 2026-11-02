@@ -1,5 +1,7 @@
 # Pedder Galaxias Evidence And Modelling Workflow
 
+> **Status:** developed in the open as a working record. This is work in progress: contents may change, and nothing here is peer-reviewed unless stated.
+
 This repository builds a staged, auditable modelling workflow for the historical
 extirpation of Pedder galaxias (`Galaxias pedderensis`) from the natural Lake
 Pedder system.
@@ -172,3 +174,7 @@ extinction in a final causal sense. It supports the narrower statement that,
 within the current model-family and target framework, habitat-only and
 trout-only explanations are not competitive, and joint trout-plus-climbing
 explanations are the most stable calibration result so far.
+
+## Licence
+
+Code is released under the [MIT Licence](LICENSE). Text, figures and data created for this project are released under [CC BY-SA 4.0](LICENSE-CONTENT). Third-party material keeps its own terms where stated.
