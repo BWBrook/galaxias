@@ -12,11 +12,11 @@ This repo is the Pedder galaxias modelling and evidence workflow.
 - Do not run heavy ABC calibration, large simulation batches, big data pulls,
   or long parallel jobs on the Mac mini unless they have first been scoped as
   genuinely local-scale.
-- Offload meaningful compute through the remote-compute ladder described in
-  `/Users/bwbrook/work/nectar`: usually `deep-server` / `utas-ubuntu` for
-  large single-host CPU/RAM work, `alien-wsl` for GPU work that fits dual RTX
-  2080s, Nectar for elastic cloud CPU/GPU jobs, and `kunanyi` only for true
-  PBS-scale multi-node jobs.
+- Follow the current cross-machine routing guidance in
+  `/Users/bwbrook/work/nectar`. Route heavy work started from a Mac to `nectar`.
+  From `wsl`, route heavy CPU or large-memory jobs to `deep` and GPU work that
+  fits two 8 GiB RTX 2080s to `alien` via `deep`. Use `nectar` for elastic cloud
+  CPU/GPU jobs and `kunanyi` for multi-node PBS jobs.
 - Use `/Users/bwbrook/work/nectar` for the current machine runbooks, SSH paths,
   PBS conventions, data-placement rules, and smoke-test ladders.
 
