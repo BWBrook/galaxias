@@ -1,0 +1,30 @@
+default_profile: chris_review_brief
+
+profiles:
+  chris_review_brief:
+    description: Planning memo for external review of the Pedder galaxias paper proposal
+    manuscript_sources:
+      - ../chris_review_brief.md
+    lint_sources:
+      - ../chris_review_brief.md
+    bibliography: empty_refs.yaml
+    csl: planning_style.csl
+    journal: Marine and Freshwater Research
+    csl_search_dirs:
+      - .
+    output_dir: ..
+    output_stem: chris_review_brief
+    page_numbers: lower_right
+    line_spacing: single
+    line_numbering: none
+    figures:
+      placement: pages
+      caption_position: top
+      placeholder_id: figures
+    margins:
+      unit: in
+      paper_size: letter
+      top: 1.0
+      bottom: 1.0
+      left: 1.0
+      right: 1.0
