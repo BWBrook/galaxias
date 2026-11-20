@@ -9,3 +9,28 @@ outputs/
 htmlcov/
 *.log
 .ipynb_checkpoints/
+
+# Derived files over 1 MB from the September-October analyses: kept on
+# nectar:/data/share/galaxias/data-over-1mb-20261120/ (same paths).
+/data/age_lake_repair_20261002/archive_diagnostic/complete_histories.csv
+/data/age_lake_repair_20261002/archive_diagnostic/historical_lake_scores.csv
+/data/age_lake_repair_20261002/archive_diagnostic/lake_annual_selected.csv
+/data/age_lake_repair_20261002/gate_summary/base_endpoint_support_summary.csv
+/data/age_lake_repair_20261002/gate_summary/base_primary_gate.csv
+/data/age_lake_repair_20261002/gate_summary/campaign_composition_summary.csv
+/data/age_linked_recovery_20261001/coherence_base.csv
+/data/age_probability_gate_20261003/proposal.json
+/data/common_model/compatibility_map.csv
+/data/common_model/early_lake_20260920/early_lake_contrasts.csv
+/data/common_model/mate_guard_20260920/history_seeds.csv.gz
+/data/common_model/mate_guard_20260920/selected_profiles.csv
+/data/conditional_calibration/parameter_diagnostics.csv
+/data/conditional_calibration/selected_source_comparison.csv
+/data/historical_fit_observation_audit/context_fit_summary.csv
+/data/terminal_history_screen/source_metrics.csv
+
+# Planning notes addressed to or about Chris Burridge, withheld pending his
+# agreement: kept on nectar:/data/share/galaxias/withheld-20261120/.
+/manuscript/planning/chris_review_brief.md
+/manuscript/planning/chris_review_brief.docx
+/manuscript/planning/paper_plan_and_skeleton.md
