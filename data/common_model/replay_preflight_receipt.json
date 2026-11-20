@@ -1,0 +1,259 @@
+{
+  "status": "passed",
+  "sources": 356,
+  "replicates": 2000,
+  "runtime": {
+    "python": "3.14.5 (main, May 10 2026, 19:28:16) [Clang 22.1.3 ]",
+    "numpy": "2.4.6",
+    "pandas": "2.3.3",
+    "platform": "Linux-6.8.0-139-generic-x86_64-with-glibc2.39"
+  },
+  "smoke_runs": 8,
+  "serial_parallel": "exact;two_sources_by_two_archived_replicates",
+  "max_diagnostic_deviations": {
+    "missing_positive_record_episodes": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "lake_nondetection_occupied_episodes": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "natural_nondetection_occupied_episodes": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "nondetection_occupied_episodes": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "lake_observation_proxy_mean_abundance": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "natural_observation_proxy_mean_abundance": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "n_total_1995": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "n_total_1996": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "n_refuge_1995": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "n_total_1992_1996_mean": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "n_total_2002": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "latent_last_presence_year": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "first_zero_year": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT001_raw_penalty": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT001_weighted_penalty": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT001_projected_primary": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT001_projected_secondary": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT002_raw_penalty": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT002_weighted_penalty": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT002_projected_primary": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT002_projected_secondary": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT003_raw_penalty": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT003_weighted_penalty": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT003_projected_primary": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT003_projected_secondary": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT004_raw_penalty": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT004_weighted_penalty": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT004_projected_primary": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT004_projected_secondary": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT005_raw_penalty": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT005_weighted_penalty": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT005_projected_primary": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT005_projected_secondary": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT006_raw_penalty": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT006_weighted_penalty": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT006_projected_primary": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT006_projected_secondary": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT007_raw_penalty": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT007_weighted_penalty": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT007_projected_primary": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT007_projected_secondary": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT008_raw_penalty": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT008_weighted_penalty": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT008_projected_primary": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT008_projected_secondary": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT009_raw_penalty": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT009_weighted_penalty": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT009_projected_primary": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT009_projected_secondary": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT010_raw_penalty": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT010_weighted_penalty": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT010_projected_primary": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT010_projected_secondary": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT011_raw_penalty": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT011_weighted_penalty": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT011_projected_primary": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT011_projected_secondary": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT012_raw_penalty": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT012_weighted_penalty": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT012_projected_primary": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    "CT012_projected_secondary": {
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    }
+  }
+}

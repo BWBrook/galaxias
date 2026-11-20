@@ -1,0 +1,41 @@
+{
+  "status": "complete",
+  "script": {
+    "bytes": 7024,
+    "sha256": "50875f489e50403a8b038497abe0e8ee1307b43a8dd2001fe39b882e542bbb75"
+  },
+  "analysis_receipt": {
+    "bytes": 1334,
+    "sha256": "05dd1c8ff89a66cf8ace58301cab9313e1c98398a64658489437102c69b83622"
+  },
+  "freeze_manifest": {
+    "bytes": 1897,
+    "sha256": "2308bae6fb1aefe37292198dfe85cb04b5c3e321410471e2cd8ad6fd726a5117"
+  },
+  "run_manifest": {
+    "bytes": 231655,
+    "sha256": "ea6bc8df256d3bc13cbe50e76db8d48ef971ab1705a6c85fc32a1ef290ee2146"
+  },
+  "outputs": {
+    "all_fixed_source_cells.csv": {
+      "bytes": 32512,
+      "sha256": "fda3fda87a7d75e07d66480b2884bc602d6a5330f468b4966e06679debef8eda"
+    },
+    "all_fixed_source_profiles.csv": {
+      "bytes": 4345863,
+      "sha256": "24aab3161a487e9e47862cc33aead89a0045433c6b8afe311dc120e7bb028935"
+    },
+    "original_witness_cells.csv": {
+      "bytes": 14776,
+      "sha256": "75810aee1a8810b244988e44a635710f9ab60d2a5a5bec73829de0fb96450ec9"
+    },
+    "original_witness_retention.csv": {
+      "bytes": 1042225,
+      "sha256": "50aef88156c8a1e781056e057074dd63eb63a518499e30af24276b49ad0e1311"
+    },
+    "summary.json": {
+      "bytes": 684,
+      "sha256": "b71dae61535efb9ddf3ec4911c4bbe437b6576f92051f0f7fa351935404549b1"
+    }
+  }
+}

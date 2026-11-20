@@ -1,0 +1,334 @@
+{
+  "archive": {
+    "git_ancestry": "81e37202f6322e37ac7f1b0070402b76b7967a82",
+    "local": "outputs/remote/age_lake_refocus_20261002",
+    "remote_clone": "/data/codex/repos/galaxias-age-refocus-20261002",
+    "remote_host": "utas-ubuntu",
+    "remote_path": "/data/codex/scratch/galaxias/age_lake_refocus_20261002",
+    "source_snapshot_tar": {
+      "bytes": 28956623,
+      "path": "outputs/age_lake_refocus_20261002/dispatch/source_snapshot.tar.gz",
+      "sha256": "5488493b1a426a363c6f3ae8cff112cd05b44bac9a95238aac0365ed496da26a"
+    }
+  },
+  "budget": {
+    "initial_search_remaining": 399360,
+    "no_post_outcome_draws": true,
+    "programme_ceiling": 1100000,
+    "programme_planned": 1035520,
+    "qualification_conservative_used": 2263,
+    "qualification_reserve": 8000,
+    "repair_tranche": 92160
+  },
+  "checks": {
+    "all_generation_analysis_summary_bindings_verified": true,
+    "analysis_runtime_dependencies_unchanged": 7,
+    "earlier_completion_bindings_preserved": 33,
+    "existing_slow_tests_excluded": 5,
+    "final_portability_compile_passed": true,
+    "final_portability_files_inspected": 700,
+    "full_history_decompressed_hashes_verified": true,
+    "generation_runtime_dependencies_unchanged": 48,
+    "independent_audit_checks_passed": 14,
+    "linux_qualification_tests_passed": 26,
+    "linux_serial_parallel_exact": true,
+    "local_fast_check_passed": 326,
+    "local_linux_compact_features_exact": true,
+    "new_bundle_lf_only": true,
+    "raw_cross_platform_comparison": "tolerance-qualified; see cross_platform_qualification.json",
+    "remote_frozen_snapshot_files_reverified": 661
+  },
+  "completed_utc": "2026-10-02T02:42:22.830767+00:00",
+  "driver_exit_code": 0,
+  "earlier_completion_receipt": {
+    "bytes": 7365,
+    "path": "data/age_linked_recovery_20261001/completion_receipt.json",
+    "sha256": "f3686c0bf71d09031898fdc74294da27f9b555a1cea75d5a39f9f0c54871887d"
+  },
+  "files": {
+    "AGENT_HANDOFF.md": {
+      "bytes": 56145,
+      "sha256": "f341bebd5cad06b87e100b415c88274195f4f23814a63a0bfbfdeece87e7aec6"
+    },
+    "data/age_lake_repair_20261002/archive_accounting_summary.json": {
+      "bytes": 1290,
+      "sha256": "0178606fc0bc4465d4235d7e87676439d6dc6f413f89358b86e5d5b16903cf00"
+    },
+    "data/age_lake_repair_20261002/archive_diagnostic/capture_failure_breakdown.csv": {
+      "bytes": 1500,
+      "sha256": "7f76ee5ad1ecaeb2fb24ebeb328a0b29883114dedd2ad8bed68a15c25d429e3f"
+    },
+    "data/age_lake_repair_20261002/archive_diagnostic/complete_histories.csv": {
+      "bytes": 1720615,
+      "sha256": "cbb079aa4a4153ffe1d85a1dcd3f53a068866aec20d798753a815aa912ab4d4f"
+    },
+    "data/age_lake_repair_20261002/archive_diagnostic/endpoint_summary.csv": {
+      "bytes": 574,
+      "sha256": "3c49586c3c565e89bca60e6e818e0190dfe54c14dcf0d17c65ea05eec913b232"
+    },
+    "data/age_lake_repair_20261002/archive_diagnostic/historical_lake_scores.csv": {
+      "bytes": 4144032,
+      "sha256": "549fe0d9e565b0aa8f86f56832427fe8785b466c33fac9397d58eb1de63942ff"
+    },
+    "data/age_lake_repair_20261002/archive_diagnostic/lake_annual_selected.csv": {
+      "bytes": 5322650,
+      "sha256": "7d45e83c58170b33d9a63af8f213610277b24bd8c2a689fdc40994f36dd5fd76"
+    },
+    "data/age_lake_repair_20261002/archive_diagnostic/provenance.json": {
+      "bytes": 11047,
+      "sha256": "eab42c4681e8b2f6f99730a730ba021aee90c1f7076943ea650d9c9ea470c552"
+    },
+    "data/age_lake_repair_20261002/archive_diagnostic/source_grouping.csv": {
+      "bytes": 57471,
+      "sha256": "41839c925b159181240a210a9151e8cb7d01911ec96e652dcc78ebf891eee5f5"
+    },
+    "data/age_lake_repair_20261002/archive_diagnostic/superseded/provenance_pre_reconstruction.json": {
+      "bytes": 10812,
+      "sha256": "5e77070a57c5fe6fd0de21d771f5e6fa7bf672a72a2ab25a24945d39f33cf0e3"
+    },
+    "data/age_lake_repair_20261002/archive_diagnostic/weighted_endpoint_composition.csv": {
+      "bytes": 163899,
+      "sha256": "2a956a2860ca65d806f6a3203b123810d11f17e3968af657574fe4a61131e661"
+    },
+    "data/age_lake_repair_20261002/gate_summary/audit.json": {
+      "bytes": 15239,
+      "sha256": "f1e0a81f78522b7c84138b15dcf67c0240665167c4efb2268fd7f3881180432d"
+    },
+    "data/age_lake_repair_20261002/gate_summary/base_endpoint_support_summary.csv": {
+      "bytes": 5765758,
+      "sha256": "f89ea3be3763500be7891424ffd09fdaddaf8543661e06ba6c62a69a157f6d08"
+    },
+    "data/age_lake_repair_20261002/gate_summary/base_primary_gate.csv": {
+      "bytes": 1782726,
+      "sha256": "1e6e5ed5e980fa12846a955bf629a9b22fed40877c1512f8be28dfda3d2eea54"
+    },
+    "data/age_lake_repair_20261002/gate_summary/baseline_composition.csv": {
+      "bytes": 72860,
+      "sha256": "0eceedbfc07357f6fa32b7444ab9867c34e716ff497726f0e066fb0a21f41168"
+    },
+    "data/age_lake_repair_20261002/gate_summary/campaign_composition_summary.csv": {
+      "bytes": 2949746,
+      "sha256": "f0fe9b9ec78f6e0524b3ba57805812fa997db156d606897cd44e8e93d617300d"
+    },
+    "data/age_lake_repair_20261002/gate_summary/failure_summary.csv": {
+      "bytes": 322014,
+      "sha256": "1d7ef969378ed9a3ebd1517067e4368976a6c776d3da942afe4efec7b45fe579"
+    },
+    "data/age_lake_repair_20261002/gate_summary/source_independence.csv": {
+      "bytes": 23879,
+      "sha256": "bd2513631f0f48fbab22d38eb97567f09084f0ca2296fe34b3ce4ca5cb9c7a8c"
+    },
+    "data/age_lake_repair_20261002/lake_evidence.csv": {
+      "bytes": 2093,
+      "sha256": "6d21136f60601ceeb448bfcd69347e77d6c6ee1af66fdb203c4c9da7e4dd87ee"
+    },
+    "data/age_lake_repair_20261002/proposal.json": {
+      "bytes": 210005,
+      "sha256": "e3d03dd3024ecc0866e8615c5c13f1659be9ffecf7e849690722752682fb7158"
+    },
+    "data/age_lake_repair_20261002/provenance/analysis_receipt.json": {
+      "bytes": 3148,
+      "sha256": "6c55e844ec6c5328a612dfff1f54cb42dfcf5453dcd5be9e20580e5dc1120387"
+    },
+    "data/age_lake_repair_20261002/provenance/analysis_reproducibility.json": {
+      "bytes": 8947,
+      "sha256": "d214ee1355b413962f9c969a5c8baedc869ba6196950dcc3aa1c6904315dfc7f"
+    },
+    "data/age_lake_repair_20261002/provenance/cross_platform_qualification.json": {
+      "bytes": 739,
+      "sha256": "41b73ca24e46269c622a9c33cd2c0c5566e1c99d40d904ecbcfb0d00f89757b9"
+    },
+    "data/age_lake_repair_20261002/provenance/execution_receipt.json": {
+      "bytes": 498,
+      "sha256": "2c7aa7721c6a82cd4b3425607daffdcb994555c539593571610b02c992a3a857"
+    },
+    "data/age_lake_repair_20261002/provenance/final_fast_check.log": {
+      "bytes": 3961,
+      "sha256": "e5ac4f455e097f204d560655ea9f85e5905c3219f6217267b442a1c5f69f23dc"
+    },
+    "data/age_lake_repair_20261002/provenance/final_fast_check_receipt.json": {
+      "bytes": 542,
+      "sha256": "2ca5c1ccc206f30e1c1b64931262376b1152ffcdd430df83b738bc6e39596152"
+    },
+    "data/age_lake_repair_20261002/provenance/gate_analysis.log": {
+      "bytes": 2816,
+      "sha256": "b75c3b51cd65986ef432685b33863963e63be4ec0b22c194ec0f64e1d2517df5"
+    },
+    "data/age_lake_repair_20261002/provenance/gate_driver.log": {
+      "bytes": 511,
+      "sha256": "034288c11e2a7516509dd94a1275299d5dfa4b5369e0a0bbef1cead18f23d398"
+    },
+    "data/age_lake_repair_20261002/provenance/gate_exit_code.txt": {
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "data/age_lake_repair_20261002/provenance/gate_finished_utc.txt": {
+      "bytes": 21,
+      "sha256": "0d0648a398538ba03e5f9d9dcdac9729ab42f73e4167ef24dfd985ead79f2a86"
+    },
+    "data/age_lake_repair_20261002/provenance/gate_generation.log": {
+      "bytes": 22975,
+      "sha256": "c291eb4eebe82c76da04905bbf00bb4787794e34e0b21c8e2d61cc2cdf854a46"
+    },
+    "data/age_lake_repair_20261002/provenance/gate_interpretation_note.json": {
+      "bytes": 1150,
+      "sha256": "fcd59c73bda7437e8ddd698fefc0a4d363b0a8627cdaf5353dd89c53f2867500"
+    },
+    "data/age_lake_repair_20261002/provenance/gate_started_utc.txt": {
+      "bytes": 21,
+      "sha256": "ffc5bf57ebb4890ad02db69adb64752bcd2df61ccf26c8894c4c4561f5bf5e9c"
+    },
+    "data/age_lake_repair_20261002/provenance/generation_manifest.json": {
+      "bytes": 13842,
+      "sha256": "44fb17833d70888fb9ae747ee10a64ecc5a3185aa3c4160050c619d7563f024b"
+    },
+    "data/age_lake_repair_20261002/provenance/independent_result_audit.json": {
+      "bytes": 13342,
+      "sha256": "bab962e4f478ef30ca95b1e64bec944bfb51f9342945634434f2ab067757f193"
+    },
+    "data/age_lake_repair_20261002/provenance/lake_evidence_bindings.json": {
+      "bytes": 986,
+      "sha256": "b58b83f2bb12e6740cdf6dfe18acf40d6a68e1718352b56b81e6c1aef48e00de"
+    },
+    "data/age_lake_repair_20261002/provenance/linux_parallel_smoke_manifest.json": {
+      "bytes": 13822,
+      "sha256": "989444f001cf3c9479071c85d9b4d4445a7e0885b14ccf0e4bc37c4e5192a0bc"
+    },
+    "data/age_lake_repair_20261002/provenance/linux_serial_smoke_manifest.json": {
+      "bytes": 13820,
+      "sha256": "5e71ee0ea9f506d6acecb93ff8f23a5b0779d0ee8f0b50e8172f1d05db841c33"
+    },
+    "data/age_lake_repair_20261002/provenance/linux_smoke_analysis_receipt.json": {
+      "bytes": 3090,
+      "sha256": "b2fe9731da506e4278daad51ee98443d5c831a364f861bea6466cc10f8d602d0"
+    },
+    "data/age_lake_repair_20261002/provenance/local_smoke_analysis_receipt.json": {
+      "bytes": 3091,
+      "sha256": "91467b8e3e80b4ffe1ef86d512645fda366db9df8765e0592e53834b3c01cb79"
+    },
+    "data/age_lake_repair_20261002/provenance/local_smoke_manifest.json": {
+      "bytes": 13812,
+      "sha256": "615d0a3973fd0edb51fbaf55bd7a78138db6ed17495910dc2416ee5a6dbf682b"
+    },
+    "data/age_lake_repair_20261002/provenance/previous_AGENT_HANDOFF.md": {
+      "bytes": 52447,
+      "sha256": "417a0b7d84738d54db7b88b74532b3dfb8cdf535f308b252edad60fc95464c22"
+    },
+    "data/age_lake_repair_20261002/provenance/previous_handoff_preservation.json": {
+      "bytes": 710,
+      "sha256": "49ff18220687ee3b7694637bf5a8262a37d8bd045f15e5fb7e53ac591f02ce3c"
+    },
+    "data/age_lake_repair_20261002/provenance/qualification_exit_code.txt": {
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "data/age_lake_repair_20261002/provenance/qualification_finished_utc.txt": {
+      "bytes": 21,
+      "sha256": "53dbd07cf475f7e5806b3fd318e9d95d8019bedcc549dc1650ad832ace183efb"
+    },
+    "data/age_lake_repair_20261002/provenance/qualification_receipt.json": {
+      "bytes": 616,
+      "sha256": "2f3e426fee3209b8ee24f6a538057ef314b57359a8871ffbf061efb7ed3a1124"
+    },
+    "data/age_lake_repair_20261002/provenance/qualification_started_utc.txt": {
+      "bytes": 21,
+      "sha256": "6c759f92e82e6465cf5602e4cac3e81693806f43f0bc56ee2d6e89365e640c96"
+    },
+    "data/age_lake_repair_20261002/provenance/qualification_tests.log": {
+      "bytes": 99,
+      "sha256": "8cde0c80ae721004868a86e8e37ec04e4554266bc22d8e986b5dc545c698dfac"
+    },
+    "data/age_lake_repair_20261002/provenance/qualify_remote.sh": {
+      "bytes": 3658,
+      "sha256": "eaa3e848bf842067b874315da6a6fd6999000887bbe67cd8f2293af901a0d699"
+    },
+    "data/age_lake_repair_20261002/provenance/run_gate_remote.sh": {
+      "bytes": 3822,
+      "sha256": "47f5779e24e81a9e05a313eba39e64fb2fa68bb26841d4b8a0fba9a2df45bffe"
+    },
+    "data/age_lake_repair_20261002/provenance/score_controls.json": {
+      "bytes": 393,
+      "sha256": "bf6aa6f32852fce8d6ba0165735e770a640f55084f0cee13791e3b981c156e13"
+    },
+    "data/age_lake_repair_20261002/provenance/seed_separation_preflight.json": {
+      "bytes": 657,
+      "sha256": "1897867bf6b0a39b24825ba946838920c9f592b19096ecf2b9e878916eebbacf"
+    },
+    "data/age_lake_repair_20261002/provenance/source_snapshot.json": {
+      "bytes": 113350,
+      "sha256": "dca06a21a96702d70ed993dbe8b1b31771f0d41f2bbc93d55f9f8370e39045bf"
+    },
+    "data/age_lake_repair_20261002/report_summary.json": {
+      "bytes": 8483,
+      "sha256": "b93146ec7a7cf45dcb6c169cfdcac4a91be338619af562f0ea76ac5fc92669cd"
+    },
+    "docs/age_historical_refocus_protocol.md": {
+      "bytes": 13860,
+      "sha256": "0b257922f5f7de72fa9c2a033fae0ac3c89b72e0b0e5d0da69f2db015adb4d53"
+    },
+    "docs/age_historical_refocus_results.md": {
+      "bytes": 12488,
+      "sha256": "13a580f8510807770dcd0bde5df0b284dc35d0a6c4238f55ee8725cabb214124"
+    },
+    "scripts/analyze_age_historical_refocus.py": {
+      "bytes": 21971,
+      "sha256": "32e367e064c33a7b452864988124c28f7c7c7d8a87b297e9e81abe38a25e0c89"
+    },
+    "scripts/diagnose_age_lake_archive.py": {
+      "bytes": 37314,
+      "sha256": "88347ac7ca272bc91c2a372f17e894bd0856c4d01c96c7769e3af175663553bf"
+    },
+    "scripts/run_age_historical_refocus.py": {
+      "bytes": 20297,
+      "sha256": "f99814ea5ee92e1d484e447f06621705acbb6d5222efb41d74bc7ff13d75b397"
+    },
+    "scripts/summarize_age_historical_refocus.py": {
+      "bytes": 27727,
+      "sha256": "0ba3bdc5d0d1c0a704e8849b1010bede4afb60531fcbf399c2120ad4478db4bb"
+    },
+    "src/galaxias_model/age_historical_refocus.py": {
+      "bytes": 26523,
+      "sha256": "76af96441b32e407aa61c2ec82c1cd6d591e13badf3c33fc6ec8376cc9c44672"
+    },
+    "src/galaxias_model/age_refocus_scores.py": {
+      "bytes": 23439,
+      "sha256": "8bd9366271aec50b6162a8dbd98d7922be8088e8a8dfa6cbd77ffcaf5dcf0c53"
+    },
+    "tests/test_age_historical_refocus.py": {
+      "bytes": 5544,
+      "sha256": "8511f2fcf1facade317815fe3e327c85622e711b22f413a113f179c11f7548cb"
+    },
+    "tests/test_age_historical_refocus_analysis.py": {
+      "bytes": 2243,
+      "sha256": "a8ce48f3b2e6fd7ec5d4cf5f5f641901d33f5eb49885d63208159c1d0c44dd38"
+    },
+    "tests/test_age_historical_refocus_runner.py": {
+      "bytes": 2864,
+      "sha256": "fd1e55f914ffb1cf962c046ad32a045801571883a999a8ab75a9417fb27547ba"
+    },
+    "tests/test_age_refocus_scores.py": {
+      "bytes": 6924,
+      "sha256": "673f3b3eda6e2d656ae2fd21cb48c43b7e1440a54c623aed95244da7c54d30eb"
+    }
+  },
+  "history_status_counts": {
+    "algebraically_infeasible": 3544,
+    "complete": 9740,
+    "process_infeasible": 17436
+  },
+  "independent_audit": "PASS",
+  "previous_handoff_preservation": "data/age_lake_repair_20261002/provenance/previous_handoff_preservation.json",
+  "primary_base_assessed": 0,
+  "primary_base_passes": 0,
+  "scientific_disposition": "STOP_BEFORE_HISTORICAL_COMPARISON",
+  "scope": "Completed bounded Lake-history conditioning repair and prospective recovery test; historical comparison not performed",
+  "source_counts": {
+    "independent_bank_ids": 1024,
+    "independent_nuisance_ids": 3072,
+    "independent_truth_ids": 2048,
+    "joint_attempts": 30720,
+    "nominal_site_history_attempts": 92160,
+    "paired_cell_source_rows": 15360
+  },
+  "status": "complete"
+}

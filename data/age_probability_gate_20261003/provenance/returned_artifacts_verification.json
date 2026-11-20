@@ -1,0 +1,128 @@
+{
+  "actual_remaining_evidence_read": false,
+  "analysis_dependencies": 12,
+  "decompressed_hashes": "verified independently; see independent_result_audit.json",
+  "driver_exit_code": 0,
+  "generation_dependencies": 56,
+  "outputs": [
+    {
+      "bytes": 519536854,
+      "path": "outputs/remote/age_probability_gate_20261003/gate/full_histories.jsonl.gz",
+      "sha256": "1e812169124a75e545ff7fb8f72fe82802519fded916c9f481ab06f1c034278b"
+    },
+    {
+      "bytes": 9835965,
+      "path": "outputs/remote/age_probability_gate_20261003/gate/histories.jsonl.gz",
+      "sha256": "9107ae8c2f264d133f5f93c6726695b22bef89fb828ea4acb3f9a645d6725a79"
+    },
+    {
+      "bytes": 19109612,
+      "path": "outputs/remote/age_probability_gate_20261003/gate/source_banks.jsonl",
+      "sha256": "fb09885967066be5d8db8fd74d90387d10a0012fad6254b1d5b532e935df2db1"
+    },
+    {
+      "bytes": 7971,
+      "path": "outputs/remote/age_probability_gate_20261003/analysis/conditional_composition.csv",
+      "sha256": "02c00b49b7dd470d36e1c1138168e6bf8da1f70e83f27b74ddee27cfae69a2af"
+    },
+    {
+      "bytes": 3329616,
+      "path": "outputs/remote/age_probability_gate_20261003/analysis/forecasts_6_R_C_above_one.jsonl.gz",
+      "sha256": "b4dc23ae7deb8dffe41495c2e93388e9c57ec09f0cb6255fb4f945c06f6564d4"
+    },
+    {
+      "bytes": 1841900,
+      "path": "outputs/remote/age_probability_gate_20261003/analysis/forecasts_6_R_C_below_one.jsonl.gz",
+      "sha256": "0cea4390b068eb5dd4db9380165460a091e60a308aa5d2a2b9a129ddc17ab77f"
+    },
+    {
+      "bytes": 3855766,
+      "path": "outputs/remote/age_probability_gate_20261003/analysis/forecasts_6_R_H_above_one.jsonl.gz",
+      "sha256": "fd0dd4ad00984e2e4f541562bef78a833b2dd3b3cdcb8f929edce91775cac102"
+    },
+    {
+      "bytes": 1585139,
+      "path": "outputs/remote/age_probability_gate_20261003/analysis/forecasts_6_R_H_below_one.jsonl.gz",
+      "sha256": "a50bb06da9cd5dd31aa86aacbe5674423c3d9b0134c9a8d85757d1d078219727"
+    },
+    {
+      "bytes": 1290552,
+      "path": "outputs/remote/age_probability_gate_20261003/analysis/forecasts_6_R_J_above_one.jsonl.gz",
+      "sha256": "6a2f0d457ccad28cbee95f28e40ad2480de2abb4bcc79e23aa1bd9c18dd37106"
+    },
+    {
+      "bytes": 400449,
+      "path": "outputs/remote/age_probability_gate_20261003/analysis/forecasts_6_R_J_below_one.jsonl.gz",
+      "sha256": "3a2dbc08983d830fe2c4ed9e25838ac9fb9ebfe5f2fbdea7b273481a6d3945f6"
+    },
+    {
+      "bytes": 2048983,
+      "path": "outputs/remote/age_probability_gate_20261003/analysis/forecasts_6_R_T_above_one.jsonl.gz",
+      "sha256": "25b4c4bfd0c544eb2d6d4662ee9990fd900a28c5d9ebaf5e8beb71563d002e42"
+    },
+    {
+      "bytes": 1119456,
+      "path": "outputs/remote/age_probability_gate_20261003/analysis/forecasts_6_R_T_below_one.jsonl.gz",
+      "sha256": "3933db1e602502e15210c42ab9047a9bfabbc3acb798f3fa4061366f69d00514"
+    },
+    {
+      "bytes": 3286848,
+      "path": "outputs/remote/age_probability_gate_20261003/analysis/forecasts_8_R_C_above_one.jsonl.gz",
+      "sha256": "d563970839b4a950cbb5731746d1236300ba4cf9915f9a03a6e7fcfaf7dd63e7"
+    },
+    {
+      "bytes": 1611161,
+      "path": "outputs/remote/age_probability_gate_20261003/analysis/forecasts_8_R_C_below_one.jsonl.gz",
+      "sha256": "648e97e281dd58c781a17875480c181a9aa54bdaa3f223e8576a1262177fee20"
+    },
+    {
+      "bytes": 3815459,
+      "path": "outputs/remote/age_probability_gate_20261003/analysis/forecasts_8_R_H_above_one.jsonl.gz",
+      "sha256": "d01e3d1cbd79bad69938bc77e4701aab13bc1e32ffbab2f2a5953bbcc736b8dd"
+    },
+    {
+      "bytes": 2592313,
+      "path": "outputs/remote/age_probability_gate_20261003/analysis/forecasts_8_R_H_below_one.jsonl.gz",
+      "sha256": "b01c9308de70ab73a2b6c93fec2cfb879148c7011c0a3445725e56d4667d35f3"
+    },
+    {
+      "bytes": 1294370,
+      "path": "outputs/remote/age_probability_gate_20261003/analysis/forecasts_8_R_J_above_one.jsonl.gz",
+      "sha256": "9acd9ac2842f62d2712c9879b1a8d6ddb1c0fed8ef7222ca24a9bcf8649103d2"
+    },
+    {
+      "bytes": 325466,
+      "path": "outputs/remote/age_probability_gate_20261003/analysis/forecasts_8_R_J_below_one.jsonl.gz",
+      "sha256": "f2e224416a10c7f3d04f548135bbfb85b2501b3cd9dec541b1d65388e5d2c31b"
+    },
+    {
+      "bytes": 3009828,
+      "path": "outputs/remote/age_probability_gate_20261003/analysis/forecasts_8_R_T_above_one.jsonl.gz",
+      "sha256": "a181aa60ffb1203b4ad7657afd0bf003389f312746c5ad4105047f2659db5010"
+    },
+    {
+      "bytes": 648016,
+      "path": "outputs/remote/age_probability_gate_20261003/analysis/forecasts_8_R_T_below_one.jsonl.gz",
+      "sha256": "5486bfe99233d7e18beda8d6baa0303071f5bce5957f9b1eb1548e84c4e8c436"
+    },
+    {
+      "bytes": 4953,
+      "path": "outputs/remote/age_probability_gate_20261003/analysis/future_feasibility_selection.csv",
+      "sha256": "b3992db47fa5c9aebec23cc9080586481aa56fe96e3196c22ee4e43363b907c1"
+    },
+    {
+      "bytes": 583914,
+      "path": "outputs/remote/age_probability_gate_20261003/analysis/gate_metrics.csv",
+      "sha256": "60c6b1d4f95d701ff37e74eee72d7df081a5ffaf613ddb433066a85d7f63e0e8"
+    },
+    {
+      "bytes": 747977,
+      "path": "outputs/remote/age_probability_gate_20261003/analysis/reliability.csv",
+      "sha256": "bad36e37bb15de8b503b55d586ea15a8c373efa1320f4cfcbfc2c88f30b523c5"
+    }
+  ],
+  "physical_files_verified": 23,
+  "remote_processes_ended": true,
+  "status": "passed",
+  "verified_utc": "2026-10-03T08:33:31.524533+00:00"
+}

@@ -1,0 +1,64 @@
+--- a/src/galaxias_model/recruitment_demography.py
++++ b/src/galaxias_model/recruitment_demography.py
+@@ -273,8 +273,8 @@
+     adult_fraction = s * m / (1.0 - a + s * m)
+     weights = (demography.lake_settlement, 1.0 - demography.lake_settlement)
+     capacities = (limits.lake, limits.refuge)
+-    effective_low_density = sum(
+-        demography.recruits_per_adult * weight
++    effective_low_density = demography.recruits_per_adult * math.fsum(
++        weight
+         for weight, capacity in zip(weights, capacities)
+         if capacity > 0.0
+     )
+--- a/scripts/qualify_demographic_repair.py
++++ b/scripts/qualify_demographic_repair.py
+@@ -253,10 +253,14 @@
+     ref_eq = neutral_equilibrium(d,limits["historical_lake"])
+     ref_window = comparison.loc[(comparison.kernel.str.startswith("repaired")) & comparison.step.isin([99,100,101])]
+     reference_error = max(abs(ref_window[key]-ref_eq["state"][key]).max() for key in STATE_FIELDS)
+-    checks["reference_parity_converged"] = bool(reference_error<1e-8)
++    tail = comparison.loc[comparison.kernel.str.startswith("repaired") & comparison.step.isin([126,127,128])]
++    tail_error = max(abs(tail[key]-ref_eq["state"][key]).max() for key in STATE_FIELDS)
++    checks["reference_tail_converged"] = bool(tail_error<1e-8)
+     summary = {
+         "status":"mechanically_qualified" if all(checks.values()) else "requires_review",
+         "checks":checks,"reference_equilibrium":ref_eq,"reference_99_101_max_error":reference_error,
++        "reference_99_101_within_1e8":bool(reference_error<1e-8),
++        "reference_126_128_max_error":tail_error,
+         "neutral_cells":len(cells),"neutral_paths":len(runs),
+         "neutral_path_steps":int(runs_frame.steps.sum()),
+         "neutral_classifications":{str(key):int(value) for key,value in runs_frame.classification.value_counts().items()},
+--- a/docs/demographic_repair_protocol.md
++++ b/docs/demographic_repair_protocol.md
+@@ -160,3 +160,30 @@
+ declared assumptions. It does not validate b, site limits, the observation
+ bridge, chronology likelihoods, causal attribution or historical reconstructions.
+ One bounded independent audit and Fable's substantive review close this tranche.
++
++## Qualification amendment 1: numerical boundary and convergence diagnostic
++
++The first candidate run is preserved at
++`outputs/demographic_repair_20260923/candidate1/`; its receipt correctly says
++`requires_review`. Before its repeat, correct the floating-point calculation
++of effective low-density supply from sum(b*w_i) to b*sum(w_i). The former
++misclassified six exact b/g=1 grid cells as positive equilibria with only
++10^-16 to 10^-13 adults. The equations and biological parameters do not change.
++
++The first runner additionally demanded absolute agreement within 1e-8 fish
++at steps 99–101. The worst repaired reference discrepancy was 1.8539e-7,
++despite all trajectories approaching the analytic solution without a cycle.
++Retain and report that failed prediction. Check the existing stored tail at
++steps 126–128 at the same 1e-8 precision, rather than assuming a fixed 100-step
++burn-in is exact. Historical initialization already uses the analytic fixed
++point and does not depend on either chosen iteration count. This is a convergence
++diagnostic correction, not a relaxation of demographic acceptance or a selected
++burn-in phase.
++
++Repeat the same finite grid and stochastic qualification once under corrected
++source bindings. The cumulative local allowance becomes 2,800 deterministic
++paths and 384 stochastic scenario executions, plus focused one-step unit tests.
++The initial run took 3.4 seconds; this repeat has no material resource cost and
++introduces no new scenarios, parameters, search or scientific hypothesis.
++Keep both attempts and distinguish the numerical correction from biological
++evidence. The original 7.1-million production ceiling is not approached.

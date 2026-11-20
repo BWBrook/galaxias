@@ -1,0 +1,197 @@
+{
+  "verdict": "conditionally_supported",
+  "new_histories": 0,
+  "checks": {
+    "case_selection": {
+      "roles": 18,
+      "distinct_profiles": 17,
+      "exact_role_profile_match": true
+    },
+    "conditional_counts": {
+      "profiles_checked": 3,
+      "year_rows_checked": 18,
+      "mismatch_count": 0,
+      "mismatches": [],
+      "profiles": [
+        {
+          "source_id": "common-production|20260919|minimum_dated_adult_first|R_C|w3|s0099",
+          "q": 0.2,
+          "observation_model": "shared_quality",
+          "survival": 9.562074439490347e-05,
+          "conditional_ess": 1.784102197676204,
+          "conditional_largest_weight": 0.7461437441405966,
+          "conditional_qualified": false
+        },
+        {
+          "source_id": "common-production|20260918|minimum_dated_adult_first|R_C|w3|s0106",
+          "q": 0.2,
+          "observation_model": "shared_quality",
+          "survival": 1.826034639742923e-05,
+          "conditional_ess": 13.64701099141778,
+          "conditional_largest_weight": 0.13640355746809615,
+          "conditional_qualified": false
+        },
+        {
+          "source_id": "common-production|20260918|base|R_C|w1|s0011",
+          "q": 0.02,
+          "observation_model": "shared_quality",
+          "survival": 0.5111211740486816,
+          "conditional_ess": 151.56240581549935,
+          "conditional_largest_weight": 0.021227730526205205,
+          "conditional_qualified": true
+        }
+      ],
+      "mapping": {
+        "1997": "neg_N_total_1998",
+        "1998": "neg_N_total_1999",
+        "1999": "neg_N_total_2000",
+        "2000": "neg_N_total_2001",
+        "2001": "neg_N_total_2002",
+        "2002": "endpoint_N_total_2002"
+      }
+    },
+    "illustrative_histories": {
+      "selected_profiles": 17,
+      "expected_supported_outcomes": 25,
+      "reported_rows": 25,
+      "mismatch_count": 0,
+      "mismatches": []
+    },
+    "early_lake_edge_contrasts": {
+      "profiles_checked": 4,
+      "endpoint_rows_checked": 20,
+      "mismatch_count": 0,
+      "mismatches": [],
+      "profiles": [
+        {
+          "source_id": "common-production|20260919|base|R_J|w3|s0082",
+          "q": 0.005,
+          "observation_model": "shared_quality",
+          "selection_reason": "low_factual_ess",
+          "factual_ess": 100.86459239782818,
+          "invalid_support_count": 0,
+          "invalid_mass": 0.0
+        },
+        {
+          "source_id": "common-production|20260919|juvenile_climbing|R_J|w3|s0183",
+          "q": 0.05,
+          "observation_model": "shared_quality",
+          "selection_reason": "largest_1980_effect",
+          "factual_ess": 127.51288943799489,
+          "invalid_support_count": 0,
+          "invalid_mass": 0.0
+        },
+        {
+          "source_id": "common-production|20260919|minimum_dated_juvenile_first|R_J|w2|s0145",
+          "q": 0.02,
+          "observation_model": "shared_quality",
+          "selection_reason": "invalid_removal",
+          "factual_ess": 398.8243633872408,
+          "invalid_support_count": 25,
+          "invalid_mass": 0.03616464027420575
+        },
+        {
+          "source_id": "common-production|20260919|env_rho_010|R_J|w2|s0128",
+          "q": 0.2,
+          "observation_model": "homogeneous",
+          "selection_reason": "low_factual_ess",
+          "factual_ess": 1.0,
+          "invalid_support_count": 0,
+          "invalid_mass": 0.0
+        }
+      ],
+      "actual_year_mapping": {
+        "lake_N_L_1987": "neg_N_L_1988",
+        "lake_N_L_1988": "neg_N_L_1989"
+      }
+    },
+    "conditional_envelope_aggregation": {
+      "rows": 738,
+      "mismatch_count": 0
+    },
+    "early_lake_summary_aggregation": {
+      "rows": 170,
+      "mismatch_count": 0
+    }
+  },
+  "raw_rows": {
+    "factual": 19456,
+    "counterfactual": 4096,
+    "factual_sources": 19,
+    "counterfactual_sources": 4
+  },
+  "concentration": {
+    "conditional_profiles": 1527,
+    "conditional_qualified": 1485,
+    "conditional_unqualified": 42,
+    "minimum_conditional_ess": 1.784102197676204,
+    "minimum_conditional_ess_source": "common-production|20260919|minimum_dated_adult_first|R_C|w3|s0099",
+    "early_lake_factual_compatible_profiles": 274,
+    "early_lake_defined_compatible_per_endpoint": 213,
+    "early_lake_undefined_invalid_profiles_per_endpoint": 61
+  },
+  "status": "complete",
+  "scope": "bounded independent existing-artifact audit; no simulations and no production re-audit",
+  "operational_claim": "Frozen compatible profiles imply materially different persistence/count histories, and fixed-factual-weight removal of the trout overshoot raises mean 1980 lake abundance in all 12 compatible base/q=.02/shared-quality R_J profiles, with a weaker later signal.",
+  "headline_claim_checks": {
+    "base_R_J_1980": {
+      "profiles": 12,
+      "positive_point_estimates": 12,
+      "ci95_wholly_above_zero": 10,
+      "estimate_min": 0.1824433237660193,
+      "estimate_max": 45.56474700484814,
+      "status": "matched"
+    },
+    "base_minimum_survival_endpoint_table": {
+      "profiles": 4,
+      "restrictions": [
+        "R_H",
+        "R_T",
+        "R_C",
+        "R_J"
+      ],
+      "status": "matched"
+    },
+    "high_q_precision_wording": {
+      "survival_estimates": [
+        1.826034639742923e-05,
+        9.562074439490347e-05
+      ],
+      "survival_mc_se": [
+        5e-06,
+        7.2e-05
+      ],
+      "status": "corrected_in_results_report",
+      "note": "joint-weight qualification does not imply endpoint precision"
+    }
+  },
+  "ranked_threats": [
+    {
+      "rank": 1,
+      "severity": "major_scope_limit",
+      "threat": "population scale and observation process remain unidentified; outputs are scenario-conditional rather than historical abundance bounds"
+    },
+    {
+      "rank": 2,
+      "severity": "major_precision_limit",
+      "threat": "42/1527 survivor-conditioned profiles are unqualified; unqualified profiles set 96 envelope minima and 18 maxima, and q=.2 has no qualified survivor-conditioned profile"
+    },
+    {
+      "rank": 3,
+      "severity": "interpretation_limit",
+      "threat": "8/25 illustrative outcome distributions are unqualified and several selection roles are survival ties"
+    },
+    {
+      "rank": 4,
+      "severity": "interpretation_limit",
+      "threat": "actual-year proxies and four early-lake endpoints do not provide a complete annual trajectory"
+    }
+  ],
+  "required_before_stronger_inference": [
+    "empirically constrain population scale and survey coverage",
+    "test a defensible spatially heterogeneous detection representation if historical abundance claims depend on it",
+    "obtain precision-qualified survivor tails before quoting extreme conditional counts",
+    "use a separate decision-focused analysis before ranking mechanisms or interventions"
+  ],
+  "residual_uncertainty": "The arithmetic is verified for the stated bounded checks; ecological plausibility, search completeness, observation-model adequacy, and causal identification remain unresolved."
+}

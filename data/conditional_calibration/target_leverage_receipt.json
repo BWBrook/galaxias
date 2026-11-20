@@ -1,0 +1,40 @@
+{
+  "status": "complete",
+  "diagnostic_only": "Frozen sources; no score replacement or reselection.",
+  "source": {
+    "bytes": 4410,
+    "sha256": "f1174b3b4453b0997d13598950e408177c421fa4dc8840e3627fdedfc3622a23"
+  },
+  "membership": {
+    "bytes": 132659,
+    "sha256": "e88a89a3a831ff460789172251e348f3ea0f5f3558d3567c31b3d8c7cd2aa785"
+  },
+  "phases": {
+    "screen": {
+      "bytes": 8366,
+      "sha256": "5af7078a495087813009de78c63b83abc8aa24c05443b63774cc023c759c9a49"
+    },
+    "refine": {
+      "bytes": 9269,
+      "sha256": "4a56b3b53ed2524bc4bef27438b4c0e3482e662e863552a3871d6a40c666b4ce"
+    },
+    "validate": {
+      "bytes": 9966,
+      "sha256": "2dccdd5fc786b21d03b47d7eb15c13ec2f735e0e31422c970c1468a8e4670b2c"
+    }
+  },
+  "outputs": {
+    "target_leverage_sources.csv": {
+      "bytes": 139363,
+      "sha256": "409f22918b2af868fee69f029d598fda521a57172e4c0655baeab8ff166d6dd8"
+    },
+    "target_leverage_contexts.csv": {
+      "bytes": 95639,
+      "sha256": "97c0fa3d4a2aab6da67b5dc61cf4bea6711f2dec27f55d5b925777b7b33e5e2d"
+    },
+    "structural_score_floors.csv": {
+      "bytes": 229,
+      "sha256": "cec357456d5ab904fa1744e376c684c834ec6ffa909739e4befad88a3c83757e"
+    }
+  }
+}

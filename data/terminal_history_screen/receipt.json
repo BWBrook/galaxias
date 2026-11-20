@@ -1,0 +1,77 @@
+{
+  "scope": "fixed_prior_pool_screen_and_independent_process_confirmation",
+  "inputs": {
+    "pilot_manifest": {
+      "bytes": 9569,
+      "sha256": "bf50507d86d488a7f319a0537920b3619fbcb16706db1158f0e662f7bbfb0729"
+    },
+    "screen_manifest": {
+      "bytes": 7809,
+      "sha256": "38fd1d9bba4f77154774a082d843c2abd8c2614bd209f531e6d551b3b64df4bb"
+    },
+    "confirm_manifest": {
+      "bytes": 8643,
+      "sha256": "0328427eb0a537e16910320788e662d88c344ba79d3a1d27ae1a7161ab561302"
+    },
+    "extend_manifest": {
+      "bytes": 9331,
+      "sha256": "8a0139c435ce40cb913aa1fc69af548b0adbfb1cb5268cbb7ea5f68773d43ce9"
+    }
+  },
+  "analysis_bindings": {
+    "analyze_terminal_history_screen.py": {
+      "bytes": 19175,
+      "sha256": "184a1146f18d2a04a842924f144c40d20ed27a3d335872688095dc92ec6c075f"
+    },
+    "summarize_observation_repair_pilot.py": {
+      "bytes": 18598,
+      "sha256": "de16a5618a97a72ec605898264b4749764e43f2b53350fe544c69a89e9248e1f"
+    },
+    "run_observation_repair_pilot.py": {
+      "bytes": 16559,
+      "sha256": "424e85b5656524424325ac9be0255e6461fb300d017ac0f32d36c05ff7557fb5"
+    }
+  },
+  "confirmation_sources": 90,
+  "phases": [
+    "screen",
+    "confirm",
+    "extend",
+    "pooled_adaptive"
+  ],
+  "interpretation": "Uniform initial confirmation is primary. Extension-only and adaptive pooled results retain original selections. Source means are equal-weight conditional scenarios, not posterior probabilities. High ESS does not exclude unseen rare histories.",
+  "outputs": {
+    "selection_membership.csv": {
+      "bytes": 26865,
+      "sha256": "284543f4a404b91927d63742b4f89703a4db36652ffad05b07f4f3863137b6ca"
+    },
+    "confirmation_candidates.csv": {
+      "bytes": 5212,
+      "sha256": "876f40bee0053710cfd6faa12f02d6aa0f1f411fbcdbdfe717147ddc6717b6bc"
+    },
+    "screen_family_support.csv": {
+      "bytes": 5589,
+      "sha256": "fd6c51d3ad38e2daa96dcf93cd85b7faa7ba5e2405bf0c6c3079dcd8121d93bc"
+    },
+    "route_overlap.csv": {
+      "bytes": 321,
+      "sha256": "fac397e3b7339d37f7f688c1d7438be0f24c9b602d6520b1135e9edf3547285a"
+    },
+    "extension_priority.csv": {
+      "bytes": 2839,
+      "sha256": "046e50025cb409bc1db2d4b57aa9a4b500ab63d9bd4dd0e87e064556b4fc84d1"
+    },
+    "extension_candidates.csv": {
+      "bytes": 1756,
+      "sha256": "4a6e1889a3f8304610b7e9d58b4dd5308d7c13dd429749753ae108b1bafc3dfd"
+    },
+    "source_metrics.csv": {
+      "bytes": 1701560,
+      "sha256": "b9ba2678d824a80d4a489df34e7e45e7a51c0cd669b78336d48c89008ae5c8f6"
+    },
+    "route_summary.csv": {
+      "bytes": 213983,
+      "sha256": "c767d2f4b029f3f15fcf20d545e1589538dcbb208f71e6c52e2f89e55bc92051"
+    }
+  }
+}

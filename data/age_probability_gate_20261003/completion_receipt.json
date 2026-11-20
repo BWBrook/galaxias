@@ -1,0 +1,315 @@
+{
+  "actual_historical_probability_computed": false,
+  "actual_remaining_evidence_read": false,
+  "analysis": {
+    "all_status_counts": {
+      "UNASSESSABLE": 1033,
+      "UNASSESSABLE_CALIBRATION_PRECISION": 119
+    },
+    "bootstrap_draws": 2000,
+    "elapsed_seconds": 117.36062150704674,
+    "primary_rows": 576,
+    "primary_status_counts": {
+      "UNASSESSABLE": 564,
+      "UNASSESSABLE_CALIBRATION_PRECISION": 12
+    },
+    "qualified_primary_columns": [],
+    "rows": 1152
+  },
+  "archive": {
+    "git_ancestry": "81e37202f6322e37ac7f1b0070402b76b7967a82",
+    "local": "outputs/remote/age_probability_gate_20261003",
+    "remote_clone": "/data/codex/repos/galaxias-age-probability-20261003",
+    "remote_host": "utas-ubuntu",
+    "remote_path": "/data/codex/scratch/galaxias/age_probability_gate_20261003",
+    "source_snapshot_tar": {
+      "bytes": 30229051,
+      "path": "outputs/age_probability_gate_20261003/dispatch/source_snapshot.tar.gz",
+      "sha256": "40ee69d4a905d348f6e1c0f86e2c601147dcede3116fafff95cc443937a869b7"
+    }
+  },
+  "authorization": "Barry accepted option A in relayed Fable message 841: one final bounded probability-calibration attempt, followed by STOP if unassessable.",
+  "budget": {
+    "initial_search_remaining": 251904,
+    "no_post_outcome_draws": true,
+    "probability_gate_tranche": 147456,
+    "programme_ceiling": 1100000,
+    "programme_planned": 1035520,
+    "qualification_conservative_used": 3263,
+    "qualification_new_conservative_charge": 1000,
+    "qualification_new_explicit_site_smokes": 288,
+    "qualification_reserve": 8000
+  },
+  "checks": {
+    "analysis_dependencies_unchanged": 12,
+    "decompressed_hashes_verified": "independent_result_audit.json",
+    "earlier_completion_files_preserved": 66,
+    "existing_slow_tests_excluded": 5,
+    "final_portability_compile_passed": true,
+    "final_portability_files_inspected": 749,
+    "generation_dependencies_unchanged": 56,
+    "git_diff_check_passed": true,
+    "independent_methods_review": "PASS_FOR_QUALIFICATION",
+    "independent_result_audit_checks_passed": 52,
+    "linux_focused_tests_passed": 42,
+    "linux_serial_parallel_replay": "exact",
+    "local_fast_check_passed": 368,
+    "local_focused_tests_passed": 42,
+    "mac_linux_replay": "tolerance-qualified; see cross_platform_qualification.json",
+    "new_bundle_lf_only": true,
+    "physical_returned_output_files_verified": 23,
+    "prior_and_qualification_seed_overlap": 0,
+    "production_unique_parameter_and_process_seeds": 14336,
+    "remote_processes_ended": true,
+    "remote_source_snapshot_files_reverified": 720,
+    "summary_and_audit_bindings_verified": true
+  },
+  "completed_utc": "2026-10-03T08:36:40.746013+00:00",
+  "driver_exit_code": 0,
+  "earlier_completion_receipt": {
+    "bytes": 14754,
+    "path": "data/age_lake_repair_20261002/completion_receipt.json",
+    "sha256": "4b8869705bb458efad6882ced0fad8216bf96a1b7fee7dc9a9d25a9c65c91395"
+  },
+  "files": {
+    "AGENT_HANDOFF.md": {
+      "bytes": 59768,
+      "sha256": "2db05eae9c4479d36fd0a0aecf35fe94d69d42a2eb8fee1ee11799dad7b1bc42"
+    },
+    "data/age_probability_gate_20261003/conditional_composition.csv": {
+      "bytes": 7971,
+      "sha256": "02c00b49b7dd470d36e1c1138168e6bf8da1f70e83f27b74ddee27cfae69a2af"
+    },
+    "data/age_probability_gate_20261003/future_feasibility_selection.csv": {
+      "bytes": 4953,
+      "sha256": "b3992db47fa5c9aebec23cc9080586481aa56fe96e3196c22ee4e43363b907c1"
+    },
+    "data/age_probability_gate_20261003/gate_metrics.csv": {
+      "bytes": 583914,
+      "sha256": "60c6b1d4f95d701ff37e74eee72d7df081a5ffaf613ddb433066a85d7f63e0e8"
+    },
+    "data/age_probability_gate_20261003/proposal.json": {
+      "bytes": 1263951,
+      "sha256": "9a253bf749abc5c64ed2c507c3985ce093d4df889405b85f28078b0eaa580ce6"
+    },
+    "data/age_probability_gate_20261003/provenance/analysis_receipt.json": {
+      "bytes": 8905,
+      "sha256": "c2cb7e1280d55947add092d8728aba201cabfdf3578c3996f0f107f9375b5bb6"
+    },
+    "data/age_probability_gate_20261003/provenance/cross_platform_qualification.json": {
+      "bytes": 1064,
+      "sha256": "59c2f9cab60a1b19bd6f78304a09a769ab362b07c845f138d38cca34dbb62a9c"
+    },
+    "data/age_probability_gate_20261003/provenance/execution_plan.json": {
+      "bytes": 1569,
+      "sha256": "e9c76b38b9f60ec7b7e98740a3962e17ee195b0b0f753629840a4b116355190a"
+    },
+    "data/age_probability_gate_20261003/provenance/execution_receipt.json": {
+      "bytes": 281,
+      "sha256": "758fb786b89d4c24f4fa2b359edeebd745421db2fe703e25a2f9b8eb3392e4fa"
+    },
+    "data/age_probability_gate_20261003/provenance/gate_analysis.log": {
+      "bytes": 1252,
+      "sha256": "c90d9baed8f04c896f96b96b9786f125dc232f59aa683f010c213ca2250b1d68"
+    },
+    "data/age_probability_gate_20261003/provenance/gate_driver.log": {
+      "bytes": 299,
+      "sha256": "97180061cfacd0efc237b565f7bad69b7a7d615df451317bf064164c3fe9c840"
+    },
+    "data/age_probability_gate_20261003/provenance/gate_exit_code.txt": {
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "data/age_probability_gate_20261003/provenance/gate_finished_utc.txt": {
+      "bytes": 21,
+      "sha256": "8f7c1b16ceca5063d6220b058cfd8d6bb613967d7ca6f98f7f2dba69de952ded"
+    },
+    "data/age_probability_gate_20261003/provenance/gate_generation.log": {
+      "bytes": 12450,
+      "sha256": "d8702bb6336963a484057554b6007da29ab47b0e99cb80a1cb6b69cb0973486d"
+    },
+    "data/age_probability_gate_20261003/provenance/gate_started_utc.txt": {
+      "bytes": 21,
+      "sha256": "a10517c019ee8839cb0a9787acda3ea49557fc81fcd96fdb69b019c6c6f3a86f"
+    },
+    "data/age_probability_gate_20261003/provenance/generation_manifest.json": {
+      "bytes": 12770,
+      "sha256": "9a0f3b9829c7c89f18d6a743c8bcf5ca4c9eb7a713f4147ae9820a9f29c7f5e3"
+    },
+    "data/age_probability_gate_20261003/provenance/independent_methods_audit.json": {
+      "bytes": 1915,
+      "sha256": "33c2e7de0b6e83e39fb6d1b69b9070277635eef447a8e2e50105c640a77869ff"
+    },
+    "data/age_probability_gate_20261003/provenance/independent_result_audit.json": {
+      "bytes": 44762,
+      "sha256": "4b2535686dff710dd36cb6b42a2b1fec857ad52de96320d10290f2fbe4e4516f"
+    },
+    "data/age_probability_gate_20261003/provenance/linux_parallel_smoke_manifest.json": {
+      "bytes": 12707,
+      "sha256": "a9dd745778147d3e8ba15e80c7eb87463ddaa46908af61443e1cd02b520b9ce6"
+    },
+    "data/age_probability_gate_20261003/provenance/linux_serial_smoke_manifest.json": {
+      "bytes": 12706,
+      "sha256": "2284fc2faa13d5aebe93c9f46470fcbef9d30a6a2eaababfecd54b7e5d190e43"
+    },
+    "data/age_probability_gate_20261003/provenance/linux_smoke_analysis_receipt.json": {
+      "bytes": 4980,
+      "sha256": "a8b80b2505299b1436f0e0f5a9f722a0276316ad103bc3582bb03d19b9974214"
+    },
+    "data/age_probability_gate_20261003/provenance/local_fast_check.log": {
+      "bytes": 4361,
+      "sha256": "cb932e3ab66a489994da616ac7b39617e5388e7271d1795394cd06d9b020e09a"
+    },
+    "data/age_probability_gate_20261003/provenance/local_smoke_analysis_receipt.json": {
+      "bytes": 4981,
+      "sha256": "7336312c391cd438d6c15b12dd62911fd592d456848e03682c2e77003d2da568"
+    },
+    "data/age_probability_gate_20261003/provenance/local_smoke_manifest.json": {
+      "bytes": 12696,
+      "sha256": "e88e30299dbea6ab6c5377686bb912a3875b7023b15361dcaa2c649a17af2e7e"
+    },
+    "data/age_probability_gate_20261003/provenance/prefreeze_binding_correction.json": {
+      "bytes": 956,
+      "sha256": "e9f98e7bf81b6bef616d5438643507d4300576f6a9bc27166ccaa1a3e82fed0b"
+    },
+    "data/age_probability_gate_20261003/provenance/previous_AGENT_HANDOFF.md": {
+      "bytes": 56145,
+      "sha256": "f341bebd5cad06b87e100b415c88274195f4f23814a63a0bfbfdeece87e7aec6"
+    },
+    "data/age_probability_gate_20261003/provenance/previous_handoff_preservation.json": {
+      "bytes": 531,
+      "sha256": "13943670c2a10bb3b1032fdf6472433f8d713e213b9d3256f1be85c20b095cb2"
+    },
+    "data/age_probability_gate_20261003/provenance/qualification_driver.log": {
+      "bytes": 560,
+      "sha256": "901e74130776a61249e7386f5b26cb50b4ee67098e1555aac3376f67adea3410"
+    },
+    "data/age_probability_gate_20261003/provenance/qualification_exit_code.txt": {
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "data/age_probability_gate_20261003/provenance/qualification_finished_utc.txt": {
+      "bytes": 21,
+      "sha256": "e6a1b77500024a77b56fa65c4d6d7732c28a7a058ccd288fb2d15abe66bd8f4f"
+    },
+    "data/age_probability_gate_20261003/provenance/qualification_receipt.json": {
+      "bytes": 579,
+      "sha256": "5f4844ffef8e007d5d6e4c726a1e278ed592a86e7ca7ed0f2c5549876e163283"
+    },
+    "data/age_probability_gate_20261003/provenance/qualification_started_utc.txt": {
+      "bytes": 21,
+      "sha256": "4ce2c62af020b90b83cd9752875e730bf313c33c0469d2660bb4ed2a9a2996a0"
+    },
+    "data/age_probability_gate_20261003/provenance/qualification_tests.log": {
+      "bytes": 100,
+      "sha256": "9cf8fd41f69233610413796de41768ae11c302b7a021346da5372f4f2616d64c"
+    },
+    "data/age_probability_gate_20261003/provenance/qualify_remote.sh": {
+      "bytes": 4148,
+      "sha256": "cfe1d32516ae96a1e372798d4cef948dfe13e03e507d907a769b0f1d8bafecfe"
+    },
+    "data/age_probability_gate_20261003/provenance/returned_artifacts_verification.json": {
+      "bytes": 5472,
+      "sha256": "8dfd6a85f3ff3fd5bc9a627c8aaf8691e8f0833f30a2f214770ed02bd9d20556"
+    },
+    "data/age_probability_gate_20261003/provenance/run_gate_remote.sh": {
+      "bytes": 3222,
+      "sha256": "e788e17eed022e731f47ae6b841d3d0fec94b4b3cfd3019d9a321a8e3144ffcd"
+    },
+    "data/age_probability_gate_20261003/provenance/seed_separation_preflight.json": {
+      "bytes": 9738,
+      "sha256": "1464723fe9d0445b2872c1b9adec5705d937885d4017f1211589ce5b42741be0"
+    },
+    "data/age_probability_gate_20261003/provenance/source_snapshot.json": {
+      "bytes": 124227,
+      "sha256": "2dfd44484f71c5688776ba8cb1a28fb70bcf91a009a6f3ab47bf7b51fb2962ee"
+    },
+    "data/age_probability_gate_20261003/reliability.csv": {
+      "bytes": 747977,
+      "sha256": "bad36e37bb15de8b503b55d586ea15a8c373efa1320f4cfcbfc2c88f30b523c5"
+    },
+    "data/age_probability_gate_20261003/report_summary.json": {
+      "bytes": 16455,
+      "sha256": "6a25ca0772c00482b0ecf791d0ae98968912c2c66ca2cba2ceed4130b29c6306"
+    },
+    "docs/age_probability_gate_protocol.md": {
+      "bytes": 13469,
+      "sha256": "86f1c021951ad0c305a19dc959814f9e6495cde8bd437fd115e37854acb8923e"
+    },
+    "docs/age_probability_gate_results.md": {
+      "bytes": 9761,
+      "sha256": "976d1cf0d8aca65a5335feb6d1e094f16e4ac0683706ca6eba548907210d8698"
+    },
+    "scripts/analyze_age_probability_gate.py": {
+      "bytes": 24376,
+      "sha256": "cdf34f653e59ece082dfcb8ba24aaff0ad7b38608edcf153d7c73330255cd372"
+    },
+    "scripts/audit_age_probability_gate.py": {
+      "bytes": 46412,
+      "sha256": "1a7d5a6a5b78329b7dfa4e84e452e7604c762c9fc8aec329291d02a287a94412"
+    },
+    "scripts/run_age_probability_gate.py": {
+      "bytes": 18930,
+      "sha256": "e06349ad0b03311c489a97122dcee56108bb4e881f3a5fb2d2a934ffc8af93b6"
+    },
+    "scripts/summarize_age_probability_gate.py": {
+      "bytes": 6315,
+      "sha256": "d578939edf3f54a87ba07f5909c284b4af8eb0e3b832816fbe75f0dd55c93cc6"
+    },
+    "src/galaxias_model/age_joint_proposal.py": {
+      "bytes": 11047,
+      "sha256": "5941e156853694ebcfe3f4827da9d72ff449a40ff6fa7b678a2d875813797d36"
+    },
+    "src/galaxias_model/age_probability_observation.py": {
+      "bytes": 15280,
+      "sha256": "00d266f08a3126f96bba5b0665c7c7d9f2260ec03dea540945935463caa232c3"
+    },
+    "src/galaxias_model/age_probability_scores.py": {
+      "bytes": 18487,
+      "sha256": "65378e67ec42369bb2ab2436b72b2f5629b25ab9b3b75e6930c0ebd8089afc66"
+    },
+    "tests/test_age_joint_proposal.py": {
+      "bytes": 5266,
+      "sha256": "c926b16e7134475afb4165fa9c4bd16eb764292c2078c1fc054ea1e8ba89dde7"
+    },
+    "tests/test_age_probability_analysis.py": {
+      "bytes": 6031,
+      "sha256": "34bbb97a57e0610b1c95e5cf662a8a3964da188e77678b7ded9cb5721e88b95f"
+    },
+    "tests/test_age_probability_observation.py": {
+      "bytes": 5983,
+      "sha256": "86a24bd9a99f82d42d577be0eddff32c7aa51baaf24314fa1e8b851c76a4994b"
+    },
+    "tests/test_age_probability_runner.py": {
+      "bytes": 6288,
+      "sha256": "e9858a942c1d4e66bd91f24dfb904fbbc1f42e02af80dd1f7746ad214a1d966a"
+    },
+    "tests/test_age_probability_scores.py": {
+      "bytes": 6652,
+      "sha256": "74d3fefb7ccb398a09da7daa91100063b7bf93b3f51c8fd1382e1e8c767920cf"
+    }
+  },
+  "fourth_attempt_authorized": false,
+  "generation": {
+    "actual_advance_calls": 4626046,
+    "elapsed_seconds": 3244.416175768012,
+    "executed_linked_histories": 43584,
+    "history_status_counts": {
+      "algebraically_infeasible": 5568,
+      "complete": 15384,
+      "process_infeasible": 28200
+    },
+    "independent_nuisance_source_ids": 2048,
+    "joint_history_attempts": 49152,
+    "nominal_site_history_attempts": 147456,
+    "paired_cell_source_rows": 8192
+  },
+  "preserved_previous_binding": {
+    "bytes": 56145,
+    "original_path": "AGENT_HANDOFF.md",
+    "preserved_path": "data/age_probability_gate_20261003/provenance/previous_AGENT_HANDOFF.md",
+    "sha256": "f341bebd5cad06b87e100b415c88274195f4f23814a63a0bfbfdeece87e7aec6"
+  },
+  "scientific_disposition": "STOP_FINAL_BOUNDED_ATTEMPT",
+  "status": "complete"
+}

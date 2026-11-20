@@ -1,0 +1,17 @@
+{
+  "updated_utc": "2026-09-18T11:03:10.534098+00:00",
+  "scientific_maximum_including_replay": 7071040,
+  "hard_ceiling": 7100000,
+  "implementation_check_allowance": 28960,
+  "conservative_implementation_check_ceiling": 15000,
+  "known_executions": {
+    "legacy_replay_serial_parallel_preflight": 8,
+    "local_failed_pipeline_smoke": 288,
+    "local_24_cell_parity": 96,
+    "target_24_cell_parity": 96,
+    "target_focused_unit_histories": 39,
+    "target_complete_pipeline_smoke": 1686
+  },
+  "accounting_note": "Target pipeline counts will be added from completed manifests. Earlier local unit checks were not instrumented; their coverage is conservatively included in the 15000 check ceiling rather than presented as an exact count. No saved viability-failure histories fund replacement proposals or extra search. The signed empty-parent allocation exception preserves 200 draws without extra proposals.",
+  "known_executions_subtotal": 2213
+}

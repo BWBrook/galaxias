@@ -1,0 +1,27 @@
+{
+  "candidate": "age_structured_candidate_1_20260927",
+  "status": "awaiting_scientific_review",
+  "file_sha256": {
+    "data/age_structured_design_20260927/attempt_1_receipt.json": "69202c9e6a2da69f7ae9b482d144e5d0bcdc6ba1f506b6bf1987912a76ea4a1b",
+    "data/age_structured_design_20260927/attempt_2_receipt.json": "e6627f998732f1da596d6d0ba3ce600d6292aac22c2969c8beab273d9d462038",
+    "data/age_structured_design_20260927/observation_register.csv": "cf6ac3faa11e1a23d58dfc458780b4397b990e59acd81010b6652ca19a4a0899",
+    "data/age_structured_design_20260927/removal_evidence.csv": "cd3b3710650afc4204cb2a3586097d5d9220033920024a18dc6be63516cfbeae",
+    "data/age_structured_design_20260927/scenarios.json": "432b935d4e843c2c79c85679bc7cb1dcb61848a702b76dc6b282d5faec361b8e",
+    "data/parameter_priors.csv": "0430990010becb5c1dbbad5a60a64ab87a754657afa4ac902914c101dde3e718",
+    "docs/age_structured_design_audit.md": "0b1df506d6d94e2f3ea06650fc6de6c8def773e23f536d97256f8cfeaaff6929",
+    "docs/age_structured_design_results.md": "d5ef3d9afb49df2585aac36e1740d8fa4abe0e431b7764f0e092706173b9c5fe",
+    "docs/age_structured_protocol.md": "3f970af0978dfdf4da590c30c489e20590722b265a776b1f738ec309fa36874f",
+    "scripts/qualify_age_demography.py": "1caa07d9ca9d8a7bd61418803ad93ea812f5a4ceaaebe8dff84453769a633b70",
+    "src/galaxias_model/age_demography.py": "5bb305d052c89b8ab0fea6da27811f182d551505f176588769193bd31ffeb6ca",
+    "src/galaxias_model/age_observation.py": "7f520ee504c21af6f86150b3f5ceb717386cddaab141d18ae6105713d9581a22",
+    "src/galaxias_model/age_scenarios.py": "4110d13a37c93737bdc248edfc78cdc385eea216d08deb3bdcfd315205c3e72c",
+    "src/galaxias_model/common_model.py": "2031373352dbdb55b30db571dc7b861e67f804fc0b5709ef99233f73e8e463c4",
+    "src/galaxias_model/mate_guard.py": "7da473275457d9970c7b6a748e4ac92043c96ccdd14266142fb6e02827bdb332",
+    "src/galaxias_model/recruitment_demography.py": "332f7ab7c5b27abecbbc9dbe8bd4bfd1873e3743d8949fc707f102ee952f3ef5",
+    "src/galaxias_model/recruitment_scenarios.py": "624423c0983441a55d925399444c6a217c20e2f9e4e3b37975e7b803270b528a",
+    "tests/test_age_demography.py": "a83f4d72d3b287aa8d0c708cac3a1fc06529f3ffc506c07cb49a9676ab08516a",
+    "tests/test_age_observation.py": "ca182488912779d0f300a629128c2d87622eaa373cfcf1d4097d4e148bbe1bad",
+    "tests/test_age_scenarios.py": "5a615b262b19078b2e24d05736f00e132ac9474ad16fa11f2afdf9638fc3d56c",
+    "uv.lock": "5d6561c9a74c38eccbc35c6053c0819d36357f3331305058f863a66bb3ef148e"
+  }
+}

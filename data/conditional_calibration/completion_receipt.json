@@ -1,0 +1,141 @@
+{
+  "status": "complete",
+  "run_id": "conditional_calibration_20260912T034910Z",
+  "raw_local_directory": "outputs/remote/conditional_calibration_20260912T034910Z",
+  "raw_remote_directory": "/data/codex/scratch/galaxias/conditional_calibration_20260912T034910Z",
+  "started_utc": "2026-09-12T03:52:15Z",
+  "finished_utc": "2026-09-12T04:53:13Z",
+  "counts": {
+    "prior_sources": 7500,
+    "intrinsic_simulations": 15000,
+    "screen_histories": 750000,
+    "refine_histories": 318000,
+    "validate_histories": 712000,
+    "refine_sources": 636,
+    "validate_sources": 356
+  },
+  "validation": {
+    "all_phase_exit_codes_zero": true,
+    "frozen_source_snapshot_verified": true,
+    "raw_archives_and_summary_bindings_verified": true,
+    "make_check": "137 passed (132 standard, 5 slow)",
+    "scientific_review": "Independent bounded specialist audit approved closure; structural-score, paired-source and simulation-precision claims checked; delivery receipt required before final closure.",
+    "figure": "Final PNG visually inspected"
+  },
+  "source_files": {
+    "docs/conditional_calibration_results.md": {
+      "bytes": 11932,
+      "sha256": "b81959ee330aa35c67e3b5a53b03a9ea0a3733ae45312442b40e462e89ea6341"
+    },
+    "AGENT_HANDOFF.md": {
+      "bytes": 24518,
+      "sha256": "b921bd1b1dd17846e5c4dcb9e9f583f971ccc80b527d0aed7861d39d2af899b7"
+    },
+    "scripts/plot_conditional_calibration.R": {
+      "bytes": 6208,
+      "sha256": "47b73e9c8359a9e64b1ef8f85f8ffed7c8d1b2f5782f601dad805ef773a33aa4"
+    },
+    "scripts/summarize_conditional_target_leverage.py": {
+      "bytes": 4410,
+      "sha256": "f1174b3b4453b0997d13598950e408177c421fa4dc8840e3627fdedfc3622a23"
+    }
+  },
+  "delivery_files": {
+    "conditional_calibration.pdf": {
+      "bytes": 7616,
+      "sha256": "17a105996217ad05a9d10d785f7cadaa789737e11968aba1a5462a1e74c7db37"
+    },
+    "conditional_calibration.png": {
+      "bytes": 177545,
+      "sha256": "2f611cd7d5a63ce6dd6d7a8fc9bd26d4a68027a6faae6b72e6c3bbe8eb6d85a3"
+    },
+    "context_comparison.csv": {
+      "bytes": 459339,
+      "sha256": "ad1275f2d12d581ae00b03648e03a86db54eb116c74f895aee4c7335c2ba6d07"
+    },
+    "discovery_curves.csv": {
+      "bytes": 37810,
+      "sha256": "cdc8f2063ccedfc3d014a6d1bd60b9e4d84b811c0ac16ac36b4d65daae7c9077"
+    },
+    "global_family_counts.csv": {
+      "bytes": 1710,
+      "sha256": "d333582f9756c217288eb5c7cc39912f7a67b9403aceaa5dda5fcf052fe9ae00"
+    },
+    "paired_observation_sensitivity.csv": {
+      "bytes": 3602,
+      "sha256": "d981f8754406e620c33cd41dac6f571202e2a944cf15fb66057cd73676170a64"
+    },
+    "parameter_diagnostics.csv": {
+      "bytes": 1081034,
+      "sha256": "6e4db2ee617d778159e5355570dfe56b65329def0cfa8c483a2fd3cbbc3b1e84"
+    },
+    "provenance/prior_run_manifest.json": {
+      "bytes": 10067,
+      "sha256": "198d9d8b93e8a5b16fb70881a59b0e72862422c066097470542b90ac94e0796b"
+    },
+    "provenance/refine_analysis_manifest.json": {
+      "bytes": 1054,
+      "sha256": "962df5bcd15284d8e8f8b083afb0b751c821c0f608a41224b49daaefa4e87cff"
+    },
+    "provenance/refine_run_manifest.json": {
+      "bytes": 9269,
+      "sha256": "4a56b3b53ed2524bc4bef27438b4c0e3482e662e863552a3871d6a40c666b4ce"
+    },
+    "provenance/run_programme.sh": {
+      "bytes": 3238,
+      "sha256": "18a8fb530446ee91c4f14ee2426eaa3cf02b32ea2dc7468daf0f7327c8ae4e2a"
+    },
+    "provenance/screen_analysis_manifest.json": {
+      "bytes": 952,
+      "sha256": "dfe70f8a5da39244201c6c7889b0566ba116e454cc4a5727366efa48bd443997"
+    },
+    "provenance/screen_run_manifest.json": {
+      "bytes": 8366,
+      "sha256": "5af7078a495087813009de78c63b83abc8aa24c05443b63774cc023c759c9a49"
+    },
+    "provenance/seed_preflight.json": {
+      "bytes": 1263,
+      "sha256": "dc82c2e69545a2ffee14b4f686a4f55540cc69976daa75d96ff4d384de134bb2"
+    },
+    "provenance/source_snapshot.sha256": {
+      "bytes": 3902,
+      "sha256": "38982a632fe4091c2b5a1e0b7b9399e724c1d2fa6fa05b95621f4f6fba1cad37"
+    },
+    "provenance/validate_analysis_manifest.json": {
+      "bytes": 773,
+      "sha256": "27101ce469ade25fb2d5b59fdb1683d5d11095861c6d823751cf154a35df7726"
+    },
+    "provenance/validate_run_manifest.json": {
+      "bytes": 9966,
+      "sha256": "2dccdd5fc786b21d03b47d7eb15c13ec2f735e0e31422c970c1468a8e4670b2c"
+    },
+    "receipt.json": {
+      "bytes": 1538,
+      "sha256": "6e9920114031cbb11a4e990fc543a3402e82474f7d629e4b66c8327086b1f493"
+    },
+    "selected_source_comparison.csv": {
+      "bytes": 1048757,
+      "sha256": "b79a0128586483be09afc9de13941c7094e89f8df7598e780bdfbc63b62ee278"
+    },
+    "selection_membership.csv": {
+      "bytes": 131970,
+      "sha256": "1895f279092e2d7162ada6e1db6e3f44c5a9ab1c3ea5073bb998ef554dc284a5"
+    },
+    "structural_score_floors.csv": {
+      "bytes": 229,
+      "sha256": "cec357456d5ab904fa1744e376c684c834ec6ffa909739e4befad88a3c83757e"
+    },
+    "target_leverage_contexts.csv": {
+      "bytes": 95639,
+      "sha256": "97c0fa3d4a2aab6da67b5dc61cf4bea6711f2dec27f55d5b925777b7b33e5e2d"
+    },
+    "target_leverage_receipt.json": {
+      "bytes": 1215,
+      "sha256": "db52df61fc2c86765439981d362363ab778974616ce41ec57764484eecd0f770"
+    },
+    "target_leverage_sources.csv": {
+      "bytes": 139363,
+      "sha256": "409f22918b2af868fee69f029d598fda521a57172e4c0655baeab8ff166d6dd8"
+    }
+  }
+}

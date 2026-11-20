@@ -1,0 +1,16 @@
+{
+  "earlier_completion_bound_files_verified": 33,
+  "earlier_completion_receipt": {
+    "bytes": 7365,
+    "path": "data/age_linked_recovery_20261001/completion_receipt.json",
+    "sha256": "f3686c0bf71d09031898fdc74294da27f9b555a1cea75d5a39f9f0c54871887d"
+  },
+  "preserved_binding": {
+    "bytes": 52447,
+    "sha256": "417a0b7d84738d54db7b88b74532b3dfb8cdf535f308b252edad60fc95464c22"
+  },
+  "preserved_path": "data/age_lake_repair_20261002/provenance/previous_AGENT_HANDOFF.md",
+  "scope": "Preserve byte-identical old handoff before recording current repair. Original completion receipt and all original result files remain unchanged.",
+  "status": "preserved",
+  "superseded_path": "AGENT_HANDOFF.md"
+}

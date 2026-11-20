@@ -1,0 +1,64 @@
+{
+  "status": "complete",
+  "new_histories": 0,
+  "qualified_source_profiles": 1527,
+  "unique_sources": 517,
+  "selection_roles": 18,
+  "selected_source_profiles": 17,
+  "illustrative_histories": 25,
+  "max_reconciliation_absolute_difference": 5.684341886080801e-13,
+  "survivor_conditional_qualified_profiles": 1485,
+  "input_files": {
+    "analysis/validated_source_profiles.csv": {
+      "bytes": 56021870,
+      "sha256": "87fb4e76a2af26985af42039006607d1d87928b14b10460c2058752414688f10"
+    },
+    "validate/raw_histories.csv.gz": {
+      "bytes": 83833086,
+      "sha256": "28e1bf73692733cabef35c189f782c0ec4d3edb07451220dea471d43451c046d"
+    },
+    "validate/parameter_values.csv.gz": {
+      "bytes": 900315,
+      "sha256": "e5c58ef5b41cbdf48b39f6cc763f3444f22fcd1f8678ff7022c5b0c10ccf7cc4"
+    }
+  },
+  "outputs": {
+    "case_parameters.csv": {
+      "bytes": 181565,
+      "sha256": "ff4548850197f24b8f68e9b4101cdc3bcf543f417da350afe538d4cd7d0f572e"
+    },
+    "survivor_conditioned_natural_counts.csv.gz": {
+      "bytes": 585199,
+      "sha256": "b9854bb97b02df49a2d7126cbbf5af2ffc3cbab0cda9ed8c334005f02854bbd6"
+    },
+    "conditional_count_envelopes.csv": {
+      "bytes": 86579,
+      "sha256": "2e5004d6fea51f451f33b8d8b0f979d7dc983b6544959d35202b2434ccb0decc"
+    },
+    "illustrative_histories.csv": {
+      "bytes": 8940,
+      "sha256": "31ec523b862a9d74e7b8eb867dfd6a1ca1a17dc7f9d5603b74484cb49c78a990"
+    },
+    "case_annual_refuge.csv": {
+      "bytes": 95832,
+      "sha256": "b51d44939002f9eff696b56d8f302e83bfb8c8827d8b07410af72b0c9e4a0fca"
+    },
+    "selected_cases.csv": {
+      "bytes": 5601,
+      "sha256": "e50d1dc0c79368bcb38adc8229367a83a3e6730dee8354232ce227b3e92d2a62"
+    },
+    "profile_reconciliation.csv": {
+      "bytes": 331257,
+      "sha256": "a99ad5517ea4c14e46ba7f0f4d0c11742a5dedc682fe7c77812c0478a8020f5b"
+    }
+  },
+  "script": {
+    "bytes": 12836,
+    "sha256": "4e443dba9aa2875d085f0da0d159358e2cf256bf09e01a08a448017e3dcdeac8"
+  },
+  "plan": {
+    "bytes": 4683,
+    "sha256": "9ab8b1ed214b0c87618e2d6fd65d17a68771ca0bdf90754139f032e5720d1085"
+  },
+  "interpretation": "Conditional natural-range count distributions are process spread given terminal survival and factual observations, not empirical population bounds. Original map unchanged."
+}

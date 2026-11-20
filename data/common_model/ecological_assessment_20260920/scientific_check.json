@@ -1,0 +1,40 @@
+{
+  "status": "complete",
+  "reviewer": "independent native agent ecological_assessment_check",
+  "verdict": "conditionally_supported",
+  "scope": "bounded scientific interpretation and independent two-source raw-history recomputation",
+  "new_histories": 0,
+  "calculations": [
+    {
+      "source": "common-production|20260918|base|R_C|w1|s0011",
+      "q": 0.02,
+      "observation_model": "shared_quality",
+      "supported_histories": 708,
+      "supported_rebound_histories": 107,
+      "rebound_mass_given_survival": 0.19765279115558643,
+      "mc_se": 0.03630174614998709
+    },
+    {
+      "source": "common-production|20260919|base|R_J|w3|s0082",
+      "q": 0.02,
+      "observation_model": "shared_quality",
+      "supported_histories": 788,
+      "supported_rebound_histories": 114,
+      "rebound_mass_given_survival": 0.23032877798586063,
+      "mc_se": 0.041733557625359526
+    }
+  ],
+  "example_check": {
+    "flagged": 6,
+    "total": 25,
+    "flagged_outcome_weights_unqualified": 4
+  },
+  "mismatches": 0,
+  "required_qualifications": [
+    "No automatic plausibility inference from small abundance",
+    "One-fish rebound conflicts only with complete closed literal fish-census interpretation without omitted reproductive states or immigration",
+    "Late lake counts do not prove independent lake breeding",
+    "No new weight exclusion or mechanism ranking"
+  ],
+  "result": "Qualifications incorporated into report; no further computational correction required"
+}

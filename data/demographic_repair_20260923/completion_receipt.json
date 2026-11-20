@@ -1,0 +1,240 @@
+{
+  "completed_at": "2026-09-23T04:36:32.044316+00:00",
+  "status": "mechanically_qualified_for_scientific_review",
+  "authorization_quote": "Good work, both of you. This was a major catch! Proceed with the demographic repair as a priority.",
+  "git_head": "81e37202f6322e37ac7f1b0070402b76b7967a82",
+  "scope": "Demographic core and base-forcing adapter; local bounded qualification. No calibration, new search, remote dispatch, commit, push or publication.",
+  "attempts": [
+    {
+      "name": "candidate1",
+      "raw_path": "outputs/demographic_repair_20260923/candidate1",
+      "status": "requires_review",
+      "started_at": "2026-09-23T04:22:05.993322+00:00",
+      "completed_at": "2026-09-23T04:22:09.408828+00:00",
+      "elapsed_seconds": 3.4162052089814097,
+      "iterated_deterministic_paths": 1294,
+      "standalone_fixed_point_checks": 423,
+      "stochastic_executions": 192,
+      "source_bindings": {
+        "src/galaxias_model/recruitment_demography.py": {
+          "sha256": "d45ea2fa79fc53a31089deb24f80fdd3ed7a5f89bb2da033f1d3d66459ee96dd",
+          "verified_at": "data/demographic_repair_20260923/snapshots/candidate1/src/galaxias_model/recruitment_demography.py"
+        },
+        "src/galaxias_model/recruitment_scenarios.py": {
+          "sha256": "624423c0983441a55d925399444c6a217c20e2f9e4e3b37975e7b803270b528a",
+          "verified_at": "data/demographic_repair_20260923/snapshots/candidate1/src/galaxias_model/recruitment_scenarios.py"
+        },
+        "src/galaxias_model/common_model.py": {
+          "sha256": "2031373352dbdb55b30db571dc7b861e67f804fc0b5709ef99233f73e8e463c4",
+          "verified_at": "src/galaxias_model/common_model.py"
+        },
+        "src/galaxias_model/mate_guard.py": {
+          "sha256": "7da473275457d9970c7b6a748e4ac92043c96ccdd14266142fb6e02827bdb332",
+          "verified_at": "src/galaxias_model/mate_guard.py"
+        },
+        "src/galaxias_model/simulation.py": {
+          "sha256": "531e1c597b2ada9a09c1fb47b462098149e3fe943aa37d96cde1cfe713d700c3",
+          "verified_at": "src/galaxias_model/simulation.py"
+        },
+        "src/galaxias_model/io.py": {
+          "sha256": "97f75f0d10d763aa8004dba2bf17868205ab9735620275d40f29cab5003e85a4",
+          "verified_at": "src/galaxias_model/io.py"
+        },
+        "src/galaxias_model/types.py": {
+          "sha256": "bbb91a0a1e344c7e1b97d5ef5c10ce943dccf6789fc4924eb0229342dd0a6d75",
+          "verified_at": "src/galaxias_model/types.py"
+        },
+        "scripts/qualify_demographic_repair.py": {
+          "sha256": "75176d107fccad49d90bf669f00017ec2838d28d29e419bc47539a89a7bd7c29",
+          "verified_at": "data/demographic_repair_20260923/snapshots/candidate1/scripts/qualify_demographic_repair.py"
+        },
+        "docs/demographic_repair_protocol.md": {
+          "sha256": "4ba563c7d74b65e1e2d1797551ed31b2710794811a8d8a87c41971406a7761b3",
+          "verified_at": "data/demographic_repair_20260923/snapshots/candidate1/docs/demographic_repair_protocol.md"
+        },
+        "data/parameter_priors.csv": {
+          "sha256": "0430990010becb5c1dbbad5a60a64ab87a754657afa4ac902914c101dde3e718",
+          "verified_at": "data/parameter_priors.csv"
+        },
+        "data/scenario_definitions.json": {
+          "sha256": "1fa42d3df26abe51af3cb34fdf0d31bda0ce106a2fc8bfb0ba3f9a739f689023",
+          "verified_at": "data/scenario_definitions.json"
+        },
+        "data/model_family_parameter_map.csv": {
+          "sha256": "eca7781b2b3c59232a0f3e0adb56569fa5a627daa5342b3d07da1f43d1ff13a0",
+          "verified_at": "data/model_family_parameter_map.csv"
+        },
+        "data/parameter_constraints.csv": {
+          "sha256": "b4aa87f4d4972a287ecb68958033694d5535c1e8ddfaf3a46f4d70885d356816",
+          "verified_at": "data/parameter_constraints.csv"
+        },
+        "uv.lock": {
+          "sha256": "5d6561c9a74c38eccbc35c6053c0819d36357f3331305058f863a66bb3ef148e",
+          "verified_at": "uv.lock"
+        }
+      },
+      "output_manifest_sha256": "ca8628f2ce3ad46b090522fc81b26e9ef277b77a20f85d1223d587ec089636b4",
+      "outputs_verified": 9
+    },
+    {
+      "name": "candidate1_amend1",
+      "raw_path": "outputs/demographic_repair_20260923/candidate1_amend1",
+      "status": "mechanically_qualified",
+      "started_at": "2026-09-23T04:24:34.959224+00:00",
+      "completed_at": "2026-09-23T04:24:38.174773+00:00",
+      "elapsed_seconds": 3.216020624997327,
+      "iterated_deterministic_paths": 1294,
+      "standalone_fixed_point_checks": 423,
+      "stochastic_executions": 192,
+      "source_bindings": {
+        "src/galaxias_model/recruitment_demography.py": {
+          "sha256": "332f7ab7c5b27abecbbc9dbe8bd4bfd1873e3743d8949fc707f102ee952f3ef5",
+          "verified_at": "data/demographic_repair_20260923/snapshots/candidate1_amend1/src/galaxias_model/recruitment_demography.py"
+        },
+        "src/galaxias_model/recruitment_scenarios.py": {
+          "sha256": "624423c0983441a55d925399444c6a217c20e2f9e4e3b37975e7b803270b528a",
+          "verified_at": "data/demographic_repair_20260923/snapshots/candidate1_amend1/src/galaxias_model/recruitment_scenarios.py"
+        },
+        "src/galaxias_model/common_model.py": {
+          "sha256": "2031373352dbdb55b30db571dc7b861e67f804fc0b5709ef99233f73e8e463c4",
+          "verified_at": "src/galaxias_model/common_model.py"
+        },
+        "src/galaxias_model/mate_guard.py": {
+          "sha256": "7da473275457d9970c7b6a748e4ac92043c96ccdd14266142fb6e02827bdb332",
+          "verified_at": "src/galaxias_model/mate_guard.py"
+        },
+        "src/galaxias_model/simulation.py": {
+          "sha256": "531e1c597b2ada9a09c1fb47b462098149e3fe943aa37d96cde1cfe713d700c3",
+          "verified_at": "src/galaxias_model/simulation.py"
+        },
+        "src/galaxias_model/io.py": {
+          "sha256": "97f75f0d10d763aa8004dba2bf17868205ab9735620275d40f29cab5003e85a4",
+          "verified_at": "src/galaxias_model/io.py"
+        },
+        "src/galaxias_model/types.py": {
+          "sha256": "bbb91a0a1e344c7e1b97d5ef5c10ce943dccf6789fc4924eb0229342dd0a6d75",
+          "verified_at": "src/galaxias_model/types.py"
+        },
+        "scripts/qualify_demographic_repair.py": {
+          "sha256": "710078f06d6603481434457d1d26845e3a567e174795cf85527e62bf85ba1240",
+          "verified_at": "data/demographic_repair_20260923/snapshots/candidate1_amend1/scripts/qualify_demographic_repair.py"
+        },
+        "docs/demographic_repair_protocol.md": {
+          "sha256": "a54b1c82ca2229c2e404da39b42ed3216809507f88dd14ecc8e0c763eb8eb064",
+          "verified_at": "data/demographic_repair_20260923/snapshots/candidate1_amend1/docs/demographic_repair_protocol.md"
+        },
+        "data/parameter_priors.csv": {
+          "sha256": "0430990010becb5c1dbbad5a60a64ab87a754657afa4ac902914c101dde3e718",
+          "verified_at": "data/parameter_priors.csv"
+        },
+        "data/scenario_definitions.json": {
+          "sha256": "1fa42d3df26abe51af3cb34fdf0d31bda0ce106a2fc8bfb0ba3f9a739f689023",
+          "verified_at": "data/scenario_definitions.json"
+        },
+        "data/model_family_parameter_map.csv": {
+          "sha256": "eca7781b2b3c59232a0f3e0adb56569fa5a627daa5342b3d07da1f43d1ff13a0",
+          "verified_at": "data/model_family_parameter_map.csv"
+        },
+        "data/parameter_constraints.csv": {
+          "sha256": "b4aa87f4d4972a287ecb68958033694d5535c1e8ddfaf3a46f4d70885d356816",
+          "verified_at": "data/parameter_constraints.csv"
+        },
+        "uv.lock": {
+          "sha256": "5d6561c9a74c38eccbc35c6053c0819d36357f3331305058f863a66bb3ef148e",
+          "verified_at": "uv.lock"
+        }
+      },
+      "output_manifest_sha256": "a6fa23bcc2f58c6ef41ac43c09b6efc822c5ec8ce56d97f0f32f3e6383d128bc",
+      "outputs_verified": 9
+    }
+  ],
+  "cumulative_qualification_counts": {
+    "iterated_deterministic_paths": 2588,
+    "standalone_one_step_fixed_point_checks": 846,
+    "all_deterministic_executions": 3434,
+    "stochastic_scenario_executions": 384,
+    "unique_scenario_restriction_seed_paths": 96,
+    "clarification": "The same 96 path definitions were executed serially and in parallel in each attempt; 384 is not independent Monte Carlo replication. Test-suite invocations are separate."
+  },
+  "accounting_limits": {
+    "iterated_deterministic_paths": 2800,
+    "corrected_all_deterministic_executions": 3600,
+    "stochastic_scenario_executions": 384,
+    "correction": "The 846 standalone algebra checks were initially omitted from the path count. The final protocol corrects accounting without authorizing additional runs.",
+    "previous_closed_production_receipt_usage": 5320368,
+    "previous_production_ceiling": 7100000,
+    "interpretation": "These qualification counts are reported separately from the closed production experiment; they do not reopen it."
+  },
+  "verification": {
+    "combined_tests": {
+      "command": "uv run --locked pytest -q tests/test_recruitment_demography.py tests/test_recruitment_scenarios.py tests/test_common_model.py tests/test_mate_guard.py",
+      "passed": 81,
+      "elapsed_seconds": 0.85
+    },
+    "focused_core_tests": {
+      "command": "uv run --locked pytest -q tests/test_recruitment_demography.py",
+      "passed": 27,
+      "elapsed_seconds": 0.18,
+      "subset_of_combined_suite": true
+    },
+    "test_accounting": "Unit and regression test invocations are recorded separately, including old-kernel checks. No exact simulator-path count is asserted for the pytest suite.",
+    "compilation": {
+      "command": "uv run --locked python -m compileall -q src/galaxias_model/recruitment_demography.py src/galaxias_model/recruitment_scenarios.py scripts/qualify_demographic_repair.py",
+      "passed": true
+    },
+    "portability": {
+      "command": "uv run --locked python scripts/check_portability.py",
+      "git_managed_files_checked": 560,
+      "passed": true
+    },
+    "new_files_lf_only_and_code_without_absolute_home_paths": true,
+    "both_output_manifests_and_input_bindings_reverified": true,
+    "independent_audit": "docs/demographic_repair_audit.md",
+    "independent_verdict": "GO for Fable review; no further kernel fix identified",
+    "figure_command": "Rscript scripts/plot_demographic_repair.R outputs/demographic_repair_20260923/candidate1_amend1 data/demographic_repair_20260923"
+  },
+  "current_source_and_test_hashes": {
+    "src/galaxias_model/recruitment_demography.py": "332f7ab7c5b27abecbbc9dbe8bd4bfd1873e3743d8949fc707f102ee952f3ef5",
+    "src/galaxias_model/recruitment_scenarios.py": "624423c0983441a55d925399444c6a217c20e2f9e4e3b37975e7b803270b528a",
+    "scripts/qualify_demographic_repair.py": "710078f06d6603481434457d1d26845e3a567e174795cf85527e62bf85ba1240",
+    "scripts/plot_demographic_repair.R": "97db69ae966c1e75ed67c712808dd8f3267f976eca42c737e9125317d0f0de16",
+    "tests/test_recruitment_demography.py": "0e243023df6f18ab61f830edeed406f9bb4f1d41509dcda8c1684462f0848092",
+    "tests/test_recruitment_scenarios.py": "0f00e6b231d2273c80e318c2e5ba62c5f229145a8fa3330744eb1b7374cb3e2e",
+    "tests/test_common_model.py": "688cc02bf344198c102093a0c53b27a2c3b7799452d86a77edaaaa6e28d49955",
+    "tests/test_mate_guard.py": "440162e58dc8f6c1f1346d9a9498f7e46841a0d65b8cf4fb95d216f4b9193226",
+    "docs/demographic_repair_protocol.md": "b95b4f9472ac4ded429f00a7d1eafb4cb98c5a273a2ec6ce8e539957c8acbd5e",
+    "docs/demographic_repair_results.md": "68a8a753dca5f4b0dbb957b0dac4bdf89494647567ffda881129f3993d407a1c",
+    "docs/demographic_repair_audit.md": "b8f560893f1ea306d399bcdf33252c8ea74479d5a0826bb090863a5baf0c5f4f"
+  },
+  "compact_artifact_hashes": {
+    "data/demographic_repair_20260923/demographic_repair.pdf": "f387a4c7ad5e7ede116427709a6e6b6b87f9d052034e42add1472949c0cea34c",
+    "data/demographic_repair_20260923/demographic_repair.png": "66a0bd376c572bf1cf55e5bd2ea08268a22edf4ba9dc590062ece99fa5ffc3b7",
+    "data/demographic_repair_20260923/founder_sensitivity_summary.csv": "3823ea13489829c006936100ea0363c8eeacbdd88522ff467c169f4f1086a254",
+    "data/demographic_repair_20260923/neutral_cells.csv": "acfd18f0c775ed4c82c196a6c8965c972b2868456a38bb29fe58e11c7e37ec89",
+    "data/demographic_repair_20260923/neutral_runs.csv": "abf0fc3c7240029ee0b0ec00fb19f26f4cd34599d2471bebb231b6cb1caa6291",
+    "data/demographic_repair_20260923/qualification_amendment1.patch": "83a7491efa3b932b24aadadcaea42e051c780ce5d68a888b70bd30cba36b2379",
+    "data/demographic_repair_20260923/readout.json": "1933f561ab2d10fb8fe71616be4b44c28334fb5e441ebf640ba9b5ff39c0802f"
+  },
+  "remaining_scientific_review": [
+    "Census and maturation approximation",
+    "Effective recruitment and site-specific recruitment-limit priors",
+    "Pooled two-adult reproductive closure",
+    "Normalized spawning quality and upsurge pathways",
+    "Annual founder timing",
+    "Abundance-observation bridge"
+  ],
+  "no_new_search_dispatched": true,
+  "preserved_original_kernels": {
+    "src/galaxias_model/common_model.py": "2031373352dbdb55b30db571dc7b861e67f804fc0b5709ef99233f73e8e463c4",
+    "src/galaxias_model/mate_guard.py": "7da473275457d9970c7b6a748e4ac92043c96ccdd14266142fb6e02827bdb332"
+  },
+  "correspondence": {
+    "thread_id": 31,
+    "last_read_updates_checkpoint": 478,
+    "prior_own_post": 473,
+    "review_handoff": "posted",
+    "review_message_id": 479,
+    "posted_at": "2026-09-23T04:35:37.399497+00:00",
+    "next_substantive_response": "Fable"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "biological_calls": 0,
+  "checked_cross_namespace_collisions": true,
+  "checked_utc": "2026-10-02T01:44:59.239862+00:00",
+  "observation_seed_width_bits": 128,
+  "paired_restrictions_and_removal_accounts": true,
+  "proposal_sha256": "e3d03dd3024ecc0866e8615c5c13f1659be9ffecf7e849690722752682fb7158",
+  "qualification_namespace": "age-lake-refocus-20261002-qualification",
+  "qualification_seed_overlap": 0,
+  "qualification_unique_seeds": 32,
+  "run_namespace": "age-lake-refocus-20261002-gate",
+  "source_rows": 15360,
+  "status": "passed",
+  "training_seed_overlap": 0,
+  "training_unique_seeds": 1920,
+  "unique_parameter_and_process_seeds": 9216
+}

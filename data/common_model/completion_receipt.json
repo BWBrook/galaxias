@@ -1,0 +1,87 @@
+{
+  "status": "complete",
+  "scope": "approved common-model programme through verified synthesis and Fable review handoff",
+  "completed_utc": "2026-09-19T02:34:19.768495+00:00",
+  "protocol_sha256": "c165e25bfa223cbb79ba00fce75f099c13979746b2d516ae06e93af5243879d8",
+  "production_histories": 4048960,
+  "replay_histories": 712000,
+  "conservative_implementation_check_ceiling": 15000,
+  "conservative_total_histories": 4775960,
+  "hard_ceiling": 7100000,
+  "closure_simulations": 0,
+  "independent_results_audit": "conditionally_supported; zero mismatches at tolerance",
+  "substantive_review": {
+    "thread_id": 31,
+    "message_id": 262,
+    "status": "pending Fable response"
+  },
+  "follow_up": {
+    "automation_id": "galaxias-common-model-follow-through",
+    "status": "PAUSED"
+  },
+  "files": {
+    "docs/common_model_results.md": {
+      "bytes": 13272,
+      "sha256": "78db8bcea919079affdc503cf2ba15636818a29713635a05c3f0f44b668faebb"
+    },
+    "docs/common_model_results_audit.md": {
+      "bytes": 8373,
+      "sha256": "3c2b09db0490f1744d697a4d99a4a729260194819e5ffd9f23a9cc40c6c7535e"
+    },
+    "scripts/summarize_common_model_results.py": {
+      "bytes": 4229,
+      "sha256": "5b6f825cccc95d60af7c4e01db4b7336ed165f3347c74a2b91be80a3df9a9406"
+    },
+    "data/common_model/production_verification.json": {
+      "bytes": 2480,
+      "sha256": "ee8894d7ed1e7829f39826f6d4fedd8e856ed4ce27d45f4d3e2e6193fc4b4c3b"
+    },
+    "data/common_model/retrieval_receipt.json": {
+      "bytes": 8358,
+      "sha256": "beb503ca94e44a854da063daf2055cac367cbc6e5f2d6bdd0e06921a9da5bee8"
+    },
+    "data/common_model/results_audit.json": {
+      "bytes": 18431,
+      "sha256": "1c4c5ffb53981f41fc5fb177c3b43332a2f3a117cb5d19297fa7244e9733292b"
+    },
+    "data/common_model/results_summary.json": {
+      "bytes": 2057,
+      "sha256": "561d7cf7fbd50b99c285aeaf390f8742b0c40cb68f7755771e1ec3c27f61748f"
+    },
+    "data/common_model/compatibility_map.csv": {
+      "bytes": 1078571,
+      "sha256": "f0b105003b3f8350500fa575285fb4c26002f123d98307d3888b664b50229825"
+    },
+    "data/common_model/compatibility_primary_counts.csv": {
+      "bytes": 787,
+      "sha256": "ba6f47abdebeeefce1892d77be8df2461e5edc2f16b3518910c1cf29b4f87adc"
+    },
+    "data/common_model/qualified_profile_ranges.csv": {
+      "bytes": 29644,
+      "sha256": "e04408ce88a0a674b9e044bca2e80637f4aaafe0ed9571fc664356897c10474a"
+    },
+    "data/common_model/counterfactual_qualified_profile_ranges.csv": {
+      "bytes": 2214,
+      "sha256": "9a001c8a17b33eef45e3b9531441f1be695290986276a36d0a440dc70b807b67"
+    },
+    "data/common_model/follow_up.json": {
+      "bytes": 621,
+      "sha256": "dc104af759e66e5ad322af3d8981d0a671b5e00306ed0dc55c6cfa187415358a"
+    }
+  },
+  "recomputation_evidence": {
+    "outputs/remote/common_model_20260918/closure_verification/common_results_audit_recompute.py": {
+      "bytes": 28245,
+      "sha256": "b9fe6677551a8ccda9fb2c1f943f60b2aa97fa180dba4441f8ca2c931bea7fd4"
+    },
+    "outputs/remote/common_model_20260918/closure_verification/common_results_audit_recompute.json": {
+      "bytes": 16534,
+      "sha256": "dfacb5524d97300623f9c5f8843687f22d9d1ccc1ca285fff07c3b61164ae94e"
+    },
+    "outputs/remote/common_model_20260918/closure_verification/verify_galaxias_production.py": {
+      "bytes": 8710,
+      "sha256": "9bb93a8570314ef29eab123db54a6ef025e7dbf3e657228f878b647ff12d7e9e"
+    }
+  },
+  "remaining_boundary": "Fable substantive review; no new search, combined arms, hypotheses, commit, push or publication authorised"
+}

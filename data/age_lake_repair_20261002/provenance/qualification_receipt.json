@@ -1,0 +1,19 @@
+{
+  "analysis_metric_rows": 960,
+  "completed_utc": "2026-10-02T01:42:36.375068+00:00",
+  "content_sha256": {
+    "full_histories.jsonl": "81abd6bdcefb1bd6de94193a82a7238186aafe10d8c1e730961bac5cfd233cde",
+    "histories.jsonl": "e6e3657bf96dd5402a32046fcf9779eda68ecb01055cc7b1c6d5d1dc1f77b79e"
+  },
+  "history_status_counts": {
+    "algebraically_infeasible": 16,
+    "complete": 34,
+    "process_infeasible": 30
+  },
+  "nominal_site_histories": 480,
+  "serial_parallel_exact": true,
+  "source_files_verified": 661,
+  "status": "complete",
+  "tests": "26 focused tests",
+  "weighted_score_controls_passed": true
+}

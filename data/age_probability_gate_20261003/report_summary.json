@@ -1,0 +1,712 @@
+{
+  "actual_historical_probability_computed": false,
+  "actual_remaining_evidence_read": false,
+  "all_status_counts": {
+    "UNASSESSABLE": 1033,
+    "UNASSESSABLE_CALIBRATION_PRECISION": 119
+  },
+  "analysis_elapsed_seconds": 117.36062150704674,
+  "future_feasibility_selection": {
+    "bank": {
+      "E_weighted_exclusion_fraction": [
+        0.05168574079388858,
+        0.39426001665704646
+      ],
+      "E_weighted_loss_before_future_exclusion": [
+        0.00010700597249410565,
+        0.539951746049691
+      ],
+      "raw_exclusion_fraction": [
+        0.06451612903225806,
+        0.25
+      ]
+    },
+    "truth": {
+      "E_weighted_exclusion_fraction": [
+        0.05252272935866585,
+        0.4523155540910089
+      ],
+      "E_weighted_loss_before_future_exclusion": [
+        0.0,
+        0.2090106200797848
+      ],
+      "raw_exclusion_fraction": [
+        0.07267950963222417,
+        0.20395550061804696
+      ]
+    }
+  },
+  "generation_elapsed_seconds": 3244.416175768012,
+  "groups": [
+    {
+      "E_only_loss": [
+        0.17237874074535992,
+        0.17237874074535992
+      ],
+      "E_only_loss_high": [
+        0.39723650142288996,
+        0.39723650142288996
+      ],
+      "E_only_loss_low": [
+        0.0011971873409571466,
+        0.0011971873409571466
+      ],
+      "bank_source_ess": [
+        12.410702093345563,
+        12.410702093345563
+      ],
+      "index_stratum": "above_one",
+      "maximum_age": 6,
+      "precision_truth_weight": [
+        0.2020827995041335,
+        0.9318674968863669
+      ],
+      "qualified": 0,
+      "restriction": "R_C",
+      "rows": 72,
+      "status_counts": {
+        "UNASSESSABLE": 72
+      },
+      "truth_source_ess": [
+        18.330099959383272,
+        18.330099959383272
+      ]
+    },
+    {
+      "E_only_loss": [
+        0.3949637916207014,
+        0.3949637916207014
+      ],
+      "E_only_loss_high": [
+        0.7728925895182482,
+        0.7728925895182482
+      ],
+      "E_only_loss_low": [
+        0.039753433830196985,
+        0.039753433830196985
+      ],
+      "bank_source_ess": [
+        5.568013712018979,
+        5.568013712018979
+      ],
+      "index_stratum": "below_one",
+      "maximum_age": 6,
+      "precision_truth_weight": [
+        0.0011927230226461121,
+        0.5804867152969285
+      ],
+      "qualified": 0,
+      "restriction": "R_C",
+      "rows": 72,
+      "status_counts": {
+        "UNASSESSABLE": 72
+      },
+      "truth_source_ess": [
+        8.944730167480538,
+        8.944730167480538
+      ]
+    },
+    {
+      "E_only_loss": [
+        0.00013201802018984068,
+        0.00013201802018984068
+      ],
+      "E_only_loss_high": [
+        1.0,
+        1.0
+      ],
+      "E_only_loss_low": [
+        0.0,
+        0.0
+      ],
+      "bank_source_ess": [
+        12.868932720919029,
+        12.868932720919029
+      ],
+      "index_stratum": "above_one",
+      "maximum_age": 6,
+      "precision_truth_weight": [
+        0.0,
+        0.0
+      ],
+      "qualified": 0,
+      "restriction": "R_H",
+      "rows": 72,
+      "status_counts": {
+        "UNASSESSABLE": 72
+      },
+      "truth_source_ess": [
+        19.910665666084252,
+        19.910665666084252
+      ]
+    },
+    {
+      "E_only_loss": [
+        0.0,
+        0.0
+      ],
+      "E_only_loss_high": [
+        1.0,
+        1.0
+      ],
+      "E_only_loss_low": [
+        0.0,
+        0.0
+      ],
+      "bank_source_ess": [
+        5.097018755901902,
+        5.097018755901902
+      ],
+      "index_stratum": "below_one",
+      "maximum_age": 6,
+      "precision_truth_weight": [
+        0.0,
+        0.0
+      ],
+      "qualified": 0,
+      "restriction": "R_H",
+      "rows": 72,
+      "status_counts": {
+        "UNASSESSABLE": 72
+      },
+      "truth_source_ess": [
+        14.637752706773364,
+        14.637752706773364
+      ]
+    },
+    {
+      "E_only_loss": [
+        0.1181685675462356,
+        0.1181685675462356
+      ],
+      "E_only_loss_high": [
+        0.42049810492411055,
+        0.42049810492411055
+      ],
+      "E_only_loss_low": [
+        0.0003781712478771457,
+        0.0003781712478771457
+      ],
+      "bank_source_ess": [
+        5.228573745934181,
+        5.228573745934181
+      ],
+      "index_stratum": "above_one",
+      "maximum_age": 6,
+      "precision_truth_weight": [
+        0.0334623300226584,
+        0.6096892276365237
+      ],
+      "qualified": 0,
+      "restriction": "R_J",
+      "rows": 72,
+      "status_counts": {
+        "UNASSESSABLE": 72
+      },
+      "truth_source_ess": [
+        6.843239310782513,
+        6.843239310782513
+      ]
+    },
+    {
+      "E_only_loss": [
+        0.1382442079175791,
+        0.1382442079175791
+      ],
+      "E_only_loss_high": [
+        0.9995723032467869,
+        0.9995723032467869
+      ],
+      "E_only_loss_low": [
+        0.00878361723500289,
+        0.00878361723500289
+      ],
+      "bank_source_ess": [
+        2.946992281468702,
+        2.946992281468702
+      ],
+      "index_stratum": "below_one",
+      "maximum_age": 6,
+      "precision_truth_weight": [
+        0.0,
+        0.2988029810466055
+      ],
+      "qualified": 0,
+      "restriction": "R_J",
+      "rows": 72,
+      "status_counts": {
+        "UNASSESSABLE": 72
+      },
+      "truth_source_ess": [
+        2.0639705981148784,
+        2.0639705981148784
+      ]
+    },
+    {
+      "E_only_loss": [
+        0.21951480565078585,
+        0.21951480565078585
+      ],
+      "E_only_loss_high": [
+        1.0,
+        1.0
+      ],
+      "E_only_loss_low": [
+        0.0,
+        0.0
+      ],
+      "bank_source_ess": [
+        8.38909165569658,
+        8.38909165569658
+      ],
+      "index_stratum": "above_one",
+      "maximum_age": 6,
+      "precision_truth_weight": [
+        0.0,
+        0.0
+      ],
+      "qualified": 0,
+      "restriction": "R_T",
+      "rows": 72,
+      "status_counts": {
+        "UNASSESSABLE": 72
+      },
+      "truth_source_ess": [
+        11.487881389017923,
+        11.487881389017923
+      ]
+    },
+    {
+      "E_only_loss": [
+        0.0565702506558959,
+        0.0565702506558959
+      ],
+      "E_only_loss_high": [
+        0.2793524768747138,
+        0.2793524768747138
+      ],
+      "E_only_loss_low": [
+        7.573245208645011e-07,
+        7.573245208645011e-07
+      ],
+      "bank_source_ess": [
+        4.465765022489715,
+        4.465765022489715
+      ],
+      "index_stratum": "below_one",
+      "maximum_age": 6,
+      "precision_truth_weight": [
+        0.12606006343055282,
+        0.9992334876148746
+      ],
+      "qualified": 0,
+      "restriction": "R_T",
+      "rows": 72,
+      "status_counts": {
+        "UNASSESSABLE": 60,
+        "UNASSESSABLE_CALIBRATION_PRECISION": 12
+      },
+      "truth_source_ess": [
+        5.099812953881341,
+        5.099812953881341
+      ]
+    },
+    {
+      "E_only_loss": [
+        0.11830622478803199,
+        0.11830622478803199
+      ],
+      "E_only_loss_high": [
+        0.265069937726036,
+        0.265069937726036
+      ],
+      "E_only_loss_low": [
+        0.02773434696753597,
+        0.02773434696753597
+      ],
+      "bank_source_ess": [
+        14.855485215695406,
+        14.855485215695406
+      ],
+      "index_stratum": "above_one",
+      "maximum_age": 8,
+      "precision_truth_weight": [
+        0.16789702569621257,
+        0.9111486537705911
+      ],
+      "qualified": 0,
+      "restriction": "R_C",
+      "rows": 72,
+      "status_counts": {
+        "UNASSESSABLE": 72
+      },
+      "truth_source_ess": [
+        20.338692904216867,
+        20.338692904216867
+      ]
+    },
+    {
+      "E_only_loss": [
+        0.45000868893660917,
+        0.45000868893660917
+      ],
+      "E_only_loss_high": [
+        0.6347048942027753,
+        0.6347048942027753
+      ],
+      "E_only_loss_low": [
+        0.018496428376840908,
+        0.018496428376840908
+      ],
+      "bank_source_ess": [
+        2.5589528474739573,
+        2.5589528474739573
+      ],
+      "index_stratum": "below_one",
+      "maximum_age": 8,
+      "precision_truth_weight": [
+        0.0068217852881514145,
+        0.7289631601557484
+      ],
+      "qualified": 0,
+      "restriction": "R_C",
+      "rows": 72,
+      "status_counts": {
+        "UNASSESSABLE": 72
+      },
+      "truth_source_ess": [
+        6.631767101870731,
+        6.631767101870731
+      ]
+    },
+    {
+      "E_only_loss": [
+        0.00043619366111061263,
+        0.00043619366111061263
+      ],
+      "E_only_loss_high": [
+        1.0,
+        1.0
+      ],
+      "E_only_loss_low": [
+        0.0,
+        0.0
+      ],
+      "bank_source_ess": [
+        20.73581654843517,
+        20.73581654843517
+      ],
+      "index_stratum": "above_one",
+      "maximum_age": 8,
+      "precision_truth_weight": [
+        0.0,
+        0.0
+      ],
+      "qualified": 0,
+      "restriction": "R_H",
+      "rows": 72,
+      "status_counts": {
+        "UNASSESSABLE": 72
+      },
+      "truth_source_ess": [
+        16.30386179403647,
+        16.30386179403647
+      ]
+    },
+    {
+      "E_only_loss": [
+        0.0008582199506327301,
+        0.0008582199506327301
+      ],
+      "E_only_loss_high": [
+        0.003919398424564754,
+        0.003919398424564754
+      ],
+      "E_only_loss_low": [
+        2.783791869070869e-11,
+        2.783791869070869e-11
+      ],
+      "bank_source_ess": [
+        9.875449859914943,
+        9.875449859914943
+      ],
+      "index_stratum": "below_one",
+      "maximum_age": 8,
+      "precision_truth_weight": [
+        0.8120991358468744,
+        1.0000000000000002
+      ],
+      "qualified": 0,
+      "restriction": "R_H",
+      "rows": 72,
+      "status_counts": {
+        "UNASSESSABLE": 27,
+        "UNASSESSABLE_CALIBRATION_PRECISION": 45
+      },
+      "truth_source_ess": [
+        10.445094652020309,
+        10.445094652020309
+      ]
+    },
+    {
+      "E_only_loss": [
+        0.2997489746860303,
+        0.2997489746860303
+      ],
+      "E_only_loss_high": [
+        0.7359009382160732,
+        0.7359009382160732
+      ],
+      "E_only_loss_low": [
+        0.00806815745163985,
+        0.00806815745163985
+      ],
+      "bank_source_ess": [
+        4.131145894851714,
+        4.131145894851714
+      ],
+      "index_stratum": "above_one",
+      "maximum_age": 8,
+      "precision_truth_weight": [
+        0.033028155373844965,
+        0.9917251076613542
+      ],
+      "qualified": 0,
+      "restriction": "R_J",
+      "rows": 72,
+      "status_counts": {
+        "UNASSESSABLE": 56,
+        "UNASSESSABLE_CALIBRATION_PRECISION": 16
+      },
+      "truth_source_ess": [
+        4.458919059176502,
+        4.458919059176502
+      ]
+    },
+    {
+      "E_only_loss": [
+        0.7628524907857513,
+        0.7628524907857513
+      ],
+      "E_only_loss_high": [
+        0.9999791941247862,
+        0.9999791941247862
+      ],
+      "E_only_loss_low": [
+        0.00033413142822251646,
+        0.00033413142822251646
+      ],
+      "bank_source_ess": [
+        2.593308991691881,
+        2.593308991691881
+      ],
+      "index_stratum": "below_one",
+      "maximum_age": 8,
+      "precision_truth_weight": [
+        0.0,
+        0.38621375114200207
+      ],
+      "qualified": 0,
+      "restriction": "R_J",
+      "rows": 72,
+      "status_counts": {
+        "UNASSESSABLE": 72
+      },
+      "truth_source_ess": [
+        2.1845766046873902,
+        2.1845766046873902
+      ]
+    },
+    {
+      "E_only_loss": [
+        0.005334250679561165,
+        0.005334250679561165
+      ],
+      "E_only_loss_high": [
+        0.024664937498499517,
+        0.024664937498499517
+      ],
+      "E_only_loss_low": [
+        5.644882085017212e-10,
+        5.644882085017212e-10
+      ],
+      "bank_source_ess": [
+        6.116026761891664,
+        6.116026761891664
+      ],
+      "index_stratum": "above_one",
+      "maximum_age": 8,
+      "precision_truth_weight": [
+        0.7091772238954686,
+        0.9999967549393896
+      ],
+      "qualified": 0,
+      "restriction": "R_T",
+      "rows": 72,
+      "status_counts": {
+        "UNASSESSABLE": 42,
+        "UNASSESSABLE_CALIBRATION_PRECISION": 30
+      },
+      "truth_source_ess": [
+        9.579490923297097,
+        9.579490923297097
+      ]
+    },
+    {
+      "E_only_loss": [
+        0.1502053622344103,
+        0.1502053622344103
+      ],
+      "E_only_loss_high": [
+        0.46396867259665986,
+        0.46396867259665986
+      ],
+      "E_only_loss_low": [
+        8.675996672351834e-07,
+        8.675996672351834e-07
+      ],
+      "bank_source_ess": [
+        7.170757616138869,
+        7.170757616138869
+      ],
+      "index_stratum": "below_one",
+      "maximum_age": 8,
+      "precision_truth_weight": [
+        0.07945810704947912,
+        0.9994818238945963
+      ],
+      "qualified": 0,
+      "restriction": "R_T",
+      "rows": 72,
+      "status_counts": {
+        "UNASSESSABLE": 56,
+        "UNASSESSABLE_CALIBRATION_PRECISION": 16
+      },
+      "truth_source_ess": [
+        2.594094775283292,
+        2.594094775283292
+      ]
+    }
+  ],
+  "history_status_counts": {
+    "algebraically_infeasible": 5568,
+    "complete": 15384,
+    "process_infeasible": 28200
+  },
+  "independent_source_ids": 2048,
+  "input_bindings": {
+    "outputs/remote/age_probability_gate_20261003/analysis/analysis_receipt.json": {
+      "bytes": 8905,
+      "sha256": "c2cb7e1280d55947add092d8728aba201cabfdf3578c3996f0f107f9375b5bb6"
+    },
+    "outputs/remote/age_probability_gate_20261003/analysis/conditional_composition.csv": {
+      "bytes": 7971,
+      "sha256": "02c00b49b7dd470d36e1c1138168e6bf8da1f70e83f27b74ddee27cfae69a2af"
+    },
+    "outputs/remote/age_probability_gate_20261003/analysis/future_feasibility_selection.csv": {
+      "bytes": 4953,
+      "sha256": "b3992db47fa5c9aebec23cc9080586481aa56fe96e3196c22ee4e43363b907c1"
+    },
+    "outputs/remote/age_probability_gate_20261003/analysis/gate_metrics.csv": {
+      "bytes": 583914,
+      "sha256": "60c6b1d4f95d701ff37e74eee72d7df081a5ffaf613ddb433066a85d7f63e0e8"
+    },
+    "outputs/remote/age_probability_gate_20261003/execution_receipt.json": {
+      "bytes": 281,
+      "sha256": "758fb786b89d4c24f4fa2b359edeebd745421db2fe703e25a2f9b8eb3392e4fa"
+    },
+    "outputs/remote/age_probability_gate_20261003/gate/run_manifest.json": {
+      "bytes": 12770,
+      "sha256": "9a0f3b9829c7c89f18d6a743c8bcf5ca4c9eb7a713f4147ae9820a9f29c7f5e3"
+    }
+  },
+  "joint_history_attempts": 49152,
+  "nominal_site_history_attempts": 147456,
+  "paired_cell_source_rows": 8192,
+  "primary_calibration_equivalence_pass": 0,
+  "primary_composition": {
+    "bank": {
+      "age1plus10": [
+        0.3533703743637142,
+        0.9836463180464847
+      ],
+      "breeding_pair": [
+        0.4508131748870823,
+        0.983647864348472
+      ],
+      "lake_mean_2002": [
+        75.83167306865491,
+        79483.07291295948
+      ],
+      "largest_source_share": [
+        0.16583863930655393,
+        0.4374392726123316
+      ],
+      "loss_2002": [
+        0.0,
+        0.3949637916207014
+      ],
+      "refuge_mean_2002": [
+        42.84886751352805,
+        1075.4627578321574
+      ],
+      "same_compartment_pair": [
+        0.3533702455126685,
+        0.983625944739559
+      ],
+      "source_ess": [
+        2.946992281468702,
+        12.868932720919029
+      ]
+    },
+    "truth": {
+      "age1plus10": [
+        0.21493150612290177,
+        0.9993232505617049
+      ],
+      "breeding_pair": [
+        0.5535973314991546,
+        0.9999762080801667
+      ],
+      "lake_mean_2002": [
+        772.3067908531036,
+        69487.85122314158
+      ],
+      "largest_source_share": [
+        0.1320785057400186,
+        0.6520338766481962
+      ],
+      "loss_2002": [
+        0.0,
+        0.30512855401271005
+      ],
+      "refuge_mean_2002": [
+        73.90708393910508,
+        1529.8421931390208
+      ],
+      "same_compartment_pair": [
+        0.540521527682811,
+        0.9999762080664778
+      ],
+      "source_ess": [
+        2.0639705981148784,
+        19.910665666084252
+      ]
+    }
+  },
+  "primary_computationally_assessed": 12,
+  "primary_qualified": 0,
+  "primary_status_counts": {
+    "UNASSESSABLE": 564,
+    "UNASSESSABLE_CALIBRATION_PRECISION": 12
+  },
+  "primary_zero_probability_contradictions": 77,
+  "source_bindings": {
+    "scripts/summarize_age_probability_gate.py": {
+      "bytes": 6315,
+      "sha256": "d578939edf3f54a87ba07f5909c284b4af8eb0e3b832816fbe75f0dd55c93cc6"
+    }
+  },
+  "status": "STOP_FINAL_BOUNDED_ATTEMPT",
+  "summarized_utc": "2026-10-03T08:29:41.222242+00:00"
+}

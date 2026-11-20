@@ -1,0 +1,1025 @@
+{
+  "audit_scope": "Independent read-only verification of the frozen age probability gate generation, decision table, natural-prevalence forecast calculations, and provenance bindings.",
+  "caveats": [
+    "The 8,192 cell-source rows reuse each of 2,048 independent nuisance-source IDs across four paired restrictions.",
+    "Calibration here is prospective synthetic-data calibration conditional on the engineering model and E; it is not empirical model adequacy or a historical-fate estimate.",
+    "The deterministic forecast audit is a bounded outcome-independent sample; every E-only probability and every recorded decision status is recomputed.",
+    "The frozen proper_score_contradiction flag covers any nonfinite positive-weight log score, including an undefined forecast or comparator; it is broader than the separate explicit p=0/1 outcome-contradiction flag.",
+    "A qualified primary column would authorize only the separately governed one-time actual-R step; this audit does not consume actual R."
+  ],
+  "checks": {
+    "actual_advance_calls": true,
+    "all_decisions_recomputed": true,
+    "analysis_full_design": true,
+    "analysis_generation_binding": true,
+    "analysis_output_bindings": true,
+    "analysis_source_bindings_current": true,
+    "compact_content_hash": true,
+    "complete_planned_history_universe": true,
+    "decision_component_booleans": true,
+    "e_only_natural_prevalence": true,
+    "earlier_completion_bindings": true,
+    "executed_linked_history_count": true,
+    "execution_plan_bindings_and_budget": true,
+    "fixed_design_manifest": true,
+    "forecast_file_bindings_and_rows": true,
+    "forecast_total_rows": true,
+    "forecast_truth_identity_matches": true,
+    "full_content_hash": true,
+    "full_design": true,
+    "full_history_row_count": true,
+    "generation_complete": true,
+    "generation_output_bindings": true,
+    "generation_source_bindings_current": true,
+    "generation_status_counts": true,
+    "history_identity_unique": true,
+    "history_proposal_ratio_match": true,
+    "history_row_count": true,
+    "history_source_match": true,
+    "history_stratum_match": true,
+    "independent_source_id_count": true,
+    "metric_group_coverage": true,
+    "metric_identity_unique": true,
+    "metric_row_count": true,
+    "no_actual_R_access_evidence": true,
+    "nominal_site_history_count": true,
+    "paired_restriction_source_reuse": true,
+    "paired_source_parameters_identical": true,
+    "primary_metric_row_count": true,
+    "profile_panel_coverage": true,
+    "proposal_binding": true,
+    "proposal_source_bindings_current": true,
+    "receipt_all_status_counts": true,
+    "receipt_global_status": true,
+    "receipt_primary_status_counts": true,
+    "receipt_qualified_columns": true,
+    "remote_source_snapshot_receipt": true,
+    "sampled_forecast_reconstruction": true,
+    "source_balance_by_cell_role": true,
+    "source_balance_by_stratum": true,
+    "source_row_count": true,
+    "source_row_identity_unique": true,
+    "top_level_execution_receipt": true
+  },
+  "decision_counts": {
+    "all_rows": 1152,
+    "all_status_counts": {
+      "UNASSESSABLE": 1033,
+      "UNASSESSABLE_CALIBRATION_PRECISION": 119
+    },
+    "broader_proper_score_only_rows": 0,
+    "broader_proper_score_only_rows_blocking_otherwise_sufficient_computation": 0,
+    "explicit_zero_one_outcome_contradiction_rows": 77,
+    "global_status": "STOP_FINAL_BOUNDED_ATTEMPT",
+    "primary_age6_rows": 576,
+    "primary_status_counts": {
+      "UNASSESSABLE": 564,
+      "UNASSESSABLE_CALIBRATION_PRECISION": 12
+    },
+    "proper_score_contradiction_rows": 77,
+    "qualified_primary_columns": 0
+  },
+  "execution_closure": {
+    "execution_receipt": {
+      "actual_remaining_evidence_read": false,
+      "analysis_status": "STOP_FINAL_BOUNDED_ATTEMPT",
+      "completed_utc": "2026-10-03T08:27:15.493831+00:00",
+      "generation_status": "complete",
+      "nominal_site_histories": 147456,
+      "source_files_reverified": 720,
+      "status": "complete"
+    },
+    "gate_exit_code": "0",
+    "limitation": "The independent audit verifies the mirrored snapshot/receipt identity and all bound gate dependencies; the 720-file end-of-run rehash itself was executed by the frozen remote driver and is evidenced by its receipt rather than repeated against a mutable post-run local worktree.",
+    "source_snapshot_file_count": 720,
+    "source_snapshot_head": "81e37202f6322e37ac7f1b0070402b76b7967a82"
+  },
+  "failures": [],
+  "hash_bindings": {
+    "data/age_lake_repair_20261002/lake_evidence.csv": {
+      "bytes": 2093,
+      "sha256": "6d21136f60601ceeb448bfcd69347e77d6c6ee1af66fdb203c4c9da7e4dd87ee"
+    },
+    "data/age_linked_recovery_20261001/provenance/generation_manifest.json": {
+      "bytes": 12429,
+      "sha256": "3cc63a45a5f8dea1a951993c6ee1b565938aded57435137a6139bd1abb073312"
+    },
+    "data/age_linked_recovery_20261001/retained_forcing_parameters.csv": {
+      "bytes": 11910,
+      "sha256": "0d62ac1b1edb62db886e75eb15446254844c8cb5a2bd4e4e011c30cbbf52d9bd"
+    },
+    "data/age_probability_gate_20261003/proposal.json": {
+      "bytes": 1263951,
+      "sha256": "9a253bf749abc5c64ed2c507c3985ce093d4df889405b85f28078b0eaa580ce6"
+    },
+    "data/age_probability_gate_20261003/provenance/cross_platform_qualification.json": {
+      "bytes": 1064,
+      "sha256": "59c2f9cab60a1b19bd6f78304a09a769ab362b07c845f138d38cca34dbb62a9c"
+    },
+    "data/age_probability_gate_20261003/provenance/execution_plan.json": {
+      "bytes": 1569,
+      "sha256": "e9c76b38b9f60ec7b7e98740a3962e17ee195b0b0f753629840a4b116355190a"
+    },
+    "data/age_probability_gate_20261003/provenance/qualification_receipt.json": {
+      "bytes": 579,
+      "sha256": "5f4844ffef8e007d5d6e4c726a1e278ed592a86e7ca7ed0f2c5549876e163283"
+    },
+    "data/age_probability_gate_20261003/provenance/source_snapshot.json": {
+      "bytes": 124227,
+      "sha256": "2dfd44484f71c5688776ba8cb1a28fb70bcf91a009a6f3ab47bf7b51fb2962ee"
+    },
+    "data/age_structured_design_20260929/lake_figure6_digitised.csv": {
+      "bytes": 1135,
+      "sha256": "91ce060c1c2c549563e3ab07f31864b2a3fff433c411ac02f483761463af07cb"
+    },
+    "data/age_structured_design_20260929/scenarios.json": {
+      "bytes": 6951,
+      "sha256": "b152d1c9501512b54d7aff444bc342aee785886fd6fa8158dd3976e919df83e0"
+    },
+    "docs/age_historical_refocus_protocol.md": {
+      "bytes": 13860,
+      "sha256": "0b257922f5f7de72fa9c2a033fae0ac3c89b72e0b0e5d0da69f2db015adb4d53"
+    },
+    "docs/age_linked_recovery_protocol.md": {
+      "bytes": 13689,
+      "sha256": "89ec0475b008c5fd9bf7c176ae260aed5dec82d9604cef2410a7c3b731067364"
+    },
+    "docs/age_probability_gate_protocol.md": {
+      "bytes": 13469,
+      "sha256": "86f1c021951ad0c305a19dc959814f9e6495cde8bd437fd115e37854acb8923e"
+    },
+    "docs/age_structured_protocol_candidate2.md": {
+      "bytes": 16967,
+      "sha256": "53f4c50bbd0c3be12f4909818fc720d576898c21e281f17414c2cdb60ded8877"
+    },
+    "outputs/remote/age_lake_refocus_20261002/gate/full_histories.jsonl.gz": {
+      "bytes": 339066218,
+      "sha256": "5fcec6815578f166055de0a179d9a89fd94fd42db34b8a4a65ce4ba8cb4f33f5"
+    },
+    "outputs/remote/age_lake_refocus_20261002/gate/histories.jsonl.gz": {
+      "bytes": 6444552,
+      "sha256": "d38ffe64ca87091c9bbcc9e55214fa8203896cfd97ac1d8b968ff05effec1de5"
+    },
+    "outputs/remote/age_lake_refocus_20261002/gate/run_manifest.json": {
+      "bytes": 13842,
+      "sha256": "44fb17833d70888fb9ae747ee10a64ecc5a3185aa3c4160050c619d7563f024b"
+    },
+    "outputs/remote/age_lake_refocus_20261002/gate/source_banks.jsonl": {
+      "bytes": 35618892,
+      "sha256": "8e5a313d035d35425e02fa14c5ae39656ed975b05bb126d905199cd23b932388"
+    },
+    "outputs/remote/age_lake_refocus_20261002/gate/source_support.csv": {
+      "bytes": 13038,
+      "sha256": "2aa4bd7108ae2ee3addd9f2827f5d2d9e866ebda40bc8b9c809a0e5161fb075a"
+    },
+    "outputs/remote/age_linked_recovery_20261001/gate/full_histories.jsonl.gz": {
+      "bytes": 72557949,
+      "sha256": "339a288f2b3efe788b82c30f65f35107a8d6f401f8582cb18d56e66a09501747"
+    },
+    "outputs/remote/age_linked_recovery_20261001/gate/histories.jsonl.gz": {
+      "bytes": 1147580,
+      "sha256": "92252d6490260124e638cc8f6dcb4dfbdd8b1d603a656b208d37a115146dbb21"
+    },
+    "outputs/remote/age_linked_recovery_20261001/gate/source_banks.jsonl": {
+      "bytes": 3557208,
+      "sha256": "eb670f40682eb7ba9cf5e0fd993cf62d432b202bb642bfa7dc8e52ba2e622fce"
+    },
+    "outputs/remote/age_linked_recovery_20261001/gate/source_support.csv": {
+      "bytes": 12830,
+      "sha256": "c566944a23ae4753c3d2c0ce35c2b5b3f3e89a1299a79e27b717c2265af506cd"
+    },
+    "outputs/remote/age_probability_gate_20261003/analysis/analysis_receipt.json": {
+      "bytes": 8905,
+      "sha256": "c2cb7e1280d55947add092d8728aba201cabfdf3578c3996f0f107f9375b5bb6"
+    },
+    "outputs/remote/age_probability_gate_20261003/analysis/conditional_composition.csv": {
+      "bytes": 7971,
+      "sha256": "02c00b49b7dd470d36e1c1138168e6bf8da1f70e83f27b74ddee27cfae69a2af"
+    },
+    "outputs/remote/age_probability_gate_20261003/analysis/forecasts_6_R_C_above_one.jsonl.gz": {
+      "bytes": 3329616,
+      "sha256": "b4dc23ae7deb8dffe41495c2e93388e9c57ec09f0cb6255fb4f945c06f6564d4"
+    },
+    "outputs/remote/age_probability_gate_20261003/analysis/forecasts_6_R_C_below_one.jsonl.gz": {
+      "bytes": 1841900,
+      "sha256": "0cea4390b068eb5dd4db9380165460a091e60a308aa5d2a2b9a129ddc17ab77f"
+    },
+    "outputs/remote/age_probability_gate_20261003/analysis/forecasts_6_R_H_above_one.jsonl.gz": {
+      "bytes": 3855766,
+      "sha256": "fd0dd4ad00984e2e4f541562bef78a833b2dd3b3cdcb8f929edce91775cac102"
+    },
+    "outputs/remote/age_probability_gate_20261003/analysis/forecasts_6_R_H_below_one.jsonl.gz": {
+      "bytes": 1585139,
+      "sha256": "a50bb06da9cd5dd31aa86aacbe5674423c3d9b0134c9a8d85757d1d078219727"
+    },
+    "outputs/remote/age_probability_gate_20261003/analysis/forecasts_6_R_J_above_one.jsonl.gz": {
+      "bytes": 1290552,
+      "sha256": "6a2f0d457ccad28cbee95f28e40ad2480de2abb4bcc79e23aa1bd9c18dd37106"
+    },
+    "outputs/remote/age_probability_gate_20261003/analysis/forecasts_6_R_J_below_one.jsonl.gz": {
+      "bytes": 400449,
+      "sha256": "3a2dbc08983d830fe2c4ed9e25838ac9fb9ebfe5f2fbdea7b273481a6d3945f6"
+    },
+    "outputs/remote/age_probability_gate_20261003/analysis/forecasts_6_R_T_above_one.jsonl.gz": {
+      "bytes": 2048983,
+      "sha256": "25b4c4bfd0c544eb2d6d4662ee9990fd900a28c5d9ebaf5e8beb71563d002e42"
+    },
+    "outputs/remote/age_probability_gate_20261003/analysis/forecasts_6_R_T_below_one.jsonl.gz": {
+      "bytes": 1119456,
+      "sha256": "3933db1e602502e15210c42ab9047a9bfabbc3acb798f3fa4061366f69d00514"
+    },
+    "outputs/remote/age_probability_gate_20261003/analysis/forecasts_8_R_C_above_one.jsonl.gz": {
+      "bytes": 3286848,
+      "sha256": "d563970839b4a950cbb5731746d1236300ba4cf9915f9a03a6e7fcfaf7dd63e7"
+    },
+    "outputs/remote/age_probability_gate_20261003/analysis/forecasts_8_R_C_below_one.jsonl.gz": {
+      "bytes": 1611161,
+      "sha256": "648e97e281dd58c781a17875480c181a9aa54bdaa3f223e8576a1262177fee20"
+    },
+    "outputs/remote/age_probability_gate_20261003/analysis/forecasts_8_R_H_above_one.jsonl.gz": {
+      "bytes": 3815459,
+      "sha256": "d01e3d1cbd79bad69938bc77e4701aab13bc1e32ffbab2f2a5953bbcc736b8dd"
+    },
+    "outputs/remote/age_probability_gate_20261003/analysis/forecasts_8_R_H_below_one.jsonl.gz": {
+      "bytes": 2592313,
+      "sha256": "b01c9308de70ab73a2b6c93fec2cfb879148c7011c0a3445725e56d4667d35f3"
+    },
+    "outputs/remote/age_probability_gate_20261003/analysis/forecasts_8_R_J_above_one.jsonl.gz": {
+      "bytes": 1294370,
+      "sha256": "9acd9ac2842f62d2712c9879b1a8d6ddb1c0fed8ef7222ca24a9bcf8649103d2"
+    },
+    "outputs/remote/age_probability_gate_20261003/analysis/forecasts_8_R_J_below_one.jsonl.gz": {
+      "bytes": 325466,
+      "sha256": "f2e224416a10c7f3d04f548135bbfb85b2501b3cd9dec541b1d65388e5d2c31b"
+    },
+    "outputs/remote/age_probability_gate_20261003/analysis/forecasts_8_R_T_above_one.jsonl.gz": {
+      "bytes": 3009828,
+      "sha256": "a181aa60ffb1203b4ad7657afd0bf003389f312746c5ad4105047f2659db5010"
+    },
+    "outputs/remote/age_probability_gate_20261003/analysis/forecasts_8_R_T_below_one.jsonl.gz": {
+      "bytes": 648016,
+      "sha256": "5486bfe99233d7e18beda8d6baa0303071f5bce5957f9b1eb1548e84c4e8c436"
+    },
+    "outputs/remote/age_probability_gate_20261003/analysis/future_feasibility_selection.csv": {
+      "bytes": 4953,
+      "sha256": "b3992db47fa5c9aebec23cc9080586481aa56fe96e3196c22ee4e43363b907c1"
+    },
+    "outputs/remote/age_probability_gate_20261003/analysis/gate_metrics.csv": {
+      "bytes": 583914,
+      "sha256": "60c6b1d4f95d701ff37e74eee72d7df081a5ffaf613ddb433066a85d7f63e0e8"
+    },
+    "outputs/remote/age_probability_gate_20261003/analysis/reliability.csv": {
+      "bytes": 747977,
+      "sha256": "bad36e37bb15de8b503b55d586ea15a8c373efa1320f4cfcbfc2c88f30b523c5"
+    },
+    "outputs/remote/age_probability_gate_20261003/execution_receipt.json": {
+      "bytes": 281,
+      "sha256": "758fb786b89d4c24f4fa2b359edeebd745421db2fe703e25a2f9b8eb3392e4fa"
+    },
+    "outputs/remote/age_probability_gate_20261003/gate/full_histories.jsonl.gz": {
+      "bytes": 519536854,
+      "sha256": "1e812169124a75e545ff7fb8f72fe82802519fded916c9f481ab06f1c034278b"
+    },
+    "outputs/remote/age_probability_gate_20261003/gate/histories.jsonl.gz": {
+      "bytes": 9835965,
+      "sha256": "9107ae8c2f264d133f5f93c6726695b22bef89fb828ea4acb3f9a645d6725a79"
+    },
+    "outputs/remote/age_probability_gate_20261003/gate/run_manifest.json": {
+      "bytes": 12770,
+      "sha256": "9a0f3b9829c7c89f18d6a743c8bcf5ca4c9eb7a713f4147ae9820a9f29c7f5e3"
+    },
+    "outputs/remote/age_probability_gate_20261003/gate/source_banks.jsonl": {
+      "bytes": 19109612,
+      "sha256": "fb09885967066be5d8db8fd74d90387d10a0012fad6254b1d5b532e935df2db1"
+    },
+    "outputs/remote/age_probability_gate_20261003/gate_exit_code.txt": {
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "outputs/remote/age_probability_gate_20261003/source_snapshot.json": {
+      "bytes": 124227,
+      "sha256": "2dfd44484f71c5688776ba8cb1a28fb70bcf91a009a6f3ab47bf7b51fb2962ee"
+    },
+    "pyproject.toml": {
+      "bytes": 711,
+      "sha256": "50ad878825d26c693c7ede8fc97b7c2068c69594b924e1095772a7c48c374d9d"
+    },
+    "scripts/analyze_age_probability_gate.py": {
+      "bytes": 24376,
+      "sha256": "cdf34f653e59ece082dfcb8ba24aaff0ad7b38608edcf153d7c73330255cd372"
+    },
+    "scripts/analyze_age_recovery.py": {
+      "bytes": 46083,
+      "sha256": "29eb47b313e0552fbe93441fb242761439c0b4157a07e05c6b711b94f33551a8"
+    },
+    "scripts/run_age_historical_refocus.py": {
+      "bytes": 20297,
+      "sha256": "f99814ea5ee92e1d484e447f06621705acbb6d5222efb41d74bc7ff13d75b397"
+    },
+    "scripts/run_age_probability_gate.py": {
+      "bytes": 18930,
+      "sha256": "e06349ad0b03311c489a97122dcee56108bb4e881f3a5fb2d2a934ffc8af93b6"
+    },
+    "scripts/run_age_recovery.py": {
+      "bytes": 13645,
+      "sha256": "23e21ef08c02e12999a730163af55ccb9a73197212bd9db3b452cf8c78d75696"
+    },
+    "src/galaxias_model/__init__.py": {
+      "bytes": 2703,
+      "sha256": "141b5bf6770cb39fc59a0b3173ad1f361a3261daea1b44e26c9b6a13e20a6409"
+    },
+    "src/galaxias_model/abundance_detection.py": {
+      "bytes": 5636,
+      "sha256": "9511a6381279d56fe884c87343cb768fb39200e8dd73b469369805e890edc18a"
+    },
+    "src/galaxias_model/age_demography.py": {
+      "bytes": 30562,
+      "sha256": "a8d97780ce6b9f685e9525d38681cee6f1be6dd988c3d0df747429966c64047c"
+    },
+    "src/galaxias_model/age_historical_refocus.py": {
+      "bytes": 26523,
+      "sha256": "76af96441b32e407aa61c2ec82c1cd6d591e13badf3c33fc6ec8376cc9c44672"
+    },
+    "src/galaxias_model/age_joint_proposal.py": {
+      "bytes": 11047,
+      "sha256": "5941e156853694ebcfe3f4827da9d72ff449a40ff6fa7b678a2d875813797d36"
+    },
+    "src/galaxias_model/age_observation.py": {
+      "bytes": 5314,
+      "sha256": "eef2649598916f1ccfaec68954f3d21f1126531186e4372083ae599eaa778c96"
+    },
+    "src/galaxias_model/age_probability_observation.py": {
+      "bytes": 15280,
+      "sha256": "00d266f08a3126f96bba5b0665c7c7d9f2260ec03dea540945935463caa232c3"
+    },
+    "src/galaxias_model/age_probability_scores.py": {
+      "bytes": 18487,
+      "sha256": "65378e67ec42369bb2ab2436b72b2f5629b25ab9b3b75e6930c0ebd8089afc66"
+    },
+    "src/galaxias_model/age_recovery_observation.py": {
+      "bytes": 10927,
+      "sha256": "39a0b364eb412ed0c102f8271251baa3d142c28f0da006c9ac673a3f71d8a8f9"
+    },
+    "src/galaxias_model/age_recovery_scores.py": {
+      "bytes": 26149,
+      "sha256": "92384464a0ec7e87b5ba7270fc39a188d555ed9c69a8179bd0cf8f7638d85b97"
+    },
+    "src/galaxias_model/age_refocus_scores.py": {
+      "bytes": 23439,
+      "sha256": "8bd9366271aec50b6162a8dbd98d7922be8088e8a8dfa6cbd77ffcaf5dcf0c53"
+    },
+    "src/galaxias_model/age_runner.py": {
+      "bytes": 42079,
+      "sha256": "877fc5748c02c7da05bb8e68fe09eab0e3e53d61759ee6044cdcb1a963a49048"
+    },
+    "src/galaxias_model/age_scenarios.py": {
+      "bytes": 5405,
+      "sha256": "4110d13a37c93737bdc248edfc78cdc385eea216d08deb3bdcfd315205c3e72c"
+    },
+    "src/galaxias_model/age_sources.py": {
+      "bytes": 6592,
+      "sha256": "d0a406180116345c1d77319b7903d1f0cb2e0f8c23c356f57b495fdb8c0f8ff1"
+    },
+    "src/galaxias_model/calibration.py": {
+      "bytes": 43916,
+      "sha256": "74121bb980fc876a6d2fad45aa0b158b3b4c31d43621170ca6ddeb31ba6f26cf"
+    },
+    "src/galaxias_model/common_model.py": {
+      "bytes": 29022,
+      "sha256": "2031373352dbdb55b30db571dc7b861e67f804fc0b5709ef99233f73e8e463c4"
+    },
+    "src/galaxias_model/conditional_observation.py": {
+      "bytes": 4738,
+      "sha256": "807206e3de815d2f3a7bf33f4838b232331b9b1daa6e03783bc4d4b557b82ed1"
+    },
+    "src/galaxias_model/io.py": {
+      "bytes": 20269,
+      "sha256": "97f75f0d10d763aa8004dba2bf17868205ab9735620275d40f29cab5003e85a4"
+    },
+    "src/galaxias_model/mate_guard.py": {
+      "bytes": 30236,
+      "sha256": "7da473275457d9970c7b6a748e4ac92043c96ccdd14266142fb6e02827bdb332"
+    },
+    "src/galaxias_model/mechanism_interpretation.py": {
+      "bytes": 58805,
+      "sha256": "e17efa13dd4a7db2f3a32cdf579fdc4c251bbc7f5c1cb08c07e7a0656e52fb9c"
+    },
+    "src/galaxias_model/module5_counterfactual.py": {
+      "bytes": 16297,
+      "sha256": "e8b2fad5203ff2da9396b629e0338d1a5b89cbd39508f457449a9cef6f216bd8"
+    },
+    "src/galaxias_model/module5_execution_inspect.py": {
+      "bytes": 10324,
+      "sha256": "158f971e0cd80b20fd86f95f053e8907aaaf3f249ece09261e7946011b1ed359"
+    },
+    "src/galaxias_model/module5_factorial_extension.py": {
+      "bytes": 21099,
+      "sha256": "e879bf5cccdb2dcc0e4f21af22c922e9a2a134c47a0b15fbfd330ed3da266398"
+    },
+    "src/galaxias_model/module5_factorial_extension_audit.py": {
+      "bytes": 24457,
+      "sha256": "227847399d2afe2e7723e3164fafabb00b2de9855550900852a95ed80126a04e"
+    },
+    "src/galaxias_model/module5_interaction_stability.py": {
+      "bytes": 27547,
+      "sha256": "ca0578c5553344c8aebf092800cf693aa035c42202f6ad1600887ba68d5f1719"
+    },
+    "src/galaxias_model/module5_output_checks.py": {
+      "bytes": 7548,
+      "sha256": "417219f3be0ea6258933cd45f66bd813162e1f2e62ffafef1824191a7a6551fd"
+    },
+    "src/galaxias_model/module5_partitions.py": {
+      "bytes": 2628,
+      "sha256": "c64591453594c4bf0e7345ba5004416ed327379e37dea94ee0cd4552b4563237"
+    },
+    "src/galaxias_model/module5_production_summary.py": {
+      "bytes": 21260,
+      "sha256": "e99a2c76c1cea4cd6484a5b2cbd8fa291eff8a2c10446246b4f5c75438c31014"
+    },
+    "src/galaxias_model/module5_proposals.py": {
+      "bytes": 6830,
+      "sha256": "505c1ba03a2af5e28039e223aaab5c3cc4064c9f90fab7378602e21a23dd883b"
+    },
+    "src/galaxias_model/module5_rehearsal.py": {
+      "bytes": 30481,
+      "sha256": "22b42cfffc65d71c20e0446bd7c1b697d86e52e9cd84a931a6fe163985847936"
+    },
+    "src/galaxias_model/module5_smoke_inspect.py": {
+      "bytes": 6557,
+      "sha256": "233a58f6c734724f065de8f58f8e806fc3d8e51d0db80dd00e3c16a95a5721fd"
+    },
+    "src/galaxias_model/observation.py": {
+      "bytes": 12309,
+      "sha256": "1a48a493cc656610a752d91676f3e8858fa4f46bc92c0810a2b522cb266b1ef4"
+    },
+    "src/galaxias_model/observation_repair.py": {
+      "bytes": 5790,
+      "sha256": "9dc9c69cf11c59c54c5c8433192baadd733e3b60ace96ed515e906d92d993fd2"
+    },
+    "src/galaxias_model/recruitment_demography.py": {
+      "bytes": 14554,
+      "sha256": "332f7ab7c5b27abecbbc9dbe8bd4bfd1873e3743d8949fc707f102ee952f3ef5"
+    },
+    "src/galaxias_model/recruitment_scenarios.py": {
+      "bytes": 6574,
+      "sha256": "624423c0983441a55d925399444c6a217c20e2f9e4e3b37975e7b803270b528a"
+    },
+    "src/galaxias_model/review.py": {
+      "bytes": 35054,
+      "sha256": "822d7e638cce0f026a8fbe859d278afd9d594a6675fee89c1582a0ac010a72b0"
+    },
+    "src/galaxias_model/sampling.py": {
+      "bytes": 9828,
+      "sha256": "1397b21a89767cc88069712ee012f072bd7f28cb69e302efa6eb882b81f4c613"
+    },
+    "src/galaxias_model/scoring.py": {
+      "bytes": 32295,
+      "sha256": "f94774169a2bc1aa3213a98a5004967210f7183dade82f80ee461318df937844"
+    },
+    "src/galaxias_model/simulation.py": {
+      "bytes": 18720,
+      "sha256": "531e1c597b2ada9a09c1fb47b462098149e3fe943aa37d96cde1cfe713d700c3"
+    },
+    "src/galaxias_model/types.py": {
+      "bytes": 5880,
+      "sha256": "bbb91a0a1e344c7e1b97d5ef5c10ce943dccf6789fc4924eb0229342dd0a6d75"
+    },
+    "uv.lock": {
+      "bytes": 60617,
+      "sha256": "5d6561c9a74c38eccbc35c6053c0819d36357f3331305058f863a66bb3ef148e"
+    }
+  },
+  "no_actual_R_access": {
+    "analysis_receipt_actual_historical_probability_computed": false,
+    "analysis_receipt_actual_remaining_evidence_read": false,
+    "bound_actual_data_paths": [],
+    "bound_python_sources_naming_actual_target": [],
+    "executable_source_names_R_actual": false,
+    "limitation": "This verifies frozen source and receipt evidence, path bindings, and synthetic forecast structure; it is not an operating-system file-access trace.",
+    "proposal_fit_excludes_terminal_and_remaining_evidence": true
+  },
+  "previous_completion_verification": {
+    "archives": [
+      {
+        "canonical": "data/age_linked_recovery_20261001/provenance/generation_manifest.json",
+        "manifest": {
+          "bytes": 12429,
+          "sha256": "3cc63a45a5f8dea1a951993c6ee1b565938aded57435137a6139bd1abb073312"
+        },
+        "outputs": {
+          "full_histories.jsonl.gz": {
+            "bytes": 72557949,
+            "sha256": "339a288f2b3efe788b82c30f65f35107a8d6f401f8582cb18d56e66a09501747"
+          },
+          "histories.jsonl.gz": {
+            "bytes": 1147580,
+            "sha256": "92252d6490260124e638cc8f6dcb4dfbdd8b1d603a656b208d37a115146dbb21"
+          },
+          "source_banks.jsonl": {
+            "bytes": 3557208,
+            "sha256": "eb670f40682eb7ba9cf5e0fd993cf62d432b202bb642bfa7dc8e52ba2e622fce"
+          },
+          "source_support.csv": {
+            "bytes": 12830,
+            "sha256": "c566944a23ae4753c3d2c0ce35c2b5b3f3e89a1299a79e27b717c2265af506cd"
+          }
+        },
+        "path": "outputs/remote/age_linked_recovery_20261001/gate",
+        "run_namespace": "gate-20261001"
+      },
+      {
+        "canonical": "outputs/remote/age_lake_refocus_20261002/gate/run_manifest.json",
+        "manifest": {
+          "bytes": 13842,
+          "sha256": "44fb17833d70888fb9ae747ee10a64ecc5a3185aa3c4160050c619d7563f024b"
+        },
+        "outputs": {
+          "full_histories.jsonl.gz": {
+            "bytes": 339066218,
+            "sha256": "5fcec6815578f166055de0a179d9a89fd94fd42db34b8a4a65ce4ba8cb4f33f5"
+          },
+          "histories.jsonl.gz": {
+            "bytes": 6444552,
+            "sha256": "d38ffe64ca87091c9bbcc9e55214fa8203896cfd97ac1d8b968ff05effec1de5"
+          },
+          "source_banks.jsonl": {
+            "bytes": 35618892,
+            "sha256": "8e5a313d035d35425e02fa14c5ae39656ed975b05bb126d905199cd23b932388"
+          },
+          "source_support.csv": {
+            "bytes": 13038,
+            "sha256": "2aa4bd7108ae2ee3addd9f2827f5d2d9e866ebda40bc8b9c809a0e5161fb075a"
+          }
+        },
+        "path": "outputs/remote/age_lake_refocus_20261002/gate",
+        "run_namespace": "age-lake-refocus-20261002-gate"
+      }
+    ],
+    "fit_excludes_terminal_and_remaining_evidence": true
+  },
+  "primary_decision_diagnostics": {
+    "assessed_bank_source_ess": [
+      4.465765022489715
+    ],
+    "assessed_calibration_high_range": [
+      0.6816375995854743,
+      0.7229748923332341
+    ],
+    "assessed_calibration_low_range": [
+      -0.05329851779238458,
+      -5.113784952059188e-06
+    ],
+    "assessed_truth_source_ess": [
+      5.099812953881341
+    ],
+    "broader_proper_score_only_rows": 0,
+    "computationally_assessed_cell_strata": [
+      "R_T:below_one"
+    ],
+    "computationally_assessed_rows": 12,
+    "explicit_zero_one_outcome_contradiction_rows": 77,
+    "proper_score_contradiction_rows": 77,
+    "supported_truth_weight_range": [
+      0.9999999999999998,
+      1.0000000000000002
+    ]
+  },
+  "probability_reconstruction": {
+    "aggregation": "six planned replicates averaged within every planned bank source; failed attempts/sources retained as zero contributions",
+    "e_only_groups": 16,
+    "likelihoods": "independent NB(size=69) late-count PMF plus Bernoulli-Poisson or integrated shared Gamma(1,1) visit-quality binary law",
+    "sample_rows": [
+      {
+        "absolute_error": 1.5670109524204556e-20,
+        "cell_id": "A6_legacy_range_sensitivity_primary_plan_31_early_releases_R_H",
+        "generator": "poisson",
+        "index_stratum": "above_one",
+        "planned_bank_sources": 256,
+        "profile_id": "K10_rho0.25_q0.01_base",
+        "recomputed_probability": 1.909767143649923e-06,
+        "replicate": 5,
+        "saved_probability": 1.909767143649939e-06,
+        "source_id": "age-probability-20261003-gate-v2:truth_A6_legacy_range_sensitivity_0499",
+        "zero_contribution_bank_sources": 47
+      },
+      {
+        "absolute_error": 9.503308717584377e-30,
+        "cell_id": "A6_legacy_range_sensitivity_primary_plan_31_early_releases_R_T",
+        "generator": "gamma_binary_quality",
+        "index_stratum": "above_one",
+        "planned_bank_sources": 256,
+        "profile_id": "K5_rho1_q1_base",
+        "recomputed_probability": 1.0122798892322038e-16,
+        "replicate": 3,
+        "saved_probability": 1.0122798892321088e-16,
+        "source_id": "age-probability-20261003-gate-v2:truth_A6_legacy_range_sensitivity_0205",
+        "zero_contribution_bank_sources": 145
+      },
+      {
+        "absolute_error": 1.215492279309921e-19,
+        "cell_id": "A8_legacy_range_sensitivity_primary_plan_31_early_releases_R_H",
+        "generator": "poisson",
+        "index_stratum": "above_one",
+        "planned_bank_sources": 256,
+        "profile_id": "K5_rho4_q0.01_base",
+        "recomputed_probability": 2.8523323726032326e-06,
+        "replicate": 3,
+        "saved_probability": 2.852332372603354e-06,
+        "source_id": "age-probability-20261003-gate-v2:truth_A8_legacy_range_sensitivity_0053",
+        "zero_contribution_bank_sources": 47
+      },
+      {
+        "absolute_error": 4.163336342344337e-16,
+        "cell_id": "A8_legacy_range_sensitivity_primary_plan_31_early_releases_R_C",
+        "generator": "poisson",
+        "index_stratum": "above_one",
+        "planned_bank_sources": 256,
+        "profile_id": "K2.5_rho0.25_q1_base",
+        "recomputed_probability": 0.14008837196143098,
+        "replicate": 3,
+        "saved_probability": 0.14008837196143056,
+        "source_id": "age-probability-20261003-gate-v2:truth_A8_legacy_range_sensitivity_0121",
+        "zero_contribution_bank_sources": 90
+      },
+      {
+        "absolute_error": 1.0443155233481974e-23,
+        "cell_id": "A8_legacy_range_sensitivity_primary_plan_31_early_releases_R_H",
+        "generator": "gamma_binary_quality",
+        "index_stratum": "below_one",
+        "planned_bank_sources": 256,
+        "profile_id": "K10_rho4_q0.01_base",
+        "recomputed_probability": 4.838153935966372e-10,
+        "replicate": 0,
+        "saved_probability": 4.838153935966267e-10,
+        "source_id": "age-probability-20261003-gate-v2:truth_A8_legacy_range_sensitivity_0206",
+        "zero_contribution_bank_sources": 123
+      },
+      {
+        "absolute_error": 0.0,
+        "cell_id": "A6_legacy_range_sensitivity_primary_plan_31_early_releases_R_H",
+        "generator": "gamma_binary_quality",
+        "index_stratum": "below_one",
+        "planned_bank_sources": 256,
+        "profile_id": "K2.5_rho4_q1_base",
+        "recomputed_probability": 0.0,
+        "replicate": 0,
+        "saved_probability": 0.0,
+        "source_id": "age-probability-20261003-gate-v2:truth_A6_legacy_range_sensitivity_0080",
+        "zero_contribution_bank_sources": 124
+      },
+      {
+        "absolute_error": 7.968885967768458e-18,
+        "cell_id": "A8_legacy_range_sensitivity_primary_plan_31_early_releases_R_H",
+        "generator": "poisson",
+        "index_stratum": "above_one",
+        "planned_bank_sources": 256,
+        "profile_id": "K5_rho1_q0.01_base",
+        "recomputed_probability": 0.0004758451677789764,
+        "replicate": 5,
+        "saved_probability": 0.0004758451677789684,
+        "source_id": "age-probability-20261003-gate-v2:truth_A8_legacy_range_sensitivity_0495",
+        "zero_contribution_bank_sources": 47
+      },
+      {
+        "absolute_error": 0.0,
+        "cell_id": "A6_legacy_range_sensitivity_primary_plan_31_early_releases_R_H",
+        "generator": "gamma_binary_quality",
+        "index_stratum": "below_one",
+        "planned_bank_sources": 256,
+        "profile_id": "K20_rho0.25_q0.01_base",
+        "recomputed_probability": 0.0,
+        "replicate": 3,
+        "saved_probability": 0.0,
+        "source_id": "age-probability-20261003-gate-v2:truth_A6_legacy_range_sensitivity_0420",
+        "zero_contribution_bank_sources": 124
+      },
+      {
+        "absolute_error": 1.5829351718288365e-17,
+        "cell_id": "A8_legacy_range_sensitivity_primary_plan_31_early_releases_R_C",
+        "generator": "gamma_binary_quality",
+        "index_stratum": "above_one",
+        "planned_bank_sources": 256,
+        "profile_id": "K5_rho1_q0.1_base",
+        "recomputed_probability": 0.0004388957324831099,
+        "replicate": 2,
+        "saved_probability": 0.0004388957324831257,
+        "source_id": "age-probability-20261003-gate-v2:truth_A8_legacy_range_sensitivity_0177",
+        "zero_contribution_bank_sources": 91
+      },
+      {
+        "absolute_error": 3.5388358909926865e-16,
+        "cell_id": "A6_legacy_range_sensitivity_primary_plan_31_early_releases_R_C",
+        "generator": "gamma_binary_quality",
+        "index_stratum": "below_one",
+        "planned_bank_sources": 256,
+        "profile_id": "K20_rho1_q1_base",
+        "recomputed_probability": 0.03201681025480872,
+        "replicate": 2,
+        "saved_probability": 0.03201681025480837,
+        "source_id": "age-probability-20261003-gate-v2:truth_A6_legacy_range_sensitivity_0432",
+        "zero_contribution_bank_sources": 147
+      },
+      {
+        "absolute_error": 3.155443620884047e-29,
+        "cell_id": "A6_legacy_range_sensitivity_primary_plan_31_early_releases_R_C",
+        "generator": "poisson",
+        "index_stratum": "above_one",
+        "planned_bank_sources": 256,
+        "profile_id": "K5_rho1_q1_base",
+        "recomputed_probability": 1.1338676685387274e-14,
+        "replicate": 2,
+        "saved_probability": 1.1338676685387305e-14,
+        "source_id": "age-probability-20261003-gate-v2:truth_A6_legacy_range_sensitivity_0231",
+        "zero_contribution_bank_sources": 80
+      },
+      {
+        "absolute_error": 2.168404344971009e-19,
+        "cell_id": "A8_legacy_range_sensitivity_primary_plan_31_early_releases_R_H",
+        "generator": "gamma_binary_quality",
+        "index_stratum": "above_one",
+        "planned_bank_sources": 256,
+        "profile_id": "K2.5_rho1_q0.1_base",
+        "recomputed_probability": 0.0012184488466734865,
+        "replicate": 5,
+        "saved_probability": 0.0012184488466734868,
+        "source_id": "age-probability-20261003-gate-v2:truth_A8_legacy_range_sensitivity_0093",
+        "zero_contribution_bank_sources": 47
+      },
+      {
+        "absolute_error": 9.893344823930228e-19,
+        "cell_id": "A8_legacy_range_sensitivity_primary_plan_31_early_releases_R_C",
+        "generator": "poisson",
+        "index_stratum": "above_one",
+        "planned_bank_sources": 256,
+        "profile_id": "K2.5_rho1_q0.01_base",
+        "recomputed_probability": 9.370844654935406e-05,
+        "replicate": 4,
+        "saved_probability": 9.370844654935307e-05,
+        "source_id": "age-probability-20261003-gate-v2:truth_A8_legacy_range_sensitivity_0165",
+        "zero_contribution_bank_sources": 91
+      },
+      {
+        "absolute_error": 1.3756922369381967e-211,
+        "cell_id": "A6_legacy_range_sensitivity_primary_plan_31_early_releases_R_H",
+        "generator": "gamma_binary_quality",
+        "index_stratum": "above_one",
+        "planned_bank_sources": 256,
+        "profile_id": "K20_rho4_q0.01_base",
+        "recomputed_probability": 6.38797429694504e-199,
+        "replicate": 0,
+        "saved_probability": 6.387974296943664e-199,
+        "source_id": "age-probability-20261003-gate-v2:truth_A6_legacy_range_sensitivity_0383",
+        "zero_contribution_bank_sources": 47
+      },
+      {
+        "absolute_error": 1.9109063290057016e-18,
+        "cell_id": "A6_legacy_range_sensitivity_primary_plan_31_early_releases_R_C",
+        "generator": "poisson",
+        "index_stratum": "above_one",
+        "planned_bank_sources": 256,
+        "profile_id": "K5_rho1_q0.1_base",
+        "recomputed_probability": 6.328054284000732e-05,
+        "replicate": 5,
+        "saved_probability": 6.328054284000541e-05,
+        "source_id": "age-probability-20261003-gate-v2:truth_A6_legacy_range_sensitivity_0207",
+        "zero_contribution_bank_sources": 80
+      },
+      {
+        "absolute_error": 3.1086244689504383e-15,
+        "cell_id": "A6_legacy_range_sensitivity_primary_plan_31_early_releases_R_C",
+        "generator": "poisson",
+        "index_stratum": "below_one",
+        "planned_bank_sources": 256,
+        "profile_id": "K5_rho0.25_q0.01_base",
+        "recomputed_probability": 0.610384154373926,
+        "replicate": 4,
+        "saved_probability": 0.6103841543739229,
+        "source_id": "age-probability-20261003-gate-v2:truth_A6_legacy_range_sensitivity_0272",
+        "zero_contribution_bank_sources": 146
+      },
+      {
+        "absolute_error": 0.0,
+        "cell_id": "A6_legacy_range_sensitivity_primary_plan_31_early_releases_R_H",
+        "generator": "poisson",
+        "index_stratum": "below_one",
+        "planned_bank_sources": 256,
+        "profile_id": "K5_rho0.25_q0.01_base",
+        "recomputed_probability": 0.0,
+        "replicate": 1,
+        "saved_probability": 0.0,
+        "source_id": "age-probability-20261003-gate-v2:truth_A6_legacy_range_sensitivity_0310",
+        "zero_contribution_bank_sources": 124
+      },
+      {
+        "absolute_error": 7.047314121155779e-18,
+        "cell_id": "A8_legacy_range_sensitivity_primary_plan_31_early_releases_R_H",
+        "generator": "gamma_binary_quality",
+        "index_stratum": "above_one",
+        "planned_bank_sources": 256,
+        "profile_id": "K5_rho1_q0.01_base",
+        "recomputed_probability": 0.0008579969482719981,
+        "replicate": 4,
+        "saved_probability": 0.0008579969482719911,
+        "source_id": "age-probability-20261003-gate-v2:truth_A8_legacy_range_sensitivity_0085",
+        "zero_contribution_bank_sources": 47
+      },
+      {
+        "absolute_error": 9.642727096589077e-40,
+        "cell_id": "A8_legacy_range_sensitivity_primary_plan_31_early_releases_R_H",
+        "generator": "gamma_binary_quality",
+        "index_stratum": "above_one",
+        "planned_bank_sources": 256,
+        "profile_id": "K2.5_rho4_q0.01_base",
+        "recomputed_probability": 3.3242505227568593e-25,
+        "replicate": 2,
+        "saved_probability": 3.3242505227568497e-25,
+        "source_id": "age-probability-20261003-gate-v2:truth_A8_legacy_range_sensitivity_0257",
+        "zero_contribution_bank_sources": 47
+      },
+      {
+        "absolute_error": 9.992007221626409e-16,
+        "cell_id": "A6_legacy_range_sensitivity_primary_plan_31_early_releases_R_T",
+        "generator": "gamma_binary_quality",
+        "index_stratum": "below_one",
+        "planned_bank_sources": 256,
+        "profile_id": "K20_rho4_q1_base",
+        "recomputed_probability": 0.21983387048542039,
+        "replicate": 1,
+        "saved_probability": 0.21983387048541939,
+        "source_id": "age-probability-20261003-gate-v2:truth_A6_legacy_range_sensitivity_0020",
+        "zero_contribution_bank_sources": 200
+      },
+      {
+        "absolute_error": 0.0,
+        "cell_id": "A6_legacy_range_sensitivity_primary_plan_31_early_releases_R_H",
+        "generator": "gamma_binary_quality",
+        "index_stratum": "below_one",
+        "planned_bank_sources": 256,
+        "profile_id": "K20_rho1_q0.01_base",
+        "recomputed_probability": 0.0,
+        "replicate": 1,
+        "saved_probability": 0.0,
+        "source_id": "age-probability-20261003-gate-v2:truth_A6_legacy_range_sensitivity_0174",
+        "zero_contribution_bank_sources": 124
+      },
+      {
+        "absolute_error": 4.30527948788174e-142,
+        "cell_id": "A6_legacy_range_sensitivity_primary_plan_31_early_releases_R_H",
+        "generator": "gamma_binary_quality",
+        "index_stratum": "above_one",
+        "planned_bank_sources": 256,
+        "profile_id": "K20_rho4_q0.1_base",
+        "recomputed_probability": 5.965929988179743e-128,
+        "replicate": 0,
+        "saved_probability": 5.9659299881797e-128,
+        "source_id": "age-probability-20261003-gate-v2:truth_A6_legacy_range_sensitivity_0381",
+        "zero_contribution_bank_sources": 47
+      },
+      {
+        "absolute_error": 3.1848438816761693e-19,
+        "cell_id": "A8_legacy_range_sensitivity_primary_plan_31_early_releases_R_C",
+        "generator": "poisson",
+        "index_stratum": "below_one",
+        "planned_bank_sources": 256,
+        "profile_id": "K5_rho1_q0.1_base",
+        "recomputed_probability": 2.415576080048531e-05,
+        "replicate": 3,
+        "saved_probability": 2.415576080048499e-05,
+        "source_id": "age-probability-20261003-gate-v2:truth_A8_legacy_range_sensitivity_0258",
+        "zero_contribution_bank_sources": 152
+      },
+      {
+        "absolute_error": 4.038653092508504e-18,
+        "cell_id": "A8_legacy_range_sensitivity_primary_plan_31_early_releases_R_H",
+        "generator": "poisson",
+        "index_stratum": "above_one",
+        "planned_bank_sources": 256,
+        "profile_id": "K20_rho1_q0.1_base",
+        "recomputed_probability": 0.0001293122846462934,
+        "replicate": 5,
+        "saved_probability": 0.00012931228464629744,
+        "source_id": "age-probability-20261003-gate-v2:truth_A8_legacy_range_sensitivity_0391",
+        "zero_contribution_bank_sources": 47
+      },
+      {
+        "absolute_error": 0.0,
+        "cell_id": "A6_legacy_range_sensitivity_primary_plan_31_early_releases_R_H",
+        "generator": "gamma_binary_quality",
+        "index_stratum": "below_one",
+        "planned_bank_sources": 256,
+        "profile_id": "K5_rho0.25_q0.1_base",
+        "recomputed_probability": 0.0,
+        "replicate": 4,
+        "saved_probability": 0.0,
+        "source_id": "age-probability-20261003-gate-v2:truth_A6_legacy_range_sensitivity_0506",
+        "zero_contribution_bank_sources": 124
+      },
+      {
+        "absolute_error": 2.1158898314801175e-35,
+        "cell_id": "A8_legacy_range_sensitivity_primary_plan_31_early_releases_R_H",
+        "generator": "poisson",
+        "index_stratum": "below_one",
+        "planned_bank_sources": 256,
+        "profile_id": "K20_rho4_q0.01_base",
+        "recomputed_probability": 4.913011547372669e-22,
+        "replicate": 4,
+        "saved_probability": 4.913011547372881e-22,
+        "source_id": "age-probability-20261003-gate-v2:truth_A8_legacy_range_sensitivity_0424",
+        "zero_contribution_bank_sources": 123
+      },
+      {
+        "absolute_error": 4.1239924237750675e-51,
+        "cell_id": "A6_legacy_range_sensitivity_primary_plan_31_early_releases_R_T",
+        "generator": "poisson",
+        "index_stratum": "above_one",
+        "planned_bank_sources": 256,
+        "profile_id": "K20_rho1_q0.01_base",
+        "recomputed_probability": 6.11186612037529e-38,
+        "replicate": 1,
+        "saved_probability": 6.111866120375703e-38,
+        "source_id": "age-probability-20261003-gate-v2:truth_A6_legacy_range_sensitivity_0019",
+        "zero_contribution_bank_sources": 145
+      },
+      {
+        "absolute_error": 5.984795992119984e-17,
+        "cell_id": "A8_legacy_range_sensitivity_primary_plan_31_early_releases_R_J",
+        "generator": "gamma_binary_quality",
+        "index_stratum": "above_one",
+        "planned_bank_sources": 256,
+        "profile_id": "K10_rho0.25_q0.01_base",
+        "recomputed_probability": 0.005017525680803394,
+        "replicate": 4,
+        "saved_probability": 0.005017525680803454,
+        "source_id": "age-probability-20261003-gate-v2:truth_A8_legacy_range_sensitivity_0499",
+        "zero_contribution_bank_sources": 192
+      },
+      {
+        "absolute_error": 7.014702303098414e-53,
+        "cell_id": "A8_legacy_range_sensitivity_primary_plan_31_early_releases_R_H",
+        "generator": "gamma_binary_quality",
+        "index_stratum": "above_one",
+        "planned_bank_sources": 256,
+        "profile_id": "K10_rho1_q1_base",
+        "recomputed_probability": 1.5224165594230414e-39,
+        "replicate": 4,
+        "saved_probability": 1.5224165594231116e-39,
+        "source_id": "age-probability-20261003-gate-v2:truth_A8_legacy_range_sensitivity_0297",
+        "zero_contribution_bank_sources": 47
+      },
+      {
+        "absolute_error": 2.4352197233561135e-21,
+        "cell_id": "A6_legacy_range_sensitivity_primary_plan_31_early_releases_R_T",
+        "generator": "gamma_binary_quality",
+        "index_stratum": "above_one",
+        "planned_bank_sources": 256,
+        "profile_id": "K5_rho1_q0.1_base",
+        "recomputed_probability": 3.237664682030871e-07,
+        "replicate": 3,
+        "saved_probability": 3.2376646820308466e-07,
+        "source_id": "age-probability-20261003-gate-v2:truth_A6_legacy_range_sensitivity_0301",
+        "zero_contribution_bank_sources": 145
+      },
+      {
+        "absolute_error": 1.4094628242311558e-18,
+        "cell_id": "A8_legacy_range_sensitivity_primary_plan_31_early_releases_R_H",
+        "generator": "gamma_binary_quality",
+        "index_stratum": "below_one",
+        "planned_bank_sources": 256,
+        "profile_id": "K5_rho4_q0.1_base",
+        "recomputed_probability": 3.320399225603349e-05,
+        "replicate": 4,
+        "saved_probability": 3.32039922560349e-05,
+        "source_id": "age-probability-20261003-gate-v2:truth_A8_legacy_range_sensitivity_0140",
+        "zero_contribution_bank_sources": 123
+      },
+      {
+        "absolute_error": 3.7916745780123706e-34,
+        "cell_id": "A8_legacy_range_sensitivity_primary_plan_31_early_releases_R_H",
+        "generator": "gamma_binary_quality",
+        "index_stratum": "below_one",
+        "planned_bank_sources": 256,
+        "profile_id": "K20_rho4_q0.01_base",
+        "recomputed_probability": 1.687641907000889e-20,
+        "replicate": 2,
+        "saved_probability": 1.687641907000927e-20,
+        "source_id": "age-probability-20261003-gate-v2:truth_A8_legacy_range_sensitivity_0038",
+        "zero_contribution_bank_sources": 123
+      }
+    ],
+    "sample_selection": "smallest SHA256 ranks of identifiers only; terminal outcomes, synthetic observations, and saved probabilities excluded",
+    "sampled_forecasts": 32
+  },
+  "source_and_history_counts": {
+    "compact_history_rows": 49152,
+    "full_history_rows": 49152,
+    "history_status_counts": {
+      "algebraically_infeasible": 5568,
+      "complete": 15384,
+      "process_infeasible": 28200
+    },
+    "independent_source_ids": 2048,
+    "nominal_site_histories": 147456,
+    "source_rows": 8192
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,26 @@
+{
+  "status": "diagnosed",
+  "scope": "24-source qualification slice, deterministic burn-in under both kernels",
+  "source_count": 24,
+  "initial_state_difference_sources": 22,
+  "forcing_difference_sources": 0,
+  "cause": "Guard activates at burn-in step 2 and on 50 of 100 alternating steps in the 22 affected sources; not floating-point or stream drift. Two unaffected sources remain above two adults throughout and match exactly.",
+  "examples": [
+    {
+      "source_id": "common-production|20260918|base|R_C|w1|s0011",
+      "guard_final_adults_approx": 32.2893,
+      "original_final_adults_approx": 4.8959,
+      "guard_final_juveniles_approx": 10.6556,
+      "original_final_juveniles_approx": 169.7425
+    },
+    {
+      "source_id": "common-production|20260918|juvenile_climbing|R_J|w2|s0165",
+      "guard_final_adults_approx": 311.5939,
+      "original_final_adults_approx": 23.3209,
+      "guard_final_juveniles_approx": 120.5866,
+      "original_final_juveniles_approx": 1077.7923
+    }
+  ],
+  "evidence": "Bounded kernel-worker diagnostic; values rounded, not production results. Target baseline_replay_dispatch independently records exact forcing/initial equality flags.",
+  "interpretation": "Approved amendment includes initialization. Retain original100-step phase; attribute comparison to fullguard, not late singleton reproduction alone. No burn-in redesign or extra arm."
+}

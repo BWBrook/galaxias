@@ -1,0 +1,12 @@
+{
+  "conditional_go_columns": [],
+  "full_generation_design": true,
+  "generator_count": 3,
+  "interpretation": "A pass is conditional endpoint-discrimination qualification for the declared source/world support; it is not posterior recovery, parameter identification, causal attribution, or empirical historical validation.",
+  "production_launch": false,
+  "profile_count": 540,
+  "score_controls_passed": true,
+  "score_controls_sha256": "f6f1beb3328bc5f04d50fefb7dbee69715e93860c33151e031233ec0d821992d",
+  "status": "STOP_BEFORE_HISTORICAL_SEARCH",
+  "unqualified_columns": "Non-base profiles, fixed-total controls, insufficient-support rows, and failed gates are sensitivity or diagnostic columns and do not independently authorize a historical claim."
+}

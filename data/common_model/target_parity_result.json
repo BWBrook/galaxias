@@ -1,0 +1,19 @@
+{
+  "cells": 24,
+  "distinct_histories": 48,
+  "histories_executed": 96,
+  "serial_workers": 1,
+  "parallel_workers": 2,
+  "exact_row_and_float_equality": true,
+  "minimum_seed": 15020183415811484568,
+  "maximum_seed": 16139186414521921282,
+  "seed_preflight": {
+    "phase": "parity",
+    "source_count": 24,
+    "replicates": 2,
+    "stream_count": 2,
+    "unique_seed_count": 96,
+    "key_count": 96,
+    "derivation": "sha256 tuple to uint64 above 2^63+999; exhaustive collision check"
+  }
+}

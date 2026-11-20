@@ -1,0 +1,71 @@
+{
+  "status": "review_response_complete_linked_runner_and_recovery_gate_pending",
+  "completed_utc": "2026-09-29T12:55:21.214913+00:00",
+  "head": "81e37202f6322e37ac7f1b0070402b76b7967a82",
+  "review": {
+    "thread_id": 31,
+    "message_id": 650,
+    "api_version_verified": 2,
+    "last_read_updates_checkpoint": 778,
+    "last_foreign_acknowledgement": 650,
+    "response_message_id": 779,
+    "response_created_at": "2026-09-29T12:56:03.191543+00:00"
+  },
+  "new_scientific_demographic_histories": 0,
+  "new_model_advance_calls_outside_unit_tests": 0,
+  "unit_test_fixtures_separate": true,
+  "tests": {
+    "focused_final_passed": 30,
+    "command": "uv run pytest -q tests/test_age_observation.py tests/test_age_demography.py tests/test_age_scenarios.py",
+    "new_files_compiled": true,
+    "payload_lf_checked": true,
+    "csv_shape_checked": true,
+    "csv_rows": {
+      "observation_register.csv": 10,
+      "removal_evidence.csv": 16,
+      "lake_figure6_digitised.csv": 10,
+      "observation_oracle_controls.csv": 120
+    },
+    "config_cell_and_budget_checks_passed": true,
+    "protected_source_hashes_verified": true
+  },
+  "independent_check": {
+    "scope": "bounded methods and evidence checks, not empirical validation",
+    "substantive_gap_found": "synthetic Lake observation generation was underspecified",
+    "fix": "explicit count/coarsening/digitisation generator; permit positive late synthetic catches",
+    "full_recovery_gate_passed": false
+  },
+  "environment": {
+    "python": "3.14.4",
+    "numpy": "2.4.6",
+    "system": "Darwin",
+    "architecture": "arm64"
+  },
+  "protected_files_sha256": {
+    "src/galaxias_model/age_demography.py": "5bb305d052c89b8ab0fea6da27811f182d551505f176588769193bd31ffeb6ca",
+    "src/galaxias_model/age_scenarios.py": "4110d13a37c93737bdc248edfc78cdc385eea216d08deb3bdcfd315205c3e72c",
+    "src/galaxias_model/common_model.py": "2031373352dbdb55b30db571dc7b861e67f804fc0b5709ef99233f73e8e463c4",
+    "src/galaxias_model/mate_guard.py": "7da473275457d9970c7b6a748e4ac92043c96ccdd14266142fb6e02827bdb332",
+    "src/galaxias_model/recruitment_demography.py": "332f7ab7c5b27abecbbc9dbe8bd4bfd1873e3743d8949fc707f102ee952f3ef5",
+    "src/galaxias_model/recruitment_scenarios.py": "624423c0983441a55d925399444c6a217c20e2f9e4e3b37975e7b803270b528a"
+  },
+  "candidate_1_protocol_unchanged": true,
+  "package_manifest_sha256": "3adf91b834b61a7d3682398be1a6d5d02e133b748e18ed74fff60e967f5958b4",
+  "prior_conservative_history_charge": 5320368,
+  "previous_repair_executions_separate": 3818,
+  "previous_age_candidate_qualification_executions_separate": 111,
+  "proposed_future_site_histories": 1035520,
+  "proposed_future_ceiling": 1100000,
+  "conservative_sum_if_future_allocation_approved": 6359817,
+  "standing_ceiling": 7100000,
+  "new_remote_dispatch": false,
+  "new_search": false,
+  "commit_push_publish": false,
+  "pre_dispatch_work": [
+    "linked-site dated runner with transfer and holding identity",
+    "source-to-score compilation excluding overlapping evidence",
+    "full synthetic observation/recovery gate with independent seeds",
+    "executable protocol and budget freeze"
+  ],
+  "next_implementation_owner": "Astra; routine implementation requires no further approval exchange"
+}

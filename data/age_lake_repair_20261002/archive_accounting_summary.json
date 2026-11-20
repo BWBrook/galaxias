@@ -1,0 +1,46 @@
+{
+  "all_failure_count": 5625,
+  "complete": {
+    "cell_source_combinations": 680,
+    "histories": 2055,
+    "independent_nuisance_source_ids": 208
+  },
+  "empty_lake_persist_refuge_count_range": [
+    1.0,
+    4.0
+  ],
+  "inputs": {
+    "capture_failure_breakdown.csv": {
+      "bytes": 1500,
+      "sha256": "7f76ee5ad1ecaeb2fb24ebeb328a0b29883114dedd2ad8bed68a15c25d429e3f"
+    },
+    "complete_histories.csv": {
+      "bytes": 1720615,
+      "sha256": "cbb079aa4a4153ffe1d85a1dcd3f53a068866aec20d798753a815aa912ab4d4f"
+    }
+  },
+  "interpretation": "Exploratory archive accounting; class counts are not historical probabilities. Cell pairing and replicate paths do not create independent nuisance sources.",
+  "loss": {
+    "cell_source_combinations": 32,
+    "histories": 39,
+    "independent_nuisance_source_ids": 23
+  },
+  "persist": {
+    "cell_source_combinations": 662,
+    "histories": 2016,
+    "independent_nuisance_source_ids": 206
+  },
+  "persist_empty_lake": {
+    "cell_source_combinations": 11,
+    "histories": 11,
+    "independent_nuisance_source_ids": 10
+  },
+  "persist_lake_count_median": 21182.5,
+  "persist_lake_count_p95": 1026811.5,
+  "persist_with_lake_fish": 2005,
+  "wild_capture_failure_by_year": {
+    "1990": 1404,
+    "1991": 2557,
+    "1996": 22
+  }
+}

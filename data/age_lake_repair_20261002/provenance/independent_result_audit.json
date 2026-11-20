@@ -1,0 +1,369 @@
+{
+  "all_analysis_status_counts": {
+    "unassessed_truth_and_bank_support": 258984,
+    "unassessed_truth_support": 216
+  },
+  "audit_scope": "Independent read-only verification of frozen age Lake refocus generation, canonical analysis, guarded summaries and final interpretation.",
+  "baseline_composition_diagnostics": {
+    "bank": {
+      "delta_ranges": {
+        "lake_mean_E_minus_process": [
+          -161650.71244946148,
+          81513.69838050779
+        ],
+        "total_ESS_E_minus_process": [
+          -62.54158906987276,
+          0.7697870113154952
+        ],
+        "weighted_loss_E_minus_process": [
+          -0.3728378550698431,
+          0.2977697392221625
+        ]
+      },
+      "lake_mean_reduced_strata": 33,
+      "majority_weighted_loss_strata": 1,
+      "persisting_total_median_le4_strata": 0,
+      "strata": 40,
+      "total_source_ess_max": 16.851060564730417,
+      "total_source_ess_min": 1.0250372142021065,
+      "total_source_ess_reduced_strata": 39,
+      "weighted_loss_decreased_strata": 14,
+      "weighted_loss_increased_strata": 9,
+      "weighted_loss_unchanged_strata": 17
+    },
+    "truth": {
+      "delta_ranges": {
+        "lake_mean_E_minus_process": [
+          -134419.1537100835,
+          13514.518630259248
+        ],
+        "total_ESS_E_minus_process": [
+          -92.70805633764036,
+          1.669208199442846
+        ],
+        "weighted_loss_E_minus_process": [
+          -0.12886123709445477,
+          0.4720485497397962
+        ]
+      },
+      "lake_mean_reduced_strata": 39,
+      "majority_weighted_loss_strata": 0,
+      "persisting_total_median_le4_strata": 0,
+      "strata": 40,
+      "total_source_ess_max": 39.29696507851211,
+      "total_source_ess_min": 2.86500961159082,
+      "total_source_ess_reduced_strata": 39,
+      "weighted_loss_decreased_strata": 17,
+      "weighted_loss_increased_strata": 14,
+      "weighted_loss_unchanged_strata": 9
+    }
+  },
+  "caveats": [
+    "The 15,360 source-bank rows are paired cell/source combinations; only 3,072 source_id nuisance clusters are counted as independent.",
+    "All primary Y0 rows are unassessed because raw and weighted loss-class support are insufficient; no balanced accuracy, paired improvement or endpoint recovery result is estimated.",
+    "Composition and campaign counts are descriptive counts across cell/index strata, not model-averaged probabilities or historical frequencies.",
+    "The actual early Lake record is consumed once in target weights; fresh synthetic Lake observations are replicate recovery controls and cannot justify scoring that same real block again.",
+    "Blank persistence quantiles under extreme weighting can reflect numerical underflow in globally normalized persistence weights and are not absence evidence."
+  ],
+  "checks": {
+    "analysis_output_bindings": true,
+    "analysis_stop_receipt": true,
+    "campaign_counts_match": true,
+    "generation_content_hashes": true,
+    "generation_manifest_complete": true,
+    "generation_output_bindings": true,
+    "generation_source_bindings_current": true,
+    "history_replicate_coverage": true,
+    "independent_source_universe": true,
+    "no_output_hash_drift": true,
+    "report_summary_key_counts_match": true,
+    "report_wording_safe": true,
+    "source_row_identity_unique": true,
+    "support_counts_match": true
+  },
+  "created_utc": "2026-10-02T02:40:37.570543+00:00",
+  "hash_bindings": {
+    "data/age_lake_repair_20261002/gate_summary/audit.json": {
+      "bytes": 15239,
+      "sha256": "f1e0a81f78522b7c84138b15dcf67c0240665167c4efb2268fd7f3881180432d"
+    },
+    "data/age_lake_repair_20261002/gate_summary/base_endpoint_support_summary.csv": {
+      "bytes": 5765758,
+      "sha256": "f89ea3be3763500be7891424ffd09fdaddaf8543661e06ba6c62a69a157f6d08"
+    },
+    "data/age_lake_repair_20261002/gate_summary/base_primary_gate.csv": {
+      "bytes": 1782726,
+      "sha256": "1e6e5ed5e980fa12846a955bf629a9b22fed40877c1512f8be28dfda3d2eea54"
+    },
+    "data/age_lake_repair_20261002/gate_summary/baseline_composition.csv": {
+      "bytes": 72860,
+      "sha256": "0eceedbfc07357f6fa32b7444ab9867c34e716ff497726f0e066fb0a21f41168"
+    },
+    "data/age_lake_repair_20261002/gate_summary/campaign_composition_summary.csv": {
+      "bytes": 2949746,
+      "sha256": "f0fe9b9ec78f6e0524b3ba57805812fa997db156d606897cd44e8e93d617300d"
+    },
+    "data/age_lake_repair_20261002/gate_summary/failure_summary.csv": {
+      "bytes": 322014,
+      "sha256": "1d7ef969378ed9a3ebd1517067e4368976a6c776d3da942afe4efec7b45fe579"
+    },
+    "data/age_lake_repair_20261002/gate_summary/source_independence.csv": {
+      "bytes": 23879,
+      "sha256": "bd2513631f0f48fbab22d38eb97567f09084f0ca2296fe34b3ce4ca5cb9c7a8c"
+    },
+    "data/age_lake_repair_20261002/report_summary.json": {
+      "bytes": 8483,
+      "sha256": "b93146ec7a7cf45dcb6c169cfdcac4a91be338619af562f0ea76ac5fc92669cd"
+    },
+    "docs/age_historical_refocus_results.md": {
+      "bytes": 12488,
+      "sha256": "13a580f8510807770dcd0bde5df0b284dc35d0a6c4238f55ee8725cabb214124"
+    },
+    "outputs/remote/age_lake_refocus_20261002/analysis/analysis_receipt.json": {
+      "bytes": 3148,
+      "sha256": "6c55e844ec6c5328a612dfff1f54cb42dfcf5453dcd5be9e20580e5dc1120387"
+    },
+    "outputs/remote/age_lake_refocus_20261002/analysis/base_gate_metrics.csv": {
+      "bytes": 6450195,
+      "sha256": "bcdf54ac6e61501738a9b9e67525e65a022b6aaa85979f89a76a665a6ae10103"
+    },
+    "outputs/remote/age_lake_refocus_20261002/analysis/gate_metrics.csv": {
+      "bytes": 101975681,
+      "sha256": "cb25b0767ff5ea252f131c68fe97548816db7b8e165533b14fdd0489951548d5"
+    },
+    "outputs/remote/age_lake_refocus_20261002/analysis/reproducibility.json": {
+      "bytes": 8947,
+      "sha256": "d214ee1355b413962f9c969a5c8baedc869ba6196950dcc3aa1c6904315dfc7f"
+    },
+    "outputs/remote/age_lake_refocus_20261002/analysis/score_controls.json": {
+      "bytes": 393,
+      "sha256": "bf6aa6f32852fce8d6ba0165735e770a640f55084f0cee13791e3b981c156e13"
+    },
+    "outputs/remote/age_lake_refocus_20261002/analysis/stratum_summary.csv": {
+      "bytes": 5901,
+      "sha256": "ab2e3ce954e2621d4eda960f4675048e93c775332c73b3ef97249cc864bd63b2"
+    },
+    "outputs/remote/age_lake_refocus_20261002/analysis/weighted_composition.csv": {
+      "bytes": 2498793,
+      "sha256": "4dcd544862bb146e9afb14ea2197e2e2bb0f9e8a0dffcfd5338390ef8f220414"
+    },
+    "outputs/remote/age_lake_refocus_20261002/gate/full_histories.jsonl.gz": {
+      "bytes": 339066218,
+      "sha256": "5fcec6815578f166055de0a179d9a89fd94fd42db34b8a4a65ce4ba8cb4f33f5"
+    },
+    "outputs/remote/age_lake_refocus_20261002/gate/histories.jsonl.gz": {
+      "bytes": 6444552,
+      "sha256": "d38ffe64ca87091c9bbcc9e55214fa8203896cfd97ac1d8b968ff05effec1de5"
+    },
+    "outputs/remote/age_lake_refocus_20261002/gate/run_manifest.json": {
+      "bytes": 13842,
+      "sha256": "44fb17833d70888fb9ae747ee10a64ecc5a3185aa3c4160050c619d7563f024b"
+    },
+    "outputs/remote/age_lake_refocus_20261002/gate/source_banks.jsonl": {
+      "bytes": 35618892,
+      "sha256": "8e5a313d035d35425e02fa14c5ae39656ed975b05bb126d905199cd23b932388"
+    },
+    "outputs/remote/age_lake_refocus_20261002/gate/source_support.csv": {
+      "bytes": 13038,
+      "sha256": "2aa4bd7108ae2ee3addd9f2827f5d2d9e866ebda40bc8b9c809a0e5161fb075a"
+    }
+  },
+  "matched_campaign_diagnostics": [
+    {
+      "law": "poisson",
+      "majority_weighted_loss_strata": 11,
+      "namespace": "truth",
+      "persisting_total_median_blank_strata": 0,
+      "persisting_total_median_le4_strata": 7,
+      "q": 0.01,
+      "strata": 40,
+      "total_source_ess_max": 3.513803667567571,
+      "total_source_ess_min": 1.0000000003211473
+    },
+    {
+      "law": "poisson",
+      "majority_weighted_loss_strata": 7,
+      "namespace": "bank",
+      "persisting_total_median_blank_strata": 1,
+      "persisting_total_median_le4_strata": 0,
+      "q": 0.01,
+      "strata": 40,
+      "total_source_ess_max": 3.714087286641905,
+      "total_source_ess_min": 1.0
+    },
+    {
+      "law": "poisson",
+      "majority_weighted_loss_strata": 13,
+      "namespace": "truth",
+      "persisting_total_median_blank_strata": 0,
+      "persisting_total_median_le4_strata": 9,
+      "q": 0.1,
+      "strata": 40,
+      "total_source_ess_max": 1.8926139560728326,
+      "total_source_ess_min": 1.0
+    },
+    {
+      "law": "poisson",
+      "majority_weighted_loss_strata": 10,
+      "namespace": "bank",
+      "persisting_total_median_blank_strata": 2,
+      "persisting_total_median_le4_strata": 0,
+      "q": 0.1,
+      "strata": 40,
+      "total_source_ess_max": 1.0471918204601893,
+      "total_source_ess_min": 1.0
+    },
+    {
+      "law": "poisson",
+      "majority_weighted_loss_strata": 13,
+      "namespace": "truth",
+      "persisting_total_median_blank_strata": 0,
+      "persisting_total_median_le4_strata": 10,
+      "q": 1.0,
+      "strata": 40,
+      "total_source_ess_max": 1.4014773388041022,
+      "total_source_ess_min": 1.0
+    },
+    {
+      "law": "poisson",
+      "majority_weighted_loss_strata": 10,
+      "namespace": "bank",
+      "persisting_total_median_blank_strata": 5,
+      "persisting_total_median_le4_strata": 0,
+      "q": 1.0,
+      "strata": 40,
+      "total_source_ess_max": 1.0001008490330192,
+      "total_source_ess_min": 1.0
+    },
+    {
+      "law": "gamma_quality",
+      "majority_weighted_loss_strata": 8,
+      "namespace": "truth",
+      "persisting_total_median_blank_strata": 0,
+      "persisting_total_median_le4_strata": 4,
+      "q": 0.01,
+      "strata": 40,
+      "total_source_ess_max": 7.109074150466823,
+      "total_source_ess_min": 1.0211540595442425
+    },
+    {
+      "law": "gamma_quality",
+      "majority_weighted_loss_strata": 5,
+      "namespace": "bank",
+      "persisting_total_median_blank_strata": 0,
+      "persisting_total_median_le4_strata": 0,
+      "q": 0.01,
+      "strata": 40,
+      "total_source_ess_max": 5.681371850529125,
+      "total_source_ess_min": 1.0016660861122548
+    },
+    {
+      "law": "gamma_quality",
+      "majority_weighted_loss_strata": 11,
+      "namespace": "truth",
+      "persisting_total_median_blank_strata": 0,
+      "persisting_total_median_le4_strata": 5,
+      "q": 0.1,
+      "strata": 40,
+      "total_source_ess_max": 6.856605359386717,
+      "total_source_ess_min": 1.0140504821080178
+    },
+    {
+      "law": "gamma_quality",
+      "majority_weighted_loss_strata": 5,
+      "namespace": "bank",
+      "persisting_total_median_blank_strata": 0,
+      "persisting_total_median_le4_strata": 0,
+      "q": 0.1,
+      "strata": 40,
+      "total_source_ess_max": 4.924054722620246,
+      "total_source_ess_min": 1.0014200592280786
+    },
+    {
+      "law": "gamma_quality",
+      "majority_weighted_loss_strata": 10,
+      "namespace": "truth",
+      "persisting_total_median_blank_strata": 0,
+      "persisting_total_median_le4_strata": 5,
+      "q": 1.0,
+      "strata": 40,
+      "total_source_ess_max": 6.805261761790216,
+      "total_source_ess_min": 1.0133732949476264
+    },
+    {
+      "law": "gamma_quality",
+      "majority_weighted_loss_strata": 5,
+      "namespace": "bank",
+      "persisting_total_median_blank_strata": 0,
+      "persisting_total_median_le4_strata": 0,
+      "q": 1.0,
+      "strata": 40,
+      "total_source_ess_max": 4.838433080310426,
+      "total_source_ess_min": 1.0013786228317187
+    }
+  ],
+  "primary_gate_counts": {
+    "assessed": 0,
+    "eligible_poisson_gamma_rows": 2880,
+    "fixed_total_control_rows": 1440,
+    "maximum_bank_loss_source_ess": 2.4480068225062595,
+    "maximum_bank_loss_sources": 7,
+    "maximum_coherent_truth_loss_sources": 12,
+    "maximum_truth_loss_source_ess": 3.722395485861358,
+    "passed": 0,
+    "rows": 4320,
+    "status_counts": {
+      "unassessed_truth_and_bank_support": 4320
+    }
+  },
+  "source_and_history_counts": {
+    "compact_history_rows": 30720,
+    "expected_history_rows": 30720,
+    "full_history_rows": 30720,
+    "generation_status_counts": {
+      "algebraically_infeasible": 3544,
+      "complete": 9740,
+      "process_infeasible": 17436
+    },
+    "independent_ids_by_role": {
+      "bank": 1024,
+      "truth": 2048
+    },
+    "independent_nuisance_ids": 3072,
+    "per_role_support_ranges": {
+      "bank": {
+        "cell_index_strata": 40,
+        "complete_alive_history_max": 186,
+        "complete_alive_history_min": 3,
+        "complete_history_max": 186,
+        "complete_history_min": 6,
+        "independent_loss_source_max": 7,
+        "independent_loss_source_min": 0
+      },
+      "truth": {
+        "cell_index_strata": 40,
+        "complete_alive_history_max": 358,
+        "complete_alive_history_min": 14,
+        "complete_history_max": 358,
+        "complete_history_min": 16,
+        "independent_loss_source_max": 14,
+        "independent_loss_source_min": 0
+      }
+    },
+    "source_bank_rows": 15360
+  },
+  "source_binding_verification": {
+    "declared_source_binding_count": 48,
+    "mismatches": []
+  },
+  "status": "PASS",
+  "wording_review": {
+    "no_frequency_claim": true,
+    "no_historical_comparison": true,
+    "primary_secondary_control_separation": true,
+    "replicate_evidence_caveat": true,
+    "source_rows_distinguished_from_ids": true,
+    "stop_status": true,
+    "underflow_caveat": true
+  }
+}

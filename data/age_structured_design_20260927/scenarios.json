@@ -1,0 +1,33 @@
+{
+  "status": "candidate_1_for_scientific_review_not_a_dispatch_manifest",
+  "maximum_age_years": [6, 8],
+  "nursery_allocation": {"near_obligate": [0.9, 0.99], "legacy_range_sensitivity": [0.35, 0.9]},
+  "removal_account": ["primary_plan_31_early_releases", "sanger_42_early_releases"],
+  "restrictions": ["R_H", "R_T", "R_C", "R_J"],
+  "process_cells": 32,
+  "late_effort_creek_trip_equivalents": [2.5, 5, 10, 20],
+  "late_to_early_catchability_ratio": [0.25, 1, 4],
+  "age0_accessibility": [0, 0.25, 1],
+  "search_bounds_not_empirical_priors": {
+    "s0_uniform": [0.1, 0.6], "s1_uniform": [0.2, 0.75], "s2plus_uniform": [0.2, 0.7],
+    "breeding_age2_uniform": [0.1, 0.5], "breeding_age3plus_fixed": 1,
+    "R0_log_uniform": [1.2, 20], "derived_b_maximum": 1200,
+    "recruitment_sigma_uniform": [0.2, 1.2], "post_habitat_refuge_fraction_log_uniform": [0.01, 1],
+    "historical_lake_neutral_age1plus_log_uniform": [1000, 1000000],
+    "historical_refuge_neutral_age1plus_log_uniform": [5, 10000],
+    "oberon_neutral_age1plus_log_uniform": [30, 100000],
+    "strathgordon_neutral_age1plus_log_uniform": [20, 20000],
+    "strathgordon_spawn_multiplier_before_2007_log_uniform": [0.001, 0.1]
+  },
+  "local_qualification": {"maximum_site_path_executions": 128, "synthetic_only": true, "production_permitted": false},
+  "proposed_future_budget": {
+    "initial_site_histories": 786432,
+    "one_refocus_site_histories": 393216,
+    "fresh_validation_site_histories": 393216,
+    "overshoot_counterfactual_site_histories": 16384,
+    "qualification_reserve_site_histories": 8000,
+    "total_site_histories": 1597248,
+    "ceiling_site_histories": 1600000,
+    "dispatch_permitted": false
+  }
+}

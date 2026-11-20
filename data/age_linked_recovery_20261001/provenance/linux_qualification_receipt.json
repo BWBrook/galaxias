@@ -1,0 +1,98 @@
+{
+  "actual_joint_histories": 21,
+  "calendar_hash": "78598379e2fcea9b1f6031fd071cf92b1bc50a1297766c2ea63ac61ecb509f7f",
+  "completed_utc": "2026-10-01T13:55:26.134622+00:00",
+  "deterministic_complete": 4,
+  "elapsed_seconds": 21.124996511032805,
+  "engineering_fixtures_not_prior_or_historical_evidence": true,
+  "forcing_parity": true,
+  "forcing_scalar_comparisons": 2052,
+  "holding_conservation": true,
+  "no_wild_empty": true,
+  "nominal_site_histories": 63,
+  "outputs": {
+    "counterfactual.jsonl.gz": {
+      "bytes": 9243,
+      "sha256": "2d0442b4ed5eac2f944719b763b92eb884d2cdbd1b8f59b8e2da09f6a469f6d8"
+    },
+    "deterministic.jsonl.gz": {
+      "bytes": 96971,
+      "sha256": "aaba8547e4b0c91134e59e1d7e804f221fc8e590434b4ae9fe6fca0923714ceb"
+    },
+    "parallel.jsonl.gz": {
+      "bytes": 115393,
+      "sha256": "f2dcdfb2b54e05c495547c23595e340adff101aa0ad251c869c258beecbac8a0"
+    },
+    "serial.jsonl.gz": {
+      "bytes": 115391,
+      "sha256": "eca80da3e455a91353f45b3f5c458f4a6b197a65f6959511066fcf85c26a0daf"
+    }
+  },
+  "planned_joint_histories": 21,
+  "pre_removal_pairing_exact": true,
+  "serial_parallel_exact": true,
+  "source_bindings": {
+    "data/age_linked_recovery_20261001/retained_forcing_parameters.csv": {
+      "bytes": 11910,
+      "sha256": "0d62ac1b1edb62db886e75eb15446254844c8cb5a2bd4e4e011c30cbbf52d9bd"
+    },
+    "data/age_structured_design_20260929/scenarios.json": {
+      "bytes": 6951,
+      "sha256": "b152d1c9501512b54d7aff444bc342aee785886fd6fa8158dd3976e919df83e0"
+    },
+    "data/scenario_definitions.json": {
+      "bytes": 1385,
+      "sha256": "1fa42d3df26abe51af3cb34fdf0d31bda0ce106a2fc8bfb0ba3f9a739f689023"
+    },
+    "docs/age_linked_recovery_protocol.md": {
+      "bytes": 13689,
+      "sha256": "89ec0475b008c5fd9bf7c176ae260aed5dec82d9604cef2410a7c3b731067364"
+    },
+    "pyproject.toml": {
+      "bytes": 711,
+      "sha256": "50ad878825d26c693c7ede8fc97b7c2068c69594b924e1095772a7c48c374d9d"
+    },
+    "scripts/qualify_age_linked_runner.py": {
+      "bytes": 9688,
+      "sha256": "3474e70f37c1787dd2a172dcbf7f6094bf5ba97d00982fcda54b90ee542a87e8"
+    },
+    "scripts/run_age_recovery.py": {
+      "bytes": 13645,
+      "sha256": "23e21ef08c02e12999a730163af55ccb9a73197212bd9db3b452cf8c78d75696"
+    },
+    "src/galaxias_model/age_demography.py": {
+      "bytes": 30562,
+      "sha256": "a8d97780ce6b9f685e9525d38681cee6f1be6dd988c3d0df747429966c64047c"
+    },
+    "src/galaxias_model/age_recovery_observation.py": {
+      "bytes": 10927,
+      "sha256": "39a0b364eb412ed0c102f8271251baa3d142c28f0da006c9ac673a3f71d8a8f9"
+    },
+    "src/galaxias_model/age_runner.py": {
+      "bytes": 42079,
+      "sha256": "877fc5748c02c7da05bb8e68fe09eab0e3e53d61759ee6044cdcb1a963a49048"
+    },
+    "src/galaxias_model/age_scenarios.py": {
+      "bytes": 5405,
+      "sha256": "4110d13a37c93737bdc248edfc78cdc385eea216d08deb3bdcfd315205c3e72c"
+    },
+    "src/galaxias_model/age_sources.py": {
+      "bytes": 6592,
+      "sha256": "d0a406180116345c1d77319b7903d1f0cb2e0f8c23c356f57b495fdb8c0f8ff1"
+    },
+    "src/galaxias_model/common_model.py": {
+      "bytes": 29022,
+      "sha256": "2031373352dbdb55b30db571dc7b861e67f804fc0b5709ef99233f73e8e463c4"
+    },
+    "uv.lock": {
+      "bytes": 60617,
+      "sha256": "5d6561c9a74c38eccbc35c6053c0819d36357f3331305058f863a66bb3ef148e"
+    }
+  },
+  "started_utc": "2026-10-01T13:55:05.009623+00:00",
+  "status": "complete",
+  "stochastic_attempted": 8,
+  "stochastic_complete": 7,
+  "transfer_conservation": true,
+  "workers": 2
+}

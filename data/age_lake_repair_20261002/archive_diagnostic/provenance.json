@@ -1,0 +1,269 @@
+{
+  "all_used_hashes": {
+    "data/age_linked_recovery_20261001/retained_forcing_parameters.csv": {
+      "bytes": 11910,
+      "sha256": "0d62ac1b1edb62db886e75eb15446254844c8cb5a2bd4e4e011c30cbbf52d9bd"
+    },
+    "data/age_structured_design_20260929/lake_figure6_digitised.csv": {
+      "bytes": 1135,
+      "sha256": "91ce060c1c2c549563e3ab07f31864b2a3fff433c411ac02f483761463af07cb"
+    },
+    "data/age_structured_design_20260929/scenarios.json": {
+      "bytes": 6951,
+      "sha256": "b152d1c9501512b54d7aff444bc342aee785886fd6fa8158dd3976e919df83e0"
+    },
+    "docs/age_linked_recovery_protocol.md": {
+      "bytes": 13689,
+      "sha256": "89ec0475b008c5fd9bf7c176ae260aed5dec82d9604cef2410a7c3b731067364"
+    },
+    "docs/age_structured_protocol_candidate2.md": {
+      "bytes": 16967,
+      "sha256": "53f4c50bbd0c3be12f4909818fc720d576898c21e281f17414c2cdb60ded8877"
+    },
+    "outputs/remote/age_linked_recovery_20261001/gate/full_histories.jsonl.gz": {
+      "bytes": 72557949,
+      "sha256": "339a288f2b3efe788b82c30f65f35107a8d6f401f8582cb18d56e66a09501747"
+    },
+    "outputs/remote/age_linked_recovery_20261001/gate/histories.jsonl.gz": {
+      "bytes": 1147580,
+      "sha256": "92252d6490260124e638cc8f6dcb4dfbdd8b1d603a656b208d37a115146dbb21"
+    },
+    "outputs/remote/age_linked_recovery_20261001/gate/run_manifest.json": {
+      "bytes": 12429,
+      "sha256": "3cc63a45a5f8dea1a951993c6ee1b565938aded57435137a6139bd1abb073312"
+    },
+    "outputs/remote/age_linked_recovery_20261001/gate/source_banks.jsonl": {
+      "bytes": 3557208,
+      "sha256": "eb670f40682eb7ba9cf5e0fd993cf62d432b202bb642bfa7dc8e52ba2e622fce"
+    },
+    "outputs/remote/age_linked_recovery_20261001/gate/source_support.csv": {
+      "bytes": 12830,
+      "sha256": "c566944a23ae4753c3d2c0ce35c2b5b3f3e89a1299a79e27b717c2265af506cd"
+    },
+    "pyproject.toml": {
+      "bytes": 711,
+      "sha256": "50ad878825d26c693c7ede8fc97b7c2068c69594b924e1095772a7c48c374d9d"
+    },
+    "scripts/diagnose_age_lake_archive.py": {
+      "bytes": 37314,
+      "sha256": "88347ac7ca272bc91c2a372f17e894bd0856c4d01c96c7769e3af175663553bf"
+    },
+    "scripts/run_age_historical_refocus.py": {
+      "bytes": 20297,
+      "sha256": "f99814ea5ee92e1d484e447f06621705acbb6d5222efb41d74bc7ff13d75b397"
+    },
+    "scripts/run_age_recovery.py": {
+      "bytes": 13645,
+      "sha256": "23e21ef08c02e12999a730163af55ccb9a73197212bd9db3b452cf8c78d75696"
+    },
+    "src/galaxias_model/__init__.py": {
+      "bytes": 2703,
+      "sha256": "141b5bf6770cb39fc59a0b3173ad1f361a3261daea1b44e26c9b6a13e20a6409"
+    },
+    "src/galaxias_model/abundance_detection.py": {
+      "bytes": 5636,
+      "sha256": "9511a6381279d56fe884c87343cb768fb39200e8dd73b469369805e890edc18a"
+    },
+    "src/galaxias_model/age_demography.py": {
+      "bytes": 30562,
+      "sha256": "a8d97780ce6b9f685e9525d38681cee6f1be6dd988c3d0df747429966c64047c"
+    },
+    "src/galaxias_model/age_observation.py": {
+      "bytes": 5314,
+      "sha256": "eef2649598916f1ccfaec68954f3d21f1126531186e4372083ae599eaa778c96"
+    },
+    "src/galaxias_model/age_recovery_observation.py": {
+      "bytes": 10927,
+      "sha256": "39a0b364eb412ed0c102f8271251baa3d142c28f0da006c9ac673a3f71d8a8f9"
+    },
+    "src/galaxias_model/age_recovery_scores.py": {
+      "bytes": 26149,
+      "sha256": "92384464a0ec7e87b5ba7270fc39a188d555ed9c69a8179bd0cf8f7638d85b97"
+    },
+    "src/galaxias_model/age_runner.py": {
+      "bytes": 42079,
+      "sha256": "877fc5748c02c7da05bb8e68fe09eab0e3e53d61759ee6044cdcb1a963a49048"
+    },
+    "src/galaxias_model/age_scenarios.py": {
+      "bytes": 5405,
+      "sha256": "4110d13a37c93737bdc248edfc78cdc385eea216d08deb3bdcfd315205c3e72c"
+    },
+    "src/galaxias_model/age_sources.py": {
+      "bytes": 6592,
+      "sha256": "d0a406180116345c1d77319b7903d1f0cb2e0f8c23c356f57b495fdb8c0f8ff1"
+    },
+    "src/galaxias_model/calibration.py": {
+      "bytes": 43916,
+      "sha256": "74121bb980fc876a6d2fad45aa0b158b3b4c31d43621170ca6ddeb31ba6f26cf"
+    },
+    "src/galaxias_model/common_model.py": {
+      "bytes": 29022,
+      "sha256": "2031373352dbdb55b30db571dc7b861e67f804fc0b5709ef99233f73e8e463c4"
+    },
+    "src/galaxias_model/conditional_observation.py": {
+      "bytes": 4738,
+      "sha256": "807206e3de815d2f3a7bf33f4838b232331b9b1daa6e03783bc4d4b557b82ed1"
+    },
+    "src/galaxias_model/io.py": {
+      "bytes": 20269,
+      "sha256": "97f75f0d10d763aa8004dba2bf17868205ab9735620275d40f29cab5003e85a4"
+    },
+    "src/galaxias_model/mate_guard.py": {
+      "bytes": 30236,
+      "sha256": "7da473275457d9970c7b6a748e4ac92043c96ccdd14266142fb6e02827bdb332"
+    },
+    "src/galaxias_model/mechanism_interpretation.py": {
+      "bytes": 58805,
+      "sha256": "e17efa13dd4a7db2f3a32cdf579fdc4c251bbc7f5c1cb08c07e7a0656e52fb9c"
+    },
+    "src/galaxias_model/module5_counterfactual.py": {
+      "bytes": 16297,
+      "sha256": "e8b2fad5203ff2da9396b629e0338d1a5b89cbd39508f457449a9cef6f216bd8"
+    },
+    "src/galaxias_model/module5_execution_inspect.py": {
+      "bytes": 10324,
+      "sha256": "158f971e0cd80b20fd86f95f053e8907aaaf3f249ece09261e7946011b1ed359"
+    },
+    "src/galaxias_model/module5_factorial_extension.py": {
+      "bytes": 21099,
+      "sha256": "e879bf5cccdb2dcc0e4f21af22c922e9a2a134c47a0b15fbfd330ed3da266398"
+    },
+    "src/galaxias_model/module5_factorial_extension_audit.py": {
+      "bytes": 24457,
+      "sha256": "227847399d2afe2e7723e3164fafabb00b2de9855550900852a95ed80126a04e"
+    },
+    "src/galaxias_model/module5_interaction_stability.py": {
+      "bytes": 27547,
+      "sha256": "ca0578c5553344c8aebf092800cf693aa035c42202f6ad1600887ba68d5f1719"
+    },
+    "src/galaxias_model/module5_output_checks.py": {
+      "bytes": 7548,
+      "sha256": "417219f3be0ea6258933cd45f66bd813162e1f2e62ffafef1824191a7a6551fd"
+    },
+    "src/galaxias_model/module5_partitions.py": {
+      "bytes": 2628,
+      "sha256": "c64591453594c4bf0e7345ba5004416ed327379e37dea94ee0cd4552b4563237"
+    },
+    "src/galaxias_model/module5_production_summary.py": {
+      "bytes": 21260,
+      "sha256": "e99a2c76c1cea4cd6484a5b2cbd8fa291eff8a2c10446246b4f5c75438c31014"
+    },
+    "src/galaxias_model/module5_proposals.py": {
+      "bytes": 6830,
+      "sha256": "505c1ba03a2af5e28039e223aaab5c3cc4064c9f90fab7378602e21a23dd883b"
+    },
+    "src/galaxias_model/module5_rehearsal.py": {
+      "bytes": 30481,
+      "sha256": "22b42cfffc65d71c20e0446bd7c1b697d86e52e9cd84a931a6fe163985847936"
+    },
+    "src/galaxias_model/module5_smoke_inspect.py": {
+      "bytes": 6557,
+      "sha256": "233a58f6c734724f065de8f58f8e806fc3d8e51d0db80dd00e3c16a95a5721fd"
+    },
+    "src/galaxias_model/observation.py": {
+      "bytes": 12309,
+      "sha256": "1a48a493cc656610a752d91676f3e8858fa4f46bc92c0810a2b522cb266b1ef4"
+    },
+    "src/galaxias_model/observation_repair.py": {
+      "bytes": 5790,
+      "sha256": "9dc9c69cf11c59c54c5c8433192baadd733e3b60ace96ed515e906d92d993fd2"
+    },
+    "src/galaxias_model/recruitment_demography.py": {
+      "bytes": 14554,
+      "sha256": "332f7ab7c5b27abecbbc9dbe8bd4bfd1873e3743d8949fc707f102ee952f3ef5"
+    },
+    "src/galaxias_model/recruitment_scenarios.py": {
+      "bytes": 6574,
+      "sha256": "624423c0983441a55d925399444c6a217c20e2f9e4e3b37975e7b803270b528a"
+    },
+    "src/galaxias_model/review.py": {
+      "bytes": 35054,
+      "sha256": "822d7e638cce0f026a8fbe859d278afd9d594a6675fee89c1582a0ac010a72b0"
+    },
+    "src/galaxias_model/sampling.py": {
+      "bytes": 9828,
+      "sha256": "1397b21a89767cc88069712ee012f072bd7f28cb69e302efa6eb882b81f4c613"
+    },
+    "src/galaxias_model/scoring.py": {
+      "bytes": 32295,
+      "sha256": "f94774169a2bc1aa3213a98a5004967210f7183dade82f80ee461318df937844"
+    },
+    "src/galaxias_model/simulation.py": {
+      "bytes": 18720,
+      "sha256": "531e1c597b2ada9a09c1fb47b462098149e3fe943aa37d96cde1cfe713d700c3"
+    },
+    "src/galaxias_model/types.py": {
+      "bytes": 5880,
+      "sha256": "bbb91a0a1e344c7e1b97d5ef5c10ce943dccf6789fc4924eb0229342dd0a6d75"
+    },
+    "uv.lock": {
+      "bytes": 60617,
+      "sha256": "5d6561c9a74c38eccbc35c6053c0819d36357f3331305058f863a66bb3ef148e"
+    }
+  },
+  "archive_rows": {
+    "compact_rows": 7680,
+    "complete_rows": 2055,
+    "failed_rows": 5625,
+    "full_rows": 7680,
+    "reconstruction_verified_rows": 2055
+  },
+  "diagnostic_qualification": {
+    "biological_vector_definition": "source-bank fields remaining after removing IDs, role/namespace, cell design factors (restriction, nursery, maximum age, removal account, tier), timing, index labels, and source seed; hash is a grouping aid, not an independent-set claim",
+    "failure_definition": "failure text is grouped by parsed year/site/event label; event labels are resolved with the hash-bound age_runner calendar, with neutral and linked-release failures retained",
+    "interpretation": "exploratory archive diagnostics, not historical fit, posterior, causal effect, or empirical endpoint claim",
+    "pre_spawn_compartments": "exactly reconstructed for every complete history from the 2002 transfer_2002_late checkpoint and keyed breeding draws; the helper result and independent kernel-style replay match exactly and both pooled sexes match the recorded summary",
+    "scope": "bounded existing archive diagnostic only; no new biological simulations",
+    "score_exposure_labels": "exposures and historical scores use lake trajectories only; terminal labels are applied only after scoring for endpoint composition",
+    "score_variants": "two-bin relative score and eight-trip saturated-relative score are parallel diagnostics; the eight-trip score replaces aggregate two-bin evidence and is not added to it",
+    "weighted_endpoint_year": 2002
+  },
+  "finished_utc": "2026-10-02T01:34:55.829843+00:00",
+  "historical_data": {
+    "annual_years": [
+      1976,
+      1977,
+      1978,
+      1979,
+      1980,
+      1981,
+      1982,
+      1983,
+      1984,
+      1985,
+      1986,
+      1987,
+      1988,
+      1989,
+      1990,
+      1991
+    ],
+    "count_definition": "c_i = 12 * digitised mean per site trip",
+    "lake_score_years": [
+      1976,
+      1977,
+      1978,
+      1979,
+      1980,
+      1983,
+      1986,
+      1989
+    ],
+    "path": "data/age_structured_design_20260929/lake_figure6_digitised.csv",
+    "zero_handling": "zero means remain exactly zero; reading shifts apply only to positive means"
+  },
+  "input_manifest": "outputs/remote/age_linked_recovery_20261001/gate/run_manifest.json",
+  "input_manifest_sha256": "3cc63a45a5f8dea1a951993c6ee1b565938aded57435137a6139bd1abb073312",
+  "source_grouping": {
+    "distinct_biological_vectors": {
+      "bank": 128,
+      "truth": 256
+    },
+    "distinct_cell_source_rows": 1920,
+    "distinct_source_ids": 384,
+    "pairing_key": "source_id is the shared nuisance source; cell_id,source_id is the cell-specific row; repeated cells are paired and not independent",
+    "source_bank_rows": 1920
+  },
+  "started_utc": "2026-10-02T01:34:49.064380+00:00",
+  "status": "complete"
+}

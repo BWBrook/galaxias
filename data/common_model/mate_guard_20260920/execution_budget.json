@@ -1,0 +1,24 @@
+{
+  "status": "reserved",
+  "approval": "Barry explicit Codex approval 2026-09-20, including modified demographic kernel and required compute",
+  "prior_conservative_programme_count": 4775960,
+  "production_historical_calls": 529408,
+  "auxiliary_execution_ceiling": 15000,
+  "new_total_ceiling": 5320368,
+  "programme_hard_ceiling": 7100000,
+  "workers": 8,
+  "numerical_threads": 1,
+  "allocations": {
+    "local_kernel_and_analysis_checks_conservative": 1000,
+    "initial_20_source_smoke_including_initialization_and_insurance": 100,
+    "target_serial_24_sources_2_histories_including_auxiliary": 120,
+    "target_parallel_24_sources_2_histories_including_auxiliary": 120,
+    "original_replay_48_histories_plus_two_initializations_per_source": 144,
+    "production_initialization_and_two_insurance_scenarios_per_source": 1551,
+    "preserved_24_source_serial_before_wrapper_hardening": 120,
+    "burnin_difference_diagnosis": 96,
+    "final_baseline_replay_after_forcing_gate_hardening": 96
+  },
+  "accounting": "Full auxiliary ceiling retained in programme total. Historical seed replays count as executions even though they reuse seeds. Deterministic initialization and each insurance scenario conservatively count as one. Failed attempts retained and charged; no automatic restart or top-up. Local test reservation includes both reported kernel suite executions plus unit steps. Remaining auxiliary headroom is not authority for new scientific experiments.",
+  "allocated_auxiliary_upper_bound": 3347
+}

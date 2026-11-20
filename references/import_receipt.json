@@ -1,0 +1,57 @@
+{
+  "imported_utc": "2026-10-06T02:16:06.475580+00:00",
+  "status": "IMPORTED_AND_VERIFIED",
+  "source": {
+    "ssh_alias": "wsl-laptop",
+    "reported_hostname": "laptop",
+    "path": "/mnt/c/Temp/galaxias_barry_actions_2026-10-05/2_zotero/galaxias_bibliography.yaml",
+    "bytes": 160407,
+    "sha256": "06895f7b0cad10c5515b7fe7580be88e2565204e37b0766fe389f6a4524e6eaa"
+  },
+  "canonical_path": "references/galaxias_bibliography.yaml",
+  "source_bytes_preserved": true,
+  "checks": {
+    "yaml_parse": "passed",
+    "duplicate_yaml_mapping_keys": 0,
+    "records": 92,
+    "doi_records": 74,
+    "additional_records": 18,
+    "exact_register_title_matches": 92,
+    "register_year_matches": 92,
+    "publication_dates_year_only": true,
+    "doi_coverage": "exact match to 74-entry register",
+    "unique_matching_id_and_citation_keys": 92,
+    "makedoc_compatible_citation_keys": true,
+    "caswell_second_edition_isbn": "9780878930968",
+    "horner_year": 2026,
+    "vehtari_jmlr": "25(72):1–58, 2024",
+    "makedoc_reference_audit": {
+      "cited": 92,
+      "unknown": 0,
+      "unused": 0,
+      "exit_code": 0
+    },
+    "pandoc_citeproc_all_92_records": {
+      "exit_code": 0,
+      "warnings": []
+    },
+    "lf_only": true,
+    "model_completion_bound_files_unchanged": 33,
+    "existing_planning_files_unchanged_except_readme": true
+  },
+  "metadata_sources": {
+    "caswell": "https://books.google.com/books/about/Matrix_Population_Models.html?id=CPsTAQAAIAAJ",
+    "vehtari": "https://www.jmlr.org/papers/v25/19-556.html"
+  },
+  "status_update": "Barry reported on 6 October that he sent the brief to Chris, who is reviewing it. Bibliography handoff complete; first draft awaits Chris comments.",
+  "files": {
+    "references/galaxias_bibliography.yaml": "06895f7b0cad10c5515b7fe7580be88e2565204e37b0766fe389f6a4524e6eaa",
+    "references/citation_key_map.csv": "d9fe247dc2711587519eec31a54fe8f89041d01ba50a7046143254e35b51d02f",
+    "manuscript/planning/README.md": "bcde71a200a2b91851afe01226bfc910cf417de29e43b6127dbab1731480e5ae"
+  },
+  "scratch_checks": [
+    "outputs/bibliography_import_20261006/all_keys.md",
+    "outputs/bibliography_import_20261006/citation_smoke.txt"
+  ],
+  "scope": "Bibliography transfer, reconciliation and citation-processing check only; no manuscript prose drafting or model changes."
+}

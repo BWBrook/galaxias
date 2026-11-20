@@ -1,0 +1,74 @@
+{
+  "scope": "descriptive reporting of frozen validation; no reselection or new simulation",
+  "primary_map_status_counts": {
+    "not_found_at_cap": 979,
+    "compatible_witness_found": 465,
+    "unresolved_at_cap": 284
+  },
+  "diagnostic_map_status_counts": {
+    "not_found_at_cap": 502,
+    "compatible_witness_found": 228,
+    "unresolved_at_cap": 134
+  },
+  "primary_capacity_labels": {
+    "no qualified witness": 1263,
+    "support at K_R>=20": 448,
+    "low-refuge-capacity-dependent support": 17
+  },
+  "permissive_cutoffs": {
+    "early_lower95": 0.5,
+    "joint_lower95": 1e-06
+  },
+  "permissive_primary_source_profiles": 1527,
+  "permissive_primary_unique_sources": 517,
+  "q_0005_primary_cells_with_witnesses": 48,
+  "q_0005_primary_cells_minimum_search_seed_count": 2,
+  "q_0005_primary_cells_with_K_R_ge20": 48,
+  "primary_MC_qualified_profiles_by_q_and_law": [
+    {
+      "q": 0.005,
+      "observation_model": "homogeneous",
+      "joint_mc_qualified": 593
+    },
+    {
+      "q": 0.005,
+      "observation_model": "shared_quality",
+      "joint_mc_qualified": 619
+    },
+    {
+      "q": 0.02,
+      "observation_model": "homogeneous",
+      "joint_mc_qualified": 219
+    },
+    {
+      "q": 0.02,
+      "observation_model": "shared_quality",
+      "joint_mc_qualified": 539
+    },
+    {
+      "q": 0.05,
+      "observation_model": "homogeneous",
+      "joint_mc_qualified": 27
+    },
+    {
+      "q": 0.05,
+      "observation_model": "shared_quality",
+      "joint_mc_qualified": 191
+    },
+    {
+      "q": 0.2,
+      "observation_model": "homogeneous",
+      "joint_mc_qualified": 0
+    },
+    {
+      "q": 0.2,
+      "observation_model": "shared_quality",
+      "joint_mc_qualified": 2
+    }
+  ],
+  "inputs": {
+    "compatibility_map.csv": "f0b105003b3f8350500fa575285fb4c26002f123d98307d3888b664b50229825",
+    "validated_source_profiles.csv": "87fb4e76a2af26985af42039006607d1d87928b14b10460c2058752414688f10",
+    "overshoot_counterfactual_contrasts.csv": "f1a206ff1831636b782d87005c91971440dd305be016ef2422c9eea910aa4947"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "all_passed": true,
+  "identical_exposure_opposite_labels": {
+    "bank_sources_per_class": 8,
+    "control_score_only": true,
+    "description": "Identical complete feature vectors receive opposite bank labels and distinct source IDs; score evidence must remain tied.",
+    "log_ratios": [
+      0.0,
+      0.0
+    ],
+    "passed": true,
+    "predictions": [
+      -1,
+      -1
+    ]
+  },
+  "informative_high_near_zero": {
+    "bank_sources_per_class": 8,
+    "control_score_only": true,
+    "description": "Both supported classes use the same score map; high exposure histories are contrasted with near-zero histories, with an exact-zero positive-support check.",
+    "exact_zero_positive_scores_all_negative_infinity": true,
+    "log_ratios": [
+      -43.9956,
+      86.50625508241662
+    ],
+    "near_zero_scale": 0.0001,
+    "passed": true,
+    "predictions": [
+      0,
+      1
+    ]
+  },
+  "sha256": "f6f1beb3328bc5f04d50fefb7dbee69715e93860c33151e031233ec0d821992d"
+}

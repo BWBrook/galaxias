@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "source_count": 288,
+  "viable_count": 287,
+  "pipeline_histories": 1686,
+  "parity_executions": 96,
+  "unit_histories": 39,
+  "source_output_ancestry_hashes": "verified",
+  "fresh_phase_seed_sets": "disjoint",
+  "paired_seed_keys": "exact",
+  "smoke_compatibility_witnesses": 0,
+  "scientific_interpretation": "none: reduced smoke checks execution only"
+}

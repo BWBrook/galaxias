@@ -1,0 +1,16 @@
+{
+  "analysis_status": "complete",
+  "base_gate_categories": {
+    "insufficient_truth_and_bank": 4212
+  },
+  "base_gate_rows": 4212,
+  "generation_full_design": true,
+  "generation_status": "complete",
+  "interpretation": "Accounting summaries remain at cell and index-stratum resolution. They do not pool cells or strata, treat repeated nuisance sources as independent evidence, justify GO, or compute empirical posterior quantities.",
+  "process_rows": 1048,
+  "small_sex_pool_rows": 154,
+  "source_class_rows": 160,
+  "status": "complete",
+  "strata_without_complete_histories": 1,
+  "stratum_rows": 40
+}

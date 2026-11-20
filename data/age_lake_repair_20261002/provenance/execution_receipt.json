@@ -1,0 +1,16 @@
+{
+  "analysis_receipt": {
+    "bytes": 3148,
+    "sha256": "6c55e844ec6c5328a612dfff1f54cb42dfcf5453dcd5be9e20580e5dc1120387"
+  },
+  "completed_utc": "2026-10-02T02:27:00.349639+00:00",
+  "gate_disposition": "STOP_BEFORE_HISTORICAL_COMPARISON",
+  "generation_manifest": {
+    "bytes": 13842,
+    "sha256": "44fb17833d70888fb9ae747ee10a64ecc5a3185aa3c4160050c619d7563f024b"
+  },
+  "nominal_site_histories": 92160,
+  "primary_base_passes": 0,
+  "source_files_verified": 661,
+  "status": "complete"
+}

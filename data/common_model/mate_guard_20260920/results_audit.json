@@ -1,0 +1,614 @@
+{
+  "schema_version": 1,
+  "status": "verified_with_interpretive_limits",
+  "verdict": "The singleton guard materially reduces the frozen witness set, but 609 qualified primary profiles across 226 fixed sources remain; the run establishes sensitivity, not global exclusion or mechanism ranking.",
+  "generated": "2026-09-20T23:05:16+10:00",
+  "scope": "Independent central-results audit only; no simulation, refit, replacement source or new hypothesis.",
+  "inputs": {
+    "selected_profiles": {
+      "path": "data/common_model/mate_guard_20260920/selected_profiles.csv",
+      "bytes": 6746970,
+      "sha256": "2aeb91a84b4c9edcda107470fcba3666e5f696c22e8af9797c789e9b8e85d614"
+    },
+    "production_manifest": {
+      "path": "outputs/remote/mate_guard_20260920/production/run_manifest.json",
+      "bytes": 231655,
+      "sha256": "ea6bc8df256d3bc13cbe50e76db8d48ef971ab1705a6c85fc32a1ef290ee2146"
+    },
+    "analysis_receipt": {
+      "path": "outputs/remote/mate_guard_20260920/analysis/mate_guard_analysis_receipt.json",
+      "bytes": 1334,
+      "sha256": "05dd1c8ff89a66cf8ace58301cab9313e1c98398a64658489437102c69b83622"
+    },
+    "verification": {
+      "path": "outputs/remote/mate_guard_20260920/verification.json",
+      "bytes": 814,
+      "sha256": "cc8ff8bddb21b81029e8205f211223abe8e18cb7ae282ba4fab0a7664d311e87"
+    },
+    "readout_summary": {
+      "path": "outputs/remote/mate_guard_20260920/readout/summary.json",
+      "bytes": 684,
+      "sha256": "b71dae61535efb9ddf3ec4911c4bbe437b6576f92051f0f7fa351935404549b1"
+    }
+  },
+  "source_identities": {
+    "src/galaxias_model/common_model.py": {
+      "manifest": {
+        "bytes": 29022,
+        "sha256": "2031373352dbdb55b30db571dc7b861e67f804fc0b5709ef99233f73e8e463c4"
+      },
+      "current_local": {
+        "path": "src/galaxias_model/common_model.py",
+        "bytes": 29022,
+        "sha256": "2031373352dbdb55b30db571dc7b861e67f804fc0b5709ef99233f73e8e463c4"
+      },
+      "match": true
+    },
+    "src/galaxias_model/mate_guard.py": {
+      "manifest": {
+        "bytes": 30236,
+        "sha256": "7da473275457d9970c7b6a748e4ac92043c96ccdd14266142fb6e02827bdb332"
+      },
+      "current_local": {
+        "path": "src/galaxias_model/mate_guard.py",
+        "bytes": 30236,
+        "sha256": "7da473275457d9970c7b6a748e4ac92043c96ccdd14266142fb6e02827bdb332"
+      },
+      "match": true
+    },
+    "scripts/run_mate_guard.py": {
+      "manifest": {
+        "bytes": 17386,
+        "sha256": "b0fad315b06334993fb8f829be5b6eef77c5542fed1497703305b2836fd12d0b"
+      },
+      "current_local": {
+        "path": "scripts/run_mate_guard.py",
+        "bytes": 17386,
+        "sha256": "b0fad315b06334993fb8f829be5b6eef77c5542fed1497703305b2836fd12d0b"
+      },
+      "match": true
+    },
+    "scripts/analyze_mate_guard.py": {
+      "manifest": {
+        "bytes": 35612,
+        "sha256": "3ebc2c877eefc465340ecb0fc175637c0e7fa09ad98df7b133c966c72bb93dd6"
+      },
+      "current_local": {
+        "path": "scripts/analyze_mate_guard.py",
+        "bytes": 35612,
+        "sha256": "3ebc2c877eefc465340ecb0fc175637c0e7fa09ad98df7b133c966c72bb93dd6"
+      },
+      "match": true
+    },
+    "docs/common_model_mate_guard_protocol.md": {
+      "manifest": {
+        "bytes": 8621,
+        "sha256": "5a6a2c7d74afef8f4688c7ba571c69e5ccf7a5870a2915d732f5897569ae8c3c"
+      },
+      "current_local": {
+        "path": "docs/common_model_mate_guard_protocol.md",
+        "bytes": 8621,
+        "sha256": "5a6a2c7d74afef8f4688c7ba571c69e5ccf7a5870a2915d732f5897569ae8c3c"
+      },
+      "match": true
+    }
+  },
+  "exact_remote_runtime": {
+    "python": "3.14.5 (main, May 10 2026, 19:28:16) [Clang 22.1.3 ]",
+    "numpy": "2.4.6",
+    "pandas": "2.3.3"
+  },
+  "archive_verification": {
+    "analysis_receipt": {
+      "bytes": 1334,
+      "sha256": "05dd1c8ff89a66cf8ace58301cab9313e1c98398a64658489437102c69b83622"
+    },
+    "annual_rows": 20117504,
+    "guard_active_rows": 5615255,
+    "nonzero_recruitment_when_guard_active": 0,
+    "output_files_verified": 1555,
+    "paired_histories": 529408,
+    "run_manifest": {
+      "bytes": 231655,
+      "sha256": "ea6bc8df256d3bc13cbe50e76db8d48ef971ab1705a6c85fc32a1ef290ee2146"
+    },
+    "script": {
+      "bytes": 5796,
+      "sha256": "e6d0b6e79d0a02aaed1d9acc3b9028fa04e134be30cae79ddcf5545fa32c49fb"
+    },
+    "seed_design": "Exact archived validation seed pairs reused; no fresh independent validation claim",
+    "source_count": 517,
+    "source_files_verified": 85,
+    "status": "verified",
+    "viability_failed_sources": 108,
+    "zero_or_singleton_total_population_rebounds": 0
+  },
+  "seed_identity": {
+    "expected_rows": 529408,
+    "new_rows": 529408,
+    "old_rows": 529408,
+    "expected_duplicate_keys": 0,
+    "new_duplicate_keys": 0,
+    "old_duplicate_keys": 0,
+    "new_key_seed_mismatch_count": 0,
+    "old_key_seed_mismatch_count": 0
+  },
+  "original_witness_profiles": {
+    "profile_count": 1527,
+    "source_count": 517,
+    "new_status_counts": {
+      "notfound": 734,
+      "qualified-compatible": 600,
+      "unresolved": 193
+    },
+    "retained_source_count": 226
+  },
+  "all_fixed_primary_profiles": {
+    "qualified_profile_count": 609,
+    "qualified_source_count": 226,
+    "retained_original_profile_count": 600,
+    "gained_profile_count": 9,
+    "gained_profiles": [
+      {
+        "source_id": "common-production|20260918|base|R_C|w2|s0088",
+        "q": 0.02,
+        "observation_model": "shared_quality"
+      },
+      {
+        "source_id": "common-production|20260918|juvenile_climbing|R_C|w3|s0076",
+        "q": 0.05,
+        "observation_model": "homogeneous"
+      },
+      {
+        "source_id": "common-production|20260918|minimum_dated_adult_first|R_C|w3|s0122",
+        "q": 0.05,
+        "observation_model": "shared_quality"
+      },
+      {
+        "source_id": "common-production|20260918|minimum_dated_adult_first|R_C|w3|s0188",
+        "q": 0.05,
+        "observation_model": "homogeneous"
+      },
+      {
+        "source_id": "common-production|20260918|minimum_dated_adult_first|R_C|w3|s0188",
+        "q": 0.05,
+        "observation_model": "shared_quality"
+      },
+      {
+        "source_id": "common-production|20260919|juvenile_climbing|R_C|w3|s0031",
+        "q": 0.05,
+        "observation_model": "homogeneous"
+      },
+      {
+        "source_id": "common-production|20260919|minimum_dated_adult_first|R_T|w3|s0161",
+        "q": 0.02,
+        "observation_model": "shared_quality"
+      },
+      {
+        "source_id": "common-production|20260919|minimum_dated_juvenile_first|R_J|w3|s0083",
+        "q": 0.05,
+        "observation_model": "shared_quality"
+      },
+      {
+        "source_id": "common-production|20260919|minimum_dated_juvenile_first|R_J|w3|s0170",
+        "q": 0.02,
+        "observation_model": "shared_quality"
+      }
+    ]
+  },
+  "viability": {
+    "counts": {
+      "pass": 409,
+      "fail": 108
+    },
+    "failed_component_counts": {
+      "viability_oberon_persisted_annually": 0,
+      "viability_oberon_net_growth": 108,
+      "viability_oberon_juveniles_by_1997": 0,
+      "viability_strathgordon_no_juveniles_2001_2007": 0,
+      "viability_strathgordon_recruitment_2008": 0,
+      "viability_strathgordon_positive_2012": 0
+    },
+    "failed_oberon_2012_total": {
+      "min": 8.354773043330548,
+      "max": 33.91261200110392,
+      "median": 21.388383525564542,
+      "founders_unique": [
+        34.0
+      ]
+    },
+    "interpretation": "All 108 fail only the deterministic Oberon 2012 >34-founder net-growth screen; this is phase-specific and is not founder extinction or global biological non-viability."
+  },
+  "capacity_strata": {
+    "original_profile_new_status": {
+      "K_R<20": {
+        "notfound": 172,
+        "qualified-compatible": 23,
+        "unresolved": 4
+      },
+      "K_R>=20": {
+        "notfound": 562,
+        "qualified-compatible": 577,
+        "unresolved": 189
+      }
+    },
+    "source_viability": {
+      "K_R<20": {
+        "false": 45,
+        "true": 13
+      },
+      "K_R>=20": {
+        "false": 63,
+        "true": 396
+      }
+    },
+    "source_retention": [
+      {
+        "capacity_stratum": "K_R<20",
+        "source_count": 58,
+        "viable_count": 13,
+        "retained_source_count": 6
+      },
+      {
+        "capacity_stratum": "K_R>=20",
+        "source_count": 459,
+        "viable_count": 396,
+        "retained_source_count": 220
+      }
+    ],
+    "interpretation": "K_R<20 is an established diagnostic boundary; association with retention and screen failure is not a calibrated abundance-scale effect or causal capacity estimate."
+  },
+  "paired_terminal_survival": {
+    "original_selected_profiles": {
+      "row_count": 1527,
+      "defined_count": 1073,
+      "undefined_invalid_removal_count": 454,
+      "directions_defined": {
+        "negative": 451,
+        "zero": 617,
+        "positive": 5
+      },
+      "defined_difference_min": -0.6058804048208534,
+      "defined_difference_max": 0.037202170650678865,
+      "defined_difference_median": 0.0
+    },
+    "all_fixed_profiles": {
+      "row_count": 6204,
+      "defined_count": 4368,
+      "undefined_invalid_removal_count": 1836
+    },
+    "undefined_rule": "Any amended invalid-removal history with positive original support makes the paired contrast undefined; histories are not dropped and weights are not renormalised."
+  },
+  "precision": {
+    "retained_original_profiles_survivor_tail_qualified": 568,
+    "retained_original_profiles_total": 600,
+    "all_new_primary_profiles_survivor_tail_qualified": 574,
+    "all_new_primary_profiles_total": 609,
+    "survivor_tail_by_q_law": [
+      {
+        "q": 0.005,
+        "observation_model": "homogeneous",
+        "qualified_profiles": 201,
+        "survivor_tail_qualified": 197,
+        "survivor_tail_unqualified": 4
+      },
+      {
+        "q": 0.005,
+        "observation_model": "shared_quality",
+        "qualified_profiles": 221,
+        "survivor_tail_qualified": 212,
+        "survivor_tail_unqualified": 9
+      },
+      {
+        "q": 0.02,
+        "observation_model": "homogeneous",
+        "qualified_profiles": 34,
+        "survivor_tail_qualified": 30,
+        "survivor_tail_unqualified": 4
+      },
+      {
+        "q": 0.02,
+        "observation_model": "shared_quality",
+        "qualified_profiles": 118,
+        "survivor_tail_qualified": 111,
+        "survivor_tail_unqualified": 7
+      },
+      {
+        "q": 0.05,
+        "observation_model": "homogeneous",
+        "qualified_profiles": 5,
+        "survivor_tail_qualified": 1,
+        "survivor_tail_unqualified": 4
+      },
+      {
+        "q": 0.05,
+        "observation_model": "shared_quality",
+        "qualified_profiles": 29,
+        "survivor_tail_qualified": 23,
+        "survivor_tail_unqualified": 6
+      },
+      {
+        "q": 0.2,
+        "observation_model": "shared_quality",
+        "qualified_profiles": 1,
+        "survivor_tail_qualified": 0,
+        "survivor_tail_unqualified": 1
+      }
+    ],
+    "retained_survivor_ess_min": 1.6472012098680402,
+    "retained_survivor_ess_median": 463.2901759649578
+  },
+  "targeted_raw_recomputations_q005_homogeneous": {
+    "declared_base_RC0011": {
+      "source_id": "common-production|20260918|base|R_C|w1|s0011",
+      "source_ordinal": 0,
+      "configuration": "base",
+      "restriction": "R_C",
+      "K_R": 46.29507635811398,
+      "new_viable": true,
+      "old_factual": {
+        "positive_support_count": 708,
+        "ess": 138.68394732064218,
+        "rse": 0.0789947548141306,
+        "largest": 0.025486018764478015,
+        "qualified": true,
+        "survival": 0.7079626532587047,
+        "survival_mc_se": 0.039900066301590195,
+        "survivor_ess": 103.01797922875353,
+        "survivor_rse": 0.09348269968059875,
+        "survivor_largest": 0.03599910058414462
+      },
+      "paired_new_under_old_weights": {
+        "status": "defined",
+        "invalid_positive_support_count": 0,
+        "invalid_old_weight_mass": 0.0,
+        "survival": 0.3430257071805587,
+        "difference": -0.3649369460781461,
+        "difference_mc_se": 0.0403273271909016
+      },
+      "new_own_rescored": {
+        "positive_support_count": 183,
+        "ess": 14.186886232860976,
+        "rse": 0.2637783475383792,
+        "largest": 0.1862009167268412,
+        "qualified": false,
+        "survival": 0.3574257081623594,
+        "survival_mc_se": 0.11571951594715624,
+        "survivor_ess": 8.330516487114481,
+        "survivor_rse": 0.3452251452479681,
+        "survivor_largest": 0.3053720159042082,
+        "early_lower95": 0.2460794911693784,
+        "joint_lower95": 1.175235849144798e-08,
+        "status": "notfound"
+      },
+      "max_abs_numeric_discrepancy_vs_analysis": 2.3092638912203256e-14
+    },
+    "declared_base_RJ0082": {
+      "source_id": "common-production|20260919|base|R_J|w3|s0082",
+      "source_ordinal": 287,
+      "configuration": "base",
+      "restriction": "R_J",
+      "K_R": 270.293476705477,
+      "new_viable": true,
+      "old_factual": {
+        "positive_support_count": 788,
+        "ess": 91.42060401453115,
+        "rse": 0.09985804241363092,
+        "largest": 0.03956381198827781,
+        "qualified": false,
+        "survival": 0.812946297519483,
+        "survival_mc_se": 0.03766864940000744,
+        "survivor_ess": 71.17650182241526,
+        "survivor_rse": 0.1143931694217706,
+        "survivor_largest": 0.04866719008254002
+      },
+      "paired_new_under_old_weights": {
+        "status": "defined",
+        "invalid_positive_support_count": 0,
+        "invalid_old_weight_mass": 0.0,
+        "survival": 0.4177188854899792,
+        "difference": -0.39522741202950384,
+        "difference_mc_se": 0.05102565116679067
+      },
+      "new_own_rescored": {
+        "positive_support_count": 484,
+        "ess": 19.56244867230105,
+        "rse": 0.2240330264404133,
+        "largest": 0.12235782890172217,
+        "qualified": false,
+        "survival": 0.34993234642519483,
+        "survival_mc_se": 0.1077938139791282,
+        "survivor_ess": 6.871421136008718,
+        "survivor_rse": 0.38038801802817807,
+        "survivor_largest": 0.2539934126476686,
+        "early_lower95": 0.9112969887506032,
+        "joint_lower95": 1.3460211916904132e-07,
+        "status": "notfound"
+      },
+      "max_abs_numeric_discrepancy_vs_analysis": 7.993605777301127e-15
+    },
+    "invalid_removal_example": {
+      "source_id": "common-production|20260918|minimum_dated_juvenile_first|R_H|w3|s0153",
+      "source_ordinal": 235,
+      "configuration": "minimum_dated_juvenile_first",
+      "restriction": "R_H",
+      "K_R": 25.636797516517817,
+      "new_viable": false,
+      "old_factual": {
+        "positive_support_count": 502,
+        "ess": 116.169418612463,
+        "rse": 0.0874014583957171,
+        "largest": 0.03042824837962958,
+        "qualified": true,
+        "survival": 1.0,
+        "survival_mc_se": 0.0,
+        "survivor_ess": 116.169418612463,
+        "survivor_rse": 0.0874014583957171,
+        "survivor_largest": 0.03042824837962958
+      },
+      "paired_new_under_old_weights": {
+        "status": "undefined_invalid_removal_positive_support",
+        "invalid_positive_support_count": 335,
+        "invalid_old_weight_mass": 0.7215200701479005,
+        "survival": null,
+        "difference": null,
+        "difference_mc_se": null
+      },
+      "new_own_rescored": {
+        "positive_support_count": 0,
+        "ess": 0.0,
+        "rse": null,
+        "largest": null,
+        "qualified": false,
+        "survival": null,
+        "survival_mc_se": null,
+        "survivor_ess": 0.0,
+        "survivor_rse": null,
+        "survivor_largest": null,
+        "early_lower95": 0,
+        "joint_lower95": 0,
+        "status": "notfound"
+      },
+      "max_abs_numeric_discrepancy_vs_analysis": 0.0
+    },
+    "largest_defined_change": {
+      "source_id": "common-production|20260918|env_rho_002|R_C|w3|s0156",
+      "source_ordinal": 65,
+      "configuration": "env_rho_002",
+      "restriction": "R_C",
+      "K_R": 13.413630424172473,
+      "new_viable": true,
+      "old_factual": {
+        "positive_support_count": 810,
+        "ess": 135.67734208655793,
+        "rse": 0.08000071883878462,
+        "largest": 0.03585209121192899,
+        "qualified": true,
+        "survival": 0.8897317022736151,
+        "survival_mc_se": 0.022190166116868547,
+        "survivor_ess": 115.49288240370984,
+        "survivor_rse": 0.08768973144238837,
+        "survivor_largest": 0.04029539592701122
+      },
+      "paired_new_under_old_weights": {
+        "status": "defined",
+        "invalid_positive_support_count": 0,
+        "invalid_old_weight_mass": 0.0,
+        "survival": 0.24492340290573744,
+        "difference": -0.6448082993678776,
+        "difference_mc_se": 0.04291339489387069
+      },
+      "new_own_rescored": {
+        "positive_support_count": 393,
+        "ess": 99.06213475179796,
+        "rse": 0.09553546490141335,
+        "largest": 0.032672361825591016,
+        "qualified": false,
+        "survival": 0.5799406176399484,
+        "survival_mc_se": 0.04899114935624838,
+        "survivor_ess": 53.91513766041831,
+        "survivor_rse": 0.13262081356870814,
+        "survivor_largest": 0.05633742633607948,
+        "early_lower95": 0.9584853689978174,
+        "joint_lower95": 9.6283379289269e-11,
+        "status": "notfound"
+      },
+      "max_abs_numeric_discrepancy_vs_analysis": 1.1368683772161603e-13
+    }
+  },
+  "largest_defined_q005_homogeneous_terminal_change": {
+    "source_id": "common-production|20260918|env_rho_002|R_C|w3|s0156",
+    "paired_difference": -0.6448082993678776,
+    "paired_mc_se": 0.04291339489387073,
+    "defined_count": 364
+  },
+  "base_q005_homogeneous_new_qualified": [
+    {
+      "restriction": "R_C",
+      "profile_count": 17,
+      "source_count": 17,
+      "survival_min": 0.7029470155648583,
+      "survival_max": 1.0000000000000002,
+      "survivor_tail_qualified_count": 17
+    },
+    {
+      "restriction": "R_H",
+      "profile_count": 6,
+      "source_count": 6,
+      "survival_min": 1.0,
+      "survival_max": 1.0000000000000002,
+      "survivor_tail_qualified_count": 6
+    },
+    {
+      "restriction": "R_J",
+      "profile_count": 6,
+      "source_count": 6,
+      "survival_min": 0.9999999999999998,
+      "survival_max": 1.0000000000000002,
+      "survivor_tail_qualified_count": 6
+    },
+    {
+      "restriction": "R_T",
+      "profile_count": 1,
+      "source_count": 1,
+      "survival_min": 1.0,
+      "survival_max": 1.0,
+      "survivor_tail_qualified_count": 1
+    }
+  ],
+  "analysis_comparison": {
+    "all_target_statuses_match": true,
+    "max_abs_target_numeric_discrepancy": 1.1368683772161603e-13,
+    "headline_readout_matches": {
+      "fixed_sources": true,
+      "original_witness_profiles": true,
+      "retained_witness_profiles": true,
+      "status_counts": true,
+      "retained_sources": true,
+      "viability_failed_sources": true,
+      "undefined_paired_profiles": true,
+      "all_fixed_primary_compatible_profiles": true
+    },
+    "all_headline_readout_matches": true
+  },
+  "interpretive_limits": [
+    "The 517 sources were selected under the original kernel; frequencies and direction counts are not probabilities, likelihood ratios or mechanism votes.",
+    "Paired old-weight contrasts and amended own-weight rescoring are different estimands and cannot be interchanged.",
+    "The 22/24 initialization result is a bounded qualification diagnostic, not an estimate for all 517 sources; initialization is part of the approved intervention.",
+    "Sparse binary observations, scenario q values, unknown count-to-survey scale, fixed parameters, pooled breeding and the lack of sex, co-location and mate encounter remain.",
+    "Thirty-five of 609 new compatible profiles fail survivor-tail precision, so their terminal-survival point estimates require explicit qualification."
+  ],
+  "recommendation": "Use the result as evidence of substantial singleton-guard sensitivity with surviving fixed-source examples. Preserve the two estimands, undefined-pair rule, viability phase, survivor-tail precision and fixed-selection/global-nonexclusion boundary in synthesis. Independent scientific review materially changes confidence in interpretation, though not the verified arithmetic.",
+  "selected_profile_recomputations_q020_shared_quality": {
+    "common-production|20260918|base|R_C|w1|s0011": {
+      "old_survival": 0.5111211740486817,
+      "paired_new_survival": 0.21991230525301195,
+      "paired_difference": -0.29120886879566976,
+      "paired_mc_se": 0.03533840766525286,
+      "new_own_survival": 0.2031244828633421,
+      "new_own_survival_mc_se": 0.04812185886027578,
+      "new_own_ess": 32.721324873245436,
+      "new_own_qualified": false,
+      "new_early_lower95": 0.2460794911693784,
+      "new_joint_lower95": 1.7547548935395355e-05,
+      "new_status": "notfound",
+      "analysis_paired_status": "defined",
+      "max_abs_discrepancy": 0.0
+    },
+    "common-production|20260919|base|R_J|w3|s0082": {
+      "old_survival": 0.5280867580361794,
+      "paired_new_survival": 0.20445183866435818,
+      "paired_difference": -0.3236349193718213,
+      "paired_mc_se": 0.03868642828358367,
+      "new_own_survival": 0.09460869937555423,
+      "new_own_survival_mc_se": 0.029363652750112736,
+      "new_own_ess": 25.06649831878856,
+      "new_own_qualified": false,
+      "new_early_lower95": 0.9112969887506032,
+      "new_joint_lower95": 8.553342315173319e-05,
+      "new_status": "unresolved",
+      "analysis_paired_status": "defined",
+      "max_abs_discrepancy": 0.0
+    }
+  }
+}

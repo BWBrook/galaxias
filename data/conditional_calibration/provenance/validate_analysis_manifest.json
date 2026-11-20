@@ -1,0 +1,27 @@
+{
+  "status": "complete",
+  "phase": "validate",
+  "phase_manifest": {
+    "bytes": 9966,
+    "sha256": "2dccdd5fc786b21d03b47d7eb15c13ec2f735e0e31422c970c1468a8e4670b2c"
+  },
+  "analysis_source": {
+    "bytes": 12255,
+    "sha256": "4fb309d3774a6230263e1d78819cece5f9832221df0ff2b835860ab777f2e2ad"
+  },
+  "previous_membership": null,
+  "final_membership": {
+    "bytes": 132659,
+    "sha256": "e88a89a3a831ff460789172251e348f3ea0f5f3558d3567c31b3d8c7cd2aa785"
+  },
+  "outputs": {
+    "verified_sources.csv": {
+      "bytes": 2084354,
+      "sha256": "9eef658956f76c4ad5042981a3cc030cd69d8f50018fb49bb4e5f7e6ba5ba285"
+    },
+    "context_summary.csv": {
+      "bytes": 164848,
+      "sha256": "6edec6a76471a88db559e12bc6f6827e05c013a9fe7dd501181a62585199f395"
+    }
+  }
+}

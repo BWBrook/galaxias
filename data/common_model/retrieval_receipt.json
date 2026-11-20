@@ -1,0 +1,215 @@
+{
+  "status": "verified",
+  "verified_utc": "2026-09-19T02:24:44.782458+00:00",
+  "local_directory": "/Users/bwbrook/papers/galaxias/outputs/remote/common_model_20260918/production",
+  "files": {
+    "search/run_manifest.json": {
+      "bytes": 11078,
+      "sha256": "ba1895fa59c830f43dc4ac63f006dee946a35b29f08b80b09b586877ceb29f61"
+    },
+    "search/annual_refuge_summary_wave_1.csv.gz": {
+      "bytes": 9826895,
+      "sha256": "abbd1ab5a7211a770b30d81aafd7a8a783e3a59f44af15ad21d10c57d18dbf3a"
+    },
+    "search/annual_refuge_summary_wave_2.csv.gz": {
+      "bytes": 9938943,
+      "sha256": "2ed4b79d6fca724f1e4ac41efc792b069e02fe4ab28d3a7206186fa4e3be6873"
+    },
+    "search/annual_refuge_summary_wave_3.csv.gz": {
+      "bytes": 9961151,
+      "sha256": "64b0218fe606436d5eb6d97e1bb09823b511726b8df61cf6bf1918bd0cf818e5"
+    },
+    "search/local_parent_ancestry.csv": {
+      "bytes": 1359433,
+      "sha256": "2b3e7006f9c52c1c924b83ae68fe27d76c6ed637bf4d8615dcd79b0d27ba9189"
+    },
+    "search/parameter_values.csv.gz": {
+      "bytes": 25881549,
+      "sha256": "37fcb7a1a59772f16bab1416aec6e6e9200a605232159a6ec33f10c9f3d0c6a5"
+    },
+    "search/refine_selection_membership.csv": {
+      "bytes": 845272,
+      "sha256": "cbcf906db955fb96a1d2b3f41841e69ecc7afcdd329055cd8066ad9726b799b8"
+    },
+    "search/refine_source_ids.csv": {
+      "bytes": 195918,
+      "sha256": "be18f81054b0ddc75434ab4bfe57e345a840a70ae79dcc3b64f7a937301ba5fb"
+    },
+    "search/source_exposure_descriptors.csv": {
+      "bytes": 11209875,
+      "sha256": "de8e9560f86d0bba1ea2f350d94d1620728fdf6ab4d70e8a2bdc6aaa3447bb0d"
+    },
+    "search/source_exposures_wave_1.csv.gz": {
+      "bytes": 22536598,
+      "sha256": "7cc77e470668d1c139daab6baa525c45ae58601c55de1f8ee61c5a1db8a2f49c"
+    },
+    "search/source_exposures_wave_2.csv.gz": {
+      "bytes": 22569774,
+      "sha256": "c5519759783132e12bcf00306c4b5a1e4b1d5e3b10a228b8a8a240c29d905460"
+    },
+    "search/source_exposures_wave_3.csv.gz": {
+      "bytes": 22661919,
+      "sha256": "37ca4db04dcc647c94b0614efa8b348cce7cf35300fea71c0482f54e09cffe89"
+    },
+    "search/source_summary.csv": {
+      "bytes": 1066224310,
+      "sha256": "8f8eb74a66d18ec6662f5bb95f84155097ed68c51f2ea3b09f139dbb9452acbe"
+    },
+    "search/sources.csv": {
+      "bytes": 40528451,
+      "sha256": "a16c202212fee5154b4b7d321f5774679178680a0eea1fab5707bd0ab4c42d49"
+    },
+    "refine/run_manifest.json": {
+      "bytes": 9824,
+      "sha256": "b46845bcd567da366448337342688bb5625d785097a8e8a2d22712c664353fde"
+    },
+    "refine/annual_refuge_summary.csv.gz": {
+      "bytes": 3459922,
+      "sha256": "08c6460919ba91694a51dfe3667a27bd09b900ca77f9c3f4c0ef765992b4c4e4"
+    },
+    "refine/parameter_values.csv.gz": {
+      "bytes": 3105011,
+      "sha256": "a71b5d794fb876689c96ed21ffb947a558a817e108c36cb56a06305a999c923c"
+    },
+    "refine/source_summary.csv": {
+      "bytes": 173915830,
+      "sha256": "f5e437c2e22d7111b39df2e99a5aabec63dc810b392daff131b68c110b14eb68"
+    },
+    "refine/sources.csv": {
+      "bytes": 4900038,
+      "sha256": "9ce9fa84081db755ea10f614779baf950fb006a6e1a0a0635533596b8e5148a3"
+    },
+    "refine/validate_selection_membership.csv": {
+      "bytes": 210328,
+      "sha256": "4c59862ebd0537ad81188229354f1e46a37078d3befc1a98ec2793bf5b0e5b55"
+    },
+    "refine/validate_source_ids.csv": {
+      "bytes": 56825,
+      "sha256": "3c039698b7c04ec56698f6d6d44656b20a96deb5b499c5a3740f4d8d30bde4b8"
+    },
+    "validate/run_manifest.json": {
+      "bytes": 9765,
+      "sha256": "7589024a667d40626f510007908bdfa034afc7b08c93965b88279a5784da369f"
+    },
+    "validate/annual_refuge_summary.csv.gz": {
+      "bytes": 1029163,
+      "sha256": "766adfb641226f6bc529d4c1d048baa705addbe35c03c4c6b0a5d9ea0ae398fd"
+    },
+    "validate/parameter_values.csv.gz": {
+      "bytes": 900315,
+      "sha256": "e5c58ef5b41cbdf48b39f6cc763f3444f22fcd1f8678ff7022c5b0c10ccf7cc4"
+    },
+    "validate/source_summary.csv": {
+      "bytes": 53185704,
+      "sha256": "cd4d4259237996d6ca89f00a25ab45955c49edf42cb7a696348727298c22a529"
+    },
+    "validate/sources.csv": {
+      "bytes": 1425764,
+      "sha256": "7e678d0dec701f6ce5133845bfaa3e3172924269ef7e5f464234380f697ff4c5"
+    },
+    "counterfactual/run_manifest.json": {
+      "bytes": 9802,
+      "sha256": "cb125c591b1b45f2ba52780939e0166d04c62f99899bd09cab6950dc07db7d07"
+    },
+    "counterfactual/counterfactual_histories.csv.gz": {
+      "bytes": 33033900,
+      "sha256": "d516f08eff8c045f2644c72c47626c5d169dbc25a0b7ff0a0965e945a035d489"
+    },
+    "counterfactual/parameter_values.csv.gz": {
+      "bytes": 231774,
+      "sha256": "fd0a0d76c6dacd0451e538f801c5b9cc9f3d1f0b342e658e38f1d9f16515737b"
+    },
+    "counterfactual/sources.csv": {
+      "bytes": 369372,
+      "sha256": "65de4128af505c6d7243c93a8198b05a4d0f894f19c3336de6facb096f242088"
+    },
+    "paired_toggle/run_manifest.json": {
+      "bytes": 9914,
+      "sha256": "527c95e189b3ed07cafc2eaed8f74e347b99e7b7f001ee6e5b16191971e31879"
+    },
+    "paired_toggle/factual_R_J_sources.csv": {
+      "bytes": 369372,
+      "sha256": "65de4128af505c6d7243c93a8198b05a4d0f894f19c3336de6facb096f242088"
+    },
+    "paired_toggle/paired_toggle_histories.csv.gz": {
+      "bytes": 6873904,
+      "sha256": "103eb40983edc29322fb40e9b3bd7fc1ef96abf4fda34db64aa04ac8efcf7646"
+    },
+    "paired_toggle/parameter_values.csv.gz": {
+      "bytes": 231774,
+      "sha256": "4704e3b6e2de15b9667d283305be44e2ece915fa11512f8cdcebbc3e16ee908d"
+    },
+    "analysis/analysis_receipt.json": {
+      "bytes": 3292,
+      "sha256": "2af7d300eba9ddba64acd18961a237920909b010a9846245b52c383c56901944"
+    },
+    "analysis/paired_toggle_contrasts.csv": {
+      "bytes": 8651234,
+      "sha256": "06912f5e5fc9f82d003c99c5eba7a7d6f4d3a81f79186bb69168cdaea94c93b8"
+    },
+    "analysis/cell_ledger.csv": {
+      "bytes": 23379,
+      "sha256": "e356ce808dac8a138181e9401520f32ae012426da09cfb897ea16858d58bb58d"
+    },
+    "analysis/overshoot_counterfactual_feasibility.csv": {
+      "bytes": 565423,
+      "sha256": "7e874e5e2b604d43261d23a8e0d284b814bca2b123dc1368bfca480238a025b6"
+    },
+    "analysis/annual_refuge_by_profile.csv.gz": {
+      "bytes": 13211712,
+      "sha256": "15ba8d1da684b906d5bb98f4171b2fa4ae123df404bfe47ce712d814e4c20802"
+    },
+    "analysis/overshoot_counterfactual_contrasts.csv": {
+      "bytes": 2193170,
+      "sha256": "f1a206ff1831636b782d87005c91971440dd305be016ef2422c9eea910aa4947"
+    },
+    "analysis/selection_ancestry.csv": {
+      "bytes": 1126572,
+      "sha256": "95c438040fbcf49785c3b87a750639668313035446c6631795875637f7887d51"
+    },
+    "analysis/interpretation_limits.md": {
+      "bytes": 569,
+      "sha256": "51fb6e167b4b68629636497f014c9f8149d1649605bda9b7384b8cea40dd4903"
+    },
+    "analysis/validated_source_profiles.csv": {
+      "bytes": 56021870,
+      "sha256": "87fb4e76a2af26985af42039006607d1d87928b14b10460c2058752414688f10"
+    },
+    "analysis/compatibility_map.csv": {
+      "bytes": 1078571,
+      "sha256": "f0b105003b3f8350500fa575285fb4c26002f123d98307d3888b664b50229825"
+    },
+    "analysis/paired_toggle_feasibility.csv": {
+      "bytes": 2398266,
+      "sha256": "40261585dfb00861247e6ca2c7dee496776f270e292b1e82c001a6bea43a0011"
+    },
+    "analysis/search_curves.csv": {
+      "bytes": 469716,
+      "sha256": "ec34f39efc6455376cdf146fd470a99db28d587e0132cb73abdd4548f7f4060e"
+    },
+    "analysis/ct005_summary.csv": {
+      "bytes": 193850,
+      "sha256": "1ff20d3f6da3ae3dd37b9152cd9d01d3bc09d540f6466a3f7bad6f0ff3bf5e63"
+    },
+    "analysis/early_component_summary.csv": {
+      "bytes": 427857,
+      "sha256": "63b478346021127c48e8851ab091b517bf2018ff9084130d64b43038050aa1a4"
+    },
+    "analysis/capacity_stratified_support.csv": {
+      "bytes": 119480,
+      "sha256": "bf2cc69550b048bb756a480d1a2e5d1e3a6b93cc7a06b5277c7f9057b95ecf9d"
+    },
+    "execution_receipt.json": {
+      "bytes": 7316,
+      "sha256": "c227b34d583c22b5da6c7f609b7b4f7ddc405ed858c0c5e1611cff537efad77a"
+    }
+  },
+  "intentionally_remote_only": [
+    "search/raw_histories_wave_1.csv.gz",
+    "search/raw_histories_wave_2.csv.gz",
+    "search/raw_histories_wave_3.csv.gz",
+    "refine/raw_histories.csv.gz",
+    "validate/raw_histories.csv.gz"
+  ],
+  "note": "All omitted raw archives were verified on the target; no raw payload was recreated."
+}

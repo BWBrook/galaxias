@@ -1,0 +1,97 @@
+{
+  "analysis": {
+    "cp_engine": "R qbeta",
+    "cp_interval_count": 1536,
+    "group_count": 32,
+    "primary_bank_pair_tables": 48,
+    "primary_directed_intervals": 576,
+    "primary_group_count": 16,
+    "qualified_sensitivity_groups": 0,
+    "sensitivity_failure_reasons": {
+      "bank_half_instability": 16,
+      "coverage_precision_unassessed": 13
+    },
+    "sensitivity_group_count": 16
+  },
+  "archive": {
+    "algebraically_feasible_source_ids": 2376,
+    "algebraically_infeasible_source_ids": 696,
+    "archives": [
+      "features.jsonl.gz",
+      "histories.jsonl.gz",
+      "sources.jsonl.gz"
+    ],
+    "bound_files": 49,
+    "distinct_source_ids": 3072,
+    "feature_rows": 49152,
+    "features_logical_sha256": "9f236979d826bc20eb59424d2a9cf9beb331c32b1cf277ace99b1263bb1f16a9",
+    "histories_logical_sha256": "cf5a10726598a30263f9188af3bea258deabf7f682180886644f709187b64f10",
+    "history_rows": 49152,
+    "logical_sha256": "aee317788354190f3cd5cd88e8de44716f4271f0815e9f54a91b3cee3fc31024",
+    "raw_exposure_rows_recomputed": 128,
+    "role_source_counts": {
+      "bank": 1024,
+      "calibration": 1024,
+      "test": 1024
+    },
+    "source_rows": 6144,
+    "source_status_counts": {
+      "algebraically_infeasible": 1392,
+      "feasible": 4752
+    },
+    "status_counts": {
+      "algebraically_infeasible": 11160,
+      "valid": 37992
+    }
+  },
+  "bindings": {
+    "analysis_report_sha256": "863af53bea796cb2189a9cb77a2124a1a0c0e9392560bd01f5477bf37ef522b2",
+    "audit_script_sha256": "b46ab2a4c25c6100172c288dc0b7069aaeb45e938157f93ab405a4fb1906dfdc",
+    "execution_receipt": {
+      "bound_required_hashes": [
+        "863af53bea796cb2189a9cb77a2124a1a0c0e9392560bd01f5477bf37ef522b2",
+        "def0eb31b5c68477b274b62d245720a04f3aaf869713f9fa998686c721616512"
+      ],
+      "gate_exit_code": 0,
+      "sha256": "42c440885a4549d46adb4bb66fca72ecd2a8d9951b7efe60e0de3f05620f50eb",
+      "top_level_keys": [
+        "analysis_decision",
+        "analysis_sha256",
+        "generation_status",
+        "historical_observations_read",
+        "manifest_sha256",
+        "source_files_reverified",
+        "status",
+        "verified_utc"
+      ]
+    },
+    "frozen_source_manifest_sha256": "e6083e7f22151c69872a11a69f564b8c3038943911f1ed906ff7178c1a937c45",
+    "gate_manifest_sha256": "def0eb31b5c68477b274b62d245720a04f3aaf869713f9fa998686c721616512"
+  },
+  "gate": {
+    "decision": "STOP_EARLY_RECOVERY_UNASSESSED",
+    "historical_comparison_permitted": false,
+    "primary_failure_reasons": {
+      "bank_half_instability": 16,
+      "coverage_precision_unassessed": 13
+    },
+    "qualified_primary_groups": 0,
+    "raw_pair_intersection_is_qualifying": false,
+    "robust_primary_directed_pairs": [
+      "R_J->R_H",
+      "R_T->R_H"
+    ]
+  },
+  "historical_observations_read": false,
+  "interpretation": "The synthetic result is unassessed because prespecified stability or coverage checks failed. The raw directed-pair intersection cannot qualify a contrast. This does not establish intrinsic non-identifiability, equifinality, or any historical mechanism probability.",
+  "recommendation": "Stop without historical scoring under the frozen procedure.",
+  "residual_risk": "The test population remains the declared conditional engineering distribution. Under this STOP there is no permitted historical comparison, and the raw pair intersection must not be reused as evidence. A different historical analysis would require a separately approved design.",
+  "sampled_scalar_replay": {
+    "bank_vector_count": 96,
+    "maximum_absolute_ell_difference": 5.5067062021407764e-14,
+    "query_count": 32,
+    "rank_component_checks": 768,
+    "score_function": "lake_history_log_score scalar"
+  },
+  "status": "PASS"
+}

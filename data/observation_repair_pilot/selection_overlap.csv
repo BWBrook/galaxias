@@ -1,0 +1,13 @@
+search_seed,profile_a,profile_b,n_selected_a,n_selected_b,n_intersection,n_union,jaccard_overlap
+20260908,baseline_current,repair_presence_only,10,10,0,20,0
+20260908,baseline_current,repair_detection_060,10,10,0,20,0
+20260908,baseline_current,repair_detection_098,10,10,0,20,0
+20260908,repair_presence_only,repair_detection_060,10,10,9,11,0.818181818182
+20260908,repair_presence_only,repair_detection_098,10,10,4,16,0.25
+20260908,repair_detection_060,repair_detection_098,10,10,5,15,0.333333333333
+20260909,baseline_current,repair_presence_only,10,10,0,20,0
+20260909,baseline_current,repair_detection_060,10,10,0,20,0
+20260909,baseline_current,repair_detection_098,10,10,0,20,0
+20260909,repair_presence_only,repair_detection_060,10,10,5,15,0.333333333333
+20260909,repair_presence_only,repair_detection_098,10,10,1,19,0.0526315789474
+20260909,repair_detection_060,repair_detection_098,10,10,6,14,0.428571428571

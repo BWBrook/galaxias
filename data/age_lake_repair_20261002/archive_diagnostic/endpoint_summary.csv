@@ -1,0 +1,9 @@
+restriction,terminal_class,histories,empty_lake_2002,empty_lake_2002_fraction,persist_lake_positive,pooled_pair_count,same_compartment_pair_count,median_lake_2002,p95_lake_2002
+R_H,loss,3,3,1.0,,0,0,0.0,0.0
+R_H,persist,823,0,0.0,823,823,823,48630.0,1307932.4999999984
+R_T,loss,8,8,1.0,,0,0,0.0,0.0
+R_T,persist,373,2,0.005361930294906166,371,371,371,18539.0,1101655.9999999986
+R_C,loss,18,18,1.0,,0,0,0.0,0.0
+R_C,persist,606,5,0.00825082508250825,601,584,578,13070.0,602700.5
+R_J,loss,10,10,1.0,,0,0,0.0,0.0
+R_J,persist,214,4,0.018691588785046728,210,206,204,4979.0,279446.5

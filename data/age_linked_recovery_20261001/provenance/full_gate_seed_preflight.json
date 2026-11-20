@@ -1,0 +1,9 @@
+{
+  "unique_parameter_and_process_seeds": 1920,
+  "paired_restrictions_and_removal_accounts": true,
+  "observation_seed_width_bits": 128,
+  "checked_cross_namespace_collisions": true,
+  "source_cell_rows": 1920,
+  "distinct_nuisance_sources": 384,
+  "nominal_site_histories": 23040
+}

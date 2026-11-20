@@ -1,0 +1,301 @@
+{
+  "status": "candidate_2_after_fable_650_not_dispatch_frozen",
+  "maximum_age_years": [
+    6,
+    8
+  ],
+  "nursery_allocation": {
+    "near_obligate": [
+      0.9,
+      0.99
+    ],
+    "legacy_range_sensitivity": [
+      0.35,
+      0.9
+    ]
+  },
+  "removal_account": [
+    "primary_plan_31_early_releases",
+    "sanger_42_early_releases_held_before_1992"
+  ],
+  "restrictions": [
+    "R_H",
+    "R_T",
+    "R_C",
+    "R_J"
+  ],
+  "process_cells": [
+    {
+      "tier": "primary",
+      "maximum_age": 6,
+      "nursery": "near_obligate",
+      "removal_account": "primary_plan_31_early_releases",
+      "restriction": "R_H"
+    },
+    {
+      "tier": "primary",
+      "maximum_age": 6,
+      "nursery": "near_obligate",
+      "removal_account": "primary_plan_31_early_releases",
+      "restriction": "R_T"
+    },
+    {
+      "tier": "primary",
+      "maximum_age": 6,
+      "nursery": "near_obligate",
+      "removal_account": "primary_plan_31_early_releases",
+      "restriction": "R_C"
+    },
+    {
+      "tier": "primary",
+      "maximum_age": 6,
+      "nursery": "near_obligate",
+      "removal_account": "primary_plan_31_early_releases",
+      "restriction": "R_J"
+    },
+    {
+      "tier": "primary",
+      "maximum_age": 6,
+      "nursery": "legacy_range_sensitivity",
+      "removal_account": "primary_plan_31_early_releases",
+      "restriction": "R_H"
+    },
+    {
+      "tier": "primary",
+      "maximum_age": 6,
+      "nursery": "legacy_range_sensitivity",
+      "removal_account": "primary_plan_31_early_releases",
+      "restriction": "R_T"
+    },
+    {
+      "tier": "primary",
+      "maximum_age": 6,
+      "nursery": "legacy_range_sensitivity",
+      "removal_account": "primary_plan_31_early_releases",
+      "restriction": "R_C"
+    },
+    {
+      "tier": "primary",
+      "maximum_age": 6,
+      "nursery": "legacy_range_sensitivity",
+      "removal_account": "primary_plan_31_early_releases",
+      "restriction": "R_J"
+    },
+    {
+      "tier": "primary",
+      "maximum_age": 8,
+      "nursery": "near_obligate",
+      "removal_account": "primary_plan_31_early_releases",
+      "restriction": "R_H"
+    },
+    {
+      "tier": "primary",
+      "maximum_age": 8,
+      "nursery": "near_obligate",
+      "removal_account": "primary_plan_31_early_releases",
+      "restriction": "R_T"
+    },
+    {
+      "tier": "primary",
+      "maximum_age": 8,
+      "nursery": "near_obligate",
+      "removal_account": "primary_plan_31_early_releases",
+      "restriction": "R_C"
+    },
+    {
+      "tier": "primary",
+      "maximum_age": 8,
+      "nursery": "near_obligate",
+      "removal_account": "primary_plan_31_early_releases",
+      "restriction": "R_J"
+    },
+    {
+      "tier": "primary",
+      "maximum_age": 8,
+      "nursery": "legacy_range_sensitivity",
+      "removal_account": "primary_plan_31_early_releases",
+      "restriction": "R_H"
+    },
+    {
+      "tier": "primary",
+      "maximum_age": 8,
+      "nursery": "legacy_range_sensitivity",
+      "removal_account": "primary_plan_31_early_releases",
+      "restriction": "R_T"
+    },
+    {
+      "tier": "primary",
+      "maximum_age": 8,
+      "nursery": "legacy_range_sensitivity",
+      "removal_account": "primary_plan_31_early_releases",
+      "restriction": "R_C"
+    },
+    {
+      "tier": "primary",
+      "maximum_age": 8,
+      "nursery": "legacy_range_sensitivity",
+      "removal_account": "primary_plan_31_early_releases",
+      "restriction": "R_J"
+    },
+    {
+      "tier": "held_fish_sensitivity",
+      "maximum_age": 6,
+      "nursery": "near_obligate",
+      "removal_account": "sanger_42_early_releases_held_before_1992",
+      "restriction": "R_H"
+    },
+    {
+      "tier": "held_fish_sensitivity",
+      "maximum_age": 6,
+      "nursery": "near_obligate",
+      "removal_account": "sanger_42_early_releases_held_before_1992",
+      "restriction": "R_T"
+    },
+    {
+      "tier": "held_fish_sensitivity",
+      "maximum_age": 6,
+      "nursery": "near_obligate",
+      "removal_account": "sanger_42_early_releases_held_before_1992",
+      "restriction": "R_C"
+    },
+    {
+      "tier": "held_fish_sensitivity",
+      "maximum_age": 6,
+      "nursery": "near_obligate",
+      "removal_account": "sanger_42_early_releases_held_before_1992",
+      "restriction": "R_J"
+    }
+  ],
+  "late_effort_creek_trip_equivalents": [
+    2.5,
+    5,
+    10,
+    20
+  ],
+  "late_to_early_catchability_ratio": [
+    0.25,
+    1,
+    4
+  ],
+  "age0_accessibility": [
+    0,
+    0.25,
+    1
+  ],
+  "search_bounds_not_empirical_priors": {
+    "s0_uniform": [
+      0.1,
+      0.6
+    ],
+    "s1_uniform": [
+      0.2,
+      0.75
+    ],
+    "s2plus_uniform": [
+      0.2,
+      0.7
+    ],
+    "breeding_age2_uniform": [
+      0.1,
+      0.5
+    ],
+    "breeding_age3plus_fixed": 1,
+    "R0_log_uniform": [
+      1.2,
+      20
+    ],
+    "derived_b_maximum": 1200,
+    "recruitment_sigma_uniform": [
+      0.2,
+      1.2
+    ],
+    "post_habitat_refuge_fraction_log_uniform": [
+      0.01,
+      1
+    ],
+    "historical_lake_neutral_age1plus_log_uniform": [
+      1000,
+      1000000
+    ],
+    "historical_refuge_neutral_age1plus_log_uniform": [
+      5,
+      10000
+    ],
+    "oberon_neutral_age1plus_log_uniform": [
+      30,
+      100000
+    ],
+    "strathgordon_neutral_age1plus_log_uniform": [
+      20,
+      20000
+    ],
+    "strathgordon_spawn_multiplier_before_2007_log_uniform": [
+      0.001,
+      0.1
+    ]
+  },
+  "local_qualification": {
+    "synthetic_observation_algebra_only": true,
+    "maximum_demographic_path_executions_this_tranche": 0,
+    "production_permitted": false
+  },
+  "proposed_future_budget": {
+    "initial_site_histories": 491520,
+    "one_refocus_site_histories": 245760,
+    "fresh_validation_site_histories": 245760,
+    "overshoot_counterfactual_site_histories": 10240,
+    "no_wild_removals_counterfactual_site_histories": 10240,
+    "total_site_histories": 1035520,
+    "ceiling_site_histories": 1100000,
+    "dispatch_permitted": false,
+    "synthetic_recovery_gate_site_histories": 24000,
+    "qualification_reserve_site_histories": 8000
+  },
+  "process_cell_count": 20,
+  "february_1992_effort_creek_trip_equivalents": [
+    2,
+    4
+  ],
+  "lake_zero_years": [
+    1983,
+    1986,
+    1989
+  ],
+  "lake_early_years_primary": [
+    1976,
+    1977,
+    1978,
+    1979,
+    1980
+  ],
+  "lake_power_scores": [
+    0.08333333333333333,
+    0.25,
+    1
+  ],
+  "lake_late_to_early_catchability_ratio": [
+    0.25,
+    1,
+    4
+  ],
+  "lake_accessible_cohorts": [
+    "age0",
+    "age0_plus_age1_sensitivity"
+  ],
+  "creek_capture_counts": [
+    68,
+    1,
+    0
+  ],
+  "creek_power_scores": [
+    1,
+    0.25
+  ],
+  "counterfactual_contract": {
+    "weights": "fixed_factual",
+    "no_wild_removals": "suppress natural-range extractions and every causally dependent rescue release and offspring; no replacement fish",
+    "natural_endpoint": 2002,
+    "any_site_endpoint": 2012,
+    "counterfactual_scoring": false
+  }
+}

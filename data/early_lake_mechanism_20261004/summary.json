@@ -1,0 +1,81 @@
+{
+  "algebraically_feasible_source_ids": 2376,
+  "analysis_seconds": 30.131954431999475,
+  "decision": "STOP_EARLY_RECOVERY_UNASSESSED",
+  "distinct_source_ids": 3072,
+  "generation_seconds": 659.6408246280625,
+  "historical_comparison_permitted": false,
+  "historical_observations_read": false,
+  "history_accounting": {
+    "algebraically_infeasible": 11160,
+    "history_rows": 49152,
+    "runtime_failures": 0,
+    "site_count": 49152,
+    "source_rows": 6144,
+    "status_counts": {
+      "algebraically_infeasible": 11160,
+      "valid": 37992
+    }
+  },
+  "primary_descriptive_ranges": {
+    "calibration_z1": [
+      150,
+      251
+    ],
+    "coverage_lower": [
+      0.84497358287508,
+      0.9550042879036624
+    ],
+    "coverage_rate": [
+      0.9136690647482014,
+      0.9856115107913669
+    ],
+    "directed_exclusion_lower": [
+      0.0,
+      0.6552298870241873
+    ],
+    "set_agreement": [
+      0.5251798561151079,
+      0.963265306122449
+    ]
+  },
+  "primary_failure_reasons": {
+    "bank_half_instability": 16,
+    "coverage_precision_unassessed": 13
+  },
+  "qualified_directed_pairs": [],
+  "qualified_primary_groups": 0,
+  "raw_pair_intersection_is_qualifying": false,
+  "robust_primary_directed_pairs": [
+    "R_J->R_H",
+    "R_T->R_H"
+  ],
+  "sensitivity_descriptive_ranges": {
+    "calibration_z1": [
+      145,
+      249
+    ],
+    "coverage_lower": [
+      0.8395285169997582,
+      0.9708257431008029
+    ],
+    "coverage_rate": [
+      0.9066666666666666,
+      1.0
+    ],
+    "directed_exclusion_lower": [
+      0.0,
+      0.7450913172543041
+    ],
+    "set_agreement": [
+      0.5466666666666666,
+      0.96
+    ]
+  },
+  "sensitivity_failure_reasons": {
+    "bank_half_instability": 16,
+    "coverage_precision_unassessed": 13
+  },
+  "sensitivity_qualified_groups": 0,
+  "source_rows": 6144
+}

@@ -1,0 +1,25 @@
+{
+  "inputs": {
+    "data/age_lake_repair_20261002/lake_evidence.csv": {
+      "bytes": 2093,
+      "sha256": "6d21136f60601ceeb448bfcd69347e77d6c6ee1af66fdb203c4c9da7e4dd87ee"
+    },
+    "data/age_structured_design_20260929/lake_figure6_digitised.csv": {
+      "bytes": 1135,
+      "sha256": "91ce060c1c2c549563e3ab07f31864b2a3fff433c411ac02f483761463af07cb"
+    },
+    "docs/age_historical_refocus_protocol.md": {
+      "bytes": 13860,
+      "sha256": "0b257922f5f7de72fa9c2a033fae0ac3c89b72e0b0e5d0da69f2db015adb4d53"
+    },
+    "literature/pedder/hamr_1992_pedderensis_report.md": {
+      "bytes": 91156,
+      "sha256": "80768f6fe959968e4474560d04a41f40806f6988b6d8d955b6443a5bfb0dbd85"
+    },
+    "literature/pedder/lake_2001_the_faunalakepedder.md": {
+      "bytes": 31407,
+      "sha256": "d9b16da16a2b822d01dd5f0bc6977d2706ec1c8ac64d871efe6ba9bf56aac9bd"
+    }
+  },
+  "scope": "Source inventory supporting the already frozen repair; no change to scores or simulation design"
+}

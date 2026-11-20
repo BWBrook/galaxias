@@ -1,0 +1,17 @@
+evidence_id,date_or_window,site,reported_event,count,source,interpretation,status
+RM01,1990-1991,Bonnet Bay to Salmon Ponds,wild captive broodstock,12,literature/pedder/chilcott_2013_lessons_learned_pedderensis.md:114,7 male and 5 female; 5 died and 7 later released at Oberon,reported aggregate; identities unresolved
+RM02,1991-11-01,Salmon Ponds to Oberon,release,18,literature/pedder/hamr_1992_pedderensis_report.md:113,9 mature male 8 mature female 1 immature unsexed; captive-group overlap unresolved,direct dated account
+RM03,1992-02-04,Bonnet Bay,wild collection,1,literature/pedder/hamr_1992_pedderensis_report.md:123,adult released at Oberon following day,direct dated account
+RM04,1992-02-05,Oberon,release captive offspring,11,literature/pedder/hamr_1992_pedderensis_report.md:119,offspring are not 11 wild removals,direct dated account
+RM05,1991-1992,Oberon,total early releases,31,https://www.dcceew.gov.au/environment/biodiversity/threatened/recovery-plans/pedder-swan-clarence-swamp-saddled-galaxias,20 wild plus 11 captive juveniles; section 1.1.6,1997 plan revised 1999; primary candidate account
+RM06,1991-11 to 1992-11,Oberon,total early releases,42,literature/pedder/Sanger_2001_CES_UTAS.md:125,composition unspecified here; conflicts with 31 total,alternative account; do not sum with RM05
+RM07,1996-01,Bonnet Bay to Strathgordon holding,wild collection,4,https://www.dcceew.gov.au/environment/biodiversity/threatened/recovery-plans/pedder-swan-clarence-swamp-saddled-galaxias,three survived for May 1997 release; section 1.1.6,month known; day and ages unknown
+RM08,1996-03-06,Bonnet Bay,last record,1,literature/pedder/tasmanian_galaxiidae_recovery_plan_2006_2010.md:228,positive record; permanent extraction not established,do not silently equate collection with removal
+RM09,1997-05,Strathgordon holding to Oberon,release,3,https://www.dcceew.gov.au/environment/biodiversity/threatened/recovery-plans/pedder-swan-clarence-swamp-saddled-galaxias,survivors of RM07; no new 1997 wild removal,month known; ages and sexes unknown
+RM10,2001,Oberon to Strathgordon,transfer,52,literature/pedder/chilcott_2013_lessons_learned_pedderensis.md:142,subtract from donor and add identical sex-age cohort counts to recipient,year known; date age and sex unknown
+RM11,2002,Oberon to Strathgordon,transfer,22,literature/pedder/chilcott_2013_lessons_learned_pedderensis.md:142,same transfer accounting as RM10,year known
+RM12,2005,Oberon to Strathgordon,transfer,117,literature/pedder/chilcott_2013_lessons_learned_pedderensis.md:142,same transfer accounting as RM10,year known
+RM13,2006,Oberon to Strathgordon,transfer,53,literature/pedder/chilcott_2013_lessons_learned_pedderensis.md:142,same transfer accounting as RM10,year known
+RM14,2007,Oberon to Strathgordon,transfer,109,literature/pedder/chilcott_2013_lessons_learned_pedderensis.md:142,same transfer accounting as RM10; total RM10-RM14 is 353,year known
+RM15,1992-1996,natural range,reported aggregate captures,10,literature/pedder/chilcott_2013_lessons_learned_pedderensis.md:104,upper bound on reconstructed removals in same coverage window; do not score again with dated components,aggregate count; membership and recaptures not individually documented
+RM16,1991-1997,Oberon,later founder synthesis,approximately 45,literature/pedder/2026_galaxias_pedderensis_genetics.md:33,seven captive offspring conflicts with Hamr eleven; identity conflation not established,Horner et al. 2026; retain conflict without another cell

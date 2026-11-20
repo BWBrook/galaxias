@@ -1,0 +1,18 @@
+{
+  "main_gate_nominal_site_history_attempts": 23040,
+  "main_gate_joint_proposals": 7680,
+  "main_gate_algebraically_infeasible": 848,
+  "main_gate_process_infeasible": 4777,
+  "main_gate_complete_joint_histories": 2055,
+  "main_gate_executed_site_year_advances": 697624,
+  "recovery_control_nominal_site_histories": 0,
+  "recovery_control_reserve": 960,
+  "remote_qualification_nominal_site_histories": 63,
+  "remote_serial_parallel_smoke_nominal_site_histories": 480,
+  "recorded_local_linked_site_history_executions_minimum": 435,
+  "conservative_local_development_charge": 1000,
+  "qualification_charge_total": 1543,
+  "qualification_reserve": 8000,
+  "qualification_accounting_note": "Local charge is conservative budget accounting, not an exact count of all unit fixtures; replay and qualification are not independent recovery evidence.",
+  "historical_site_histories_dispatched": 0
+}

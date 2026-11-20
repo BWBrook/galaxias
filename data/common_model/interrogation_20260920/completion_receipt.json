@@ -1,0 +1,156 @@
+{
+  "status": "complete",
+  "completed_utc": "2026-09-20T10:47:57.491078+00:00",
+  "scope": "existing-artifact ecological interrogation before further Fable critique",
+  "new_histories": 0,
+  "conservative_programme_histories": 4775960,
+  "approved_history_ceiling": 7100000,
+  "original_completion": {
+    "bytes": 3562,
+    "sha256": "34cc8e15cb1a6bcd8927cc423af471e74cb3d3e3a87d82995f64c763eaf6117f"
+  },
+  "original_bound_files_unchanged": 12,
+  "protocol_sha256": "c165e25bfa223cbb79ba00fce75f099c13979746b2d516ae06e93af5243879d8",
+  "independent_audit": "conditionally_supported; no mismatches in bounded checks; endpoint precision wording corrected",
+  "checks": {
+    "input_output_hashes": "passed",
+    "original_profile_reconciliation": "1527 profiles; max absolute difference 5.684341886080801e-13",
+    "new_python_script_compile": "passed",
+    "git_diff_whitespace": "passed",
+    "four_figures_visual_inspection": "passed"
+  },
+  "additional_retrieval": {
+    "path": "outputs/remote/common_model_20260918/production/validate/raw_histories.csv.gz",
+    "bytes": 83833086,
+    "sha256": "28e1bf73692733cabef35c189f782c0ec4d3edb07451220dea471d43451c046d"
+  },
+  "files": {
+    "AGENT_HANDOFF.md": {
+      "bytes": 33596,
+      "sha256": "d5f533940d64b73bc118aeea527e4f6ea1a62d5ebac9bc60dac91bef0108f6c8"
+    },
+    "data/common_model/early_lake_20260920/early_lake_contrast_summary.csv": {
+      "bytes": 20044,
+      "sha256": "df48eabaf12d2e18f9ed37ecc47931a3586edcb69a98a76a9c16c2b5352547b6"
+    },
+    "data/common_model/early_lake_20260920/early_lake_contrasts.csv": {
+      "bytes": 4213692,
+      "sha256": "89d5de5444b1b7976c3c97a0109caa58e77752181c9f4b5139eb3fad8146c25f"
+    },
+    "data/common_model/early_lake_20260920/early_lake_findings.md": {
+      "bytes": 1869,
+      "sha256": "2346c241529457a3d1cf3cc039fee499ca585e77935efb838ce54f23b2d107da"
+    },
+    "data/common_model/early_lake_20260920/early_lake_pairing_checks.json": {
+      "bytes": 542,
+      "sha256": "c2d024eee64e0c13379eb3427408346714e072d07e573038248be932adb9b0c6"
+    },
+    "data/common_model/early_lake_20260920/early_lake_profile_weights.csv": {
+      "bytes": 533635,
+      "sha256": "c86728fd1954363d2609913e5b8808920233a5f9f3ee6f1b5462f46fb787e7ff"
+    },
+    "data/common_model/early_lake_20260920/early_lake_receipt.json": {
+      "bytes": 2719,
+      "sha256": "6cb144cca0bc49d8daffe22ac4c3c5935e1d0030d42bc1c4250a705c37c5524b"
+    },
+    "data/common_model/interrogation_20260920/audit.json": {
+      "bytes": 7041,
+      "sha256": "9afd8d2dcb6068abee3018142919b4e1216ac3cd28c186058bdb8d96fdd91dff"
+    },
+    "data/common_model/interrogation_20260920/case_annual_refuge.csv": {
+      "bytes": 95832,
+      "sha256": "b51d44939002f9eff696b56d8f302e83bfb8c8827d8b07410af72b0c9e4a0fca"
+    },
+    "data/common_model/interrogation_20260920/case_parameters.csv": {
+      "bytes": 181565,
+      "sha256": "ff4548850197f24b8f68e9b4101cdc3bcf543f417da350afe538d4cd7d0f572e"
+    },
+    "data/common_model/interrogation_20260920/conditional_count_envelopes.csv": {
+      "bytes": 86579,
+      "sha256": "2e5004d6fea51f451f33b8d8b0f979d7dc983b6544959d35202b2434ccb0decc"
+    },
+    "data/common_model/interrogation_20260920/figures/base_refuge_examples.pdf": {
+      "bytes": 16173,
+      "sha256": "76dba0800f38927c799713cc37a768cdc0ae641362dec9ed7ffd7c9eaa4ab230"
+    },
+    "data/common_model/interrogation_20260920/figures/base_refuge_examples.png": {
+      "bytes": 429920,
+      "sha256": "70893d74aa412d6c4794b580fa57a3f522d6f84e9871647de692cdab3a4f99c9"
+    },
+    "data/common_model/interrogation_20260920/figures/boundary_refuge_examples.pdf": {
+      "bytes": 10659,
+      "sha256": "bb219c4d5f6b4fd0eb31ad5a33b15592106ca188514ec64f41fc95447dad8f67"
+    },
+    "data/common_model/interrogation_20260920/figures/boundary_refuge_examples.png": {
+      "bytes": 335887,
+      "sha256": "0b60ac38a86f6386c74f18e2a7d0d3da4e6d6e6508ba3af5f35070b1ed0cfad1"
+    },
+    "data/common_model/interrogation_20260920/figures/early_lake_overshoot.pdf": {
+      "bytes": 9331,
+      "sha256": "ad06353532cf3ac6ae35075d82dd28dd397146758ee48c650fcf70d987730676"
+    },
+    "data/common_model/interrogation_20260920/figures/early_lake_overshoot.png": {
+      "bytes": 143832,
+      "sha256": "0fd47b2d4c794ab9071505115760bf90a0ce08f572d8020eed9e81d4d7abf128"
+    },
+    "data/common_model/interrogation_20260920/figures/survival_and_persistent_population.pdf": {
+      "bytes": 79207,
+      "sha256": "69bad0a0a1676e2ea23f8fe9f941b5b22a2c21fe41650c676f96447c951a7790"
+    },
+    "data/common_model/interrogation_20260920/figures/survival_and_persistent_population.png": {
+      "bytes": 205890,
+      "sha256": "2757259e57836ff51baa9ece427d9b3479b7fdcbc630a7e5696c206d6ae37b04"
+    },
+    "data/common_model/interrogation_20260920/illustrative_histories.csv": {
+      "bytes": 8940,
+      "sha256": "31ec523b862a9d74e7b8eb867dfd6a1ca1a17dc7f9d5603b74484cb49c78a990"
+    },
+    "data/common_model/interrogation_20260920/profile_reconciliation.csv": {
+      "bytes": 331257,
+      "sha256": "a99ad5517ea4c14e46ba7f0f4d0c11742a5dedc682fe7c77812c0478a8020f5b"
+    },
+    "data/common_model/interrogation_20260920/receipt.json": {
+      "bytes": 2305,
+      "sha256": "f2c26bf03bb226d8151aace161ceb603441f6125fc3a1ca753ed30e4a6a86371"
+    },
+    "data/common_model/interrogation_20260920/selected_cases.csv": {
+      "bytes": 5601,
+      "sha256": "e50d1dc0c79368bcb38adc8229367a83a3e6730dee8354232ce227b3e92d2a62"
+    },
+    "data/common_model/interrogation_20260920/survivor_conditioned_natural_counts.csv.gz": {
+      "bytes": 585199,
+      "sha256": "b9854bb97b02df49a2d7126cbbf5af2ffc3cbab0cda9ed8c334005f02854bbd6"
+    },
+    "docs/common_model_interrogation_audit.md": {
+      "bytes": 6202,
+      "sha256": "d3404a9628dc18e6f46384a23456f546f3ec0d2ef7326d7ea852ec6e60f4aba1"
+    },
+    "docs/common_model_interrogation_plan.md": {
+      "bytes": 4683,
+      "sha256": "9ab8b1ed214b0c87618e2d6fd65d17a68771ca0bdf90754139f032e5720d1085"
+    },
+    "docs/common_model_interrogation_results.md": {
+      "bytes": 13967,
+      "sha256": "ab2e5bec05a733dff0a3ee1579d84c1a04339b46fd05e44bd5a0eaea3ee96357"
+    },
+    "scripts/analyze_common_early_lake.py": {
+      "bytes": 25680,
+      "sha256": "d3fc332d41980d91a4b04b0eb6aaf6e044968a792af90ba5f197d663adca8e01"
+    },
+    "scripts/interrogate_common_histories.py": {
+      "bytes": 12836,
+      "sha256": "4e443dba9aa2875d085f0da0d159358e2cf256bf09e01a08a448017e3dcdeac8"
+    },
+    "scripts/plot_common_interrogation.R": {
+      "bytes": 6763,
+      "sha256": "fcbfe5eda7921248d41078aa63228209c89add5775bf7a2ab2ba5ea9e430ca24"
+    }
+  },
+  "review_boundary": "Report completed analysis to Barry before re-engaging Fable; no new critique request posted",
+  "remaining_scientific_limits": [
+    "historical population scale and survey coverage unidentified",
+    "42 survivor-conditioned profiles fail concentration; high-q survival estimates also uncertain",
+    "selected examples are not typical or posterior-ranked histories",
+    "four early-lake endpoints do not supply a complete annual trajectory"
+  ]
+}

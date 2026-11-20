@@ -1,0 +1,17 @@
+{
+  "status": "complete",
+  "fixed_sources": 517,
+  "original_witness_profiles": 1527,
+  "retained_witness_profiles": 600,
+  "no_longer_qualified_witness_profiles": 927,
+  "original_witness_new_status_counts": {
+    "notfound": 734,
+    "qualified-compatible": 600,
+    "unresolved": 193
+  },
+  "original_witness_sources_retaining_at_least_one_profile": 226,
+  "viability_failed_sources": 108,
+  "original_witness_undefined_paired_profiles": 454,
+  "all_fixed_source_primary_compatible_profiles": 609,
+  "interpretation": "Fixed-source/profile sensitivity counts only; no probabilities, mechanism ranking, q comparison or global exclusion. Includes approved initialization change."
+}

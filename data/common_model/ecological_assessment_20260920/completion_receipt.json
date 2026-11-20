@@ -1,0 +1,80 @@
+{
+  "status": "complete",
+  "completed_utc": "2026-09-20T11:04:19.819873+00:00",
+  "scope": "ecological assessment before further Fable contact",
+  "new_histories": 0,
+  "conservative_programme_histories_unchanged": 4775960,
+  "history_ceiling": 7100000,
+  "protocol_sha256": "c165e25bfa223cbb79ba00fce75f099c13979746b2d516ae06e93af5243879d8",
+  "kernel_and_likelihood_match_frozen_manifest": true,
+  "previous_interrogation_artifacts_unchanged_except_mutable_handoff": true,
+  "independent_check": "conditionally_supported; two central rebound estimates independently matched",
+  "checks": [
+    "compiled new script",
+    "verified input/output hashes",
+    "checked homogeneous five-record product identity",
+    "matched 17 original weighted survival values",
+    "checked zero-abundance absorption over observed window",
+    "git diff whitespace clean"
+  ],
+  "files": {
+    "data/common_model/ecological_assessment_20260920/case_evidence_requirements.csv": {
+      "bytes": 8103,
+      "sha256": "7ce64cc8bae1165f6a9ee056cc046ecf10d35ff7591e4301a0e266cd9a0cb1f0"
+    },
+    "data/common_model/ecological_assessment_20260920/constant_population_reference.csv": {
+      "bytes": 1139,
+      "sha256": "3fdfc06cdb9b3e1a8b9ed11514f7181bea9faa132cd535241d874c1e0018f963"
+    },
+    "data/common_model/ecological_assessment_20260920/illustrative_detection_requirements.csv": {
+      "bytes": 7030,
+      "sha256": "f1f60944370d4a2d47cd4a4ef0c4c26401d7e2015b39361126d8a91811066cf6"
+    },
+    "data/common_model/ecological_assessment_20260920/one_fish_rebound_diagnostic.csv": {
+      "bytes": 2670,
+      "sha256": "89c662c5018707b64f840e01f59d1e57224b4ef0d3e05965cdd8894903b63cf4"
+    },
+    "data/common_model/ecological_assessment_20260920/receipt.json": {
+      "bytes": 1698,
+      "sha256": "bc2156134fefa54c8a8061675a5dd100b1b2ddc186238bac489e460d46b5b201"
+    },
+    "data/common_model/ecological_assessment_20260920/scientific_check.json": {
+      "bytes": 1487,
+      "sha256": "2f2915d265dc2dc4e6ba109ea0816f0928aa5ec75393315239c4544b67f0e0b6"
+    },
+    "docs/common_model_ecological_assessment.md": {
+      "bytes": 20459,
+      "sha256": "24d3875aa14dc3b4e782cf3c5e27a3103e4eb04b1128ecce53a4069d04eb00a3"
+    },
+    "scripts/assess_common_ecological_requirements.py": {
+      "bytes": 8146,
+      "sha256": "f5dacf9fae555691506cf941c847a6946af07be0c1300b6f10177ff2e801482a"
+    },
+    "literature/pedder/hamr_1992_pedderensis_report.md": {
+      "bytes": 91156,
+      "sha256": "80768f6fe959968e4474560d04a41f40806f6988b6d8d955b6443a5bfb0dbd85"
+    },
+    "literature/pedder/hamr_1995_envirbiolfishes_pedderensis.md": {
+      "bytes": 5322,
+      "sha256": "f12fed3e8508505fb6dfba6f3591b89bec87f295067772f774630beab637bd62"
+    },
+    "literature/pedder/tasmanian_galaxiidae_recovery_plan_2006_2010.md": {
+      "bytes": 221602,
+      "sha256": "4af2573216da63a393e2472dd9531e708e7dc5857ccc231d6e5649a71a80b263"
+    },
+    "literature/pedder/Sanger_2001_CES_UTAS.md": {
+      "bytes": 23456,
+      "sha256": "02a201c0cef4a94e0c1ee3616fb96723f4dc7663ef5ac9df800650dc3de7d333"
+    },
+    "docs/terminal_history_evidence_followup.md": {
+      "bytes": 7055,
+      "sha256": "b85cbbdcb99c447135a849ee66c92edcf50c9eac61d574bf6b12d02190b9de95"
+    },
+    "data/historical_fit_observation_audit/evidence_trace.csv": {
+      "bytes": 8278,
+      "sha256": "e88b8375c9b26535ac5cf0b39883c57697c4404fcb389c02e7a2f0ede6ffbe27"
+    }
+  },
+  "decisions": "No likelihood/reweighting, exclusion, mechanism ranking or model change; adequacy questions ready for scientific critique",
+  "correspondence": "No message or review request sent to Fable"
+}

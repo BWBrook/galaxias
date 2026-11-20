@@ -1,0 +1,10 @@
+{
+  "source": "outputs/remote/common_model_20260918/production/analysis/validated_source_profiles.csv",
+  "sha256": "87fb4e76a2af26985af42039006607d1d87928b14b10460c2058752414688f10",
+  "selection": "primary_profile and joint_mc_qualified and early_pattern_lower95 >= 0.5 and joint_lower95 >= 1e-6; unchanged permissive grid slice",
+  "source_profiles": 1527,
+  "unique_sources": 517,
+  "late_refuge_profile_years": 7635,
+  "meaning": "Annual within-source process means under factual joint weights; not abundance conditional on survival to 2002. Rows share histories across q/observation laws. No branch cutoff or ranking added.",
+  "new_simulations": 0
+}

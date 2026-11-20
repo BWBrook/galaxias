@@ -1,0 +1,577 @@
+{
+  "archive": "/data/codex/scratch/galaxias/common_model_20260918/production",
+  "audit": "independent common-model central-results recomputation",
+  "audit_date": "2026-09-19",
+  "capacity_strata_comparison": {
+    "exact": {},
+    "independent_rows": 576,
+    "left_only": 0,
+    "numeric": {
+      "K_L_median": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "K_R_lt20_count": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "K_R_max": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "K_R_median": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "K_R_min": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "K_R_over_PR011_median": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "PR011_median": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "PR033_median": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "positive_support_K_R_ge20_count": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "positive_support_K_R_lt20_count": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "source_count": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      }
+    },
+    "official_rows": 576,
+    "right_only": 0,
+    "total_mismatches": 0
+  },
+  "central_findings": {
+    "paired_toggle_primary_mc_qualified": 0,
+    "permissive_primary_R_J_counterfactual_resolved": 213,
+    "permissive_primary_R_J_counterfactual_undefined_invalid_removal_support": 61,
+    "permissive_primary_R_J_profiles_with_counterfactual": 274,
+    "primary_compatible": 465,
+    "primary_compatible_low_K_R_only": 17,
+    "primary_compatible_with_K_R_ge20": 448,
+    "primary_map_cells": 1728,
+    "primary_not_found": 979,
+    "primary_unresolved": 284,
+    "q_0_005_cells_with_both_seeds_and_K_R_ge20": 48,
+    "q_0_005_permissive_primary_structural_cells": 48,
+    "q_0_2_primary_qualified_configuration": "minimum_dated_adult_first",
+    "q_0_2_primary_qualified_observation_model": "shared_quality",
+    "q_0_2_primary_qualified_restriction": "R_C",
+    "q_0_2_primary_qualified_sources": 2,
+    "q_0_2_qualified_unconditional_terminal_survival": [
+      0.236328125,
+      0.470703125
+    ],
+    "q_0_2_qualified_weighted_terminal_survival": [
+      1.82603e-05,
+      9.56207e-05
+    ],
+    "resolved_counterfactual_survival_delta_range": [
+      -0.023534801893697437,
+      0.0335836641775495
+    ]
+  },
+  "compatibility_map_comparison": {
+    "exact": {
+      "best_joint_mc_qualified": {
+        "mismatch_count": 0
+      },
+      "best_source_id": {
+        "mismatch_count": 0
+      },
+      "capacity_support_label": {
+        "mismatch_count": 0
+      },
+      "status": {
+        "mismatch_count": 0
+      }
+    },
+    "independent_rows": 2592,
+    "left_only": 0,
+    "numeric": {
+      "best_early_probability": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "best_joint_mean": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "best_log_joint_mean": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "qualified_witness_count": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "source_count": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "viable_source_count": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "witness_K_R_ge20_count": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "witness_K_R_lt20_count": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      }
+    },
+    "official_rows": 2592,
+    "right_only": 0,
+    "total_mismatches": 0
+  },
+  "counterfactual_contrast_comparison": {
+    "exact": {
+      "contrast_status": {
+        "mismatch_count": 0
+      }
+    },
+    "independent_rows": 9144,
+    "left_only": 0,
+    "numeric": {
+      "endpoint_nonfinite_or_invalid_positive_support_count": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "endpoint_nonfinite_or_invalid_weight_mass": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "paired_mc_se": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "weighted_counterfactual_minus_factual": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      }
+    },
+    "official_rows": 9144,
+    "right_only": 0,
+    "total_mismatches": 0
+  },
+  "counterfactual_feasibility_comparison": {
+    "exact": {
+      "contrast_status": {
+        "mismatch_count": 0
+      },
+      "weight_precision_qualified": {
+        "mismatch_count": 0
+      }
+    },
+    "independent_rows": 3048,
+    "left_only": 0,
+    "numeric": {
+      "counterfactual_infeasible_factual_weight_mass": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "counterfactual_infeasible_positive_factual_support_count": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "factual_largest_weight_share": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "factual_weight_ess": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "factual_weight_relative_se": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      }
+    },
+    "official_rows": 3048,
+    "right_only": 0,
+    "total_mismatches": 0
+  },
+  "frozen_inputs": {
+    "analysis_receipt_sha256": "2af7d300eba9ddba64acd18961a237920909b010a9846245b52c383c56901944",
+    "protocol_sha256": "c165e25bfa223cbb79ba00fce75f099c13979746b2d516ae06e93af5243879d8",
+    "validation_manifest_sha256": "7589024a667d40626f510007908bdfa034afc7b08c93965b88279a5784da369f"
+  },
+  "q_specific_reference_comparison": {
+    "exact": {
+      "reference_source_id": {
+        "mismatch_count": 0
+      }
+    },
+    "independent_rows": 12012,
+    "left_only": 0,
+    "numeric": {
+      "delta_log_W": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "reference_log_joint_mean": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      }
+    },
+    "official_rows": 12012,
+    "right_only": 0,
+    "total_mismatches": 0
+  },
+  "representative_profiles": {
+    "counterfactual": [
+      {
+        "contrast_status": "unresolved_precision",
+        "counterfactual_infeasible_factual_weight_mass": 0.0,
+        "counterfactual_infeasible_positive_factual_support_count": 0,
+        "factual_largest_weight_share": 0.24197775834568697,
+        "factual_weight_ess": 10.939870336367196,
+        "factual_weight_relative_se": 0.3008664124927594,
+        "observation_model": "homogeneous",
+        "q": 0.005,
+        "source_id": "common-production|20260918|base|R_J|w1|s0059",
+        "weight_precision_qualified": false
+      },
+      {
+        "contrast_status": "unresolved_precision",
+        "counterfactual_infeasible_factual_weight_mass": 0.0,
+        "counterfactual_infeasible_positive_factual_support_count": 0,
+        "factual_largest_weight_share": 0.2357615396444528,
+        "factual_weight_ess": 11.300006089999826,
+        "factual_weight_relative_se": 0.2959806012445663,
+        "observation_model": "shared_quality",
+        "q": 0.005,
+        "source_id": "common-production|20260918|base|R_J|w1|s0059",
+        "weight_precision_qualified": false
+      },
+      {
+        "contrast_status": "resolved",
+        "counterfactual_infeasible_factual_weight_mass": 0.0,
+        "counterfactual_infeasible_positive_factual_support_count": 0,
+        "factual_largest_weight_share": 0.043210740047056696,
+        "factual_weight_ess": 109.70489503181071,
+        "factual_weight_relative_se": 0.09025938651580583,
+        "observation_model": "homogeneous",
+        "q": 0.02,
+        "source_id": "common-production|20260918|base|R_J|w2|s0014",
+        "weight_precision_qualified": true
+      },
+      {
+        "contrast_status": "resolved",
+        "counterfactual_infeasible_factual_weight_mass": 0.0,
+        "counterfactual_infeasible_positive_factual_support_count": 0,
+        "factual_largest_weight_share": 0.030069239228628832,
+        "factual_weight_ess": 159.53006416839332,
+        "factual_weight_relative_se": 0.07278063832890216,
+        "observation_model": "shared_quality",
+        "q": 0.02,
+        "source_id": "common-production|20260918|base|R_J|w2|s0014",
+        "weight_precision_qualified": true
+      },
+      {
+        "contrast_status": "unresolved_support_or_validity",
+        "counterfactual_infeasible_factual_weight_mass": 0.000660071358002238,
+        "counterfactual_infeasible_positive_factual_support_count": 2,
+        "factual_largest_weight_share": 0.04684799743354514,
+        "factual_weight_ess": 62.62469404165075,
+        "factual_weight_relative_se": 0.12249993433024246,
+        "observation_model": "homogeneous",
+        "q": 0.005,
+        "source_id": "common-production|20260918|minimum_dated_adult_first|R_J|w1|s0065",
+        "weight_precision_qualified": false
+      },
+      {
+        "contrast_status": "unresolved_support_or_validity",
+        "counterfactual_infeasible_factual_weight_mass": 0.0007344643491837643,
+        "counterfactual_infeasible_positive_factual_support_count": 2,
+        "factual_largest_weight_share": 0.04469597983938165,
+        "factual_weight_ess": 65.01236584029022,
+        "factual_weight_relative_se": 0.12008000613301067,
+        "observation_model": "shared_quality",
+        "q": 0.005,
+        "source_id": "common-production|20260918|minimum_dated_adult_first|R_J|w1|s0065",
+        "weight_precision_qualified": false
+      }
+    ],
+    "toggle": [
+      {
+        "contrast_status": "unresolved_precision",
+        "diagnostic_precision_qualified": false,
+        "evaluated_restriction": "R_C",
+        "factual_largest_weight_share": 0.5672701390943201,
+        "factual_weight_ess": 2.5877674962382784,
+        "factual_weight_relative_se": 0.6137542906412753,
+        "observation_model": "homogeneous",
+        "primary_mc_qualified": false,
+        "q": 0.005,
+        "replicate_count": 64,
+        "source_id": "common-production|20260918|base|R_J|w1|s0059",
+        "toggle_invalid_factual_weight_mass": 0.0,
+        "toggle_invalid_positive_factual_support_count": 0
+      },
+      {
+        "contrast_status": "unresolved_precision",
+        "diagnostic_precision_qualified": false,
+        "evaluated_restriction": "R_C",
+        "factual_largest_weight_share": 0.5736529695128073,
+        "factual_weight_ess": 2.5698538918690796,
+        "factual_weight_relative_se": 0.6159795344328629,
+        "observation_model": "shared_quality",
+        "primary_mc_qualified": false,
+        "q": 0.005,
+        "replicate_count": 64,
+        "source_id": "common-production|20260918|base|R_J|w1|s0059",
+        "toggle_invalid_factual_weight_mass": 0.0,
+        "toggle_invalid_positive_factual_support_count": 0
+      },
+      {
+        "contrast_status": "resolved",
+        "diagnostic_precision_qualified": true,
+        "evaluated_restriction": "R_C",
+        "factual_largest_weight_share": 0.045584458865597456,
+        "factual_weight_ess": 39.36830818665615,
+        "factual_weight_relative_se": 0.09965600435616798,
+        "observation_model": "homogeneous",
+        "primary_mc_qualified": false,
+        "q": 0.005,
+        "replicate_count": 64,
+        "source_id": "common-production|20260918|base|R_J|w2|s0088",
+        "toggle_invalid_factual_weight_mass": 0.0,
+        "toggle_invalid_positive_factual_support_count": 0
+      },
+      {
+        "contrast_status": "resolved",
+        "diagnostic_precision_qualified": true,
+        "evaluated_restriction": "R_C",
+        "factual_largest_weight_share": 0.035822860553223264,
+        "factual_weight_ess": 42.00919864219783,
+        "factual_weight_relative_se": 0.09115448767799207,
+        "observation_model": "shared_quality",
+        "primary_mc_qualified": false,
+        "q": 0.005,
+        "replicate_count": 64,
+        "source_id": "common-production|20260918|base|R_J|w2|s0088",
+        "toggle_invalid_factual_weight_mass": 0.0,
+        "toggle_invalid_positive_factual_support_count": 0
+      },
+      {
+        "contrast_status": "unresolved_support_or_validity",
+        "diagnostic_precision_qualified": false,
+        "evaluated_restriction": "R_C",
+        "factual_largest_weight_share": 0.5388584304939047,
+        "factual_weight_ess": 2.9626432734706523,
+        "factual_weight_relative_se": 0.5718576078160885,
+        "observation_model": "homogeneous",
+        "primary_mc_qualified": false,
+        "q": 0.005,
+        "replicate_count": 64,
+        "source_id": "common-production|20260918|minimum_dated_adult_first|R_J|w1|s0065",
+        "toggle_invalid_factual_weight_mass": 6.969352473919358e-05,
+        "toggle_invalid_positive_factual_support_count": 1
+      },
+      {
+        "contrast_status": "unresolved_support_or_validity",
+        "diagnostic_precision_qualified": false,
+        "evaluated_restriction": "R_C",
+        "factual_largest_weight_share": 0.5201154150258552,
+        "factual_weight_ess": 3.107266961025399,
+        "factual_weight_relative_se": 0.5577289334154024,
+        "observation_model": "shared_quality",
+        "primary_mc_qualified": false,
+        "q": 0.005,
+        "replicate_count": 64,
+        "source_id": "common-production|20260918|minimum_dated_adult_first|R_J|w1|s0065",
+        "toggle_invalid_factual_weight_mass": 7.491167575619025e-05,
+        "toggle_invalid_positive_factual_support_count": 1
+      }
+    ]
+  },
+  "scope": {
+    "comparison_atol": 2e-13,
+    "comparison_rtol": 2e-11,
+    "method": "Independent hard-coded observation likelihood, Wilson intervals, stable log-sum-exp summaries, map rules, capacity strata, and fixed factual-weight paired contrasts; no project analysis functions used.",
+    "new_simulations_run": false,
+    "source_files_modified": false
+  },
+  "toggle_contrast_comparison": {
+    "exact": {
+      "contrast_status": {
+        "mismatch_count": 0
+      }
+    },
+    "independent_rows": 27432,
+    "left_only": 0,
+    "numeric": {
+      "endpoint_nonfinite_or_invalid_positive_support_count": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "endpoint_nonfinite_or_invalid_weight_mass": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "paired_mc_se": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "weighted_toggle_minus_factual": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      }
+    },
+    "official_rows": 27432,
+    "right_only": 0,
+    "total_mismatches": 0
+  },
+  "toggle_feasibility_comparison": {
+    "exact": {
+      "contrast_status": {
+        "mismatch_count": 0
+      },
+      "diagnostic_precision_qualified": {
+        "mismatch_count": 0
+      },
+      "primary_mc_qualified": {
+        "mismatch_count": 0
+      }
+    },
+    "independent_rows": 9144,
+    "left_only": 0,
+    "numeric": {
+      "factual_largest_weight_share": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "factual_weight_ess": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "factual_weight_relative_se": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "replicate_count": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "toggle_invalid_factual_weight_mass": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "toggle_invalid_positive_factual_support_count": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      }
+    },
+    "official_rows": 9144,
+    "right_only": 0,
+    "total_mismatches": 0
+  },
+  "validation_raw": {
+    "raw_history_rows": 1025024,
+    "rj_raw_rows_retained_for_paired_checks": 260096,
+    "source_count": 1001,
+    "source_size_max": 1024,
+    "source_size_min": 1024
+  },
+  "validation_summary_comparison": {
+    "exact": {
+      "joint_mc_qualified": {
+        "mismatch_count": 0
+      }
+    },
+    "independent_rows": 12012,
+    "left_only": 0,
+    "numeric": {
+      "early_pattern_lower95": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "early_pattern_probability": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "early_pattern_upper95": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "joint_largest_weight_share": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "joint_lower95": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "joint_mc_relative_se": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "joint_mc_se": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "joint_mean": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "joint_positive_supported_count": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "joint_upper95": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "joint_weight_ess": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      },
+      "log_binary_mean": {
+        "max_abs_difference": 5.684341886080802e-14,
+        "mismatch_count": 0
+      },
+      "log_joint_mean": {
+        "max_abs_difference": 0.0,
+        "mismatch_count": 0
+      }
+    },
+    "official_rows": 12012,
+    "right_only": 0,
+    "total_mismatches": 0
+  },
+  "validity_edges": {
+    "counterfactual_profiles_with_positive_support_invalidity": 768,
+    "counterfactual_status_counts": {
+      "resolved": 523,
+      "unresolved_precision": 1757,
+      "unresolved_support_or_validity": 768
+    },
+    "counterfactual_underflow_edges_invalid_count_positive_mass_zero": 0,
+    "toggle_profiles_with_positive_support_invalidity": 1032,
+    "toggle_status_counts": {
+      "resolved": 228,
+      "unresolved_precision": 7884,
+      "unresolved_support_or_validity": 1032
+    },
+    "toggle_underflow_edges_invalid_count_positive_mass_zero": 0
+  },
+  "verdict": "conditionally_supported"
+}

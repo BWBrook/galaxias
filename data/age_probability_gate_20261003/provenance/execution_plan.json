@@ -1,0 +1,36 @@
+{
+  "actual_remaining_records_permitted_only_after_qualified_primary_columns": true,
+  "authorization": "Barry accepted option A in relayed Fable message 841: one final bounded broader-nursery probability-calibration attempt; stop if endpoint remains unassessable.",
+  "cross_platform_receipt": {
+    "bytes": 1064,
+    "sha256": "59c2f9cab60a1b19bd6f78304a09a769ab362b07c845f138d38cca34dbb62a9c"
+  },
+  "independent_source_ids": 2048,
+  "initial_search_previous_remaining": 399360,
+  "initial_search_remaining_after_reallocation": 251904,
+  "joint_history_attempts": 49152,
+  "nominal_site_history_attempts": 147456,
+  "numerical_library_threads": 1,
+  "paired_cell_source_rows": 8192,
+  "post_outcome_draws_permitted": false,
+  "production_namespace": "age-probability-20261003-gate-v2",
+  "production_proposal": {
+    "bytes": 1263951,
+    "sha256": "9a253bf749abc5c64ed2c507c3985ce093d4df889405b85f28078b0eaa580ce6"
+  },
+  "programme_ceiling": 1100000,
+  "programme_planned": 1035520,
+  "qualification_current_explicit_site_smokes": 288,
+  "qualification_current_maximum_charge": 1000,
+  "qualification_previous_conservative_charge": 2263,
+  "qualification_receipt": {
+    "bytes": 579,
+    "sha256": "5f4844ffef8e007d5d6e4c726a1e278ed592a86e7ca7ed0f2c5549876e163283"
+  },
+  "qualification_reserve": 8000,
+  "recorded_utc": "2026-10-03T07:32:18.493561+00:00",
+  "remote_clone": "/data/codex/repos/galaxias-age-probability-20261003",
+  "remote_host": "utas-ubuntu",
+  "remote_scratch": "/data/codex/scratch/galaxias/age_probability_gate_20261003",
+  "workers": 16
+}

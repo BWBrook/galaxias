@@ -1,0 +1,52 @@
+{
+  "status": "complete",
+  "source": {
+    "bytes": 7109,
+    "sha256": "bce5b8188192c30f7cbcfda3325f44c96028331bef7baf5fb4b4667d29711f4a"
+  },
+  "analyses": {
+    "screen": {
+      "bytes": 952,
+      "sha256": "dfe70f8a5da39244201c6c7889b0566ba116e454cc4a5727366efa48bd443997"
+    },
+    "refine": {
+      "bytes": 1054,
+      "sha256": "962df5bcd15284d8e8f8b083afb0b751c821c0f608a41224b49daaefa4e87cff"
+    },
+    "validate": {
+      "bytes": 773,
+      "sha256": "27101ce469ade25fb2d5b59fdb1683d5d11095861c6d823751cf154a35df7726"
+    }
+  },
+  "prior_manifest": {
+    "bytes": 10067,
+    "sha256": "198d9d8b93e8a5b16fb70881a59b0e72862422c066097470542b90ac94e0796b"
+  },
+  "counts": {
+    "prior_sources": 7500,
+    "refinement_sources": 636,
+    "validation_sources": 356
+  },
+  "outputs": {
+    "parameter_diagnostics.csv": {
+      "bytes": 1081034,
+      "sha256": "6e4db2ee617d778159e5355570dfe56b65329def0cfa8c483a2fd3cbbc3b1e84"
+    },
+    "selected_source_comparison.csv": {
+      "bytes": 1048757,
+      "sha256": "b79a0128586483be09afc9de13941c7094e89f8df7598e780bdfbc63b62ee278"
+    },
+    "selection_membership.csv": {
+      "bytes": 131970,
+      "sha256": "1895f279092e2d7162ada6e1db6e3f44c5a9ab1c3ea5073bb998ef554dc284a5"
+    },
+    "context_comparison.csv": {
+      "bytes": 459339,
+      "sha256": "ad1275f2d12d581ae00b03648e03a86db54eb116c74f895aee4c7335c2ba6d07"
+    },
+    "discovery_curves.csv": {
+      "bytes": 37810,
+      "sha256": "cdc8f2063ccedfc3d014a6d1bd60b9e4d84b811c0ac16ac36b4d65daae7c9077"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "automation_id": "galaxias-common-model-follow-through",
+  "kind": "heartbeat",
+  "cadence": "daily",
+  "scope": "existing approved production run through verified synthesis and Fable handoff",
+  "status_at_creation": "ACTIVE",
+  "notification_policy": "quiet on unchanged or non-actionable state",
+  "end_condition": "verified synthesis delivered and compatibility map posted for Fable review",
+  "status_at_closure": "PAUSED",
+  "closure_reason": "Verified synthesis delivered; compatibility map posted for Fable substantive review",
+  "review_message_id": 262,
+  "closed_utc": "2026-09-19T02:34:19.768075+00:00"
+}

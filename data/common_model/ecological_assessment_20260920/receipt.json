@@ -1,0 +1,26 @@
+{
+  "status": "complete",
+  "new_histories": 0,
+  "case_profiles": 17,
+  "illustrative_histories": 25,
+  "inputs": {
+    "selected_cases.csv": "e50d1dc0c79368bcb38adc8229367a83a3e6730dee8354232ce227b3e92d2a62",
+    "case_annual_refuge.csv": "b51d44939002f9eff696b56d8f302e83bfb8c8827d8b07410af72b0c9e4a0fca",
+    "illustrative_histories.csv": "31ec523b862a9d74e7b8eb867dfd6a1ca1a17dc7f9d5603b74484cb49c78a990",
+    "survivor_conditioned_natural_counts.csv.gz": "b9854bb97b02df49a2d7126cbbf5af2ffc3cbab0cda9ed8c334005f02854bbd6",
+    "case_parameters.csv": "ff4548850197f24b8f68e9b4101cdc3bcf543f417da350afe538d4cd7d0f572e"
+  },
+  "script_sha256": "f5dacf9fae555691506cf941c847a6946af07be0c1300b6f10177ff2e801482a",
+  "outputs": {
+    "case_evidence_requirements.csv": "7ce64cc8bae1165f6a9ee056cc046ecf10d35ff7591e4301a0e266cd9a0cb1f0",
+    "constant_population_reference.csv": "3fdfc06cdb9b3e1a8b9ed11514f7181bea9faa132cd535241d874c1e0018f963",
+    "illustrative_detection_requirements.csv": "f1f60944370d4a2d47cd4a4ef0c4c26401d7e2015b39361126d8a91811066cf6",
+    "one_fish_rebound_diagnostic.csv": "89c662c5018707b64f840e01f59d1e57224b4ef0d3e05965cdd8894903b63cf4"
+  },
+  "diagnostic_inputs": {
+    "interrogate_common_histories.py": "4e443dba9aa2875d085f0da0d159358e2cf256bf09e01a08a448017e3dcdeac8",
+    "abundance_detection.py": "9511a6381279d56fe884c87343cb768fb39200e8dd73b469369805e890edc18a",
+    "validate/raw_histories.csv.gz": "28e1bf73692733cabef35c189f782c0ec4d3edb07451220dea471d43451c046d"
+  },
+  "interpretation": "Miss probabilities are observation-model requirements for fixed illustrative paths, not new evidence, posterior predictive checks, q estimates, or mechanism ranks."
+}

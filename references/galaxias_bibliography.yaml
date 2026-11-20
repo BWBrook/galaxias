@@ -1,0 +1,2833 @@
+references:
+- id: adams2023MultigeneInsightsTaxonomy
+  abstract: "Context\n              Galaxiids are a widespread, southern hemisphere, radiation of mostly obligate freshwater fishes. Tasmania houses a diversity of endemic species of Galaxias and Paragalaxias. Of these, many are at risk of extinction, being landlocked, range-restricted and subject to anthropogenic threats, placing a high-conservation priority on the region.\n            \n            \n              Aim\n              Our aim was to synthesise historic and published molecular datasets to provide the sound systematic framework needed to underpin future conservation and taxonomic efforts for Tasmanian galaxiids.\n            \n            \n              Methods\n              Novel and published nuclear (allozyme) and matrilineal (cytb) datasets were generated and integrated for every putative Tasmanian galaxiid species lacking a comparable multi-gene assessment.\n            \n            \n              Key results\n              The Tasmanian galaxiids are phylogenetically\
+    \ diverse, with molecular data generally supporting the accepted taxonomy, but with potential species-level diversity noted within an alpine radiation of the Galaxias truttaceus complex and further support for synonymy of G. niger within G. brevipinnis.\n            \n            \n              Conclusions\n              This study highlights the value of multi-locus studies in both validating species-level taxonomy and resolving taxonomic ambiguities and conservation priorities within Tasmania’s galaxiids.\n            \n            \n              Implications\n              Our integrated genetic analyses provide a framework to underpin more in-depth genomic approaches to assess additional cryptic diversity and conservation planning, such as genetic rescue and ex situ population security."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Adams
+    given: Mark
+  - family: Hammer
+    given: Michael P.
+  - family: Unmack
+    given: Peter J.
+  - family: Raadik
+    given: Tarmo A.
+  - family: Jense
+    given: Charlotte
+  - family: Burridge
+    given: Christopher P.
+  citation-key: adams2023MultigeneInsightsTaxonomy
+  container-title: Marine and Freshwater Research
+  DOI: 10.1071/MF22263
+  editor:
+  - family: Joy
+    given: Michael
+  ISSN: 1323-1650, 1448-6059
+  issue: '13'
+  issued:
+  - year: 2023
+  language: en
+  license: https://creativecommons.org/licenses/by-nc-nd/4.0/
+  page: 1113–1128
+  source: DOI.org (Crossref)
+  title: Multi-gene insights into the taxonomy and conservation of Tasmania's galaxiid fishes
+  type: article-journal
+  URL: https://connectsci.au/mf/article/74/13/1113/61066/Multi-gene-insights-into-the-taxonomy-and
+  volume: '74'
+- id: allan2025DevelopingGeospatialTools
+  abstract: "Context\n              Introduced fish have caused significant range reductions for many native fish, with many threatened species now found in headwater refuges, protected by in-stream barriers such as waterfalls, weirs and culverts. Owing to the remoteness of such refuges, distribution of many native species is poorly understood despite the urgency of determining their distribution because of threats posed by the spread of introduced fish into these refuges.\n            \n            \n              Aims\n              We investigated the application of emerging remote-sensing technology (LiDAR) to improve our ability to locate potential invasion barriers and identify headwater refuges.\n            \n            \n              Methods\n              We used LiDAR-derived digital elevation models to find likely barriers, and conducted fish surveys to determine introduced trout passability and distribution in tributary headwaters.\n            \n            \n           \
+    \   Key results\n              Trout were rarely observed upstream of waterfalls with a gradient of &gt;0.82, whereas native galaxiids were found only in the absence of trout. Of 17 trout barriers surveyed, 9 supported a population of galaxiids upstream, whereas 8 were fishless.\n            \n            \n              Implications\n              LiDAR-based analysis is an effective tool for preliminary site selection and prioritisation for freshwater fish conservation. Discovery of three new populations of galaxiids in this study demonstrates the potential of this technique to locate additional trout-free headwater streams, important for threatened galaxiids and other trout-sensitive aquatic species."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Allan
+    given: Hugh
+  - family: Duncan
+    given: Richard P.
+  - family: Unmack
+    given: Peter
+  - family: White
+    given: Duanne
+  - family: Lintermans
+    given: Mark
+  citation-key: allan2025DevelopingGeospatialTools
+  container-title: Marine and Freshwater Research
+  DOI: 10.1071/MF24221
+  editor:
+  - family: Schilling
+    given: Hayden
+  ISSN: 1323-1650, 1448-6059
+  issue: '4'
+  issued:
+  - year: 2025
+  language: en
+  license: https://creativecommons.org/licenses/by-nc-nd/4.0/
+  page: MF24221
+  source: DOI.org (Crossref)
+  title: Developing geospatial tools to identify refuges from alien trout invasion in Australia to assist freshwater conservation
+  type: article-journal
+  URL: https://connectsci.au/mf/article/76/4/MF24221/237937/Developing-geospatial-tools-to-identify-refuges
+  volume: '76'
+- id: andrews1976RevisionFamilyGalaxiidae
+  abstract: "Nine species of the genus Galaxias and one species of the genus Paragalaxias are found to be represented in Tasmania. The taxonomy, meristic and morphometric variation of each species is examined and data on the distribution, life history and ecology are presented together with references and synonymy. At the commencement of the present study previous works credited a total of 16 species in four genera to Tasmania distributed as follows: Galaxias, 12 species, Paragalaxias, 1 species, Saxilaga, 2 species and Brachygalaxias, 2 subspecies.\n            In the present study G. scopus Scott is shown to be a synonym of G. truttaceus Valenciennes, G. affinis Regan and G. coxii Macleay are shown to be synonyms of G. brevipinnis Gunther which is recorded for the first time from the Australian mainland. The two species currently referred to the genus Saxilaga, S. cleaveri Scott and S. anguilliformis Scott, together with G. upcheri Scott are found to represent one species of Galaxias.\
+    \ The type locality of G. auratus Johnston is shown to be Lake Sorell and the type locality of G. upcheri is more accurately defined than in previous works. The two subspecies of Brachygalaxias, B. pusillus tasmaniensis Scott and B. pusillus flindersiensis Scott, are treated as one species of Galaxias.\n            The Tasmanian galaxiid fauna is compared and contrasted with the galaxiid faunas of mainland Australia and New Zealand and the distribution patterns and zoogeographic considerations are discussed."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Andrews
+    given: Ap
+  citation-key: andrews1976RevisionFamilyGalaxiidae
+  container-title: Marine and Freshwater Research
+  DOI: 10.1071/MF9760297
+  ISSN: 1323-1650, 1448-6059
+  issue: '2'
+  issued:
+  - year: 1976
+  language: en
+  license: https://doi.org/10.1071/journalslicense
+  page: 297–349
+  source: DOI.org (Crossref)
+  title: A revision of the family Galaxiidae (Pisces) in Tasmania
+  type: article-journal
+  URL: https://connectsci.au/mf/article/27/2/297/15762/A-revision-of-the-family-Galaxiidae-Pisces-in
+  volume: '27'
+- id: auger-methe2016StatespaceModelsDirty
+  abstract: "Abstract\n            \n              State-space models (SSMs) are increasingly used in ecology to model time-series such as animal movement paths and population dynamics. This type of hierarchical model is often structured to account for two levels of variability: biological stochasticity and measurement error. SSMs are flexible. They can model linear and nonlinear processes using a variety of statistical distributions. Recent ecological SSMs are often complex, with a large number of parameters to estimate. Through a simulation study, we show that even simple linear Gaussian SSMs can suffer from parameter- and state-estimation problems. We demonstrate that these problems occur primarily when measurement error is larger than biological stochasticity, the condition that often drives ecologists to use SSMs. Using an animal movement example, we show how these estimation problems can affect ecological inference. Biased parameter estimates of a SSM describing the movement of polar\
+    \ bears (\n              Ursus maritimus\n              ) result in overestimating their energy expenditure. We suggest potential solutions, but show that it often remains difficult to estimate parameters. While SSMs are powerful tools, they can give misleading results and we urge ecologists to assess whether the parameters can be estimated accurately before drawing ecological conclusions from their results."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Auger-Méthé
+    given: Marie
+  - family: Field
+    given: Chris
+  - family: Albertsen
+    given: Christoffer M.
+  - family: Derocher
+    given: Andrew E.
+  - family: Lewis
+    given: Mark A.
+  - family: Jonsen
+    given: Ian D.
+  - family: Mills Flemming
+    given: Joanna
+  citation-key: auger-methe2016StatespaceModelsDirty
+  container-title: Scientific Reports
+  container-title-short: Sci Rep
+  DOI: 10.1038/srep26677
+  ISSN: 2045-2322
+  issue: '1'
+  issued:
+  - year: 2016
+  language: en
+  page: '26677'
+  source: DOI.org (Crossref)
+  title: 'State-space models’ dirty little secrets: even simple linear Gaussian models can have estimation problems'
+  title-short: State-space models’ dirty little secrets
+  type: article-journal
+  URL: https://www.nature.com/articles/srep26677
+  volume: '6'
+- id: ault1994EffectsHabitatStructure
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Ault
+    given: T. R.
+  - family: White
+    given: R. W.G.
+  citation-key: ault1994EffectsHabitatStructure
+  container-title: Transactions of the American Fisheries Society
+  container-title-short: Transactions of the American Fisheries Society
+  DOI: 10.1577/1548-8659(1994)123<0939:EOHSAT>2.3.CO;2
+  ISSN: 0002-8487, 1548-8659
+  issue: '6'
+  issued:
+  - year: 1994
+  language: en
+  page: 939–949
+  source: DOI.org (Crossref)
+  title: Effects of habitat structure and the presence of brown trout on the population density of Galaxias truttaceus in Tasmania, Australia
+  type: article-journal
+  URL: https://academic.oup.com/tafs/article/123/6/939/7892946
+  volume: '123'
+- id: beaumont2002ApproximateBayesianComputation
+  abstract: "Abstract\n            We propose a new method for approximate Bayesian statistical inference on the basis of summary statistics. The method is suited to complex problems that arise in population genetics, extending ideas developed in this setting by earlier authors. Properties of the posterior distribution of a parameter, such as its mean or density curve, are approximated without explicit likelihood calculations. This is achieved by fitting a local-linear regression of simulated parameter values on simulated summary statistics, and then substituting the observed summary statistics into the regression equation. The method combines many of the advantages of Bayesian statistical inference with the computational efficiency of methods based on summary statistics. A key advantage of the method is that the nuisance parameters are automatically integrated out in the simulation step, so that the large numbers of nuisance parameters that arise in population genetics problems can be handled\
+    \ without difficulty. Simulation results indicate computational and statistical efficiency that compares favorably with those of alternative methods previously proposed in the literature. We also compare the relative efficiency of inferences obtained using methods based on summary statistics with those obtained directly from the data using MCMC."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Beaumont
+    given: Mark A
+  - family: Zhang
+    given: Wenyang
+  - family: Balding
+    given: David J
+  citation-key: beaumont2002ApproximateBayesianComputation
+  container-title: Genetics
+  DOI: 10.1093/genetics/162.4.2025
+  ISSN: 1943-2631
+  issue: '4'
+  issued:
+  - year: 2002
+  language: en
+  license: https://academic.oup.com/journals/pages/open_access/funder_policies/chorus/standard_publication_model
+  page: 2025–2035
+  source: DOI.org (Crossref)
+  title: Approximate Bayesian computation in population genetics
+  type: article-journal
+  URL: https://academic.oup.com/genetics/article/162/4/2025/6050069
+  volume: '162'
+- id: beven2006ManifestoEquifinalityThesis
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Beven
+    given: Keith
+  citation-key: beven2006ManifestoEquifinalityThesis
+  container-title: Journal of Hydrology
+  container-title-short: Journal of Hydrology
+  DOI: 10.1016/j.jhydrol.2005.07.007
+  ISSN: 00221694
+  issue: 1–2
+  issued:
+  - year: 2006
+  language: en
+  license: https://www.elsevier.com/tdm/userlicense/1.0/
+  page: 18–36
+  source: DOI.org (Crossref)
+  title: A manifesto for the equifinality thesis
+  type: article-journal
+  URL: https://linkinghub.elsevier.com/retrieve/pii/S002216940500332X
+  volume: '320'
+- id: boakes2010DistortedViewsBiodiversity
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Boakes
+    given: Elizabeth H.
+  - family: McGowan
+    given: Philip J. K.
+  - family: Fuller
+    given: Richard A.
+  - family: Chang-qing
+    given: Ding
+  - family: Clark
+    given: Natalie E.
+  - family: O'Connor
+    given: Kim
+  - family: Mace
+    given: Georgina M.
+  citation-key: boakes2010DistortedViewsBiodiversity
+  container-title: PLoS Biology
+  container-title-short: PLoS Biol
+  DOI: 10.1371/journal.pbio.1000385
+  ISSN: 1545-7885
+  issue: '6'
+  issued:
+  - year: 2010
+  language: en
+  page: e1000385
+  source: DOI.org (Crossref)
+  title: 'Distorted Views of Biodiversity: Spatial and Temporal Bias in Species Occurrence Data'
+  title-short: Distorted Views of Biodiversity
+  type: article-journal
+  URL: https://dx.plos.org/10.1371/journal.pbio.1000385
+  volume: '8'
+- id: boakes2015InferringSpeciesExtinction
+  abstract: "Summary\n            \n              \n                \n                  Accurate measures of extinction are needed in biodiversity monitoring and conservation management, but ascertaining the exact time at which a species became extinct is difficult since a small population may go undetected for many years.\n                \n                \n                  For little‐studied species, often the only information available is historical sighting data. Several statistical tests have been developed which use this information to make inferences about a species’ extinction. The increasing array of methods can present a daunting choice.\n                \n                \n                  We review the more frequently cited methods, for each model explaining its assumptions, the data required, the scenarios it was developed for and power considerations, if known. We provide guidance on selecting the most appropriate method for a particular sighting record.\n              \
+    \  \n                \n                  We give examples from the literature to show how the methods have been usefully applied across conservation research, informing conservation decision‐making and extinction inference."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Boakes
+    given: Elizabeth H.
+  - family: Rout
+    given: Tracy M.
+  - family: Collen
+    given: Ben
+  citation-key: boakes2015InferringSpeciesExtinction
+  container-title: Methods in Ecology and Evolution
+  container-title-short: Methods Ecol Evol
+  DOI: 10.1111/2041-210X.12365
+  editor:
+  - family: Hodgson
+    given: David
+  ISSN: 2041-210X, 2041-210X
+  issue: '6'
+  issued:
+  - year: 2015
+  language: en
+  license: http://onlinelibrary.wiley.com/termsAndConditions#vor
+  page: 678–687
+  source: DOI.org (Crossref)
+  title: 'Inferring species extinction: the use of sighting records'
+  title-short: Inferring species extinction
+  type: article-journal
+  URL: https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210X.12365
+  volume: '6'
+- id: brook2019FastResamplingMethoda
+  abstract: "Abstract\n            \n              The pattern of sightings of a species that is rare, and then no longer observed, can be used to estimate its extinction date. However, other than physical captures or specimens, the veracity of any sighting is ambiguous, and should be treated probabilistically when used to infer extinction dates. We present a simple yet powerful computational approach for incorporating observational reliability into extinction date estimators (\n              EDE\n              ). Our method (1) combines repeated within‐year sightings probabilistically, (2) samples observations using reliability as an inclusion probability, (3) infers a probability distribution and summary statistics of extinction dates with any\n              EDE\n              , and (4) computes the frequency distribution of the extinction date. We applied this method to eight exemplar sighting records covering a range of lengths, sighting rates and uncertainties, using a variety of statistical\n\
+    \              EDE\n              s, and compared these results with a threshold approach for selecting sightings. We also demonstrated a robust coverage of “true” extinction dates based on selected real‐world examples of rediscovered species and confirmed extinctions, and simulated sighting records. Our approach represents a powerful generalization of past work because it is not predicated on any specific method for inferring extinction dates, and yet is simple to implement (with R script provided)."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Brook
+    given: Barry W.
+  - family: Buettel
+    given: Jessie C.
+  - family: Jarić
+    given: Ivan
+  citation-key: brook2019FastResamplingMethoda
+  container-title: Ecology
+  container-title-short: Ecology
+  DOI: 10.1002/ecy.2787
+  ISSN: 0012-9658, 1939-9170
+  issue: '9'
+  issued:
+  - year: 2019
+  language: en
+  page: e02787
+  source: DOI.org (Crossref)
+  title: A fast re‐sampling method for using reliability ratings of sightings with extinction‐date estimators
+  type: article-journal
+  URL: https://esajournals.onlinelibrary.wiley.com/doi/10.1002/ecy.2787
+  volume: '100'
+- id: brook2023ResolvingWhenWherea
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Brook
+    given: Barry W.
+  - family: Sleightholme
+    given: Stephen R.
+  - family: Campbell
+    given: Cameron R.
+  - family: Jarić
+    given: Ivan
+  - family: Buettel
+    given: Jessie C.
+  citation-key: brook2023ResolvingWhenWherea
+  container-title: Science of The Total Environment
+  container-title-short: Science of The Total Environment
+  DOI: 10.1016/j.scitotenv.2023.162878
+  ISSN: 00489697
+  issued:
+  - year: 2023
+  language: en
+  page: '162878'
+  source: DOI.org (Crossref)
+  title: Resolving when (and where) the Thylacine went extinct
+  type: article-journal
+  URL: https://linkinghub.elsevier.com/retrieve/pii/S0048969723014948
+  volume: '877'
+- id: brown2022ChoosingOptimalTrigger
+  abstract: "Many endangered species exist in only a single population, and almost all species that go extinct will do so from their last remaining population. Understanding how to best conserve these single population threatened species (SPTS) is therefore a distinct and important task for threatened species conservation science. As a last resort, managers of SPTS may consider taking the entire population into captivity–\n              ex situ\n              ,\n              in toto\n              conservation. In the past, this choice has been taken to the great benefit of the SPTS, but it has also lead to catastrophe. Here, we develop a decision-support tool for planning when to trigger this difficult action. Our method considers the uncertain and ongoing decline of the SPTS, the possibility that drastic\n              ex situ\n              action will fail, and the opportunities offered by delaying the decision. Specifically, these benefits are additional time for ongoing\n        \
+    \      in situ\n              actions to succeed, and opportunities for the managers to learn about the system. To illustrate its utility, we apply the decision tool to four retrospective case-studies of declining SPTS. As well as offering support to this particular decision, our tool illustrates why trigger points for difficult conservation decisions should be formulated in advance, but must also be adaptive. A trigger-point for the\n              ex situ\n              ,\n              in toto\n              conservation of a SPTS, for example, will not take the form of a simple threshold abundance."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Brown
+    given: Kaitlyn
+  - family: Tambyah
+    given: Tamara
+  - family: Fenwick
+    given: Jack
+  - family: Grant
+    given: Patrick
+  - family: Bode
+    given: Michael
+  citation-key: brown2022ChoosingOptimalTrigger
+  container-title: PLOS ONE
+  container-title-short: PLoS ONE
+  DOI: 10.1371/journal.pone.0266244
+  editor:
+  - family: Romanach
+    given: Stephanie S.
+  ISSN: 1932-6203
+  issue: '4'
+  issued:
+  - year: 2022
+  language: en
+  page: e0266244
+  source: DOI.org (Crossref)
+  title: Choosing optimal trigger points for ex situ, in toto conservation of single population threatened species
+  type: article-journal
+  URL: https://dx.plos.org/10.1371/journal.pone.0266244
+  volume: '17'
+- id: brynjarsdottir2014LearningPhysicalParameters
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Brynjarsdóttir
+    given: Jenný
+  - family: OʼHagan
+    given: Anthony
+  citation-key: brynjarsdottir2014LearningPhysicalParameters
+  container-title: Inverse Problems
+  container-title-short: Inverse Problems
+  DOI: 10.1088/0266-5611/30/11/114007
+  ISSN: 0266-5611, 1361-6420
+  issue: '11'
+  issued:
+  - year: 2014
+  license: http://iopscience.iop.org/info/page/text-and-data-mining
+  page: '114007'
+  source: DOI.org (Crossref)
+  title: 'Learning about physical parameters: The importance of model discrepancy'
+  title-short: Learning about physical parameters
+  type: article-journal
+  URL: https://iopscience.iop.org/article/10.1088/0266-5611/30/11/114007
+  volume: '30'
+- id: bunnell2026KeyConsiderationsDecision
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Bunnell
+    given: David B.
+  - family: Ackiss
+    given: Amanda S.
+  - family: Gatch
+    given: Alexander J.
+  - family: Drake
+    given: D. Andrew R.
+  - family: Honsey
+    given: Andrew E.
+  - family: Krabbenhoft
+    given: Trevor J.
+  - family: Stacy-Duffy
+    given: William L.
+  - family: Claramunt
+    given: Randall M.
+  - family: Gordon
+    given: Roger
+  - family: Bartron
+    given: Meredith L.
+  - family: Dettmers
+    given: John M.
+  - family: Dunlop
+    given: Erin S.
+  - family: Egan
+    given: Joshua P.
+  - family: Lamothe
+    given: Karl A.
+  - family: Moore
+    given: Seth
+  - family: Muir
+    given: Andrew M.
+  - family: Robinson
+    given: Jason
+  - family: Wilson
+    given: Chris C.
+  citation-key: bunnell2026KeyConsiderationsDecision
+  container-title: Global Ecology and Conservation
+  container-title-short: Global Ecology and Conservation
+  DOI: 10.1016/j.gecco.2026.e04423
+  ISSN: '23519894'
+  issued:
+  - year: 2026
+  language: en
+  page: e04423
+  source: DOI.org (Crossref)
+  title: Key considerations for decision makers and stakeholders when identifying source populations for conservation translocations of fishes
+  type: article-journal
+  URL: https://linkinghub.elsevier.com/retrieve/pii/S2351989426003732
+  volume: '71'
+- id: caley2014QuantifyingExtinctionProbabilities
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Caley
+    given: Peter
+  - family: Barry
+    given: Simon C.
+  citation-key: caley2014QuantifyingExtinctionProbabilities
+  container-title: PLoS ONE
+  container-title-short: PLoS ONE
+  DOI: 10.1371/journal.pone.0095857
+  editor:
+  - family: Hayward
+    given: Matt
+  ISSN: 1932-6203
+  issue: '4'
+  issued:
+  - year: 2014
+  language: en
+  page: e95857
+  source: DOI.org (Crossref)
+  title: 'Quantifying Extinction Probabilities from Sighting Records: Inference and Uncertainties'
+  title-short: Quantifying Extinction Probabilities from Sighting Records
+  type: article-journal
+  URL: https://dx.plos.org/10.1371/journal.pone.0095857
+  volume: '9'
+- id: chilcott2013ExtinctHabitatExtant
+  abstract: The Pedder galaxias (Galaxias pedderensis) from Lake Pedder, Tasmania, Australia, is one of the world’s most threatened freshwater fish. The flooding of Lake Pedder in 1972 for hydroelectric power generation caused a major change to the ecosystem that initiated an irreversible decline in the Pedder galaxias within its natural range. The flooding inundated another headwater catchment and native and introduced fish from this catchment colonised the impoundment. Numbers of the Pedder galaxias declined markedly as the impoundment matured and as colonising fish proliferated. Surveys in the 1980s confirmed the parlous state of the population, highlighting the need for conservation intervention. Several urgent conservation actions were undertaken to save the species from extinction. Translocation was considered the most important recovery action, given the critically low numbers in the wild. The species is now extinct from its natural range and is known from only two translocated populations.
+    The conservation program, and specifically the translocation recovery action, saved the Pedder galaxias from extinction. The conservation management was extremely challenging since rapidly declining fish numbers needed timely and critical decisions to underpin the future of the fish. Recommendations are provided arising from this case study to guide conservation of freshwater fish in similar circumstances.
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Chilcott
+    given: Stuart
+  - family: Freeman
+    given: Rob
+  - family: Davies
+    given: Peter E.
+  - family: Crook
+    given: David A.
+  - family: Fulton
+    given: Wayne
+  - family: Hamr
+    given: Premck
+  - family: Jarvis
+    given: David
+  - family: Sanger
+    given: Andrew C.
+  citation-key: chilcott2013ExtinctHabitatExtant
+  container-title: Marine and Freshwater Research
+  DOI: 10.1071/MF12257
+  ISSN: 1323-1650, 1448-6059
+  issue: '9'
+  issued:
+  - year: 2013
+  language: en
+  license: https://doi.org/10.1071/journalslicense
+  page: 864–873
+  source: DOI.org (Crossref)
+  title: 'Extinct habitat, extant species: lessons learned from conservation recovery actions for the Pedder galaxias (Galaxias pedderensis) in south-west Tasmania, Australia'
+  title-short: Extinct habitat, extant species
+  type: article-journal
+  URL: https://connectsci.au/mf/article/64/9/864/59479/Extinct-habitat-extant-species-lessons-learned
+  volume: '64'
+- id: conn2018GuideBayesianModel
+  abstract: "Abstract\n            \n              Checking that models adequately represent data is an essential component of applied statistical inference. Ecologists increasingly use hierarchical Bayesian statistical models in their research. The appeal of this modeling paradigm is undeniable, as researchers can build and fit models that embody complex ecological processes while simultaneously accounting for observation error. However, ecologists tend to be less focused on checking model assumptions and assessing potential lack of fit when applying Bayesian methods than when applying more traditional modes of inference such as maximum likelihood. There are also multiple ways of assessing the fit of Bayesian models, each of which has strengths and weaknesses. For instance, Bayesian\n              P\n              values are relatively easy to compute, but are well known to be conservative, producing\n              P\n              values biased toward 0.5. Alternatively, lesser known approaches\
+    \ to model checking, such as prior predictive checks, cross‐validation probability integral transforms, and pivot discrepancy measures may produce more accurate characterizations of goodness‐of‐fit but are not as well known to ecologists. In addition, a suite of visual and targeted diagnostics can be used to examine violations of different model assumptions and lack of fit at different levels of the modeling hierarchy, and to check for residual temporal or spatial autocorrelation. In this review, we synthesize existing literature to guide ecologists through the many available options for Bayesian model checking. We illustrate methods and procedures with several ecological case studies including (1) analysis of simulated spatiotemporal count data, (2) N‐mixture models for estimating abundance of sea otters from an aircraft, and (3) hidden Markov modeling to describe attendance patterns of California sea lion mothers on a rookery. We find that commonly used procedures based on posterior\
+    \ predictive\n              P\n              values detect extreme model inadequacy, but often do not detect more subtle cases of lack of fit. Tests based on cross‐validation and pivot discrepancy measures (including the “sampled predictive\n              P\n              value”) appear to be better suited to model checking and to have better overall statistical performance. We conclude that model checking is necessary to ensure that scientific inference is well founded. As an essential component of scientific discovery, it should accompany most Bayesian analyses presented in the literature."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Conn
+    given: Paul B.
+  - family: Johnson
+    given: Devin S.
+  - family: Williams
+    given: Perry J.
+  - family: Melin
+    given: Sharon R.
+  - family: Hooten
+    given: Mevin B.
+  citation-key: conn2018GuideBayesianModel
+  container-title: Ecological Monographs
+  container-title-short: Ecological Monographs
+  DOI: 10.1002/ecm.1314
+  ISSN: 0012-9615, 1557-7015
+  issue: '4'
+  issued:
+  - year: 2018
+  language: en
+  page: 526–542
+  source: DOI.org (Crossref)
+  title: A guide to Bayesian model checking for ecologists
+  type: article-journal
+  URL: https://esajournals.onlinelibrary.wiley.com/doi/10.1002/ecm.1314
+  volume: '88'
+- id: cook2006ValidationSoftwareBayesian
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Cook
+    given: Samantha R
+  - family: Gelman
+    given: Andrew
+  - family: Rubin
+    given: Donald B
+  citation-key: cook2006ValidationSoftwareBayesian
+  container-title: Journal of Computational and Graphical Statistics
+  container-title-short: Journal of Computational and Graphical Statistics
+  DOI: 10.1198/106186006X136976
+  ISSN: 1061-8600, 1537-2715
+  issue: '3'
+  issued:
+  - year: 2006
+  language: en
+  page: 675–692
+  source: DOI.org (Crossref)
+  title: Validation of Software for Bayesian Models Using Posterior Quantiles
+  type: article-journal
+  URL: http://www.tandfonline.com/doi/abs/10.1198/106186006X136976
+  volume: '15'
+- id: coughlan2025DevelopmentTraitBasedRisk
+  abstract: "ABSTRACT\n            The management of introduced species to protect native fauna in the face of their rapid decline often presents a costly, technically complex, and sometimes socially controversial challenge. Prioritising when and where conservation efforts are best applied for the greatest efficacy is difficult. Using a systematic risk assessment framework effectively prioritises options among the range of management alternatives. Tensions exist between managing trout in New Zealand as a highly valued sport fishery and conserving native freshwater fish populations. We developed a trait‐based risk assessment matrix to identify the native fish most vulnerable to trout pressures and prioritise river reaches where those species are abundant for conservation focus. The trait‐based assessment indicated that all species identified as highly vulnerable to trout pressures were either non‐migratory galaxiids or mudfish. Trout overlapped in occurrence with approximately 10% of the\
+    \ entire extent of species deemed high risk to trout pressures, equating to 1626 km of river length, largely in central Otago and Hawkes Bay. While 1626 km of river is small compared to the entire riverine network (0.4%), it is still a substantial area for resource conservation interventions. Improving habitat quality to bolster native fish resilience to trout pressures, removing or reducing trout abundance are, however, potentially effective options. The approach adopted here will allow conservation managers to direct these actions to areas where they result in the greatest likelihood of positive outcomes."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Coughlan
+    given: Ami
+  - family: Canning
+    given: Adam D.
+  - family: Death
+    given: Russell G.
+  citation-key: coughlan2025DevelopmentTraitBasedRisk
+  container-title: Ecology and Evolution
+  container-title-short: Ecology and Evolution
+  DOI: 10.1002/ece3.72480
+  ISSN: 2045-7758, 2045-7758
+  issue: '12'
+  issued:
+  - year: 2025
+  language: en
+  page: e72480
+  source: DOI.org (Crossref)
+  title: Development of a trait-based risk assessment to minimise the impacts of trout on New Zealand native fishes
+  type: article-journal
+  URL: https://onlinelibrary.wiley.com/doi/10.1002/ece3.72480
+  volume: '15'
+- id: cranmer2020FrontierSimulationbasedInference
+  abstract: Many domains of science have developed complex simulations to describe phenomena of interest. While these simulations provide high-fidelity models, they are poorly suited for inference and lead to challenging inverse problems. We review the rapidly developing field of simulation-based inference and identify the forces giving additional momentum to the field. Finally, we describe how the frontier is expanding so that a broad audience can appreciate the profound influence these developments may have on science.
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Cranmer
+    given: Kyle
+  - family: Brehmer
+    given: Johann
+  - family: Louppe
+    given: Gilles
+  citation-key: cranmer2020FrontierSimulationbasedInference
+  container-title: Proceedings of the National Academy of Sciences
+  container-title-short: Proc. Natl. Acad. Sci. U.S.A.
+  DOI: 10.1073/pnas.1912789117
+  ISSN: 0027-8424, 1091-6490
+  issue: '48'
+  issued:
+  - year: 2020
+  language: en
+  page: 30055–30062
+  source: DOI.org (Crossref)
+  title: The frontier of simulation-based inference
+  type: article-journal
+  URL: https://pnas.org/doi/full/10.1073/pnas.1912789117
+  volume: '117'
+- id: deiner2017EnvironmentalDNAMetabarcoding
+  abstract: "Abstract\n            \n              The genomic revolution has fundamentally changed how we survey biodiversity on earth. High‐throughput sequencing (“\n              HTS\n              ”) platforms now enable the rapid sequencing of\n              DNA\n              from diverse kinds of environmental samples (termed “environmental\n              DNA\n              ” or “\n              eDNA\n              ”). Coupling\n              HTS\n              with our ability to associate sequences from\n              eDNA\n              with a taxonomic name is called “\n              eDNA\n              metabarcoding” and offers a powerful molecular tool capable of noninvasively surveying species richness from many ecosystems. Here, we review the use of\n              eDNA\n              metabarcoding for surveying animal and plant richness, and the challenges in using\n              eDNA\n              approaches to estimate relative abundance. We highlight\n              eDNA\n\
+    \              applications in freshwater, marine and terrestrial environments, and in this broad context, we distill what is known about the ability of different\n              eDNA\n              sample types to approximate richness in space and across time. We provide guiding questions for study design and discuss the\n              eDNA\n              metabarcoding workflow with a focus on primers and library preparation methods. We additionally discuss important criteria for consideration of bioinformatic filtering of data sets, with recommendations for increasing transparency. Finally, looking to the future, we discuss emerging applications of\n              eDNA\n              metabarcoding in ecology, conservation, invasion biology, biomonitoring, and how\n              eDNA\n              metabarcoding can empower citizen science and biodiversity education."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Deiner
+    given: Kristy
+  - family: Bik
+    given: Holly M.
+  - family: Mächler
+    given: Elvira
+  - family: Seymour
+    given: Mathew
+  - family: Lacoursière‐Roussel
+    given: Anaïs
+  - family: Altermatt
+    given: Florian
+  - family: Creer
+    given: Simon
+  - family: Bista
+    given: Iliana
+  - family: Lodge
+    given: David M.
+  - family: De Vere
+    given: Natasha
+  - family: Pfrender
+    given: Michael E.
+  - family: Bernatchez
+    given: Louis
+  citation-key: deiner2017EnvironmentalDNAMetabarcoding
+  container-title: Molecular Ecology
+  container-title-short: Molecular Ecology
+  DOI: 10.1111/mec.14350
+  ISSN: 0962-1083, 1365-294X
+  issue: '21'
+  issued:
+  - year: 2017
+  language: en
+  license: http://creativecommons.org/licenses/by/4.0/
+  page: 5872–5895
+  source: DOI.org (Crossref)
+  title: 'Environmental DNA metabarcoding: Transforming how we survey animal and plant communities'
+  title-short: 'Environmental '
+  type: article-journal
+  URL: https://onlinelibrary.wiley.com/doi/10.1111/mec.14350
+  volume: '26'
+- id: george2009GuidelinesPropagationTranslocation
+  abstract: "Abstract\n            Reestablishment of locally extinct populations and augmentation of declining populations are management activities used with increasing frequency in the conservation of imperiled fishes in the United States. Unfortunately, these options were not always carefully or appropriately used in past cases, partly owing to a lack of guidelines that address scientifically-based protocols for propagation, translocation, reintroduction, and augmentation (PTRA). PTRA programs are an important management tool for the recovery of imperiled fishes when undertaken with careful planning, including everything from determining that PTRA is necessary to incorporating knowledge of life history and genetics into the PTRA plan. In addition, PTRA programs must also assemble advisory groups, obtain funding and permitting, construct and maintain propagation facilities, and raise community awareness of the program. Because such diverse skills are needed, successful PTRA programs should\
+    \ prepare for long-term partnerships to achieve the goal of recovery."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: George
+    given: Anna L.
+  - family: Kuhajda
+    given: Bernard R.
+  - family: Williams
+    given: James D.
+  - family: Cantrell
+    given: Mark A.
+  - family: Rakes
+    given: Patrick L.
+  - family: Shute
+    given: J. R.
+  citation-key: george2009GuidelinesPropagationTranslocation
+  container-title: Fisheries
+  DOI: 10.1577/1548-8446-34.11.529
+  ISSN: 0363-2415, 1548-8446
+  issue: '11'
+  issued:
+  - year: 2009
+  language: en
+  license: https://academic.oup.com/pages/standard-publication-reuse-rights
+  page: 529–545
+  source: DOI.org (Crossref)
+  title: Guidelines for propagation and translocation for freshwater fish conservation
+  type: article-journal
+  URL: https://academic.oup.com/fisheries/article/34/11/529/7884836
+  volume: '34'
+- id: glova1991DietarySpatialOverlap
+  abstract: Benthic and drifting invertebrates as well as fish were sampled in a lake-inlet stream over a 24-h period in summer in order to investigate interactions for food and space between a native fish species (Galaxias brevipinnis, Galaxiidae) and juveniles of two exotic fish species (Salmo trutta and Oncorhynchus mykiss, Salmonidae) in New Zealand. Galaxias brevipinnis fed almost exclusively at night on the benthos, whereas both trout species fed mostly during the day on drifting and benthic prey. Larvae of Deleatidium (Ephemeroptera), Hydrobiosis and Oxyethira (Trichoptera), and Austro-simulium and Chironomidae (Diptera) were the major prey in the diets of all three fish species. Small prey made up a greater proportion of the diet of G. brevipinnis than for either trout species. All three species of fish were found primarily in riffles and runs in water depths of 0.1-0.3 rn, with G. brevipinnis frequently being in faster-flowing areas (water velocity 0.8-1.1 m s-1) than was either
+    trout species (water velocity 0.4-0.7 rn s-1). These differences in pattern of die1 feeding and micro- habitat use no doubt lessen the interaction between the galaxiid and salrnonid fish species.
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Glova
+    given: Gj
+  - family: Sagar
+    given: Pm
+  citation-key: glova1991DietarySpatialOverlap
+  container-title: Australian Journal of Marine and Freshwater Research
+  DOI: 10.1071/MF9910423
+  ISSN: 0067-1940
+  issue: '4'
+  issued:
+  - year: 1991
+  language: en
+  license: https://doi.org/10.1071/journalslicense
+  page: 423–433
+  source: DOI.org (Crossref)
+  title: Dietary and spatial overlap between stream populations of a native and two introduced fish species in New Zealand
+  type: article-journal
+  URL: https://connectsci.au/mf/article/42/4/423/56690/Dietary-and-spatial-overlap-between-stream
+  volume: '42'
+- id: glova1993FurtherAssessmentTrophic
+  abstract: "Abstract\n            \n              The trophic and spatial inter‐relations between 2 small native fish (\n              Galaxias vulgaris\n              Stokell and\n              G. paucispondylus\n              Stokell, Galaxiidae) and juveniles of 2 introduced fish (\n              Oncorhynchus tshawytscha\n              Walbaum and\n              Salmo trutta\n              L., Salmonidae) were investigated in a New Zealand stream. Interspecific overlap in timing of feeding among these four fish species was greatest between pre‐dusk and pre‐dawn (1730‐0530). Aquatic invertebrates were consumed exclusively by all fish species except\n              O. tshawytscha\n              , which also preyed on Trichoptera imagos, particularly at night. Dietary similarities were least between galaxiids, moderate between galaxiids and salmonids, and greatest between salmonid species. Both galaxiid species were found primarily in riffles, with\n              G. vulgaris\n          \
+    \    occupying slightly deeper (≤0.3 m) and slower (0.5–0.8 m. s\n              −1\n              ) waters than did\n              G. paucispondylus\n              (≤0.2 m deep and 0.7‐1.0 m. s\n              −1\n              water velocity); salmonids were mostly in pools and runs, with\n              O. tshawytscha\n              occupying slightly slower (0.1‐0.2 m. s\n              −1\n              ) and deeper (≤0.5 m) waters than those occupied by\n              S. trutta\n              (0.2–0.5 m. s\n              −1\n              water velocity and ≤0.4 m deep). The interspecific differences in feeding and microdistribution presumably reduce interaction between sympatric populations of galaxiids and salmonids."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Glova
+    given: G. J.
+  - family: Sagar
+    given: P. M.
+  citation-key: glova1993FurtherAssessmentTrophic
+  container-title: Ecology of Freshwater Fish
+  container-title-short: Ecology of Freshwater Fish
+  DOI: 10.1111/j.1600-0633.1993.tb00093.x
+  ISSN: 0906-6691, 1600-0633
+  issue: '3'
+  issued:
+  - year: 1993
+  language: en
+  license: http://onlinelibrary.wiley.com/termsAndConditions#vor
+  page: 132–140
+  source: DOI.org (Crossref)
+  title: A further assessment of trophic and spatial inter-relations of galaxiids and salmonids in New Zealand
+  type: article-journal
+  URL: https://onlinelibrary.wiley.com/doi/10.1111/j.1600-0633.1993.tb00093.x
+  volume: '2'
+- id: gneiting2007StrictlyProperScoring
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Gneiting
+    given: Tilmann
+  - family: Raftery
+    given: Adrian E
+  citation-key: gneiting2007StrictlyProperScoring
+  container-title: Journal of the American Statistical Association
+  container-title-short: Journal of the American Statistical Association
+  DOI: 10.1198/016214506000001437
+  ISSN: 0162-1459, 1537-274X
+  issue: '477'
+  issued:
+  - year: 2007
+  language: en
+  page: 359–378
+  source: DOI.org (Crossref)
+  title: Strictly Proper Scoring Rules, Prediction, and Estimation
+  type: article-journal
+  URL: http://www.tandfonline.com/doi/abs/10.1198/016214506000001437
+  volume: '102'
+- id: goldberg2016CriticalConsiderationsApplication
+  abstract: "Summary\n            \n              \n                \n                  \n                    Species detection using environmental\n                    DNA\n                    (\n                    eDNA\n                    ) has tremendous potential for contributing to the understanding of the ecology and conservation of aquatic species. Detecting species using\n                    eDNA\n                    methods, rather than directly sampling the organisms, can reduce impacts on sensitive species and increase the power of field surveys for rare and elusive species. The sensitivity of\n                    eDNA\n                    methods, however, requires a heightened awareness and attention to quality assurance and quality control protocols. Additionally, the interpretation of\n                    eDNA\n                    data demands careful consideration of multiple factors. As\n                    eDNA\n                    methods have grown in application, diverse\
+    \ approaches have been implemented to address these issues. With interest in\n                    eDNA\n                    continuing to expand, supportive guidelines for undertaking\n                    eDNA\n                    studies are greatly needed.\n                  \n                \n                \n                  \n                    Environmental\n                    DNA\n                    researchers from around the world have collaborated to produce this set of guidelines and considerations for implementing\n                    eDNA\n                    methods to detect aquatic macroorganisms.\n                  \n                \n                \n                  \n                    Critical considerations for study design include preventing contamination in the field and the laboratory, choosing appropriate sample analysis methods, validating assays, testing for sample inhibition and following minimum reporting guidelines. Critical considerations for\
+    \ inference include temporal and spatial processes, limits of correlation of\n                    eDNA\n                    with abundance, uncertainty of positive and negative results, and potential sources of allochthonous\n                    DNA\n                    .\n                  \n                \n                \n                  We present a synthesis of knowledge at this stage for application of this new and powerful detection method."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Goldberg
+    given: Caren S.
+  - family: Turner
+    given: Cameron R.
+  - family: Deiner
+    given: Kristy
+  - family: Klymus
+    given: Katy E.
+  - family: Thomsen
+    given: Philip Francis
+  - family: Murphy
+    given: Melanie A.
+  - family: Spear
+    given: Stephen F.
+  - family: McKee
+    given: Anna
+  - family: Oyler‐McCance
+    given: Sara J.
+  - family: Cornman
+    given: Robert Scott
+  - family: Laramie
+    given: Matthew B.
+  - family: Mahon
+    given: Andrew R.
+  - family: Lance
+    given: Richard F.
+  - family: Pilliod
+    given: David S.
+  - family: Strickler
+    given: Katherine M.
+  - family: Waits
+    given: Lisette P.
+  - family: Fremier
+    given: Alexander K.
+  - family: Takahara
+    given: Teruhiko
+  - family: Herder
+    given: Jelger E.
+  - family: Taberlet
+    given: Pierre
+  citation-key: goldberg2016CriticalConsiderationsApplication
+  container-title: Methods in Ecology and Evolution
+  container-title-short: Methods Ecol Evol
+  DOI: 10.1111/2041-210X.12595
+  editor:
+  - family: Gilbert
+    given: M.
+  ISSN: 2041-210X, 2041-210X
+  issue: '11'
+  issued:
+  - year: 2016
+  language: en
+  license: http://creativecommons.org/licenses/by-nc-nd/4.0/
+  page: 1299–1307
+  source: DOI.org (Crossref)
+  title: Critical considerations for the application of environmental DNA methods to detect aquatic species
+  title-short: 'Critical considerations for the application of environmental '
+  type: article-journal
+  URL: https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210X.12595
+  volume: '7'
+- id: grimm2005PatternOrientedModelingAgentBased
+  abstract: Agent-based complex systems are dynamic networks of many interacting agents; examples include ecosystems, financial markets, and cities. The search for general principles underlying the internal organization of such systems often uses bottom-up simulation models such as cellular automata and agent-based models. No general framework for designing, testing, and analyzing bottom-up models has yet been established, but recent advances in ecological modeling have come together in a general strategy we call pattern-oriented modeling. This strategy provides a unifying framework for decoding the internal organization of agent-based complex systems and may lead toward unifying algorithmic theories of the relation between adaptive behavior and system complexity.
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Grimm
+    given: Volker
+  - family: Revilla
+    given: Eloy
+  - family: Berger
+    given: Uta
+  - family: Jeltsch
+    given: Florian
+  - family: Mooij
+    given: Wolf M.
+  - family: Railsback
+    given: Steven F.
+  - family: Thulke
+    given: Hans-Hermann
+  - family: Weiner
+    given: Jacob
+  - family: Wiegand
+    given: Thorsten
+  - family: DeAngelis
+    given: Donald L.
+  citation-key: grimm2005PatternOrientedModelingAgentBased
+  container-title: Science
+  container-title-short: Science
+  DOI: 10.1126/science.1116681
+  ISSN: 0036-8075, 1095-9203
+  issue: '5750'
+  issued:
+  - year: 2005
+  language: en
+  page: 987–991
+  source: DOI.org (Crossref)
+  title: 'Pattern-Oriented Modeling of Agent-Based Complex Systems: Lessons from Ecology'
+  title-short: Pattern-Oriented Modeling of Agent-Based Complex Systems
+  type: article-journal
+  URL: https://www.science.org/doi/10.1126/science.1116681
+  volume: '310'
+- id: grimm2020ODDProtocolDescribing
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Grimm
+    given: Volker
+  - family: Railsback
+    given: Steven F.
+  - family: Vincenot
+    given: Christian E.
+  - family: Berger
+    given: Uta
+  - family: Gallagher
+    given: Cara
+  - family: DeAngelis
+    given: Donald L.
+  - family: Edmonds
+    given: Bruce
+  - family: Ge
+    given: Jiaqi
+  - family: Giske
+    given: Jarl
+  - family: Groeneveld
+    given: Jürgen
+  - family: Johnston
+    given: Alice S.A.
+  - family: Milles
+    given: Alexander
+  - family: Nabe-Nielsen
+    given: Jacob
+  - family: Polhill
+    given: J. Gareth
+  - family: Radchuk
+    given: Viktoriia
+  - family: Rohwäder
+    given: Marie-Sophie
+  - family: Stillman
+    given: Richard A.
+  - family: Thiele
+    given: Jan C.
+  - family: Ayllón
+    given: Daniel
+  citation-key: grimm2020ODDProtocolDescribing
+  container-title: Journal of Artificial Societies and Social Simulation
+  container-title-short: JASSS
+  DOI: 10.18564/jasss.4259
+  ISSN: 1460-7425
+  issue: '2'
+  issued:
+  - year: 2020
+  language: en
+  page: '7'
+  source: DOI.org (Crossref)
+  title: 'The ODD Protocol for Describing Agent-Based and Other Simulation Models: A Second Update to Improve Clarity, Replication, and Structural Realism'
+  title-short: The ODD Protocol for Describing Agent-Based and Other Simulation Models
+  type: article-journal
+  URL: http://jasss.soc.surrey.ac.uk/23/2/7.html
+  volume: '23'
+- id: haidvogl2014TypologyHistoricalSources
+  abstract: "Abstract\n            \n              Historical data are widely used in river ecology to define reference conditions or to investigate the evolution of aquatic systems. Most studies rely on printed documents from the 19th century, thus missing pre‐industrial states and human impacts. This article discusses historical sources that can be used to reconstruct the development of riverine fish communities from the Late Middle Ages until the mid‐20th century. Based on the studies of the Austrian Danube and northern Russian rivers, we propose a classification scheme of printed and archival sources and describe their fish ecological contents. Five types of sources were identified using the origin of sources as the first criterion: (i) early scientific surveys, (ii) fishery sources, (iii) fish trading sources, (iv) fish consumption sources and (v) cultural representations of fish. Except for early scientific surveys, all these sources were produced within economic and administrative\
+    \ contexts. They did not aim to report about historical fish communities, but do contain information about commercial fish and their exploitation. All historical data need further analysis for a fish ecological interpretation. Three case studies from the investigated\n              A\n              ustrian and\n              R\n              ussian rivers demonstrate the use of different source types and underline the necessity for a combination of different sources and a methodology combining different disciplinary approaches. Using a large variety of historical sources to reconstruct the development of past fish ecological conditions can support future river management by going beyond the usual approach of static historical reference conditions."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Haidvogl
+    given: Gertrud
+  - family: Lajus
+    given: Dmitry
+  - family: Pont
+    given: Didier
+  - family: Schmid
+    given: Martin
+  - family: Jungwirth
+    given: Mathias
+  - family: Lajus
+    given: Julia
+  citation-key: haidvogl2014TypologyHistoricalSources
+  container-title: Ecology of Freshwater Fish
+  container-title-short: Ecology of Freshwater Fish
+  DOI: 10.1111/eff.12103
+  ISSN: 0906-6691, 1600-0633
+  issue: '4'
+  issued:
+  - year: 2014
+  language: en
+  license: http://creativecommons.org/licenses/by-nc-nd/3.0/
+  page: 498–515
+  source: DOI.org (Crossref)
+  title: 'Typology of historical sources and the reconstruction of long‐term historical changes of riverine fish: a case study of the Austrian Danube and northern Russian rivers'
+  title-short: Typology of historical sources and the reconstruction of long‐term historical changes of riverine fish
+  type: article-journal
+  URL: https://onlinelibrary.wiley.com/doi/10.1111/eff.12103
+  volume: '23'
+- id: haidvogl2015HistoricalEcologyRiverine
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Haidvogl
+    given: Gertrud
+  - family: Hoffmann
+    given: Richard
+  - family: Pont
+    given: Didier
+  - family: Jungwirth
+    given: Mathias
+  - family: Winiwarter
+    given: Verena
+  citation-key: haidvogl2015HistoricalEcologyRiverine
+  container-title: Aquatic Sciences
+  container-title-short: Aquat Sci
+  DOI: 10.1007/s00027-015-0400-0
+  ISSN: 1015-1621, 1420-9055
+  issue: '3'
+  issued:
+  - year: 2015
+  language: en
+  page: 315–324
+  source: DOI.org (Crossref)
+  title: Historical ecology of riverine fish in Europe
+  type: article-journal
+  URL: http://link.springer.com/10.1007/s00027-015-0400-0
+  volume: '77'
+- id: hamr1995ThreatenedFishesWorld
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Hamr
+    given: Přemek
+  citation-key: hamr1995ThreatenedFishesWorld
+  container-title: Environmental Biology of Fishes
+  container-title-short: Environ Biol Fish
+  DOI: 10.1007/BF00001177
+  ISSN: 0378-1909, 1573-5133
+  issue: '4'
+  issued:
+  - year: 1995
+  language: en
+  license: http://www.springer.com/tdm
+  page: 406–406
+  source: DOI.org (Crossref)
+  title: 'Threatened fishes of the world: Galaxias pedderensis Frankenberg, 1968 (Galaxiidae)'
+  title-short: Threatened fishes of the world
+  type: article-journal
+  URL: http://link.springer.com/10.1007/BF00001177
+  volume: '43'
+- id: hardie2006StatusGalaxiidFishes
+  abstract: "Abstract\n            \n              \n                \n                  Fish of the family Galaxiidae are restricted to the southern hemisphere where they occupy a diverse array of habitats ranging from over 2000 m in elevation to sea level. Some species are diadromous and, hence, freshwater, estuarine and marine habitats are used during their life‐cycle; other species complete their entire life‐cycles in freshwater environments.\n                \n                \n                  Tasmania has a diverse galaxiid fauna that accounts for 64% of native freshwater fish species found on the island. The Tasmanian galaxiid fauna is characterized by high species richness (5 genera and 16 species), endemism (11 species), restricted distributions, and non‐diadromous life histories (11 species).\n                \n                \n                  The galaxiid fauna of Tasmania has significant conservation status with 69% of species considered ‘threatened’. The conservation status\
+    \ of the fauna is recognized at State, national and international levels.\n                \n                \n                  The key threats to galaxiids in Tasmania are exotic species, hydrological manipulations, restricted distributions, general habitat degradation and exploitation of stocks.\n                \n                \n                  Although work has recently been undertaken to conserve and manage Tasmanian galaxiid populations, the fauna is still thought to be imperilled. Knowledge gaps that need to be addressed include the biology and ecology of most species (e.g. reproductive biology, life histories, habitat use and requirements) and impacts of habitat manipulations, as well as mechanisms and impacts of interactions with exotic species. Techniques to monitor accurately the status of galaxiid species and their populations need to be developed and the coexistence of some galaxiids with introduced salmonids should also be examined.\n                \n            \
+    \  \n              Copyright © 2005 John Wiley & Sons, Ltd."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Hardie
+    given: Scott A.
+  - family: Jackson
+    given: Jean E.
+  - family: Barmuta
+    given: Leon A.
+  - family: White
+    given: Robert W.G.
+  citation-key: hardie2006StatusGalaxiidFishes
+  container-title: 'Aquatic Conservation: Marine and Freshwater Ecosystems'
+  container-title-short: Aquatic Conservation
+  DOI: 10.1002/aqc.722
+  ISSN: 1052-7613, 1099-0755
+  issue: '3'
+  issued:
+  - year: 2006
+  language: en
+  license: http://onlinelibrary.wiley.com/termsAndConditions#vor
+  page: 235–250
+  source: DOI.org (Crossref)
+  title: 'Status of galaxiid fishes in Tasmania, Australia: conservation listings, threats and management issues'
+  title-short: Status of galaxiid fishes in Tasmania, Australia
+  type: article-journal
+  URL: https://onlinelibrary.wiley.com/doi/10.1002/aqc.722
+  volume: '16'
+- id: hartig2011StatisticalInferenceStochastic
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Hartig
+    given: Florian
+  - family: Calabrese
+    given: Justin M.
+  - family: Reineking
+    given: Björn
+  - family: Wiegand
+    given: Thorsten
+  - family: Huth
+    given: Andreas
+  citation-key: hartig2011StatisticalInferenceStochastic
+  container-title: Ecology Letters
+  DOI: 10.1111/j.1461-0248.2011.01640.x
+  ISSN: 1461023X
+  issue: '8'
+  issued:
+  - year: 2011
+  language: en
+  license: http://doi.wiley.com/10.1002/tdm_license_1
+  page: 816–827
+  source: DOI.org (Crossref)
+  title: Statistical inference for stochastic simulation models - theory and application
+  title-short: Statistical inference for stochastic simulation models - theory and application
+  type: article-journal
+  URL: https://onlinelibrary.wiley.com/doi/10.1111/j.1461-0248.2011.01640.x
+  volume: '14'
+- id: horner2026EvaluatingGeneticDiversity
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Horner
+    given: Kayleigh
+  - family: Jense
+    given: Charlotte
+  - family: Ng
+    given: Elize Y. X.
+  - family: Freeman
+    given: Rob
+  - family: Deagle
+    given: Bruce
+  - family: Burridge
+    given: Christopher P.
+  citation-key: horner2026EvaluatingGeneticDiversity
+  container-title: Conservation Genetics
+  container-title-short: Conserv Genet
+  DOI: 10.1007/s10592-025-01731-0
+  ISSN: 1566-0621, 1572-9737
+  issue: '1'
+  issued:
+  - year: 2026
+  language: en
+  page: '9'
+  source: DOI.org (Crossref)
+  title: 'Evaluating genetic diversity, population structure, and introgression in insurance populations of one of Australia''s most threatened species: the freshwater fish Galaxias pedderensis'
+  title-short: Evaluating genetic diversity, population structure, and introgression in insurance populations of one of Australia’s most threatened species
+  type: article-journal
+  URL: https://link.springer.com/10.1007/s10592-025-01731-0
+  volume: '27'
+- id: jackson2004AlienSalmonidsAustralia
+  abstract: "Abstract\n            \n              Salmonids, mainly brown and rainbow trout\n              (Salmo trutta\n              and\n              Oncorhynchus mykiss)\n              were introduced into Australia in the mid 1860s and early 1890s respectively, and now support economically valuable recreational fisheries. These alien species have established self‐sustaining populations in many aquatic environments in south‐eastern and southwestern Australia, and stocking of hatchery‐produced or wild‐caught fish in larger systems is undertaken when fisheries targets are not met (e.g., fish numbers or appropriate size). Salmonids have established self‐maintaining populations in many waters not targeted or managed as fisheries, colonising the entire catchment in cooler upland areas of Australia. These populations usually comprise a high abundance of small fish in small first‐to‐third‐order tributaries. These waters are infrequently targeted by anglers, and populations may not contribute\
+    \ individuals to downstream fisheries. Negative impacts of alien salmonids on native aquatic fauna (including fish, frogs, spiny crayfish), mainly through direct predation and to a lesser degree competition for resources, have been noted for over 140 years. Impacts on some faunal groups have been severe enough to eliminate entire populations and severely fragment species across their range. Despite these impacts, salmonid management is focused largely on providing improved recreational angling opportunities, whereas management of their impacts is almost non‐existent. Management of the symptom of salmonid impacts, i.e., declining native species, begins only after native species have become imperilled. This paper focuses on impediments to effective management of salmonid impacts, existing and potential management or control options, and future directions and research needs."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Jackson
+    given: Jean E.
+  - family: Raadik
+    given: Tarmo A.
+  - family: Lintermans
+    given: Mark
+  - family: Hammer
+    given: Michael
+  citation-key: jackson2004AlienSalmonidsAustralia
+  container-title: New Zealand Journal of Marine and Freshwater Research
+  container-title-short: New Zealand Journal of Marine and Freshwater Research
+  DOI: 10.1080/00288330.2004.9517252
+  ISSN: 0028-8330, 1175-8805
+  issue: '3'
+  issued:
+  - year: 2004
+  language: en
+  license: http://onlinelibrary.wiley.com/termsAndConditions#vor
+  page: 447–455
+  source: DOI.org (Crossref)
+  title: 'Alien salmonids in Australia: impediments to effective impact management, and future directions'
+  title-short: Alien salmonids in Australia
+  type: article-journal
+  URL: https://rsnz.onlinelibrary.wiley.com/doi/10.1080/00288330.2004.9517252
+  volume: '38'
+- id: jense2025HistoricalImpactsInvasive
+  abstract: "ABSTRACT\n            \n              Aim\n              \n                Invasive species can affect native species detrimentally, causing localised population declines, range contractions and extinctions. Given the costs and difficulties of controlling invasive species, sound knowledge of the potential benefits to native species is essential. However, sometimes the impacts of invasive species have been inferred by proxy, based on allopatric distribution with native species.\n                \n                  Galaxias johnstoni\n                \n                , an endemic freshwater fish in Tasmania, is one such species. It has a restricted range and is believed to have experienced fragmentation and decline due to the introduction of brown trout,\n                \n                  Salmo trutta\n                \n                , in 1864. This study examines patterns of genetic diversity in contemporary\n                \n                  G. johnstoni\n           \
+    \     \n                populations and tests for genetic signatures of impact by introduced brown trout.\n              \n            \n            \n              Location\n              Central highlands Tasmania.\n            \n            \n              Methods\n              Nuclear Single Nucleotide Polymorphisms and mitochondrial DNA sequences were used to assess genetic isolation of populations. Approximate Bayesian Computation was employed to test alternative historical demographic scenarios for the observed patterns of genetic variation.\n            \n            \n              Results\n              \n                Genetic isolation of the sampled populations was confirmed. However, brown trout do not appear to have caused genetic isolation of contemporary\n                \n                  G. johnstoni\n                \n                populations and received equivocal support for reductions in population size. Instead, habitat preferences and post‐glacial recolonisation\
+    \ from local refugia appear more likely to explain the contemporary patterns of\n                \n                  G. johnstoni\n                \n                genetic variation.\n              \n            \n            \n              Main Conclusions\n              Our study highlights how genetic approaches can evaluate historical impacts of invasive species, especially where native and invasive species are presently allopatric. We also illustrate potential limitations of this approach: (1) the possibility that other processes have influenced native species coincident with the arrival of invasive pests, (2) the overshadowing of invasive species impacts by signatures from earlier demographic events and (3) the inability to recover signatures from genetically isolated populations that do not survive to the present. Multiple lines of evidence are critical to inform appropriate conservation actions."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Jense
+    given: Charlotte
+  - family: Deagle
+    given: Bruce E.
+  - family: Freeman
+    given: Rob
+  - family: Burridge
+    given: Christopher P.
+  citation-key: jense2025HistoricalImpactsInvasive
+  container-title: Diversity and Distributions
+  container-title-short: Diversity and Distributions
+  DOI: 10.1111/ddi.70072
+  ISSN: 1366-9516, 1472-4642
+  issue: '11'
+  issued:
+  - year: 2025
+  language: en
+  page: e70072
+  source: DOI.org (Crossref)
+  title: 'Historical impacts of invasive species may not always be what they seem: a genetic perspective from an endangered native species'
+  title-short: Historical Impacts of Invasive Species May Not Always Be What They Seem
+  type: article-journal
+  URL: https://onlinelibrary.wiley.com/doi/10.1111/ddi.70072
+  volume: '31'
+- id: jolly2024IsolationManagementProtect
+  abstract: "Abstract\n            \n              \n                \n                  The use of barriers in freshwater systems to mitigate invasions, known as isolation management, has been increasingly implemented as a protection strategy for native fish. Barriers are crucial for securing vulnerable populations, but much remains to be learnt about the drivers of success and the implications of deliberate fragmentation.\n                \n                \n                  In Aotearoa‐New Zealand, henceforth Aotearoa, native non‐migratory galaxiid (NMG) fishes are characterized by a disproportionate number of threatened species with introduced salmonids (trout) identified as a key driver of NMG declines.\n                \n                \n                  We conducted a qualitative review of barriers protecting NMG in Aotearoa, illustrating varying outcomes and current knowledge gaps with case studies. Barrier types ranged from natural bedrock waterfalls, shallow velocity chutes\
+    \ and drying reaches to deliberately engineered structures (known commonly as exclusion barriers). Barriers were typically located in headwater streams or spring systems. NMG species secured by fragmentation often have high conservation value and barriers are essential for their protection.\n                \n                \n                  Despite the critical role of these barriers, the isolated NMG populations above them are at risk of stochastic extirpation, invasion, or re‐invasion. Exclusion barriers may restrict access to habitat for native migratory fish species and can sometimes alter or remove ideal mesohabitat from protected populations.\n                \n                \n                  Overall, when using exclusion barriers, managers must assess extinction risk for individual populations by isolation or invasion, balancing benefits and consequences. However, these assessments are frequently based on incomplete data and hindered by lack of general understanding of\
+    \ the underpinning processes. Despite well‐documented benefits to NMG population survival, key knowledge gaps such as long‐term viability of isolated populations, combinations of physical barrier parameters conferring exclusion under all flow regimes and extent of habitat loss to other native species still exist."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Jolly
+    given: Martha E.
+  - family: Warburton
+    given: Helen J.
+  - family: Bowie
+    given: Sjaan
+  - family: Challies
+    given: Edward
+  - family: Jellyman
+    given: Phillip G.
+  - family: McIntosh
+    given: Angus R.
+  citation-key: jolly2024IsolationManagementProtect
+  container-title: 'Aquatic Conservation: Marine and Freshwater Ecosystems'
+  container-title-short: Aquatic Conservation
+  DOI: 10.1002/aqc.4220
+  ISSN: 1052-7613, 1099-0755
+  issue: '7'
+  issued:
+  - year: 2024
+  language: en
+  page: e4220
+  source: DOI.org (Crossref)
+  title: 'Isolation management to protect threatened native galaxiid fish species: lessons from Aotearoa New Zealand'
+  title-short: Isolation management to protect threatened native galaxiid fish species
+  type: article-journal
+  URL: https://onlinelibrary.wiley.com/doi/10.1002/aqc.4220
+  volume: '34'
+- id: jolly2025ManagingIsolationImplementing
+  abstract: "ABSTRACT\n            Fish invasions are a key driver of change in freshwater systems, impacting biodiversity and economies. The use of in‐stream barriers to prevent or mitigate such invasions and protect native fish populations, known as isolation management (IM), has been increasingly reported. However, despite the need to secure vulnerable populations, trade‐offs between isolation and invasion are likely, and it is unclear if current knowledge supports optimal long‐term outcomes. Aotearoa New Zealand has a history of using exclusion barriers to prevent incursions of introduced sports fish into native river‐resident galaxiid (RRG) refuges predominantly within the South Island. We assessed 37 structures and predicted successful exclusion would be due to a combination of barrier parameters and habitat. Additionally, we assessed global exclusion knowledge, conducting a systematic review and meta‐analysis of peer‐reviewed studies of trout barriers to examine the prevalence of\
+    \ quantitative barrier parameters in the literature. We found that drop height had the strongest relationship with exclusion in both field survey and meta‐analysis, and downstream pool depth was also negatively correlated with exclusion in the field data. Less than a third (27%) of trout barrier studies identified by systematic review reported quantitative barrier parameters, and barrier height was the only parameter found to have a relationship with exclusion. Only six (11%) of the quantitative studies described deliberate exclusion of fish for ecological gain. Trout barriers had successful outcomes in New Zealand, with galaxiid densities higher above successful barriers than any other position; therefore, there is evidence supporting barrier use in conservation."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Jolly
+    given: Martha E.
+  - family: Warburton
+    given: Helen J.
+  - family: Bowie
+    given: Sjaan
+  - family: McIntosh
+    given: Angus R.
+  citation-key: jolly2025ManagingIsolationImplementing
+  container-title: River Research and Applications
+  container-title-short: River Research & Apps
+  DOI: 10.1002/rra.4447
+  ISSN: 1535-1459, 1535-1467
+  issue: '6'
+  issued:
+  - year: 2025
+  language: en
+  page: 1347–1361
+  source: DOI.org (Crossref)
+  title: 'Managing isolation: implementing in-stream barriers to exclude introduced trout from fragmented native freshwater fish refuges'
+  title-short: Managing Isolation
+  type: article-journal
+  URL: https://onlinelibrary.wiley.com/doi/10.1002/rra.4447
+  volume: '41'
+- id: jones2015LifeHistoryInfluences
+  abstract: "Summary\n            \n              \n                \n                  Invasion biology often focuses on the life‐history traits and the physiological tolerance of introduced species, and on assessing the suitability of receiving habitats. Few studies have examined how trait variation in recipient communities affects the responses of native fauna to pressures from invasive species.\n                \n                \n                  \n                    This study examines how previously identified life‐history differences in a species‐complex of native New Zealand galaxiid fish influence their spatial interactions with invasive salmonids (mainly\n                    Salmo trutta\n                    , but also\n                    Oncorhynchus mykiss, O. tshawytscha\n                    and\n                    Salvelinus fontinalis\n                    ).\n                  \n                \n                \n                  A combination of a long‐term, broad‐scale,\
+    \ presence–absence dataset and a more intensive electrofishing survey was used to examine the extent to which galaxiid species distributions overlap with those of salmonids, and to assess demographic effects associated with salmonid presence. A generalised linear modelling approach was used to test the effect of life history on galaxiid–salmonid interactions while taking into account the possible confounding effects of habitat differences between species distributions.\n                \n                \n                  Galaxiid species with ‘fast’ life‐history traits (e.g. high fecundity, small eggs) regularly co‐occurred with salmonids over extensive areas, sometimes over long periods, occasionally where salmonid densities were high. In contrast, galaxiid species with ‘slow’ life‐history traits (e.g. low fecundity, large eggs) were almost never found co‐occurring with salmonids, and evidence suggested they were most often excluded even where salmonid densities were low. The model\
+    \ outputs indicated that, although habitat played an important role, galaxiid life histories were a dominant factor determining whether species co‐occurred with or were excluded by salmonids.\n                \n                \n                  The strong influence of interspecific life‐history variation on how these closely related galaxiid species interact with salmonids demonstrates the importance of detailed life‐history information in predicting how native biota are likely to respond to pressures from invasive species."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Jones
+    given: Peter E.
+  - family: Closs
+    given: Gerard P.
+  citation-key: jones2015LifeHistoryInfluences
+  container-title: Freshwater Biology
+  container-title-short: Freshwater Biology
+  DOI: 10.1111/fwb.12637
+  ISSN: 0046-5070, 1365-2427
+  issue: '10'
+  issued:
+  - year: 2015
+  language: en
+  license: http://onlinelibrary.wiley.com/termsAndConditions#vor
+  page: 2127–2141
+  source: DOI.org (Crossref)
+  title: Life history influences the vulnerability of New Zealand galaxiids to invasive salmonids
+  title-short: 'Life history influences the vulnerability of '
+  type: article-journal
+  URL: https://onlinelibrary.wiley.com/doi/10.1111/fwb.12637
+  volume: '60'
+- id: kennedy2001BayesianCalibrationComputer
+  abstract: "Summary\n            We consider prediction and uncertainty analysis for systems which are approximated using complex mathematical models. Such models, implemented as computer codes, are often generic in the sense that by a suitable choice of some of the model's input parameters the code can be used to predict the behaviour of the system in a variety of specific applications. However, in any specific application the values of necessary parameters may be unknown. In this case, physical observations of the system in the specific context are used to learn about the unknown parameters. The process of fitting the model to the observed data by adjusting the parameters is known as calibration. Calibration is typically effected by ad hoc fitting, and after calibration the model is used, with the fitted input values, to predict the future behaviour of the system. We present a Bayesian calibration technique which improves on this traditional approach in two respects. First, the predictions\
+    \ allow for all sources of uncertainty, including the remaining uncertainty over the fitted parameters. Second, they attempt to correct for any inadequacy of the model which is revealed by a discrepancy between the observed data and the model predictions from even the best-fitting parameter values. The method is illustrated by using data from a nuclear radiation release at Tomsk, and from a more complex simulated nuclear accident exercise."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Kennedy
+    given: Marc C.
+  - family: O'Hagan
+    given: Anthony
+  citation-key: kennedy2001BayesianCalibrationComputer
+  container-title: 'Journal of the Royal Statistical Society Series B: Statistical Methodology'
+  DOI: 10.1111/1467-9868.00294
+  ISSN: 1369-7412, 1467-9868
+  issue: '3'
+  issued:
+  - year: 2001
+  language: en
+  license: https://academic.oup.com/journals/pages/open_access/funder_policies/chorus/standard_publication_model
+  page: 425–464
+  source: DOI.org (Crossref)
+  title: Bayesian Calibration of Computer Models
+  type: article-journal
+  URL: https://academic.oup.com/jrsssb/article/63/3/425/7083367
+  volume: '63'
+- id: lange2018MultiplestressorEffectsFreshwater
+  abstract: "Abstract\n            Interactions among multiple anthropogenic stressors threaten freshwater fish and pose challenges for fisheries management and conservation. Previous studies of multiple‐stressor effects on freshwater fish suggest a prevalence of antagonistic interactions. However, taxonomy, life stage and/or environmental context likely modify the magnitude and direction of fish responses to multiple stressors. Stressor intensity, impact mechanism, exposure time and ecosystem size may further affect interaction outcomes. Large‐scale studies quantifying how these variables moderate stressor interactions are lacking. To address this knowledge gap, we performed a meta‐analysis of 29 factorial multiple‐stressor experiments to examine the influence of seven potential moderator variables on the magnitude and direction of stressor interactions. Using weighted random‐effects meta‐analytic models, we demonstrate the importance of taxonomic identity and life stage for interaction\
+    \ outcomes. In particular, Cypriniformes showed stronger antagonisms than Salmoniformes, as did larval fish compared to juveniles. Interaction outcomes also varied among the measured fish responses with survival yielding stronger antagonisms than biomass. Increasing experimental duration and volume of the experimental units both drove interactions towards synergisms, supporting findings from previous studies that synergisms take time and space to develop. In an era when the number of stressors affecting freshwater systems is increasing rapidly, our study provides a vital step towards identifying generalities in multiple‐stressor outcomes and thus improved predictions of multiple‐stressor impacts. Furthermore, our meta‐analysis complements studies in real streams, rivers and lakes by providing an experimentally derived context for the growing number of multiple‐stressor assessments in research, management and conservation of freshwater fish."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Lange
+    given: Katharina
+  - family: Bruder
+    given: Andreas
+  - family: Matthaei
+    given: Christoph D.
+  - family: Brodersen
+    given: Jakob
+  - family: Paterson
+    given: Rachel A.
+  citation-key: lange2018MultiplestressorEffectsFreshwater
+  container-title: Fish and Fisheries
+  container-title-short: Fish and Fisheries
+  DOI: 10.1111/faf.12305
+  ISSN: 1467-2960, 1467-2979
+  issue: '6'
+  issued:
+  - year: 2018
+  language: en
+  page: 974–983
+  source: DOI.org (Crossref)
+  title: 'Multiple‐stressor effects on freshwater fish: Importance of taxonomy and life stage'
+  title-short: Multiple‐stressor effects on freshwater fish
+  type: article-journal
+  URL: https://onlinelibrary.wiley.com/doi/10.1111/faf.12305
+  volume: '19'
+- id: lintermans2013ReviewOngroundRecovery
+  abstract: Freshwater fish are a highly threatened group and recovery of these threatened species is an increasingly difficult ecological and social challenge. There are many different on-ground recovery actions available to managers, but no synthesis of what, how or why these recovery actions have been deployed. The present paper reviews 428 reported on-ground recovery actions from a survey of practitioners of threatened freshwater-fish recovery in Australia. Recovery actions were grouped into 12 categories, with the most commonly utilised recovery categories being harvest control, translocation, habitat enhancement and stock enhancement. Major drivers of recovery actions were general conservation concern, recovery plans and emergency responses. The number of recovery actions grew significantly in the decade beginning 2000 as the impacts of prolonged drought in south-eastern Australia intensified. In all, 58% of recovery actions occurred in the Murray–Darling Basin, although this region
+    holds only 27% of the 74 listed threatened freshwater fish in Australia. Few or no recovery actions were reported for many species, and few actions occurred in northern or western parts of the country. More than 80% of recovery actions reportedly had some form of monitoring. The diversity of management interventions is reviewed, and patterns and issues are identified to guide future recovery efforts.
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Lintermans
+    given: Mark
+  citation-key: lintermans2013ReviewOngroundRecovery
+  container-title: Marine and Freshwater Research
+  DOI: 10.1071/MF12306
+  ISSN: 1323-1650, 1448-6059
+  issue: '9'
+  issued:
+  - year: 2013
+  language: en
+  license: https://creativecommons.org/licenses/by-nc-nd/4.0/
+  page: 775–791
+  source: DOI.org (Crossref)
+  title: A review of on-ground recovery actions for threatened freshwater fish in Australia
+  type: article-journal
+  URL: https://connectsci.au/mf/article/64/9/775/275186/A-review-of-on-ground-recovery-actions-for
+  volume: '64'
+- id: lintermans2020BigTroubleLittle
+  abstract: Globally, freshwater fishes are declining at an alarming rate. Despite much evidence of catastrophic declines, few Australian species are listed as threatened under national legislation. We aim to help redress this by identifying the Australian freshwater fishes that are in the most immediate risk of extinction. For 22 freshwater fishes (identified as highly threatened by experts), we used structured expert elicitation to estimate the probability of extinction in the next ~20 years, and to identify key threats and priority management needs. All but one of the 22 species are small (&lt;150 mm total length), 12 have been formally described only in the last decade, with seven awaiting description. Over 90% of these species were assessed to have a &gt;50% probability of extinction in the next ~20 years. Collectively, the biggest factor contributing to the likelihood of extinction of the freshwater fishes considered is that they occur in small (distributions ≤44 km2), geographically
+    isolated populations, and are threatened by a mix of processes (particularly alien fishes and climate change). Nineteen of these species are unlisted on national legislation, so legislative drivers for recovery actions are largely absent. Research has provided strong direction on how to manage ~35% of known threats to the species considered, and, of these, ~36% of threats have some management underway (although virtually none are at the stage where intervention is no longer required). Increased resourcing, management intervention and social attitudinal change is urgently needed to avert the impending extinction of Australia’s most imperilled freshwater fishes.
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Lintermans
+    given: Mark
+  - family: Geyle
+    given: Hayley M.
+  - family: Beatty
+    given: Stephen
+  - family: Brown
+    given: Culum
+  - family: Ebner
+    given: Brendan C.
+  - family: Freeman
+    given: Rob
+  - family: Hammer
+    given: Michael P.
+  - family: Humphreys
+    given: William F.
+  - family: Kennard
+    given: Mark J.
+  - family: Kern
+    given: Pippa
+  - family: Martin
+    given: Keith
+  - family: Morgan
+    given: David L.
+  - family: Raadik
+    given: Tarmo A.
+  - family: Unmack
+    given: Peter J.
+  - family: Wager
+    given: Rob
+  - family: Woinarski
+    given: John C. Z.
+  - family: Garnett
+    given: Stephen T.
+  citation-key: lintermans2020BigTroubleLittle
+  container-title: Pacific Conservation Biology
+  DOI: 10.1071/PC19053
+  ISSN: 1038-2097, 2204-4604
+  issue: '4'
+  issued:
+  - year: 2020
+  language: en
+  license: https://doi.org/10.1071/journalslicense
+  page: 365–377
+  source: DOI.org (Crossref)
+  title: 'Big trouble for little fish: identifying Australian freshwater fishes in imminent risk of extinction'
+  title-short: Big trouble for little fish
+  type: article-journal
+  URL: https://connectsci.au/pc/article/26/4/365/37559/Big-trouble-for-little-fish-identifying-Australian
+  volume: '26'
+- id: lintermans2024TroubledWatersLand
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Lintermans
+    given: Mark
+  - family: Lutz
+    given: Maiko
+  - family: Whiterod
+    given: Nick S.
+  - family: Gruber
+    given: Bernd
+  - family: Hammer
+    given: Michael P.
+  - family: Kennard
+    given: Mark J.
+  - family: Morgan
+    given: David L.
+  - family: Raadik
+    given: Tarmo A.
+  - family: Unmack
+    given: Peter
+  - family: Brooks
+    given: Steven
+  - family: Ebner
+    given: Brendan C.
+  - family: Gilligan
+    given: Dean
+  - family: Butler
+    given: Gavin L.
+  - family: Moore
+    given: Glenn
+  - family: Brown
+    given: Culum
+  - family: Freeman
+    given: Rob
+  - family: Kerezsy
+    given: Adam
+  - family: Bice
+    given: Chris M.
+  - family: Le Feuvre
+    given: Matthew C.
+  - family: Beatty
+    given: Stephen
+  - family: Arthington
+    given: Angela H.
+  - family: Koehn
+    given: John
+  - family: Larson
+    given: Helen K.
+  - family: Coleman
+    given: Rhys
+  - family: Mathwin
+    given: Rupert
+  - family: Pearce
+    given: Luke
+  - family: Tonkin
+    given: Zeb
+  - family: Bruce
+    given: Andrew
+  - family: Espinoza
+    given: Tom
+  - family: Kern
+    given: Pippa
+  - family: Lieschke
+    given: Jason A.
+  - family: Martin
+    given: Keith
+  - family: Sparks
+    given: John
+  - family: Stoessel
+    given: Daniel J.
+  - family: Wedderburn
+    given: Scotte D.
+  - family: Allan
+    given: Hugh
+  - family: Clunie
+    given: Pam
+  - family: Cockayne
+    given: Bernie
+  - family: Ellis
+    given: Iain
+  - family: Hardie
+    given: Scott
+  - family: Koster
+    given: Wayne
+  - family: Moy
+    given: Karl
+  - family: Roberts
+    given: David
+  - family: Schmarr
+    given: David
+  - family: Sharley
+    given: Joanne
+  - family: Sternberg
+    given: David
+  - family: Zukowski
+    given: Sylvia
+  - family: Walsh
+    given: Chris
+  - family: Zampatti
+    given: Brenton
+  - family: Shelley
+    given: James J.
+  - family: Sayer
+    given: Catherine
+  - family: Chapple
+    given: David G.
+  citation-key: lintermans2024TroubledWatersLand
+  container-title: Biological Conservation
+  container-title-short: Biological Conservation
+  DOI: 10.1016/j.biocon.2024.110843
+  ISSN: '00063207'
+  issued:
+  - year: 2024
+  language: en
+  page: '110843'
+  source: DOI.org (Crossref)
+  title: 'Troubled waters in the land down under: pervasive threats and high extinction risks demand urgent conservation actions to protect Australia''s native freshwater fishes'
+  title-short: Troubled waters in the land down under
+  type: article-journal
+  URL: https://linkinghub.elsevier.com/retrieve/pii/S0006320724004051
+  volume: '300'
+- id: liu2025EnvironmentalDNAMetabarcoding
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Liu
+    given: Shuaishuai
+  - family: Chen
+    given: Juan
+  - family: Cui
+    given: Ge
+  - family: Zhang
+    given: Bo
+  - family: Yan
+    given: Bingcheng
+  - family: Nie
+    given: Qihao
+  citation-key: liu2025EnvironmentalDNAMetabarcoding
+  container-title: Journal of Environmental Management
+  container-title-short: Journal of Environmental Management
+  DOI: 10.1016/j.jenvman.2025.124531
+  ISSN: 03014797
+  issued:
+  - year: 2025
+  language: en
+  page: '124531'
+  source: DOI.org (Crossref)
+  title: 'Environmental DNA metabarcoding: Current applications and future prospects for freshwater fish monitoring'
+  title-short: Environmental DNA metabarcoding
+  type: article-journal
+  URL: https://linkinghub.elsevier.com/retrieve/pii/S0301479725005079
+  volume: '376'
+- id: mackenzie2002ESTIMATINGSITEOCCUPANCYa
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: MacKenzie
+    given: Darryl I.
+  - family: Nichols
+    given: James D.
+  - family: Lachman
+    given: Gideon B.
+  - family: Droege
+    given: Sam
+  - family: Andrew Royle
+    given: J.
+  - family: Langtimm
+    given: Catherine A.
+  citation-key: mackenzie2002ESTIMATINGSITEOCCUPANCYa
+  container-title: Ecology
+  container-title-short: Ecology
+  DOI: 10.1890/0012-9658(2002)083[2248:ESORWD]2.0.CO;2
+  ISSN: 0012-9658
+  issue: '8'
+  issued:
+  - year: 2002
+  language: en
+  license: http://doi.wiley.com/10.1002/tdm_license_1.1
+  page: 2248–2255
+  source: DOI.org (Crossref)
+  title: Estimating site occupancy rates when detection probabilities are less than one
+  type: article-journal
+  URL: http://doi.wiley.com/10.1890/0012-9658(2002)083[2248:ESORWD]2.0.CO;2
+  volume: '83'
+- id: mackenzie2005DesigningOccupancyStudies
+  abstract: "Summary\n            \n              \n                \n                  The fraction of sampling units in a landscape where a target species is present (occupancy) is an extensively used concept in ecology. Yet in many applications the species will not always be detected in a sampling unit even when present, resulting in biased estimates of occupancy. Given that sampling units are surveyed repeatedly within a relatively short timeframe, a number of similar methods have now been developed to provide unbiased occupancy estimates. However, practical guidance on the efficient design of occupancy studies has been lacking.\n                \n                \n                  In this paper we comment on a number of general issues related to designing occupancy studies, including the need for clear objectives that are explicitly linked to science or management, selection of sampling units, timing of repeat surveys and allocation of survey effort. Advice on the number of repeat\
+    \ surveys per sampling unit is considered in terms of the variance of the occupancy estimator, for three possible study designs.\n                \n                \n                  \n                    We recommend that sampling units should be surveyed a minimum of three times when detection probability is high (> 0·5 survey\n                    −1\n                    ), unless a removal design is used.\n                  \n                \n                \n                  We found that an optimal removal design will generally be the most efficient, but we suggest it may be less robust to assumption violations than a standard design.\n                \n                \n                  Our results suggest that for a rare species it is more efficient to survey more sampling units less intensively, while for a common species fewer sampling units should be surveyed more intensively.\n                \n                \n                  \n                    Synthesis and applications\n\
+    \                    . Reliable inferences can only result from quality data. To make the best use of logistical resources, study objectives must be clearly defined; sampling units must be selected, and repeated surveys timed appropriately; and a sufficient number of repeated surveys must be conducted. Failure to do so may compromise the integrity of the study. The guidance given here on study design issues is particularly applicable to studies of species occurrence and distribution, habitat selection and modelling, metapopulation studies and monitoring programmes."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Mackenzie
+    given: Darryl I.
+  - family: Royle
+    given: J. Andrew
+  citation-key: mackenzie2005DesigningOccupancyStudies
+  container-title: Journal of Applied Ecology
+  container-title-short: Journal of Applied Ecology
+  DOI: 10.1111/j.1365-2664.2005.01098.x
+  ISSN: 0021-8901, 1365-2664
+  issue: '6'
+  issued:
+  - year: 2005
+  language: en
+  license: http://onlinelibrary.wiley.com/termsAndConditions#vor
+  page: 1105–1114
+  source: DOI.org (Crossref)
+  title: 'Designing occupancy studies: General advice and allocating survey effort'
+  title-short: Designing occupancy studies
+  type: article-journal
+  URL: https://besjournals.onlinelibrary.wiley.com/doi/10.1111/j.1365-2664.2005.01098.x
+  volume: '42'
+- id: mccrea2024InferringSpeciesExtinctiona
+  abstract: "Abstract\n            \n              \n                \n                  1.\n                  Understanding whether a species still persists, or the timing of its extinction is challenging, however, such knowledge is fundamental for effective species management.\n                \n                \n                  2.\n                  For the vast majority of species our understanding of their existence is based solely on sighting data that can range from museum specimens and clear photographs, through vocalisations, to markings and oral accounts.\n                \n                \n                  3.\n                  Here we review the methods that have been developed to infer the extinction of species from a sighting record, providing an understanding of their assumptions and applications. We have also produced an RShiny package which can be used to implement some of the methods presented in the article.\n                \n                \n                  4.\n\
+    \                  While there are a number of potential areas that could be further developed, the methods reviewed provide a useful tool for inferring species extinction."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: McCrea
+    given: Rachel S.
+  - family: Cheale
+    given: Thomas
+  - family: Campillo-Funollet
+    given: Eduard
+  - family: Roberts
+    given: David L.
+  citation-key: mccrea2024InferringSpeciesExtinctiona
+  container-title: 'Cambridge Prisms: Extinction'
+  container-title-short: Camb. prisms Extinction
+  DOI: 10.1017/ext.2024.18
+  ISSN: 2755-0958
+  issued:
+  - year: 2024
+  language: en
+  license: http://creativecommons.org/licenses/by/4.0
+  page: e19
+  source: DOI.org (Crossref)
+  title: Inferring species extinction from sighting data
+  type: article-journal
+  URL: https://www.cambridge.org/core/product/identifier/S2755095824000184/type/journal_article
+  volume: '2'
+- id: mcdowall1981GalaxiidFishesAustralia
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: McDowall
+    given: R. M.
+  - family: Frankenberg
+    given: R. S.
+  citation-key: mcdowall1981GalaxiidFishesAustralia
+  container-title: Records of the Australian Museum
+  container-title-short: Rec. Aust. Mus.
+  DOI: 10.3853/j.0067-1975.33.1981.195
+  ISSN: 0067-1975
+  issue: '10'
+  issued:
+  - year: 1981
+  language: en
+  page: 443–605
+  source: DOI.org (Crossref)
+  title: 'The galaxiid fishes of Australia (Pisces: Galaxiidae)'
+  title-short: The galaxiid fishes of Australia (Pisces
+  type: article-journal
+  URL: https://journals.australian.museum/mcdowall-and-frankenberg-1981-rec-aust-mus-3310-443605/
+  volume: '33'
+- id: mcdowall1994PossibleCompetitiveExclusion
+  abstract: "Common river galaxias\n              (Galaxias vulgaris)\n              are apparently absent from the Waipori River above Lake Mahinerangi, but widespread elsewhere in the Taieri River system including tributaries just below the dam. Koaro (G.\n              brevipinnis)\n              abound in tributaries of Lake Mahinerangi, but are rare in the Taieri River. We hypothesise that koaro have replaced common river galaxias in streams above the Mahinerangi Dam since it was built."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: McDowall
+    given: R.M.
+  - family: Allibone
+    given: R.M.
+  citation-key: mcdowall1994PossibleCompetitiveExclusion
+  container-title: Journal of the Royal Society of New Zealand
+  container-title-short: Journal of the Royal Society of New Zealand
+  DOI: 10.1080/03014223.1994.9517462
+  ISSN: 0303-6758, 1175-8899
+  issue: '2'
+  issued:
+  - year: 1994
+  language: en
+  license: http://onlinelibrary.wiley.com/termsAndConditions#vor
+  page: 161–168
+  source: DOI.org (Crossref)
+  title: Possible competitive exclusion of common river galaxias (Galaxias vulgaris) by koaro (G. brevipinnis) following impoundment of the Waipori River, Otago, New Zealand
+  type: article-journal
+  URL: https://rsnz.onlinelibrary.wiley.com/doi/10.1080/03014223.1994.9517462
+  volume: '24'
+- id: mcdowall2003ImpactsIntroducedSalmonids
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: McDowall
+    given: R. M.
+  citation-key: mcdowall2003ImpactsIntroducedSalmonids
+  container-title: Transactions of the American Fisheries Society
+  container-title-short: Transactions of the American Fisheries Society
+  DOI: 10.1577/1548-8659(2003)132<0229:IOISON>2.0.CO;2
+  ISSN: 0002-8487, 1548-8659
+  issue: '2'
+  issued:
+  - year: 2003
+  language: en
+  page: 229–238
+  source: DOI.org (Crossref)
+  title: 'Impacts of introduced salmonids on native galaxiids in New Zealand upland streams: a new look at an old problem'
+  title-short: Impacts of Introduced Salmonids on Native Galaxiids in New Zealand Upland Streams
+  type: article-journal
+  URL: https://academic.oup.com/tafs/article/132/2/229/7890997
+  volume: '132'
+- id: mcdowall2006CryingWolfCrying
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: McDowall
+    given: R. M.
+  citation-key: mcdowall2006CryingWolfCrying
+  container-title: Reviews in Fish Biology and Fisheries
+  container-title-short: Rev Fish Biol Fisheries
+  DOI: 10.1007/s11160-006-9017-7
+  ISSN: 0960-3166, 1573-5184
+  issue: 3–4
+  issued:
+  - year: 2006
+  language: en
+  license: http://www.springer.com/tdm
+  page: 233–422
+  source: DOI.org (Crossref)
+  title: 'Crying wolf, crying foul, or crying shame: alien salmonids and a biodiversity crisis in the southern cool-temperate galaxioid fishes?'
+  title-short: Crying wolf, crying foul, or crying shame
+  type: article-journal
+  URL: http://link.springer.com/10.1007/s11160-006-9017-7
+  volume: '16'
+- id: mcgowan2017IUCNGuidelinesDetermining
+  abstract: "Abstract\n            The Convention on Biological Diversity's target of halting extinctions by 2020 is less than a handful of years away. Captive, or ex situ, management has long been cited as having a potential role to play in the recovery of species, although this remains the subject of debate. IUCN's Species Survival Commission (IUCN SSC) produced guidelines to assist in identifying when ex situ management may contribute to species recovery in 2002. Since then, there have been considerable developments in a range of areas that may influence the design of such programs (e.g., understanding of constraints on breeding programs, development of new techniques and approaches, and strategic planning approaches to species conservation). IUCN SSC has therefore revised its guidance and proposes a five‐step process: (1) compile a status review; (2) define the role(s) that ex situ management might play; (3) determine the precise nature of the ex situ population in order to meet identified\
+    \ role(s); (4) define resources and expertise, and appraise the feasibility and risks; and (5) make a decision that is informed based on the above analysis and transparent. These guidelines offer an objective process for considering the role of ex situ management in species conservation."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: McGowan
+    given: Philip J.K.
+  - family: Traylor‐Holzer
+    given: Kathy
+  - family: Leus
+    given: Kristin
+  citation-key: mcgowan2017IUCNGuidelinesDetermining
+  container-title: Conservation Letters
+  container-title-short: CONSERVATION LETTERS
+  DOI: 10.1111/conl.12285
+  ISSN: 1755-263X, 1755-263X
+  issue: '3'
+  issued:
+  - year: 2017
+  language: en
+  license: http://creativecommons.org/licenses/by/4.0/
+  page: 361–366
+  source: DOI.org (Crossref)
+  title: IUCN Guidelines for Determining When and How Ex Situ Management Should Be Used in Species Conservation
+  type: article-journal
+  URL: https://conbio.onlinelibrary.wiley.com/doi/10.1111/conl.12285
+  volume: '10'
+- id: mcintosh1994SizerelatedImpactsIntroduced
+  abstract: "The impact of small (fork length < 100 mm) and large (≥ 100 mm) brown trout (\n              Salmo trutta\n              L.) on the distribution of the common river galaxias (\n              Galaxias vulgaris\n              Stokell) was investigated in the Shag River (South Island, New Zealand). Riffle reaches were sampled by electrofishing and their macrohabitat was described in terms of substratum, flow, elevation, and vegetation characteristics. Galaxias densities in reaches containing large trout were lower than reaches with only small trout or no trout and trout size was the most important variable determining galaxias density. Densities of galaxias < 80 mm were reduced in the presence of large trout, but not galaxias > 80 mm. Reaches with large, small, or no trout varied in terms of water depth, percentage cobble, and elevation. However, these differences were unlikely to account for variations in galaxias densities because selection for these particular habitat features\
+    \ accounted for only a small proportion of the observed variation in galaxias density. A change in macrohabitat use by galaxias from fast current velocities in sites without trout to slower velocities in sites with large trout may be explained by competition for areas of high velocity (potentially the better feeding areas). However, a combination of interspecific competition and predation by large brown trout is likely to be responsible for the observed reductions in the density of smaller galaxias."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: McIntosh
+    given: Angus R.
+  - family: Crowl
+    given: Todd A.
+  - family: Townsend
+    given: Colin R.
+  citation-key: mcintosh1994SizerelatedImpactsIntroduced
+  container-title: New Zealand Journal of Marine and Freshwater Research
+  container-title-short: New Zealand Journal of Marine and Freshwater Research
+  DOI: 10.1080/00288330.1994.9516602
+  ISSN: 0028-8330, 1175-8805
+  issue: '2'
+  issued:
+  - year: 1994
+  language: en
+  license: http://onlinelibrary.wiley.com/termsAndConditions#vor
+  page: 135–144
+  source: DOI.org (Crossref)
+  title: Size-related impacts of introduced brown trout on the distribution of native common river galaxias
+  type: article-journal
+  URL: https://rsnz.onlinelibrary.wiley.com/doi/10.1080/00288330.1994.9516602
+  volume: '28'
+- id: morris2019UsingSimulationStudies
+  abstract: "Simulation studies are computer experiments that involve creating data by pseudo‐random sampling. A key strength of simulation studies is the ability to understand the behavior of statistical methods because some “truth” (usually some parameter/s of interest) is known from the process of generating the data. This allows us to consider properties of methods, such as bias. While widely used, simulation studies are often poorly designed, analyzed, and reported. This tutorial outlines the rationale for using simulation studies and offers guidance for design, execution, analysis, reporting, and presentation. In particular, this tutorial provides a structured approach for planning and reporting simulation studies, which involves defining aims, data‐generating mechanisms, estimands, methods, and performance measures (“ADEMP”); coherent terminology for simulation studies; guidance on coding simulation studies; a critical discussion of key performance measures and their estimation; guidance\
+    \ on structuring tabular and graphical presentation of results; and new graphical presentations. With a view to describing recent practice, we review 100 articles taken from Volume 34 of\n              Statistics in Medicine\n              , which included at least one simulation study and identify areas for improvement."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Morris
+    given: Tim P.
+  - family: White
+    given: Ian R.
+  - family: Crowther
+    given: Michael J.
+  citation-key: morris2019UsingSimulationStudies
+  container-title: Statistics in Medicine
+  container-title-short: Statistics in Medicine
+  DOI: 10.1002/sim.8086
+  ISSN: 0277-6715, 1097-0258
+  issue: '11'
+  issued:
+  - year: 2019
+  language: en
+  page: 2074–2102
+  source: DOI.org (Crossref)
+  title: Using simulation studies to evaluate statistical methods
+  type: article-journal
+  URL: https://onlinelibrary.wiley.com/doi/10.1002/sim.8086
+  volume: '38'
+- id: moy2023AlternativeConservationOutcomes
+  abstract: "Abstract\n            \n              \n                \n                  The translocation of species outside their natural range is a threat to aquatic biodiversity globally, especially freshwater fishes, as most are not only susceptible to predation and competition but readily hybridize with congeners.\n                \n                \n                  \n                    Running River rainbowfish (RRR,\n                    \n                      Melanotaenia\n                    \n                     sp.) is a narrow‐ranged, small‐bodied freshwater fish that recently became threatened and was subsequently listed as Critically Endangered, owing to introgressive hybridization and competition following the translocation of a congeneric species, the eastern rainbowfish (\n                    \n                      Melanotaenia splendida\n                    \n                    ).\n                  \n                \n                \n                  To conserve\
+    \ RRR, wild fish were taken into captivity, genetically confirmed as pure representatives, and successfully bred. As the threat of introgression with translocated eastern rainbowfish could not be mitigated, a plan was devised to translocate captive raised RRR into unoccupied habitats within their native catchment, upstream of natural barriers. The translocation plan involved careful site selection and habitat assessment, predator training (exposure to predators prior to release), soft release (with a gradual transition from captivity to nature), and post‐release monitoring, and this approach was ultimately successful.\n                \n                \n                  Two populations of RRR were established in two previously unoccupied streams above waterfalls with a combined stream length of 18 km. Post‐release monitoring was affected by floods and low sample sizes, but suggested that predation and time of release are important factors to consider in similar conservation recovery\
+    \ programmes for small‐bodied, short‐lived fishes."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Moy
+    given: Karl
+  - family: Schaffer
+    given: Jason
+  - family: Hammer
+    given: Michael P.
+  - family: Attard
+    given: Catherine R. M.
+  - family: Beheregaray
+    given: Luciano B.
+  - family: Duncan
+    given: Richard
+  - family: Lintermans
+    given: Mark
+  - family: Brown
+    given: Culum
+  - family: Unmack
+    given: Peter J.
+  citation-key: moy2023AlternativeConservationOutcomes
+  container-title: 'Aquatic Conservation: Marine and Freshwater Ecosystems'
+  container-title-short: Aquatic Conservation
+  DOI: 10.1002/aqc.4023
+  ISSN: 1052-7613, 1099-0755
+  issue: '12'
+  issued:
+  - year: 2023
+  language: en
+  page: 1445–1459
+  source: DOI.org (Crossref)
+  title: 'Alternative conservation outcomes from aquatic fauna translocations: losing and saving the Running River rainbowfish'
+  title-short: Alternative conservation outcomes from aquatic fauna translocations
+  type: article-journal
+  URL: https://onlinelibrary.wiley.com/doi/10.1002/aqc.4023
+  volume: '33'
+- id: orr2024StudyingInteractionsAnthropogenic
+  abstract: "Abstract\n            \n              Understanding the interactions among anthropogenic stressors is critical for effective conservation and management of ecosystems. Freshwater scientists have invested considerable resources in conducting factorial experiments to disentangle stressor interactions by testing their individual and combined effects. However, the diversity of stressors and systems studied has hindered previous syntheses of this body of research. To overcome this challenge, we used a novel machine learning framework to identify relevant studies from over 235,000 publications. Our synthesis resulted in a new dataset of 2396 multiple‐stressor experiments in freshwater systems. By summarizing the methods used in these studies, quantifying trends in the popularity of the investigated stressors, and performing co‐occurrence analysis, we produce the most comprehensive overview of this diverse field of research to date. We provide both a taxonomy grouping the 909 investigated\
+    \ stressors into 31 classes and an open‐source and interactive version of the dataset (\n              https://jamesaorr.shinyapps.io/freshwater‐multiple‐stressors/\n              ). Inspired by our results, we provide a framework to help clarify whether statistical interactions detected by factorial experiments align with stressor interactions of interest, and we outline general guidelines for the design of multiple‐stressor experiments relevant to any system. We conclude by highlighting the research directions required to better understand freshwater ecosystems facing multiple stressors."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Orr
+    given: James A.
+  - family: Macaulay
+    given: Samuel J.
+  - family: Mordente
+    given: Adriana
+  - family: Burgess
+    given: Benjamin
+  - family: Albini
+    given: Dania
+  - family: Hunn
+    given: Julia G.
+  - family: Restrepo‐Sulez
+    given: Katherin
+  - family: Wilson
+    given: Ramesh
+  - family: Schechner
+    given: Anne
+  - family: Robertson
+    given: Aoife M.
+  - family: Lee
+    given: Bethany
+  - family: Stuparyk
+    given: Blake R.
+  - family: Singh
+    given: Delezia
+  - family: O'Loughlin
+    given: Isobel
+  - family: Piggott
+    given: Jeremy J.
+  - family: Zhu
+    given: Jiangqiu
+  - family: Dinh
+    given: Khuong V.
+  - family: Archer
+    given: Louise C.
+  - family: Penk
+    given: Marcin
+  - family: Vu
+    given: Minh Thi Thuy
+  - family: Juvigny‐Khenafou
+    given: Noël P. D.
+  - family: Zhang
+    given: Peiyu
+  - family: Sanders
+    given: Philip
+  - family: Schäfer
+    given: Ralf B.
+  - family: Vinebrooke
+    given: Rolf D.
+  - family: Hilt
+    given: Sabine
+  - family: Reed
+    given: Thomas
+  - family: Jackson
+    given: Michelle C.
+  citation-key: orr2024StudyingInteractionsAnthropogenic
+  container-title: Ecology Letters
+  container-title-short: Ecology Letters
+  DOI: 10.1111/ele.14463
+  ISSN: 1461-023X, 1461-0248
+  issue: '6'
+  issued:
+  - year: 2024
+  language: en
+  page: e14463
+  source: DOI.org (Crossref)
+  title: 'Studying interactions among anthropogenic stressors in freshwater ecosystems: A systematic review of 2396 multiple‐stressor experiments'
+  title-short: Studying interactions among anthropogenic stressors in freshwater ecosystems
+  type: article-journal
+  URL: https://onlinelibrary.wiley.com/doi/10.1111/ele.14463
+  volume: '27'
+- id: rivadeneira2009UseSightingRecords
+  abstract: In the absence of long‐term monitoring data, inferences about extinctions of species and populations are generally based on past observations about the presence of a particular species at specified places and times (sightings). Several methods have been developed to estimate the probability and timing of extinctions from records of such sightings, but they differ in their computational complexity and assumptions about the nature of the sighting record. Here we use simulations to evaluate the performance of seven methods proposed to estimate the upper confidence limit on extinction times under different extinction and sampling scenarios. Our results show that the ability of existing methods to correctly estimate the timing of extinctions varies with the type of extinction (sudden vs. gradual) and the nature of sampling effort over time. When the probability of sampling a species declines over time, many of the methods perform poorly. On the other hand, the simulation results also
+    suggest that as long as the choice of the method is determined by the nature of the underlying sighting data, existing methods should provide reliable inferences about the timing of past extinctions.
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Rivadeneira
+    given: Marcelo M.
+  - family: Hunt
+    given: Gene
+  - family: Roy
+    given: Kaustuv
+  citation-key: rivadeneira2009UseSightingRecords
+  container-title: Ecology
+  container-title-short: Ecology
+  DOI: 10.1890/08-0316.1
+  ISSN: 0012-9658, 1939-9170
+  issue: '5'
+  issued:
+  - year: 2009
+  language: en
+  license: http://onlinelibrary.wiley.com/termsAndConditions#vor
+  page: 1291–1300
+  source: DOI.org (Crossref)
+  title: 'The use of sighting records to infer species extinctions: an evaluation of different methods'
+  title-short: The use of sighting records to infer species extinctions
+  type: article-journal
+  URL: https://esajournals.onlinelibrary.wiley.com/doi/10.1890/08-0316.1
+  volume: '90'
+- id: robert2011LackConfidenceApproximate
+  abstract: "Approximate Bayesian computation (ABC) have become an essential tool for the analysis of complex stochastic models. Grelaud et al. [(2009)\n              Bayesian Anal\n              3:427–442] advocated the use of ABC for model choice in the specific case of Gibbs random fields, relying on an intermodel sufficiency property to show that the approximation was legitimate. We implemented ABC model choice in a wide range of phylogenetic models in the Do It Yourself-ABC (DIY-ABC) software [Cornuet et al. (2008)\n              Bioinformatics\n              24:2713–2719]. We now present arguments as to why the theoretical arguments for ABC model choice are missing, because the algorithm involves an unknown loss of information induced by the use of insufficient summary statistics. The approximation error of the posterior probabilities of the models under comparison may thus be unrelated with the computational effort spent in running an ABC algorithm. We then conclude that additional\
+    \ empirical verifications of the performances of the ABC procedure as those available in DIY-ABC are necessary to conduct model choice."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Robert
+    given: Christian P.
+  - family: Cornuet
+    given: Jean-Marie
+  - family: Marin
+    given: Jean-Michel
+  - family: Pillai
+    given: Natesh S.
+  citation-key: robert2011LackConfidenceApproximate
+  container-title: Proceedings of the National Academy of Sciences
+  container-title-short: Proc. Natl. Acad. Sci. U.S.A.
+  DOI: 10.1073/pnas.1102900108
+  ISSN: 0027-8424, 1091-6490
+  issue: '37'
+  issued:
+  - year: 2011
+  language: en
+  page: 15112–15117
+  source: DOI.org (Crossref)
+  title: Lack of confidence in approximate Bayesian computation model choice
+  type: article-journal
+  URL: https://pnas.org/doi/full/10.1073/pnas.1102900108
+  volume: '108'
+- id: rout2009UsingSightingRecords
+  abstract: "Summary\n            \n              \n                \n                  \n                    A major challenge for eradication managers is deciding when a programme can be deemed successful.\n                    \n                      Regan\n                      et al\n                      . (2006)\n                    \n                    were the first to pose this problem within a decision theory framework, minimizing the net expected cost of the decision. The optimal time to declare eradication was based on the number of consecutive surveys in which the species was not found (‘absent surveys’). Their formulation used estimates of detectability and persistence – parameters that are often difficult to estimate – to calculate the probability that the invasive species is still present.\n                  \n                \n                \n                  \n                    Here we use a similar decision‐making framework but instead predict presence based on the\
+    \ pattern of sightings, using a method developed by\n                    Solow (1993a)\n                    that assumes a constant sighting rate. This method does not require estimates of detectability and persistence. We find the number of absent surveys after which eradication should be declared, using three approaches: a stochastic dynamic program, which finds the exact optimal solution, a rule of thumb, and an approximation. We then compare these results with a method assuming a declining sighting rate.\n                  \n                \n                \n                  Both the rule of thumb and approximation give results that are close to the exact optimal solution. The rule of thumb with the declining sighting rate method generally gives a larger optimal number of absent surveys.\n                \n                \n                  \n                    Synthesis and applications.\n                    Analysing this problem within a decision theory framework enables\
+    \ us to minimize the expected cost of declaring eradication. By using the more readily available sighting data, we make this framework applicable to a wider range of invasive species. Our approximation is a simple calculation, making it an accessible tool that could be applied by managers of eradication programmes for invasive species."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Rout
+    given: Tracy M.
+  - family: Salomon
+    given: Yacov
+  - family: McCarthy
+    given: Michael A.
+  citation-key: rout2009UsingSightingRecords
+  container-title: Journal of Applied Ecology
+  container-title-short: Journal of Applied Ecology
+  DOI: 10.1111/j.1365-2664.2008.01586.x
+  ISSN: 0021-8901, 1365-2664
+  issue: '1'
+  issued:
+  - year: 2009
+  language: en
+  license: http://onlinelibrary.wiley.com/termsAndConditions#vor
+  page: 110–117
+  source: DOI.org (Crossref)
+  title: Using sighting records to declare eradication of an invasive species
+  type: article-journal
+  URL: https://besjournals.onlinelibrary.wiley.com/doi/10.1111/j.1365-2664.2008.01586.x
+  volume: '46'
+- id: royle2003ESTIMATINGABUNDANCEREPEATED
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Royle
+    given: J. Andrew
+  - family: Nichols
+    given: James D.
+  citation-key: royle2003ESTIMATINGABUNDANCEREPEATED
+  container-title: Ecology
+  container-title-short: Ecology
+  DOI: 10.1890/0012-9658(2003)084[0777:EAFRPA]2.0.CO;2
+  ISSN: 0012-9658
+  issue: '3'
+  issued:
+  - year: 2003
+  language: en
+  license: http://doi.wiley.com/10.1002/tdm_license_1.1
+  page: 777–790
+  source: DOI.org (Crossref)
+  title: Estimating abundance from repeated presence-absence data or point counts
+  type: article-journal
+  URL: http://doi.wiley.com/10.1890/0012-9658(2003)084[0777:EAFRPA]2.0.CO;2
+  volume: '84'
+- id: rykiel1996TestingEcologicalModels
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Rykiel
+    given: Edward J.
+  citation-key: rykiel1996TestingEcologicalModels
+  container-title: Ecological Modelling
+  container-title-short: Ecological Modelling
+  DOI: 10.1016/0304-3800(95)00152-2
+  ISSN: 03043800
+  issue: '3'
+  issued:
+  - year: 1996
+  language: en
+  license: https://www.elsevier.com/tdm/userlicense/1.0/
+  page: 229–244
+  source: DOI.org (Crossref)
+  title: 'Testing ecological models: The meaning of validation'
+  title-short: Testing ecological models
+  type: article-journal
+  URL: https://linkinghub.elsevier.com/retrieve/pii/0304380095001522
+  volume: '90'
+- id: smart2015EnvironmentalDNASampling
+  abstract: "Effective management of alien species requires detecting populations in the early stages of invasion. Environmental DNA (eDNA) sampling can detect aquatic species at relatively low densities, but few studies have directly compared detection probabilities of eDNA sampling with those of traditional sampling methods. We compare the ability of a traditional sampling technique (bottle trapping) and eDNA to detect a recently established invader, the smooth newt\n              Lissotriton vulgaris vulgaris\n              , at seven field sites in Melbourne, Australia. Over a four‐month period, per‐trap detection probabilities ranged from 0.01 to 0.26 among sites where\n              L. v. vulgaris\n              was detected, whereas per‐sample eDNA estimates were much higher (0.29–1.0). Detection probabilities of both methods varied temporally (across days and months), but temporal variation appeared to be uncorrelated between methods. Only estimates of spatial variation were strongly\
+    \ correlated across the two sampling techniques. Environmental variables (water depth, rainfall, ambient temperature) were not clearly correlated with detection probabilities estimated via trapping, whereas eDNA detection probabilities were negatively correlated with water depth, possibly reflecting higher eDNA concentrations at lower water levels. Our findings demonstrate that eDNA sampling can be an order of magnitude more sensitive than traditional methods, and illustrate that traditional‐ and eDNA‐based surveys can provide independent information on species distributions when occupancy surveys are conducted over short timescales."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Smart
+    given: Adam S.
+  - family: Tingley
+    given: Reid
+  - family: Weeks
+    given: Andrew R.
+  - family: Van Rooyen
+    given: Anthony R.
+  - family: McCarthy
+    given: Michael A.
+  citation-key: smart2015EnvironmentalDNASampling
+  container-title: Ecological Applications
+  container-title-short: Ecological Applications
+  DOI: 10.1890/14-1751.1
+  ISSN: 1051-0761, 1939-5582
+  issue: '7'
+  issued:
+  - year: 2015
+  language: en
+  license: http://onlinelibrary.wiley.com/termsAndConditions#vor
+  page: 1944–1952
+  source: DOI.org (Crossref)
+  title: Environmental DNA sampling is more sensitive than a traditional survey technique for detecting an aquatic invader
+  type: article-journal
+  URL: https://esajournals.onlinelibrary.wiley.com/doi/10.1890/14-1751.1
+  volume: '25'
+- id: smart2016AssessingCostefficiencyEnvironmental
+  abstract: "Summary\n            \n              \n                \n                  \n                    Environmental\n                    DNA\n                    (\n                    eDNA\n                    ) sampling can be a highly sensitive method for detecting aquatic taxa; however, the cost‐efficiency of this technique relative to traditional methods has not been rigorously assessed.\n                  \n                \n                \n                  \n                    We show how methods that account for imperfect and stochastic detection can be used to (i) determine the optimal allocation of survey effort with\n                    eDNA\n                    sampling for a fixed budget (i.e. identify the optimal combination of water samples vs. site visits), and (ii) assess the cost‐efficiency of\n                    eDNA\n                    sampling relative to traditional survey techniques. We illustrate this approach by comparing\n                    eDNA\n\
+    \                    sampling and bottle‐trapping for an exotic newt species (\n                    Lissotriton v. vulgaris\n                    ) recently detected in Melbourne, Australia.\n                  \n                \n                \n                  \n                    Bottle traps produced much lower detection rates than\n                    eDNA\n                    sampling, but the cost‐efficiency of the two methods can be similar because bottle‐trapping is cheaper per sample. The relative cost‐efficiency of the two sampling methods was sensitive to the available survey budget, the costs of\n                    eDNA\n                    primer/probe development and sample processing and the number of positive quantitative\n                    PCR\n                    assays (\n                    qPCR\n                    s) used to designate a water sample as positive for newt\n                    DNA\n                    . Environmental\n                    DNA\n\
+    \                    sampling was more cost‐efficient than bottle‐trapping for small to intermediate budgets when primer/probe development and sample processing costs were low, and 1/4 or 2/4 positive\n                    qPCR\n                    s were used to label a water sample as positive for newt\n                    eDNA\n                    . However, bottle traps were generally more cost‐efficient than\n                    eDNA\n                    sampling when primer/probe development and sample processing costs were high, regardless of\n                    qPCR\n                    threshold or survey budget.\n                  \n                \n                \n                  \n                    Traditional sampling methods may achieve lower detection probabilities compared to\n                    eDNA\n                    sampling, but the totality of costs can make\n                    eDNA\n                    sampling less efficient than traditional techniques\
+    \ in some circumstances. Our approach provides a quantitative framework for determining how many water samples and site visits are required to maximize detection probabilities with\n                    eDNA\n                    sampling, and can calculate the cost‐efficiency of any sampling method."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Smart
+    given: Adam S.
+  - family: Weeks
+    given: Andrew R.
+  - family: Van Rooyen
+    given: Anthony R.
+  - family: Moore
+    given: Alana
+  - family: McCarthy
+    given: Michael A.
+  - family: Tingley
+    given: Reid
+  citation-key: smart2016AssessingCostefficiencyEnvironmental
+  container-title: Methods in Ecology and Evolution
+  container-title-short: Methods Ecol Evol
+  DOI: 10.1111/2041-210X.12598
+  editor:
+  - family: Yoccoz
+    given: Nigel
+  ISSN: 2041-210X, 2041-210X
+  issue: '11'
+  issued:
+  - year: 2016
+  language: en
+  license: http://onlinelibrary.wiley.com/termsAndConditions#am
+  page: 1291–1298
+  source: DOI.org (Crossref)
+  title: Assessing the cost-efficiency of environmental DNA sampling
+  title-short: 'Assessing the cost‐efficiency of environmental '
+  type: article-journal
+  URL: https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210X.12598
+  volume: '7'
+- id: smith2026BattlePredatorsImpact
+  abstract: "ABSTRACT\n            \n              \n                \n                  Biological invasions are recognised as one of the greatest threats to the persistence of freshwater fish communities. More than 500 introduced freshwater fish species are now established worldwide, yet their ecosystem‐level impacts remain poorly quantified in many regions. The Mount Lofty Ranges represent a particularly important system for evaluating these impacts as they support several native fish species of conservation concern alongside established populations of trout and redfin perch.\n                \n                \n                  \n                    Data from 1338 sampling events, across 356 sites, collected over a 23‐year period to assess the effects of introduced\n                    \n                      Salmo trutta\n                    \n                    (brown trout),\n                    \n                      Oncorhynchus mykiss\n                    \n                \
+    \    (rainbow trout) and\n                    \n                      Perca fluviatilis\n                    \n                    (redfin perch) on native fish populations in the Mount Lofty Ranges, South Australia.\n                  \n                \n                \n                  \n                    Strong and significant reductions in native species abundance and diversity were observed at sites where trout occurred, whereas redfin perch appeared to primarily affect exotic species abundance. Network analyses revealed a pronounced predatory effect associated with brown trout, including the potential for strong competitive interactions with redfin perch. Brown trout negatively affected four native species,\n                    Pseudaphiritis urvillii\n                    (congolli),\n                    \n                      Galaxias maculatus\n                    \n                    (common galaxias),\n                    \n                      Galaxias olidus\n   \
+    \                 \n                    (mountain galaxias) and\n                    \n                      Nannoperca australis\n                    \n                    (southern pygmy perch), all currently at risk of extinction.\n                  \n                \n                \n                  Centrality analyses further identified the predatory impact of brown trout and redfin perch in the Mount Lofty Ranges, whereby a fundamental shift in fish community structure has occurred, with restructured trophic interactions and energy flow across the community.\n                \n                \n                  Collectively, our findings suggest that invasive predators can differentially restructure freshwater fish communities. Furthermore, management actions targeting redfin perch in isolation may unintentionally intensify declines in native fish by releasing competitive or predatory pressures from trout species. Effective management of freshwater invasions therefore requires\
+    \ an ecosystem‐based approach that accounts for interactions among multiple invasive species."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Smith
+    given: Renee J.
+  - family: Taylor‐Wilkins
+    given: Allira J.
+  - family: Green
+    given: Douglas J.
+  citation-key: smith2026BattlePredatorsImpact
+  container-title: Freshwater Biology
+  container-title-short: Freshwater Biology
+  DOI: 10.1111/fwb.70280
+  ISSN: 0046-5070, 1365-2427
+  issue: '7'
+  issued:
+  - year: 2026
+  language: en
+  page: e70280
+  source: DOI.org (Crossref)
+  title: 'The battle of the predators: the impact of introduced exotic trout and redfin perch on native fish in seasonal rivers of South Australia'
+  title-short: The Battle of the Predators
+  type: article-journal
+  URL: https://onlinelibrary.wiley.com/doi/10.1111/fwb.70280
+  volume: '71'
+- id: solow2005InferringExtinctionSighting
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Solow
+    given: Andrew R.
+  citation-key: solow2005InferringExtinctionSighting
+  container-title: Mathematical Biosciences
+  container-title-short: Mathematical Biosciences
+  DOI: 10.1016/j.mbs.2005.02.001
+  ISSN: '00255564'
+  issue: '1'
+  issued:
+  - year: 2005
+  language: en
+  license: https://www.elsevier.com/tdm/userlicense/1.0/
+  page: 47–55
+  source: DOI.org (Crossref)
+  title: Inferring extinction from a sighting record
+  type: article-journal
+  URL: https://linkinghub.elsevier.com/retrieve/pii/S0025556405000350
+  volume: '195'
+- id: talts2018ValidatingBayesianInference
+  abstract: Verifying the correctness of Bayesian computation is challenging. This is especially true for complex models that are common in practice, as these require sophisticated model implementations and algorithms. In this paper we introduce \emph{simulation-based calibration} (SBC), a general procedure for validating inferences from Bayesian algorithms capable of generating posterior samples. This procedure not only identifies inaccurate computation and inconsistencies in model implementations but also provides graphical summaries that can indicate the nature of the problems that arise. We argue that SBC is a critical part of a robust Bayesian workflow, as well as being a useful tool for those developing computational algorithms and statistical software.
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Talts
+    given: Sean
+  - family: Betancourt
+    given: Michael
+  - family: Simpson
+    given: Daniel
+  - family: Vehtari
+    given: Aki
+  - family: Gelman
+    given: Andrew
+  citation-key: talts2018ValidatingBayesianInference
+  DOI: 10.48550/ARXIV.1804.06788
+  issued:
+  - year: 2018
+  license: arXiv.org perpetual, non-exclusive license
+  publisher: arXiv
+  source: DOI.org (Datacite)
+  title: Validating Bayesian Inference Algorithms with Simulation-Based Calibration
+  type: article
+  URL: https://arxiv.org/abs/1804.06788
+  version: '2'
+- id: tenhumberg2004LinkingWildCaptive
+  abstract: "Abstract: \n              Captive breeding of animals is widely used to manage endangered species, frequently with the ambition of future reintroduction into the wild. Because this conservation measure is very expensive, we need to optimize decisions, such as when to capture wild animals or release captive‐bred individuals into the wild. It is unlikely that one particular strategy will always work best; instead, we expect the best decision to depend on the number of individuals in the wild and in captivity. We constructed a first‐order Markov‐chain population model for two populations, one captive and one wild, and we used stochastic dynamic programming to identify optimal state‐dependent strategies. The model recommends unique sequences of optimal management actions over several years. A robust rule of thumb for species that can increase faster in captivity than in the wild is to capture the entire wild population whenever the wild population is below a threshold size of 20\
+    \ females. This rule applies even if the wild population is growing and under a broad range of different parameter values. Once a captive population is established, it should be maintained as a safety net and animals should be released only if the captive population is close to its carrying capacity. We illustrate the utility of this model by applying it to the Arabian oryx (\n              Oryx leucoryx\n              ). The threshold for capturing the entire Arabian oryx population in the wild is 36 females, and captive‐bred individuals should not be released before the captive facilities are at least 85% full.\n            \n          , \n            \n              \n              \n                Resumen: \n                La reproducción de animales en cautiverio es utilizada ampliamente para manejar especies en peligro, frecuentemente con la ambición de reintroducirlos al medio natural. Debido a que esta medida de conservación es muy costosa necesitamos optimizar decisiones,\
+    \ tales como cuando capturar animales silvestres o liberar individuos criados en cautiverio. Es poco probable que una estrategia particular siempre funcione mejor; más bien, esperamos que la mejor decisión dependa del número de individuos silvestres y en cautiverio. Construimos un modelo poblacional de cadena de Markov de primer orden para dos poblaciones, una en cautiverio y otra silvestre, y usamos programación dinámica estocástica para identificar estrategias estado‐dependientes óptimas. El modelo recomienda secuencias únicas de acciones de manejo óptimo durante varios años. Una regla básica robusta para especies que pueden incrementar más rápidamente en cautiverio que en su medio natural es la captura de toda la población silvestre, cuando ésta se encuentre debajo del umbral de 20 hembras. Esta regla aplica aun si la población silvestre está creciendo y bajo una amplia gama de valores de diferentes parámetros. Una vez que se establece una población en cautiverio, debe ser mantenida\
+    \ como una red de seguridad y los animales deben ser liberados solo si la población en cautiverio se aproxima a su capacidad de carga. Ilustramos la utilidad de este modelo aplicándolo al\n                Oryx leucoryx\n                . El umbral para la captura de toda la población silvestre de oryx es 36 hembras, y los individuos criados en cautiverio no deberán ser liberados antes de que las instalaciones de cautiverio estén llenas por lo menos al 85%."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Tenhumberg
+    given: Brigitte
+  - family: Tyre
+    given: Andrew J.
+  - family: Shea
+    given: Katriona
+  - family: Possingham
+    given: Hugh P.
+  citation-key: tenhumberg2004LinkingWildCaptive
+  container-title: Conservation Biology
+  container-title-short: Conservation Biology
+  DOI: 10.1111/j.1523-1739.2004.00246.x
+  ISSN: 0888-8892, 1523-1739
+  issue: '5'
+  issued:
+  - year: 2004
+  language: en
+  page: 1304–1314
+  source: DOI.org (Crossref)
+  title: 'Linking Wild and Captive Populations to Maximize Species Persistence: Optimal Translocation Strategies'
+  title-short: Linking Wild and Captive Populations to Maximize Species Persistence
+  type: article-journal
+  URL: https://conbio.onlinelibrary.wiley.com/doi/10.1111/j.1523-1739.2004.00246.x
+  volume: '18'
+- id: tingley2021AccountingFalsePositive
+  abstract: "Abstract\n            \n              Environmental DNA (eDNA) sampling is a promising method for surveying aquatic fauna. Recent eDNA studies have investigated the likelihood of false negative errors in the laboratory and in the field, but the likelihood of false positives remains poorly studied. We investigated the likelihood of both types of errors in eDNA surveys of an Australian threatened freshwater fish (\n              Galaxiella pusilla\n              ) using laboratory experiments, field surveys, and recent advances in hierarchical site occupancy‐detection modeling. Laboratory experiments revealed high primer/probe specificity; absence of sample contamination in extraction and qPCR blanks; and rapid accumulation and deterioration of eDNA in aquaria. Hierarchical site occupancy‐detection models fitted to pilot data collected at 13 wetlands revealed that two water samples, each with two qPCRs, would be required to achieve a cumulative detection probability >.95. A more\
+    \ comprehensive survey, in which we simultaneously used dip netting and eDNA sampling at 29 wetlands, revealed similar mean detection probabilities of the two sampling methods (trapping: 0.74 vs. eDNA: 0.68), and low probabilities of false positive errors at the water sample level (0.0080) and at the qPCR level (0.0039) for eDNA sampling. Collectively, our results illustrate that eDNA sampling can be a sensitive and specific method for monitoring the occurrence of freshwater fauna. Detection probabilities of eDNA sampling were comparable to those of a traditional sampling method, and probabilities of laboratory‐induced false positives were low. Future studies employing eDNA sampling should estimate, and properly account for, false positive errors in addition to false negatives."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Tingley
+    given: Reid
+  - family: Coleman
+    given: Rhys
+  - family: Gecse
+    given: Nathaniel
+  - family: Van Rooyen
+    given: Anthony
+  - family: R. Weeks
+    given: Andrew
+  citation-key: tingley2021AccountingFalsePositive
+  container-title: Environmental DNA
+  container-title-short: Environmental DNA
+  DOI: 10.1002/edn3.124
+  ISSN: 2637-4943, 2637-4943
+  issue: '2'
+  issued:
+  - year: 2021
+  language: en
+  page: 388–397
+  source: DOI.org (Crossref)
+  title: 'Accounting for false positive detections in occupancy studies based on environmental DNA: A case study of a threatened freshwater fish (Galaxiella pusilla)'
+  title-short: Accounting for false positive detections in occupancy studies based on environmental DNA
+  type: article-journal
+  URL: https://onlinelibrary.wiley.com/doi/10.1002/edn3.124
+  volume: '3'
+- id: townsend1991FragmentedPopulationStructure
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Townsend
+    given: Colin R.
+  - family: Crowl
+    given: Todd A.
+  citation-key: townsend1991FragmentedPopulationStructure
+  container-title: Oikos
+  container-title-short: Oikos
+  DOI: 10.2307/3545242
+  ISSN: 00301299
+  issue: '3'
+  issued:
+  - year: 1991
+  page: '347'
+  source: DOI.org (Crossref)
+  title: 'Fragmented population structure in a native New Zealand fish: an effect of introduced brown trout?'
+  title-short: Fragmented Population Structure in a Native New Zealand Fish
+  type: article-journal
+  URL: https://www.jstor.org/stable/3545242?origin=crossref
+  volume: '61'
+- id: waters2023FishBiogeographyHybridization
+  abstract: "Abstract\n            Freshwater ecosystems frequently house diverse assemblages of closely related fish taxa, which can be particularly prone to hybridization and introgression. While extensive introgression may be expected among biogeographically proximate lineages, recent analyses imply that contemporary distributions do not always accurately predict hybridization history. Here, we use the ABBA–BABA approach to test biogeographic hypotheses regarding the extent of hybridization in the recent evolution of New Zealand’s species-rich freshwater Galaxias vulgaris fish complex. Genome-wide comparisons reveal significant increases in introgression associated with increasing geographic overlap of taxa. The estimator DP, which assesses the net proportion of a genome originating from introgression, shows a particularly strong relationship with biogeographic overlap (R2 = .43; p = .005). Our analyses nevertheless reveal surprisingly substantial signatures of introgression among taxa\
+    \ that currently have disjunct distributions within drainages (e.g., separate subcatchments). These “anomalies” imply that current biogeography is not always an accurate predictor of introgression history. Our study suggests that both modern and ancient biogeographic shifts, including recent anthropogenic range fragmentation and tectonically driven riven capture events, have influenced introgression histories in this dynamic freshwater fish radiation."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Waters
+    given: Jonathan M
+  - family: Campbell
+    given: Ciaran S M
+  - family: Dutoit
+    given: Ludovic
+  citation-key: waters2023FishBiogeographyHybridization
+  container-title: Evolution
+  DOI: 10.1093/evolut/qpad147
+  editor:
+  - family: Taylor
+    given: Scott
+  - family: Zelditch
+    given: Miriam
+  ISSN: 0014-3820, 1558-5646
+  issue: '11'
+  issued:
+  - year: 2023
+  language: en
+  license: https://academic.oup.com/pages/standard-publication-reuse-rights
+  page: 2409–2419
+  source: DOI.org (Crossref)
+  title: 'Fish biogeography and hybridization: do contemporary distributions predict introgression history?'
+  title-short: Fish biogeography and hybridization
+  type: article-journal
+  URL: https://academic.oup.com/evolut/article/77/11/2409/7243428
+  volume: '77'
+- id: weeks2011AssessingBenefitsRisks
+  abstract: "Abstract\n            Translocations are being increasingly proposed as a way of conserving biodiversity, particularly in the management of threatened and keystone species, with the aims of maintaining biodiversity and ecosystem function under the combined pressures of habitat fragmentation and climate change. Evolutionary genetic considerations should be an important part of translocation strategies, but there is often confusion about concepts and goals. Here, we provide a classification of translocations based on specific genetic goals for both threatened species and ecological restoration, separating targets based on ‘genetic rescue’ of current population fitness from those focused on maintaining adaptive potential. We then provide a framework for assessing the genetic benefits and risks associated with translocations and provide guidelines for managers focused on conserving biodiversity and evolutionary processes. Case studies are developed to illustrate the framework."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Weeks
+    given: Andrew R.
+  - family: Sgro
+    given: Carla M.
+  - family: Young
+    given: Andrew G.
+  - family: Frankham
+    given: Richard
+  - family: Mitchell
+    given: Nicki J.
+  - family: Miller
+    given: Kim A.
+  - family: Byrne
+    given: Margaret
+  - family: Coates
+    given: David J.
+  - family: Eldridge
+    given: Mark D. B.
+  - family: Sunnucks
+    given: Paul
+  - family: Breed
+    given: Martin F.
+  - family: James
+    given: Elizabeth A.
+  - family: Hoffmann
+    given: Ary A.
+  citation-key: weeks2011AssessingBenefitsRisks
+  container-title: Evolutionary Applications
+  container-title-short: Evolutionary Applications
+  DOI: 10.1111/j.1752-4571.2011.00192.x
+  ISSN: 1752-4571, 1752-4571
+  issue: '6'
+  issued:
+  - year: 2011
+  language: en
+  license: http://onlinelibrary.wiley.com/termsAndConditions#vor
+  page: 709–725
+  source: DOI.org (Crossref)
+  title: 'Assessing the benefits and risks of translocations in changing environments: a genetic perspective'
+  title-short: Assessing the benefits and risks of translocations in changing environments
+  type: article-journal
+  URL: https://onlinelibrary.wiley.com/doi/10.1111/j.1752-4571.2011.00192.x
+  volume: '4'
+- id: wood2010StatisticalInferenceNoisy
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Wood
+    given: Simon N.
+  citation-key: wood2010StatisticalInferenceNoisy
+  container-title: Nature
+  container-title-short: Nature
+  DOI: 10.1038/nature09319
+  ISSN: 0028-0836, 1476-4687
+  issue: '7310'
+  issued:
+  - year: 2010
+  language: en
+  license: http://www.springer.com/tdm
+  page: 1102–1104
+  source: DOI.org (Crossref)
+  title: Statistical inference for noisy nonlinear ecological dynamic systems
+  type: article-journal
+  URL: https://www.nature.com/articles/nature09319
+  volume: '466'
+- id: woodford2010EvidenceSourceSink
+  abstract: "Introduced predators with patchy distributions can create demographic sinks within native prey populations. Such invasions may give rise to source–sink metapopulations if there are still sources of native species colonists in the landscape. In New Zealand, introduced brown trout (\n              Salmo trutta\n              ) and rainbow trout (\n              Oncorhychus mykiss\n              ) are linked with declines in native non‐diadromous galaxiids but co‐occur with these galaxiids in some locations. We investigated whether trout create sinks in\n              Galaxias vulgaris\n              populations, and whether trout‐free reaches could act as sources, allowing persistence in the sink habitat. We conducted quantitative seasonal monitoring of\n              G. vulgaris\n              population structure across two subcatchments of the Waimakariri River, South Island. Two trout‐free and seven trout‐invaded sites in the Porter River catchment and two trout‐free and five\
+    \ trout‐invaded sites in the Broken River catchment were monitored over two winters and the adjoining summer. Spatially continuous monitoring of young‐of‐the‐year (YOY) galaxiid distributions and apparent survival across the Broken River catchment was also undertaken.\n              Galaxias vulgaris\n              YOY recruitment was high in trout‐free reaches, indicating positive population growth.\n              Galaxias vulgaris\n              was absent from three trout‐invaded sites, and the remaining invaded sites had significantly depleted juvenile recruitment. Information‐theoretic model selection indicated that trout, rather than habitat, drove recruitment failure. Trout‐invaded sites could be divided into “sinks” that retained no YOY galaxiids, indicating no local recruitment, and “pseudosinks,” which had very few recruits. Absence of small\n              G. vulgaris\n              at sink sites suggested population maintenance through immigration of adults from sources, whereas\
+    \ pseudosink sites appear capable of self‐recruitment at low carrying capacities. Trout‐free reaches appear to act as sources in a river network but are susceptible to future invasions by trout. Thus, not only may invasive species cause source–sink metapopulations in native species, but also the potential of refugia for natives (sources) to become future sinks highlights the vulnerability of these metapopulations when invasive predators are the principal demographic driver."
+  accessed:
+  - year: 2026
+    month: 10
+    day: 5
+  author:
+  - family: Woodford
+    given: Darragh J.
+  - family: McIntosh
+    given: Angus R.
+  citation-key: woodford2010EvidenceSourceSink
+  container-title: Ecological Applications
+  container-title-short: Ecological Applications
+  DOI: 10.1890/08-1909.1
+  ISSN: 1051-0761, 1939-5582
+  issue: '4'
+  issued:
+  - year: 2010
+  language: en
+  license: http://onlinelibrary.wiley.com/termsAndConditions#vor
+  page: 967–977
+  source: DOI.org (Crossref)
+  title: Evidence of source-sink metapopulations in a vulnerable native galaxiid fish driven by introduced trout
+  type: article-journal
+  URL: https://esajournals.onlinelibrary.wiley.com/doi/10.1890/08-1909.1
+  volume: '20'
+- id: CASWELL2001
+  citation-key: CASWELL2001
+  type: book
+  author:
+  - family: Caswell
+    given: Hal
+  title: 'Matrix Population Models: Construction, Analysis, and Interpretation'
+  issued:
+  - year: 2001
+  edition: '2'
+  publisher: Sinauer Associates
+  publisher-place: Sunderland, Massachusetts
+  ISBN: '9780878930968'
+  number-of-pages: '722'
+  URL: https://books.google.com/books?id=CPsTAQAAIAAJ
+- id: FRANKENBERG1968
+  citation-key: FRANKENBERG1968
+  type: article-journal
+  author:
+  - family: Frankenberg
+    given: R. S.
+  title: Two new species of galaxiid fishes from the Lake Pedder region of southern Tasmania
+  issued:
+  - year: 1968
+  container-title: Australian Zoologist
+  volume: '14'
+  page: 268–274
+- id: HAMR1992
+  citation-key: HAMR1992
+  type: report
+  author:
+  - family: Hamr
+    given: Premek
+  title: Conservation of Galaxias pedderensis
+  issued:
+  - year: 1992
+  publisher: Inland Fisheries Commission, Tasmania
+  number: Occasional Report 92-01
+- id: IFC_NEWS1996
+  citation-key: IFC_NEWS1996
+  type: article-magazine
+  author:
+  - literal: Inland Fisheries Commission Tasmania
+  title: Lakes Gordon and Pedder
+  issued:
+  - year: 1996
+  container-title: On the Rise
+  volume: '25'
+  issue: '2'
+  page: '7'
+  URL: https://www.ifs.tas.gov.au/media/publications/IFS_Newsletter_VOL25-_NO2-_OCT1996.pdf#page=7
+- id: IFC_NEWS1997
+  citation-key: IFC_NEWS1997
+  type: article-magazine
+  author:
+  - literal: Inland Fisheries Commission Tasmania
+  title: Promising news on most-endangered fish
+  issued:
+  - year: 1997
+  container-title: On the Rise
+  volume: '26'
+  issue: '1'
+  page: '3'
+  URL: https://www.ifs.tas.gov.au/media/publications/IFS_Newsletter_VOL26-_NO1-_MAY1997.pdf#page=3
+- id: IFS2022
+  citation-key: IFS2022
+  type: webpage
+  author:
+  - literal: Inland Fisheries Service Tasmania
+  title: IFS staff fly into Lake Oberon to check on the Pedder galaxias population
+  issued:
+  - year: 2022
+  publisher: Inland Fisheries Service Tasmania
+  URL: https://www.ifs.tas.gov.au/news/2022/apr/13/ifs-staff-fly-into-lake-oberon-to-check-on-the-pedder-galaxias-population
+- id: IFS2024
+  citation-key: IFS2024
+  type: report
+  author:
+  - family: Freeman
+    given: Rob
+  - family: Wisniewski
+    given: Josef
+  title: Native Fish Conservation Annual Report 2023-24
+  issued:
+  - year: 2024
+  publisher: Inland Fisheries Service Tasmania
+  URL: https://www.ifs.tas.gov.au/media/publications/Native_Fish_Conservation_Annual_Report_2024__Final.pdf
+- id: IFS2026
+  citation-key: IFS2026
+  type: webpage
+  author:
+  - literal: Inland Fisheries Service Tasmania
+  title: Conserving the threatened Pedder galaxias
+  issued:
+  - year: 2026
+  publisher: Inland Fisheries Service Tasmania
+  URL: https://www.ifs.tas.gov.au/news/2026/may/20/conserving-the-threatened-pedder-galaxias
+- id: LAKE2001
+  citation-key: LAKE2001
+  type: chapter
+  author:
+  - family: Lake
+    given: P. S.
+  title: 'The fauna of Lake Pedder: changes after the flooding and thoughts on restoration'
+  issued:
+  - year: 2001
+  container-title: 'Lake Pedder: Values and Restoration'
+  collection-title: Occasional Paper
+  number: '27'
+  page: 87–98
+  publisher: Centre for Environmental Studies, University of Tasmania
+  URL: https://lakepedder.org/wp-content/uploads/2017/03/h-lake-inverts-11_01.pdf
+- id: NRETAS2023
+  citation-key: NRETAS2023
+  type: report
+  author:
+  - literal: Threatened Species Section, Department of Natural Resources and Environment Tasmania
+  title: Listing statement for Galaxias pedderensis (Pedder galaxias)
+  issued:
+  - year: 2023
+  publisher: Department of Natural Resources and Environment Tasmania
+  URL: https://nre.tas.gov.au/Documents/Galaxias%20pedderensis_LS_APPROVED%20BY%20GM_15062023.pdf
+- id: RECOVERYPLAN1997_1999
+  citation-key: RECOVERYPLAN1997_1999
+  type: report
+  author:
+  - family: Crook
+    given: David A.
+  - family: Sanger
+    given: Andrew C.
+  title: Recovery Plan for the Pedder, Swan, Clarence, Swamp and Saddled Galaxias
+  issued:
+  - year: 1997
+  publisher: Inland Fisheries Commission, Tasmania
+  edition: Revised 1999
+  URL: https://www.dcceew.gov.au/environment/biodiversity/threatened/recovery-plans/pedder-swan-clarence-swamp-saddled-galaxias
+- id: RECOVERYPLAN2006
+  citation-key: RECOVERYPLAN2006
+  type: report
+  author:
+  - literal: Threatened Species Section, Department of Primary Industries and Water
+  title: Threatened Tasmanian Galaxiidae Recovery Plan 2006-2010
+  issued:
+  - year: 2006
+  publisher: Department of Primary Industries and Water
+  URL: https://www.agriculture.gov.au/sites/default/files/documents/tasmanian-galaxiidae.pdf
+- id: SANGER2001
+  citation-key: SANGER2001
+  type: chapter
+  author:
+  - family: Sanger
+    given: Andrew C.
+  title: Prospects and problems for the restoration of the Pedder galaxias
+  issued:
+  - year: 2001
+  container-title: 'Lake Pedder: Values and Restoration'
+  collection-title: Occasional Paper
+  number: '27'
+  page: 125–130
+  publisher: Centre for Environmental Studies, University of Tasmania
+- id: SANGER_FULTON1991
+  citation-key: SANGER_FULTON1991
+  type: report
+  author:
+  - family: Sanger
+    given: Andrew C.
+  - family: Fulton
+    given: Wayne
+  title: Conservation of endangered species of Tasmanian freshwater fish
+  issued:
+  - year: 1991
+  publisher: Inland Fisheries Commission, Tasmania
+  number: Occasional Report 91-01
+- id: WOODFORD_MCINTOSH2013
+  citation-key: WOODFORD_MCINTOSH2013
+  type: report
+  author:
+  - family: Woodford
+    given: Darragh J.
+  - family: McIntosh
+    given: Angus R.
+  title: Effects of introduced trout predation on non-diadromous galaxiid fish populations across invaded riverscapes
+  issued:
+  - year: 2013
+  collection-title: Science for Conservation
+  number: '320'
+  publisher: New Zealand Department of Conservation
+  URL: https://www.doc.govt.nz/globalassets/documents/science-and-technical/sfc320entire.pdf
+- id: galaxias_edna_lachlan
+  citation-key: galaxias_edna_lachlan
+  type: report
+  author:
+  - family: Hinlo
+    given: Rheyda
+  - family: Broadhurst
+    given: Ben
+  - family: Bylemans
+    given: Jonas
+  - family: Allan
+    given: Hugh
+  - family: Gleeson
+    given: Dianne
+  - family: Thiem
+    given: Jason
+  - family: Dyer
+    given: Fiona
+  title: Monitoring native fish in the Lachlan catchment through environmental DNA and conventional methods
+  issued:
+  - year: 2019
+  publisher: Australian Government
+  URL: https://www.dcceew.gov.au/sites/default/files/documents/monitoring-native-fish-lachlan-environmental-dna-conventional-methods.pdf
+- id: owen2013
+  citation-key: owen2013
+  type: book
+  author:
+  - family: Owen
+    given: Art B.
+  title: Monte Carlo theory, methods and examples
+  issued:
+  - year: 2013
+  URL: https://artowen.su.domains/mc/
+- id: vehtari2024
+  citation-key: vehtari2024
+  type: article-journal
+  author:
+  - family: Vehtari
+    given: Aki
+  - family: Simpson
+    given: Daniel
+  - family: Gelman
+    given: Andrew
+  - family: Yao
+    given: Yuling
+  - family: Gabry
+    given: Jonah
+  title: Pareto Smoothed Importance Sampling
+  issued:
+  - year: 2024
+  container-title: Journal of Machine Learning Research
+  volume: '25'
+  issue: '72'
+  page: 1–58
+  URL: https://jmlr.org/papers/volume25/19-556.html

@@ -1,0 +1,14 @@
+{
+  "preserved_at": "data/age_probability_gate_20261003/provenance/previous_AGENT_HANDOFF.md",
+  "previous_completion_receipt": {
+    "bytes": 14754,
+    "path": "data/age_lake_repair_20261002/completion_receipt.json",
+    "sha256": "4b8869705bb458efad6882ced0fad8216bf96a1b7fee7dc9a9d25a9c65c91395"
+  },
+  "previous_files_verified": 66,
+  "previous_handoff_binding": {
+    "bytes": 56145,
+    "sha256": "f341bebd5cad06b87e100b415c88274195f4f23814a63a0bfbfdeece87e7aec6"
+  },
+  "verified_utc": "2026-10-03T07:22:34.734397+00:00"
+}

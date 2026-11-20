@@ -1,0 +1,18 @@
+{
+  "status": "running",
+  "scope": "frozen_validation_replay",
+  "recorded_utc": "2026-09-18T10:30:06.682814+00:00",
+  "host": "deep-server-ts",
+  "workers": 8,
+  "pid": 70021,
+  "remote_source": "/data/codex/repos/galaxias-replay-20260918T1026",
+  "remote_run": "/data/codex/scratch/galaxias/detection_replay_20260918T1026",
+  "archive": "/data/codex/scratch/galaxias/conditional_calibration_20260912T034910Z",
+  "histories": 712000,
+  "preflight_smoke_histories": 8,
+  "source_archive_sha256": "879efb525d7e3bd70f7b454decd9c051d07d67d8fc81e86239188eebf3cb9cf9",
+  "protocol_sha256": "c165e25bfa223cbb79ba00fce75f099c13979746b2d516ae06e93af5243879d8",
+  "new_model_comparison_started": false,
+  "completion_receipt": "data/common_model/detection_replay_completion.json",
+  "current_status": "complete_verified"
+}

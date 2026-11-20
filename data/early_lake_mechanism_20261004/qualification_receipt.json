@@ -1,0 +1,27 @@
+{
+  "compile_passed": true,
+  "floating_atol": 1e-08,
+  "floating_rtol": 1e-12,
+  "focused_tests_linux": 36,
+  "focused_tests_mac": 36,
+  "input_manifest_sha256": {
+    "linux_parallel": "89c338bcebcebdbf3356445a9eb07b944133e4b01047deb2d1fd3a65a8bfbc6f",
+    "linux_serial": "551d4b1b7e2efd3cd08c0953b66af01d83609b97e91d1eb4a6747df535510937",
+    "local_serial": "7fba7a89c901fdfee5be373e60b3426f9d76cb624c4602c7c67b4955bb1ffc85"
+  },
+  "linux_serial_parallel_physical_and_logical_hashes_exact": true,
+  "mac_linux_analysis_replayed": true,
+  "mac_linux_discrete_histories_and_features_exact": true,
+  "maximum_floating_absolute_difference": 1.280568540096283e-09,
+  "new_qualification_reserve_charge": 1000,
+  "numeric_comparisons": 307116,
+  "portability_passed": true,
+  "qualification_reserve_ceiling": 8000,
+  "qualification_site_history_attempts_replayed": 576,
+  "qualification_total_charge": 4263,
+  "replay_script_sha256": "4057a4cc37d46d0fec37acf6cd9e8b97d611e7f48b37333873f59747428c4e74",
+  "source_snapshot_files_verified": 56,
+  "source_snapshot_manifest_sha256": "e6083e7f22151c69872a11a69f564b8c3038943911f1ed906ff7178c1a937c45",
+  "status": "PASS",
+  "verified_utc": "2026-10-04T01:59:49.598291+00:00"
+}

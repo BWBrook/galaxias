@@ -1,0 +1,19 @@
+{
+  "checked_utc": "2026-10-02T01:48:09.440814+00:00",
+  "compact_features_byte_identical": true,
+  "difference_branches": {
+    "/history/forcing": 215,
+    "/history/per_year_diagnostics": 37
+  },
+  "differing_numeric_values": 252,
+  "full_history_absolute_tolerance": 1e-14,
+  "full_history_byte_identical": false,
+  "full_history_relative_tolerance": 1e-14,
+  "histories": 80,
+  "maximum_absolute_difference": 2.9103830456733704e-11,
+  "source_manifests": {
+    "outputs/age_lake_refocus_20261002/local_smoke": "615d0a3973fd0edb51fbaf55bd7a78138db6ed17495910dc2416ee5a6dbf682b",
+    "outputs/remote/age_lake_refocus_20261002/smoke_serial": "5e71ee0ea9f506d6acecb93ff8f23a5b0779d0ee8f0b50e8172f1d05db841c33"
+  },
+  "status": "passed"
+}

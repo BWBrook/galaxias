@@ -1,0 +1,43 @@
+{
+  "auditor_role": "independent sol_high_specialist",
+  "changes_before_biological_qualification": [
+    "Bounded ratio uses all independent source means, including zero-contribution failures.",
+    "Analyzer propagates zero-probability support contradictions in its comparator.",
+    "Analyzer receipt binds both imported predecessor script dependencies."
+  ],
+  "completed_utc": "2026-10-03T07:22:34.734855+00:00",
+  "findings": [
+    "No remaining blocker to proposal freeze or qualification.",
+    "Actual remaining observations are not read by the analyzer or proposal fit.",
+    "Pooled independent heterogeneous source means satisfy Maurer-Pontil Theorem 11; source bootstrap remains stratified.",
+    "Fixed probability bins, unsupported-case bounds, contradiction handling, failed-source retention, source clustering and dependency bindings reviewed."
+  ],
+  "remaining_limitations": [
+    "Low absolute E support may still yield an unassessable bounded probability interval.",
+    "Observation namespaces are paired; exact common random numbers are not promised for every insurance draw."
+  ],
+  "source_bindings": {
+    "docs/age_probability_gate_protocol.md": {
+      "bytes": 13469,
+      "sha256": "86f1c021951ad0c305a19dc959814f9e6495cde8bd437fd115e37854acb8923e"
+    },
+    "scripts/analyze_age_probability_gate.py": {
+      "bytes": 24376,
+      "sha256": "cdf34f653e59ece082dfcb8ba24aaff0ad7b38608edcf153d7c73330255cd372"
+    },
+    "scripts/run_age_probability_gate.py": {
+      "bytes": 18930,
+      "sha256": "e06349ad0b03311c489a97122dcee56108bb4e881f3a5fb2d2a934ffc8af93b6"
+    },
+    "src/galaxias_model/age_probability_scores.py": {
+      "bytes": 18487,
+      "sha256": "65378e67ec42369bb2ab2436b72b2f5629b25ab9b3b75e6930c0ebd8089afc66"
+    }
+  },
+  "status": "PASS_FOR_QUALIFICATION",
+  "tests": {
+    "all_new_targeted": 42,
+    "existing_slow_excluded": 5,
+    "local_fast": 368
+  }
+}

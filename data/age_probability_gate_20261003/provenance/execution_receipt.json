@@ -1,0 +1,9 @@
+{
+  "actual_remaining_evidence_read": false,
+  "analysis_status": "STOP_FINAL_BOUNDED_ATTEMPT",
+  "completed_utc": "2026-10-03T08:27:15.493831+00:00",
+  "generation_status": "complete",
+  "nominal_site_histories": 147456,
+  "source_files_reverified": 720,
+  "status": "complete"
+}

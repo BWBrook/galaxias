@@ -1,0 +1,25 @@
+{
+  "biological_calls_before_final_freeze": 0,
+  "canonical_proposal": {
+    "bytes": 1263951,
+    "path": "data/age_probability_gate_20261003/proposal.json",
+    "sha256": "9a253bf749abc5c64ed2c507c3985ce093d4df889405b85f28078b0eaa580ce6"
+  },
+  "fields_compared": [
+    "groups",
+    "source_utilities",
+    "historical_lake_means",
+    "training_archives",
+    "training_source_ids",
+    "forbidden_training_seeds"
+  ],
+  "proposal_geometry_and_training_utilities_unchanged": true,
+  "reason": "Add two direct imported script dependencies to the analysis receipt bindings before biological qualification.",
+  "status": "verified",
+  "superseded_prequalification_file": {
+    "bytes": 1263951,
+    "path": "outputs/age_probability_gate_20261003/prequalification/proposal_before_analysis_dependency_binding.json",
+    "sha256": "d0db0f28d5f9a6592ffa526405f625310949f9f326543037172e56972944d890"
+  },
+  "verified_utc": "2026-10-03T07:35:29.472015+00:00"
+}

@@ -1,0 +1,99 @@
+{
+  "status": "complete",
+  "completed_utc": "2026-09-20T13:07:51.010868+00:00",
+  "scope": "Approved finite singleton-guard experiment through verified conditional synthesis and Fable review handoff",
+  "base_git_head": "81e37202f6322e37ac7f1b0070402b76b7967a82",
+  "historical_calls": 529408,
+  "source_count": 517,
+  "annual_rows": 20117504,
+  "auxiliary_allocation_upper_bound": 3347,
+  "auxiliary_ceiling": 15000,
+  "conservative_programme_ceiling": 5320368,
+  "programme_hard_ceiling": 7100000,
+  "original_profiles": {
+    "qualified": 600,
+    "unresolved": 193,
+    "notfound": 734
+  },
+  "retaining_sources": 226,
+  "all_fixed_primary_compatible_profiles": 609,
+  "independent_audit": "supported with material interpretive qualifications; no rerun required",
+  "next_responder": "Fable",
+  "correspondence_message": 420,
+  "simulations_running": false,
+  "commit_push_publication": false,
+  "artifacts": {
+    "docs/common_model_mate_guard_results.md": {
+      "bytes": 11539,
+      "sha256": "4788e75dbf0811647d7097dc26eb8a89abe9e21396a3cddff07b12e85a52c7ec"
+    },
+    "docs/common_model_mate_guard_results_audit.md": {
+      "bytes": 10381,
+      "sha256": "a6afdaf75da66ea793df302ee48864c966d97c21877b03c5742e8046d6785431"
+    },
+    "docs/common_model_mate_guard_preflight_audit.md": {
+      "bytes": 9988,
+      "sha256": "9dfe3d508b4c9fed0a2de10e7279e33974f9872c08f358ce9a9c496352404441"
+    },
+    "AGENT_HANDOFF.md": {
+      "bytes": 39331,
+      "sha256": "109e25d63f15d54c3e1e693b7af770eefdd9ed3d2f558957e99dcf8ba83e0728"
+    },
+    "data/common_model/mate_guard_20260920/freeze_manifest.json": {
+      "bytes": 1897,
+      "sha256": "2308bae6fb1aefe37292198dfe85cb04b5c3e321410471e2cd8ad6fd726a5117"
+    },
+    "data/common_model/mate_guard_20260920/execution_budget.json": {
+      "bytes": 1512,
+      "sha256": "da377c8e05430528c0990eebc7b35c0715d4e9d9e8040ce8ff0882a73e88c365"
+    },
+    "data/common_model/mate_guard_20260920/target_qualification.json": {
+      "bytes": 15599,
+      "sha256": "498690d674ae2ce06c7f901954f0abd25528194cc6b32ae85b7045707e897445"
+    },
+    "data/common_model/mate_guard_20260920/verification.json": {
+      "bytes": 814,
+      "sha256": "cc8ff8bddb21b81029e8205f211223abe8e18cb7ae282ba4fab0a7664d311e87"
+    },
+    "data/common_model/mate_guard_20260920/retrieval_receipt.json": {
+      "bytes": 716,
+      "sha256": "ddbcf8356cac4452d635d97874f2f4ce38441eb710fbf106d5648dcaaa0692d4"
+    },
+    "data/common_model/mate_guard_20260920/results_audit.json": {
+      "bytes": 21651,
+      "sha256": "6679aaa0b459de8d4959317fe4b0f424cc61b203c97262d5d1dd923a9c2ddd64"
+    },
+    "data/common_model/mate_guard_20260920/readout_summary.json": {
+      "bytes": 684,
+      "sha256": "b71dae61535efb9ddf3ec4911c4bbe437b6576f92051f0f7fa351935404549b1"
+    },
+    "data/common_model/mate_guard_20260920/readout_summary_receipt.json": {
+      "bytes": 1284,
+      "sha256": "6733a02b0990ebc0eeb07559b436dc590eb4f5828ef2f85a6f505fd40ac30176"
+    },
+    "data/common_model/mate_guard_20260920/correspondence_review_handoff.json": {
+      "bytes": 346,
+      "sha256": "5d7d915f18b6819b6f43053e6ff45bbfc1bc2e9e50efb8329e473b1a45f1d578"
+    },
+    "data/common_model/mate_guard_20260920/fable_review_handoff.md": {
+      "bytes": 3298,
+      "sha256": "3bfe6629f859b29b1e36d77ce85bc6765b47f727f51308a40db90487a3084281"
+    },
+    "scripts/verify_mate_guard.py": {
+      "bytes": 5796,
+      "sha256": "e6d0b6e79d0a02aaed1d9acc3b9028fa04e134be30cae79ddcf5545fa32c49fb"
+    },
+    "scripts/summarize_mate_guard.py": {
+      "bytes": 7024,
+      "sha256": "50875f489e50403a8b038497abe0e8ee1307b43a8dd2001fe39b882e542bbb75"
+    },
+    "tests/test_mate_guard.py": {
+      "bytes": 17629,
+      "sha256": "440162e58dc8f6c1f1346d9a9498f7e46841a0d65b8cf4fb95d216f4b9193226"
+    },
+    "tests/test_mate_guard_analysis.py": {
+      "bytes": 6829,
+      "sha256": "4348e2dfcf4a7715d7904659f8bb1f652210bf3ecd25e2d3b1602988536c62ec"
+    }
+  }
+}

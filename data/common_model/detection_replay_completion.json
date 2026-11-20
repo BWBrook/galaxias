@@ -1,0 +1,24 @@
+{
+  "status": "verified",
+  "verified_utc": "2026-09-18T12:09:44.393911+00:00",
+  "histories": 712000,
+  "sources": 356,
+  "replicates_per_source": 2000,
+  "max_absolute_diagnostic_difference": 0.0,
+  "max_relative_diagnostic_difference": 0.0,
+  "numeric_diagnostic_fields": 61,
+  "source_profile_rows": 6052,
+  "selection": "unchanged frozen cohorts",
+  "replay_manifest": {
+    "bytes": 31444,
+    "sha256": "0d9abbab78a00a89e57368fd935386bf43d42a6a437666a57b5fcc46c8eff512"
+  },
+  "analysis_receipt": {
+    "bytes": 1462,
+    "sha256": "67dbfb06b3be452d9f831d5258c7660ffb5a46ababa20378157044eefbb6458f"
+  },
+  "exit_receipt": {
+    "bytes": 277,
+    "sha256": "c1ad3a5fb924c9c668d0847fd291e051863ca493462f423994c829917db84095"
+  }
+}

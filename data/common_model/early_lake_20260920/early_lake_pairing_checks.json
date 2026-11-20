@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "source_count": 254,
+  "replicates_per_source": 1024,
+  "factual_rows": 260096,
+  "counterfactual_rows": 260096,
+  "paired_rows": 260096,
+  "factual_seed_unique_count": 520192,
+  "counterfactual_seed_unique_count": 520192,
+  "seed_columns": [
+    "simulation_seed",
+    "environment_seed"
+  ],
+  "pair_keys": [
+    "search_seed",
+    "configuration",
+    "restriction",
+    "wave",
+    "source_index",
+    "source_id",
+    "replicate_index",
+    "simulation_seed",
+    "environment_seed"
+  ],
+  "new_histories": 0
+}

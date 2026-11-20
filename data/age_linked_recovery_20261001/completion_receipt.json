@@ -1,0 +1,171 @@
+{
+  "archive": {
+    "git_ancestry": "81e37202f6322e37ac7f1b0070402b76b7967a82",
+    "local": "outputs/remote/age_linked_recovery_20261001",
+    "remote_host": "utas-ubuntu",
+    "remote_path": "/data/codex/scratch/galaxias/age_linked_recovery_20261001"
+  },
+  "checks": {
+    "all_generation_and_analysis_outputs_verified": true,
+    "compact_tables_match_independent_pandas_extraction": true,
+    "current_analysis_source_bindings_verified": 10,
+    "current_generation_source_bindings_verified": 42,
+    "fast_check": {
+      "command": "make fast-check",
+      "deselected_existing_slow_tests": 5,
+      "observed_utc": "2026-10-01T13:48:50Z",
+      "passed": 300
+    },
+    "final_portability_compile": {
+      "command": "make portability compile",
+      "files_inspected": 638,
+      "passed": true
+    },
+    "independent_full_history_diagnostics_audit": true,
+    "new_text_files_lf_only": true,
+    "remote_dispatch_snapshot_files_reverified": 610
+  },
+  "completed_utc": "2026-10-01T14:24:58.896534+00:00",
+  "decision": "STOP_BEFORE_HISTORICAL_SEARCH",
+  "driver_exit_code": 0,
+  "files": {
+    "data/age_linked_recovery_20261001/base_gate_summary.csv": {
+      "bytes": 758727,
+      "sha256": "fd1267cb056fc400564e0a3652fb9648cf273428fe4ddf77b42393119efd0406"
+    },
+    "data/age_linked_recovery_20261001/coherence_base.csv": {
+      "bytes": 1569350,
+      "sha256": "3f4a39b4161fce3eac93577b095b1246bffe1e955e9f635f83c36bd83fc21e82"
+    },
+    "data/age_linked_recovery_20261001/coherence_profile_summary.csv": {
+      "bytes": 6698,
+      "sha256": "931a2b97768abb827695adc1b7696e04545bf5db7a68115b4464c6d6301b28f2"
+    },
+    "data/age_linked_recovery_20261001/gate_decision.json": {
+      "bytes": 760,
+      "sha256": "8095220b2f29f9dfc0f73bac992496ab544cdb3066a8239752fcc5554c4f1abd"
+    },
+    "data/age_linked_recovery_20261001/process_summary.csv": {
+      "bytes": 190387,
+      "sha256": "1140080beae3c41a103ff048495e2378c3f9ce9087cd80cbfe06bdf94fff2cc7"
+    },
+    "data/age_linked_recovery_20261001/provenance/analysis_receipt.json": {
+      "bytes": 18378,
+      "sha256": "9b88fb0cd9a9e171e00c269e0afc43fb708e9f8e8c39b77b23a7783ea6acac08"
+    },
+    "data/age_linked_recovery_20261001/provenance/analysis_reproducibility.json": {
+      "bytes": 28561,
+      "sha256": "0edb40ad99bb06de525896343ed2e6d8c88c9275584c4ee273d2768a57d3c821"
+    },
+    "data/age_linked_recovery_20261001/provenance/execution_accounting.json": {
+      "bytes": 892,
+      "sha256": "e18e168c2a8d19bfc394a97922f7b58757b294195b651f3261001554ec6f0ceb"
+    },
+    "data/age_linked_recovery_20261001/provenance/full_gate_seed_preflight.json": {
+      "bytes": 284,
+      "sha256": "60dc726ed9feb2e1a1fadac10d9c212a896a70cb89efc4fe8c702efb25a77016"
+    },
+    "data/age_linked_recovery_20261001/provenance/generation_manifest.json": {
+      "bytes": 12429,
+      "sha256": "3cc63a45a5f8dea1a951993c6ee1b565938aded57435137a6139bd1abb073312"
+    },
+    "data/age_linked_recovery_20261001/provenance/independent_audit.json": {
+      "bytes": 891,
+      "sha256": "4865adf69c4647a6968e502d1ecfbc3c05e2fd93a08f23dadbabbeaaff60e41b"
+    },
+    "data/age_linked_recovery_20261001/provenance/linux_qualification_receipt.json": {
+      "bytes": 3547,
+      "sha256": "fd6105040c6882e2ed0d72af660dbfac6ab67bc6b9cf2be71cb502f79068a5e6"
+    },
+    "data/age_linked_recovery_20261001/provenance/local_qualification_receipt.json": {
+      "bytes": 3546,
+      "sha256": "1b9557506946c87af872b72e6925dd0d9cecdceb314d6364fd2ad9a79c571367"
+    },
+    "data/age_linked_recovery_20261001/provenance/qualification_analysis_receipt.json": {
+      "bytes": 14692,
+      "sha256": "b632ad9f5508c7bccb430b95537d5ae82b7267b2ca4c956bb6d64841692a85a6"
+    },
+    "data/age_linked_recovery_20261001/provenance/qualification_analysis_summary.json": {
+      "bytes": 754,
+      "sha256": "8c6a5007b6c8772f5569863dce03d4ef8d9a41974169a5a5409ffed0c9a448ba"
+    },
+    "data/age_linked_recovery_20261001/provenance/qualification_parallel_manifest.json": {
+      "bytes": 12416,
+      "sha256": "127540834e7672389cb66e0c6240efdab3721e53c3599c04c95e15a09499ebc1"
+    },
+    "data/age_linked_recovery_20261001/provenance/qualification_replay.json": {
+      "bytes": 306,
+      "sha256": "df2dc28aa39912da20de87f28484ff5661e7042fcf1d4e0b2a40a48d337cd919"
+    },
+    "data/age_linked_recovery_20261001/provenance/qualification_serial_manifest.json": {
+      "bytes": 12415,
+      "sha256": "c61ee0670d6f2b35910edaaa43a9a512a9756ebe3282d5a8fc0dea9023da8d6a"
+    },
+    "data/age_linked_recovery_20261001/provenance/qualify_remote.sh": {
+      "bytes": 1927,
+      "sha256": "16765f9654a48cb8c3f0984462875b24b80d5b59fa02da56158d1655cab3f1f5"
+    },
+    "data/age_linked_recovery_20261001/provenance/run_gate.sh": {
+      "bytes": 1737,
+      "sha256": "b200c4b5b586e9fa2580f6056a8c7df07f85dd632d3d773758dd42fa8d1f2d44"
+    },
+    "data/age_linked_recovery_20261001/provenance/source_snapshot.json": {
+      "bytes": 103945,
+      "sha256": "c83bac6b246d9c157f392609d1e548f007ddbf0b4096f2ffbec6b873e95e3e07"
+    },
+    "data/age_linked_recovery_20261001/retained_forcing_parameters.csv": {
+      "bytes": 11910,
+      "sha256": "0d62ac1b1edb62db886e75eb15446254844c8cb5a2bd4e4e011c30cbbf52d9bd"
+    },
+    "data/age_linked_recovery_20261001/score_controls.json": {
+      "bytes": 980,
+      "sha256": "b93291904d94e2997229e2b09cd805a486cdcb628d9edfe33bca86a683677473"
+    },
+    "data/age_linked_recovery_20261001/small_sex_pool_summary.csv": {
+      "bytes": 20721,
+      "sha256": "2ac9e50b8e52651edd36d5a46b7b604ab8e05d0649628626b81c0155e277008a"
+    },
+    "data/age_linked_recovery_20261001/source_class_coverage.csv": {
+      "bytes": 15078,
+      "sha256": "0524830f3a7b59bc3f5e44dc1318bd917854b003cdf01be003215a15df93200e"
+    },
+    "data/age_linked_recovery_20261001/source_support.csv": {
+      "bytes": 12709,
+      "sha256": "0d6f8891b03b84f183e6b10f1be961f3ff98beb841598851fdd355217f385e3d"
+    },
+    "data/age_linked_recovery_20261001/stratum_coverage.csv": {
+      "bytes": 4315,
+      "sha256": "45640102817b8bad655ee4b3daeab7aff487018bbf3ca10037797852c2eb11c1"
+    },
+    "data/age_linked_recovery_20261001/summary.json": {
+      "bytes": 609,
+      "sha256": "fdea4743aea840c6290590653e7182fea9362cdd77844afb3a85f842c8a76192"
+    },
+    "data/age_linked_recovery_20261001/summary_receipt.json": {
+      "bytes": 10033,
+      "sha256": "832f89ea2f1483bc01c15bd2c4b0fe57044cccf9dfad7ba7b692f0e81c961674"
+    }
+  },
+  "main_driver_finished_utc": "2026-10-01T14:14:59Z",
+  "main_driver_started_utc": "2026-10-01T13:58:05Z",
+  "report_and_implementation": {
+    "AGENT_HANDOFF.md": {
+      "bytes": 52447,
+      "sha256": "417a0b7d84738d54db7b88b74532b3dfb8cdf535f308b252edad60fc95464c22"
+    },
+    "docs/age_linked_recovery_protocol.md": {
+      "bytes": 13689,
+      "sha256": "89ec0475b008c5fd9bf7c176ae260aed5dec82d9604cef2410a7c3b731067364"
+    },
+    "docs/age_linked_recovery_results.md": {
+      "bytes": 13666,
+      "sha256": "308ae55e6a1d5f1ee46f213aaac29eecc78133607aee0f2510ab1a1f3ca004f6"
+    },
+    "scripts/summarize_age_linked_recovery.py": {
+      "bytes": 19993,
+      "sha256": "c84e03822427cfd5324da3080decc10dbcf81b452fcfd59b449e1e79e9f89c9f"
+    }
+  },
+  "scientific_disposition": "endpoint_discrimination_unassessed_due_to_source_support",
+  "status": "complete"
+}

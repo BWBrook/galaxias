@@ -1,0 +1,25 @@
+{
+  "analysis_receipt": {
+    "bytes": 1334,
+    "sha256": "05dd1c8ff89a66cf8ace58301cab9313e1c98398a64658489437102c69b83622"
+  },
+  "annual_rows": 20117504,
+  "guard_active_rows": 5615255,
+  "nonzero_recruitment_when_guard_active": 0,
+  "output_files_verified": 1555,
+  "paired_histories": 529408,
+  "run_manifest": {
+    "bytes": 231655,
+    "sha256": "ea6bc8df256d3bc13cbe50e76db8d48ef971ab1705a6c85fc32a1ef290ee2146"
+  },
+  "script": {
+    "bytes": 5796,
+    "sha256": "e6d0b6e79d0a02aaed1d9acc3b9028fa04e134be30cae79ddcf5545fa32c49fb"
+  },
+  "seed_design": "Exact archived validation seed pairs reused; no fresh independent validation claim",
+  "source_count": 517,
+  "source_files_verified": 85,
+  "status": "verified",
+  "viability_failed_sources": 108,
+  "zero_or_singleton_total_population_rebounds": 0
+}

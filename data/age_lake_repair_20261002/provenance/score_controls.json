@@ -1,0 +1,27 @@
+{
+  "all_passed": true,
+  "biology_calls": 0,
+  "exact_zero_positive_impossible": true,
+  "identical_exposure_log_ratios": [
+    -7.105427357601002e-15,
+    -4.440892098500626e-16
+  ],
+  "identical_exposure_predictions": [
+    -1,
+    -1
+  ],
+  "informative_post_ess": [
+    [
+      8.0,
+      8.0
+    ],
+    [
+      8.0,
+      8.0
+    ]
+  ],
+  "informative_predictions": [
+    0,
+    1
+  ]
+}

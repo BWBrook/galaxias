@@ -1,0 +1,9 @@
+{
+  "status": "complete",
+  "serial_parallel_exact": true,
+  "content_sha256": {
+    "full_histories.jsonl": "8fcdc978622a2da0fef59e1c0a5df9eb89f62d761e637f991d82b7a6408761dc",
+    "histories.jsonl": "082f30b3fdd5f8690be63d8a1b45febf7fcf6bc54dc3c608ca23902c5299e82b"
+  },
+  "nominal_site_histories": 480
+}

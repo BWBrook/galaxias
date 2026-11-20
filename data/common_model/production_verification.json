@@ -1,0 +1,75 @@
+{
+  "status": "verified",
+  "verified_utc": "2026-09-19T02:24:04.724994+00:00",
+  "production_path": "/data/codex/scratch/galaxias/common_model_20260918/production",
+  "execution_receipt": {
+    "bytes": 7316,
+    "sha256": "c227b34d583c22b5da6c7f609b7b4f7ddc405ed858c0c5e1611cff537efad77a"
+  },
+  "source_bundle": {
+    "bytes": 23419,
+    "sha256": "4fb539288cf81ade5fbe56873034454b3769a02635eec08789dc7296f76bee25"
+  },
+  "source_files_verified": 146,
+  "phase_manifests": {
+    "search": {
+      "bytes": 11078,
+      "sha256": "ba1895fa59c830f43dc4ac63f006dee946a35b29f08b80b09b586877ceb29f61"
+    },
+    "refine": {
+      "bytes": 9824,
+      "sha256": "b46845bcd567da366448337342688bb5625d785097a8e8a2d22712c664353fde"
+    },
+    "validate": {
+      "bytes": 9765,
+      "sha256": "7589024a667d40626f510007908bdfa034afc7b08c93965b88279a5784da369f"
+    },
+    "counterfactual": {
+      "bytes": 9802,
+      "sha256": "cb125c591b1b45f2ba52780939e0166d04c62f99899bd09cab6950dc07db7d07"
+    },
+    "paired_toggle": {
+      "bytes": 9914,
+      "sha256": "527c95e189b3ed07cafc2eaed8f74e347b99e7b7f001ee6e5b16191971e31879"
+    }
+  },
+  "analysis_receipt": {
+    "bytes": 3292,
+    "sha256": "2af7d300eba9ddba64acd18961a237920909b010a9846245b52c383c56901944"
+  },
+  "history_counts": {
+    "search": 1832896,
+    "refine": 882176,
+    "validate": 1025024,
+    "counterfactual": 260096,
+    "paired_toggle": 48768
+  },
+  "search_sources": 28800,
+  "viable_search_sources": 28639,
+  "refined_sources": 3446,
+  "validated_sources": 1001,
+  "paired_R_J_sources": 254,
+  "local_parent_links_verified": 11520,
+  "fresh_unique_seeds_verified": 7480192,
+  "actual_fresh_and_paired_seed_rows_verified": 4048960,
+  "selection": "all rank memberships and source parameter ancestry verified; no validation reselection",
+  "replay_histories": 712000,
+  "conservative_check_ceiling": 15000,
+  "conservative_total_histories": 4775960,
+  "hard_ceiling": 7100000,
+  "new_simulations_for_closure": 0,
+  "checks": [
+    "source and wrapper hashes",
+    "all phase and analysis output hashes",
+    "runtime and archive ancestry",
+    "all prescribed allocations",
+    "viability retention",
+    "source parameter identity",
+    "all immediate-wave local parents",
+    "frozen refinement and validation ranking",
+    "all raw replicate identities and counts",
+    "actual demographic and environment seed derivation and global uniqueness",
+    "exact paired seed coverage",
+    "budget ceiling"
+  ]
+}

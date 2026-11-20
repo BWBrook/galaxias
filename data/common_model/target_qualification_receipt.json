@@ -1,0 +1,235 @@
+{
+  "status": "complete",
+  "scope": "common_model_qualify",
+  "started_utc": "2026-09-18T11:00:58.408447+00:00",
+  "source_bundle": {
+    "bytes": 23419,
+    "sha256": "4fb539288cf81ade5fbe56873034454b3769a02635eec08789dc7296f76bee25"
+  },
+  "runtime": "3.14.5 (main, May 10 2026, 19:28:16) [Clang 22.1.3 ]",
+  "steps": [
+    {
+      "stage": "compile",
+      "started_utc": "2026-09-18T11:00:58.631370+00:00",
+      "command": [
+        "/data/codex/repos/galaxias-conditional-20260912T034910Z/.venv/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "scripts",
+        "tests"
+      ],
+      "finished_utc": "2026-09-18T11:00:59.400936+00:00"
+    },
+    {
+      "stage": "tests",
+      "started_utc": "2026-09-18T11:00:59.626410+00:00",
+      "command": [
+        "/data/codex/repos/galaxias-conditional-20260912T034910Z/.venv/bin/python",
+        "-c",
+        "import sys,json\nfrom pathlib import Path\ncounts={'common_stochastic':0,'legacy_stochastic':0,'legacy_deterministic':0}\ndef profile(frame,event,arg):\n if event!='call': return\n name=frame.f_code.co_name\n if name=='run_common_history' and frame.f_code.co_filename.endswith('/galaxias_model/common_model.py'): counts['common_stochastic']+=1\n elif name=='run_scenario_simulation' and frame.f_code.co_filename.endswith('/galaxias_model/simulation.py'):\n  counts['legacy_stochastic' if frame.f_locals['config'].stochastic else 'legacy_deterministic']+=1\nsys.setprofile(profile)\nimport pytest\ncode=pytest.main(['-q','tests/test_common_model.py','tests/test_common_model_comparison.py','tests/test_abundance_detection.py'])\nsys.setprofile(None)\nPath(sys.argv[1]).write_text(json.dumps(counts,indent=2)+'\\n')\nsys.exit(code)\n",
+        "/data/codex/scratch/galaxias/common_model_20260918/qualification/unit_history_counts.json"
+      ],
+      "finished_utc": "2026-09-18T11:01:13.812905+00:00"
+    },
+    {
+      "stage": "parity",
+      "started_utc": "2026-09-18T11:01:14.039791+00:00",
+      "command": [
+        "/data/codex/repos/galaxias-conditional-20260912T034910Z/.venv/bin/python",
+        "scripts/run_common_model_comparison.py",
+        "--phase",
+        "parity",
+        "--mode",
+        "smoke",
+        "--workers",
+        "2",
+        "--output-dir",
+        "/data/codex/scratch/galaxias/common_model_20260918/qualification/parity"
+      ],
+      "finished_utc": "2026-09-18T11:01:23.700659+00:00"
+    },
+    {
+      "stage": "search",
+      "started_utc": "2026-09-18T11:01:23.921794+00:00",
+      "command": [
+        "/data/codex/repos/galaxias-conditional-20260912T034910Z/.venv/bin/python",
+        "scripts/run_common_model_comparison.py",
+        "--mode",
+        "smoke",
+        "--workers",
+        "2",
+        "--buffer-size",
+        "4",
+        "--phase",
+        "search",
+        "--output-dir",
+        "/data/codex/scratch/galaxias/common_model_20260918/qualification/search"
+      ],
+      "finished_utc": "2026-09-18T11:05:11.070969+00:00"
+    },
+    {
+      "stage": "refine",
+      "started_utc": "2026-09-18T11:05:11.299394+00:00",
+      "command": [
+        "/data/codex/repos/galaxias-conditional-20260912T034910Z/.venv/bin/python",
+        "scripts/run_common_model_comparison.py",
+        "--mode",
+        "smoke",
+        "--workers",
+        "2",
+        "--buffer-size",
+        "4",
+        "--phase",
+        "refine",
+        "--output-dir",
+        "/data/codex/scratch/galaxias/common_model_20260918/qualification/refine",
+        "--search-dir",
+        "/data/codex/scratch/galaxias/common_model_20260918/qualification/search"
+      ],
+      "finished_utc": "2026-09-18T11:05:42.040375+00:00"
+    },
+    {
+      "stage": "validate",
+      "started_utc": "2026-09-18T11:05:42.269937+00:00",
+      "command": [
+        "/data/codex/repos/galaxias-conditional-20260912T034910Z/.venv/bin/python",
+        "scripts/run_common_model_comparison.py",
+        "--mode",
+        "smoke",
+        "--workers",
+        "2",
+        "--buffer-size",
+        "4",
+        "--phase",
+        "validate",
+        "--output-dir",
+        "/data/codex/scratch/galaxias/common_model_20260918/qualification/validate",
+        "--search-dir",
+        "/data/codex/scratch/galaxias/common_model_20260918/qualification/search",
+        "--refine-dir",
+        "/data/codex/scratch/galaxias/common_model_20260918/qualification/refine"
+      ],
+      "finished_utc": "2026-09-18T11:06:02.940382+00:00"
+    },
+    {
+      "stage": "counterfactual",
+      "started_utc": "2026-09-18T11:06:03.169020+00:00",
+      "command": [
+        "/data/codex/repos/galaxias-conditional-20260912T034910Z/.venv/bin/python",
+        "scripts/run_common_model_comparison.py",
+        "--mode",
+        "smoke",
+        "--workers",
+        "2",
+        "--buffer-size",
+        "4",
+        "--phase",
+        "counterfactual",
+        "--output-dir",
+        "/data/codex/scratch/galaxias/common_model_20260918/qualification/counterfactual",
+        "--search-dir",
+        "/data/codex/scratch/galaxias/common_model_20260918/qualification/search",
+        "--validate-dir",
+        "/data/codex/scratch/galaxias/common_model_20260918/qualification/validate"
+      ],
+      "finished_utc": "2026-09-18T11:06:10.031827+00:00"
+    },
+    {
+      "stage": "paired_toggle",
+      "started_utc": "2026-09-18T11:06:10.258696+00:00",
+      "command": [
+        "/data/codex/repos/galaxias-conditional-20260912T034910Z/.venv/bin/python",
+        "scripts/run_common_model_comparison.py",
+        "--mode",
+        "smoke",
+        "--workers",
+        "2",
+        "--buffer-size",
+        "4",
+        "--phase",
+        "paired_toggle",
+        "--output-dir",
+        "/data/codex/scratch/galaxias/common_model_20260918/qualification/paired_toggle",
+        "--search-dir",
+        "/data/codex/scratch/galaxias/common_model_20260918/qualification/search",
+        "--validate-dir",
+        "/data/codex/scratch/galaxias/common_model_20260918/qualification/validate"
+      ],
+      "finished_utc": "2026-09-18T11:06:25.432260+00:00"
+    },
+    {
+      "stage": "analysis",
+      "started_utc": "2026-09-18T11:06:25.661630+00:00",
+      "command": [
+        "/data/codex/repos/galaxias-conditional-20260912T034910Z/.venv/bin/python",
+        "scripts/analyze_common_model_comparison.py",
+        "--search-dir",
+        "/data/codex/scratch/galaxias/common_model_20260918/qualification/search",
+        "--refine-dir",
+        "/data/codex/scratch/galaxias/common_model_20260918/qualification/refine",
+        "--validate-dir",
+        "/data/codex/scratch/galaxias/common_model_20260918/qualification/validate",
+        "--counterfactual-dir",
+        "/data/codex/scratch/galaxias/common_model_20260918/qualification/counterfactual",
+        "--paired-toggle-dir",
+        "/data/codex/scratch/galaxias/common_model_20260918/qualification/paired_toggle",
+        "--output-dir",
+        "/data/codex/scratch/galaxias/common_model_20260918/qualification/analysis"
+      ],
+      "finished_utc": "2026-09-18T11:06:55.598391+00:00"
+    }
+  ],
+  "workers": 2,
+  "dispatch_gate": null,
+  "phase_receipts": {
+    "search": {
+      "manifest": {
+        "bytes": 10542,
+        "sha256": "0c3fb81ed6984ecfca471ec0727fba1e0af16d20519a442a6b4bf3d0021ffa3a"
+      },
+      "history_count": 574
+    },
+    "refine": {
+      "manifest": {
+        "bytes": 9775,
+        "sha256": "7840bac4a3c432376cbba73e9a19e83718acda2b56f4a2d6a1e0d8e3b966fd45"
+      },
+      "history_count": 432
+    },
+    "validate": {
+      "manifest": {
+        "bytes": 9720,
+        "sha256": "ce360447fc16584f77e6ece87db660a7eb23188083976b52afde32f7b20c8450"
+      },
+      "history_count": 344
+    },
+    "counterfactual": {
+      "manifest": {
+        "bytes": 9750,
+        "sha256": "29c349a25ccd7b4f07ef3567a27d90a041c3e240177270e85dd7ff0a9a44073a"
+      },
+      "history_count": 84
+    },
+    "paired_toggle": {
+      "manifest": {
+        "bytes": 9874,
+        "sha256": "2dc049e4ca1aa20c12814516f1ad228da1eb32da7a4b55c4845924e657a39733"
+      },
+      "history_count": 252
+    }
+  },
+  "pipeline_histories_executed": 1686,
+  "parity_histories_executed": 96,
+  "unit_history_counts": {
+    "common_stochastic": 39,
+    "legacy_stochastic": 0,
+    "legacy_deterministic": 0
+  },
+  "analysis_receipt": {
+    "bytes": 3282,
+    "sha256": "2a8a4d9243c5d75cb865f2423832a05276056fc57d8ca241e10597606add71b3"
+  },
+  "finished_utc": "2026-09-18T11:06:55.601546+00:00"
+}

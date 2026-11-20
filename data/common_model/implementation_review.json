@@ -1,0 +1,35 @@
+{
+  "recorded_utc": "2026-09-18T11:01:12.662943+00:00",
+  "status": "source_audit_passed",
+  "reviewer": "independent sol_max_auditor common_preflight_audit",
+  "protocol_sha256": "c165e25bfa223cbb79ba00fce75f099c13979746b2d516ae06e93af5243879d8",
+  "source_bundle_sha256": "4fb539288cf81ade5fbe56873034454b3769a02635eec08789dc7296f76bee25",
+  "independent_checks": {
+    "focused_tests_passed": 39,
+    "compileall": "passed",
+    "diff_check": "passed"
+  },
+  "resolved_findings": [
+    "zero-inclusive free effects and exact effective restriction rows",
+    "viability annual-state serialization",
+    "nonzero zero-event MC bounds",
+    "annual refuge and isolated exposure reporting",
+    "archive ancestry and runtime binding",
+    "empty retained-source analysis",
+    "annual mean and presence column separation",
+    "strict positive-support validity under floating underflow"
+  ],
+  "pre_scientific_run_gates": [
+    "all 712000 archived histories reconciled",
+    "target-runtime 24-cell serial/parallel exact equality",
+    "complete target smoke including every phase and analysis",
+    "full replay and parity evidence posted to Fable"
+  ],
+  "scientific_limits": "Code review and replay are not empirical validation; compatibility is conditional on finite search and declared observation/process scenarios.",
+  "subsequent_target_qualification": {
+    "status": "passed",
+    "receipt": "data/common_model/target_qualification_receipt.json",
+    "verification": "data/common_model/target_qualification_checks.json",
+    "finished_utc": "2026-09-18T11:06:55.601546+00:00"
+  }
+}

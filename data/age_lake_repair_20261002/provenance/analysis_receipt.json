@@ -1,0 +1,94 @@
+{
+  "all_endpoint_status_counts": {
+    "unassessed_truth_and_bank_support": 258984,
+    "unassessed_truth_support": 216
+  },
+  "composition_rows": 7120,
+  "conditional_go_columns": [],
+  "elapsed_seconds": 411.2816418580478,
+  "endpoints": [
+    "terminal_alive",
+    "terminal_pair",
+    "terminal_same_compartment_pair",
+    "terminal_age1plus10"
+  ],
+  "finished_utc": "2026-10-02T02:26:56.697849+00:00",
+  "generation_manifest": {
+    "bytes": 13842,
+    "sha256": "44fb17833d70888fb9ae747ee10a64ecc5a3185aa3c4160050c619d7563f024b"
+  },
+  "generators": [
+    "poisson",
+    "gamma_quality",
+    "fixed_creek_total"
+  ],
+  "independence": "Fresh truth and bank; all old histories used only for proposal training",
+  "metric_rows": 259200,
+  "outputs": {
+    "base_gate_metrics.csv": {
+      "bytes": 6450195,
+      "sha256": "bcdf54ac6e61501738a9b9e67525e65a022b6aaa85979f89a76a665a6ae10103"
+    },
+    "gate_metrics.csv": {
+      "bytes": 101975681,
+      "sha256": "cb25b0767ff5ea252f131c68fe97548816db7b8e165533b14fdd0489951548d5"
+    },
+    "reproducibility.json": {
+      "bytes": 8947,
+      "sha256": "d214ee1355b413962f9c969a5c8baedc869ba6196950dcc3aa1c6904315dfc7f"
+    },
+    "score_controls.json": {
+      "bytes": 393,
+      "sha256": "bf6aa6f32852fce8d6ba0165735e770a640f55084f0cee13791e3b981c156e13"
+    },
+    "stratum_summary.csv": {
+      "bytes": 5901,
+      "sha256": "ab2e3ce954e2621d4eda960f4675048e93c775332c73b3ef97249cc864bd63b2"
+    },
+    "weighted_composition.csv": {
+      "bytes": 2498793,
+      "sha256": "4dcd544862bb146e9afb14ea2197e2e2bb0f9e8a0dffcfd5338390ef8f220414"
+    }
+  },
+  "primary_base_assessed": 0,
+  "primary_base_passes": 0,
+  "primary_base_status_counts": {
+    "unassessed_truth_and_bank_support": 4320
+  },
+  "profiles": 540,
+  "score_controls_passed": true,
+  "seed_namespace": "age-refocus-bootstrap-20261002",
+  "source_bindings": {
+    "docs/age_historical_refocus_protocol.md": {
+      "bytes": 13860,
+      "sha256": "0b257922f5f7de72fa9c2a033fae0ac3c89b72e0b0e5d0da69f2db015adb4d53"
+    },
+    "scripts/analyze_age_historical_refocus.py": {
+      "bytes": 21971,
+      "sha256": "32e367e064c33a7b452864988124c28f7c7c7d8a87b297e9e81abe38a25e0c89"
+    },
+    "scripts/analyze_age_recovery.py": {
+      "bytes": 46083,
+      "sha256": "29eb47b313e0552fbe93441fb242761439c0b4157a07e05c6b711b94f33551a8"
+    },
+    "src/galaxias_model/age_historical_refocus.py": {
+      "bytes": 26523,
+      "sha256": "76af96441b32e407aa61c2ec82c1cd6d591e13badf3c33fc6ec8376cc9c44672"
+    },
+    "src/galaxias_model/age_recovery_observation.py": {
+      "bytes": 10927,
+      "sha256": "39a0b364eb412ed0c102f8271251baa3d142c28f0da006c9ac673a3f71d8a8f9"
+    },
+    "src/galaxias_model/age_recovery_scores.py": {
+      "bytes": 26149,
+      "sha256": "92384464a0ec7e87b5ba7270fc39a188d555ed9c69a8179bd0cf8f7638d85b97"
+    },
+    "src/galaxias_model/age_refocus_scores.py": {
+      "bytes": 23439,
+      "sha256": "8bd9366271aec50b6162a8dbd98d7922be8088e8a8dfa6cbd77ffcaf5dcf0c53"
+    }
+  },
+  "started_utc": "2026-10-02T02:20:05.416237+00:00",
+  "status": "STOP_BEFORE_HISTORICAL_COMPARISON",
+  "strata": 40
+}

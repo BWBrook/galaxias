@@ -1,0 +1,22 @@
+{
+  "status": "verified",
+  "production_output_files": 1555,
+  "source_files": 85,
+  "run_manifest": {
+    "bytes": 231655,
+    "sha256": "ea6bc8df256d3bc13cbe50e76db8d48ef971ab1705a6c85fc32a1ef290ee2146"
+  },
+  "analysis_receipt": {
+    "bytes": 1334,
+    "sha256": "05dd1c8ff89a66cf8ace58301cab9313e1c98398a64658489437102c69b83622"
+  },
+  "summary_receipt": {
+    "bytes": 1284,
+    "sha256": "6733a02b0990ebc0eeb07559b436dc590eb4f5828ef2f85a6f505fd40ac30176"
+  },
+  "verification": {
+    "bytes": 814,
+    "sha256": "cc8ff8bddb21b81029e8205f211223abe8e18cb7ae282ba4fab0a7664d311e87"
+  },
+  "note": "Local retrieved production, analysis and readout hashes match completed remote manifests; no simulation rerun."
+}

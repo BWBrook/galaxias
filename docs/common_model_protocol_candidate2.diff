@@ -1,0 +1,265 @@
+--- candidate1/common_model_protocol.md
++++ candidate2/common_model_protocol.md
+@@ -1,9 +1,9 @@
+ # Common-model comparison and abundance-dependent detection
+ 
+-Date: 2026-09-18. Version: review candidate 1. Scientific execution has not begun.
++Date: 2026-09-18. Version: review candidate 2. Scientific execution has not begun.
+ 
+ Barry authorised autonomous progress on the direction discussed in Correspondence
+-thread 31, including Fable's proposal #166. This document makes the choices
++thread 31, including Fable's proposal #166 and review #243. This document makes the choices
+ concrete for Fable's pre-run review. That review precedes scientific replay or
+ new-model simulation; implementation and synthetic unit tests may proceed.
+ After review, freeze the accepted text and implementation hashes before dispatch.
+@@ -17,7 +17,8 @@
+ 
+ Deliver a verified frozen-history detection replay, a comparison of explicit
+ restrictions under four classes of structure, and conditional overshoot-removal
+-contrasts. Report compatible examples, unresolved cases, and cases where none
++contrasts. The extraction class is explicitly **minimum dated removals** and
++does not test the broader conservation-removal hypothesis. Report compatible examples, unresolved cases, and cases where none
+ was found at the declared search resolution. A failed finite search does not
+ prove a mechanism necessary. No posterior family weights, empirical extinction
+ probability, universal historical-adequacy threshold or publication decision
+@@ -153,7 +154,8 @@
+ that the climbing index is proportional to comparable abundance over the two
+ years; neither assumption is verified by the few museum lots. This contrast
+ remains a demographic pattern because N changes across restrictions. It is
+-**not** a forcing-only QC check. Report original dominance levels descriptively.
++**not** a forcing-only QC check. Report original dominance levels descriptively
++and CT005 pass fractions separately by restriction and configuration.
+ 
+ A history's early-pattern indicator requires: presence in both compartments in
+ all pre-flood years 1965–1971; a lake boom peak in 1975–1980 above both pre-flood
+@@ -167,14 +169,87 @@
+ PR009*PR039, and transports the same capacities into Oberon, Strathgordon and
+ Pedder without area scaling. Known founders and CT011 constrain those assumed
+ products; they do not independently estimate historical Pedder capacity.
+-Therefore new primary historical selection excludes CT011/12 count penalties.
+-Run the old insurance scenarios as separately labelled conditional checks,
+-including establishment/recruitment timing, but do not use them to certify the
+-historical count scale. Retain the current capacity-product sampling distribution
+-for comparability and report effective lake/refuge capacities; do not interpret
+-PR039 separately. No invented area multiplier or fixed scale is introduced.
+-Site-specific capacity modelling is outside this tranche. This decision and
+-its effect on biological screening are explicit subjects of Fable's review.
++Therefore new primary historical selection excludes CT011/12 count penalties,
++but restores a binary intrinsic-viability requirement V from the two existing
++deterministic insurance scenarios. For each new source require:
++
++- Oberon N_total > 0 at every annual state from its first founder addition
++  through 2012, N_total(2012) greater than the total founders added (34 in the
++  current scenario), and first juvenile year no later than 1997.
++- Strathgordon no juveniles in 2001–2007, juveniles present in 2008, and positive
++  total population in 2012. The pre-2008 condition is imposed by the spawn
++  schedule and is a consistency check, not independent evidence of fit.
++
++Cache these diagnostics once per exact nuisance/scenario source, including all
++annual states needed for the checks. The old cached endpoint projections alone
++cannot certify continuous persistence; do not infer missing diagnostics from
++them or modify the archived cache. These deterministic checks use the same
++baseline scenarios across restrictions and configurations; environmental noise
++and historical removals are not added to insurance scenarios. Define
++I_early = V * I_historical_patterns, with CT004 also required at source level.
++Keep V and each historical component separately visible. V-failing proposals
++retain their identities and failure diagnostics, receive W=0 and cannot be
++parents or retained candidates. Do not replace them with extra proposals; a
++wave with no viable local parents uses its allocated local slots as global draws.
++There is no deterministic historical-trajectory gate.
++
++This is a growth/persistence screen without fitted count penalties, not literally
++scale-free: founder counts and transported capacities still enter. It filters
++intrinsically poor establishment scenarios but does not guarantee a viable or
++large historical refuge. Founders enter the insurance lake; growth there can
++coexist with very small K_R. Retain the current capacity-product distribution;
++no invented area multiplier or hard lower refuge-capacity cutoff is introduced.
++Site-specific capacity modelling is outside this tranche.
++
++For all proposals and validated witnesses report K_L, K_R, PR011, K_R/PR011,
++PR033 and realised annual N_R by restriction, configuration, search seed and q
++profile. Flag K_R<20 as a declared diagnostic, not empirical inadequacy. For each
++compatibility cell report witnesses with K_R<20 and K_R>=20 separately; label
++support found only below 20 as **low-refuge-capacity-dependent support**. Also
++show retained PR033 distributions so upsurge-only or weak-habitat witnesses are
++visible. Capacity and PR033 are not separately identified biological estimates.
++
++### Prospective habitat-only observation reference
++
++R_H has zero direct refuge exposure, but its abundance is not determined by
++K_R alone. In the deterministic annual map the resident refuge total is
++X_R/(1 + PR011*X_R/K_R), followed by lake immigrants. X_R includes survivor
++terms and recruitment from both compartments, whose spawn quality depends on
++habitat. Habitat-driven lake-to-refuge movement also remains. Thus K_R is a
++density-dependence scale, not an equilibrium count; the resident term saturates
++at K_R/PR011, and immigration can add to it. Demographic stochasticity and
++nonlinear density dependence further preclude an exact R_H prediction from
++(K_R,q) alone (`src/galaxias_model/simulation.py`, `_advance_pedder_state`).
++
++Before simulation record the analytic **constant-refuge observation reference**:
++N_R=n at every observation, N_L=0, no removals, and early/viability indicators
++set to one solely for this calculation. With seven positives in the common
++model (section 4), L_ref(n,q)=[1-(1-q)^n]^7*(1-q)^(5*n).
++This reference intentionally omits the historical boom and other dynamics; it
++is not itself a compatible R_H trajectory. Its homogeneous maximum is at
++n*=log(5/12)/log(1-q). The late-miss factor alone is (1-q)^(5*n), not the full
++likelihood. The thirteen-record replay reference instead has exponent 6 for
++positives and optimum log(5/11)/log(1-q).
++
++Tabulate the reference over n={1,3.75,10,20,50,70,100,200} and all four q values,
++including the prescribed shared-quality mixture. It can be plotted against a
++capacity axis only under the explicit simplifying assumption n=K_R. Compare
++new R_H trajectories with these count/detection predictions after the run;
++agreement would expose observation/scale sensitivity, not prove habitat caused
++or could not cause extinction. Neither this reference nor V closes the remaining
++small-refuge loophole; capacity-stratified reporting makes it visible.
++
++The pre-run table is `data/common_model/constant_refuge_observation_reference.csv`,
++reproducible with `uv run python scripts/tabulate_detection_reference.py --output
++data/common_model/constant_refuge_observation_reference.csv`. This is analytic
++evaluation only; no ecological trajectory has been simulated for it.
++
++| q | Homogeneous optimum constant refuge n (14-record reference) |
++|---|---:|
++| .005 | 174.656 |
++| .02 | 43.334 |
++| .05 | 17.068 |
++| .20 | 3.923 |
+ 
+ ## 4. One-at-a-time structural comparisons
+ 
+@@ -185,7 +260,7 @@
+ | Base | common forcing/gating, demographic noise, stage-neutral biotic mortality, no explicit removals |
+ | Environmental survival | base plus annual shared juvenile survival Beta(mu*kappa,(1−mu)*kappa), mu=PR001; rho=1/(kappa+1) is .02 or .10 |
+ | Juvenile climbing | base with juvenile climbing mortality hazard doubled; adult climbing hazard and movement retain the base coefficients |
+-| Dated removal | base with the two confirmed-date extraction events below; 1996 allocation adult-first or juvenile-first |
++| Minimum dated removals | base with the two confirmed-date extraction events below; 1996 allocation adult-first or juvenile-first; does not test the broader removal hypothesis |
+ 
+ The environmental distribution preserves mean juvenile survival, not expected
+ population size. Annual draws are independent through time and shared across
+@@ -199,30 +274,43 @@
+ R_T remain pure zero-climbing restrictions. It affects mortality only and does
+ not silently double movement response. It is not an egg-predation model.
+ 
+-First removal comparison uses the strict confirmed-date subset: one **adult**
+-removed from Bonnet Bay Creek 1 on 4 February 1992, and four stage-unknown wild
+-fish removed in January 1996. The 1992 positive record occurs immediately before
+-that extraction; the 1996 positive condition occurs after January extraction,
+-reflecting the later March record. Both are before the annual demographic
+-transition. Explicitly: in 1992 observe the early-year state, remove one adult,
+-then transition; in 1996 remove four from the early-year state, evaluate the
+-positive-record probability on that post-removal state, then transition.
+-The latter observation is not evaluated on the unmodified N_R(1995).
+-Counts insufficient for documented extraction make the history
+-incompatible; never silently reduce the observed removal or create fish.
+-For 1996 use adult-first versus juvenile-first with spill to the other stage
+-only when required. These are alternative allocations, not guaranteed bounds
+-on long-term effect. Remove from the refuge compartment in both cases.
+-
+-This deliberately omits the incomplete 1990–1991 extraction history and the
+-additional undated founder. Hamr documents captive deaths and collections and
+-18 releases by November 1991, but release dates and overlapping captivity
+-accounts do not supply an exact extraction ledger. The comparison is a minimum
+-confirmed-date sensitivity, not a test of all conservation impacts. Captive-born
+-juveniles are not additional wild removals. May 1997 is a release date for three
+-survivors, not an extraction date. Placing January 1996 extraction after the
+-March detection is not an admissible “late” timing scenario. A broader annual
+-window schedule may be added only as an explicit pre-run amendment after review.
++Use the strict confirmed-date subset: one **adult** removed from Bonnet Bay
++Creek 1 on 4 February 1992, and four stage-unknown wild fish removed in January
++1996. In 1992 observe the early-year state, remove one adult, then transition.
++In 1996 evaluate a January positive on the pre-removal early-year state, remove
++four, evaluate the March positive on the post-removal state, then transition.
++The March probability is not evaluated on the unmodified N_R(1995). This annual
++approximation has no intervening January–March demographic transition.
++Counts insufficient for documented extraction make the history incompatible;
++never silently reduce the observed removal or create fish. For 1996 compare
++adult-first versus juvenile-first, spilling to the other stage only when
++required. These allocations are not guaranteed bounds on long-term effect.
++Remove from the refuge compartment in both cases.
++
++Use both January and March 1996 positive records in **all new-model
++configurations**, including no-removal configurations, so comparisons share the
++same evidence. They have the same state when no extraction is imposed. The
++common model therefore has 14 records: seven positives and seven negatives;
++the January and March positives share one 1996 quality block. Conditional on
++state and quality, event outcomes are independent, a declared observation
++assumption. q is now per model count unit per specified record, with equal q for
++the two 1996 events despite unknown effort. This does not establish measured
++per-fish detection. The archived replay retains its original 13-record bridge
++and may not be ranked against the new 14-record likelihood as a model contest.
++
++Every table, plot legend and results section must call this arm **minimum dated
++removals** and state that it **does not test the broader removal hypothesis**.
++It omits the substantial 1990–1991 Bonnet Bay collections highlighted in Fable's
++review (20 wild founders in the proposed window reconstruction), captive losses,
++and other incompletely dated extractions. A null contrast cannot support
++“removals did not matter”. This accepts Fable's explicit narrow-scope alternative
++to adding the bounded-window arm, preserving the six-configuration budget.
++Hamr's 1991 release group includes an immature fish; an all-adult window
++allocation would itself require qualification. Captive-born juveniles are not
++additional wild removals. May 1997 is a release date for three survivors, not an
++extraction date. A broader window-removal comparison remains outside this
++tranche. Evidence: `literature/pedder/hamr_1992_pedderensis_report.md`,
++`docs/terminal_history_evidence_followup.md`, and Correspondence #243.
+ 
+ ## 5. Search, validation and interpretation
+ 
+@@ -241,10 +329,12 @@
+ Eight primary profiles are the four q values crossed with homogeneous and
+ shared quality. Independent-quality mixtures are scored as diagnostics at all
+ sources but do not create another search. Rank by mean joint weight
+-`W = I(early patterns) * L(binary records | history,q)`; no weight-five score or
+-nuisance variance can deflate it. If sampled W is zero, refocusing tie-breaks use
++`W = V * I(historical early patterns) * L(binary records | history,q)`; no weight-five score or
++nuisance variance can deflate it. Among V-passing sources with sampled W zero, refocusing tie-breaks use
+ early-pattern pass fraction, then binary-record likelihood, then source ID.
+-All histories enter denominators. No deterministic historical gate is used.
++All histories enter denominators for viable sources; a source failing V has
++W=0 by definition and does not consume stochastic histories. Saved runs are
++not reassigned to extra search. No deterministic historical gate is used.
+ 
+ Per configuration/restriction/seed retain 20 sources per primary profile for
+ 256 fresh refinement histories; after refinement freeze five per profile for
+@@ -258,7 +348,17 @@
+ P(I_early=1) in {.50,.80,.95} and mean same-history joint weights
+ E[W]=E[I_early * L_binary] in {1e-6,1e-4,1e-2}.
+ These are transparent numerical criteria, not empirical adequacy standards.
+-Report continuous values as well as the grid. A compatible witness requires an
++Read the grid only within a fixed q, observation representation and
++configuration; absolute joint-weight cutoffs are not comparable across q.
++Report continuous values as well as the grid. For every validated source also
++report delta_log_W = log(E[W_source]) minus the largest validated log(E[W])
++across restrictions and search seeds at the **same q, observation representation
++and configuration**. This descriptive reference does not reselect sources,
++change witness criteria, estimate model probabilities or support cross-q model
++ranking. An unsupported source has delta=-inf if the reference is finite; if
++all sources have no observed support the reference is undefined. Report the
++reference source identity and MC precision; the observed maximum is noisy and
++its normalisation does not remove selection uncertainty. A compatible witness requires an
+ independently validated source above both cutoffs at that same source with its approximate lower
+ 95% MC bounds above them and the joint-weight precision criteria below. A grid
+ cell without a witness is “not found at cap”; if candidate intervals straddle
+@@ -292,7 +392,8 @@
+ 1,966,080 refinement; 1,966,080 validation; and up to 491,520 R_J counterfactuals:
+ **6,978,880 histories**. An overall ceiling of 7.1 million allows small prescribed
+ smokes, not additional search waves. At most 57,600 deterministic insurance
+-checks (two per fresh source) are separate and unscored. End early on a source
++checks (two per fresh source) are separate and supply the binary viability
++screen; they carry no scored count penalty. End early on a source
+ identity, reproduction, physical-validity or implementation-contract failure.
+ 
+ Run on deep-server after live capacity checks, initially eight workers with
+@@ -307,8 +408,10 @@
+ 
+ Before dispatch, Fable is asked to review five consequential choices: the null
+ restrictions/gating; CT005's raw-count directional contrast; treatment of
+-transported insurance capacities; the strict dated removal subset and event
+-ordering; and the conditional compatibility criteria/compute envelope. Their
++transported insurance capacities and the viability screen; minimum dated
++removals and equal 1996 evidence across configurations; the qualified analytical
++reference and capacity diagnostics; and q-specific normalised reporting. The
++search and 7.1-million compute envelope remain unchanged. Their
+ review is advisory scientific scrutiny, not independent empirical validation.
+ Astra resolves routine implementation issues and reports any material departure
+ from the authorised scientific scope to Barry.

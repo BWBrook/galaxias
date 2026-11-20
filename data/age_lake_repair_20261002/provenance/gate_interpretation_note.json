@@ -1,0 +1,21 @@
+{
+  "additional_simulation": false,
+  "assessed_count_contract": "primary_base_assessed includes fixed-total controls; primary_base_passes excludes fixed-total controls.",
+  "bindings": {
+    "docs/age_historical_refocus_protocol.md": {
+      "bytes": 13860,
+      "sha256": "0b257922f5f7de72fa9c2a033fae0ac3c89b72e0b0e5d0da69f2db015adb4d53"
+    },
+    "scripts/analyze_age_historical_refocus.py": {
+      "bytes": 21971,
+      "sha256": "32e367e064c33a7b452864988124c28f7c7c7d8a87b297e9e81abe38a25e0c89"
+    }
+  },
+  "conclusion": "A full-score synthetic replicate pass is necessary but insufficient to validate the remaining-evidence historical comparison.",
+  "evidence_use": "The actual early Lake block is consumed once by W=(g/q)*exp(S_E); do not rescore it. Historical continuation must use remaining evidence once or return to original g and evaluate full joint score once.",
+  "gate_code_change": false,
+  "protocol_change": false,
+  "recorded_utc": "2026-10-02T01:53:52.429965+00:00",
+  "review": "Independent read-only methods check by age_recovery_scoring",
+  "stage": "generation running; prospective observation analysis not started"
+}

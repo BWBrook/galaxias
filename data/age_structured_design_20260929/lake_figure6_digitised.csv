@@ -1,0 +1,11 @@
+time_label,proposed_year,mean_per_site_trip,digitisation_halfwidth,error_bar_top_unclassified,x_native,bar_end_y_native,baseline_y_native,primary_count_block,status
+0,1975,0.6285908638647262,0.08,1.335476908959181,780,380.5,328.9241196198992,False,digitised_mean_not_raw_count
+0.5,unresolved,0.33374915566692037,0.08,0.46781375042621354,955,355.5,328.1158817775292,False,digitised_mean_not_raw_count
+1,1976,1.9033426393060193,0.08,2.902733254784386,1125,483.5,327.3307364449411,True,digitised_mean_not_raw_count
+2,1977,7.933630821299779,0.08,14.460139047990822,1295,977.5,326.54559111235307,True,digitised_mean_not_raw_count
+3,1978,1.3618470959199878,0.08,2.1174839027450942,1465,437.5,325.760445779765,True,digitised_mean_not_raw_count
+4,1979,2.5411530413533336,0.08,3.4064790620724072,1630,533.5,324.998392956959,True,digitised_mean_not_raw_count
+5,1980,0.6738178229814628,0.08,0.90538394120206,1800,379.5,324.213247624371,True,digitised_mean_not_raw_count
+8,1983,0,0,,,,,True,zero_catch_verified_in_plot_and_prose
+11,1986,0,0,,,,,True,zero_catch_verified_in_plot_and_prose
+14,1989,0,0,,,,,True,zero_catch_verified_in_plot_and_prose

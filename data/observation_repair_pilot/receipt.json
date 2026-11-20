@@ -1,0 +1,239 @@
+{
+  "scope": "completed_pilot_summary_no_simulation_no_reselection",
+  "input_bindings": {
+    "run_manifest.json": {
+      "bytes": 9569,
+      "sha256": "bf50507d86d488a7f319a0537920b3619fbcb16706db1158f0e662f7bbfb0729"
+    },
+    "parameter_values.csv.gz": {
+      "bytes": 854245,
+      "sha256": "c10ea81959aa9eb96b6cbe261c07bd4204a02d4047b6e39fead012ff68675cc1"
+    },
+    "deterministic_projections.csv.gz": {
+      "bytes": 326127,
+      "sha256": "f0d9aad96197d703f661599b6bb01a408eea531e03db7d40b0be21615b41d99b"
+    },
+    "stage_a_selection.csv": {
+      "bytes": 2251221,
+      "sha256": "c934cbc9e819abeaa3f779ad119900a3449b1d4c5e69309b6057039868736ecb"
+    },
+    "stage_b_replicates.csv.gz": {
+      "bytes": 1338405,
+      "sha256": "6ebaefb42f7533fdd38d07689876b49c725689f73a036ba2dcf71da93a8c8bfb"
+    },
+    "stage_b_source_summary.csv": {
+      "bytes": 603245,
+      "sha256": "29893a54ed1e77cc5713b5b6c18190119c3f7713964575cd40b475ff02d7b392"
+    },
+    "validation_replicates.csv.gz": {
+      "bytes": 887543,
+      "sha256": "6dfb7d89cf431bed81b3b97284962a5f84cc9d6cb2362511649a6ae7fec5911d"
+    },
+    "validation_source_summary.csv": {
+      "bytes": 102910,
+      "sha256": "1e92bd2c3795bc4ce396cd01f77e25e3c5ca61ee0e96564ae9aa95b58bce918d"
+    }
+  },
+  "verified_counts": {
+    "prior_sources": 1000,
+    "deterministic_historical_runs": 1000,
+    "deterministic_intrinsic_runs": 2000,
+    "stage_b_union_sources": 349,
+    "stage_b_historical_runs": 6980,
+    "validation_union_sources": 55,
+    "validation_historical_runs": 5500
+  },
+  "source_validation_rows": 80,
+  "context_summary_rows": 4800,
+  "aggregation": "Originally selected source/profile rows only. Within each context every parameter source has equal weight. Both search and independent validation are reported. No cross-profile averaging or validation ranking.",
+  "conditional_history_physics": "Within each source normalise I(positive_records_compatible)*(1-p)^occupied_episodes using stable log weights. Average resulting source expectations equally. These are conditional process histories under experimental assumptions, not posterior parameter/model probabilities.",
+  "legacy_weighting": "baseline_current weighted physics use presence-only p=0 diagnostics, not an asserted legacy observation likelihood.",
+  "unsupported": "Zero sampled support yields infinite discrepancy and missing conditional physics; no floor or fabricated weights. n_supported and n_sources_with_value disclose coverage. Means of conditional physics exclude unsupported sources.",
+  "mc_warnings": "ESS <10 and largest weight share >0.2 diagnose Monte Carlo concentration, not biological fit. Largest-share warning is missing without sampled support; ESS warning includes zero-support sources.",
+  "raw_source_binding_record": [
+    {
+      "path": "src/galaxias_model/__init__.py",
+      "bytes": 2703,
+      "sha256": "141b5bf6770cb39fc59a0b3173ad1f361a3261daea1b44e26c9b6a13e20a6409"
+    },
+    {
+      "path": "src/galaxias_model/calibration.py",
+      "bytes": 43916,
+      "sha256": "74121bb980fc876a6d2fad45aa0b158b3b4c31d43621170ca6ddeb31ba6f26cf"
+    },
+    {
+      "path": "src/galaxias_model/io.py",
+      "bytes": 20269,
+      "sha256": "97f75f0d10d763aa8004dba2bf17868205ab9735620275d40f29cab5003e85a4"
+    },
+    {
+      "path": "src/galaxias_model/mechanism_interpretation.py",
+      "bytes": 58805,
+      "sha256": "e17efa13dd4a7db2f3a32cdf579fdc4c251bbc7f5c1cb08c07e7a0656e52fb9c"
+    },
+    {
+      "path": "src/galaxias_model/module5_counterfactual.py",
+      "bytes": 16297,
+      "sha256": "e8b2fad5203ff2da9396b629e0338d1a5b89cbd39508f457449a9cef6f216bd8"
+    },
+    {
+      "path": "src/galaxias_model/module5_execution_inspect.py",
+      "bytes": 10324,
+      "sha256": "158f971e0cd80b20fd86f95f053e8907aaaf3f249ece09261e7946011b1ed359"
+    },
+    {
+      "path": "src/galaxias_model/module5_factorial_extension.py",
+      "bytes": 21099,
+      "sha256": "e879bf5cccdb2dcc0e4f21af22c922e9a2a134c47a0b15fbfd330ed3da266398"
+    },
+    {
+      "path": "src/galaxias_model/module5_factorial_extension_audit.py",
+      "bytes": 24457,
+      "sha256": "227847399d2afe2e7723e3164fafabb00b2de9855550900852a95ed80126a04e"
+    },
+    {
+      "path": "src/galaxias_model/module5_interaction_stability.py",
+      "bytes": 27547,
+      "sha256": "ca0578c5553344c8aebf092800cf693aa035c42202f6ad1600887ba68d5f1719"
+    },
+    {
+      "path": "src/galaxias_model/module5_output_checks.py",
+      "bytes": 7548,
+      "sha256": "417219f3be0ea6258933cd45f66bd813162e1f2e62ffafef1824191a7a6551fd"
+    },
+    {
+      "path": "src/galaxias_model/module5_partitions.py",
+      "bytes": 2628,
+      "sha256": "c64591453594c4bf0e7345ba5004416ed327379e37dea94ee0cd4552b4563237"
+    },
+    {
+      "path": "src/galaxias_model/module5_production_summary.py",
+      "bytes": 21260,
+      "sha256": "e99a2c76c1cea4cd6484a5b2cbd8fa291eff8a2c10446246b4f5c75438c31014"
+    },
+    {
+      "path": "src/galaxias_model/module5_proposals.py",
+      "bytes": 6830,
+      "sha256": "505c1ba03a2af5e28039e223aaab5c3cc4064c9f90fab7378602e21a23dd883b"
+    },
+    {
+      "path": "src/galaxias_model/module5_rehearsal.py",
+      "bytes": 30481,
+      "sha256": "22b42cfffc65d71c20e0446bd7c1b697d86e52e9cd84a931a6fe163985847936"
+    },
+    {
+      "path": "src/galaxias_model/module5_smoke_inspect.py",
+      "bytes": 6557,
+      "sha256": "233a58f6c734724f065de8f58f8e806fc3d8e51d0db80dd00e3c16a95a5721fd"
+    },
+    {
+      "path": "src/galaxias_model/observation.py",
+      "bytes": 12309,
+      "sha256": "1a48a493cc656610a752d91676f3e8858fa4f46bc92c0810a2b522cb266b1ef4"
+    },
+    {
+      "path": "src/galaxias_model/observation_repair.py",
+      "bytes": 5790,
+      "sha256": "9dc9c69cf11c59c54c5c8433192baadd733e3b60ace96ed515e906d92d993fd2"
+    },
+    {
+      "path": "src/galaxias_model/review.py",
+      "bytes": 35054,
+      "sha256": "822d7e638cce0f026a8fbe859d278afd9d594a6675fee89c1582a0ac010a72b0"
+    },
+    {
+      "path": "src/galaxias_model/sampling.py",
+      "bytes": 9828,
+      "sha256": "1397b21a89767cc88069712ee012f072bd7f28cb69e302efa6eb882b81f4c613"
+    },
+    {
+      "path": "src/galaxias_model/scoring.py",
+      "bytes": 32295,
+      "sha256": "f94774169a2bc1aa3213a98a5004967210f7183dade82f80ee461318df937844"
+    },
+    {
+      "path": "src/galaxias_model/simulation.py",
+      "bytes": 18720,
+      "sha256": "531e1c597b2ada9a09c1fb47b462098149e3fe943aa37d96cde1cfe713d700c3"
+    },
+    {
+      "path": "src/galaxias_model/types.py",
+      "bytes": 5880,
+      "sha256": "bbb91a0a1e344c7e1b97d5ef5c10ce943dccf6789fc4924eb0229342dd0a6d75"
+    },
+    {
+      "path": "scripts/run_observation_repair_pilot.py",
+      "bytes": 16559,
+      "sha256": "424e85b5656524424325ac9be0255e6461fb300d017ac0f32d36c05ff7557fb5"
+    },
+    {
+      "path": "uv.lock",
+      "bytes": 60617,
+      "sha256": "5d6561c9a74c38eccbc35c6053c0819d36357f3331305058f863a66bb3ef148e"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 711,
+      "sha256": "50ad878825d26c693c7ede8fc97b7c2068c69594b924e1095772a7c48c374d9d"
+    },
+    {
+      "path": "docs/observation_repair_pilot.md",
+      "bytes": 11788,
+      "sha256": "0389e2f015ab16b0a3a1e7b0312b1b374016ae01e22c1db08d9067630c4fb1a2"
+    },
+    {
+      "path": "data/parameter_priors.csv",
+      "bytes": 18348,
+      "sha256": "0430990010becb5c1dbbad5a60a64ab87a754657afa4ac902914c101dde3e718"
+    },
+    {
+      "path": "data/model_family_parameter_map.csv",
+      "bytes": 23581,
+      "sha256": "eca7781b2b3c59232a0f3e0adb56569fa5a627daa5342b3d07da1f43d1ff13a0"
+    },
+    {
+      "path": "data/parameter_constraints.csv",
+      "bytes": 1232,
+      "sha256": "b4aa87f4d4972a287ecb68958033694d5535c1e8ddfaf3a46f4d70885d356816"
+    },
+    {
+      "path": "data/evidence_ledger.csv",
+      "bytes": 26228,
+      "sha256": "d7e030a3225e567504f86fc06b5cb5c943f6ff0db4cad4fce6c837fa69fac6ec"
+    },
+    {
+      "path": "data/calibration_targets.csv",
+      "bytes": 5529,
+      "sha256": "6726cd80d00b5e28db63f44837f4633485d0010f21f146201b4d303ea280d42c"
+    },
+    {
+      "path": "data/calibration_target_details.json",
+      "bytes": 3470,
+      "sha256": "4cddc990be7fd526ea3d1103c694c71c91b51b5f93c2d1f3fdd1be2d6d3f39d3"
+    },
+    {
+      "path": "data/scenario_definitions.json",
+      "bytes": 1385,
+      "sha256": "1fa42d3df26abe51af3cb34fdf0d31bda0ce106a2fc8bfb0ba3f9a739f689023"
+    }
+  ],
+  "summariser_binding": {
+    "path": "scripts/summarize_observation_repair_pilot.py",
+    "bytes": 18598,
+    "sha256": "de16a5618a97a72ec605898264b4749764e43f2b53350fe544c69a89e9248e1f"
+  },
+  "outputs": {
+    "source_validation.csv": {
+      "bytes": 68614,
+      "sha256": "29922155b1327b5f6fd43417280bd7568e0f24b8a6283eb125d6dd327ff6776a"
+    },
+    "context_summary.csv": {
+      "bytes": 684659,
+      "sha256": "c3d87a6413cc26c8195c45c72836d2cb812228b31e8a088a6e4b2e768e021537"
+    },
+    "selection_overlap.csv": {
+      "bytes": 910,
+      "sha256": "7b3600e29ca157dd0246c758468b0aadaa13852ca78ed874da1474898369d728"
+    }
+  }
+}

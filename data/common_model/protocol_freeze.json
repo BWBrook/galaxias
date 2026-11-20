@@ -1,0 +1,16 @@
+{
+  "status": "frozen",
+  "protocol": "docs/common_model_protocol.md",
+  "sha256": "c165e25bfa223cbb79ba00fce75f099c13979746b2d516ae06e93af5243879d8",
+  "bytes": 27189,
+  "signed_off": {
+    "thread_id": 31,
+    "message_id": 248,
+    "participants": [
+      "Barry",
+      "Fable"
+    ]
+  },
+  "recorded_utc": "2026-09-18T10:27:17.784001+00:00",
+  "note": "Candidate 2 text preserved byte-for-byte. Execution status is recorded outside the frozen protocol. Pre-run evidence:712000-history reconciliation and new-kernel serial/parallel agreement."
+}

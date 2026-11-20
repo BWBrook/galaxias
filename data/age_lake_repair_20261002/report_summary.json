@@ -1,0 +1,270 @@
+{
+  "bindings": {
+    "data/age_lake_repair_20261002/gate_summary/source_independence.csv": {
+      "bytes": 23879,
+      "sha256": "bd2513631f0f48fbab22d38eb97567f09084f0ca2296fe34b3ce4ca5cb9c7a8c"
+    },
+    "outputs/remote/age_lake_refocus_20261002/analysis/analysis_receipt.json": {
+      "bytes": 3148,
+      "sha256": "6c55e844ec6c5328a612dfff1f54cb42dfcf5453dcd5be9e20580e5dc1120387"
+    },
+    "outputs/remote/age_lake_refocus_20261002/analysis/base_gate_metrics.csv": {
+      "bytes": 6450195,
+      "sha256": "bcdf54ac6e61501738a9b9e67525e65a022b6aaa85979f89a76a665a6ae10103"
+    },
+    "outputs/remote/age_lake_refocus_20261002/analysis/weighted_composition.csv": {
+      "bytes": 2498793,
+      "sha256": "4dcd544862bb146e9afb14ea2197e2e2bb0f9e8a0dffcfd5338390ef8f220414"
+    }
+  },
+  "created_utc": "2026-10-02T02:32:54.272014+00:00",
+  "interpretation": "Descriptive diagnostics by model/index stratum and role. Counts of strata are not model-averaged probabilities. No endpoint recovered and no historical fit performed.",
+  "matched_campaign_diagnostics": [
+    {
+      "campaign": "both",
+      "law": "poisson",
+      "majority_weighted_loss_strata": 11,
+      "namespace": "truth",
+      "persisting_total_median_blank_strata": 0,
+      "persisting_total_median_le4_strata": 7,
+      "q_electro": 0.01,
+      "q_larvae": 0.01,
+      "strata": 40,
+      "timing": "mid",
+      "total_source_ess_max": 3.513803667567571,
+      "total_source_ess_min": 1.000000000321147
+    },
+    {
+      "campaign": "both",
+      "law": "poisson",
+      "majority_weighted_loss_strata": 13,
+      "namespace": "truth",
+      "persisting_total_median_blank_strata": 0,
+      "persisting_total_median_le4_strata": 9,
+      "q_electro": 0.1,
+      "q_larvae": 0.1,
+      "strata": 40,
+      "timing": "mid",
+      "total_source_ess_max": 1.8926139560728328,
+      "total_source_ess_min": 1.0
+    },
+    {
+      "campaign": "both",
+      "law": "poisson",
+      "majority_weighted_loss_strata": 13,
+      "namespace": "truth",
+      "persisting_total_median_blank_strata": 0,
+      "persisting_total_median_le4_strata": 10,
+      "q_electro": 1.0,
+      "q_larvae": 1.0,
+      "strata": 40,
+      "timing": "mid",
+      "total_source_ess_max": 1.4014773388041022,
+      "total_source_ess_min": 1.0
+    },
+    {
+      "campaign": "both",
+      "law": "gamma_quality",
+      "majority_weighted_loss_strata": 8,
+      "namespace": "truth",
+      "persisting_total_median_blank_strata": 0,
+      "persisting_total_median_le4_strata": 4,
+      "q_electro": 0.01,
+      "q_larvae": 0.01,
+      "strata": 40,
+      "timing": "mid",
+      "total_source_ess_max": 7.109074150466823,
+      "total_source_ess_min": 1.0211540595442423
+    },
+    {
+      "campaign": "both",
+      "law": "gamma_quality",
+      "majority_weighted_loss_strata": 11,
+      "namespace": "truth",
+      "persisting_total_median_blank_strata": 0,
+      "persisting_total_median_le4_strata": 5,
+      "q_electro": 0.1,
+      "q_larvae": 0.1,
+      "strata": 40,
+      "timing": "mid",
+      "total_source_ess_max": 6.856605359386717,
+      "total_source_ess_min": 1.0140504821080178
+    },
+    {
+      "campaign": "both",
+      "law": "gamma_quality",
+      "majority_weighted_loss_strata": 10,
+      "namespace": "truth",
+      "persisting_total_median_blank_strata": 0,
+      "persisting_total_median_le4_strata": 5,
+      "q_electro": 1.0,
+      "q_larvae": 1.0,
+      "strata": 40,
+      "timing": "mid",
+      "total_source_ess_max": 6.805261761790216,
+      "total_source_ess_min": 1.0133732949476264
+    },
+    {
+      "campaign": "both",
+      "law": "poisson",
+      "majority_weighted_loss_strata": 7,
+      "namespace": "bank",
+      "persisting_total_median_blank_strata": 1,
+      "persisting_total_median_le4_strata": 0,
+      "q_electro": 0.01,
+      "q_larvae": 0.01,
+      "strata": 40,
+      "timing": "mid",
+      "total_source_ess_max": 3.714087286641905,
+      "total_source_ess_min": 1.0
+    },
+    {
+      "campaign": "both",
+      "law": "poisson",
+      "majority_weighted_loss_strata": 10,
+      "namespace": "bank",
+      "persisting_total_median_blank_strata": 2,
+      "persisting_total_median_le4_strata": 0,
+      "q_electro": 0.1,
+      "q_larvae": 0.1,
+      "strata": 40,
+      "timing": "mid",
+      "total_source_ess_max": 1.047191820460189,
+      "total_source_ess_min": 1.0
+    },
+    {
+      "campaign": "both",
+      "law": "poisson",
+      "majority_weighted_loss_strata": 10,
+      "namespace": "bank",
+      "persisting_total_median_blank_strata": 5,
+      "persisting_total_median_le4_strata": 0,
+      "q_electro": 1.0,
+      "q_larvae": 1.0,
+      "strata": 40,
+      "timing": "mid",
+      "total_source_ess_max": 1.0001008490330192,
+      "total_source_ess_min": 1.0
+    },
+    {
+      "campaign": "both",
+      "law": "gamma_quality",
+      "majority_weighted_loss_strata": 5,
+      "namespace": "bank",
+      "persisting_total_median_blank_strata": 0,
+      "persisting_total_median_le4_strata": 0,
+      "q_electro": 0.01,
+      "q_larvae": 0.01,
+      "strata": 40,
+      "timing": "mid",
+      "total_source_ess_max": 5.681371850529125,
+      "total_source_ess_min": 1.0016660861122548
+    },
+    {
+      "campaign": "both",
+      "law": "gamma_quality",
+      "majority_weighted_loss_strata": 5,
+      "namespace": "bank",
+      "persisting_total_median_blank_strata": 0,
+      "persisting_total_median_le4_strata": 0,
+      "q_electro": 0.1,
+      "q_larvae": 0.1,
+      "strata": 40,
+      "timing": "mid",
+      "total_source_ess_max": 4.924054722620246,
+      "total_source_ess_min": 1.0014200592280786
+    },
+    {
+      "campaign": "both",
+      "law": "gamma_quality",
+      "majority_weighted_loss_strata": 5,
+      "namespace": "bank",
+      "persisting_total_median_blank_strata": 0,
+      "persisting_total_median_le4_strata": 0,
+      "q_electro": 1.0,
+      "q_larvae": 1.0,
+      "strata": 40,
+      "timing": "mid",
+      "total_source_ess_max": 4.838433080310426,
+      "total_source_ess_min": 1.0013786228317187
+    }
+  ],
+  "primary_gate": {
+    "assessed": 0,
+    "eligible_poisson_gamma_rows": 2880,
+    "maximum_bank_loss_source_ess": 2.4480068225062595,
+    "maximum_bank_loss_sources": 7,
+    "maximum_coherent_truth_loss_sources": 12,
+    "maximum_truth_loss_source_ess": 3.722395485861358,
+    "passed": 0,
+    "rows": 4320
+  },
+  "primary_role_diagnostics": {
+    "bank": {
+      "lake_mean_reduced_strata": 33,
+      "majority_loss_source_ess": [
+        {
+          "cell_id": "A6_legacy_range_sensitivity_primary_plan_31_early_releases_R_J",
+          "index_stratum": "below_one",
+          "source_ess_loss": 1.00962050933345,
+          "total_source_ess": 1.027605607539754,
+          "weighted_loss": 0.991190501308009
+        }
+      ],
+      "majority_weighted_loss_strata": 1,
+      "persisting_total_median_le4_strata": 0,
+      "persisting_total_median_max": 476873.0,
+      "persisting_total_median_min": 17.0,
+      "raw_loss_sources_max": 7,
+      "raw_loss_sources_min": 0,
+      "source_ess_reduced_strata": 39,
+      "strata": 40,
+      "total_source_ess_max": 16.851060564730417,
+      "total_source_ess_median": 5.298036484765125,
+      "total_source_ess_min": 1.0250372142021065,
+      "weighted_loss_decreased_strata": 14,
+      "weighted_loss_increased_strata": 9,
+      "weighted_loss_unchanged_strata": 17
+    },
+    "truth": {
+      "lake_mean_reduced_strata": 39,
+      "majority_loss_source_ess": [],
+      "majority_weighted_loss_strata": 0,
+      "persisting_total_median_le4_strata": 0,
+      "persisting_total_median_max": 76483.0,
+      "persisting_total_median_min": 25.0,
+      "raw_loss_sources_max": 14,
+      "raw_loss_sources_min": 0,
+      "source_ess_reduced_strata": 39,
+      "strata": 40,
+      "total_source_ess_max": 39.29696507851211,
+      "total_source_ess_median": 10.324515952779882,
+      "total_source_ess_min": 2.86500961159082,
+      "weighted_loss_decreased_strata": 17,
+      "weighted_loss_increased_strata": 14,
+      "weighted_loss_unchanged_strata": 9
+    }
+  },
+  "secondary_base_assessment": {
+    "terminal_age1plus10": {
+      "assessed": 0,
+      "passed": 0,
+      "rows": 4320
+    },
+    "terminal_alive": {
+      "assessed": 0,
+      "passed": 0,
+      "rows": 4320
+    },
+    "terminal_pair": {
+      "assessed": 0,
+      "passed": 0,
+      "rows": 4320
+    },
+    "terminal_same_compartment_pair": {
+      "assessed": 0,
+      "passed": 0,
+      "rows": 4320
+    }
+  }
+}

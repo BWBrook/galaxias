@@ -1,0 +1,35 @@
+{
+  "status": "complete",
+  "phase": "refine",
+  "phase_manifest": {
+    "bytes": 9269,
+    "sha256": "4a56b3b53ed2524bc4bef27438b4c0e3482e662e863552a3871d6a40c666b4ce"
+  },
+  "analysis_source": {
+    "bytes": 12255,
+    "sha256": "4fb309d3774a6230263e1d78819cece5f9832221df0ff2b835860ab777f2e2ad"
+  },
+  "previous_membership": {
+    "bytes": 246801,
+    "sha256": "7871b2bca977000f99e3e8ebb1d58fbd14d899f3cc4dc817e0b267e3c20c067b"
+  },
+  "final_membership": null,
+  "outputs": {
+    "verified_sources.csv": {
+      "bytes": 3627908,
+      "sha256": "af70972f18f0594694490cb367788763dfd6e3cc308a2caf57aa814e17d1d06e"
+    },
+    "selection_membership.csv": {
+      "bytes": 132659,
+      "sha256": "e88a89a3a831ff460789172251e348f3ea0f5f3558d3567c31b3d8c7cd2aa785"
+    },
+    "candidates.csv": {
+      "bytes": 20844,
+      "sha256": "c46e87007018091548fed78bcc6fa91b1a1dfe9157cc82f47c3b7658840a230f"
+    },
+    "context_summary.csv": {
+      "bytes": 162348,
+      "sha256": "c2b4add0127975ea5a931b8d5d20aefb5c3bcc1027109a3bbd75f3cf60355828"
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "status": "complete",
+  "scope": "descriptive paired early-lake overshoot endpoints",
+  "analysis_script": {
+    "bytes": 25680,
+    "sha256": "d3fc332d41980d91a4b04b0eb6aaf6e044968a792af90ba5f197d663adca8e01"
+  },
+  "inputs": {
+    "validate_manifest": {
+      "bytes": 9765,
+      "sha256": "7589024a667d40626f510007908bdfa034afc7b08c93965b88279a5784da369f"
+    },
+    "counterfactual_manifest": {
+      "bytes": 9802,
+      "sha256": "cb125c591b1b45f2ba52780939e0166d04c62f99899bd09cab6950dc07db7d07"
+    },
+    "factual_raw_histories": {
+      "bytes": 83833086,
+      "sha256": "28e1bf73692733cabef35c189f782c0ec4d3edb07451220dea471d43451c046d"
+    },
+    "counterfactual_raw_histories": {
+      "bytes": 33033900,
+      "sha256": "d516f08eff8c045f2644c72c47626c5d169dbc25a0b7ff0a0965e945a035d489"
+    },
+    "validated_source_profiles": {
+      "bytes": 56021870,
+      "sha256": "87fb4e76a2af26985af42039006607d1d87928b14b10460c2058752414688f10"
+    },
+    "analysis_receipt": {
+      "bytes": 3292,
+      "sha256": "2af7d300eba9ddba64acd18961a237920909b010a9846245b52c383c56901944"
+    }
+  },
+  "new_histories": 0,
+  "weighting": "fixed factual 14-record joint weights times factual early_patterns_pass and removals_valid; no counterfactual likelihood or reselection",
+  "compatibility_slice": "R_J profiles joined from hash-verified validated_source_profiles; early lower95 >= 0.5, joint lower95 >= 1e-6, and existing joint_mc_qualified",
+  "outputs": {
+    "early_lake_contrast_summary.csv": {
+      "bytes": 20044,
+      "sha256": "df48eabaf12d2e18f9ed37ecc47931a3586edcb69a98a76a9c16c2b5352547b6"
+    },
+    "early_lake_contrasts.csv": {
+      "bytes": 4213692,
+      "sha256": "89d5de5444b1b7976c3c97a0109caa58e77752181c9f4b5139eb3fad8146c25f"
+    },
+    "early_lake_findings.md": {
+      "bytes": 1869,
+      "sha256": "2346c241529457a3d1cf3cc039fee499ca585e77935efb838ce54f23b2d107da"
+    },
+    "early_lake_pairing_checks.json": {
+      "bytes": 542,
+      "sha256": "c2d024eee64e0c13379eb3427408346714e072d07e573038248be932adb9b0c6"
+    },
+    "early_lake_profile_weights.csv": {
+      "bytes": 533635,
+      "sha256": "c86728fd1954363d2609913e5b8808920233a5f9f3ee6f1b5462f46fb787e7ff"
+    }
+  },
+  "checks": {
+    "paired_formula": {
+      "status": "passed",
+      "profile": "common-production|20260918|base|R_J|w1|s0059",
+      "endpoint": "lake_N_L_1980"
+    },
+    "invalidity": {
+      "status": "passed",
+      "profile": "common-production|20260918|minimum_dated_adult_first|R_J|w1|s0065",
+      "positive_support_count": 2
+    },
+    "zero_effect": {
+      "status": "passed",
+      "profile": "common-production|20260918|base|R_J|w1|s0059",
+      "endpoint": "lake_N_L_1983"
+    }
+  }
+}

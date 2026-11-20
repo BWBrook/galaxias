@@ -1,0 +1,61 @@
+{
+  "status": "candidate_qualified_for_review_not_dispatch",
+  "completed_utc": "2026-09-27T04:45:15.006398+00:00",
+  "head": "81e37202f6322e37ac7f1b0070402b76b7967a82",
+  "new_scientific_comparison_histories": 0,
+  "qualification": {
+    "attempts": 2,
+    "stochastic_path_executions": 96,
+    "deterministic_fixed_point_executions": 12,
+    "audit_single_updates": 3,
+    "total_conservatively_charged_executions": 111,
+    "ceiling": 128,
+    "unit_test_fixtures_separate": true,
+    "serial_parallel_exact": true,
+    "max_absolute_fixed_point_error": 9.094947017729282e-13,
+    "requalification_reason": "diagnostic naming clarified; no numerical change"
+  },
+  "tests": {
+    "fast_check": {
+      "passed": 267,
+      "slow_deselected": 5,
+      "state": "before final diagnostics-only rename"
+    },
+    "focused_final": {
+      "passed": 26
+    },
+    "new_files_compiled": true,
+    "new_files_lf_checked": true,
+    "csv_shape_checked": true,
+    "source_output_hashes_verified": true
+  },
+  "environment": {
+    "python": "3.14.4",
+    "numpy": "2.4.6",
+    "system": "Darwin",
+    "architecture": "arm64"
+  },
+  "protected_files_sha256": {
+    "src/galaxias_model/common_model.py": "2031373352dbdb55b30db571dc7b861e67f804fc0b5709ef99233f73e8e463c4",
+    "src/galaxias_model/mate_guard.py": "7da473275457d9970c7b6a748e4ac92043c96ccdd14266142fb6e02827bdb332",
+    "src/galaxias_model/recruitment_demography.py": "332f7ab7c5b27abecbbc9dbe8bd4bfd1873e3743d8949fc707f102ee952f3ef5",
+    "src/galaxias_model/recruitment_scenarios.py": "624423c0983441a55d925399444c6a217c20e2f9e4e3b37975e7b803270b528a"
+  },
+  "package_manifest_sha256": "6e9916ac3ae96ccd164621bb6fdc0a7e3de8093f065561bf99a86dd82db9d7ff",
+  "prior_conservative_history_charge": 5320368,
+  "previous_repair_executions_separate": 3818,
+  "proposed_future_site_histories": 1597248,
+  "conservative_sum_if_future_allocation_approved": 6921545,
+  "standing_ceiling": 7100000,
+  "new_remote_dispatch": false,
+  "new_search": false,
+  "commit_push_publish": false,
+  "pre_dispatch_work": [
+    "Fable scientific review",
+    "linked-site dated runner with transfer and holding identity",
+    "source-to-score compilation",
+    "Lake Figure 6 digitisation",
+    "synthetic observation/recovery controls",
+    "executable protocol and budget freeze"
+  ]
+}

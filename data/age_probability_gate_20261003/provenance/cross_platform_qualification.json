@@ -1,0 +1,27 @@
+{
+  "absolute_tolerance": 1e-10,
+  "compact_bytes_local_linux_exact": false,
+  "linux_serial_parallel_exact": true,
+  "local_linux_tolerance_qualified": true,
+  "manifests": {
+    "outputs/age_probability_gate_20261003/local_smoke/run_manifest.json": {
+      "bytes": 12696,
+      "sha256": "e88e30299dbea6ab6c5377686bb912a3875b7023b15361dcaa2c649a17af2e7e"
+    },
+    "outputs/remote/age_probability_gate_20261003/smoke_parallel/run_manifest.json": {
+      "bytes": 12707,
+      "sha256": "a9dd745778147d3e8ba15e80c7eb87463ddaa46908af61443e1cd02b520b9ce6"
+    },
+    "outputs/remote/age_probability_gate_20261003/smoke_serial/run_manifest.json": {
+      "bytes": 12706,
+      "sha256": "2284fc2faa13d5aebe93c9f46470fcbef9d30a6a2eaababfecd54b7e5d190e43"
+    }
+  },
+  "maximum_absolute_difference": 2.9103830456733704e-11,
+  "nominal_site_history_qualification_charge": 288,
+  "numeric_comparisons": 416160,
+  "relative_tolerance": 1e-12,
+  "source_draws_local_linux_bytes_exact": false,
+  "status": "passed",
+  "verified_utc": "2026-10-03T07:30:09.191525+00:00"
+}

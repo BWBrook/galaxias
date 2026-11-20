@@ -1,0 +1,1203 @@
+{
+  "status": "mechanically_qualified",
+  "checks": {
+    "analytic_fixed_points": true,
+    "no_period_two_candidates": true,
+    "nonnegative_finite_stochastic": true,
+    "integer_stochastic": true,
+    "guard_prevents_recruitment": true,
+    "no_zero_singleton_rebound": true,
+    "serial_parallel_exact": true,
+    "source_hashes_unchanged": true,
+    "reference_tail_converged": true
+  },
+  "reference_equilibrium": {
+    "state": {
+      "J_L": 79.81843575418992,
+      "A_L": 55.872905027932944,
+      "J_R": 34.20790103750997,
+      "A_R": 23.945530726256976
+    },
+    "critical_recruits_per_adult": 1.2785714285714287,
+    "adult_fraction": 0.4117647058823529,
+    "adult_total": 79.81843575418992,
+    "positive": true,
+    "guard_consistent": true,
+    "effective_low_density_recruits_per_adult": 4.0
+  },
+  "reference_99_101_max_error": 1.853918334404625e-07,
+  "reference_99_101_within_1e8": false,
+  "reference_126_128_max_error": 3.7963587828926393e-10,
+  "neutral_cells": 423,
+  "neutral_paths": 1269,
+  "neutral_path_steps": 325682,
+  "neutral_classifications": {
+    "positive_fixed_point": 728,
+    "near_zero": 494,
+    "unresolved_at_cap": 47
+  },
+  "guard_inconsistent_positive_cells": 11,
+  "maximum_fixed_point_error": 3.9142292935394917e-16,
+  "founder_sensitivity_paths": 18,
+  "deterministic_paths_this_run": 1294,
+  "stochastic_unique_paths": 96,
+  "stochastic_executions": 192,
+  "stochastic_rows": 2304,
+  "stochastic_starting_states": [
+    {
+      "scenario": "lake_oberon",
+      "restriction": "R_J",
+      "seed": 2026092300,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "lake_oberon",
+      "restriction": "R_J",
+      "seed": 2026092301,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "lake_oberon",
+      "restriction": "R_J",
+      "seed": 2026092302,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "lake_oberon",
+      "restriction": "R_J",
+      "seed": 2026092303,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "lake_oberon",
+      "restriction": "R_J",
+      "seed": 2026092304,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "lake_oberon",
+      "restriction": "R_J",
+      "seed": 2026092305,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "lake_oberon",
+      "restriction": "R_J",
+      "seed": 2026092306,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "lake_oberon",
+      "restriction": "R_J",
+      "seed": 2026092307,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "lake_oberon",
+      "restriction": "R_J",
+      "seed": 2026092308,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "lake_oberon",
+      "restriction": "R_J",
+      "seed": 2026092309,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "lake_oberon",
+      "restriction": "R_J",
+      "seed": 2026092310,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "lake_oberon",
+      "restriction": "R_J",
+      "seed": 2026092311,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "lake_oberon",
+      "restriction": "R_J",
+      "seed": 2026092312,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "lake_oberon",
+      "restriction": "R_J",
+      "seed": 2026092313,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "lake_oberon",
+      "restriction": "R_J",
+      "seed": 2026092314,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "lake_oberon",
+      "restriction": "R_J",
+      "seed": 2026092315,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "lake_oberon",
+      "restriction": "R_J",
+      "seed": 2026092316,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "lake_oberon",
+      "restriction": "R_J",
+      "seed": 2026092317,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "lake_oberon",
+      "restriction": "R_J",
+      "seed": 2026092318,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "lake_oberon",
+      "restriction": "R_J",
+      "seed": 2026092319,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "lake_oberon",
+      "restriction": "R_J",
+      "seed": 2026092320,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "lake_oberon",
+      "restriction": "R_J",
+      "seed": 2026092321,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "lake_oberon",
+      "restriction": "R_J",
+      "seed": 2026092322,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "lake_oberon",
+      "restriction": "R_J",
+      "seed": 2026092323,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "lake_oberon",
+      "restriction": "R_J",
+      "seed": 2026092324,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "lake_oberon",
+      "restriction": "R_J",
+      "seed": 2026092325,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "lake_oberon",
+      "restriction": "R_J",
+      "seed": 2026092326,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "lake_oberon",
+      "restriction": "R_J",
+      "seed": 2026092327,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "lake_oberon",
+      "restriction": "R_J",
+      "seed": 2026092328,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "lake_oberon",
+      "restriction": "R_J",
+      "seed": 2026092329,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "lake_oberon",
+      "restriction": "R_J",
+      "seed": 2026092330,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "lake_oberon",
+      "restriction": "R_J",
+      "seed": 2026092331,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "strathgordon",
+      "restriction": "R_J",
+      "seed": 2026092300,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "strathgordon",
+      "restriction": "R_J",
+      "seed": 2026092301,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "strathgordon",
+      "restriction": "R_J",
+      "seed": 2026092302,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "strathgordon",
+      "restriction": "R_J",
+      "seed": 2026092303,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "strathgordon",
+      "restriction": "R_J",
+      "seed": 2026092304,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "strathgordon",
+      "restriction": "R_J",
+      "seed": 2026092305,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "strathgordon",
+      "restriction": "R_J",
+      "seed": 2026092306,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "strathgordon",
+      "restriction": "R_J",
+      "seed": 2026092307,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "strathgordon",
+      "restriction": "R_J",
+      "seed": 2026092308,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "strathgordon",
+      "restriction": "R_J",
+      "seed": 2026092309,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "strathgordon",
+      "restriction": "R_J",
+      "seed": 2026092310,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "strathgordon",
+      "restriction": "R_J",
+      "seed": 2026092311,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "strathgordon",
+      "restriction": "R_J",
+      "seed": 2026092312,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "strathgordon",
+      "restriction": "R_J",
+      "seed": 2026092313,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "strathgordon",
+      "restriction": "R_J",
+      "seed": 2026092314,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "strathgordon",
+      "restriction": "R_J",
+      "seed": 2026092315,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "strathgordon",
+      "restriction": "R_J",
+      "seed": 2026092316,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "strathgordon",
+      "restriction": "R_J",
+      "seed": 2026092317,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "strathgordon",
+      "restriction": "R_J",
+      "seed": 2026092318,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "strathgordon",
+      "restriction": "R_J",
+      "seed": 2026092319,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "strathgordon",
+      "restriction": "R_J",
+      "seed": 2026092320,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "strathgordon",
+      "restriction": "R_J",
+      "seed": 2026092321,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "strathgordon",
+      "restriction": "R_J",
+      "seed": 2026092322,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "strathgordon",
+      "restriction": "R_J",
+      "seed": 2026092323,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "strathgordon",
+      "restriction": "R_J",
+      "seed": 2026092324,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "strathgordon",
+      "restriction": "R_J",
+      "seed": 2026092325,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "strathgordon",
+      "restriction": "R_J",
+      "seed": 2026092326,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "strathgordon",
+      "restriction": "R_J",
+      "seed": 2026092327,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "strathgordon",
+      "restriction": "R_J",
+      "seed": 2026092328,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "strathgordon",
+      "restriction": "R_J",
+      "seed": 2026092329,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "strathgordon",
+      "restriction": "R_J",
+      "seed": 2026092330,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "strathgordon",
+      "restriction": "R_J",
+      "seed": 2026092331,
+      "initial_state": {
+        "J_L": 0.0,
+        "A_L": 0.0,
+        "J_R": 0.0,
+        "A_R": 0.0
+      },
+      "initialization_rounding": false
+    },
+    {
+      "scenario": "historical_lake",
+      "restriction": "R_H",
+      "seed": 2026092400,
+      "initial_state": {
+        "J_L": 80.0,
+        "A_L": 56.0,
+        "J_R": 34.0,
+        "A_R": 24.0
+      },
+      "initialization_rounding": true
+    },
+    {
+      "scenario": "historical_lake",
+      "restriction": "R_H",
+      "seed": 2026092401,
+      "initial_state": {
+        "J_L": 80.0,
+        "A_L": 56.0,
+        "J_R": 34.0,
+        "A_R": 24.0
+      },
+      "initialization_rounding": true
+    },
+    {
+      "scenario": "historical_lake",
+      "restriction": "R_H",
+      "seed": 2026092402,
+      "initial_state": {
+        "J_L": 80.0,
+        "A_L": 56.0,
+        "J_R": 34.0,
+        "A_R": 24.0
+      },
+      "initialization_rounding": true
+    },
+    {
+      "scenario": "historical_lake",
+      "restriction": "R_H",
+      "seed": 2026092403,
+      "initial_state": {
+        "J_L": 80.0,
+        "A_L": 56.0,
+        "J_R": 34.0,
+        "A_R": 24.0
+      },
+      "initialization_rounding": true
+    },
+    {
+      "scenario": "historical_lake",
+      "restriction": "R_H",
+      "seed": 2026092404,
+      "initial_state": {
+        "J_L": 80.0,
+        "A_L": 56.0,
+        "J_R": 34.0,
+        "A_R": 24.0
+      },
+      "initialization_rounding": true
+    },
+    {
+      "scenario": "historical_lake",
+      "restriction": "R_H",
+      "seed": 2026092405,
+      "initial_state": {
+        "J_L": 80.0,
+        "A_L": 56.0,
+        "J_R": 34.0,
+        "A_R": 24.0
+      },
+      "initialization_rounding": true
+    },
+    {
+      "scenario": "historical_lake",
+      "restriction": "R_H",
+      "seed": 2026092406,
+      "initial_state": {
+        "J_L": 80.0,
+        "A_L": 56.0,
+        "J_R": 34.0,
+        "A_R": 24.0
+      },
+      "initialization_rounding": true
+    },
+    {
+      "scenario": "historical_lake",
+      "restriction": "R_H",
+      "seed": 2026092407,
+      "initial_state": {
+        "J_L": 80.0,
+        "A_L": 56.0,
+        "J_R": 34.0,
+        "A_R": 24.0
+      },
+      "initialization_rounding": true
+    },
+    {
+      "scenario": "historical_lake",
+      "restriction": "R_T",
+      "seed": 2026092400,
+      "initial_state": {
+        "J_L": 80.0,
+        "A_L": 56.0,
+        "J_R": 34.0,
+        "A_R": 24.0
+      },
+      "initialization_rounding": true
+    },
+    {
+      "scenario": "historical_lake",
+      "restriction": "R_T",
+      "seed": 2026092401,
+      "initial_state": {
+        "J_L": 80.0,
+        "A_L": 56.0,
+        "J_R": 34.0,
+        "A_R": 24.0
+      },
+      "initialization_rounding": true
+    },
+    {
+      "scenario": "historical_lake",
+      "restriction": "R_T",
+      "seed": 2026092402,
+      "initial_state": {
+        "J_L": 80.0,
+        "A_L": 56.0,
+        "J_R": 34.0,
+        "A_R": 24.0
+      },
+      "initialization_rounding": true
+    },
+    {
+      "scenario": "historical_lake",
+      "restriction": "R_T",
+      "seed": 2026092403,
+      "initial_state": {
+        "J_L": 80.0,
+        "A_L": 56.0,
+        "J_R": 34.0,
+        "A_R": 24.0
+      },
+      "initialization_rounding": true
+    },
+    {
+      "scenario": "historical_lake",
+      "restriction": "R_T",
+      "seed": 2026092404,
+      "initial_state": {
+        "J_L": 80.0,
+        "A_L": 56.0,
+        "J_R": 34.0,
+        "A_R": 24.0
+      },
+      "initialization_rounding": true
+    },
+    {
+      "scenario": "historical_lake",
+      "restriction": "R_T",
+      "seed": 2026092405,
+      "initial_state": {
+        "J_L": 80.0,
+        "A_L": 56.0,
+        "J_R": 34.0,
+        "A_R": 24.0
+      },
+      "initialization_rounding": true
+    },
+    {
+      "scenario": "historical_lake",
+      "restriction": "R_T",
+      "seed": 2026092406,
+      "initial_state": {
+        "J_L": 80.0,
+        "A_L": 56.0,
+        "J_R": 34.0,
+        "A_R": 24.0
+      },
+      "initialization_rounding": true
+    },
+    {
+      "scenario": "historical_lake",
+      "restriction": "R_T",
+      "seed": 2026092407,
+      "initial_state": {
+        "J_L": 80.0,
+        "A_L": 56.0,
+        "J_R": 34.0,
+        "A_R": 24.0
+      },
+      "initialization_rounding": true
+    },
+    {
+      "scenario": "historical_lake",
+      "restriction": "R_C",
+      "seed": 2026092400,
+      "initial_state": {
+        "J_L": 80.0,
+        "A_L": 56.0,
+        "J_R": 34.0,
+        "A_R": 24.0
+      },
+      "initialization_rounding": true
+    },
+    {
+      "scenario": "historical_lake",
+      "restriction": "R_C",
+      "seed": 2026092401,
+      "initial_state": {
+        "J_L": 80.0,
+        "A_L": 56.0,
+        "J_R": 34.0,
+        "A_R": 24.0
+      },
+      "initialization_rounding": true
+    },
+    {
+      "scenario": "historical_lake",
+      "restriction": "R_C",
+      "seed": 2026092402,
+      "initial_state": {
+        "J_L": 80.0,
+        "A_L": 56.0,
+        "J_R": 34.0,
+        "A_R": 24.0
+      },
+      "initialization_rounding": true
+    },
+    {
+      "scenario": "historical_lake",
+      "restriction": "R_C",
+      "seed": 2026092403,
+      "initial_state": {
+        "J_L": 80.0,
+        "A_L": 56.0,
+        "J_R": 34.0,
+        "A_R": 24.0
+      },
+      "initialization_rounding": true
+    },
+    {
+      "scenario": "historical_lake",
+      "restriction": "R_C",
+      "seed": 2026092404,
+      "initial_state": {
+        "J_L": 80.0,
+        "A_L": 56.0,
+        "J_R": 34.0,
+        "A_R": 24.0
+      },
+      "initialization_rounding": true
+    },
+    {
+      "scenario": "historical_lake",
+      "restriction": "R_C",
+      "seed": 2026092405,
+      "initial_state": {
+        "J_L": 80.0,
+        "A_L": 56.0,
+        "J_R": 34.0,
+        "A_R": 24.0
+      },
+      "initialization_rounding": true
+    },
+    {
+      "scenario": "historical_lake",
+      "restriction": "R_C",
+      "seed": 2026092406,
+      "initial_state": {
+        "J_L": 80.0,
+        "A_L": 56.0,
+        "J_R": 34.0,
+        "A_R": 24.0
+      },
+      "initialization_rounding": true
+    },
+    {
+      "scenario": "historical_lake",
+      "restriction": "R_C",
+      "seed": 2026092407,
+      "initial_state": {
+        "J_L": 80.0,
+        "A_L": 56.0,
+        "J_R": 34.0,
+        "A_R": 24.0
+      },
+      "initialization_rounding": true
+    },
+    {
+      "scenario": "historical_lake",
+      "restriction": "R_J",
+      "seed": 2026092400,
+      "initial_state": {
+        "J_L": 80.0,
+        "A_L": 56.0,
+        "J_R": 34.0,
+        "A_R": 24.0
+      },
+      "initialization_rounding": true
+    },
+    {
+      "scenario": "historical_lake",
+      "restriction": "R_J",
+      "seed": 2026092401,
+      "initial_state": {
+        "J_L": 80.0,
+        "A_L": 56.0,
+        "J_R": 34.0,
+        "A_R": 24.0
+      },
+      "initialization_rounding": true
+    },
+    {
+      "scenario": "historical_lake",
+      "restriction": "R_J",
+      "seed": 2026092402,
+      "initial_state": {
+        "J_L": 80.0,
+        "A_L": 56.0,
+        "J_R": 34.0,
+        "A_R": 24.0
+      },
+      "initialization_rounding": true
+    },
+    {
+      "scenario": "historical_lake",
+      "restriction": "R_J",
+      "seed": 2026092403,
+      "initial_state": {
+        "J_L": 80.0,
+        "A_L": 56.0,
+        "J_R": 34.0,
+        "A_R": 24.0
+      },
+      "initialization_rounding": true
+    },
+    {
+      "scenario": "historical_lake",
+      "restriction": "R_J",
+      "seed": 2026092404,
+      "initial_state": {
+        "J_L": 80.0,
+        "A_L": 56.0,
+        "J_R": 34.0,
+        "A_R": 24.0
+      },
+      "initialization_rounding": true
+    },
+    {
+      "scenario": "historical_lake",
+      "restriction": "R_J",
+      "seed": 2026092405,
+      "initial_state": {
+        "J_L": 80.0,
+        "A_L": 56.0,
+        "J_R": 34.0,
+        "A_R": 24.0
+      },
+      "initialization_rounding": true
+    },
+    {
+      "scenario": "historical_lake",
+      "restriction": "R_J",
+      "seed": 2026092406,
+      "initial_state": {
+        "J_L": 80.0,
+        "A_L": 56.0,
+        "J_R": 34.0,
+        "A_R": 24.0
+      },
+      "initialization_rounding": true
+    },
+    {
+      "scenario": "historical_lake",
+      "restriction": "R_J",
+      "seed": 2026092407,
+      "initial_state": {
+        "J_L": 80.0,
+        "A_L": 56.0,
+        "J_R": 34.0,
+        "A_R": 24.0
+      },
+      "initialization_rounding": true
+    }
+  ],
+  "elapsed_seconds": 3.216020624997327,
+  "completed_at": "2026-09-23T04:24:38.174773+00:00",
+  "limits": "Qualification only; site limits and b are illustrative, no ecological likelihood or historical ranking."
+}

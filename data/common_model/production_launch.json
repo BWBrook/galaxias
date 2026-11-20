@@ -1,0 +1,30 @@
+{
+  "status": "launched",
+  "pid": 77653,
+  "started_utc": "2026-09-18T12:13:44.817413+00:00",
+  "source": "/data/codex/repos/galaxias-common-20260918",
+  "run": "/data/codex/scratch/galaxias/common_model_20260918/production",
+  "workers": 8,
+  "native_numeric_threads": 1,
+  "dispatch_gate": {
+    "bytes": 997,
+    "sha256": "4095fe02660b266bff2bda563baa48945c9cf9c470a2a1e13e4892f71b53c40a"
+  },
+  "source_bundle": {
+    "bytes": 23419,
+    "sha256": "4fb539288cf81ade5fbe56873034454b3769a02635eec08789dc7296f76bee25"
+  },
+  "pre_run_evidence_message": 260,
+  "mode": "production",
+  "stages": [
+    "search",
+    "refine",
+    "validate",
+    "counterfactual",
+    "paired_toggle",
+    "analysis"
+  ],
+  "policy": "finite approved plan; fail closed; no extra search or automatic restart",
+  "dispatch_confirmed_message": 261,
+  "follow_up_id": "galaxias-common-model-follow-through"
+}

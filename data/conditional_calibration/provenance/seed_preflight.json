@@ -1,0 +1,43 @@
+{
+  "fresh_history_runs": 19500000,
+  "phase_history_runs": {
+    "screen": 750000,
+    "refine": 3750000,
+    "validate": 15000000
+  },
+  "earlier_history_runs": 175980,
+  "search_seeds": [
+    20260912,
+    20260913,
+    20260914
+  ],
+  "draws_per_family": 500,
+  "all_family_count": 5,
+  "phase_codes": {
+    "screen": 1201,
+    "refine": 1301,
+    "validate": 1409
+  },
+  "runner_binding": {
+    "bytes": 35232,
+    "sha256": "741a3f034402321782db2d4e961579639c1005675c2fd5b2631436487ea25ea7"
+  },
+  "legacy_archives": {
+    "outputs/remote/observation_repair_pilot_20260908T004649Z/pilot": {
+      "bytes": 9569,
+      "sha256": "bf50507d86d488a7f319a0537920b3619fbcb16706db1158f0e662f7bbfb0729"
+    },
+    "outputs/remote/terminal_history_screen_20260908T012648Z/screen": {
+      "bytes": 7809,
+      "sha256": "38fd1d9bba4f77154774a082d843c2abd8c2614bd209f531e6d551b3b64df4bb"
+    },
+    "outputs/remote/terminal_history_screen_20260908T012648Z/confirm": {
+      "bytes": 8643,
+      "sha256": "0328427eb0a537e16910320788e662d88c344ba79d3a1d27ae1a7161ab561302"
+    },
+    "outputs/remote/terminal_history_screen_20260908T012648Z/extend": {
+      "bytes": 9331,
+      "sha256": "8a0139c435ce40cb913aa1fc69af548b0adbfb1cb5268cbb7ea5f68773d43ce9"
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "lake": {
+    "source_pdf_sha256": "bfd567d5612a211366f8fe110144a97f7f22893e77d1229040e6d9d66b5d21c7",
+    "extracted_stencil_sha256": "077c6e82cb91baef07c41a62a007a09b2f854a9c478d8155ff564571ac9b528b",
+    "figure_printed_page": 94,
+    "methods_printed_page": 89,
+    "native_width": 2517,
+    "native_height": 1649,
+    "pixels_per_unit": 82.05,
+    "baseline_slope": -0.004618501956400252,
+    "baseline_intercept": 332.5265511458914,
+    "digitisation_halfwidth": 0.08,
+    "halfwidth_kind": "conservative reading band, not SE or SD",
+    "early_visits": [
+      1976,
+      1977,
+      1978,
+      1979,
+      1980
+    ],
+    "late_visits": [
+      1983,
+      1986,
+      1989
+    ],
+    "sites_per_visit_assumed": 12,
+    "early_catch_equivalent": 172.965497050327,
+    "early_catch_equivalent_interval": [
+      168.165497050327,
+      177.765497050327
+    ],
+    "raw_count_claim": false,
+    "exclude_ambiguous_time_labels": [
+      0,
+      0.5
+    ]
+  },
+  "isolated_refuge_proposal_fraction": {
+    "near_obligate": 0.07628035861293819,
+    "legacy_range": 0.6772125429959415
+  },
+  "matched_exposure_control": {
+    "kind": "observation_templates_not_biologically_qualified_histories",
+    "loss_annual_late_abundance": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.0
+    ],
+    "persistence_annual_late_abundance": [
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      0.8
+    ],
+    "early_and_february_identical": true,
+    "conditional_log_score_loss": -7.087782870601526,
+    "conditional_log_score_persistence": -7.087782870601526,
+    "whole_conditional_distribution_identical": true,
+    "oracle_balanced_accuracy": 0.5,
+    "interpretation": "aggregate exposure cannot identify the final year's occupancy without demographic restrictions"
+  },
+  "demographic_histories_run": 0,
+  "model_advance_calls": 0,
+  "full_synthetic_recovery_gate_passed": false
+}

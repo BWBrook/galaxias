@@ -1,0 +1,30 @@
+{
+  "status": "complete",
+  "started_utc": "2026-09-27T04:40:53.790538+00:00",
+  "synthetic_only": true,
+  "ceiling_site_path_executions": 128,
+  "planned_stochastic_executions": 48,
+  "planned_deterministic_executions": 6,
+  "scientific_comparison_histories": 0,
+  "source_hashes": {
+    "src/galaxias_model/age_demography.py": "5bb305d052c89b8ab0fea6da27811f182d551505f176588769193bd31ffeb6ca",
+    "src/galaxias_model/age_scenarios.py": "4110d13a37c93737bdc248edfc78cdc385eea216d08deb3bdcfd315205c3e72c",
+    "src/galaxias_model/age_observation.py": "7f520ee504c21af6f86150b3f5ceb717386cddaab141d18ae6105713d9581a22",
+    "src/galaxias_model/recruitment_demography.py": "332f7ab7c5b27abecbbc9dbe8bd4bfd1873e3743d8949fc707f102ee952f3ef5",
+    "scripts/qualify_age_demography.py": "1caa07d9ca9d8a7bd61418803ad93ea812f5a4ceaaebe8dff84453769a633b70",
+    "data/age_structured_design_20260927/scenarios.json": "432b935d4e843c2c79c85679bc7cb1dcb61848a702b76dc6b282d5faec361b8e"
+  },
+  "calendar_sha256": "e9274f8e7c51494d9f99e0bc67983e69f871a6f5149092f32902c102e3aae241",
+  "local_workers": 2,
+  "stochastic_years_per_path": 20,
+  "actual_stochastic_executions": 48,
+  "actual_deterministic_executions": 6,
+  "serial_parallel_exact": true,
+  "maximum_absolute_fixed_point_error": 9.094947017729282e-13,
+  "completed_utc": "2026-09-27T04:40:55.451469+00:00",
+  "output_sha256": {
+    "serial.json": "e75c39c750d9790bef07fd14c071ee988555f15140c2d356db537dea2ddda060",
+    "parallel.json": "e75c39c750d9790bef07fd14c071ee988555f15140c2d356db537dea2ddda060",
+    "calendar.json": "e9274f8e7c51494d9f99e0bc67983e69f871a6f5149092f32902c102e3aae241"
+  }
+}

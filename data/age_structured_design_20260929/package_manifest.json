@@ -1,0 +1,25 @@
+{
+  "candidate": "age_structured_candidate_2_20260929",
+  "status": "review_amendment_and_observation_checks_not_executable_freeze",
+  "file_sha256": {
+    "data/age_structured_design_20260929/lake_figure6_digitised.csv": "91ce060c1c2c549563e3ab07f31864b2a3fff433c411ac02f483761463af07cb",
+    "data/age_structured_design_20260929/observation_checks.json": "748eed8ba59c66cc8fbe17e01b39276cb370bce22b3bda2a88db788b7178dd57",
+    "data/age_structured_design_20260929/observation_oracle_controls.csv": "51d5b7c903b93a07332d9e9014ef579200ea9788c28704c6530295347847c9a7",
+    "data/age_structured_design_20260929/observation_register.csv": "b57852f7f541325d83cff06af2600e219b5724c56cddb4396539125c2e17bc9d",
+    "data/age_structured_design_20260929/removal_evidence.csv": "bb00e363979da6cc314920ca44ecb3aaa5c72bbdb54b41478076eafcc9c16f30",
+    "data/age_structured_design_20260929/scenarios.json": "b152d1c9501512b54d7aff444bc342aee785886fd6fa8158dd3976e919df83e0",
+    "docs/age_structured_protocol.md": "3f970af0978dfdf4da590c30c489e20590722b265a776b1f738ec309fa36874f",
+    "docs/age_structured_protocol_candidate2.md": "53f4c50bbd0c3be12f4909818fc720d576898c21e281f17414c2cdb60ded8877",
+    "docs/age_structured_review_response_20260929.md": "c2028090657931f8b7084d04e786068182298968741c0b6ac369f5e39fe1cdee",
+    "scripts/prepare_age_review_20260929.py": "0a710bcdd1a956e959a64daa8103960cf95b7ddd8c6012c2950d9fd6ecfd7898",
+    "src/galaxias_model/age_demography.py": "5bb305d052c89b8ab0fea6da27811f182d551505f176588769193bd31ffeb6ca",
+    "src/galaxias_model/age_observation.py": "eef2649598916f1ccfaec68954f3d21f1126531186e4372083ae599eaa778c96",
+    "src/galaxias_model/age_scenarios.py": "4110d13a37c93737bdc248edfc78cdc385eea216d08deb3bdcfd315205c3e72c",
+    "src/galaxias_model/common_model.py": "2031373352dbdb55b30db571dc7b861e67f804fc0b5709ef99233f73e8e463c4",
+    "src/galaxias_model/mate_guard.py": "7da473275457d9970c7b6a748e4ac92043c96ccdd14266142fb6e02827bdb332",
+    "src/galaxias_model/recruitment_demography.py": "332f7ab7c5b27abecbbc9dbe8bd4bfd1873e3743d8949fc707f102ee952f3ef5",
+    "src/galaxias_model/recruitment_scenarios.py": "624423c0983441a55d925399444c6a217c20e2f9e4e3b37975e7b803270b528a",
+    "tests/test_age_observation.py": "212539137aa0ad9ea08c96a2598ca6b9fef7830722061d6b9a9977117e37c75f",
+    "uv.lock": "5d6561c9a74c38eccbc35c6053c0819d36357f3331305058f863a66bb3ef148e"
+  }
+}
